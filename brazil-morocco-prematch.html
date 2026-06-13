@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil vs Morocco — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#ffdf00;--mor:#c1272d;--blue:#5aa0e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);
+    color:var(--txt);min-height:100vh;padding:24px 16px 80px;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto}
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    padding:5px 12px;border-radius:999px;background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:.4px;margin-top:6px;
+    background:linear-gradient(90deg,#ffdf00,#fff 55%,#c1272d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+  .vsbar{display:flex;align-items:stretch;gap:0;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .b{background:linear-gradient(135deg,#2a2a10,#14180e)}
+  .vsbar .m{background:linear-gradient(135deg,#2a1012,#160d0e);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .b .nm{color:var(--bra)}.vsbar .m .nm{color:#e8696e}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.brazil{border-left:3px solid var(--bra)}
+  .card.morocco{border-left:3px solid var(--mor)}
+  .keyduel{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);
+    border-left:3px solid var(--blue);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .keyduel .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+
+  /* MOVE DIAGRAM */
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px}
+  .move .mtag.atk{background:rgba(255,223,0,.14);color:var(--bra)}
+  .move .mtag.def{background:rgba(193,39,45,.16);color:#e8696e}
+  .move .mt{font-size:17px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:34px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group C · Matchday 1</span>
+  </div>
+  <h1>Brazil vs Morocco</h1>
+  <div class="sub">A tactical chess match — how Brazil attacks, how Morocco defends</div>
+  <div class="meta">🕒 3:30 AM IST, Sun 14 Jun · 📍 MetLife Stadium, East Rutherford · Ref: Slavko Vinčić (SVN)</div>
+
+  <div class="vsbar">
+    <div class="side b">
+      <div class="nm">🇧🇷 Brazil</div>
+      <div class="fm">4-2-3-1 / 4-3-3 · Ancelotti · FIFA #5 · favourites (-167)</div>
+    </div>
+    <div class="mid">VS</div>
+    <div class="side m">
+      <div class="nm">Morocco 🇲🇦</div>
+      <div class="fm">4-3-3 mid-block · Ouahbi · FIFA #8 · AFCON champions</div>
+    </div>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News &amp; Probable XIs</h2>
+  <p class="lead">This is the standout fixture of Matchday 1 — five-time champions against the team that knocked on the final's door in 2022 and have since become the <strong>"Brazilians of Africa."</strong> Morocco arrive as reigning AFCON champions, unbeaten in their last five, sitting 8th in the world. Brazil are favourites, but everyone covering this game agrees: <strong>this is a genuine test, not a warm-up.</strong></p>
+
+  <div class="card brazil">
+    <h3 style="margin-top:0">🇧🇷 Brazil — the picture</h3>
+    <ul>
+      <li><strong>Neymar is OUT</strong> — grade-two calf strain; he wears the No.10 but isn't fit. Brazil build without a classic playmaker, so creativity runs through Paquetá and the wide forwards.</li>
+      <li><strong>Right-back is the headache.</strong> Wesley withdrew injured. Ancelotti has tested Danilo, Ederson and Roger Ibañez there — Danilo is the likeliest starter, but it's a patched-up spot.</li>
+      <li><strong>The real weakness: left-back.</strong> An ageing Alex Sandro (or Douglas Santos) has to deal with Hakimi — a recurring theme in every preview.</li>
+      <li><strong>Spine is elite:</strong> Alisson; Marquinhos &amp; Gabriel; Casemiro + Bruno Guimarães; Vinícius &amp; Raphinha wide; Matheus Cunha (or Igor Thiago) at striker.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-2-3-1): Alisson; Danilo, Marquinhos, Gabriel, Alex Sandro; Casemiro, Bruno Guimarães; Raphinha, Paquetá, Vinícius Jr; Cunha.</p>
+  </div>
+
+  <div class="card morocco">
+    <h3 style="margin-top:0">🇲🇦 Morocco — the picture</h3>
+    <ul>
+      <li><strong>Two big absences:</strong> CB Nayef Aguerd (groin) and winger Abde Ezzalzouli (knee) are out — Aguerd's loss weakens the centre, but Ouahbi insists the principles don't change.</li>
+      <li><strong>Mazraoui passed fit</strong> after a shoulder knock vs Norway — expected to start at left-back.</li>
+      <li><strong>The Hakimi question:</strong> normally right-back, but some line-ups have him switched to track Vinícius directly. Either way he's the fulcrum — defence and their No.1 attacking outlet.</li>
+      <li><strong>Defend-as-a-unit identity:</strong> compact, disciplined, lethal on the counter through Hakimi's overlaps and Brahim Díaz between the lines. Young double pivot (Bouaddi / El Aynaoui) is the area to test.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-3-3): Bounou; Hakimi, Diop, Riad, Mazraoui; El Aynaoui, Bouaddi, Ounahi; Brahim Díaz, Saibari, El Khannouss.</p>
+  </div>
+
+  <h2><span class="ic">♟️</span> The Central Chess Problem</h2>
+  <p>Strip it down and the game is a single recurring question: <strong>can Brazil's individual quality unlock a Morocco block that is purpose-built to deny exactly this kind of opponent?</strong> Morocco won't try to dominate the ball — their own coach says their route "is not long possession." They want a compact 4-3-3 / 4-5-1 mid-block, deny the half-spaces, and turn one Brazilian loose pass into a Hakimi-led counter.</p>
+  <p>Brazil's answer is positional: control the middle through <strong>Casemiro + Bruno Guimarães</strong>, then isolate <strong>Vinícius 1v1</strong> on the left and let <strong>Raphinha drift into vertical pockets</strong> on the right. The fault-line runs down <em>both</em> flanks — Vinícius attacking Hakimi's side, and Hakimi attacking Brazil's weak left-back. Whoever wins their wide duel tilts the group.</p>
+
+  <div class="keyduel">
+    <div class="t">⚔️ The duel that decides it — Vinícius Jr vs Achraf Hakimi</div>
+    <p style="margin:8px 0 0">The whole match compresses into this. Vinícius is football's most dangerous 1v1 runner in transition; Hakimi is one of the few full-backs with the recovery pace and intelligence to live with him — <em>and</em> Morocco's primary attacking weapon. The tension: <strong>if Hakimi pushes high to attack, he leaves the exact space Vinícius wants to run into. If he stays to contain Vinícius, Morocco lose their best outlet.</strong> Brazil will deliberately attack this seam again and again.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> Tactical Move 1 — How Brazil Attacks</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag atk">Brazil · Attack</span><span class="mt">The left-side overload to free Vinícius</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrowY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="arrowW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#ffffff"/></marker>
+        <marker id="arrowR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#c1272d"/></marker>
+      </defs>
+      <!-- pitch -->
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect x="0" y="0" width="720" height="55"/><rect x="0" y="110" width="720" height="55"/><rect x="0" y="220" width="720" height="55"/><rect x="0" y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2">
+        <rect x="14" y="14" width="692" height="412" rx="4"/>
+        <line x1="14" y1="220" x2="706" y2="220"/>
+        <circle cx="360" cy="220" r="52"/>
+        <rect x="250" y="14" width="220" height="70"/>
+        <rect x="250" y="356" width="220" height="70"/>
+      </g>
+      <!-- Attacking direction note -->
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ (Morocco's right / Hakimi's flank to the left of the diagram)</text>
+
+      <!-- MOROCCO defenders (red) in block, top -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="150" cy="120" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="124" x="150">HAK</text><text x="150" y="146" fill="#ffd2d4">Hakimi</text></g>
+        <g><circle cx="290" cy="95" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="99" x="290">RIAD</text></g>
+        <g><circle cx="430" cy="95" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="99" x="430">DIOP</text></g>
+        <g><circle cx="565" cy="120" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="124" x="565">MAZ</text></g>
+        <!-- midfield screen -->
+        <g><circle cx="250" cy="180" r="12" fill="#9b1b20" stroke="#fff" stroke-width="1.2"/><text y="184" x="250">AYN</text></g>
+        <g><circle cx="420" cy="180" r="12" fill="#9b1b20" stroke="#fff" stroke-width="1.2"/><text y="184" x="420">BOU</text></g>
+      </g>
+
+      <!-- BRAZIL attackers (yellow) bottom moving up -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="120" cy="330" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text y="334" x="120">VIN</text><text x="120" y="356" fill="#fff" font-size="10">Vinícius</text></g>
+        <g><circle cx="250" cy="300" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text y="304" x="250">PAQ</text></g>
+        <g><circle cx="360" cy="330" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text y="334" x="360">CUN</text></g>
+        <g><circle cx="210" cy="385" r="12" fill="#e6c200" stroke="#fff" stroke-width="1.2"/><text y="389" x="210">SAN</text><text x="210" y="408" fill="#fff" font-size="9">A.Sandro</text></g>
+        <g><circle cx="470" cy="300" r="12" fill="#e6c200" stroke="#fff" stroke-width="1.2"/><text y="304" x="470">BRU</text></g>
+      </g>
+
+      <!-- MOVEMENT ARROWS -->
+      <!-- Paqueta drags Ayn / overloads, then ball to Vini -->
+      <path d="M250 288 C 230 250, 200 230, 175 205" stroke="#ffffff" stroke-width="3" fill="none" stroke-dasharray="2 0" marker-end="url(#arrowW)"/>
+      <!-- A.Sandro underlaps outside to pin -->
+      <path d="M212 373 C 150 350, 120 330, 108 300" stroke="#ffffff" stroke-width="3" fill="none" stroke-dasharray="7 5" marker-end="url(#arrowW)"/>
+      <!-- Vinicius drives at Hakimi into the channel -->
+      <path d="M133 322 C 150 280, 150 230, 150 175" stroke="#ffdf00" stroke-width="4" fill="none" marker-end="url(#arrowY)"/>
+      <!-- final ball in behind to far post -->
+      <path d="M158 168 C 240 130, 330 120, 410 120" stroke="#ffdf00" stroke-width="3.5" fill="none" stroke-dasharray="9 6" marker-end="url(#arrowY)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf00"></i> Ball-carry / dribble</span>
+      <span><i style="border-top-color:#ffdf00;border-top-style:dashed"></i> Pass / cross</span>
+      <span><i style="border-top-color:#ffffff;border-top-style:dashed"></i> Off-ball run (decoy / underlap)</span>
+    </div>
+
+    <p class="expl"><strong>The idea:</strong> Brazil deliberately overloads Vinícius's flank. <strong>Paquetá drifts left</strong> and <strong>Alex Sandro underlaps</strong> on the outside — two runners that occupy El Aynaoui and pin Hakimi, forcing Morocco to choose who to track. That isolates <strong>Vinícius 1v1 against Hakimi with a runner outside him.</strong> If Hakimi steps to the overlap, Vinícius drives inside the channel vacated behind him; if Hakimi holds, Vinícius takes him on. Either way Brazil manufactures a yard, then the <strong>cut-back / far-post ball</strong> (yellow dashed) attacks the space Aguerd's absence has weakened in the centre — Riad and Diop dragged across, Cunha and Raphinha arriving at the back post. This is the single move Brazil will run most often.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Tactical Move 2 — How Morocco Defends (&amp; Strikes Back)</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag def">Morocco · Defend + Counter</span><span class="mt">Compact block, then the Hakimi–Brahim transition</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrowR2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e8696e"/></marker>
+        <marker id="arrowG2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="arrowDk" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffffff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect x="0" y="0" width="720" height="55"/><rect x="0" y="110" width="720" height="55"/><rect x="0" y="220" width="720" height="55"/><rect x="0" y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2">
+        <rect x="14" y="14" width="692" height="412" rx="4"/>
+        <line x1="14" y1="220" x2="706" y2="220"/>
+        <circle cx="360" cy="220" r="52"/>
+        <rect x="250" y="14" width="220" height="70"/>
+        <rect x="250" y="356" width="220" height="70"/>
+      </g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Morocco defends low ↓, then breaks ↑ at speed once they win it</text>
+
+      <!-- Morocco compact block (red) - two banks low -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- back four -->
+        <g><circle cx="170" cy="360" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="364" x="170">HAK</text></g>
+        <g><circle cx="300" cy="375" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="379" x="300">RIAD</text></g>
+        <g><circle cx="420" cy="375" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="379" x="420">DIOP</text></g>
+        <g><circle cx="545" cy="360" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text y="364" x="545">MAZ</text></g>
+        <!-- midfield three -->
+        <g><circle cx="240" cy="285" r="12" fill="#9b1b20" stroke="#fff" stroke-width="1.2"/><text y="289" x="240">AYN</text></g>
+        <g><circle cx="360" cy="300" r="12" fill="#9b1b20" stroke="#fff" stroke-width="1.2"/><text y="304" x="360">BOU</text></g>
+        <g><circle cx="475" cy="285" r="12" fill="#9b1b20" stroke="#fff" stroke-width="1.2"/><text y="289" x="475">OUN</text></g>
+        <!-- forwards ready to break -->
+        <g><circle cx="300" cy="200" r="12" fill="#e0565b" stroke="#fff" stroke-width="1.2"/><text y="204" x="300">BRA</text><text x="300" y="180" fill="#ffd2d4" font-size="9">Brahim</text></g>
+        <g><circle cx="440" cy="200" r="12" fill="#e0565b" stroke="#fff" stroke-width="1.2"/><text y="204" x="440">SAI</text></g>
+      </g>
+
+      <!-- Brazil players caught high (faint yellow) -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle" opacity="0.85">
+        <g><circle cx="150" cy="250" r="11" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text y="254" x="150">VIN</text></g>
+        <g><circle cx="560" cy="250" r="11" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text y="254" x="560">RAPH</text></g>
+        <g><circle cx="360" cy="150" r="11" fill="#e6c200" stroke="#fff" stroke-width="1.2"/><text y="154" x="360">CAS</text></g>
+        <g><circle cx="210" cy="160" r="11" fill="#e6c200" stroke="#fff" stroke-width="1.2"/><text y="164" x="210">SAN</text></g>
+      </g>
+
+      <!-- DEFENSIVE SHELL: compact shape braces -->
+      <path d="M150 345 Q360 320 560 345" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 6" fill="none" opacity="0.6"/>
+      <path d="M225 300 Q360 280 490 300" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 6" fill="none" opacity="0.6"/>
+      <text x="600" y="330" font-size="10" fill="#fff" opacity=".7">2 compact</text>
+      <text x="600" y="344" font-size="10" fill="#fff" opacity=".7">banks of 4</text>
+
+      <!-- COUNTER: win ball -> Brahim -> Hakimi overlap -->
+      <!-- win ball near Bou, spring Brahim -->
+      <path d="M352 292 C 330 250, 315 225, 305 215" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#arrowG2)"/>
+      <!-- Brahim releases Hakimi down the line -->
+      <path d="M292 195 C 240 165, 190 150, 165 130" stroke="#e8696e" stroke-width="4" fill="none" marker-end="url(#arrowR2)"/>
+      <!-- Hakimi storms into the space behind A.Sandro -->
+      <path d="M170 345 C 150 270, 150 200, 152 140" stroke="#e8696e" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#arrowR2)"/>
+      <!-- cutback into box -->
+      <path d="M150 128 C 220 100, 300 100, 360 110" stroke="#e8696e" stroke-width="3" fill="none" stroke-dasharray="9 6" marker-end="url(#arrowR2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Ball won → first pass</span>
+      <span><i style="border-top-color:#e8696e"></i> Counter run / carry</span>
+      <span><i style="border-top-color:#e8696e;border-top-style:dashed"></i> Hakimi overlap / cut-back</span>
+      <span><i style="border-top-color:#ffffff;border-top-style:dashed"></i> Block shape</span>
+    </div>
+
+    <p class="expl"><strong>The idea:</strong> Morocco sit in <strong>two compact banks</strong>, conceding the ball and protecting the half-spaces — Bouaddi and El Aynaoui screen the zone where Bruno and Paquetá want to receive. The trap: invite Brazil's full-backs (especially Alex Sandro) high, then <strong>win the ball and go vertical in three touches.</strong> The instant Bouaddi intercepts, the first pass finds <strong>Brahim Díaz between the lines</strong> (green) — he turns and releases <strong>Hakimi storming into the space behind the advanced Alex Sandro</strong> (red). With Vinícius caught upfield and slow to track back — a weakness every preview names — that flank is open grass. The <strong>cut-back</strong> targets the box before Brazil's centre-backs reset. This is precisely how Morocco hurt elite sides: not possession, but lethal, rehearsed transition.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> The Sub-Battles That Will Swing It</h2>
+  <ul>
+    <li><strong>Bruno Guimarães vs Morocco's young pivot (Bouaddi):</strong> Bruno is Brazil's engine — he finds the pockets Casemiro can't reach. Bouaddi is technically gifted but raw; this is his examination. If Bruno gets time between the lines, Brazil flow.</li>
+    <li><strong>Brazil's rest-defence vs the counter:</strong> Casemiro screening, and whether the makeshift right-back (Danilo) and Alex Sandro can stay disciplined. One loose pass becomes a Hakimi break.</li>
+    <li><strong>Brahim Díaz on the half-turn:</strong> Morocco's release valve. Marquinhos/Casemiro must deny him time, or the counters ignite.</li>
+    <li><strong>Set-pieces:</strong> Hakimi, El Khannouss and Ounahi are dead-ball threats — with Aguerd's aerial presence gone, but Brazil's centre-backs strong, this is a quieter-but-live route for Morocco.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>The consensus from previews and models: Brazil have <strong>too much quality in midfield and on the wings</strong> over 90 minutes, but Morocco are exactly the organised, transition-sharp opponent who can make the favourites uncomfortable — several models lean "Morocco or draw." Expect Brazil to dominate the ball and territory, Morocco to defend in banks and threaten on the Hakimi break. The decisive variable is whether Vinícius wins his duel before Hakimi wins his.</p>
+    <div class="scoreline">🇧🇷 Brazil 2 — 1 Morocco</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: Brazil edge it through a Vinícius moment + a second-half cushion. A 1-1 draw is very much live if Morocco's first counter lands. The "cagey, high-quality" game everyone expects.</p>
+  </div>
+
+  </div>
+</body>
+</html>

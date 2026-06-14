@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil 1-1 Morocco — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#ffdf00;--mor:#c1272d;--blue:#5aa0e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);
+    color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  /* STICKY NAV */
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin-bottom:18px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#ffdf00,#fff 55%,#c1272d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:18px;margin:16px 0 6px}
+  .scoreboard .t{font-size:18px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);
+    border-radius:12px;padding:6px 18px}
+  .scoreboard .bra{color:var(--bra)}.scoreboard .mor{color:#e8696e}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#fff}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 6px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .b{color:var(--bra)}.stat .v .m{color:#e8696e}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.fix{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:17px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(57,217,138,.13);color:var(--green);border-color:#1f4533">Group C · Matchday 1 · FT</span>
+  </div>
+  <h1>Brazil vs Morocco — What Went Wrong</h1>
+
+  <div class="scoreboard">
+    <span class="t bra">🇧🇷 Brazil</span>
+    <span class="sc">1 – 1</span>
+    <span class="t mor">Morocco 🇲🇦</span>
+  </div>
+  <div class="meta">📍 MetLife Stadium · Group C · Full-time</div>
+  <div class="scorers">⚽ <b>Saibari 21'</b> (assist B. Díaz) &nbsp;·&nbsp; <b>Vinícius Jr 32'</b> (assist B. Guimarães)</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Possession (HT)</div><div class="v"><span class="b">54%</span> · <span class="m">46%</span></div></div>
+    <div class="stat"><div class="l">Shots (HT)</div><div class="v"><span class="b">6</span> · <span class="m">12</span></div></div>
+    <div class="stat"><div class="l">xG (HT)</div><div class="v"><span class="b">0.85</span> · <span class="m">1.22</span></div></div>
+    <div class="stat"><div class="l">Duels won</div><div class="v"><span class="m">52%</span> Morocco</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">First-half stats. Morocco out-shot and out-chanced Brazil and edged the duels — the numbers back the eye-test.</p>
+
+  <h2><span class="ic">🧭</span> The Story in One Paragraph</h2>
+  <p class="lead">Morocco were the better side, especially in the first half — they <strong>pressed Brazil high, controlled possession against the run of reputation, and led through a composed Saibari finish</strong> after a clean through-ball split Brazil's midfield. Brazil's reply was pure individual brilliance: <strong>Vinícius Júnior cut inside and smashed a clinical right-footed equaliser</strong> — his only shot on target. After the break the game flattened; Brazil sat ready to counter but created little, Morocco kept the ball and nearly stole it late (El Aynaoui's 90+8' rocket, brilliantly saved by Alisson). <strong>A 1-1 that flattered Brazil as much as it frustrated them — exactly the cohesion, midfield and finishing problems the eye picked up.</strong></p>
+
+  <div class="callout">
+    <div class="t">✅ Your read vs the data</div>
+    <p style="margin:8px 0 0">Your take was on the money. <strong>"Lacked cohesion"</strong> → Morocco edged duels (52%) and recoveries (Ounahi 7), Brazil never settled. <strong>"Lacklustre midfield"</strong> → Paquetá's error led to a Morocco chance, the double pivot was bypassed for Saibari's goal, and Brazil's xG (0.85) trailed Morocco's (1.22). <strong>"No opportunistic striker"</strong> → Igor Thiago couldn't convert a presentable header, and Brazil's only on-target moment of quality came from Vinícius himself. <strong>"Morocco effective on the break"</strong> → 12 shots, the higher xG, and the late El Aynaoui chance all came from exactly that.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 — Morocco (Saibari 21') · How the midfield was opened</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Morocco · Goal</span><span class="mt">Through-ball splits the double pivot</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e8696e"/></marker>
+        <marker id="aW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2">
+        <rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/>
+        <rect x="250" y="14" width="220" height="70"/><rect x="250" y="356" width="220" height="70"/>
+      </g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Morocco attacking ↑ · Brazil's defensive third at top</text>
+
+      <!-- Brazil defenders/midfield (yellow) - shows the gap -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="13" fill="#e6c200" stroke="#fff" stroke-width="1.4"/><text x="360" y="44">ALI</text></g>
+        <g><circle cx="250" cy="95" r="13" fill="#e6c200" stroke="#fff" stroke-width="1.4"/><text x="250" y="99">MAR</text></g>
+        <g><circle cx="455" cy="95" r="13" fill="#e6c200" stroke="#fff" stroke-width="1.4"/><text x="455" y="99">GAB</text></g>
+        <!-- double pivot pulled apart -->
+        <g><circle cx="225" cy="200" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text x="225" y="204">CAS</text></g>
+        <g><circle cx="470" cy="195" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text x="470" y="199">BRU</text></g>
+        <text x="348" y="160" text-anchor="middle" font-size="11" fill="#fff">GAP</text>
+        <path d="M300 175 Q360 150 420 175" stroke="#fff" stroke-dasharray="4 5" fill="none" opacity=".7"/>
+      </g>
+
+      <!-- Morocco (red) -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="300" r="12" fill="#c1272d" stroke="#fff" stroke-width="1.3"/><text x="300" y="304">BRA</text><text x="300" y="324" fill="#ffd2d4" font-size="9">B.Díaz</text></g>
+        <g><circle cx="360" cy="150" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text x="360" y="154">SAI</text><text x="360" y="132" fill="#ffd2d4" font-size="9">Saibari</text></g>
+      </g>
+
+      <!-- Saibari run + Diaz pass -->
+      <path d="M300 288 C 330 235, 350 195, 360 168" stroke="#fff" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aW)"/>
+      <path d="M312 296 C 345 250, 352 215, 360 172" stroke="#e8696e" stroke-width="3.5" fill="none" marker-end="url(#aR)"/>
+      <!-- finish over keeper -->
+      <path d="M360 138 C 360 100, 360 70, 360 55" stroke="#e8696e" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aR)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#e8696e"></i> Through-ball &amp; finish</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Saibari's run</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Pivot pulled apart (gap)</span>
+    </div>
+
+    <p class="expl"><strong>What happened:</strong> Brahim Díaz received between the lines and slid a <strong>through-ball into the channel between Casemiro and Bruno Guimarães</strong>, who were pulled apart and screening nobody. Saibari timed his run beyond Brazil's centre-backs and <strong>lifted a composed finish over Alisson</strong>, who hesitated coming off his line. The goal crystallised Brazil's core problem: the <strong>double pivot offered no protection</strong> — when Brazil's structure broke, there was acres of grass in front of the back four for a runner to attack. This is the midfield cohesion failure your eye caught, drawn out.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 — Brazil (Vinícius 32') · Why it was individual, not systemic</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Brazil · Goal</span><span class="mt">Vinícius cuts inside &amp; finishes far post</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="aW2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2">
+        <rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/>
+        <rect x="250" y="14" width="220" height="70"/><rect x="250" y="356" width="220" height="70"/>
+      </g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · Vinícius from the left</text>
+      <!-- Goal frame -->
+      <rect x="310" y="14" width="100" height="14" fill="none" stroke="#fff" stroke-width="3"/>
+
+      <!-- Morocco defenders (red) -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="46" r="12" fill="#c1272d" stroke="#fff" stroke-width="1.3"/><text x="360" y="50">BNO</text></g>
+        <g><circle cx="245" cy="120" r="12" fill="#c1272d" stroke="#fff" stroke-width="1.3"/><text x="245" y="124">HAK</text></g>
+        <g><circle cx="350" cy="115" r="12" fill="#c1272d" stroke="#fff" stroke-width="1.3"/><text x="350" y="119">RIAD</text></g>
+      </g>
+
+      <!-- Bruno + Vini (yellow) -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="430" cy="250" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="430" y="254">BRU</text></g>
+        <g><circle cx="140" cy="300" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text x="140" y="304">VIN</text><text x="140" y="324" fill="#fff" font-size="9">Vinícius</text></g>
+      </g>
+
+      <!-- Bruno pass to Vini -->
+      <path d="M418 250 C 330 270, 230 290, 158 298" stroke="#ffdf00" stroke-width="3" stroke-dasharray="9 6" fill="none" marker-end="url(#aY)"/>
+      <!-- Vini carries inside diagonally -->
+      <path d="M150 290 C 210 250, 250 200, 300 150" stroke="#ffdf00" stroke-width="4" fill="none" marker-end="url(#aY)"/>
+      <!-- shot far post -->
+      <path d="M305 142 C 330 100, 360 60, 388 28" stroke="#ffdf00" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aY)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf00"></i> Carry / shot</span>
+      <span><i style="border-top-color:#ffdf00;border-top-style:dashed"></i> Bruno's pass</span>
+    </div>
+
+    <p class="expl"><strong>What happened:</strong> Bruno Guimarães fed Vinícius wide-left; Vinícius <strong>drove diagonally infield off his marker and rifled a right-footed shot past Bounou into the far corner</strong> — the "stamp of the house," as Telemundo called it. <strong>The tactical point cuts the other way, though:</strong> this was a moment of elite individual quality, <em>not</em> a product of Brazil's collective play. It was Vinícius's <strong>only shot on target all half</strong>. A team relying on one player to manufacture goals from nothing — with no structured chance-creation or penalty-box finisher behind him — is exactly the fragility you flagged. The goal papered over the performance.</p>
+  </div>
+
+  <h2><span class="ic">🔧</span> The Fix — Two Tactical Adjustments Brazil Should Make</h2>
+  <p>Based on the actual failures above — a bypassed pivot and over-reliance on Vinícius — here are two concrete, evidence-based changes for Haiti (Jun 19) and Scotland (Jun 24), and the knockouts beyond.</p>
+
+  <h3>Fix 1 — A true single pivot + staggered midfield (stop getting split)</h3>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Brazil · Fix 1</span><span class="mt">Casemiro anchors; Bruno &amp; Paquetá stagger ahead</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2">
+        <rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/>
+        <rect x="250" y="14" width="220" height="70"/><rect x="250" y="356" width="220" height="70"/>
+      </g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">A staggered midfield triangle closes the gap Saibari exploited</text>
+
+      <!-- back line -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="180" cy="360" r="12" fill="#e6c200" stroke="#fff" stroke-width="1.3"/><text x="180" y="364">LB</text></g>
+        <g><circle cx="290" cy="375" r="12" fill="#e6c200" stroke="#fff" stroke-width="1.3"/><text x="290" y="379">MAR</text></g>
+        <g><circle cx="430" cy="375" r="12" fill="#e6c200" stroke="#fff" stroke-width="1.3"/><text x="430" y="379">GAB</text></g>
+        <g><circle cx="545" cy="360" r="12" fill="#e6c200" stroke="#fff" stroke-width="1.3"/><text x="545" y="364">RB</text></g>
+      </g>
+      <!-- single pivot deep -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="300" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="360" y="304">CAS</text><text x="360" y="282" fill="#fff" font-size="9">anchor</text></g>
+        <!-- two ahead, staggered -->
+        <g><circle cx="255" cy="235" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="255" y="239">BRU</text></g>
+        <g><circle cx="465" cy="235" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="465" y="239">PAQ</text></g>
+      </g>
+      <!-- triangle screen lines -->
+      <path d="M360 286 L262 248" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+      <path d="M360 286 L458 248" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+      <path d="M268 235 L452 235" stroke="#39d98a" stroke-width="2" stroke-dasharray="4 6" fill="none" opacity=".7"/>
+      <!-- covered zone -->
+      <ellipse cx="360" cy="300" rx="120" ry="50" fill="#39d98a" opacity="0.10"/>
+      <text x="360" y="200" text-anchor="middle" font-size="11" fill="#bdf0d6">central lane screened — no through-ball seam</text>
+    </svg>
+
+    <div class="legend"><span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Screening triangle / covered zone</span></div>
+
+    <p class="expl"><strong>The adjustment:</strong> The Morocco goal came because two flat pivots got split. Drop <strong>Casemiro as a genuine lone anchor</strong> directly in front of the centre-backs, and <strong>stagger Bruno and Paquetá slightly ahead</strong> so they form a triangle, not a flat line. That closes the vertical seam Brahim Díaz threaded — there's always one body screening the central lane. It also frees Bruno (Brazil's best progressor) to receive higher rather than babysitting the base. Against Haiti and Scotland this won't be tested much, but it's the structural fix for the knockouts.</p>
+  </div>
+
+  <h3>Fix 2 — A penalty-box striker + second runner (stop depending on Vini's magic)</h3>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Brazil · Fix 2</span><span class="mt">Occupy the six-yard box; give Vinícius a target &amp; a partner</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="aB3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2">
+        <rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/>
+        <rect x="250" y="14" width="220" height="70"/><rect x="250" y="356" width="220" height="70"/>
+        <rect x="312" y="14" width="96" height="30"/>
+      </g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Vinícius's cut-back now finds TWO bodies in the box, not zero</text>
+
+      <!-- Vini wide left carrying -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="120" cy="180" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text x="120" y="184">VIN</text></g>
+        <!-- striker at near post -->
+        <g><circle cx="320" cy="90" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text x="320" y="94">9</text><text x="320" y="72" fill="#fff" font-size="9">striker</text></g>
+        <!-- raphinha back-post runner -->
+        <g><circle cx="430" cy="110" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="430" y="114">RAP</text></g>
+        <!-- late midfield runner -->
+        <g><circle cx="360" cy="200" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.3"/><text x="360" y="204">PAQ</text><text x="360" y="222" fill="#cfe0ee" font-size="9">late run</text></g>
+      </g>
+
+      <!-- Morocco defenders -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle" opacity=".9">
+        <g><circle cx="280" cy="120" r="11" fill="#c1272d" stroke="#fff" stroke-width="1.2"/><text x="280" y="124">CB</text></g>
+        <g><circle cx="380" cy="120" r="11" fill="#c1272d" stroke="#fff" stroke-width="1.2"/><text x="380" y="124">CB</text></g>
+      </g>
+
+      <!-- Vini carry to byline -->
+      <path d="M132 172 C 170 130, 210 105, 250 92" stroke="#ffdf00" stroke-width="4" fill="none" marker-end="url(#aY3)"/>
+      <!-- cutback to near-post striker -->
+      <path d="M255 96 C 285 92, 300 91, 308 90" stroke="#ffdf00" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY3)"/>
+      <!-- alt cutback to back post -->
+      <path d="M250 100 C 320 130, 380 125, 418 116" stroke="#ffdf00" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aY3)" opacity=".8"/>
+      <!-- late runner arrives at edge -->
+      <path d="M360 188 C 358 160, 356 140, 354 120" stroke="#5aa0e6" stroke-width="3" fill="none" marker-end="url(#aB3)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf00"></i> Vini carry / cut-back options</span>
+      <span><i style="border-top-color:#5aa0e6"></i> Late midfield runner (Paquetá)</span>
+    </div>
+
+    <p class="expl"><strong>The adjustment:</strong> Against Morocco, when Vinícius and Raphinha got to the byline, <strong>the box was empty</strong> — Igor Thiago was isolated and Brazil had no one attacking the six-yard space or the penalty spot. Brazil must <strong>commit a genuine penalty-box striker to the near/far post AND send a late midfield runner (Paquetá) to the edge of the area</strong> on every wide entry. That converts Vinícius's dribbling into actual chances instead of hopeful cut-backs to nobody — and means Brazil aren't reliant on him scoring solo. If Neymar returns (calf — doubtful for Haiti), he adds the between-the-lines creator the side lacked; but the more important structural fix is bodies in the box, not another playmaker.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next — Brazil's Path</h2>
+  <p>The draw isn't a crisis — it's a warning. Group C is wide open, and Brazil remain favourites to advance, but <strong>top spot now matters for an easier Round-of-32 side, and they were second-best in their opener.</strong> The good news: the next two opponents (Haiti, Scotland) will likely sit deep, which lets Ancelotti drill the box-occupation fix without the transition risk Morocco posed. The warning: a deep block is exactly what frustrated them in patches here, so the <strong>finishing and final-third structure must improve now, not in the knockouts.</strong></p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Fri 19 Jun · MD2</div><div class="g">Brazil vs Haiti</div><div class="n">Lincoln Financial Field, Philadelphia. Deep block expected — a chance to rehearse the box-occupation fix and build goal difference.</div></div>
+    <div class="nx"><div class="d">Wed 24 Jun · MD3</div><div class="g">Scotland vs Brazil</div><div class="n">Hard Rock Stadium, Miami. Organised 5-3-2; the wide-overload + late-runner pattern is the key to unlocking it.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>Brazil escaped with a point thanks to one piece of Vinícius brilliance, but Morocco exposed three real problems: a <strong>pivot that gets split</strong>, a <strong>midfield that doesn't control</strong>, and <strong>no one finishing in the box.</strong> None are fatal, and all are fixable against the deeper blocks of Haiti and Scotland. But if Ancelotti doesn't address the central screening and the empty penalty box before the knockouts, a better side than Morocco will punish exactly the same fragilities. <strong>The talent is there; the structure isn't — yet.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

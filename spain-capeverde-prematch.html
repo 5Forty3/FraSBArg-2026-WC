@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Cape Verde — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#c60b1e;--espy:#ffc400;--cv:#1c4fa0;--blue:#5aa0e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .e{background:linear-gradient(135deg,#2a0e12,#160d0e)}
+  .vsbar .c{background:linear-gradient(135deg,#0e1726,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .e .nm{color:#ff6470}.vsbar .c .nm{color:#6aa3e6}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.spain{border-left:3px solid var(--espy)}
+  .card.cv{border-left:3px solid var(--cv)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .statline{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+  .pill{background:#0d141d;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12.5px;color:#cdd6e2}
+  .pill b{color:var(--gold)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.on{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.off{background:rgba(138,151,168,.16);color:#aab6c6}
+  .move .mtag.atk{background:rgba(198,11,30,.18);color:#ff6470}
+  .move .mtag.mid{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group H · Matchday 1</span>
+  </div>
+  <h1>Spain vs Cape Verde</h1>
+  <div class="sub">A Spain-focused tactical study — the Yamal question, Pedri's metronome, and how La Roja break a debutant block</div>
+  <div class="meta">🕒 9:30 PM IST, Mon 15 Jun · 📍 Mercedes-Benz Stadium, Atlanta</div>
+
+  <div class="vsbar">
+    <div class="side e"><div class="nm">🇪🇸 Spain</div><div class="fm">4-3-3 · De la Fuente · Euro 2024 champions · tournament favourites (1/10)</div></div>
+    <div class="mid">VS</div>
+    <div class="side c"><div class="nm">Cape Verde 🇨🇻</div><div class="fm">4-2-3-1 low block · Bubista · World Cup debutants · the "Blue Sharks"</div></div>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News &amp; The Real Story</h2>
+  <p class="lead">This is, on paper, the most lopsided fixture of the entire opening round — Euro champions and World Cup favourites against a nation of half a million people playing the <strong>first World Cup match in their history</strong>. The result is barely in doubt. The intrigue is entirely about <strong>how De la Fuente manages his crown jewels</strong> — and the headline decision is whether, and for how long, Lamine Yamal and Nico Williams feature.</p>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — the picture</h3>
+    <ul>
+      <li><strong>Yamal &amp; Nico Williams both START ON THE BENCH.</strong> De la Fuente confirmed in his press conference that <strong>Yamal will get second-half minutes and is "fully recovered"</strong> from the April hamstring tear; Nico (managing a hamstring/hernia issue) is also a bench option to build fitness. The plan is to reunite the wing duo later in the group.</li>
+      <li><strong>Likely front three:</strong> Ferran Torres and Álex Baena/Dani Olmo wide, <strong>Mikel Oyarzabal</strong> at striker (12 goals in his last 12 Spain caps). Ferran is hungry — he scored twice in Spain's 7-0 opener four years ago.</li>
+      <li><strong>Midfield is the engine:</strong> Rodri (back from his long ACL layoff, still rebuilding rhythm), <strong>Pedri</strong> (arguably the best midfielder at the tournament), and Fabián Ruiz.</li>
+      <li><strong>Gavi is BACK</strong> — named in the 26 after two knee surgeries cost him ~two years. A bench/impact option and one of the feel-good stories of the squad.</li>
+      <li><strong>A historic quirk:</strong> no Real Madrid players in a Spain World Cup squad for the first time ever (Carvajal injured, Huijsen omitted).</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-3-3): Simón; Llorente/Porro, Cubarsí, Laporte, Cucurella; Pedri, Rodri, Fabián Ruiz; Ferran, Oyarzabal, Baena. (Yamal, Nico Williams, Gavi, Olmo on the bench.)</p>
+  </div>
+
+  <div class="card cv">
+    <h3 style="margin-top:0">🇨🇻 Cape Verde — the picture</h3>
+    <ul>
+      <li><strong>No injury concerns</strong> — a fully available squad for their historic debut. Dailon Livramento expected to lead the line.</li>
+      <li><strong>Villarreal's Logan Costa</strong> is the key man at the back — La Liga experience, and the one defender who genuinely knows this level.</li>
+      <li><strong>Game plan:</strong> a deep, compact 4-2-3-1 / 4-5-1, protect the centre, frustrate, and savour the occasion. Realistically, containment and counters are their only route.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-2-3-1): Vozinha; Moreira, L. Costa, Lopes, Stopira; K. Pina, D. Duarte; J. Cabral, Monteiro, Mendes; Livramento.</p>
+  </div>
+
+  <h2><span class="ic">♟️</span> The Central Problem — Breaking a Low Block</h2>
+  <p>Cape Verde will do what every overmatched debutant does: drop into two banks, deny the half-spaces, and dare Spain to be patient. Spain's entire <em>juego de posición</em> identity is built for exactly this — occupy the five vertical lanes, create numerical superiority, draw the block out and slip a runner behind it. The question isn't <em>whether</em> Spain break it, but <em>how quickly</em> — and that answer changes dramatically depending on whether Yamal is on the pitch. So let's study both states.</p>
+
+  <h2><span class="ic">⚡</span> Tactical Move 1 — WITH Yamal &amp; Nico Williams on the wings</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag on">Spain · Wingers ON</span><span class="mt">Touchline width + the inverted Yamal threat</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Cape Verde defending deep at top</text>
+
+      <!-- CV block (blue) -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="230" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/></g>
+        <g><circle cx="320" cy="105" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/></g>
+        <g><circle cx="410" cy="105" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/></g>
+        <g><circle cx="500" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/></g>
+        <g><circle cx="285" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/></g>
+        <g><circle cx="365" cy="180" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/></g>
+        <g><circle cx="445" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/></g>
+        <text x="365" y="148" text-anchor="middle" font-size="10" fill="#bcd2f0">compact block</text>
+      </g>
+
+      <!-- Spain (yellow) -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Yamal wide right, will cut in -->
+        <g><circle cx="600" cy="250" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="600" y="254">YAM</text><text x="600" y="276" fill="#fff" font-size="10">Yamal</text></g>
+        <!-- Nico wide left -->
+        <g><circle cx="120" cy="250" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="120" y="254">NIC</text><text x="120" y="274" fill="#fff" font-size="10">N.Williams</text></g>
+        <!-- Pedri & Oyarzabal -->
+        <g><circle cx="430" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="304">PED</text></g>
+        <g><circle cx="365" cy="245" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="365" y="249">OYA</text></g>
+        <!-- overlapping RB -->
+        <g><circle cx="640" cy="330" r="11" fill="#e0ad00" stroke="#fff" stroke-width="1.2"/><text x="640" y="334">RB</text></g>
+      </g>
+
+      <!-- Yamal isolates, cuts inside on left foot -->
+      <path d="M600 264 C 595 230, 560 195, 470 150" stroke="#ffc400" stroke-width="4" fill="none" marker-end="url(#aY)"/>
+      <!-- RB overlaps outside to pin the FB -->
+      <path d="M642 318 C 650 280, 645 250, 632 232" stroke="#fff" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aW)"/>
+      <!-- shot/curl to far corner -->
+      <path d="M465 142 C 430 100, 390 60, 360 30" stroke="#ffc400" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aY)"/>
+      <!-- Nico stretches block on far side -->
+      <path d="M120 236 C 130 200, 150 175, 175 150" stroke="#ffc400" stroke-width="3" fill="none" stroke-dasharray="9 6" marker-end="url(#aY)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Yamal carry / shot</span>
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Pass / cross</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Overlap (pin the full-back)</span>
+    </div>
+
+    <p class="expl"><strong>What Yamal changes:</strong> This is the difference between a comfortable win and a <em>highlight reel</em>. Yamal is a <strong>left-footed inverted right winger</strong> — he hugs the touchline to stretch the block, then cuts inside onto his stronger left foot to shoot or thread the final ball. His 2025-26 numbers are absurd for an 18-year-old: <strong>16 La Liga goals + 11 assists (24 G / 14 A in all competitions)</strong> before the April hamstring injury, an 8.33 FotMob average, and the youngest-ever La Liga Player of the Season award. Against a deep block, his value is that he <strong>doesn't need space to be given — he manufactures it 1v1.</strong> The mechanism above: an overlapping right-back pins Cape Verde's left-back, Yamal isolates the now-hesitant defender, cuts inside and curls to the far corner, with Nico Williams stretching the opposite side to keep the block from shifting across. One moment of Yamal quality ends the contest. <strong>Nico Williams</strong> mirrors the threat from the left — a pure pace-and-directness merchant who pins full-backs deep — meaning Spain attack <em>both</em> touchlines at once and the block simply cannot stay compact.</p>
+  </div>
+
+  <h2><span class="ic">🧩</span> Tactical Move 2 — WITHOUT Yamal &amp; Nico (the likely starting XI)</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag off">Spain · Wingers OFF</span><span class="mt">Positional overloads &amp; combination play instead of 1v1</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · no individual 1v1 dribbler — break it by combination</text>
+
+      <!-- CV block -->
+      <g><circle cx="250" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/><circle cx="335" cy="108" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/><circle cx="420" cy="108" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/><circle cx="505" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/><circle cx="300" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/><circle cx="380" cy="178" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/><circle cx="460" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/></g>
+
+      <!-- Spain combos -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="320" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="300" y="324">PED</text></g>
+        <g><circle cx="430" cy="320" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="324">FAB</text></g>
+        <g><circle cx="200" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="200" y="254">BAE</text></g>
+        <g><circle cx="540" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="540" y="254">FER</text></g>
+        <g><circle cx="365" cy="235" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="365" y="239">OYA</text></g>
+        <!-- inverted full-backs creating overload -->
+        <g><circle cx="250" cy="290" r="10" fill="#e0ad00" stroke="#fff" stroke-width="1.1"/><text x="250" y="294" font-size="9">LB</text></g>
+        <g><circle cx="490" cy="290" r="10" fill="#e0ad00" stroke="#fff" stroke-width="1.1"/><text x="490" y="294" font-size="9">RB</text></g>
+      </g>
+
+      <!-- third-man combination: Pedri -> Oyarzabal lay-off -> runner -->
+      <path d="M312 312 C 335 285, 350 260, 360 248" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)"/>
+      <path d="M365 222 C 360 200, 350 180, 335 160" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)"/>
+      <!-- Baena third-man run in behind -->
+      <path d="M205 238 C 230 195, 270 165, 320 145" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG2)"/>
+      <!-- switch of play to opposite overload -->
+      <path d="M315 320 C 420 345, 500 320, 528 262" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="4 6" fill="none" marker-end="url(#aG2)" opacity=".8"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Combination passes</span>
+      <span><i style="border-top-color:#39d98a"></i> Third-man run / switch</span>
+    </div>
+
+    <p class="expl"><strong>What changes without the dribblers:</strong> Ferran Torres, Álex Baena and Dani Olmo are excellent footballers, but none is a touchline 1v1 destroyer like Yamal or a pace-merchant like Nico. So Spain must break the block <em>collectively</em> rather than individually: <strong>third-man combinations</strong> (Pedri into Oyarzabal's lay-off, a runner arriving beyond), <strong>quick switches of play</strong> to overload the far side, and <strong>inverted full-backs</strong> stepping into midfield to create central numerical superiority. It still works — Spain are deep enough that "even a rotated, cautious Spain has far too much" — but the goals are likely to come <em>later</em> and require more patience. The risk is a frustrating opening hour against a packed, motivated debutant, exactly the kind of low-tempo trap that can flatten Spain's rhythm. This is why <strong>Yamal off the bench around the hour mark is the perfect tournament-management move</strong>: let the combination play tire the block, then unleash the 1v1 wizard against tired legs.</p>
+  </div>
+
+  <h2><span class="ic">🎻</span> Tactical Move 3 — Pedri, the Metronome</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag mid">Spain · Midfield</span><span class="mt">Pedri sets the tempo &amp; finds the seams</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aP" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+        <marker id="aY3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="105" width="720" height="52"/><rect y="210" width="720" height="52"/><rect y="315" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><line x1="14" y1="210" x2="706" y2="210"/><circle cx="360" cy="210" r="50"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Pedri receives between the lines, then chooses the right seam</text>
+
+      <!-- CV midfield/defense -->
+      <g><circle cx="280" cy="120" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/><circle cx="440" cy="120" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/><circle cx="360" cy="95" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/></g>
+
+      <!-- Pedri central, receiving -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="255" r="15" fill="#5aa0e6" stroke="#fff" stroke-width="1.7"/><text x="360" y="259" fill="#06223f">PED</text><text x="360" y="282" fill="#fff" font-size="11">Pedri</text></g>
+        <g><circle cx="180" cy="200" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="180" y="204">LW</text></g>
+        <g><circle cx="560" cy="200" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="560" y="204">RW</text></g>
+        <g><circle cx="360" cy="150" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="360" y="154">9</text></g>
+        <g><circle cx="250" cy="300" r="10" fill="#e0ad00" stroke="#fff" stroke-width="1.1"/><text x="250" y="304" font-size="9">ROD</text></g>
+      </g>
+
+      <!-- Rodri to Pedri -->
+      <path d="M262 295 C 300 280, 330 270, 345 262" stroke="#5aa0e6" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#aP)"/>
+      <!-- Pedri 3 options (fan of passes) -->
+      <path d="M352 242 C 300 215, 240 205, 195 202" stroke="#5aa0e6" stroke-width="3" fill="none" marker-end="url(#aP)"/>
+      <path d="M368 242 C 420 215, 510 205, 548 202" stroke="#5aa0e6" stroke-width="3" fill="none" marker-end="url(#aP)"/>
+      <path d="M360 240 C 360 210, 360 185, 360 165" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aY3)"/>
+      <text x="470" y="250" font-size="10" fill="#bcd9f6">scans &amp; picks the open seam</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6"></i> Pedri receive &amp; distribute</span>
+      <span><i style="border-top-color:#ffc400"></i> Line-breaking pass to the 9</span>
+    </div>
+
+    <p class="expl"><strong>Why Pedri is the man it all flows through:</strong> Multiple previews call him <strong>"the single most important non-Yamal player"</strong> and arguably <em>the best midfielder at this World Cup</em>. His 2025-26 line — <strong>9 La Liga assists, a 7.8 FotMob average, elite progressive-passing and expected-threat numbers</strong> — only hints at his real value: he is the side's <em>tempo dial</em>. Against a low block, the team that can't break through often <em>speeds up</em> in frustration and gets sloppy; Pedri does the opposite. He drops between the lines, <strong>receives on the half-turn under pressure, scans, and consistently picks the one pass that breaks a line</strong> — to a winger's feet, into the striker, or the disguised through-ball into the channel. With Rodri rebuilding rhythm after his ACL layoff, Pedri carries the creative burden of <em>controlling the game's speed</em>. If Cape Verde manage to frustrate Spain early, Pedri is the player most likely to find the key that unpicks the lock — calm, press-resistant, and relentlessly progressive. He is the difference between sterile possession and penetration.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> The Gavi Factor</h2>
+  <div class="callout">
+    <div class="t">🐺 Pablo Gavi — "The Warrior" returns</div>
+    <p style="margin:8px 0 0">One of the squad's great stories. After <strong>two surgeries on the same knee that cost him roughly two years</strong> (an ACL rupture in Nov 2023, then a further setback), Gavi forced his way back into Barcelona's XI late in 2025-26 and earned a place in the 26. He hasn't played for Spain since that first knee injury — so a World Cup cameo would cap a remarkable comeback. <strong>What he offers tactically is a contrast to Pedri:</strong> where Pedri controls and soothes, Gavi <em>injects chaos and aggression</em> — relentless pressing, ferocious duels, vertical, line-breaking carries and the willingness to play forward at all costs. Against a tiring low block in the closing 25 minutes, his intensity is a genuine weapon: he hassles defenders into errors and drives at a retreating line rather than passing in front of it. The caveat is fitness management — De la Fuente will reintroduce him carefully given the injury history — but as a high-energy impact sub to break a stubborn block, Gavi is exactly the kind of disruptor that complements Spain's more patient starters.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Watch-Points</h2>
+  <ul>
+    <li><strong>The clock on Yamal:</strong> the moment he enters (likely around the hour) is when the highlight reel begins. Tired Cape Verde legs vs the world's best teenager is a mismatch.</li>
+    <li><strong>Ferran Torres's audition:</strong> a rare start in Yamal's place — he scored twice in the 7-0 opener four years ago and will be desperate to stake a claim for more minutes.</li>
+    <li><strong>Oyarzabal's finishing:</strong> 12 goals in his last 12 Spain games. If Spain create early, he punishes.</li>
+    <li><strong>Logan Costa &amp; Cape Verde's discipline:</strong> their entire hope is staying compact for 70+ minutes. The longer they keep it level, the more nervous Atlanta gets.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>There is no realistic path to an upset — Spain's quality, depth and midfield control are overwhelming, and the bookmakers' 1/10 reflects it. The only genuine question is the <em>margin and the timing</em>: expect a patient, possibly goalless-ish opening as Cape Verde stay compact, then Spain pulling clear after the break — accelerated the instant Yamal (and likely Nico Williams, Gavi, Olmo) arrive against tiring legs. A clean sheet and a professional, building win is the overwhelming likelihood.</p>
+    <div class="scoreline">🇪🇸 Spain 3 — 0 Cape Verde</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a controlled first hour, then the floodgates open once the substitutes inject 1v1 quality. Cape Verde will rightly savour the occasion — but the result is not in doubt.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 0-0 Cape Verde — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#c60b1e;--espy:#ffc400;--cv:#1c4fa0;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .e{color:#ff6470}.scoreboard .c{color:#6aa3e6}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .headline{text-align:center;font-size:13.5px;color:var(--green);font-weight:700;margin-top:8px}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff6470}.stat .v .c{color:#6aa3e6}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:var(--red);font-weight:700}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fail{background:rgba(255,93,106,.16);color:var(--red)}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(57,217,138,.13);color:var(--green);border-color:#1f4533">Group H · Matchday 1 · FT</span>
+  </div>
+  <h1>Spain vs Cape Verde — The Wall That Wouldn't Fall</h1>
+
+  <div class="scoreboard">
+    <span class="t e">🇪🇸 Spain</span>
+    <span class="sc">0 – 0</span>
+    <span class="t c">Cape Verde 🇨🇻</span>
+  </div>
+  <div class="meta">📍 Mercedes-Benz Stadium, Atlanta · Group H · Full-time</div>
+  <div class="headline">🦈 One of the greatest draws in World Cup history — debutants Cape Verde hold the European champions</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Shots</div><div class="v"><span class="e">27</span> · <span class="c">6</span></div></div>
+    <div class="stat"><div class="l">On target</div><div class="v"><span class="e">7</span> · <span class="c">2</span></div></div>
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="e">2.29</span> · <span class="c">0.30</span></div></div>
+    <div class="stat"><div class="l">Vozinha saves</div><div class="v"><span class="c">8</span> 🧤</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">27 shots, an xG of 2.29, 70% possession — and not one goal. The numbers are a portrait of dominance without a cutting edge.</p>
+
+  <h2><span class="ic">🧭</span> The Story of the Match</h2>
+  <p class="lead">Spain spent the opening 35 minutes in <strong>first gear</strong> — content to circulate the ball and probe, so untroubled that Cape Verde didn't touch the ball in the Spanish half for the first 22 minutes. The "Blue Sharks" simply defended, and they did it magnificently: a disciplined low block that <strong>threw bodies in front of everything in the box as if their lives depended on it</strong>, with a 40-year-old goalkeeper, Vozinha, producing the game of his life — eight saves, including a stunning late-first-half double-stop after Ferran Torres rattled the crossbar and Oyarzabal met the rebound. An early Torres effort was also chalked off by VAR.</p>
+  <p>Spain shifted into <strong>second gear after the 35th minute</strong> and sustained that pressure through the second half — but for all the territory and shot volume, they <strong>lacked ideas for manufacturing space in the box and a clean sight of goal.</strong> The pre-match read held up on both counts: this was always likely to be a slow Spanish start, and Cape Verde were always going to fade physically past the hour. Which is exactly where the game turned on the touchline.</p>
+
+  <div class="callout">
+    <div class="t">⏱️ The decisive hour — where the dugouts diverged</div>
+    <p style="margin:8px 0 0">As legs tired, <strong>Cape Verde's coach showed real gumption</strong>, making changes early in the second half to refresh his block while it was most vulnerable. <strong>De la Fuente blinked.</strong> He waited until around the <strong>70th minute to introduce Lamine Yamal</strong> — and the teenager changed the game's energy instantly, driving at defenders and creating danger from nothing. But Cape Verde reacted perfectly, <strong>man-marking Yamal with up to three defenders at once.</strong> He still wriggled free on occasion, but rarely with enough time to convert a half-yard into a clear strike. Olmo, Nico Williams and Merino followed, and Spain laid late siege — a Yamal effort even went to a VAR check — but the wall held. Bringing the game-breaker on 20 minutes earlier, against fresher legs, might have changed everything.</p>
+  </div>
+
+  <h2><span class="ic">❌</span> Why Spain Failed to Score — Diagram 1</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fail">Spain · Failure 1</span><span class="mt">A packed box with no penalty-area presence</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Cape Verde's penalty box — bodies everywhere, no Spanish target</text>
+
+      <!-- CV defenders packing the box (blue) -->
+      <g>
+        <circle cx="250" cy="70" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="300" cy="55" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="50" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="420" cy="55" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="470" cy="70" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="300" cy="105" r="11" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <circle cx="360" cy="110" r="11" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <circle cx="420" cy="105" r="11" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <text x="360" y="34" text-anchor="middle" font-size="11" fill="#fff">🧤 Vozinha</text>
+        <circle cx="360" cy="26" r="9" fill="#0a3" stroke="#fff" stroke-width="1.2"/>
+      </g>
+
+      <!-- Spain wide players crossing into nobody (yellow) -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="110" cy="230" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="110" y="234">LW</text></g>
+        <g><circle cx="610" cy="230" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="610" y="234">FER</text></g>
+        <!-- lone striker swallowed by defenders -->
+        <g><circle cx="360" cy="160" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="164">OYA</text><text x="360" y="185" fill="#ffdf66" font-size="9">1 v 5, isolated</text></g>
+      </g>
+
+      <!-- crosses into a crowd -->
+      <path d="M120 218 C 200 170, 280 140, 330 120" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY)"/>
+      <path d="M600 218 C 520 170, 440 140, 390 120" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY)"/>
+      <!-- shot blocked -->
+      <path d="M360 148 C 360 120, 360 95, 360 78" stroke="#ff5d6a" stroke-width="3.5" fill="none" marker-end="url(#aR)"/>
+      <text x="500" y="150" font-size="10" fill="#ffb3b8">every cross meets a blue shirt</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Spain cross / entry</span>
+      <span><i style="border-top-color:#ff5d6a"></i> Shot blocked / saved</span>
+    </div>
+
+    <p class="expl"><strong>The core failure — no true No.9.</strong> Spain delivered ball after ball into the box, but there was no <em>opportunistic penalty-area finisher</em> to attack it. Oyarzabal, nominally the striker, was repeatedly swallowed up 1-v-many and barely touched the ball; crosses sailed into a forest of blue shirts with no Spanish body winning the first contact or gambling on the second ball. This is the chronic, years-old Spanish flaw laid bare: a side that can pass a team to the edge of the six-yard box but has <strong>nobody whose single job is to put the ball in the net.</strong> 27 shots and an xG of 2.29 without scoring is the statistical fingerprint of <em>volume without a killer</em> — lots of half-chances, no one to convert the half-chance into a goal.</p>
+  </div>
+
+  <h2><span class="ic">❌</span> Why Spain Failed to Score — Diagram 2</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fail">Spain · Failure 2</span><span class="mt">Predictable U-shape: sideways possession, no penetration</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aX" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="220" y="14" width="280" height="90"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · the ball goes around the block, never through it</text>
+
+      <!-- CV compact two banks -->
+      <g>
+        <circle cx="270" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="345" cy="110" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="420" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="300" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <circle cx="360" cy="180" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <circle cx="420" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <text x="360" y="148" text-anchor="middle" font-size="10" fill="#bcd2f0">two compact banks, central lane sealed</text>
+      </g>
+
+      <!-- Spain U-shape possession -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="130" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="130" y="254">CUC</text></g>
+        <g><circle cx="260" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="260" y="304">PED</text></g>
+        <g><circle cx="360" cy="330" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="334">ROD</text></g>
+        <g><circle cx="460" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="460" y="304">FAB</text></g>
+        <g><circle cx="590" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="590" y="254">LLO</text></g>
+      </g>
+
+      <!-- the U-shape passing (around, never through) -->
+      <path d="M142 244 C 180 215, 220 205, 252 290" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#aY2)" opacity=".5"/>
+      <path d="M272 300 C 310 320, 340 322, 350 322" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#aY2)"/>
+      <path d="M372 326 C 410 320, 440 312, 450 308" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#aY2)"/>
+      <path d="M468 292 C 520 250, 560 240, 580 258" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#aY2)" opacity=".5"/>
+      <!-- attempted vertical pass blocked -->
+      <path d="M360 318 C 360 280, 360 250, 360 215" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(355,205)"><path d="M0,0 L10,10 M10,0 L0,10" stroke="#ff5d6a" stroke-width="3"/></g>
+      <text x="360" y="250" text-anchor="middle" font-size="10" fill="#ffb3b8">vertical lane blocked</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Sideways circulation (the "U")</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Vertical pass denied</span>
+    </div>
+
+    <p class="expl"><strong>The second failure — sterile, predictable build-up.</strong> Too often Spain's possession became a slow <em>U-shape</em>: ball circulated from one full-back, across the midfield, to the other full-back and back, <strong>around</strong> the block but rarely <strong>through</strong> it. With Rodri only good in patches as he rebuilds rhythm after his ACL layoff, and Pedri uncharacteristically subdued and crowded out of his half-turn pockets, Spain lacked the disguised, line-breaking pass that turns possession into penetration. Only Cucurella and Pedri intermittently found the gaps; the front line offered little movement to <em>pull</em> defenders out of shape. The result was a tempo that, while it rose after 35 minutes, never carried the <em>variety</em> — no early crosses mixed with cut-backs mixed with shots from range — needed to make a deep block guess wrong. Predictable pressure is comfortable pressure to defend against.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Performance Snapshot</h2>
+  <div class="ratings">
+    <div class="rt"><b>Pedri</b> — <span class="bad">Below his level</span>. Spain's metronome looked strangely lost, crowded out of his pockets, unable to find the line-breaker. The one player they most needed to unlock the lock had an off day.</div>
+    <div class="rt"><b>Rodri</b> — <span class="mid">Good in parts</span>. Flashes of control, but still short of full rhythm post-ACL; couldn't impose the relentless tempo of his peak.</div>
+    <div class="rt"><b>Gavi</b> — <span class="bad">Ineffective</span>. Energy without end product; his chaos didn't translate into chances and he was withdrawn as Spain chased the game.</div>
+    <div class="rt"><b>Ferran Torres</b> — <span class="bad">Anonymous</span>. A goal disallowed and the crossbar aside, he "barely touched the ball." His audition fell flat.</div>
+    <div class="rt"><b>Dani Olmo</b> — <span class="good">Bright cameo</span>. In just a few minutes looked sharper and more incisive than Torres — a strong claim for more minutes.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="good">Instant impact</span>. Changed the energy the moment he arrived (~70'), beat multiple defenders, forced a VAR check — but came on too late, and was triple-teamed.</div>
+  </div>
+
+  <h2><span class="ic">🔧</span> What Spain Must Fix — Diagram 3</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · Fix 1</span><span class="mt">Start the game-breakers &amp; play a real focal point</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aY3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Now there are bodies AND 1v1 threats — the block has to choose</text>
+
+      <!-- CV defenders, now pulled apart -->
+      <g>
+        <circle cx="245" cy="80" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="60" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="400" cy="60" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="475" cy="80" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <text x="245" y="105" text-anchor="middle" font-size="9" fill="#ffb3b8">dragged wide</text>
+      </g>
+
+      <!-- Spain: Yamal + striker + back-post + late runner -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="220" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="600" y="224">YAM</text><text x="600" y="244" fill="#fff" font-size="9">starts</text></g>
+        <g><circle cx="120" cy="220" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="120" y="224">NIC</text></g>
+        <!-- true 9 at near post -->
+        <g><circle cx="320" cy="120" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="320" y="124" fill="#06301d">9</text><text x="320" y="144" fill="#bff0d5" font-size="9">near post</text></g>
+        <!-- back post runner -->
+        <g><circle cx="430" cy="120" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="430" y="124" fill="#06301d">OLM</text><text x="430" y="144" fill="#bff0d5" font-size="9">back post</text></g>
+        <!-- late edge-of-box runner -->
+        <g><circle cx="360" cy="200" r="11" fill="#39d98a" stroke="#fff" stroke-width="1.3"/><text x="360" y="204" fill="#06301d">PED</text></g>
+      </g>
+
+      <!-- Yamal cuts in & cuts back -->
+      <path d="M598 210 C 580 175, 540 150, 470 130" stroke="#ffc400" stroke-width="4" fill="none" marker-end="url(#aY3)"/>
+      <path d="M460 128 C 420 120, 360 122, 335 124" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY3)"/>
+      <!-- runners attacking the cutback -->
+      <path d="M320 134 C 322 110, 330 95, 340 80" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG)"/>
+      <path d="M360 189 C 358 165, 350 145, 345 128" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Yamal carry / cut-back</span>
+      <span><i style="border-top-color:#39d98a"></i> Box runners (9, back post, late edge)</span>
+    </div>
+
+    <p class="expl"><strong>Fix 1 — front-load the difference-makers and give them a target.</strong> The lesson of the hour is brutal: Yamal at 70 minutes won the eye-test in 20 minutes, so <strong>he (and ideally Nico Williams) should start</strong> the next game against fresher legs, not tired-block leftovers. But individual width alone isn't enough — Spain must pair it with an <strong>actual penalty-box presence</strong>: a striker attacking the near post, a second runner (Olmo, who looked sharper than Torres) at the back post, and a midfielder timing a late arrival at the penalty spot. Yamal's cut-backs found nobody against Cape Verde; with three bodies attacking the box, his quality converts into goals. The selection question is real — <strong>Olmo over Torres</strong> on this evidence — and the structural one is non-negotiable: <em>someone must occupy the six-yard box.</em></p>
+  </div>
+
+  <h2><span class="ic">🔧</span> What Spain Must Fix — Diagram 4</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · Fix 2</span><span class="mt">Verticality &amp; variety — break the block, don't just surround it</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aY4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aB4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="220" y="14" width="280" height="90"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Three ways through: between-lines receive, third-man run, shot from range</text>
+
+      <!-- CV block -->
+      <g>
+        <circle cx="280" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="110" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="120" r="11" fill="#1c4fa0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="175" r="10" fill="#16407f" stroke="#fff" stroke-width="1"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- deep playmaker -->
+        <g><circle cx="360" cy="330" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="334">ROD</text></g>
+        <!-- Pedri receiving between lines -->
+        <g><circle cx="360" cy="245" r="13" fill="#5aa0e6" stroke="#fff" stroke-width="1.5"/><text x="360" y="249" fill="#06223f">PED</text><text x="360" y="268" fill="#bcd9f6" font-size="9">between lines</text></g>
+        <!-- third man runner -->
+        <g><circle cx="210" cy="280" r="11" fill="#39d98a" stroke="#fff" stroke-width="1.3"/><text x="210" y="284" fill="#06301d">RUN</text></g>
+        <!-- shooter from edge -->
+        <g><circle cx="520" cy="270" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="520" y="274">MER</text></g>
+      </g>
+
+      <!-- vertical pass into Pedri -->
+      <path d="M360 318 C 360 295, 360 275, 360 260" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aY4)"/>
+      <!-- option A: third man run played in -->
+      <path d="M348 240 C 300 225, 250 230, 222 262" stroke="#39d98a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aG4)"/>
+      <path d="M210 268 C 230 215, 270 175, 305 150" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG4)"/>
+      <!-- option B: lay to shooter from range -->
+      <path d="M372 240 C 430 225, 490 255, 512 262" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aB4)"/>
+      <path d="M520 258 C 500 200, 460 150, 420 120" stroke="#5aa0e6" stroke-width="3" fill="none" marker-end="url(#aB4)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Vertical pass in</span>
+      <span><i style="border-top-color:#39d98a"></i> Third-man run behind</span>
+      <span><i style="border-top-color:#5aa0e6"></i> Lay-off &amp; shot from range</span>
+    </div>
+
+    <p class="expl"><strong>Fix 2 — add verticality and variety to beat the next block.</strong> Saudi Arabia and Uruguay will have watched this and learned that Spain can be smothered by sitting deep. The antidote is to stop circulating <em>around</em> the block and start playing <em>through</em> it: <strong>braver vertical passes into a between-the-lines receiver</strong> (get Pedri on the half-turn in the pockets he was denied here), then <strong>third-man runs</strong> bursting beyond — and crucially, the threat of a <strong>shot from distance</strong> (Merino's long-range power was noted the moment he arrived). When a block knows you'll only try to walk it in, it stays compact; the moment you'll also shoot from 22 yards or slide a runner in behind, it has to step out — and stepping out is what creates the gaps Spain never found. Mix early crosses, cut-backs, and shots from range so the defence has to guess. <em>Unpredictability is the key that opens a locked door.</em></p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next</h2>
+  <p>One point isn't a disaster — but it turns a "routine" group into a live one, and Group H now has everyone's attention. Spain remain favourites to progress, but the margin for managing minutes has shrunk: <strong>they likely need to win their next two with conviction, and top spot suddenly matters.</strong> The fixes are clear and achievable — start the difference-makers, field a genuine box presence, and inject vertical variety — but the deeper, chronic issue (the absence of a world-class No.9) has no quick solution and will shadow this team all tournament. The talent to win the World Cup is unquestionably there. The cutting edge is the open question.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Sun 21 Jun · MD2</div><div class="g">Spain vs Saudi Arabia</div><div class="n">Atlanta. A must-respond game — expect Yamal &amp; Williams to start and a sharper, more vertical Spain.</div></div>
+    <div class="nx"><div class="d">Fri 26 Jun · MD3</div><div class="g">Uruguay vs Spain</div><div class="n">Guadalajara. The group decider — Bielsa's intensity vs Spain's positional play, possibly for top spot.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>This was a historic afternoon for Cape Verde — a masterclass in disciplined, brave low-block defending, crowned by a 40-year-old goalkeeper's career game — and a sobering one for Spain. La Roja dominated everything except the only thing that counts: <strong>the scoreline.</strong> The diagnosis is unambiguous — <strong>no penalty-box finisher, too-predictable build-up, and a game-breaker introduced too late.</strong> The cures are within reach for Saudi Arabia and Uruguay: start Yamal, give him bodies to find, and play through the block rather than around it. Spain have the players to win this tournament. On this evidence, they do not yet have the <em>cutting edge</em> — and that, not talent, is what will decide how far they go.</p>
+  </div>
+
+</div>
+</body>
+</html>

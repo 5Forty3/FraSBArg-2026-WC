@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs Algeria — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#6ca9e0;--arg2:#8ec5f0;--alg:#1c8a4e;--algr:#d23c43;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#6ca9e0,#fff 50%,#6ca9e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .a{background:linear-gradient(135deg,#0e1f33,#0d1117)}
+  .vsbar .g{background:linear-gradient(135deg,#0e2419,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .a .nm{color:var(--arg2)}.vsbar .g .nm{color:#5fd49b}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.argentina{border-left:3px solid var(--arg)}
+  .card.algeria{border-left:3px solid var(--alg)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .philo{background:linear-gradient(135deg,#241a0c,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);
+    border-radius:10px;padding:16px 18px;margin:14px 0}
+  .philo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .philo .vs3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+  @media(max-width:560px){.philo .vs3{grid-template-columns:1fr}}
+  .philo .vs3 .col{background:#0d141d;border:1px solid var(--line);border-radius:9px;padding:11px 12px}
+  .philo .vs3 .col b{display:block;font-size:13px;margin-bottom:5px}
+  .philo .vs3 .col.m b{color:#6ca9e0}.philo .vs3 .col.b b{color:#ff8e8e}.philo .vs3 .col.s b{color:var(--gold)}
+  .philo .vs3 .col span{font-size:12.5px;color:#c5cedd}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.atk{background:rgba(108,169,224,.18);color:var(--arg2)}
+  .move .mtag.def{background:rgba(210,60,67,.18);color:#f08a8e}
+  .move .mtag.sys{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mtag.age{background:rgba(255,93,106,.16);color:var(--red)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group J · Matchday 1</span>
+  </div>
+  <h1>Argentina vs Algeria</h1>
+  <div class="sub">The champions begin their defence — Messi's sixth World Cup, Scaloni's grand synthesis, and the ticking clock</div>
+  <div class="meta">🕒 6:30 AM IST, Wed 17 Jun · 📍 Arrowhead Stadium, Kansas City</div>
+
+  <div class="vsbar">
+    <div class="side a"><div class="nm">🇦🇷 Argentina</div><div class="fm">4-3-3 / 4-4-2 · Scaloni · reigning champions · FIFA #1 · favourites</div></div>
+    <div class="mid">VS</div>
+    <div class="side g"><div class="nm">Algeria 🇩🇿</div><div class="fm">4-3-3 mid-block · Petković · first WC since 2014 · the "Fennecs"</div></div>
+  </div>
+
+  <h2><span class="ic">👑</span> The Stage — A Champion's Last Dance Begins</h2>
+  <p class="lead">Three and a half years after the greatest final the tournament has ever seen, the champions return — and the man who lit up Qatar leads them out one more time. This is <strong>Lionel Messi's 200th cap and his sixth World Cup, making him the first man ever to play at six finals.</strong> Argentina arrive as FIFA's No.1 side, on a run of scoring 2+ goals in six straight matches, carrying the serene confidence of a group that <em>knows how to win.</em> But beneath the favouritism sit two genuine questions that will shadow this entire campaign: <strong>how much Messi can the team get, and how much gas is left in the tank of a squad built around the 2022 heroes?</strong> Both are live from minute one against an Algeria side perfectly designed to make a slow start hurt.</p>
+
+  <div class="card argentina">
+    <h3 style="margin-top:0">🇦🇷 Argentina — the picture</h3>
+    <ul>
+      <li><strong>Messi (hamstring) is the headline.</strong> Recently back from a layoff, he scored a penalty in a 20-minute friendly cameo — a positive sign he's rounding into fitness. How Scaloni rations his minutes <em>across the tournament</em> is the storyline of the whole campaign.</li>
+      <li><strong>Emiliano Martínez passed fit</strong> after breaking a finger before the Europa League final — the 2022 Golden Glove keeper remains the spine of the defence.</li>
+      <li><strong>Tagliafico is OUT (calf)</strong> — Facundo Medina or 21-year-old Valentín Barco (scored in two of the last three friendlies) deputises at left-back. Julián Álvarez (ankle) trained fully and should be available; Lautaro Martínez — Serie A's top scorer with 17 — leads the line.</li>
+      <li><strong>The title-winning midfield returns:</strong> De Paul, Enzo Fernández, Mac Allister. <strong>17 of the 2022 winners are in the squad</strong> — a national record — and seven of the players who started the 2022 final are set to start here.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-3-3): E. Martínez; Molina, Romero, Otamendi, Medina; De Paul, E. Fernández, Mac Allister; Messi, La. Martínez, Almada.</p>
+  </div>
+
+  <div class="card algeria">
+    <h3 style="margin-top:0">🇩🇿 Algeria — a dangerous first opponent</h3>
+    <ul>
+      <li><strong>Back at the World Cup for the first time since 2014</strong>, and arriving in form — they topped their CAF qualifying group, outscoring opponents 24-8 and conceding under a goal a game.</li>
+      <li><strong>Riyad Mahrez</strong> remains the talisman — his wand of a left foot can unlock any defence, and he's a genuine set-piece threat. The plan is to limit Argentina, then spring him.</li>
+      <li><strong>Real pace &amp; flair around him:</strong> Mohammed Amoura's speed on the opposite flank, Amine Gouiri in fine form as a smart focal point, Ibrahim Maza's creativity between the lines.</li>
+      <li><strong>The gameplan:</strong> stay compact, frustrate Argentina's build-up, and break at speed — and crucially, <em>punish Argentina's full-backs if they push too high.</em> If the champions are flat early, Algeria can land a punch.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-3-3): L. Zidane; Aït-Nouri, Hadjam, Mandi, Belghali; Bentaleb, Boudaoui, Chaïbi; Amoura, Gouiri, Mahrez.</p>
+  </div>
+
+  <h2><span class="ic">🧠</span> Scalonismo — The Truce That Ended Argentina's Civil War</h2>
+  <p>To understand how Scaloni will manage this match — and this tournament — you have to understand the ideological war he ended. For half a century, Argentine football tore itself between <strong>two opposing religions.</strong></p>
+
+  <div class="philo">
+    <div class="t">⚖️ The two schools — and the third way</div>
+    <div class="vs3">
+      <div class="col m"><b>Menottismo (1978)</b><span>César Luis Menotti's romantic creed: football as art and joy, possession, attacking expression, <em>la nuestra</em>. Win, but win beautifully — earn the opponent's respect.</span></div>
+      <div class="col b"><b>Bilardismo (1986)</b><span>Carlos Bilardo's ruthless antithesis: win by any means, 1-0 is enough. Discipline, defensive certainty, neutralise the opponent, build a side around one genius (Maradona).</span></div>
+      <div class="col s"><b>Scalonismo — "La Tercera"</b><span>Scaloni's synthesis: a truce. Menottista quality and on-ball control fused with Bilardista pragmatism, organisation and tournament cynicism — plus a modern collective press neither old school had.</span></div>
+    </div>
+    <p style="margin:6px 0 0;font-size:14px;color:#e4ddc9">As one writer put it, Scaloni offered <em>"definitive proof that there is space for both Menottismo and Bilardismo not just in the same team, but in the same game"</em> — a third World Cup born of a third way. Where Menotti and Bilardo each preached one true path, <strong>Scaloni is gloriously non-dogmatic</strong>: he rarely names the same shape twice, sliding between a 4-3-3 for control, a 4-4-2 to clog the centre, and a 3-5-2 for the biggest nights. Pragmatism in service of beauty, beauty in service of results.</p>
+  </div>
+
+  <p><strong>How that shapes tonight:</strong> against a deeper Algeria, expect the controlling 4-3-3 — patient build-up, Messi roaming free, the front line ready to strike on the counter if Algeria over-commit. And expect the <em>tournament-level</em> Scaloni to reveal himself in his substitutions and minute-management: he will be thinking about the knockouts even while winning the opener.</p>
+
+  <h2><span class="ic">🎻</span> Tactical Move 1 — Scaloni's system: building the team around an ageing genius</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag sys">Argentina · The Messi System</span><span class="mt">De Paul the bodyguard, Messi the free roamer</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · the structure that frees Messi</text>
+
+      <!-- Messi free in right half-space -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="470" cy="175" r="15" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="470" y="179">MESSI</text><text x="470" y="155" fill="#fff" font-size="9">roams free</text></g>
+        <!-- De Paul bodyguard behind/beside -->
+        <g><circle cx="510" cy="270" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="510" y="274" fill="#06301d">DEP</text><text x="510" y="292" fill="#bff0d5" font-size="9">"bodyguard"</text></g>
+        <!-- midfield -->
+        <g><circle cx="360" cy="290" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="360" y="294">ENZO</text></g>
+        <g><circle cx="230" cy="265" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="230" y="269">MAC</text></g>
+        <!-- forwards -->
+        <g><circle cx="330" cy="150" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="330" y="154">LAU</text></g>
+        <g><circle cx="170" cy="170" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="170" y="174">ALM</text></g>
+      </g>
+
+      <!-- De Paul covers the space Messi vacates -->
+      <path d="M500 258 C 470 230, 450 215, 462 188" stroke="#39d98a" stroke-width="3" stroke-dasharray="6 5" fill="none" marker-end="url(#aG)"/>
+      <path d="M522 282 C 560 320, 560 360, 545 390" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="4 6" fill="none" opacity=".7"/>
+      <text x="595" y="350" font-size="9" fill="#bff0d5">covers RB zone</text>
+      <!-- Messi receives & creates -->
+      <path d="M372 285 C 400 250, 430 215, 455 190" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aA)"/>
+      <path d="M460 162 C 420 130, 370 115, 340 120" stroke="#6ca9e0" stroke-width="3.5" fill="none" marker-end="url(#aA)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi receive &amp; create</span>
+      <span><i style="border-top-color:#39d98a"></i> De Paul cover / shield</span>
+    </div>
+
+    <p class="expl"><strong>Scaloni's tactical genius is how he platforms an ageing superstar.</strong> Messi's distance covered per 90 has fallen sharply since 2022 — but his decisive actions (key passes, take-ons, shots on target) remain elite. The modern maxim around him: <em>he doesn't need to run; he needs to decide.</em> So Scaloni surrounds him with industry. <strong>Rodrigo De Paul is the "bodyguard"</strong> — covering vast tracts on the right, shielding Messi from defensive duties and screening the full-back zone Messi vacates as he drifts into the right half-space. Enzo dictates from deeper, Mac Allister shuttles, and Lautaro stretches the last line so Messi has space to receive between the lines. It's a structure engineered to extract maximum genius for minimum mileage — and it's why, even at 38, Messi remains the single most dangerous player on any pitch he stands on.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Tactical Move 2 — How Argentina attacks: unlocking Algeria's block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag atk">Argentina · Attack</span><span class="mt">Messi's half-space gravity + the overload</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aW2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi pulls the block, then the killer ball</text>
+
+      <!-- Algeria compact block (green/red) -->
+      <g>
+        <circle cx="250" cy="115" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="330" cy="100" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="410" cy="100" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="490" cy="115" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="300" cy="170" r="10" fill="#157040" stroke="#fff" stroke-width="1"/>
+        <circle cx="380" cy="172" r="10" fill="#157040" stroke="#fff" stroke-width="1"/>
+        <circle cx="455" cy="168" r="10" fill="#157040" stroke="#fff" stroke-width="1"/>
+        <text x="360" y="145" text-anchor="middle" font-size="10" fill="#bff0cf">compact mid-block</text>
+      </g>
+
+      <!-- Argentina -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi drifts wide-right drawing 2 markers -->
+        <g><circle cx="560" cy="230" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.6"/><text x="560" y="234">MES</text></g>
+        <!-- Molina overlaps outside -->
+        <g><circle cx="620" cy="300" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="620" y="304">MOL</text></g>
+        <!-- Lautaro on the shoulder -->
+        <g><circle cx="380" cy="230" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="380" y="234">LAU</text></g>
+        <!-- Almada far side -->
+        <g><circle cx="130" cy="220" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="130" y="224">ALM</text></g>
+        <!-- Mac Allister late run -->
+        <g><circle cx="300" cy="290" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="300" y="294">MAC</text></g>
+      </g>
+
+      <!-- 2 markers drawn to Messi -->
+      <path d="M495 130 C 520 165, 540 195, 552 215" stroke="#fff" stroke-width="2" stroke-dasharray="4 5" fill="none" opacity=".55"/>
+      <path d="M455 180 C 500 200, 535 215, 550 222" stroke="#fff" stroke-width="2" stroke-dasharray="4 5" fill="none" opacity=".55"/>
+      <text x="600" y="200" font-size="9" fill="#dceeff">draws 2 markers</text>
+      <!-- Molina overlaps to pin -->
+      <path d="M622 288 C 625 260, 612 240, 590 228" stroke="#fff" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aW2)"/>
+      <!-- Messi disguised through-ball to Lautaro / late runner -->
+      <path d="M548 222 C 480 200, 420 200, 392 218" stroke="#6ca9e0" stroke-width="3.5" fill="none" marker-end="url(#aA2)"/>
+      <!-- Lautaro spins in behind -->
+      <path d="M380 218 C 378 180, 372 140, 372 110" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="2 0" fill="none" marker-end="url(#aA2)"/>
+      <!-- Mac late run -->
+      <path d="M305 278 C 320 235, 335 190, 350 140" stroke="#6ca9e0" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aA2)" opacity=".75"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi pass / Lautaro run</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Overlap &amp; markers drawn</span>
+    </div>
+
+    <p class="expl"><strong>The block-breaking blueprint.</strong> Algeria will sit compact and dare Argentina to be patient. Argentina's answer runs through Messi's <em>gravity</em>: he drifts into the right half-space and <strong>draws two markers</strong>, while Molina overlaps outside him to pin the Algerian left-back — creating a 2-v-1 that forces the block to shift and crack. From there, Messi's disguised through-ball releases <strong>Lautaro spinning off the last shoulder</strong>, with Mac Allister timing a late arrival from deep into the space the block has vacated. The danger Argentina must respect: those high full-backs (Molina especially) are exactly the players Mahrez and Amoura want to attack the instant possession turns over — so every overload carries transition risk. Control vs counter; this is the whole game.</p>
+  </div>
+
+  <h2><span class="ic">🦊</span> Tactical Move 3 — How Algeria hurts Argentina: the Mahrez counter</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag def">Algeria · Counter</span><span class="mt">Spring Mahrez &amp; Amoura into the full-back space</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aAl" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d23c43"/></marker>
+        <marker id="aGr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Algeria breaking ↑ · attack the space behind Argentina's high full-backs</text>
+
+      <!-- Argentina back line, Molina caught high -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="100" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="300" y="104" fill="#06223f">OTA</text></g>
+        <g><circle cx="400" cy="100" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="400" y="104" fill="#06223f">ROM</text></g>
+        <g><circle cx="200" cy="115" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="200" y="119" fill="#06223f">MED</text></g>
+        <!-- Molina caught HIGH -->
+        <g opacity=".6"><circle cx="560" cy="250" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="560" y="254" fill="#06223f">MOL</text><text x="560" y="272" fill="#dceeff" font-size="8">caught high</text></g>
+        <text x="560" y="135" text-anchor="middle" font-size="10" fill="#ffd2d4">VACATED</text>
+        <path d="M510 150 q55 -18 110 0" stroke="#ff5d6a" stroke-dasharray="4 5" fill="none" opacity=".7"/>
+      </g>
+
+      <!-- Algeria break -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="320" r="12" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="360" y="324">BEN</text></g>
+        <g><circle cx="420" cy="240" r="12" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="420" y="244">GOU</text></g>
+        <!-- Mahrez storming the channel -->
+        <g><circle cx="560" cy="320" r="13" fill="#d23c43" stroke="#fff" stroke-width="1.5"/><text x="560" y="324">MAH</text><text x="560" y="344" fill="#ffd2d4" font-size="9">Mahrez</text></g>
+        <!-- Amoura far side -->
+        <g><circle cx="170" cy="250" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="170" y="254">AMO</text></g>
+      </g>
+
+      <!-- win it -> Gouiri -->
+      <path d="M372 312 C 395 285, 410 262, 416 250" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aGr)"/>
+      <!-- release Mahrez wide into the vacated zone -->
+      <path d="M432 238 C 490 250, 535 290, 552 308" stroke="#39d98a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aGr)"/>
+      <!-- Mahrez storms in & cuts onto left foot -->
+      <path d="M552 308 C 540 250, 530 195, 470 150" stroke="#d23c43" stroke-width="4" fill="none" marker-end="url(#aAl)"/>
+      <!-- shot/cross -->
+      <path d="M468 142 C 430 120, 390 112, 360 112" stroke="#d23c43" stroke-width="3" stroke-dasharray="9 6" fill="none" marker-end="url(#aAl)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Win ball → release</span>
+      <span><i style="border-top-color:#d23c43"></i> Mahrez counter run</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Vacated full-back zone</span>
+    </div>
+
+    <p class="expl"><strong>Algeria's one real route to a result.</strong> They won't out-football Argentina — so they'll stay compact and bet everything on transition. The target is obvious: <strong>the grass behind Argentina's advancing full-backs.</strong> When Molina pushes high to support Messi's overloads, Mahrez lurks to attack the space he leaves. Win the ball through Bentaleb or Gouiri, release Mahrez into the channel, and let the captain cut onto that famous left foot for a shot or a cross to Gouiri arriving centrally — with Amoura's pace stretching the opposite side. It's low-percentage against a back line this experienced — Otamendi and Romero have seen it all — but Algeria <em>only need one</em>, and a flat Argentine start (always a risk in an early-morning opener) is exactly the opening they're hunting.</p>
+  </div>
+
+  <h2><span class="ic">⏳</span> Tactical Move 4 — The ageing question: 2026 vs 2022</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag age">Argentina · The Clock</span><span class="mt">Where time could bite this title defence</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="400" rx="10" fill="#0d1320"/>
+      <text x="360" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#e8edf4">Same heroes, three years on — the endurance question</text>
+
+      <!-- Two columns: 2022 vs 2026 -->
+      <g font-size="12" font-weight="700" fill="#8ec5f0" text-anchor="middle">
+        <text x="200" y="68">QATAR 2022 🏆</text>
+        <text x="520" y="68">USA/MEX/CAN 2026</text>
+      </g>
+
+      <!-- bars: average age -->
+      <g font-family="inherit">
+        <text x="60" y="110" font-size="11" fill="#8b97a8">Squad avg. age</text>
+        <rect x="60" y="120" width="240" height="22" rx="5" fill="#19212e" stroke="#26303f"/>
+        <rect x="60" y="120" width="170" height="22" rx="5" fill="#39d98a"/>
+        <text x="312" y="137" font-size="11" font-weight="800" fill="#39d98a">~27.5</text>
+
+        <rect x="420" y="120" width="240" height="22" rx="5" fill="#19212e" stroke="#26303f"/>
+        <rect x="420" y="120" width="222" height="22" rx="5" fill="#e9b949"/>
+        <text x="668" y="137" font-size="11" font-weight="800" fill="#e9b949">29y 9d</text>
+
+        <text x="60" y="172" font-size="11" fill="#8b97a8">Messi — distance covered / 90</text>
+        <rect x="60" y="182" width="240" height="22" rx="5" fill="#19212e" stroke="#26303f"/>
+        <rect x="60" y="182" width="210" height="22" rx="5" fill="#39d98a"/>
+        <text x="180" y="199" font-size="10" font-weight="800" fill="#06301d">2022 baseline</text>
+
+        <rect x="420" y="182" width="240" height="22" rx="5" fill="#19212e" stroke="#26303f"/>
+        <rect x="420" y="182" width="150" height="22" rx="5" fill="#ff5d6a"/>
+        <text x="495" y="199" font-size="10" font-weight="800" fill="#3a0d10">sharply lower</text>
+
+        <text x="60" y="234" font-size="11" fill="#8b97a8">Heroes of 2022 still relied on</text>
+        <rect x="60" y="244" width="600" height="22" rx="5" fill="#19212e" stroke="#26303f"/>
+        <rect x="60" y="244" width="470" height="22" rx="5" fill="#6ca9e0"/>
+        <text x="360" y="261" font-size="11" font-weight="800" fill="#06223f">17 of 26 squad · 7 of the XI · Otamendi 38 · Messi 38 · De Paul, Di María-era core</text>
+      </g>
+
+      <!-- the risk window -->
+      <g>
+        <rect x="60" y="300" width="600" height="74" rx="10" fill="#16110a" stroke="#3a2f12"/>
+        <text x="76" y="324" font-size="12" font-weight="800" fill="#e9b949">⚠ The danger window: the 5th–7th game</text>
+        <text x="76" y="346" font-size="11.5" fill="#e4ddc9">2022's run needed Messi peak-available. In 2026 the legs are older, the schedule longer —</text>
+        <text x="76" y="363" font-size="11.5" fill="#e4ddc9">deep knockouts &amp; extra-time are where an ageing core is likeliest to fade.</text>
+      </g>
+    </svg>
+
+    <p class="expl"><strong>The shadow over the defence of the crown.</strong> This is the same group that conquered Qatar — and that is both its strength and its risk. The squad's <strong>average age is 29 years and 9 days</strong>; <strong>17 of the 26 are 2022 winners</strong>, Otamendi is 38, Messi is 38, and several core players are running on fumes after relentless seasons. Messi's distance covered has dropped sharply since 2022 — Scaloni's system hides it well in a single game, but a <em>seven-game tournament</em> is a different test. The honest concern isn't the group stage; it's the <strong>fifth, sixth and seventh matches</strong>, where fresher, younger sides (France, Spain) can run at tiring legs and where extra-time looms. Argentina's counter-argument is real: their 2022 triumph was <em>genuinely collective</em> — defensive structure, pressing organisation and Scaloni's adaptability are skills that don't age like raw athleticism. <strong>If any champion can break the post-win curse, it's this one — but the clock is the opponent no tactic fully beats.</strong> Expect Scaloni to manage minutes ruthlessly from tonight, resting legs the moment a game is safe.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Players &amp; Sub-Battles</h2>
+  <ul>
+    <li><strong>Lionel Messi</strong> — 200th cap, sixth World Cup, still the most dangerous man on the pitch. The whole tournament bends around his minutes.</li>
+    <li><strong>De Paul vs the counter</strong> — his shielding of Messi and the right-back zone is the hinge between Argentina's control and Algeria's transitions.</li>
+    <li><strong>Riyad Mahrez</strong> — Algeria's heartbeat and their one player capable of conjuring something from nothing. Contain him and Algeria's threat shrinks dramatically.</li>
+    <li><strong>Lautaro Martínez</strong> — Serie A's top scorer, the clinical finish Argentina lacked at times in 2022. His movement off Messi is key against a deep block.</li>
+    <li><strong>Emiliano Martínez</strong> — in a low-scoring, transition game, the 2022 Golden Glove keeper could again be decisive in a one-on-one moment.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Argentina are better than Algeria by a clear margin, and even a carefully-managed Messi tilts the game firmly their way. The champions' midfield control, big-game serenity and Scaloni's tactical command should see them through without fully hitting top gear. But this is a more awkward opener than the holders would have wanted: Algeria carry genuine counter-attacking venom in Mahrez and Amoura, and a flat early-morning start could let the Fennecs land a punch — so a clean sheet is far from guaranteed. Expect a controlled, professional Argentine win, built on patience against the block and discipline against the break.</p>
+    <div class="scoreline">🇦🇷 Argentina 2 — 0 Algeria</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: Messi's gravity and Lautaro's finishing break a stubborn block; Argentina manage the game and Messi's minutes. A 2-1 with a late Algeria consolation is very live if a counter lands. The defence of the crown begins.</p>
+  </div>
+
+</div>
+</body>
+</html>

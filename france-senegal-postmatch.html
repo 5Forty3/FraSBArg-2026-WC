@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France 3-1 Senegal — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#1a4fa0;--fra2:#3b82d6;--sen:#1e9e57;--seny:#fdef42;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#1e9e57);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .f{color:#6aa3e6}.scoreboard .s{color:#5fd49b}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#fff}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .f{color:#6aa3e6}.stat .v .s{color:#5fd49b}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .quote{background:#0d141d;border-left:3px solid var(--gold);border-radius:8px;padding:11px 15px;margin:12px 0;font-size:14px;color:#e4ddc9;font-style:italic}
+  .quote b{color:var(--gold);font-style:normal}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(59,130,214,.18);color:#6aa3e6}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(57,217,138,.13);color:var(--green);border-color:#1f4533">Group I · Matchday 1 · FT</span>
+  </div>
+  <h1>France vs Senegal — A Tale of Two Halves &amp; a King's Coronation</h1>
+
+  <div class="scoreboard">
+    <span class="t f">🇫🇷 France</span>
+    <span class="sc">3 – 1</span>
+    <span class="t s">Senegal 🇸🇳</span>
+  </div>
+  <div class="meta">📍 MetLife Stadium, New Jersey · Group I · Full-time</div>
+  <div class="scorers">⚽ <b>Mbappé 66', 90+6'</b> · <b>Barcola 82'</b> &nbsp;|&nbsp; <b>Mbaye 90+5'</b> (Senegal)</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">1st-half shots</div><div class="v"><span class="f">~3</span> · <span class="s">~3</span></div></div>
+    <div class="stat"><div class="l">Front 3 touches (1st h)</div><div class="v"><span class="f">1</span> 😳</div></div>
+    <div class="stat"><div class="l">Mbappé goals</div><div class="v"><span class="f">2</span> ⚡</div></div>
+    <div class="stat"><div class="l">Mbappé's FR record</div><div class="v"><span class="f">58</span> 🏆</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">France's celebrated front three managed a single combined touch before half-time — then Mbappé took over after the break.</p>
+
+  <h2><span class="ic">🧭</span> The Story of the Match</h2>
+  <p class="lead">For 45 minutes, the script looked dangerously like 2002 all over again. <strong>France started nervously, and Senegal were the better team for most of the first half</strong> — physical, organised, urgent in the duels, and genuinely threatening on the break. The Lions of Teranga had the two best chances of the half: Nicolas Jackson beat Upamecano on a lightning counter (after Mbappé lost possession) and rattled the post, and right before the interval Ismaïla Sarr somehow missed from close range after a Mané cutback — the kind of gilt-edged opening that, had it gone in, might have flipped the entire tournament narrative. <strong>That Senegal couldn't convert their half-chances exposed their one true limitation — a lack of ruthless end product — and underlined the experience of France's four-man defence,</strong> which bent without breaking.</p>
+
+  <div class="callout">
+    <div class="t">🔎 On Mbappé's wretched first half</div>
+    <p style="margin:8px 0 0">The captain was, in the words of one broadcaster, <em>"dreadful"</em> before the break — mistiming at least three touches, two of them in the box off promising passes, and losing possession to gift Jackson that early chance. The most plausible read isn't decline but <strong>rhythm</strong>: a player adjusting to the unique tempo and intensity of a World Cup opener, his timing a fraction off after the long season. Crucially, France as a whole lacked any method for creating space — <strong>everyone wanted to be the No.10</strong>, with Mbappé, Dembélé, Doué and Olise all drifting into the same congested central pockets, producing a confused scramble in the final third rather than penetration. The famous front three's <strong>single combined touch before half-time</strong> is the statistical fingerprint of that disconnection.</p>
+  </div>
+
+  <h2><span class="ic">🎩</span> The Coach Who Reads Games — Deschamps' Half-Time Masterstroke</h2>
+  <p>This is where <strong>rare pedigree told.</strong> Didier Deschamps is one of only three men to win the World Cup as both captain (1998) and coach (2018) — and his in-game intelligence decided this match. He made <em>no personnel change at the break</em>; instead he <strong>reorganised the shape</strong>. France stretched the pitch — pushing width and asking players to occupy the touchlines rather than clogging the middle — which instantly manufactured the space that had been absent. Olise drifted central to control midfield alongside Rabiot, France pressed higher to force Senegal errors, and the congestion cleared.</p>
+  <div class="quote"><b>The crucial nuance:</b> Senegal, to their immense credit, never sat back and parked the bus the way Cape Verde did to Spain a day earlier — they kept attacking, kept committing bodies forward. That bravery is exactly what Deschamps read at the interval: a side that keeps pushing <em>leaves space behind it</em>. By stretching the field and going vertical, France turned Senegal's admirable ambition into the very gaps Mbappé would exploit. The change was as much about <strong>reading the opponent as fixing his own team.</strong></div>
+
+  <h2><span class="ic">⚽</span> Goal of the Match 1 — Mbappé's opener (66')</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">France · 1-0</span><span class="mt">Olise's curled pass &amp; the one-motion finish</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise curls it around four defenders</text>
+
+      <!-- Senegal back line (green) -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="270" cy="95" r="11" fill="#1e9e57" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="340" cy="80" r="11" fill="#1e9e57" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="410" cy="80" r="11" fill="#1e9e57" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="475" cy="95" r="11" fill="#1e9e57" stroke="#fff" stroke-width="1.2"/>
+        <text x="372" y="60" text-anchor="middle" font-size="9" fill="#bdf0d0">4 defenders bypassed</text>
+      </g>
+
+      <!-- Olise wide right, Mbappe central -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="560" cy="230" r="13" fill="#1a4fa0" stroke="#fff" stroke-width="1.4"/><text x="560" y="234">OLI</text><text x="560" y="254" fill="#dceeff" font-size="9">Olise</text></g>
+        <g><circle cx="330" cy="200" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="330" y="204">MBA</text><text x="330" y="224" fill="#dceeff" font-size="9">turns &amp; shoots</text></g>
+      </g>
+
+      <!-- Olise curled pass around the line -->
+      <path d="M548 222 C 470 175, 400 135, 345 125" stroke="#3b82d6" stroke-width="3.5" stroke-dasharray="9 6" fill="none" marker-end="url(#aF)"/>
+      <!-- Mbappe run to meet it -->
+      <path d="M330 186 C 332 165, 335 145, 340 128" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#aW)"/>
+      <!-- one-motion finish past Mendy -->
+      <path d="M344 120 C 350 95, 358 65, 364 38" stroke="#3b82d6" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aF)"/>
+      <text x="430" y="120" font-size="10" fill="#bcd9f6">turn + finish in one motion</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Olise's curled through-ball</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Mbappé's run</span>
+      <span><i style="border-top-color:#3b82d6"></i> Finish</span>
+    </div>
+
+    <p class="expl"><strong>The breakthrough, and a product of the tactical reset.</strong> With France now stretching the pitch and Senegal still committed forward, the gaps appeared. Michael Olise — superb all night, and the game's most creative force — <strong>curled a pass around four Senegalese defenders</strong> into the one corridor that mattered. Mbappé, finally finding his rhythm, met it and <strong>turned and shot in a single motion</strong>, leaving Koulibaly for dead and slipping it past Mendy. It was the first goal of France's tournament and the moment the floodgates opened. The contrast with the first half was total: where France had forced the ball into traffic before the break, here they played <em>through</em> a stretched defence — exactly what Deschamps' reorganisation was designed to produce.</p>
+  </div>
+
+  <h2><span class="ic">🚀</span> Goal of the Match 2 — Mbappé's 30-yard thunderbolt (90+6')</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">France · 3-1</span><span class="mt">The coronation strike from distance</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <!-- goal -->
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · 30 yards out, top-left corner</text>
+
+      <!-- Mendy positioning + late dive -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#1e9e57" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">MEN</text></g>
+        <!-- defenders backing off -->
+        <circle cx="300" cy="150" r="10" fill="#1e9e57" stroke="#fff" stroke-width="1" opacity=".8"/>
+        <circle cx="420" cy="150" r="10" fill="#1e9e57" stroke="#fff" stroke-width="1" opacity=".8"/>
+        <text x="360" y="135" text-anchor="middle" font-size="9" fill="#bdf0d0">defenders back off — no pressure on the ball</text>
+      </g>
+
+      <!-- Mbappe outside the box -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="300" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="304">MBA</text><text x="360" y="322" fill="#dceeff" font-size="9">picks it up, 30 yds</text></g>
+      </g>
+
+      <!-- the strike to top-left -->
+      <path d="M352 288 C 340 220, 330 130, 322 30" stroke="#3b82d6" stroke-width="4" fill="none" marker-end="url(#aF2)"/>
+      <!-- keeper's late, mistimed dive (toward top-left but late) -->
+      <path d="M360 40 C 345 30, 335 26, 328 26" stroke="#ff5d6a" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
+      <text x="250" y="70" font-size="10" fill="#ffb3b8">keeper's dive late / mistimed</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6"></i> Mbappé's strike (30 yds)</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Goalkeeper's late dive</span>
+    </div>
+
+    <p class="expl"><strong>The goal that crowned a king.</strong> Barely a minute after Ibrahim Mbaye's brilliant solo strike had pulled Senegal back to 2-1 and injected late tension, Mbappé answered instantly. He collected the ball <strong>fully 30 yards out</strong>, was allowed a half-yard as tired defenders backed off, and <strong>lifted a ferocious strike into the top-left corner</strong> — over Mendy and just under the bar. Zlatan Ibrahimović called it "a magic moment." It made Mbappé France's all-time leading scorer (58) and moved him past Messi on the all-time World Cup list. <strong>One honest caveat the highlight reels won't dwell on:</strong> for all the undeniable power and technique, Mendy's dive was <em>late and mistimed</em> — he leapt a fraction slow and got nowhere near a ball a top keeper might have reached. It's the kind of small goalkeeping error that Cape Verde's Vozinha never granted Spain the day before — a reminder that fine margins, not just brilliance, separate the teams who win from the teams who draw.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Key Takeaways</h2>
+  <ul>
+    <li><strong>Mbappé (after the break)</strong> — from dreadful to decisive. Two goals, a record, and a statement of why he's among the greatest of all time. The first half is the worry; the second is the reminder.</li>
+    <li><strong>Michael Olise</strong> — France's best player. His central drift and defence-splitting passing created the opener and several other chances. A genuine creative hub.</li>
+    <li><strong>Bradley Barcola</strong> — 131 seconds to score on his World Cup debut. France's attacking depth is frightening.</li>
+    <li><strong>Senegal</strong> — brave, organised, and superior for a half, but undone by missed chances and Mbappé's class. No shame, and a warning to the group.</li>
+    <li><strong>Ibrahim Mbaye (18)</strong> — the youngest African scorer in World Cup history, a star in the making, billed as "the next Mbappé."</li>
+  </ul>
+
+  <h2><span class="ic">🔧</span> France's Future — Fix 1: Solve the "everyone's a No.10" problem</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">France · Fix 1</span><span class="mt">Stagger the front four — fix the roles, keep the width</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aF3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Defined lanes: width pinned, one No.10, Mbappé highest</text>
+
+      <!-- block ghost -->
+      <g opacity=".5"><circle cx="300" cy="120" r="10" fill="#888" stroke="#fff" stroke-width="1"/><circle cx="420" cy="120" r="10" fill="#888" stroke="#fff" stroke-width="1"/></g>
+
+      <!-- France structured -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- wide men HIGH & WIDE on touchlines -->
+        <g><circle cx="90" cy="180" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="90" y="184">DEM</text><text x="90" y="204" fill="#dceeff" font-size="8">stays wide L</text></g>
+        <g><circle cx="630" cy="180" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="630" y="184">OLI</text><text x="630" y="204" fill="#dceeff" font-size="8">stays wide R</text></g>
+        <!-- single 10 -->
+        <g><circle cx="360" cy="265" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.4"/><text x="360" y="269" fill="#06223f">DOU</text><text x="360" y="288" fill="#bcd9f6" font-size="8">the ONE No.10</text></g>
+        <!-- Mbappe highest, central -->
+        <g><circle cx="360" cy="150" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="154">MBA</text><text x="360" y="132" fill="#dceeff" font-size="8">highest line</text></g>
+      </g>
+
+      <!-- vertical channels shown -->
+      <path d="M90 195 L90 90" stroke="#39d98a" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/>
+      <path d="M630 195 L630 90" stroke="#39d98a" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/>
+      <!-- service routes -->
+      <path d="M105 175 C 180 150, 250 140, 305 150" stroke="#3b82d6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aF3)"/>
+      <path d="M615 175 C 540 150, 470 140, 415 150" stroke="#3b82d6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aF3)"/>
+      <path d="M360 252 C 360 220, 360 195, 360 168" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Width → service</span>
+      <span><i style="border-top-color:#39d98a"></i> The single No.10 feeds Mbappé</span>
+    </div>
+
+    <p class="expl"><strong>The first-half lesson made permanent.</strong> France's early struggles came from four creators crowding the same central zone — a scramble of would-be No.10s with nobody stretching the pitch. The second-half fix worked because it imposed <em>roles</em>: <strong>Dembélé and Olise stay genuinely wide</strong> to pin full-backs and open the channels; <strong>one player (Doué) is the designated No.10</strong> rather than three; and <strong>Mbappé holds the highest line</strong> as the focal point of the runs, not another deep-dropping playmaker. Against Iraq and Norway — and the knockouts — Deschamps should start in this shape rather than rediscovering it at half-time. The talent is overwhelming; the discipline of <em>who occupies which lane</em> is what turns it from a scramble into a machine.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> France's Future — Fix 2: Protect the full-back zones &amp; start faster</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">France · Fix 2</span><span class="mt">A screening pivot so the counters don't bite</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aR4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Defending ↓ · Tchouaméni screens; one full-back holds when the other goes</text>
+
+      <!-- France back line + pivot -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="250" cy="330" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="250" y="334">SAL</text></g>
+        <g><circle cx="400" cy="330" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="400" y="334">UPA</text></g>
+        <!-- Kounde tucks in / holds -->
+        <g><circle cx="540" cy="320" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="540" y="324">KOU</text><text x="540" y="342" fill="#dceeff" font-size="8">holds when Theo goes</text></g>
+        <!-- screening pivot -->
+        <g><circle cx="330" cy="255" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="330" y="259" fill="#06301d">TCH</text><text x="330" y="278" fill="#bff0d5" font-size="8">screens the channel</text></g>
+        <!-- Theo high -->
+        <g opacity=".7"><circle cx="120" cy="220" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="120" y="224">THE</text></g>
+      </g>
+
+      <!-- opponent break attempt blocked -->
+      <path d="M470 200 C 420 235, 380 250, 350 255" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aR4)"/>
+      <g transform="translate(340,250)"><path d="M0,0 L12,12 M12,0 L0,12" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- pivot covering arc -->
+      <path d="M250 250 Q330 225 410 250" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none" opacity=".8"/>
+      <ellipse cx="330" cy="258" rx="120" ry="42" fill="#39d98a" opacity="0.10"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Screening / cover</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Opponent counter denied</span>
+    </div>
+
+    <p class="expl"><strong>The vulnerability Senegal exposed — and the next opponent will too.</strong> Jackson's post and Sarr's sitter both came from the same source: France's full-backs pushing high and leaving the channel behind them open to fast transitions, with too little protection. Mbappé's well-documented reluctance to press compounds it. The fix is structural discipline: <strong>Tchouaméni sitting as a genuine screening pivot</strong> in front of the back line, and a clear rule that <strong>when one full-back bombs forward (Theo), the other (Koundé) tucks in</strong> to keep a back-three shape in rest-defence. Add a faster start — Deschamps' sides are chronically slow openers, and against Iraq's likely deep block that's less punishing, but against a Norway side with Haaland it could be fatal. <strong>France can't rely on a Mbappé rescue act every game;</strong> tightening the transitions is how a good team becomes a winning one.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next</h2>
+  <p>Three points, top of the group, and Mbappé purring — France could hardly have asked for more from a game that, at half-time, was threatening to become a nightmare. But the performance carried clear warnings: the <strong>slow start, the congested attacking shape, and the soft transition defending</strong> are all fixable, and all must be fixed before the knockouts. The good news is the next test, Iraq, will likely sit deep — a chance to rehearse the disciplined, lane-defined attacking shape against a low block (the very problem that humbled Spain). The sterner exam is Norway and Haaland on Matchday 3, possibly for top spot, where the transition defending will be ruthlessly probed.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Mon 22 Jun · MD2</div><div class="g">France vs Iraq</div><div class="n">Lincoln Financial Field, Philadelphia. A deep block awaits — the perfect stage to bed in the structured front four.</div></div>
+    <div class="nx"><div class="d">Fri 26 Jun · MD3</div><div class="g">Norway vs France</div><div class="n">Foxborough. Haaland vs Saliba, possibly for top spot — France's transition defending will be tested to the limit.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>France won ugly, then won beautifully — a sleepy, scrambled first half rescued by a coach reading the game perfectly and a superstar answering the call. <strong>Deschamps' half-time reorganisation, not a personnel change, turned the match;</strong> Senegal's bravery in keeping the game open played into French hands; and Mbappé's brilliance (with a small assist from a mistimed goalkeeper dive) did the rest. The result is ideal, but the diagnosis is honest: <strong>fix the attacking roles, protect the full-back channels, and start faster.</strong> Get those right, and a France side this talented is a serious bet to reach a third straight World Cup final. The pieces are all here — Deschamps just has to make them click from the first whistle, not the 46th minute.</p>
+  </div>
+
+</div>
+</body>
+</html>

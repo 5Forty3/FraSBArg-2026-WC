@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messi! Messi!! Messi!!! — Argentina 3-0 Algeria Post-Match</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#6ca9e0;--arg2:#8ec5f0;--alg:#1c8a4e;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(30px,7vw,56px);font-weight:800;margin-top:8px;letter-spacing:1px;
+    background:linear-gradient(90deg,#6ca9e0,#fff 50%,#6ca9e0);-webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 2px 30px rgba(108,169,224,.2)}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .a{color:var(--arg2)}.scoreboard .g{color:#5fd49b}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:14px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--arg2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .a{color:var(--arg2)}.stat .v .g{color:#5fd49b}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .records{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.records{grid-template-columns:1fr}}
+  .rec{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:9px;padding:11px 14px}
+  .rec b{color:var(--gold);font-size:14px}.rec span{display:block;font-size:13px;color:#c5cedd;margin-top:2px}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(108,169,224,.18);color:var(--arg2)}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(108,169,224,.16);color:var(--arg2);border-color:#274055">Group J · Matchday 1 · FT</span>
+  </div>
+  <h1>Messi! Messi!! Messi!!!</h1>
+  <div class="sub">Argentina 3-0 Algeria — a 38-year-old genius writes himself into history, one more time</div>
+
+  <div class="scoreboard">
+    <span class="t a">🇦🇷 Argentina</span>
+    <span class="sc">3 – 0</span>
+    <span class="t g">Algeria 🇩🇿</span>
+  </div>
+  <div class="meta">📍 Kansas City Stadium · Group J · Full-time</div>
+  <div class="scorers">⚽ <b>Messi 17', 60', 76'</b> &nbsp;—&nbsp; a perfect hat-trick of moments (a 4th goal disallowed for a marginal offside)</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Possession</div><div class="v"><span class="a">~46%</span> · <span class="g">~54%</span></div></div>
+    <div class="stat"><div class="l">Shots</div><div class="v"><span class="a">10</span> · <span class="g">7</span></div></div>
+    <div class="stat"><div class="l">Algeria shots on target</div><div class="v">0 🧱</div></div>
+    <div class="stat"><div class="l">Messi WC goals</div><div class="v"><span class="a">16</span> 🐐</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Algeria edged possession but never tested Emi Martínez — zero shots on target. Argentina's experienced back line was barely troubled.</p>
+
+  <h2><span class="ic">👑</span> This Match Was About One Man</h2>
+  <p class="lead">Some nights, tactics bow to genius. This was one of them. <strong>Lionel Messi scored a hat-trick on his 200th cap, in his record sixth World Cup, just 19 days short of his 40th birthday</strong> — and in doing so, drew level with Miroslav Klose as the all-time leading scorer in World Cup history on 16 goals. To produce <em>that</em>, at <em>that</em> age, on <em>that</em> stage, is not normal footballing achievement; it is something closer to the superhuman. He even had a fourth goal — a brilliant finish — chalked off for the finest of marginal offsides. The headline writes itself, and it is the only headline that matters: <strong>Messi, Messi, Messi.</strong></p>
+
+  <div class="records">
+    <div class="rec"><b>🏆 16 World Cup goals</b><span>Level with Klose's all-time record — can claim it outright vs Austria.</span></div>
+    <div class="rec"><b>🎩 First World Cup hat-trick</b><span>His 11th career international hat-trick, and he's now the oldest player ever to score three in a World Cup game.</span></div>
+    <div class="rec"><b>🗓️ Sixth World Cup · 200th cap</b><span>The first man ever to feature at six World Cups — 20 years to the day after his WC debut vs Serbia &amp; Montenegro in 2006.</span></div>
+    <div class="rec"><b>🤝 17 World Cup wins</b><span>Also drew level with Klose for the most World Cup match victories by any player.</span></div>
+  </div>
+
+  <h2><span class="ic">🧭</span> The Story of the Match</h2>
+  <p>For all the records, this was Argentina in <strong>first gear</strong> — and that is perhaps the most ominous part. Algeria were tidy through midfield and actually edged the possession, but they were utterly <strong>toothless in the final third</strong>: not a single shot on target, no real chance to trouble Emiliano Martínez (playing through a fractured finger). That blunt edge is exactly why <strong>Argentina's much-questioned ageing defence looked entirely comfortable</strong> — Otamendi, Romero and Lisandro Martínez had time and space to read everything in front of them. This was, in fact, a near-perfect demonstration of <strong>Scalonismo — "La Tercera"</strong>: the synthesis of Bilardista defensive solidity (a back line that conceded nothing of substance) and Menottista attacking flair (a front line orchestrated by a magician). Control and craft, fused.</p>
+
+  <div class="callout">
+    <div class="t">🛡️ The team that plays around the magician</div>
+    <p style="margin:8px 0 0">The opening goal was the perfect symbol of how this team is built. It began with a <strong>through pass from De Paul — Messi's "bodyguard"</strong> — releasing the captain, who did the rest. Argentina, quite literally, <em>play around Messi</em>: every pattern bends toward getting him the ball in a position to decide the game, and he repays it like no one else can. It is breathtaking when it works. But it also frames the one genuine worry that no amount of brilliance tonight can erase — <strong>what happens on the night Messi has an off game, especially in a knockout?</strong> For Argentina to lift the trophy again, the supporting cast must prove they can win <em>outside the Messi sphere</em>.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (17') — Messi rolls his man &amp; curls it home</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Messi · 1-0</span><span class="mt">The De Paul release &amp; the moving-ball strike</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · ~30 yards out, left-footed curl</text>
+
+      <!-- Zidane + defenders -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">ZID</text></g>
+        <circle cx="300" cy="150" r="10" fill="#157040" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <text x="300" y="135" font-size="9" fill="#bff0cf">marker rolled</text>
+      </g>
+
+      <!-- De Paul deep, Messi rolling forward -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="540" cy="330" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="540" y="334" fill="#06301d">DEP</text><text x="540" y="352" fill="#bff0d5" font-size="9">the through pass</text></g>
+        <g><circle cx="340" cy="250" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="340" y="254">MES</text></g>
+      </g>
+
+      <!-- De Paul through ball -->
+      <path d="M528 322 C 460 300, 400 280, 358 262" stroke="#39d98a" stroke-width="3.5" stroke-dasharray="9 6" fill="none" marker-end="url(#aG)"/>
+      <!-- Messi rolls marker & drives -->
+      <path d="M340 236 C 338 212, 335 190, 340 168" stroke="#6ca9e0" stroke-width="4" fill="none" marker-end="url(#aA)"/>
+      <!-- curling finish to far corner -->
+      <path d="M345 160 C 360 120, 380 75, 398 30" stroke="#6ca9e0" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aA)"/>
+      <text x="450" y="120" font-size="10" fill="#bcd9f6">curl, ball still moving</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> De Paul through ball</span>
+      <span><i style="border-top-color:#6ca9e0"></i> Messi carry &amp; curling finish</span>
+    </div>
+
+    <p class="expl"><strong>The symbol of the whole team.</strong> It started with the bodyguard: <strong>De Paul threaded the through pass</strong> that set Messi free ~30 yards out. Messi rolled his marker, surged forward and <strong>curled a left-footed strike beyond Luca Zidane</strong> (yes — Zinedine's son) into the far corner. There's an honest parallel here with Mbappé's opener the day before: a powerful strike from outside the box, with the ball still <em>moving</em> as he hit it, making the flight awkward — but a top goalkeeper might still have done better. No matter. The mechanism mattered: the team's entire purpose is to get Messi the ball in that pocket, and when it does, this is what happens.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (60') — pouncing on the rebound</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Messi · 2-0</span><span class="mt">Mac Allister's strike, the spill, the predator's instinct</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aO" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e9b949"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · the striker's instinct on the loose ball</text>
+
+      <!-- Zidane spilling -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="44" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="360" y="48">ZID</text><text x="360" y="28" fill="#ffd9a0" font-size="9">spills it ⚠</text></g>
+      </g>
+
+      <!-- Mac Allister shoots, Messi lurking -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="470" cy="230" r="13" fill="#6ca9e0" stroke="#fff" stroke-width="1.5"/><text x="470" y="234">MAC</text></g>
+        <g><circle cx="300" cy="120" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="300" y="124">MES</text><text x="300" y="102" fill="#fff" font-size="9">first to react</text></g>
+      </g>
+
+      <!-- Mac shot -->
+      <path d="M460 220 C 420 160, 390 90, 372 40" stroke="#6ca9e0" stroke-width="3.5" fill="none" marker-end="url(#aA2)"/>
+      <!-- rebound out to Messi -->
+      <path d="M352 44 C 330 70, 312 95, 305 108" stroke="#e9b949" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#aO)"/>
+      <!-- Messi finish -->
+      <path d="M308 108 C 320 80, 335 55, 350 34" stroke="#6ca9e0" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aA2)"/>
+      <text x="220" y="95" font-size="10" fill="#bcd9f6">right-foot finish</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Mac Allister shot &amp; Messi finish</span>
+      <span><i style="border-top-color:#e9b949;border-top-style:dashed"></i> Keeper's spilled rebound</span>
+    </div>
+
+    <p class="expl"><strong>The poacher's goal — proof he's more than a creator.</strong> Mac Allister struck powerfully from distance, Zidane couldn't hold it, and <strong>Messi was first to the loose ball</strong>, finishing coolly with his right foot. It's the least spectacular of the three but arguably the most telling: even at 38, his anticipation and positioning in the box are razor-sharp. He reads the spill before it happens. This is the goal that shows Messi isn't merely orchestrating from deep — he still lives in the penalty area when it matters. Worth noting too: it took a goalkeeping error to gift it, the kind of fine margin that separates results at this level.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 (76') — the trademark curl &amp; the unstoppable one</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Messi · 3-0</span><span class="mt">The hat-trick finish from the edge of the box</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aG3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · the curl into the top corner — unsaveable</text>
+
+      <!-- Zidane wrong-footed -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="42" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="360" y="46">ZID</text></g>
+        <path d="M360 40 C 372 36, 382 34, 388 34" stroke="#ff5d6a" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+        <text x="430" y="46" font-size="9" fill="#ffb3b8">wrong side — no chance</text>
+      </g>
+
+      <!-- Nico Gonzalez assist + Messi -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="180" cy="230" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="180" y="234" fill="#06301d">N.G</text><text x="180" y="252" fill="#bff0d5" font-size="9">the pass</text></g>
+        <g><circle cx="330" cy="200" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="330" y="204">MES</text></g>
+      </g>
+
+      <!-- Nico Gonzalez to Messi -->
+      <path d="M192 222 C 250 205, 295 200, 316 200" stroke="#39d98a" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aG3)"/>
+      <!-- Messi takes a touch to the edge -->
+      <path d="M338 188 C 345 175, 350 165, 352 152" stroke="#6ca9e0" stroke-width="3" fill="none" marker-end="url(#aA3)"/>
+      <!-- the curl into the far top corner -->
+      <path d="M352 146 C 350 110, 348 70, 320 30" stroke="#6ca9e0" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aA3)"/>
+      <text x="430" y="150" font-size="10" fill="#bcd9f6">trademark curl, top corner</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Nicolás González's pass</span>
+      <span><i style="border-top-color:#6ca9e0"></i> Messi curl into the top corner</span>
+    </div>
+
+    <p class="expl"><strong>The pick of the three — and the one no keeper saves.</strong> Receiving from Nicolás González, Messi shifted the ball to the edge of the area and bent a <strong>trademark curling finish into the far top corner</strong> — the shot he has scored a hundred times across two decades, and still no defence has solved. Where the first goal flattered the keeper a touch and the second needed a spill, this was pure, unassailable quality: the perfect contact, the perfect bend, beyond any reach. It completed the hat-trick, drew him level with Klose, and brought a packed Kansas City Stadium to its feet in worship. He was substituted moments later to a standing ovation — his night's work, and history, complete.</p>
+  </div>
+
+  <h2><span class="ic">⚖️</span> The Real Tactical Question — Life Outside the Messi Sphere</h2>
+  <p>Tonight Messi made it look easy. But a World Cup is seven games, and the brutal truth for any Messi-dependent side is that <strong>he cannot be magnificent every single night</strong> — and the nights he isn't tend to arrive in the cauldron of the knockouts, against elite opponents who suffocate him. The 2026 trophy will not be won by Messi alone; it will be won if and when <strong>the supporting cast can decide a game with Messi quiet.</strong> So who are the "others," and how does Argentina score without their talisman as the focal point? Two patterns must work.</p>
+
+  <h2><span class="ic">🔧</span> Future Fix 1 — Lautaro &amp; Julián: a two-striker threat that doesn't need Messi</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Argentina · Fix 1</span><span class="mt">Direct vertical threat through the strikers</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aA4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · two strikers stretch the line without Messi as the hub</text>
+
+      <!-- opp back line -->
+      <g><circle cx="250" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="360" cy="100" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="470" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Enzo deep distributor -->
+        <g><circle cx="360" cy="320" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="360" y="324">ENZO</text></g>
+        <!-- two strikers -->
+        <g><circle cx="290" cy="200" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="290" y="204" fill="#06301d">LAU</text><text x="290" y="222" fill="#bff0d5" font-size="9">Lautaro</text></g>
+        <g><circle cx="440" cy="205" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="440" y="209" fill="#06301d">JUL</text><text x="440" y="227" fill="#bff0d5" font-size="9">J. Álvarez</text></g>
+        <!-- Mac late -->
+        <g><circle cx="360" cy="265" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="360" y="269">MAC</text></g>
+      </g>
+
+      <!-- Enzo vertical pass split -->
+      <path d="M350 310 C 330 270, 310 235, 300 218" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aA4)"/>
+      <!-- Lautaro run in behind -->
+      <path d="M285 186 C 280 160, 275 135, 278 115" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG4)"/>
+      <!-- Julian diagonal run -->
+      <path d="M438 190 C 430 160, 410 135, 380 115" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG4)"/>
+      <!-- Mac late arrival -->
+      <path d="M360 253 C 360 220, 360 185, 360 150" stroke="#6ca9e0" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aA4)" opacity=".75"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Striker runs in behind</span>
+      <span><i style="border-top-color:#6ca9e0;border-top-style:dashed"></i> Vertical pass / late run</span>
+    </div>
+
+    <p class="expl"><strong>The Messi-free plan A.</strong> When Messi is contained or rested, Argentina's most reliable alternative is a genuine <strong>two-striker threat</strong>: pairing <strong>Lautaro Martínez</strong> (Serie A's top scorer, 17 goals) with <strong>Julián Álvarez</strong>, both running the channels rather than waiting to be fed. Enzo Fernández becomes the vertical distributor from deep, splitting the centre-backs with line-breaking passes, while Mac Allister times late runs into the box — the very pattern that set up tonight's second goal. The point is to make Argentina's scoring <em>positional and collective</em> — runs, second balls, late arrivals — rather than dependent on one man conjuring magic. This is the look Scaloni may need for a knockout night when Messi is double-marked out of the game.</p>
+  </div>
+
+  <h2><span class="ic">🌟</span> Future Fix 2 — The next generation: Nico Paz &amp; fresh legs</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Argentina · Fix 2</span><span class="mt">A creative heir to share Messi's burden</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aA5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · a second creator means two threats to track, not one</text>
+
+      <!-- opp block -->
+      <g><circle cx="280" cy="120" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="440" cy="120" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="360" cy="175" r="10" fill="#666" stroke="#fff" stroke-width="1"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi one side -->
+        <g><circle cx="540" cy="230" r="13" fill="#8ec5f0" stroke="#fff" stroke-width="1.5"/><text x="540" y="234">MES</text></g>
+        <!-- Nico Paz the other -->
+        <g><circle cx="190" cy="230" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="190" y="234" fill="#06301d">PAZ</text><text x="190" y="252" fill="#bff0d5" font-size="9">Nico Paz</text></g>
+        <!-- striker -->
+        <g><circle cx="360" cy="240" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="360" y="244">LAU</text></g>
+      </g>
+
+      <!-- two creators feeding the striker from both half-spaces -->
+      <path d="M528 222 C 460 195, 410 180, 382 175" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aA5)"/>
+      <path d="M202 222 C 270 195, 320 180, 348 175" stroke="#39d98a" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aG5)"/>
+      <!-- striker spin -->
+      <path d="M360 228 C 360 200, 360 165, 360 140" stroke="#6ca9e0" stroke-width="3.5" fill="none" marker-end="url(#aA5)"/>
+      <text x="360" y="300" text-anchor="middle" font-size="10" fill="#bcd9f6">two creative half-spaces = the defence can't double Messi</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0;border-top-style:dashed"></i> Messi creates (one side)</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Nico Paz creates (other side)</span>
+    </div>
+
+    <p class="expl"><strong>The succession plan — and the load-sharing.</strong> The encouraging note from tonight's bench: <strong>21-year-old Nico Paz</strong> (a brilliant debut Serie A season at Como — 12 goals, 6 assists) came on for Messi's final minutes. He is the most exciting glimpse of life <em>after</em> Messi, and more immediately, a way to <em>share the creative load now</em>. If Argentina can field a second genuine playmaker in the other half-space, opponents can no longer simply double-team Messi and shut the team off — they must respect two threats. The same logic extends across the squad: <strong>Álvarez, Lautaro, Almada and Paz must all show they can decide a game</strong> so Argentina aren't a one-man team when it matters most. One mild surprise tonight was that Giovani Lo Celso — short of rhythm and in need of minutes — stayed on the bench; he, too, may yet have a role to play in sharing the burden as the tournament deepens.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> The Future — The Art of Peaking at the Right Time</h2>
+  <p>Here is the paradox of a dominant opener for an ageing team: <strong>you want to win, but you do not want to peak.</strong> The graveyard of World Cup history is full of brilliant sides who hit their ceiling in the group stage and had nothing left for the final week. For a squad with an average age near 30 and a 38-year-old talisman, <strong>energy management is as important as tactics</strong> — and tonight's "first gear" performance is, read correctly, a <em>good</em> sign: Argentina won comfortably while keeping plenty in reserve, and Scaloni pulled Messi the moment the game was safe. There is a real structural advantage ahead, too: their next two group games are in the <strong>air-conditioned dome in Dallas</strong>, sparing the older legs the brutal summer heat and preserving freshness for the knockouts. The blueprint is clear — <strong>do enough to win, hide the top gear, and arrive at the business end with Messi and the legs fresh.</strong> Peak in week three, not week one.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Mon 22 Jun · MD2</div><div class="g">Argentina vs Austria</div><div class="n">AT&amp;T Stadium, Dallas (dome). Rangnick's gegenpressing is the group's real tactical test — and Messi can claim the all-time WC scoring record outright.</div></div>
+    <div class="nx"><div class="d">Sat 27 Jun · MD3</div><div class="g">Argentina vs Jordan</div><div class="n">AT&amp;T Stadium, Dallas (dome). A chance to rotate, rest legs, and give the supporting cast minutes — if the group is already secured.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>A perfect start, authored by a genius defying time itself. Argentina barely moved out of first gear, conceded nothing of note, and watched Messi rewrite the record books — the synthesis of <strong>Scalonismo</strong> in its purest form: solid at the back, sublime up front. But the very ease of it underlines the campaign's defining question. <strong>This team plays around Messi, and that is both its glory and its fragility.</strong> To win it all, the others — Lautaro, Álvarez, Paz, Almada — must prove they can carry a game when the magician is quiet, and Scaloni must nurse these ageing legs to a late-tournament peak rather than an early one. Tonight, none of that mattered. Tonight belonged to one man, and one chant that echoed around Kansas City and will echo all the way to the final: <strong>Messi, Messi, Messi.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

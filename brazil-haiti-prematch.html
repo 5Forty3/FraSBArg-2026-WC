@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil vs Haiti — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#ffdf00;--bra2:#009b3a;--hai:#1c3f94;--hair:#d21034;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#ffdf00,#009b3a 60%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .b{background:linear-gradient(135deg,#2a2a10,#14180e)}
+  .vsbar .h{background:linear-gradient(135deg,#0e1a33,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .b .nm{color:var(--bra)}.vsbar .h .nm{color:#6a8fd6}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.brazil{border-left:3px solid var(--bra)}
+  .card.haiti{border-left:3px solid var(--hai)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .pressure{background:linear-gradient(135deg,#2a1010,#0f1117);border:1px solid #4a1a1a;border-left:3px solid var(--red);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .pressure .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#ff8e8e}
+  .grpstand{display:grid;grid-template-columns:1fr;gap:6px;margin-top:10px}
+  .gr{display:flex;align-items:center;gap:10px;background:#0d141d;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
+  .gr .pos{font-weight:800;color:var(--gold);width:18px}
+  .gr .tm{font-weight:700;flex:1}
+  .gr .pt{font-weight:800;color:#fff}
+  .gr.brz{border-color:#3a3a14}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group C · Matchday 2</span>
+  </div>
+  <h1>Brazil vs Haiti</h1>
+  <div class="sub">A must-win — how Brazil must fix the Morocco problems against a deep block</div>
+  <div class="meta">🕒 6:30 AM IST, Sat 20 Jun · 📍 Lincoln Financial Field, Philadelphia</div>
+
+  <div class="vsbar">
+    <div class="side b"><div class="nm">🇧🇷 Brazil</div><div class="fm">4-3-3 / 4-2-3-1 · Ancelotti · 5x champions · need a win to settle the group</div></div>
+    <div class="mid">VS</div>
+    <div class="side h"><div class="nm">Haiti 🇭🇹</div><div class="fm">deep 4-4-2 block · Migné · first WC in 52 years · nothing to lose</div></div>
+  </div>
+
+  <div class="pressure">
+    <div class="t">⚠️ The pressure cooker — Group C after Matchday 1</div>
+    <div class="grpstand">
+      <div class="gr"><span class="pos">1</span><span class="tm">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span><span class="pt">3 pts</span></div>
+      <div class="gr"><span class="pos">2</span><span class="tm">🇲🇦 Morocco</span><span class="pt">1 pt</span></div>
+      <div class="gr brz"><span class="pos">3</span><span class="tm">🇧🇷 Brazil</span><span class="pt">1 pt</span></div>
+      <div class="gr"><span class="pos">4</span><span class="tm">🇭🇹 Haiti</span><span class="pt">0 pts</span></div>
+    </div>
+    <p style="margin:10px 0 0">Brazil's 1-1 draw with Morocco — in which they were second-best for long spells — has left the five-time champions <strong>third in their group and under real pressure</strong>. Anything but a win here, and qualification could come down to a nervy final-day shootout with group leaders Scotland. For a nation of Brazil's stature, dropping points to a side ranked outside the world's top 80 would be a "national catastrophe." This is, in every meaningful sense, <strong>a must-win.</strong></p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News &amp; The Ancelotti Reset</h2>
+  <p class="lead">Carlo Ancelotti was unhappy with the level against Morocco — the side looked, in one writer's words, "oddly blunt" — and he is <strong>set to ring the changes</strong> to inject control and freshness. The challenge flips completely from Matchday 1: Morocco came at Brazil; Haiti will sit deep and dare Brazil to break them down. This is a <em>low-block</em> exam, and Brazil failed a similar test of patience against Morocco's organisation.</p>
+
+  <div class="card brazil">
+    <h3 style="margin-top:0">🇧🇷 Brazil — the expected changes</h3>
+    <ul>
+      <li><strong>Fabinho for Casemiro</strong> in midfield — Casemiro lost over half his 13 duels vs Morocco and was bypassed for their goal; Ancelotti wants more legs and control at the base.</li>
+      <li><strong>Douglas Santos for Alex Sandro</strong> at left-back, and Danilo pushing in at the back — tightening the full-back zones that Morocco exploited.</li>
+      <li><strong>Luiz Henrique &amp; Matheus Cunha pushing in</strong> for Paquetá and Igor Thiago up front — Thiago missed presentable chances last time; Cunha offers a sharper, more mobile focal point.</li>
+      <li><strong>Neymar is OUT again</strong> — still not recovered, training largely alone; he remains at the team hotel. The creative burden stays with Vinícius and Raphinha.</li>
+      <li><strong>Vinícius Jr</strong> — scorer of the stunning equaliser vs Morocco, and as SI put it, "as long as Brazil have Vini Jr, it has a chance to win any match." He just needs to stay involved for longer spells.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-3-3): Alisson; Danilo, Marquinhos, Gabriel, D. Santos; Fabinho, B. Guimarães, L. Henrique; Raphinha, Cunha, Vinícius Jr.</p>
+  </div>
+
+  <div class="card haiti">
+    <h3 style="margin-top:0">🇭🇹 Haiti — the deep block</h3>
+    <ul>
+      <li><strong>At a World Cup for the first time in 52 years</strong> and competitive in a narrow 1-0 loss to Scotland — they will take heart from that and defend for their lives.</li>
+      <li><strong>The plan is obvious:</strong> a deep, compact 4-4-2, throw bodies in front of everything, and hope to frustrate a Brazil side that already looked blunt once. A point would be historic; they have nothing to lose.</li>
+      <li><strong>Genuine transition speed</strong> is their one weapon — if Brazil's high full-backs over-commit, Haiti can spring a rare counter, the exact pattern that troubled Brazil against Morocco.</li>
+      <li>History is brutal — Haiti have conceded 17 in three previous meetings, including a 7-1 in 2016 — but a deep block in a one-off World Cup game is a different proposition.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-4-2): Placide; Arcus, Adé, Delcroix, Expérience; Deedson, Jacques, Bellegarde, Providence; Isidor, Pierrot.</p>
+  </div>
+
+  <h2><span class="ic">🔍</span> The Two Lessons of the Morocco Draw</h2>
+  <p>Brazil's opener exposed two specific, fixable failings that Haiti's block will test all over again. <strong>One:</strong> a flat double pivot that got split and offered no protection, leaving Vinícius and Raphinha isolated and the team disjointed. <strong>Two — the bigger one against a low block:</strong> when the wingers got to the byline, the penalty box was empty, and a misfiring focal point (Igor Thiago) spurned the few chances that came. Brazil created enough to win and didn't finish. Here are the two adjustments that turn that blunt display into a convincing one.</p>
+
+  <h2><span class="ic">🔧</span> Improvement 1 — A staggered midfield &amp; a true progressor (control the block)</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Brazil · Fix 1</span><span class="mt">Fabinho anchors, Bruno freed to break lines</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · a triangle, not a flat line — break the block through the centre</text>
+
+      <!-- Haiti block -->
+      <g>
+        <circle cx="260" cy="120" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="340" cy="108" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="420" cy="108" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="500" cy="120" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="305" cy="175" r="10" fill="#15306f" stroke="#fff" stroke-width="1"/>
+        <circle cx="380" cy="178" r="10" fill="#15306f" stroke="#fff" stroke-width="1"/>
+        <circle cx="455" cy="175" r="10" fill="#15306f" stroke="#fff" stroke-width="1"/>
+        <text x="380" y="148" text-anchor="middle" font-size="10" fill="#a9c0ee">deep, compact 4-4-2</text>
+      </g>
+
+      <!-- Brazil staggered triangle -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="320" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="360" y="324" fill="#06301d">FAB</text><text x="360" y="302" fill="#bff0d5" font-size="9">anchor</text></g>
+        <g><circle cx="255" cy="250" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="255" y="254">BRU</text><text x="255" y="234" fill="#fff" font-size="8">freed higher</text></g>
+        <g><circle cx="465" cy="250" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="465" y="254">L.H</text></g>
+        <!-- forwards pinning -->
+        <g><circle cx="150" cy="200" r="11" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text x="150" y="204">VIN</text></g>
+        <g><circle cx="570" cy="200" r="11" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text x="570" y="204">RAP</text></g>
+      </g>
+
+      <!-- triangle screen lines -->
+      <path d="M360 306 L262 262" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+      <path d="M360 306 L458 262" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+      <ellipse cx="360" cy="318" rx="115" ry="46" fill="#39d98a" opacity="0.10"/>
+      <!-- Bruno line-breaking pass -->
+      <path d="M262 238 C 280 200, 300 170, 330 150" stroke="#ffdf00" stroke-width="3.5" fill="none" marker-end="url(#aY)"/>
+      <text x="360" y="200" text-anchor="middle" font-size="10" fill="#fff3b0">Bruno receives, breaks the line</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Screening triangle</span>
+      <span><i style="border-top-color:#ffdf00"></i> Line-breaking pass</span>
+    </div>
+
+    <p class="expl"><strong>The midfield fix.</strong> Against Morocco, two flat pivots were split and offered no protection. The change — <strong>Fabinho dropping in as a genuine lone anchor</strong> with <strong>Bruno Guimarães freed to play higher</strong> and Luiz Henrique staggered alongside — forms a triangle rather than a flat line. Two benefits at once: it screens the central lane Haiti would counter through, <em>and</em> it releases Brazil's best progressor (Bruno) from babysitting the base so he can receive between the lines and slide the line-breaking passes that unlock a deep block. Control and penetration from the same tweak. Casemiro's struggles (over half his duels lost) made this an easy call for Ancelotti.</p>
+  </div>
+
+  <h2><span class="ic">🔧</span> Improvement 2 — Fill the box: a real No.9 &amp; bodies on the cut-back</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Brazil · Fix 2</span><span class="mt">Cunha occupies the six-yard space; runners attack the cut-back</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="aG2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · Vini's cut-back now finds bodies, not an empty box</text>
+
+      <!-- Haiti defenders packed -->
+      <g>
+        <circle cx="280" cy="90" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="78" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="90" r="11" fill="#1c3f94" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="60" text-anchor="middle" font-size="9" fill="#a9c0ee">defenders ball-watching the winger</text>
+      </g>
+
+      <!-- Vini wide left carrying -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="120" cy="200" r="13" fill="#ffdf00" stroke="#fff" stroke-width="1.5"/><text x="120" y="204">VIN</text></g>
+        <!-- Cunha near post -->
+        <g><circle cx="320" cy="130" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="320" y="134" fill="#06301d">CUN</text><text x="320" y="152" fill="#bff0d5" font-size="9">near post 9</text></g>
+        <!-- Raphinha back post -->
+        <g><circle cx="430" cy="135" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="430" y="139" fill="#06301d">RAP</text><text x="430" y="157" fill="#bff0d5" font-size="9">back post</text></g>
+        <!-- Bruno late edge -->
+        <g><circle cx="360" cy="215" r="11" fill="#5aa0e6" stroke="#fff" stroke-width="1.3"/><text x="360" y="219" fill="#06223f">BRU</text><text x="360" y="237" fill="#bcd9f6" font-size="9">late, edge of box</text></g>
+      </g>
+
+      <!-- Vini carry to byline -->
+      <path d="M132 192 C 170 150, 210 120, 250 100" stroke="#ffdf00" stroke-width="4" fill="none" marker-end="url(#aY2)"/>
+      <!-- cutback to near post -->
+      <path d="M255 102 C 285 110, 300 122, 308 128" stroke="#ffdf00" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)"/>
+      <!-- alt cutback back post -->
+      <path d="M250 108 C 320 140, 380 142, 418 140" stroke="#ffdf00" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)" opacity=".8"/>
+      <!-- runners arriving -->
+      <path d="M320 144 C 322 120, 328 105, 335 90" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG2)"/>
+      <path d="M360 204 C 358 175, 352 150, 348 130" stroke="#5aa0e6" stroke-width="3" fill="none" marker-end="url(#aG2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf00"></i> Vini carry / cut-back options</span>
+      <span><i style="border-top-color:#39d98a"></i> Box runners (9 + back post)</span>
+      <span><i style="border-top-color:#5aa0e6"></i> Late midfield runner</span>
+    </div>
+
+    <p class="expl"><strong>The decisive fix against a low block.</strong> Brazil's biggest failing vs Morocco wasn't creating chances — it was that <strong>the box was empty</strong> when Vinícius and Raphinha reached the byline, and Igor Thiago spurned what little came. The cure is bodies: <strong>Matheus Cunha as a sharper, more mobile No.9 attacking the near post</strong>, a second forward (Raphinha drifting in) at the back post, and <strong>Bruno Guimarães timing a late arrival at the edge of the area</strong> on every wide entry. That converts Vinícius's relentless 1v1 dribbling — Brazil's single biggest weapon — into actual goals instead of cut-backs to nobody. Against a packed Haiti defence that will concede the wide areas, getting Vini and Raphinha isolated 1v1 and then <em>filling the six-yard box</em> is the whole game. Take the early chances, and a frustrating afternoon becomes a rout.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Watch-Points</h2>
+  <ul>
+    <li><strong>Patience vs frustration</strong> — if the breakthrough is slow, the memory of the Morocco draw could creep in and tighten Brazilian limbs. An early goal changes everything.</li>
+    <li><strong>Vinícius Jr</strong> — Brazil's match-winner. He needs to stay involved for longer spells rather than drifting out of games.</li>
+    <li><strong>Matheus Cunha's finishing</strong> — if he takes his early chances where Igor Thiago didn't, this could be the confidence-restoring rout Brazil need.</li>
+    <li><strong>Transition discipline</strong> — Haiti's one weapon is the counter; Brazil's high full-backs and the new pivot must not gift them the break that Morocco found.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>On paper it should not be close: Brazil are a class above, stung by the Morocco draw, and should arrive determined to make a statement against a side ranked outside the top 80. The only real danger is psychological — a slow start against a deep, organised block inviting the same frustration that blunted them in the opener. But with Ancelotti's changes adding control and a genuine box presence, and with Vinícius capable of deciding any match on his own, expect Brazil to find the breakthrough and then pull clear. Take the early chances, and the floodgates open.</p>
+    <div class="scoreline">🇧🇷 Brazil 3 — 0 Haiti</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a patient first 25 minutes, then Brazil's quality and a filled penalty box break the block — a confidence-restoring win. A nervy, narrow 1-0 is the downside if the finishing misfires again.</p>
+  </div>
+
+</div>
+</body>
+</html>

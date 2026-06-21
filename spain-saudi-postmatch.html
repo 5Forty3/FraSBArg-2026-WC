@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 4-0 Saudi Arabia — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#c60b1e;--espy:#ffc400;--sau:#1c7a3e;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .e{color:#ff6470}.scoreboard .s{color:#5fd49b}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#ff8e95}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff6470}.stat .v .s{color:#5fd49b}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--green);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .star{color:var(--espy);font-weight:700}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(57,217,138,.13);color:var(--green);border-color:#1f4533">Group H · Matchday 2 · FT</span>
+  </div>
+  <h1>Spain vs Saudi Arabia — The Champions Click Into Gear</h1>
+
+  <div class="scoreboard">
+    <span class="t e">🇪🇸 Spain</span>
+    <span class="sc">4 – 0</span>
+    <span class="t s">Saudi Arabia 🇸🇦</span>
+  </div>
+  <div class="meta">📍 Mercedes-Benz Stadium, Atlanta · Group H · Full-time</div>
+  <div class="scorers">⚽ <b>Yamal 10'</b> · <b>Oyarzabal 21', 24'</b> · <b>Al-Tambakti 49' (OG)</b> — qualification sealed</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Shots</div><div class="v"><span class="e">20</span> · <span class="s">3</span></div></div>
+    <div class="stat"><div class="l">On target</div><div class="v"><span class="e">9</span> · <span class="s">1</span></div></div>
+    <div class="stat"><div class="l">First 24 min</div><div class="v"><span class="e">3</span> goals 🔥</div></div>
+    <div class="stat"><div class="l">Simón saves needed</div><div class="v">~0 🧤</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">The response in full: a clinical, swaggering performance. Saudi's lone shot on target was a tame late effort — Unai Simón was a spectator.</p>
+
+  <h2><span class="ic">🧭</span> The Story — From Frustration to Statement</h2>
+  <p class="lead">If the Cape Verde draw asked every question about Spain, this answered them in 24 minutes. La Roja were <strong>clinical, technically immaculate, and looked every inch champions</strong> — the first half-hour, three goals and all, was the most dominant spell any side has produced at this World Cup. They <em>toyed</em> with Saudi Arabia, winning every loose ball and making the elite look effortless. The single change that unlocked everything was the one the opener demanded: <strong>De la Fuente bet on dribblers and width.</strong> Starting <strong>Yamal, with Dani Olmo and Álex Baena providing genuine width</strong>, fixed the central congestion that plagued Match 1 — where Pedri, Gavi, Torres and the rest had all crowded the same pockets playing the same way. This time the pitch was stretched, the lanes were defined, and the quality poured through.</p>
+
+  <div class="callout">
+    <div class="t">✅ Every pre-match fix, delivered</div>
+    <p style="margin:8px 0 0">The prescription was exact, and so was the execution. <strong>Start the game-breakers</strong> → Yamal started and scored his first World Cup goal inside 10 minutes, drawing up to three markers all game. <strong>Width instead of central congestion</strong> → Olmo and Baena stretched the field, with Olmo outstanding in a central role. <strong>Fill the box / find a poacher</strong> → Mikel Oyarzabal answered the years-old "no true No.9" question with a clinical brace and an assist, Player of the Match. From 27 shots and 0 goals to 20 shots and 4 goals — the dam didn't just break, it burst.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (10') — Yamal's first World Cup goal</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Spain · 1-0</span><span class="mt">Oyarzabal's cross, Yamal arrives</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · the poacher turns provider for the teenager</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="44" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.3"/><text x="360" y="48">OWA</text></g>
+        <circle cx="300" cy="120" r="10" fill="#155e30" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="420" cy="120" r="10" fill="#155e30" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Oyarzabal wide left crossing -->
+        <g><circle cx="160" cy="180" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="160" y="184" fill="#06301d">OYA</text><text x="160" y="204" fill="#bff0d5" font-size="9">the cross</text></g>
+        <!-- Yamal arriving from the right -->
+        <g><circle cx="470" cy="180" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="470" y="184">YAM</text><text x="470" y="202" fill="#fff" font-size="9">arrives &amp; finishes</text></g>
+      </g>
+
+      <!-- Oyarzabal cross -->
+      <path d="M172 172 C 260 130, 360 110, 448 130" stroke="#39d98a" stroke-width="3.5" stroke-dasharray="9 6" fill="none" marker-end="url(#aG)"/>
+      <!-- Yamal run + finish -->
+      <path d="M468 166 C 460 130, 450 90, 430 50" stroke="#ffc400" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aY)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Oyarzabal cross</span>
+      <span><i style="border-top-color:#ffc400"></i> Yamal run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The fix made flesh inside ten minutes.</strong> The roles were a perfect inversion of the team's identity crisis: the striker became the creator and the winger the finisher. Oyarzabal delivered the cross from the left, and <strong>Lamine Yamal arrived to score his first-ever World Cup goal</strong> at just 18 — the spark Spain had been crying out for. With Saudi defending deep and offering space, and Olmo/Baena stretching the pitch, Yamal had room to attack the back post rather than being swallowed in traffic. The early goal calmed every Spanish nerve and opened the floodgates — a world away from the anxious, goalless probing against Cape Verde.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (21') — Oyarzabal, the poacher's instinct</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Spain · 2-0</span><span class="mt">Laporte keeps it alive, Oyarzabal pounces</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aB2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · a scramble kept alive, finished from close range</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="44" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.3"/><text x="360" y="48">OWA</text></g>
+        <circle cx="300" cy="95" r="10" fill="#155e30" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="420" cy="95" r="10" fill="#155e30" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Laporte keeping it alive wide -->
+        <g><circle cx="520" cy="180" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.3"/><text x="520" y="184" fill="#06223f">LAP</text><text x="520" y="202" fill="#bcd9f6" font-size="9">keeps it alive</text></g>
+        <!-- Oyarzabal close range -->
+        <g><circle cx="360" cy="135" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="360" y="139">OYA</text><text x="360" y="157" fill="#fff" font-size="9">close-range finish</text></g>
+      </g>
+
+      <!-- Laporte ball back in -->
+      <path d="M508 172 C 450 150, 410 142, 378 138" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aB2)"/>
+      <!-- Oyarzabal finish -->
+      <path d="M360 121 C 360 95, 360 70, 360 36" stroke="#ffc400" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aY2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Laporte keeps the attack alive</span>
+      <span><i style="border-top-color:#ffc400"></i> Oyarzabal close-range finish</span>
+    </div>
+
+    <p class="expl"><strong>The goal that answered Spain's oldest question.</strong> For years the great Spanish sides have lacked a true penalty-box predator. Here was the antidote: when Aymeric Laporte kept a Spanish attack alive in the box, <strong>Oyarzabal was perfectly positioned to finish from close range</strong> — the instinctive movement and clinical touch of a natural poacher. It's exactly the profile that was missing against Cape Verde, when crosses sailed into an empty area. Oyarzabal occupying the six-yard space, gambling on the loose ball, and converting without hesitation is the piece of the puzzle Spanish football has chased for a decade.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 (24') — Oyarzabal's volley off Olmo's header</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Spain · 3-0</span><span class="mt">Cucurella cross, Olmo's knockdown, Oyarzabal volleys home</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aB3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+        <marker id="aR3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · cross → Olmo header → Oyarzabal volley</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="44" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.3"/><text x="360" y="48">OWA</text></g>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Cucurella wide left -->
+        <g><circle cx="130" cy="200" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.3"/><text x="130" y="204" fill="#06223f">CUC</text><text x="130" y="222" fill="#bcd9f6" font-size="9">cross</text></g>
+        <!-- Olmo heads it down/across -->
+        <g><circle cx="410" cy="150" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="410" y="154" fill="#06301d">OLM</text><text x="410" y="172" fill="#bff0d5" font-size="9">header</text></g>
+        <!-- Oyarzabal volleys -->
+        <g><circle cx="300" cy="170" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="300" y="174">OYA</text><text x="300" y="192" fill="#fff" font-size="9">volley</text></g>
+      </g>
+
+      <!-- Cucurella cross -->
+      <path d="M142 192 C 230 145, 330 130, 398 142" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aB3)"/>
+      <!-- Olmo header to Oyarzabal -->
+      <path d="M398 156 C 370 165, 335 168, 314 169" stroke="#39d98a" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#aR3)"/>
+      <!-- Oyarzabal volley to goal -->
+      <path d="M306 157 C 320 120, 340 75, 356 38" stroke="#ffc400" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aY3)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Cucurella cross</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Olmo header</span>
+      <span><i style="border-top-color:#ffc400"></i> Oyarzabal volley</span>
+    </div>
+
+    <p class="expl"><strong>The pick of the three — and a showcase of the new width.</strong> This was the width fix scoring a goal: <strong>Marc Cucurella delivered from the left, Dani Olmo rose to head it across, and Oyarzabal volleyed home</strong> his second to make it 3-0 inside 24 minutes. Three things the opener lacked, all present at once — a genuine wide delivery, a body attacking the cross, and a finisher arriving with conviction. Olmo was exceptional in his central role all afternoon (he had a hand in two goals), the perfect link between Pedri's orchestration and Oyarzabal's finishing. This was the most dominant 24-minute spell of the tournament so far.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Performance Snapshot</h2>
+  <div class="ratings">
+    <div class="rt"><b>Mikel Oyarzabal</b> — <span class="star">Player of the Match</span>. Two goals and an assist. The opportunistic poacher Spain have lacked for a decade — and a clever creator who draws defenders to free others.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="star">Unplayable</span>. First World Cup goal, a constant right-side threat, drew up to three markers all game. Managed off at half-time with the job done.</div>
+    <div class="rt"><b>Dani Olmo</b> — <span class="good">Exceptional</span>. Outstanding in the central role, involved in two goals, the link that made the front line flow.</div>
+    <div class="rt"><b>Pedri</b> — <span class="good">Chief orchestrator</span>. Back to his best, controlling the tempo and stringing together 20+ pass sequences in the Saudi third.</div>
+    <div class="rt"><b>Álex Baena</b> — <span class="good">Width &amp; set-pieces</span>. Provided the genuine left-side width missing in Match 1; his corner led to the fourth.</div>
+    <div class="rt"><b>Unai Simón</b> — <span class="good">A spectator</span>. Untested across two games; Saudi's only shot on target was a tame late effort. The defence remains unbreached.</div>
+  </div>
+
+  <h2><span class="ic">🔧</span> Future Tactic 1 — Keep this shape, but tested by a real opponent</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · Future 1</span><span class="mt">Width + a poacher vs a side that won't gift space</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · keep the lanes defined: wingers wide, ONE No.10, a fixed 9</text>
+
+      <!-- compact disciplined block (Uruguay-style) -->
+      <g>
+        <circle cx="270" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="350" cy="100" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="430" cy="100" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="510" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="165" r="10" fill="#666" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="165" r="10" fill="#666" stroke="#fff" stroke-width="1"/>
+        <text x="390" y="140" text-anchor="middle" font-size="9" fill="#bbb">disciplined block — won't leave gaps</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="610" cy="240" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="610" y="244">YAM</text><text x="610" y="262" fill="#fff" font-size="8">stays wide R</text></g>
+        <g><circle cx="110" cy="240" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="110" y="244">NIC</text><text x="110" y="262" fill="#fff" font-size="8">stays wide L</text></g>
+        <g><circle cx="360" cy="255" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.4"/><text x="360" y="259" fill="#06223f">OLM</text><text x="360" y="277" fill="#bcd9f6" font-size="8">the ONE No.10</text></g>
+        <g><circle cx="360" cy="150" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="360" y="154" fill="#06301d">OYA</text><text x="360" y="132" fill="#bff0d5" font-size="8">fixed 9, gambles</text></g>
+      </g>
+
+      <!-- service from width -->
+      <path d="M598 232 C 520 200, 460 175, 408 158" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY4)"/>
+      <path d="M122 232 C 200 200, 260 175, 312 158" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY4)"/>
+      <path d="M360 242 C 360 215, 360 190, 360 166" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG4)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Width → service</span>
+      <span><i style="border-top-color:#39d98a"></i> The fixed No.9 attacks it</span>
+    </div>
+
+    <p class="expl"><strong>The blueprint is found — now protect it.</strong> The lesson of these two games is stark: the shape that produced 0 goals and the shape that produced 4 differ only in <em>discipline of roles</em>. Spain must keep this structure — <strong>wingers genuinely wide (Yamal right, Nico/Williams left), one designated No.10 (Olmo), and a fixed poacher (Oyarzabal) gambling in the box</strong> — rather than drifting back to four players in the same central pocket. The honest caveat: Saudi <em>gifted</em> Spain space by attacking and defending too high. Uruguay won't. Bielsa's side will be compact and aggressive, and the width-plus-poacher pattern will have to break a disciplined block that doesn't hand over the lanes. The personnel now fit the problem; the next test is whether the pattern works when space must be <em>created</em>, not merely <em>found</em>.</p>
+  </div>
+
+  <h2><span class="ic">⏳</span> Future Tactic 2 — Manage Yamal's minutes &amp; sharpen the second-half tempo</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · Future 2</span><span class="mt">Don't let the game go flat when the stars rest</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="420" rx="10" fill="#0d1320"/>
+      <text x="360" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#e8edf4">Tempo profile — keep intensity after the rotations</text>
+
+      <!-- timeline -->
+      <line x1="70" y1="300" x2="660" y2="300" stroke="#26303f" stroke-width="2"/>
+      <text x="70" y="320" font-size="10" fill="#8b97a8">0'</text>
+      <text x="350" y="320" font-size="10" fill="#8b97a8">HT (Yamal off)</text>
+      <text x="630" y="320" font-size="10" fill="#8b97a8">90'</text>
+
+      <!-- first-half high intensity bars -->
+      <g>
+        <rect x="80" y="120" width="26" height="180" rx="3" fill="#39d98a"/>
+        <rect x="116" y="100" width="26" height="200" rx="3" fill="#39d98a"/>
+        <rect x="152" y="110" width="26" height="190" rx="3" fill="#39d98a"/>
+        <rect x="188" y="130" width="26" height="170" rx="3" fill="#39d98a"/>
+        <rect x="224" y="150" width="26" height="150" rx="3" fill="#39d98a"/>
+        <rect x="260" y="170" width="26" height="130" rx="3" fill="#5fd49b"/>
+        <rect x="296" y="185" width="26" height="115" rx="3" fill="#5fd49b"/>
+        <text x="200" y="92" text-anchor="middle" font-size="11" fill="#39d98a" font-weight="800">3 goals · ruthless</text>
+      </g>
+      <!-- second half lower -->
+      <g>
+        <rect x="370" y="225" width="26" height="75" rx="3" fill="#e9b949"/>
+        <rect x="406" y="235" width="26" height="65" rx="3" fill="#e9b949"/>
+        <rect x="442" y="240" width="26" height="60" rx="3" fill="#e9b949"/>
+        <rect x="478" y="245" width="26" height="55" rx="3" fill="#e9b949"/>
+        <rect x="514" y="248" width="26" height="52" rx="3" fill="#e9b949"/>
+        <rect x="550" y="250" width="26" height="50" rx="3" fill="#e9b949"/>
+        <rect x="586" y="252" width="26" height="48" rx="3" fill="#e9b949"/>
+        <text x="490" y="210" text-anchor="middle" font-size="11" fill="#e9b949" font-weight="800">pace dropped, game went flat</text>
+      </g>
+
+      <!-- note box -->
+      <rect x="70" y="346" width="590" height="56" rx="10" fill="#16110a" stroke="#3a2f12"/>
+      <text x="86" y="368" font-size="11.5" fill="#e4ddc9">Smart to rest Yamal (can't yet do 90) &amp; Oyarzabal with the game won — but vs Uruguay,</text>
+      <text x="86" y="386" font-size="11.5" fill="#e4ddc9">the bench (Nico, Merino, Pino, Fabián) must sustain intensity, not let the tempo sag.</text>
+    </svg>
+
+    <p class="expl"><strong>The one refinement from a near-perfect day.</strong> Once Spain hit four and rotated — Yamal and Oyarzabal off, Nico Williams, Merino and Pino on — <strong>the tempo noticeably dropped and the game went flat.</strong> Against Saudi that was harmless game-management; the points were long secure. But two things to carry forward: first, <strong>Yamal still can't complete 90 minutes</strong>, so the half-time hook will recur, and Spain must learn to sustain their level without him for spells — crucial in a knockout when he might be needed late. Second, the <strong>second-string must keep the intensity up</strong> rather than coasting, because against Uruguay (or in a tight knockout) there'll be no comfortable lead to coast on. The depth is there — Nico Williams shifting Cucurella into a midfield role created overloads even late — but the <em>habit</em> of relentlessness for 90 minutes is the final piece. A brilliant day; this is the fine-tuning.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next</h2>
+  <p>Qualification to the Round of 32 is sealed, the attacking blueprint is found, and the defence still hasn't conceded — or barely been tested — across two games. Spain top Group H and head into the final-day decider against <strong>Bielsa's Uruguay</strong> likely playing for top spot. That is a different animal entirely: organised, intense, and unwilling to gift the space Saudi did. It's the perfect examination of whether this clinical new Spain can break a disciplined block as easily as they punished a passive one. On today's evidence — Yamal flying, Oyarzabal finally giving them a killer, Olmo and Pedri purring — La Roja look every bit the champions they were billed as.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Group H · qualified</div><div class="g">Spain into Round of 32</div><div class="n">Top of the group; the Uruguay result decides final seeding and the knockout path.</div></div>
+    <div class="nx"><div class="d">Fri 26 Jun · MD3</div><div class="g">Uruguay vs Spain</div><div class="n">The group decider. Bielsa's intensity &amp; compact block — the real test of Spain's width-and-poacher blueprint.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>From the frustration of Cape Verde to a swaggering statement: Spain were <strong>clinical, technically immaculate, and looked like champions.</strong> Every fix the opener demanded was delivered — Yamal started and scored, Olmo and Baena gave the team width, and in Oyarzabal, Spain may finally have found the opportunistic No.9 that has eluded them for a generation. The 3-0 in 24 minutes was the tournament's most dominant spell. The only caveats are honest ones: Saudi gifted the space, and the tempo sagged once the stars rested. Uruguay will gift nothing. But the blueprint is found, the poacher has arrived, and the defence is yet to be breached — Spain are well and truly up and running.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Saudi Arabia — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#c60b1e;--espy:#ffc400;--sau:#1c7a3e;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .e{background:linear-gradient(135deg,#2a0e12,#160d0e)}
+  .vsbar .s{background:linear-gradient(135deg,#0e2417,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .e .nm{color:#ff6470}.vsbar .s .nm{color:#5fd49b}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.spain{border-left:3px solid var(--espy)}
+  .card.saudi{border-left:3px solid var(--sau)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+
+  .bench{background:linear-gradient(135deg,#1a1206,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px;margin:14px 0}
+  .bench .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .bench .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:560px){.bench .grid{grid-template-columns:repeat(2,1fr)}}
+  .bench .b{background:#0d141d;border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center}
+  .bench .b .n{font-size:11px;color:var(--muted);text-transform:uppercase}
+  .bench .b .v{font-size:20px;font-weight:800;color:#fff;margin-top:3px}
+  .bench .b .x{font-size:11px;color:var(--red);margin-top:2px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.dng{background:rgba(28,122,62,.22);color:#5fd49b}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group H · Matchday 2</span>
+  </div>
+  <h1>Spain vs Saudi Arabia</h1>
+  <div class="sub">Must-win after the Cape Verde shock — and this time, the game-breakers start</div>
+  <div class="meta">🕒 9:30 PM IST, Sun 21 Jun · 📍 Mercedes-Benz Stadium, Atlanta (climate-controlled dome)</div>
+
+  <div class="vsbar">
+    <div class="side e"><div class="nm">🇪🇸 Spain</div><div class="fm">4-3-3 · De la Fuente · Euro 2024 champions · must win</div></div>
+    <div class="mid">VS</div>
+    <div class="side s"><div class="nm">Saudi Arabia 🇸🇦</div><div class="fm">deep 4-4-2 · Donis · "Green Falcons" · the Vozinha blueprint</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">📊 Group H after MD1 — all four level on 1 point</div>
+    <p style="margin:8px 0 0">Spain's stunning 0-0 with Cape Verde left them <strong>bottom of a four-way tie</strong> (Saudi Arabia, Uruguay, Cape Verde and Spain all on a single point). With Bielsa's Uruguay still to come on the final day, this is now a <strong>must-win</strong>: four points from the next two games would likely secure qualification. The pressure on the pre-tournament favourites is real — and after watching a 40-year-old keeper deny them, Saudi's Al-Owais "will certainly be channeling his inner Vozinha."</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News — The Big Change Spain Needed</h2>
+  <p class="lead">Our Cape Verde post-match verdict was blunt: <em>start the game-breakers, field a real box presence, play through the block not around it.</em> De la Fuente has listened on the most important point — <strong>both Lamine Yamal and Nico Williams are set to START</strong>, the exact change the performance demanded. The two wide threats who turned the opener the moment they came on now begin together for the first time at this World Cup.</p>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — the changes</h3>
+    <ul>
+      <li><strong>Yamal STARTS</strong> — confirmed ready from the first whistle, though "still not able to complete a full 90," so expect him managed off around the hour. In just 20 minutes off the bench vs Cape Verde he had 5 dribbles and 2 shots — Spain's only spark.</li>
+      <li><strong>Nico Williams STARTS</strong> too — pace and directness on the left, attacking the opposite flank to Yamal so Saudi can't double up on one side.</li>
+      <li><strong>Ferran Torres &amp; Gavi drop out</strong> — neither "covered themselves in glory" vs Cape Verde. Oyarzabal continues at striker (the man who memorably went 30 minutes without a touch in the opener, but carries real goal threat — 6 goals in 5 of his last 6 qualifiers).</li>
+      <li><strong>Midfield unchanged &amp; elite:</strong> Rodri, Pedri, Fabián Ruiz — the engine that must finally turn possession into penetration. Merino is nursing a knock; Víctor Muñoz is out (hamstring).</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-3-3): Simón; Llorente, Cubarsí, Laporte, Cucurella; Fabián Ruiz, Rodri, Pedri; Yamal, Oyarzabal, N. Williams.</p>
+  </div>
+
+  <div class="card saudi">
+    <h3 style="margin-top:0">🇸🇦 Saudi Arabia — the deep block, again</h3>
+    <ul>
+      <li><strong>A battling 1-1 draw with Uruguay</strong> (they led until late) — satisfied with their tournament so far, and likely unchanged.</li>
+      <li><strong>The plan is pure containment:</strong> just 33% possession and 3 shots on target vs Uruguay; they generated a microscopic 0.06 xG in the second half. Shrink the pitch, deny Spain access, survive.</li>
+      <li><strong>Salem Al-Dawsari</strong> is their one real counter-attacking danger — Spain must respect transitions if they over-commit, but Saudi rarely threaten sustained pressure.</li>
+      <li>Sobering record: Saudi Arabia have <strong>lost 9 straight World Cup matches to UEFA sides, 8 of them to nil.</strong> The blueprint is to make it ugly and steal a point.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Probable XI (4-4-2): Al-Owais; Abdulhamid, Al-Amri, Al-Tambakti, Al-Harbi; Abu Al-Shamat, Kanno, Al-Khaibari, S. Al-Dawsari; Al-Brikan, Al-Juwayr.</p>
+  </div>
+
+  <h2><span class="ic">📐</span> The Match 1 Benchmark — What Must Change</h2>
+  <p>Spain didn't lack chances against Cape Verde; they lacked <em>cutting edge</em>. The numbers are a portrait of dominance without a finish — and they are the benchmark every improvement today is measured against.</p>
+  <div class="bench">
+    <div class="t">📊 Cape Verde (MD1) — the dominance-without-a-goal fingerprint</div>
+    <div class="grid">
+      <div class="b"><div class="n">Possession</div><div class="v">74%</div></div>
+      <div class="b"><div class="n">Shots</div><div class="v">27</div></div>
+      <div class="b"><div class="n">xG</div><div class="v">2.29</div></div>
+      <div class="b"><div class="n">Goals</div><div class="v">0</div><div class="x">the problem</div></div>
+    </div>
+    <p style="margin:12px 0 0;font-size:14px;color:#e4ddc9">27 shots and 2.29 xG without scoring — and that was <em>without</em> Yamal and Williams for 70 minutes. The dam was always likely to burst once the dribblers started. The three fixes the opener demanded: <strong>(1)</strong> start the 1v1 game-breakers, <strong>(2)</strong> fill the penalty box on cut-backs, <strong>(3)</strong> add verticality so the build-up isn't a predictable sideways "U".</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Improvement 1 — Start Yamal &amp; Nico: attack both touchlines at once</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · Fix 1</span><span class="mt">Two 1v1 threats stretch a block that can't double both</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Saudi must choose which winger to double</text>
+
+      <!-- Saudi block -->
+      <g>
+        <circle cx="250" cy="120" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="330" cy="108" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="410" cy="108" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="490" cy="120" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="300" cy="175" r="10" fill="#155e30" stroke="#fff" stroke-width="1"/>
+        <circle cx="380" cy="178" r="10" fill="#155e30" stroke="#fff" stroke-width="1"/>
+        <circle cx="455" cy="175" r="10" fill="#155e30" stroke="#fff" stroke-width="1"/>
+        <text x="380" y="148" text-anchor="middle" font-size="10" fill="#a9e0bc">compact 4-4-2</text>
+      </g>
+
+      <!-- Yamal wide right (inverted), Nico wide left -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="610" cy="245" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="610" y="249">YAM</text><text x="610" y="270" fill="#fff" font-size="9">Yamal</text></g>
+        <g><circle cx="110" cy="245" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="110" y="249">NIC</text><text x="110" y="269" fill="#fff" font-size="9">N.Williams</text></g>
+        <g><circle cx="365" cy="245" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="365" y="249">OYA</text></g>
+        <g><circle cx="650" cy="330" r="11" fill="#e0ad00" stroke="#fff" stroke-width="1.2"/><text x="650" y="334">RB</text></g>
+      </g>
+
+      <!-- double team drawn to Yamal -->
+      <path d="M495 132 C 540 165, 575 200, 600 228" stroke="#fff" stroke-width="2" stroke-dasharray="4 5" fill="none" opacity=".5"/>
+      <path d="M455 182 C 520 205, 575 215, 595 232" stroke="#fff" stroke-width="2" stroke-dasharray="4 5" fill="none" opacity=".5"/>
+      <text x="600" y="200" font-size="9" fill="#fff3b0">doubled here...</text>
+      <!-- ...so Nico is 1v1 on the far side -->
+      <text x="150" y="200" font-size="9" fill="#fff3b0">...so Nico is 1v1 here</text>
+      <!-- Yamal cuts in -->
+      <path d="M598 235 C 560 200, 510 165, 460 150" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aY)"/>
+      <!-- switch to Nico -->
+      <path d="M598 250 C 420 300, 240 295, 128 258" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="6 6" fill="none" marker-end="url(#aG)" opacity=".85"/>
+      <!-- Nico drives -->
+      <path d="M122 232 C 140 195, 165 165, 195 148" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aY)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Winger 1v1 drive</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Switch of play</span>
+    </div>
+
+    <p class="expl"><strong>The single most important change.</strong> As RotoWire put it: "Spain's most direct route to a goal is Yamal isolating his full-back... Saudi have to double up on him without leaving Nico Williams one-on-one on the other side — and that is a difficult balance to strike for ninety minutes." That is the entire point of starting both. <strong>Yamal</strong> is a left-footed inverted right winger who manufactures space 1v1 against any block; <strong>Nico Williams</strong> is raw pace and directness on the left. With both on the pitch, Saudi cannot collapse onto one flank — double Yamal and a quick switch frees Nico in space; respect Nico and Yamal cuts inside to shoot or thread the killer ball. Against Cape Verde, Spain attacked with no touchline 1v1 threat for 70 minutes; today they have two of the world's best from the first whistle.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> Improvement 2 — Fill the box &amp; play vertical (don't just pass it sideways)</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · Fix 2</span><span class="mt">Bodies on the cut-back + Pedri's vertical penetration</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aB2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Yamal's cut-back finally finds bodies, not an empty box</text>
+
+      <!-- Saudi packed box -->
+      <g>
+        <circle cx="280" cy="90" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="78" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="90" r="11" fill="#1c7a3e" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="60" text-anchor="middle" font-size="9" fill="#a9e0bc">deep, ball-watching the winger</text>
+      </g>
+
+      <!-- Yamal carrying right -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="200" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="600" y="204">YAM</text></g>
+        <!-- Oyarzabal near post -->
+        <g><circle cx="400" cy="130" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="400" y="134" fill="#06301d">OYA</text><text x="400" y="152" fill="#bff0d5" font-size="9">near post 9</text></g>
+        <!-- Nico back post -->
+        <g><circle cx="300" cy="135" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="300" y="139" fill="#06301d">NIC</text><text x="300" y="157" fill="#bff0d5" font-size="9">back post</text></g>
+        <!-- Pedri late edge -->
+        <g><circle cx="360" cy="215" r="11" fill="#5aa0e6" stroke="#fff" stroke-width="1.3"/><text x="360" y="219" fill="#06223f">PED</text><text x="360" y="237" fill="#bcd9f6" font-size="9">late, edge of box</text></g>
+      </g>
+
+      <!-- Yamal carry to byline -->
+      <path d="M588 192 C 550 150, 510 120, 460 100" stroke="#ffc400" stroke-width="4" fill="none" marker-end="url(#aY2)"/>
+      <!-- cutbacks -->
+      <path d="M460 102 C 430 110, 410 122, 405 128" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)"/>
+      <path d="M455 108 C 390 138, 340 140, 312 138" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)" opacity=".8"/>
+      <!-- runners -->
+      <path d="M400 144 C 402 120, 405 105, 408 90" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG2)"/>
+      <path d="M360 204 C 358 175, 352 150, 348 130" stroke="#5aa0e6" stroke-width="3" fill="none" marker-end="url(#aB2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Yamal carry / cut-back</span>
+      <span><i style="border-top-color:#39d98a"></i> Box runners (9 + back post)</span>
+      <span><i style="border-top-color:#5aa0e6"></i> Pedri late at the edge</span>
+    </div>
+
+    <p class="expl"><strong>The other half of the fix.</strong> Even with two great wingers, Spain must put <em>bodies in the box</em> — the very thing missing vs Cape Verde, where cut-backs found nobody. The pattern: when Yamal or Nico reaches the byline, <strong>Oyarzabal attacks the near post, the opposite winger arrives at the back post, and Pedri times a late run to the edge of the area</strong> for the cut-back. And to stop the build-up becoming the predictable sideways "U" of the opener, <strong>Pedri must be braver vertically</strong> — receiving on the half-turn in the pockets and sliding the line-breaking pass, while the threat of a shot from range forces Saudi to step out of their shell. Volume was never Spain's problem (27 shots); <em>quality of the final action</em> was. Fill the box, play forward, be clinical — and the 0-0 ghost is exorcised quickly.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Watch-Points</h2>
+  <ul>
+    <li><strong>The clock on Yamal</strong> — he can't yet do a full 90, so the first hour is when Spain must make it count before he's managed off.</li>
+    <li><strong>Oyarzabal's finishing</strong> — quiet vs Cape Verde, but a proven scorer. If Spain create early and he converts, nerves vanish.</li>
+    <li><strong>Transition discipline</strong> — Spain will throw caution forward; Al-Dawsari is Saudi's one outlet. Don't gift the counter that gives Saudi a famous point.</li>
+    <li><strong>Tempo &amp; patience</strong> — if the breakthrough is slow again, the Cape Verde memory could tighten Spanish legs. An early goal is everything.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Spain generated 27 shots and 2.29 xG <em>without</em> their two best attackers for most of the opener — now both start, against a Saudi side that has lost nine straight World Cup games to European opposition, eight to nil, and managed 0.06 xG in a half against Uruguay. The blueprint that frustrated Spain (a packed block plus an inspired keeper) is repeatable, but with Yamal and Williams from the first whistle and bodies in the box, the dam should burst this time. Expect Spain to be far more clinical and pull clear once the first goal arrives.</p>
+    <div class="scoreline">🇪🇸 Spain 3 — 0 Saudi Arabia</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a tense opening, then Yamal/Williams unlock it and Spain run out comfortable winners. A nervy 1-0 or another frustrating draw is the downside if the finishing misfires again — but the personnel finally fit the problem.</p>
+  </div>
+
+</div>
+</body>
+</html>

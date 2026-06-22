@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France vs Iraq — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#1a4fa0;--fra2:#3b82d6;--irq:#1c8a4e;--irqr:#d23c43;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#1c8a4e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .f{background:linear-gradient(135deg,#0e1a2e,#0d1117)}
+  .vsbar .i{background:linear-gradient(135deg,#0e2419,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .f .nm{color:#6aa3e6}.vsbar .i .nm{color:#5fd49b}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.france{border-left:3px solid var(--fra2)}
+  .card.iraq{border-left:3px solid var(--irq)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .record{background:linear-gradient(135deg,#0e1a2e,#0f1117);border:1px solid #1c3454;border-left:3px solid var(--fra2);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .record .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#6aa3e6}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:#6aa3e6}
+  .move .mtag.irq{background:rgba(28,138,78,.20);color:#5fd49b}
+  .move .mtag.duel{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group I · Matchday 2</span>
+  </div>
+  <h1>France vs Iraq</h1>
+  <div class="sub">The champions chase qualification &amp; Mbappé chases history — against the Lions of Mesopotamia's low block</div>
+  <div class="meta">🕒 2:30 AM IST, Tue 23 Jun · 📍 Lincoln Financial Field, Philadelphia</div>
+
+  <div class="vsbar">
+    <div class="side f"><div class="nm">🇫🇷 France</div><div class="fm">4-2-3-1 · Deschamps · co-favourites · 2018 champions, 2022 finalists</div></div>
+    <div class="mid">VS</div>
+    <div class="side i"><div class="nm">Iraq 🇮🇶</div><div class="fm">deep 4-4-2 · Graham Arnold · first WC since 1986 · "Lions of Mesopotamia"</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The stakes — one win from the last 32</div>
+    <p style="margin:8px 0 0">France beat Senegal 3-1 in a "group of death" opener and a win here <strong>seals Round-of-32 qualification with a game to spare.</strong> They currently sit second behind Norway only on goal difference, so a big scoreline matters with the likely Matchday-3 decider against Haaland's Norway looming. Iraq, back at a World Cup for the first time in 40 years, were beaten 4-1 by Norway and <strong>need a result to keep faint qualification hopes alive</strong> — but realistically face one of the tournament's tallest tasks.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">verify before kickoff</span></h2>
+  <p class="lead">These XIs are <strong>predicted, not yet confirmed</strong> — though there's strong agreement across outlets. The key theme: with qualification in sight against the group's weakest side, <strong>Deschamps is expected to make around three changes to rest legs for the knockouts</strong> — while crucially keeping the attacking combination that tore Senegal apart after half-time.</p>
+
+  <div class="card france">
+    <h3 style="margin-top:0">🇫🇷 France — the expected rotation</h3>
+    <ul>
+      <li><strong>Olise central, Dembélé wide, Barcola starting</strong> — the exact trio (behind Mbappé) that dismantled Senegal in the second half. Olise was Man of the Match in the opener and is in scintillating form; Barcola earned a start after his lively cameo and debut goal.</li>
+      <li><strong>~3 changes to rest legs:</strong> Lucas Digne in for Théo Hernández at left-back; <strong>Manu Koné likely for Tchouaméni</strong> (a World Cup debut) alongside Rabiot; Barcola in for Doué. All sources agree on the same three.</li>
+      <li><strong>Saliba "gritting his teeth"</strong> through long-standing niggles but expected to start; the Saliba-Upamecano pairing holds.</li>
+      <li><strong>Mbappé leads the line</strong> and chases history (see below). France have scored in 14 straight matches, multiple goals in 13 of them.</li>
+      <li><strong>The honest caveat:</strong> France have <em>not kept a clean sheet in six games</em> — Senegal exposed real defensive chinks. Even rotating, the back line must concentrate.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Maignan; Koundé, Saliba, Upamecano, Digne; Koné, Rabiot; Dembélé, Olise, Barcola; Mbappé. (Not yet confirmed.)</p>
+  </div>
+
+  <div class="card iraq">
+    <h3 style="margin-top:0">🇮🇶 Iraq — don't dismiss them entirely</h3>
+    <ul>
+      <li><strong>A compact, deep 4-4-2</strong> under Graham Arnold (the ex-Australia boss): stay narrow, protect the box, frustrate, and spring counters. The plan is "survival and opportunism."</li>
+      <li><strong>Aymen Hussein is the focal point</strong> — a physical target man (33 international goals) who scored Iraq's first World Cup goal in 40 years against Norway with a bullet header. His hold-up play and aerial threat are Iraq's route back into any game.</li>
+      <li><strong>Amir Al-Ammari</strong> is the key creator and outlet; Man Utd's <strong>Zidane Iqbal</strong> brings European pedigree in midfield. Ali Al-Hamadi (their other striker) is a fitness doubt.</li>
+      <li><strong>A note of defiance:</strong> Arnold has said Iraq "refuse to stay conservative" and will "engage" France rather than merely park the bus — which could make them braver (and more vulnerable) than a pure low block.</li>
+      <li>The warning sign: vs Norway they managed <em>no shots after the 63rd minute</em> as legs and structure faded. Discipline for 90 minutes is the challenge.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-4-2): Hassan; Hussein Ali, Tahseen, Hashim, Doski; Bayesh, Al-Ammari, Iqbal, Qasem; Al-Hamadi, A. Hussein. (Not yet confirmed.)</p>
+  </div>
+
+  <div class="record">
+    <div class="t">👑 Mbappé's date with history</div>
+    <p style="margin:8px 0 0">Against Senegal, Mbappé became <strong>France's all-time leading scorer (58 international goals), surpassing Giroud</strong>, and broke Just Fontaine's France World Cup record. Now he sits on <strong>14 World Cup goals — just two behind the all-time leaders, Messi and Klose (16).</strong> With Messi having moved to 18 in Argentina's win earlier today, the Mbappé-Messi duel for "greatest World Cup scorer of this era" is the tournament's great running subplot — and Iraq's porous defence (4 conceded vs Norway) is exactly the kind of opponent against which Mbappé feasts. He's scored in seven consecutive France games.</p>
+  </div>
+
+  <h2><span class="ic">♟️</span> The Central Problem — Breaking the Block, Punishing the Counter</h2>
+  <p>This is a classic favourite-vs-underdog tactical puzzle, with one wrinkle: Iraq say they'll have a go rather than purely sit. France will dominate the ball and must break a packed, narrow defence; the question is how quickly. The flip side is France's own soft underbelly — six games without a clean sheet — and Iraq's one genuine weapon, Hussein on the counter and from set-pieces. Let's draw the key patterns.</p>
+
+  <h2><span class="ic">⚡</span> Tactical Move 1 — How France breaks the block: Mbappé in behind</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Attack</span><span class="mt">Stretch it wide, then the vertical ball for Mbappé's run</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · width drags the block, vertical ball releases Mbappé</text>
+
+      <!-- Iraq deep block (green) -->
+      <g>
+        <circle cx="250" cy="100" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="330" cy="92" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="410" cy="92" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="490" cy="100" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="300" cy="150" r="10" fill="#155e34" stroke="#fff" stroke-width="1"/>
+        <circle cx="380" cy="153" r="10" fill="#155e34" stroke="#fff" stroke-width="1"/>
+        <circle cx="455" cy="150" r="10" fill="#155e34" stroke="#fff" stroke-width="1"/>
+        <text x="370" y="128" text-anchor="middle" font-size="10" fill="#a9e0bc">deep, narrow 4-4-2</text>
+      </g>
+
+      <!-- France -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- Dembele wide right, Barcola wide left to stretch -->
+        <g><circle cx="600" cy="210" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="600" y="214">DEM</text></g>
+        <g><circle cx="120" cy="210" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="120" y="214">BAR</text></g>
+        <!-- Olise central as the passer -->
+        <g><circle cx="430" cy="270" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="430" y="274">OLI</text></g>
+        <!-- Mbappe peeling -->
+        <g><circle cx="300" cy="215" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="300" y="219">MBA</text><text x="300" y="237" fill="#dceeff" font-size="9">spins in behind</text></g>
+      </g>
+
+      <!-- Olise vertical ball -->
+      <path d="M418 262 C 380 220, 340 180, 308 150" stroke="#3b82d6" stroke-width="3.5" stroke-dasharray="9 6" fill="none" marker-end="url(#aF)"/>
+      <!-- Mbappe run -->
+      <path d="M300 201 C 295 170, 292 140, 298 105" stroke="#3b82d6" stroke-width="4" fill="none" marker-end="url(#aF)"/>
+      <!-- finish -->
+      <path d="M300 100 C 320 75, 340 55, 360 34" stroke="#3b82d6" stroke-width="3" fill="none" stroke-dasharray="2 0" marker-end="url(#aF)"/>
+      <!-- width pins FBs -->
+      <path d="M588 205 L520 165" stroke="#fff" stroke-width="2" stroke-dasharray="4 5" opacity=".5"/>
+      <path d="M132 205 L210 165" stroke="#fff" stroke-width="2" stroke-dasharray="4 5" opacity=".5"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6"></i> Mbappé run / finish</span>
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Olise's vertical ball</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Width pins the full-backs</span>
+    </div>
+
+    <p class="expl"><strong>France's bluntest instrument against a low block.</strong> The lesson from the first-half struggle vs Senegal was clear — France got congested centrally. The fix, which worked after the break and should start here: <strong>Dembélé and Barcola hold genuine width to pin Iraq's full-backs and stretch the narrow block</strong>, while <strong>Olise pulls the strings from a central role</strong>, sliding vertical balls into the channels. The instant Iraq's back line drops too deep or steps fractionally square, <strong>Mbappé spins off the shoulder and attacks the space</strong> — the single hardest thing in football to defend. Iraq's centre-backs showed clear vulnerability to direct, pacey play against Norway; Mbappé is a far more refined version of the same threat. Get him isolated against that back line once, and the breakthrough comes.</p>
+  </div>
+
+  <h2><span class="ic">🎨</span> Tactical Move 2 — The Olise–Mbappé axis &amp; overlapping width</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Creation</span><span class="mt">Olise the conductor, full-backs overlapping to overload</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aG2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise receives between lines, overlap creates the cut-back</text>
+
+      <!-- Iraq block -->
+      <g>
+        <circle cx="270" cy="100" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="92" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="450" cy="100" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="150" r="10" fill="#155e34" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="150" r="10" fill="#155e34" stroke="#fff" stroke-width="1"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- Olise between lines -->
+        <g><circle cx="360" cy="235" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="239">OLI</text><text x="360" y="257" fill="#dceeff" font-size="9">between lines</text></g>
+        <!-- Mbappe near post -->
+        <g><circle cx="320" cy="120" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="320" y="124">MBA</text></g>
+        <!-- Dembele wide right -->
+        <g><circle cx="600" cy="210" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="600" y="214">DEM</text></g>
+        <!-- Kounde overlapping -->
+        <g><circle cx="640" cy="300" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="640" y="304">KOU</text></g>
+      </g>
+
+      <!-- Olise slides wide to Dembele -->
+      <path d="M375 228 C 460 205, 540 200, 588 208" stroke="#3b82d6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aF2)"/>
+      <!-- Kounde overlaps outside -->
+      <path d="M642 288 C 648 260, 635 235, 615 220" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+      <!-- cut-back to Mbappe / late runner -->
+      <path d="M608 200 C 540 150, 420 125, 335 122" stroke="#39d98a" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aG2)"/>
+      <!-- Mbappe finish -->
+      <path d="M322 106 C 330 80, 345 55, 358 34" stroke="#3b82d6" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aF2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6"></i> Olise distribution / Mbappé finish</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Cut-back</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Koundé overlap</span>
+    </div>
+
+    <p class="expl"><strong>The creative engine that unlocked Senegal — bedded in from the start.</strong> Michael Olise was the standout of France's opener, and shifting him permanently into the central playmaker role is the key tweak. From there he <strong>receives between Iraq's lines, scans, and feeds the wide men or threads the killer pass</strong>. The pattern to watch: Olise slides it wide to Dembélé, <strong>Koundé overlaps outside to pin the full-back and reach the byline</strong>, and the cut-back finds Mbappé attacking the near post with a late runner (Rabiot or Barcola) behind. Against a narrow block that protects the centre, <em>overlapping width and cut-backs</em> are the proven way in — and France, with Olise conducting, have more ways to hurt a deep defence than almost anyone: pace in behind, dribblers wide, runners from midfield. Patience is rarely a problem for long.</p>
+  </div>
+
+  <h2><span class="ic">🦁</span> Tactical Move 3 — Iraq's one route: Hussein on the counter &amp; set-pieces</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag irq">Iraq · Counter</span><span class="mt">Hold it up with Hussein, hit France's open back line</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aI" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aIr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d23c43"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Iraq breaking ↑ · target Hussein, then exploit France's high, leaky line</text>
+
+      <!-- France back line, full-backs caught high -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="100" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="300" y="104">SAL</text></g>
+        <g><circle cx="400" cy="100" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="400" y="104">UPA</text></g>
+        <!-- full-backs high & faded -->
+        <g opacity=".6"><circle cx="150" cy="240" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="150" y="244">DIG</text><text x="150" y="262" fill="#dceeff" font-size="8">caught high</text></g>
+        <g opacity=".6"><circle cx="560" cy="240" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="560" y="244">KOU</text></g>
+        <text x="350" y="135" text-anchor="middle" font-size="10" fill="#ffd2d4">space between the CBs &amp; the vacated flanks</text>
+      </g>
+
+      <!-- Iraq break -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- Al-Ammari wins/carries -->
+        <g><circle cx="400" cy="320" r="12" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="400" y="324">AMM</text></g>
+        <!-- Hussein holds up centrally -->
+        <g><circle cx="360" cy="200" r="14" fill="#1c8a4e" stroke="#fff" stroke-width="1.6"/><text x="360" y="204">HUS</text><text x="360" y="222" fill="#bff0cf" font-size="9">target man holds</text></g>
+        <!-- runner off him -->
+        <g><circle cx="250" cy="240" r="12" fill="#d23c43" stroke="#fff" stroke-width="1.4"/><text x="250" y="244">HAM</text></g>
+      </g>
+
+      <!-- Al-Ammari to Hussein -->
+      <path d="M390 310 C 380 280, 372 250, 366 218" stroke="#39d98a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aI)"/>
+      <!-- Hussein lay-off to runner -->
+      <path d="M346 196 C 320 205, 290 220, 268 232" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aI)"/>
+      <!-- runner attacks the channel -->
+      <path d="M242 226 C 215 185, 215 145, 250 110" stroke="#d23c43" stroke-width="3.5" fill="none" marker-end="url(#aIr)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Win it → feed Hussein</span>
+      <span><i style="border-top-color:#d23c43"></i> Runner attacks the channel</span>
+    </div>
+
+    <p class="expl"><strong>Iraq's slim but real path — and France's genuine vulnerability.</strong> Les Bleus have <em>not kept a clean sheet in six matches</em>, and Senegal showed their back line can be got at when the full-backs push high and the structure stretches. Iraq's plan leans entirely on that: <strong>win the ball, find Aymen Hussein's hold-up play</strong> (his bullet header against Norway proved he can punish this level), and <strong>spring a runner — Al-Hamadi or a breaking midfielder — into the channel behind France's advancing full-backs.</strong> Set-pieces are their other lifeline; Hussein's aerial power from an Al-Ammari delivery is a constant threat. The catch: Iraq managed no shots after the 63rd minute against Norway as fatigue bit. They must stay disciplined and clinical in their rare moments — a tall order, but with Arnold vowing to "engage" rather than merely defend, they'll at least try to make France uncomfortable.</p>
+  </div>
+
+  <h2><span class="ic">⚔️</span> Tactical Move 4 — The duel that defines it: Mbappé vs Iraq's centre-backs</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag duel">Key Duel</span><span class="mt">Mbappé's movement vs Tahseen &amp; Hashim</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="105" width="720" height="52"/><rect y="210" width="720" height="52"/><rect y="315" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><rect x="220" y="14" width="280" height="95"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Mbappé drifts wide-left, then darts across the front of the CB</text>
+
+      <!-- Iraq CBs -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="320" cy="150" r="12" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="320" y="154">TAH</text></g>
+        <g><circle cx="420" cy="150" r="12" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="420" y="154">HAS</text></g>
+        <path d="M300 168 Q370 178 440 168" stroke="#fff" stroke-dasharray="4 5" fill="none" opacity=".6"/>
+      </g>
+
+      <!-- Mbappe drifting from wide-left -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="160" cy="250" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="160" y="254">MBA</text><text x="160" y="272" fill="#dceeff" font-size="9">drifts wide, then darts</text></g>
+        <!-- supplier -->
+        <g><circle cx="500" cy="250" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="500" y="254">OLI</text></g>
+      </g>
+
+      <!-- Mbappe blindside run across the CB -->
+      <path d="M172 240 C 220 205, 270 180, 330 130" stroke="#3b82d6" stroke-width="4" fill="none" marker-end="url(#aF4)"/>
+      <!-- ball threaded into his run -->
+      <path d="M490 244 C 440 210, 400 180, 350 130" stroke="#3b82d6" stroke-width="3" stroke-dasharray="9 6" fill="none" marker-end="url(#aF4)"/>
+      <text x="250" y="150" font-size="10" fill="#bcd9f6">blindside dart between the CBs</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6"></i> Mbappé run</span>
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Through-ball</span>
+    </div>
+
+    <p class="expl"><strong>The contest that decides how comfortable the night is.</strong> Iraq's centre-back pairing (likely Zaid Tahseen and Akam Hashim) showed clear vulnerabilities against Norway's direct play. Against Mbappé they face an even harder examination: he'll <strong>drift to the left channel to escape a marker, then dart on the blindside across the front of the centre-back</strong> into the space behind. If Iraq's full-backs are dragged out by Dembélé and Barcola, the centre-backs are isolated, and tracking Mbappé's movement while holding the line is close to impossible for defenders of this level. France only need to win this duel once for the floodgates to open — and given Mbappé's record-chasing motivation against a porous defence, expect him to test it relentlessly from the first whistle.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Players &amp; Sub-Battles</h2>
+  <ul>
+    <li><strong>Kylian Mbappé</strong> — two from the all-time World Cup record, in ruthless form, against exactly the kind of defence he punishes. The headline act.</li>
+    <li><strong>Michael Olise</strong> — France's in-form conductor; if he starts central, he'll be the creative hub that unlocks the block.</li>
+    <li><strong>Aymen Hussein</strong> — Iraq's talisman and only real route to a goal; his hold-up and aerial threat are the counter and set-piece danger.</li>
+    <li><strong>Manu Koné</strong> — likely a France World Cup debut; his energy alongside Rabiot must also screen the counters Iraq will seek.</li>
+    <li><strong>France's back line vs complacency</strong> — six games without a clean sheet. A rotated defence easing off could gift Iraq the consolation they crave.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>The gulf is enormous and France should win comfortably — they have too much pace, too much craft, and too many ways to break a deep block, with Mbappé and Olise leading a forward line Iraq simply cannot match. The only real questions are the margin and whether France's rotated, clean-sheet-shy defence keeps Iraq scoreless. Expect Les Bleus to be patient if needed, find the breakthrough, and pull clear once the first goal lands — with Mbappé the overwhelming favourite to author it and edge closer to history. Iraq will "engage," may frustrate for a spell, and could nick a consolation on the counter or a set-piece, but a result is a near-impossible ask.</p>
+    <div class="scoreline">🇫🇷 France 4 — 0 Iraq</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a controlled, possibly patient first 25 minutes, then France's quality — and a likely Mbappé goal or two — runs clear. A Both-Teams-To-Score scenario (a late Iraq counter past a rotated French defence) is very live given the six-game clean-sheet drought.</p>
+  </div>
+
+</div>
+</body>
+</html>

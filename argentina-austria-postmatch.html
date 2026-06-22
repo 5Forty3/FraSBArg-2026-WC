@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina 2-0 Austria — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#6ca9e0;--arg2:#8ec5f0;--aut:#d23c43;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#6ca9e0,#fff 50%,#6ca9e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .a{color:var(--arg2)}.scoreboard .u{color:#f08a8e}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--arg2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .a{color:var(--arg2)}.stat .v .u{color:#f08a8e}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .records{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.records{grid-template-columns:1fr}}
+  .rec{background:linear-gradient(135deg,#10243a,#0f1117);border:1px solid #1c3e5c;border-left:3px solid var(--arg);border-radius:9px;padding:11px 14px}
+  .rec b{color:var(--arg2);font-size:14px}.rec span{display:block;font-size:13px;color:#c5cedd;margin-top:2px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(108,169,224,.18);color:var(--arg2)}
+  .move .mtag.def{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.fix{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(108,169,224,.16);color:var(--arg2);border-color:#274055">Group J · Matchday 2 · FT</span>
+  </div>
+  <h1>Argentina vs Austria — Ugly, Resolute, &amp; Touched by Genius</h1>
+
+  <div class="scoreboard">
+    <span class="t a">🇦🇷 Argentina</span>
+    <span class="sc">2 – 0</span>
+    <span class="t u">Austria 🇦🇹</span>
+  </div>
+  <div class="meta">📍 AT&amp;T Stadium, Arlington · Group J · Full-time</div>
+  <div class="scorers">⚽ <b>Messi 39', 90+5'</b> — a record-breaking brace (and a missed penalty in between)</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Austria shots on target</div><div class="v">1 🧱</div></div>
+    <div class="stat"><div class="l">Messi shots</div><div class="v"><span class="a">7</span></div></div>
+    <div class="stat"><div class="l">Messi WC goals</div><div class="v"><span class="a">18</span> 🐐</div></div>
+    <div class="stat"><div class="l">Clean sheets (2 games)</div><div class="v"><span class="a">2</span></div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Austria's only shot on target was a Sabitzer free-kick. Across two games Argentina have conceded a single shot on target per match. A fortress.</p>
+
+  <h2><span class="ic">🧭</span> The Story — A Champion's Grind</h2>
+  <p class="lead">This was a hard, tense, attritional night — and at times it felt as though Argentina <em>chose</em> to make it that way. They defended for long stretches, ceded territory and possession to Rangnick's pressing, high-switching Austria, and trusted in a back line that simply would not be breached. It worked because the defending was sublime: <strong>Austria, for all their energy and ambition, never came close to scoring.</strong> Their only shot on target all night was a Sabitzer free-kick that Emiliano Martínez pushed away. Around that wall of resistance came two moments of magic from the greatest player on the planet — and the small detail that Lionel Messi <strong>missed a penalty</strong> in the 9th minute, denying himself what would otherwise have been a second hat-trick of the tournament.</p>
+
+  <div class="records">
+    <div class="rec"><b>🏆 18 World Cup goals — outright record</b><span>Messi surpasses Klose (16) and is now two clear as the all-time leading scorer in World Cup history.</span></div>
+    <div class="rec"><b>🔥 Six consecutive WC games scoring</b><span>Joins only Just Fontaine (1958) &amp; Jairzinho (1970) — and 5 goals already this tournament, leading the Golden Boot.</span></div>
+    <div class="rec"><b>🎯 Scored despite a missed penalty</b><span>The first time he's ever scored for Argentina in a competitive game in which he also missed a spot-kick — mental resilience embodied.</span></div>
+    <div class="rec"><b>🔒 Through to the Round of 32</b><span>Qualification sealed; top spot in Group J is all but confirmed, likely steering them away from Spain in the last 32.</span></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">⚠️ The penalty miss &amp; the 15 lost minutes</div>
+    <p style="margin:8px 0 0">Lautaro won it (fouled after a deep ball), VAR confirmed it — and Messi, with a chance to break the record from 12 yards, took a slow run-up and pushed it wide right, looking stunned. Tellingly, <strong>Argentina lost their rhythm for the next 15 minutes</strong>, coughing up the ball repeatedly in midfield as Austria settled and took control. It exposed a real technical trait: Argentina commit so fully to patient, positional possession that they can struggle to <em>switch the play quickly across the pitch</em> — and against a side like Austria that constantly rotates and switches, that rigidity briefly handed the initiative away. That they conceded nothing during that wobble is the entire point of what came next.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (39') — The telepathic give-and-go</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Messi · 1-0</span><span class="mt">Carry, find Almada, take the return, finish first-time</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · one-two with Almada, first-time finish</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="44" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.3"/><text x="360" y="48">SCH</text></g>
+        <circle cx="300" cy="120" r="10" fill="#b32a30" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="420" cy="120" r="10" fill="#b32a30" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi carries from deeper central -->
+        <g><circle cx="340" cy="290" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="340" y="294">MES</text><text x="340" y="312" fill="#fff" font-size="9">carries &amp; gives</text></g>
+        <!-- Almada wide -->
+        <g><circle cx="540" cy="220" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="540" y="224" fill="#06301d">ALM</text><text x="540" y="242" fill="#bff0d5" font-size="9">returns it</text></g>
+        <!-- Messi's onward run to finish -->
+        <g><circle cx="400" cy="190" r="12" fill="#8ec5f0" stroke="#fff" stroke-width="1.4" opacity=".55"/><text x="400" y="194" opacity=".8">▷</text></g>
+      </g>
+
+      <!-- Messi pass out to Almada -->
+      <path d="M354 282 C 430 255, 490 235, 525 226" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aA)"/>
+      <!-- Messi makes the onward run -->
+      <path d="M350 278 C 365 250, 385 220, 400 202" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#aG)"/>
+      <!-- Almada return into his path -->
+      <path d="M528 212 C 480 195, 440 192, 414 192" stroke="#39d98a" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#aG)"/>
+      <!-- first-time finish -->
+      <path d="M404 178 C 395 130, 380 80, 368 36" stroke="#6ca9e0" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aA)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi pass &amp; finish</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Almada's return</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Messi's onward run</span>
+    </div>
+
+    <p class="expl"><strong>Redemption, and a testament to the egoless collective.</strong> Thirty minutes after the penalty miss, Messi answered. He carried from midfield, slipped the ball wide to Thiago Almada, and continued his run; <strong>Almada returned it first time into Messi's path, and the captain finished in one touch.</strong> What made it beautiful was the <em>telepathy</em> — the way the whole side has adapted, without ego, to play for him: Almada's return wasn't a pass so much as an act of trust, laying the ball into space he knew Messi would attack. This is the genius of the collective Scaloni has built — eleven players who instinctively know where the maestro wants the ball, and serve it without hesitation. The record-breaking 17th World Cup goal, made by a team that plays as one.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (90+5') — Sheer tenacity, twice off the floor</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Messi · 2-0</span><span class="mt">His pass, his run, two rebounds, buried through two defenders</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aO2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e9b949"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · switch to Álvarez, then Messi reacts quickest to the chaos</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="44" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.3"/><text x="360" y="48">SCH</text></g>
+        <!-- two defenders he fires through -->
+        <circle cx="335" cy="95" r="10" fill="#b32a30" stroke="#fff" stroke-width="1" opacity=".9"/>
+        <circle cx="390" cy="98" r="10" fill="#b32a30" stroke="#fff" stroke-width="1" opacity=".9"/>
+        <text x="362" y="78" font-size="9" fill="#f3c0c2">through 2 defenders</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Alvarez left -->
+        <g><circle cx="140" cy="200" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="140" y="204">ALV</text><text x="140" y="222" fill="#dceeff" font-size="9">shot saved</text></g>
+        <!-- Messi making the run into the box -->
+        <g><circle cx="300" cy="180" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="300" y="184">MES</text><text x="300" y="202" fill="#fff" font-size="9">runs in, reacts twice</text></g>
+      </g>
+
+      <!-- Messi switch to Alvarez -->
+      <path d="M312 174 C 250 165, 190 180, 152 192" stroke="#6ca9e0" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aA2)" opacity=".85"/>
+      <!-- Messi's run into the box -->
+      <path d="M295 166 C 300 140, 305 120, 308 105" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="5 5" fill="none"/>
+      <!-- Alvarez shot saved (rebound to area) -->
+      <path d="M150 188 C 220 150, 280 120, 330 60" stroke="#6ca9e0" stroke-width="2.5" fill="none" opacity=".6" marker-end="url(#aA2)"/>
+      <!-- rebound 1 (blocked) -->
+      <path d="M345 50 C 330 75, 318 92, 312 100" stroke="#e9b949" stroke-width="3" stroke-dasharray="5 4" fill="none" marker-end="url(#aO2)"/>
+      <!-- Messi 1st effort blocked, 2nd buried -->
+      <path d="M308 96 C 320 70, 340 50, 360 34" stroke="#6ca9e0" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aA2)"/>
+      <text x="430" y="130" font-size="10" fill="#bcd9f6">blocked, then buried</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi switch / run / finish</span>
+      <span><i style="border-top-color:#e9b949;border-top-style:dashed"></i> Rebounds in the box</span>
+    </div>
+
+    <p class="expl"><strong>The goal of pure will — and the perfect encapsulation of late-era Messi.</strong> Deep in stoppage time, moments after Austria had spurned their best chance, Messi <strong>switched the play to Julián Álvarez on the left.</strong> Álvarez's shot was saved; Messi — who had made the run into the box <em>after</em> playing the pass — saw his first follow-up blocked, then reacted quickest to <strong>fire the second rebound through two defenders</strong> and into the net. It was a goal of sheer tenacity: creator, then runner, then poacher, three roles in five seconds, refusing to give up on a ball twice off the floor. And it speaks to the great mystery of his game — <strong>he walks or stands for much of a match, conserving everything, then in and around the box he detonates his pace in a split second</strong> and catches defenders flat-footed. How do you mark a man who looks switched off until the instant he isn't? You don't. The record-extending 18th, sealed by a champion's hunger.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Defensive Masterclass 1 — The aerial fortress</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag def">Argentina · Defending</span><span class="mt">Every cross answered, every aerial duel won</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aRd" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d23c43"/></marker>
+        <marker id="aGd" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina defending ↓ · Romero &amp; Lisandro dominate the air, Emi commands the box</text>
+
+      <!-- Emi -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#8ec5f0" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">EMI</text></g>
+        <!-- CBs winning headers -->
+        <g><circle cx="305" cy="130" r="14" fill="#6ca9e0" stroke="#fff" stroke-width="1.6"/><text x="305" y="134">ROM</text><text x="305" y="152" fill="#fff" font-size="8">heads clear</text></g>
+        <g><circle cx="420" cy="135" r="14" fill="#6ca9e0" stroke="#fff" stroke-width="1.6"/><text x="420" y="139">LIS</text><text x="420" y="157" fill="#fff" font-size="8">heads clear</text></g>
+        <!-- FB tracking -->
+        <g><circle cx="200" cy="160" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="200" y="164">MOL</text></g>
+        <g><circle cx="510" cy="160" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="510" y="164">MED</text></g>
+      </g>
+
+      <!-- Austria crossers + target man -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="90" cy="250" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="90" y="254">WID</text></g>
+        <g><circle cx="630" cy="250" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="630" y="254">SAB</text></g>
+        <g><circle cx="360" cy="200" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="360" y="204">ARN</text></g>
+      </g>
+
+      <!-- crosses in -->
+      <path d="M102 242 C 180 195, 250 165, 300 150" stroke="#d23c43" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aRd)"/>
+      <path d="M618 242 C 540 195, 470 165, 425 152" stroke="#d23c43" stroke-width="2.5" stroke-dasharray="8 5" fill="none" marker-end="url(#aRd)"/>
+      <!-- headed clear -->
+      <path d="M305 116 C 290 90, 250 75, 210 70" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aGd)"/>
+      <path d="M420 120 C 440 92, 480 78, 520 72" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aGd)"/>
+      <!-- contest zone -->
+      <ellipse cx="362" cy="135" rx="130" ry="44" fill="#39d98a" opacity="0.10"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#d23c43;border-top-style:dashed"></i> Austria crosses in</span>
+      <span><i style="border-top-color:#39d98a"></i> Headed clear / won</span>
+    </div>
+
+    <p class="expl"><strong>The most impressive thing on the pitch — and it wasn't the goals.</strong> Austria's whole plan B was to go aerial — long balls to a target man, crosses from both flanks, set-pieces aimed at the back post. <strong>Argentina answered every single one.</strong> Cristián Romero and Lisandro Martínez were colossal in the air, attacking the ball at its highest point and heading clear with authority; every cross was met with a Spanish-style clarity of marking, the targeted runner picked up early and the first contact won. Emiliano Martínez commanded his box, claiming and punching with total assurance. Austria simply <em>did not know how to beat this defence</em> — the lone Sabitzer free-kick aside, they never tested Emi. On this evidence, scoring against Argentina in this tournament will be desperately hard.</p>
+  </div>
+
+  <h2><span class="ic">🧱</span> Defensive Masterclass 2 — Compact block &amp; the rotating subs</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag def">Argentina · Block</span><span class="mt">Defend deep, deny the seams, refresh the legs</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aRb" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d23c43"/></marker>
+        <marker id="aXb" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="356" width="220" height="70"/></g>
+      <text x="360" y="20" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Austria attacking ↓ · two banks deny every central seam</text>
+
+      <!-- Argentina two banks of four (defending bottom) -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- back four -->
+        <g><circle cx="200" cy="360" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="200" y="364">MOL</text></g>
+        <g><circle cx="300" cy="372" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="300" y="376">ROM</text></g>
+        <g><circle cx="420" cy="372" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="420" y="376">LIS</text></g>
+        <g><circle cx="520" cy="360" r="11" fill="#6ca9e0" stroke="#fff" stroke-width="1.2"/><text x="520" y="364">MED</text></g>
+        <!-- midfield bank -->
+        <g><circle cx="250" cy="290" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="250" y="294">MAC</text></g>
+        <g><circle cx="350" cy="285" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="350" y="289">ENZO</text></g>
+        <g><circle cx="450" cy="285" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="450" y="289">DEP</text></g>
+        <g><circle cx="540" cy="295" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="540" y="299">ALM</text></g>
+        <text x="360" y="330" text-anchor="middle" font-size="10" fill="#bcd9f6">compact two banks · central lane sealed</text>
+      </g>
+
+      <!-- Austria attackers probing -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="170" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="360" y="174">SAB</text></g>
+        <g><circle cx="230" cy="160" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="230" y="164">SCH</text></g>
+        <g><circle cx="500" cy="160" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="500" y="164">WAN</text></g>
+      </g>
+
+      <!-- attempted central pass blocked -->
+      <path d="M360 182 C 360 220, 360 250, 360 272" stroke="#d23c43" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(355,278)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- forced wide -->
+      <path d="M348 172 C 300 185, 260 200, 235 215" stroke="#d23c43" stroke-width="2.5" stroke-dasharray="7 5" fill="none" marker-end="url(#aRb)"/>
+      <ellipse cx="360" cy="300" rx="160" ry="55" fill="#39d98a" opacity="0.08"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#d23c43;border-top-style:dashed"></i> Austria probe / forced wide</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Central pass denied</span>
+    </div>
+
+    <p class="expl"><strong>Defending as an act of will — and smart management.</strong> For long spells Argentina were content to sit in two compact banks, conceding possession and territory but <strong>sealing every central seam</strong>, forcing Austria wide and into the aerial duels they were always going to lose. Austria split possession, pressed high and switched the ball cleverly, but found no way through a block that simply refused to crack. And to Scaloni's great credit, <strong>he managed it actively</strong> — rotating legs throughout (Otamendi on for an injured Romero, then Paredes, Tagliafico, González and Álvarez) to keep the defensive intensity fresh and make the team <em>more</em> solid as the game wore on, not less. It's Bilardista pragmatism in its purest form: win ugly, concede nothing, trust the magician for the moment that decides it.</p>
+  </div>
+
+  <h2><span class="ic">🔧</span> Future Tactic — Fix the slow switch; keep the fortress</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Argentina · Future</span><span class="mt">Add quick switches of play to unlock the next deep block</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aGf" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aAf" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · don't grind one side — switch fast to the free man</text>
+
+      <!-- block shifted to one side -->
+      <g>
+        <circle cx="250" cy="120" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="390" cy="115" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="290" cy="175" r="10" fill="#666" stroke="#fff" stroke-width="1"/>
+        <circle cx="360" cy="178" r="10" fill="#666" stroke="#fff" stroke-width="1"/>
+        <text x="300" y="150" text-anchor="middle" font-size="9" fill="#bbb">block over-shifts to the ball side</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi/ball on the right (congested) -->
+        <g><circle cx="250" cy="270" r="14" fill="#8ec5f0" stroke="#fff" stroke-width="1.6"/><text x="250" y="274">MES</text></g>
+        <!-- Enzo deep as the switch hub -->
+        <g><circle cx="360" cy="320" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="360" y="324">ENZO</text></g>
+        <!-- free man far side -->
+        <g><circle cx="600" cy="240" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="600" y="244" fill="#06301d">FREE</text><text x="600" y="262" fill="#bff0d5" font-size="9">isolated 1v1</text></g>
+      </g>
+
+      <!-- slow grind (faded, what NOT to do) -->
+      <path d="M236 262 C 220 240, 215 215, 230 195" stroke="#ff5d6a" stroke-width="2" stroke-dasharray="4 5" fill="none" opacity=".6"/>
+      <text x="180" y="210" font-size="9" fill="#ffb3b8">don't grind the loaded side</text>
+      <!-- the fix: recycle to Enzo then switch -->
+      <path d="M250 286 C 290 310, 330 318, 346 320" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aAf)"/>
+      <path d="M374 314 C 460 295, 540 265, 586 250" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aGf)"/>
+      <!-- free man attacks -->
+      <path d="M598 226 C 560 190, 510 160, 450 130" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aGf)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0;border-top-style:dashed"></i> Recycle to the deep hub</span>
+      <span><i style="border-top-color:#39d98a"></i> Fast switch → free man attacks</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> What to avoid: grinding the loaded side</span>
+    </div>
+
+    <p class="expl"><strong>The one refinement before the knockouts.</strong> The defence is a finished article — keep it exactly as is. The attacking lesson from the wobble after the penalty miss is clear: <strong>Argentina's positional game can become too static, over-loading one side and patiently grinding rather than switching the point of attack.</strong> Against a deep, well-drilled knockout opponent, that predictability lets the block shift across and smother everything. The fix isn't to abandon possession — it's to <strong>recycle through a deep hub (Enzo) and switch the play fast to the isolated free man on the opposite flank</strong>, forcing the block to scramble sideways and opening the 1v1s where Messi, González or Álvarez can hurt them. Win the ball, hold it — but punish a shifting block by changing the angle quickly. Add that to a defence this miserly, and Argentina are genuinely built to go all the way. The other note: <strong>Messi's minutes</strong> — he played 90 again; against fresher knockout legs, getting games safe early to rest him remains the quiet priority.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next</h2>
+  <p>Qualification sealed, top spot all but confirmed, two clean sheets, and Messi rewriting the record books — a near-flawless position, even from an imperfect performance. The bigger picture is hugely encouraging: <strong>this is a side that can win ugly</strong>, grinding out a tight game through defensive excellence and a moment of genius rather than needing to be at their fluent best. That is exactly the quality that wins tournaments. The final group game against Jordan is a chance to rotate, rest Messi's legs, and give minutes to the deep squad — before a likely Round-of-32 tie in Miami where, as group winners, they should avoid Spain. The champions look every inch like champions: solid, ruthless, and carried by the greatest of all time.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Group J · qualified</div><div class="g">Argentina into Round of 32</div><div class="n">Top spot all but sealed; a likely last-32 tie in Miami on July 3, probably avoiding Spain.</div></div>
+    <div class="nx"><div class="d">MD3</div><div class="g">Argentina vs Jordan</div><div class="n">A chance to rotate heavily, rest Messi &amp; Romero (knee), and give the deep squad valuable minutes.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>Not a vintage Argentina performance — but maybe a more revealing one. They were made to graft by a brave, well-drilled Austria, briefly lost their way after Messi's penalty miss, and never fully controlled the game. Yet they <strong>conceded nothing of substance, defended the air and the box like a fortress, managed their legs intelligently, and won through two moments of irrepressible genius from the greatest player in World Cup history.</strong> The one thing to sharpen is the speed of their switches against a deep block; the rest — the miserly defence, the egoless collective, the Messi magic — is the profile of a team that knows how to win when it isn't at its best. That, more than any thrashing, is what champions are made of. <strong>Messi, 18 World Cup goals, and counting.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

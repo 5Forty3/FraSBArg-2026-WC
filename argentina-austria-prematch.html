@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs Austria — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#6ca9e0;--arg2:#8ec5f0;--aut:#d23c43;--autw:#f0f0f0;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#6ca9e0,#fff 50%,#6ca9e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .a{background:linear-gradient(135deg,#0e1f33,#0d1117)}
+  .vsbar .u{background:linear-gradient(135deg,#2a0e10,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .a .nm{color:var(--arg2)}.vsbar .u .nm{color:#f08a8e}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.argentina{border-left:3px solid var(--arg)}
+  .card.austria{border-left:3px solid var(--aut)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .celebrate{background:linear-gradient(135deg,#10243a,#0f1117);border:1px solid #1c3e5c;border-left:3px solid var(--arg);
+    border-radius:10px;padding:16px 18px;margin:14px 0}
+  .celebrate .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--arg2)}
+  .quote{background:#0d141d;border-left:3px solid var(--gold);border-radius:8px;padding:11px 15px;margin:12px 0;font-size:14px;color:#e4ddc9;font-style:italic}
+  .quote b{color:var(--gold);font-style:normal}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.score{background:rgba(108,169,224,.18);color:var(--arg2)}
+  .move .mtag.choke{background:rgba(210,60,67,.20);color:#f08a8e}
+  .move .mtag.adapt{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group J · Matchday 2</span>
+  </div>
+  <h1>Argentina vs Austria</h1>
+  <div class="sub">The champions chase qualification &amp; history — and a celebration of the beautiful game, Albiceleste style</div>
+  <div class="meta">🕒 10:30 PM IST, Mon 22 Jun · 📍 AT&amp;T Stadium, Arlington, Texas (climate-controlled dome)</div>
+
+  <div class="vsbar">
+    <div class="side a"><div class="nm">🇦🇷 Argentina</div><div class="fm">4-3-3 / 4-4-2 · Scaloni · reigning champions · FIFA #1 · top of Group J</div></div>
+    <div class="mid">VS</div>
+    <div class="side u"><div class="nm">Austria 🇦🇹</div><div class="fm">4-2-3-1 gegenpress · Rangnick · "Das Team" · first WC since 1998</div></div>
+  </div>
+
+  <div class="celebrate">
+    <div class="t">💙 A celebration of Argentine football</div>
+    <p style="margin:8px 0 0">There is no team quite like this one. Argentina don't just play football — they <em>perform</em> it, a fusion of street-corner <em>gambeta</em>, midfield artistry and the unbreakable collective spirit that lifted the trophy in Qatar. At the centre, still, is the greatest to ever do it: <strong>Lionel Messi, 38 years old, fresh off a hat-trick, one goal from becoming the outright all-time World Cup top scorer.</strong> What makes this side beautiful isn't just Messi — it's the way eleven players orchestrate themselves around his genius, a living embodiment of Scaloni's <strong>"La Tercera"</strong>: the synthesis of Menottista art and Bilardista steel. Tonight they can seal the knockouts and write another page of history. Settle in and enjoy them while you can.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">verify before kickoff</span></h2>
+  <p class="lead">A note on accuracy: as of writing these XIs are <strong>predicted, not officially confirmed</strong> — and there is genuine debate about Argentina's attack. Most outlets expect Messi to start on the right with Lautaro Martínez up top and Thiago Almada/Nicolás González left; ESPN, intriguingly, floats a variant with <strong>Nico Paz starting on the right and Messi rested or rotated.</strong> The one near-certain change is enforced: <strong>Gonzalo Montiel limped off at half-time vs Algeria, so Nahuel Molina is expected at right-back.</strong> Treat the rest as the likely shape, not gospel.</p>
+
+  <div class="card argentina">
+    <h3 style="margin-top:0">🇦🇷 Argentina — the expected picture</h3>
+    <ul>
+      <li><strong>Messi</strong> is expected to start — fit, in peak rhythm after his hat-trick, and chasing the record (one goal breaks Klose's 16; a win is also the most World Cup victories ever). Scaloni <em>may</em> rest him at some stage with qualification close.</li>
+      <li><strong>Molina in for the injured Montiel</strong> at right-back — the one forced change. Romero &amp; Lisandro Martínez continue centrally; Medina/Tagliafico at left-back.</li>
+      <li><strong>The platform midfield:</strong> De Paul, Mac Allister, Enzo Fernández — the trio built to bypass a high press and shield Messi. Crucially, <strong>De Paul &amp; Mac Allister are press-resistant carriers</strong>, vital against Austria.</li>
+      <li><strong>Striker call:</strong> Lautaro struggled vs Algeria and was hooked early, so <strong>Julián Álvarez</strong> is a live option — his runs in behind directly threaten Austria's high line.</li>
+      <li><strong>The bench is a weapon:</strong> Nico Paz, Álvarez, Nico González, Lo Celso — game-changers Scaloni can deploy to alter the picture (more on Paz below).</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-3-3): E. Martínez; Molina, Romero, L. Martínez, Medina; De Paul, Mac Allister, E. Fernández; Messi, La. Martínez, Almada. (Álvarez, Nico Paz, N. González on the bench. Not yet confirmed.)</p>
+  </div>
+
+  <div class="card austria">
+    <h3 style="margin-top:0">🇦🇹 Austria — Rangnick's pressing monsters</h3>
+    <ul>
+      <li><strong>Ralf Rangnick</strong> — the godfather of gegenpressing whose ideas shaped Klopp, Tuchel and Nagelsmann — has rebuilt Austria around <strong>relentless counter-pressing: win the ball high the instant it's lost, suffocate, and break fast.</strong></li>
+      <li><strong>Back at a World Cup for the first time since 1998</strong>, beat Jordan 3-1 (though it flattered them — an own goal and a stoppage-time penalty). They sit level with Argentina on 3 points; this is effectively a play-in for top spot.</li>
+      <li><strong>Key men:</strong> Marcel Sabitzer (the engine, arrives late in the box), Konrad Laimer (may shift to right-back to cover Posch's broken jaw), Nicolas Seiwald &amp; Xaver Schlager closing central spaces, David Alaba marshalling the back line, Arnautović's hold-up play the focal point.</li>
+      <li><strong>The plan:</strong> press incessantly, keep it tight, and hope a set-piece or sharp counter catches Argentina's defence square — the way Jordan briefly did.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): A. Schlager; Laimer, Lienhart, Alaba, Mwene; Seiwald, X. Schlager; Schmid, Sabitzer, Wimmer; Arnautović. (Not yet confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> The Central Battle — Can Austria's Press Smother Messi?</h2>
+  <p>This game has one defining question, and Rangnick named it himself. Austria will press hard and try to deny Messi time, with <strong>Seiwald and Schlager tasked with closing the central areas.</strong> As RotoWire framed it: "If they can crowd him out, Austria stay in it. If Messi gets a half-yard to turn and pick passes, Argentina will carve out chances. It is the single biggest factor in the game." So let's draw the two ways Messi hurts them, the one way Austria choke him — and the beautiful contingency if they succeed.</p>
+
+  <h2><span class="ic">⚡</span> Scoring Route 1 — Messi drops into the half-space &amp; threads the runner</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag score">Messi · Scoring Route 1</span><span class="mt">Beat the press by dropping off, then the disguised through-ball</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi drops to receive between the lines, Álvarez runs</text>
+
+      <!-- Austria high line + midfield press -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="110" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="300" y="114">ALA</text></g>
+        <g><circle cx="420" cy="110" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="420" y="114">LIE</text></g>
+        <path d="M280 128 Q360 142 440 128" stroke="#fff" stroke-dasharray="4 5" fill="none" opacity=".6"/>
+        <text x="360" y="160" text-anchor="middle" font-size="10" fill="#f3c0c2">high line — space in behind</text>
+        <!-- pressers -->
+        <g><circle cx="430" cy="250" r="10" fill="#b32a30" stroke="#fff" stroke-width="1"/><text x="430" y="254" font-size="8">SEI</text></g>
+        <g><circle cx="500" cy="270" r="10" fill="#b32a30" stroke="#fff" stroke-width="1"/><text x="500" y="274" font-size="8">SCH</text></g>
+      </g>
+
+      <!-- Messi dropping into pocket -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="470" cy="200" r="15" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="470" y="204">MESSI</text><text x="470" y="182" fill="#fff" font-size="9">drops to the pocket</text></g>
+        <!-- De Paul feeds him -->
+        <g><circle cx="540" cy="300" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="540" y="304" fill="#06301d">DEP</text></g>
+        <!-- Alvarez runs in behind -->
+        <g><circle cx="300" cy="200" r="13" fill="#6ca9e0" stroke="#fff" stroke-width="1.5"/><text x="300" y="204">ALV</text><text x="300" y="222" fill="#dceeff" font-size="9">spins in behind</text></g>
+      </g>
+
+      <!-- De Paul to Messi (escaping press) -->
+      <path d="M528 292 C 510 260, 495 230, 484 214" stroke="#39d98a" stroke-width="3" stroke-dasharray="6 5" fill="none" marker-end="url(#aG)"/>
+      <!-- Messi disguised through ball -->
+      <path d="M455 192 C 400 165, 340 145, 305 128" stroke="#6ca9e0" stroke-width="3.5" fill="none" marker-end="url(#aA)"/>
+      <!-- Alvarez run + finish -->
+      <path d="M300 186 C 300 150, 305 110, 320 60" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="2 0" fill="none" marker-end="url(#aA)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi pass / Álvarez run</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> De Paul feeds Messi</span>
+    </div>
+
+    <p class="expl"><strong>How Messi beats a press: he doesn't run from it, he drops beneath it.</strong> Against Austria's high block, Messi's genius is to <strong>drift into the right half-space and drop into the pocket between their midfield and defence</strong> — the seam Seiwald and Schlager are desperate to close. De Paul, a press-resistant carrier, slides him the ball; the instant Messi receives on the half-turn with a half-yard of space, the game is his. Austria's high line becomes the trap: <strong>Messi's disguised through-ball releases Álvarez spinning in behind</strong>, and a back line caught square is undone. This is the nightmare Rangnick described — give Messi a half-yard to turn and pick passes, and the chances flow. The whole Argentine structure exists to manufacture that half-yard.</p>
+  </div>
+
+  <h2><span class="ic">🎩</span> Scoring Route 2 — The trademark: cut inside &amp; curl, or the set-piece</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag score">Messi · Scoring Route 2</span><span class="mt">From the right touchline onto the left foot — or a dead ball</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · the move he has scored a thousand times</text>
+
+      <!-- keeper + defenders -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">SCH</text></g>
+        <circle cx="430" cy="150" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="350" cy="135" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/>
+      </g>
+
+      <!-- Messi wide right -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="240" r="15" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="600" y="244">MESSI</text><text x="600" y="264" fill="#fff" font-size="9">cuts inside</text></g>
+        <!-- Molina overlaps to pin FB -->
+        <g><circle cx="650" cy="320" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="650" y="324">MOL</text></g>
+      </g>
+
+      <!-- Molina overlap pins the FB -->
+      <path d="M648 308 C 652 280, 645 255, 628 240" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+      <text x="640" y="290" font-size="9" fill="#dceeff">overlap pins FB</text>
+      <!-- Messi cuts inside on left foot -->
+      <path d="M588 230 C 550 195, 500 165, 450 145" stroke="#6ca9e0" stroke-width="4" fill="none" marker-end="url(#aA2)"/>
+      <!-- the curl to far top corner -->
+      <path d="M448 138 C 420 100, 395 65, 380 32" stroke="#6ca9e0" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aA2)"/>
+      <text x="470" y="110" font-size="10" fill="#bcd9f6">curl, far top corner</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi carry &amp; curling finish</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Molina overlap</span>
+    </div>
+
+    <p class="expl"><strong>The signature — and the one no defence has ever solved.</strong> Give Messi the ball on the right touchline with a yard, and the oldest, deadliest pattern in football unfolds: <strong>Molina overlaps outside to pin and occupy the Austrian left-back, Messi cuts inside onto his left foot, and bends it into the far top corner</strong> — exactly his third goal against Algeria. Against Austria's back line, if Laimer is filling in at full-back (out of position), that 1v1 is even more favourable. And don't forget the <strong>dead ball</strong>: Messi is Argentina's primary free-kick and corner taker, and against an Austrian side whose own threat leans on set-pieces, his delivery and curled free-kicks are a constant scoring route. Two decades on, the magic hasn't faded — it's just been distilled.</p>
+  </div>
+
+  <h2><span class="ic">🛑</span> The Danger — How Austria Might Choke Messi</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag choke">Austria · Smother Messi</span><span class="mt">Deny the pocket, swarm the right, exploit the non-presser</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d23c43"/></marker>
+        <marker id="aX" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Austria pressing ↓ · trap Messi on the right, counter through the space he leaves</text>
+
+      <!-- Messi crowded on the right -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="520" cy="230" r="15" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="520" y="234">MESSI</text></g>
+      </g>
+      <!-- 3 Austrians swarming him -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="470" cy="200" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="470" y="204">SEI</text></g>
+        <g><circle cx="560" cy="190" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="560" y="194">SCH</text></g>
+        <g><circle cx="560" cy="290" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/><text x="560" y="294">MWE</text></g>
+        <path d="M480 212 L506 226" stroke="#d23c43" stroke-width="2.5" marker-end="url(#aR)"/>
+        <path d="M548 200 L532 220" stroke="#d23c43" stroke-width="2.5" marker-end="url(#aR)"/>
+        <path d="M550 280 L532 244" stroke="#d23c43" stroke-width="2.5" marker-end="url(#aR)"/>
+        <text x="600" y="240" font-size="9" fill="#f3c0c2">swarm, deny the turn</text>
+      </g>
+
+      <!-- the seam Messi vacates / non-press -->
+      <text x="180" y="170" font-size="10" fill="#f3c0c2">Messi doesn't track back →</text>
+      <text x="200" y="186" font-size="10" fill="#f3c0c2">space to counter here</text>
+      <!-- turnover -> counter into that zone -->
+      <path d="M508 244 C 420 270, 300 250, 200 210" stroke="#d23c43" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aR)"/>
+      <!-- Argentina pass into Messi denied -->
+      <path d="M520 320 C 520 290, 520 265, 520 248" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(515,242)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#d23c43"></i> Austria swarm / counter</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Pass to Messi denied</span>
+    </div>
+
+    <p class="expl"><strong>Rangnick's blueprint — and he said the quiet part out loud.</strong> Austria's plan is to <strong>deny Messi the pocket entirely: swarm him with two or three the instant the ball travels his way, block the passing lane into his feet, and never let him turn.</strong> Seiwald and Schlager screen the central seam while a presser jumps from behind. But Rangnick revealed the deeper logic too — he noted Messi <em>"likes to stay on the sides... that doesn't mean they have one man less, but they have one man less that works in counter-pressing."</em> In other words, Austria will try to <strong>win the ball near Messi and counter immediately through the very space he doesn't track back to cover</strong>, turning his lack of defensive legwork into their transition runway. Sabitzer arriving late, Schmid and Arnautović breaking — this is how the underdog stays alive. If Argentina's full-backs are caught high, that vacated right flank is Austria's road to a shock.</p>
+  </div>
+
+  <h2><span class="ic">♟️</span> The Beautiful Contingency — If Messi Is Choked, He Becomes the False Nine</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag adapt">Scaloni · The Adaptation</span><span class="mt">Messi shifts central; Nico Paz takes the right to re-open the defence</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ca9e0"/></marker>
+        <marker id="aP4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e9b949"/></marker>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi central as a false 9, Nico Paz fresh on the right</text>
+
+      <!-- Austria back line -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="270" cy="110" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="350" cy="100" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="430" cy="100" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="510" cy="110" r="11" fill="#d23c43" stroke="#fff" stroke-width="1.2"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi central as false 9, dropping -->
+        <g><circle cx="360" cy="210" r="15" fill="#8ec5f0" stroke="#fff" stroke-width="1.7"/><text x="360" y="214">MESSI</text><text x="360" y="192" fill="#fff" font-size="9">false 9, drops central</text></g>
+        <!-- Nico Paz fresh on the right -->
+        <g><circle cx="610" cy="230" r="14" fill="#e9b949" stroke="#fff" stroke-width="1.6"/><text x="610" y="234" fill="#3a2f12">PAZ</text><text x="610" y="252" fill="#fff" font-size="9">fresh legs, RW</text></g>
+        <!-- Alvarez / runner stays high -->
+        <g><circle cx="250" cy="180" r="12" fill="#6ca9e0" stroke="#fff" stroke-width="1.3"/><text x="250" y="184">ALV</text></g>
+      </g>
+
+      <!-- a CB tempted to follow Messi -> gap -->
+      <path d="M350 110 C 352 145, 356 175, 358 192" stroke="#ff5d6a" stroke-width="2.5" stroke-dasharray="5 5" fill="none" opacity=".7"/>
+      <text x="420" y="160" font-size="9" fill="#f3c0c2">CB follows Messi → gap opens</text>
+      <!-- Messi drops & slips it wide to Paz attacking the vacated channel -->
+      <path d="M375 205 C 460 195, 540 205, 595 222" stroke="#6ca9e0" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aA4)"/>
+      <!-- Paz drives the now-open right -->
+      <path d="M600 218 C 560 180, 520 150, 470 125" stroke="#e9b949" stroke-width="3.5" fill="none" marker-end="url(#aP4)"/>
+      <!-- Alvarez attacks the central gap Messi created -->
+      <path d="M250 168 C 270 140, 300 120, 335 105" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG4)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#6ca9e0"></i> Messi drops &amp; releases wide</span>
+      <span><i style="border-top-color:#e9b949"></i> Nico Paz attacks the right</span>
+      <span><i style="border-top-color:#39d98a"></i> Runner exploits the central gap</span>
+    </div>
+
+    <p class="expl"><strong>The chess move if Plan A is smothered — and it's a thing of beauty.</strong> Suppose Austria succeed: they swarm Messi on the right and choke the supply. Scaloni's elegant counter is to <strong>shift Messi into a central false-nine role and introduce 21-year-old Nico Paz on the right</strong> — and it solves two problems at once. First, <strong>Messi dropping from a central position drags a centre-back out of the back line</strong> (defenders hate following a false nine into midfield); if the CB follows, a gap yawns open for Álvarez to attack; if he doesn't, Messi receives free in the most dangerous zone of all. Second, <strong>Nico Paz brings fresh legs and his own creativity to the right flank</strong>, re-opening the wide channel that Austria had loaded with three bodies to trap Messi — they can't keep swarming a touchline that Messi has vacated. The defensive shape that worked against Messi-on-the-right is suddenly pulled apart from the centre. It's Scaloni's non-dogmatic genius in miniature: when one beautiful idea is countered, he has another ready — and it doubles as the perfect way to manage Messi's legs while keeping Argentina lethal. <em>This</em> is why they're champions.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Players &amp; Sub-Battles</h2>
+  <ul>
+    <li><strong>Lionel Messi</strong> — one goal from history, the gravity around which everything orbits. Contain him and Austria dream; free him and it's over.</li>
+    <li><strong>De Paul &amp; Mac Allister vs the press</strong> — the press-resistant carriers who must beat Austria's first wave to release Messi. The hinge of the game.</li>
+    <li><strong>Marcel Sabitzer</strong> — Austria's engine, the late-arriving runner and pressing heartbeat. If Austria stay in it, he's why.</li>
+    <li><strong>Julián Álvarez</strong> — the willing runner whose movement in behind punishes Austria's high line; a likely starter over a misfiring Lautaro.</li>
+    <li><strong>Nico Paz</strong> — the golden contingency off the bench; a glimpse of Argentina's future and tonight's tactical wildcard.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Austria are well-organised, aggressive and genuinely competitive — far harder to break down than Algeria, and Rangnick's press will make Argentina uncomfortable in spells. But the gulf in quality is real, Argentina's defensive record is immaculate (they didn't concede a shot on target to Algeria), and over 90 minutes the champions simply have too much — above all, the one player Austria admit is "the best who ever lived." Expect a tighter, more tactical game than the opener, with Argentina patient against the press before their quality tells. A win seals the knockouts; a Messi goal makes him the outright greatest World Cup scorer in history.</p>
+    <div class="scoreline">🇦🇷 Argentina 2 — 0 Austria</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a tense first half against the press, then Argentina's class — and likely a Messi moment — pulls them clear as Austria tire. A 1-0 grind or a nervy 2-1 is live if Austria land a counter or set-piece. The champions march on.</p>
+  </div>
+
+</div>
+</body>
+</html>

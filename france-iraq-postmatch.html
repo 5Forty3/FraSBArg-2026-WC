@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France 3-0 Iraq — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#1a4fa0;--fra2:#3b82d6;--irq:#1c8a4e;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#3b82d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .f{color:#6aa3e6}.scoreboard .i{color:#5fd49b}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#6aa3e6}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .f{color:#6aa3e6}.stat .v .i{color:#5fd49b}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .records{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.records{grid-template-columns:1fr}}
+  .rec{background:linear-gradient(135deg,#0e1a2e,#0f1117);border:1px solid #1c3454;border-left:3px solid var(--fra2);border-radius:9px;padding:11px 14px}
+  .rec b{color:#6aa3e6;font-size:14px}.rec span{display:block;font-size:13px;color:#c5cedd;margin-top:2px}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .star{color:#6aa3e6;font-weight:700}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(59,130,214,.18);color:#6aa3e6}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:#6aa3e6;border-color:#1c3454">Group I · Matchday 2 · FT</span>
+  </div>
+  <h1>France vs Iraq — Mbappé Marches On, Through the Storm</h1>
+
+  <div class="scoreboard">
+    <span class="t f">🇫🇷 France</span>
+    <span class="sc">3 – 0</span>
+    <span class="t i">Iraq 🇮🇶</span>
+  </div>
+  <div class="meta">📍 Lincoln Financial Field, Philadelphia · Group I · Full-time (after a 2hr+ storm delay)</div>
+  <div class="scorers">⚽ <b>Mbappé 14', 2nd-half</b> · <b>Dembélé</b> — qualification sealed, clean sheet at last</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="f">2.38</span> · <span class="i">0.60</span></div></div>
+    <div class="stat"><div class="l">Touches in opp box</div><div class="v"><span class="f">20</span> · <span class="i">4</span></div></div>
+    <div class="stat"><div class="l">Mbappé WC goals</div><div class="v"><span class="f">16</span> ⚡</div></div>
+    <div class="stat"><div class="l">Clean sheet</div><div class="v">first in 7 ✅</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">A comfortable, professional win — and crucially France's first clean sheet in seven games, ending the defensive drought.</p>
+
+  <h2><span class="ic">🧭</span> The Story of the Match</h2>
+  <p class="lead">France did exactly what champions-in-waiting do to overmatched opposition: <strong>took the lead early, controlled the game, and pulled clear without ever needing top gear</strong> — all while surviving the tournament's first major weather event, a thunderstorm that forced a delay of well over two hours and left the Philadelphia pitch saturated. Mbappé struck first with a trademark fizzing drive, doubled it after the restart courtesy of a gift from the Iraqi defence, and Ousmane Dembélé capped it with a long-awaited first World Cup goal. The xG told the story — <strong>2.38 to 0.60</strong>, 20 touches in the Iraqi box to four — and, just as importantly, the back line finally kept the clean sheet that had eluded France for six straight matches. Qualification to the Round of 32 is sealed.</p>
+
+  <div class="records">
+    <div class="rec"><b>⚡ 16 World Cup goals — level with Klose</b><span>Mbappé's brace moves him equal with Klose, two behind Messi's new all-time record of 18.</span></div>
+    <div class="rec"><b>🏃 15 &amp; 16 in 16 WC appearances</b><span>A staggering strike rate; four goals already this tournament, one behind Messi in the Golden Boot race.</span></div>
+    <div class="rec"><b>🎯 Dembélé's first WC goal — 19th try</b><span>The Ballon d'Or winner finally scored at a World Cup on his 19th major-tournament appearance.</span></div>
+    <div class="rec"><b>🔒 Round of 32 sealed</b><span>France through; a win over Norway on Friday secures top spot and a perfect group record.</span></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🌩️ The storm that split the game</div>
+    <p style="margin:8px 0 0">This was a night defined as much by the weather as the football. A violent thunderstorm forced a <strong>delay of well over two hours</strong>, splitting the match either side of a saturated, water-splashing pitch and removing the second-half hydration break entirely. To France's credit, the long interruption didn't break their rhythm — they came out after the restart and were "almost immediately back on the front foot," getting their gift of a second goal within minutes. Maintaining concentration through a two-hour stoppage is its own test, and the champions passed it without fuss.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (14') — Mbappé's fizzing drive</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">France · 1-0</span><span class="mt">Olise finds him simply, Mbappé rifles it from distance</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aB" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · a left-footed drive from outside the box</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">BAS</text></g>
+        <circle cx="300" cy="150" r="10" fill="#155e34" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="420" cy="150" r="10" fill="#155e34" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Olise wide right -->
+        <g><circle cx="560" cy="240" r="13" fill="#5aa0e6" stroke="#fff" stroke-width="1.5"/><text x="560" y="244" fill="#06223f">OLI</text><text x="560" y="262" fill="#bcd9f6" font-size="9">simple ball inside</text></g>
+        <!-- Mbappe outside the box -->
+        <g><circle cx="360" cy="270" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="274">MBA</text><text x="360" y="292" fill="#dceeff" font-size="9">drives first time</text></g>
+      </g>
+
+      <!-- Olise pass inside -->
+      <path d="M548 234 C 470 245, 410 262, 380 268" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aB)"/>
+      <!-- the fizzing drive -->
+      <path d="M352 258 C 350 195, 350 110, 350 36" stroke="#3b82d6" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aF)"/>
+      <text x="430" y="180" font-size="10" fill="#bcd9f6">fizzing left-foot strike</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Olise's pass inside</span>
+      <span><i style="border-top-color:#3b82d6"></i> Mbappé's drive from distance</span>
+    </div>
+
+    <p class="expl"><strong>The breakthrough, and the Olise–Mbappé axis at work.</strong> It was almost too simple: <strong>Michael Olise, drifting in from the right, slid an unfussy ball inside to Mbappé</strong>, who took a touch and <strong>rifled a fizzing left-footed drive from outside the box</strong> past Ahmed Basil in the 14th minute. Exactly the pre-match plan — Olise as the central conductor feeding the finisher — executed early to settle any nerves. It was Mbappé's 15th World Cup goal and the perfect demonstration that France don't need to break a deep block down patiently when they have a player who can simply detonate one from 20 yards. One moment of quality, and the contest was effectively decided.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (2nd half) — A gift, gratefully accepted</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">France · 2-0</span><span class="mt">Iraq's botched goal-kick, France pounce, Dembélé squares for Mbappé</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aErr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · a botched short goal-kick recovered high, then squared</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="430" cy="60" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="430" y="64">BAS</text><text x="430" y="44" fill="#ffb3b8" font-size="9">kick at feet ⚠</text></g>
+        <!-- defender who got it wrong -->
+        <g><circle cx="500" cy="120" r="10" fill="#155e34" stroke="#fff" stroke-width="1" opacity=".85"/><text x="500" y="124" font-size="8">IRQ</text></g>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Dembele recovers high & squares -->
+        <g><circle cx="560" cy="180" r="13" fill="#1a4fa0" stroke="#fff" stroke-width="1.5"/><text x="560" y="184">DEM</text><text x="560" y="202" fill="#dceeff" font-size="9">recovers &amp; squares</text></g>
+        <!-- Mbappe slots -->
+        <g><circle cx="330" cy="120" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="330" y="124">MBA</text><text x="330" y="142" fill="#dceeff" font-size="9">slots home</text></g>
+      </g>
+
+      <!-- botched goal kick to defender at feet -->
+      <path d="M440 66 C 470 90, 490 105, 498 112" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="5 4" fill="none" marker-end="url(#aErr)"/>
+      <!-- Dembele recovers high & squares across -->
+      <path d="M548 174 C 470 150, 400 130, 348 122" stroke="#3b82d6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aF2)"/>
+      <!-- Mbappe finish -->
+      <path d="M328 106 C 335 82, 345 58, 355 36" stroke="#3b82d6" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aF2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Iraq's botched goal-kick</span>
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Dembélé recovery &amp; square</span>
+      <span><i style="border-top-color:#3b82d6"></i> Mbappé finish</span>
+    </div>
+
+    <p class="expl"><strong>Punishing the error — the chronic Iraqi flaw struck again.</strong> Just as against Norway, Iraq were undone by their own building from the back. Shortly after the storm restart, a <strong>botched short goal-kick was fired straight to the feet of a defender, France pressed high and won it back, and Dembélé — unselfish as ever — squared for Mbappé to slot home</strong> his 16th World Cup goal, equalling Klose. The pre-match warning was that Iraq's defensive errors, not France's brilliance, would likely decide the margin; so it proved. It also showcased the value of France's aggressive high press after the restart: keep the pressure on a nervous defence, and the gifts arrive. Two-nil, and the game was dead.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 — Dembélé's long-awaited first World Cup goal</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">France · 3-0</span><span class="mt">Olise slides him through, Dembélé tucks it into the bottom corner</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aB3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise threads it right, Dembélé finishes bottom-left</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#1c8a4e" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">BAS</text></g>
+        <circle cx="320" cy="140" r="10" fill="#155e34" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="400" cy="140" r="10" fill="#155e34" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Olise central -->
+        <g><circle cx="360" cy="260" r="13" fill="#5aa0e6" stroke="#fff" stroke-width="1.5"/><text x="360" y="264" fill="#06223f">OLI</text><text x="360" y="282" fill="#bcd9f6" font-size="9">slides him through</text></g>
+        <!-- Dembele breaking right -->
+        <g><circle cx="540" cy="230" r="14" fill="#1a4fa0" stroke="#fff" stroke-width="1.6"/><text x="540" y="234">DEM</text><text x="540" y="252" fill="#dceeff" font-size="9">runs through</text></g>
+      </g>
+
+      <!-- Olise through ball right -->
+      <path d="M373 254 C 440 235, 500 228, 528 228" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aB3)"/>
+      <!-- Dembele carries & finishes bottom-left -->
+      <path d="M528 222 C 480 180, 430 130, 380 60" stroke="#3b82d6" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aF3)"/>
+      <text x="430" y="150" font-size="10" fill="#bcd9f6">powered across keeper, bottom-left</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Olise's through-ball</span>
+      <span><i style="border-top-color:#3b82d6"></i> Dembélé run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>A milestone moment, and Olise's masterclass continues.</strong> Having squared selflessly for Mbappé's second, Dembélé got his own reward: <strong>Michael Olise slid him through on the right with an effortless pass, and the PSG winger tucked it powerfully across Basil into the bottom-left corner</strong> — his <em>first ever World Cup goal, at the 19th time of asking</em> across major tournaments. The assist was Olise's third of the tournament, underlining that the decision to make him the central creative hub has been transformative. Beyond the milestone, the goal reflected France's total control: even at 2-0 with the game won, they kept probing, and the quality of the Olise-to-Dembélé connection was simply a class above.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Performance Snapshot</h2>
+  <div class="ratings">
+    <div class="rt"><b>Kylian Mbappé</b> — <span class="star">Inevitable</span>. A brace, now level with Klose on 16 WC goals, and a constant menace — even hit the bar late before being rested for Thuram.</div>
+    <div class="rt"><b>Michael Olise</b> — <span class="star">The conductor</span>. An assist and the creative hub from the central role; his third assist of the tournament. France's most important non-Mbappé player.</div>
+    <div class="rt"><b>Ousmane Dembélé</b> — <span class="good">Selfless &amp; rewarded</span>. An assist (squaring for Mbappé) and finally his first World Cup goal. A complete performance.</div>
+    <div class="rt"><b>The back line</b> — <span class="good">Clean sheet at last</span>. After six games conceding, France finally shut the door — albeit against limited opposition. A psychological boost.</div>
+    <div class="rt"><b>Manu Koné</b> — <span class="good">Composed debut</span>. Steady alongside Rabiot on his World Cup debut; helped control the midfield second balls.</div>
+    <div class="rt"><b>Iraq (Iqbal, Al-Hamadi)</b> — <span class="good">Brave</span>. Caught the eye and started brightly in midfield, but undone again by defensive errors. No shame.</div>
+  </div>
+
+  <h2><span class="ic">🔧</span> Future Tactic 1 — The blueprint holds: keep Olise central, Mbappé free</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">France · Future 1</span><span class="mt">The structure that's clicked — preserve it for Norway &amp; beyond</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise central feeds three runners; Mbappé highest</text>
+
+      <!-- opp back line -->
+      <g><circle cx="270" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="360" cy="100" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="450" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/></g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- Olise central hub -->
+        <g><circle cx="360" cy="255" r="14" fill="#5aa0e6" stroke="#fff" stroke-width="1.6"/><text x="360" y="259" fill="#06223f">OLI</text><text x="360" y="277" fill="#bcd9f6" font-size="9">central hub</text></g>
+        <!-- wide men -->
+        <g><circle cx="120" cy="210" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="120" y="214">BAR</text></g>
+        <g><circle cx="600" cy="210" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="600" y="214">DEM</text></g>
+        <!-- Mbappe highest -->
+        <g><circle cx="360" cy="150" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="154">MBA</text><text x="360" y="132" fill="#dceeff" font-size="8">highest line</text></g>
+      </g>
+
+      <!-- three feeds from Olise -->
+      <path d="M346 248 C 270 230, 180 220, 134 214" stroke="#3b82d6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aF4)"/>
+      <path d="M374 248 C 450 230, 540 220, 586 214" stroke="#3b82d6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aF4)"/>
+      <path d="M360 242 C 360 215, 360 190, 360 166" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG4)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Olise distribution</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé's run in behind</span>
+    </div>
+
+    <p class="expl"><strong>The shape has clicked — don't touch it.</strong> Across the Senegal second half and now this full game, the pattern is settled and devastating: <strong>Olise as the central playmaker, Dembélé and Barcola stretching the flanks, and Mbappé as the highest, freest runner.</strong> Olise's vision turns France's individual talent into a coherent attack — he created the opener and the third, and pulls all the strings. For Norway on Friday (the likely top-spot decider) and into the knockouts, Deschamps should keep this exact structure; the first-half congestion of the Senegal opener feels solved. The one nuance for tougher opponents: against a side that defends deeper and more disciplined than Iraq, France will need Olise's between-the-lines passing and the overlapping full-backs even more, since they won't get gift goals from defensive errors.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Future Tactic 2 — The defence: clean sheet earned, but the real test is Norway</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">France · Future 2</span><span class="mt">Tighten the rest-defence before Haaland comes calling</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aR5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="356" width="220" height="70"/></g>
+      <text x="360" y="20" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Defending ↓ · a screening pivot &amp; full-back discipline vs an elite #9 (Haaland)</text>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- back four -->
+        <g><circle cx="220" cy="360" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="220" y="364">DIG</text></g>
+        <g><circle cx="320" cy="372" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="320" y="376">SAL</text></g>
+        <g><circle cx="420" cy="372" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="420" y="376">UPA</text></g>
+        <g><circle cx="520" cy="360" r="11" fill="#5a96cc" stroke="#fff" stroke-width="1.2"/><text x="520" y="364">KOU</text></g>
+        <!-- screening pivot -->
+        <g><circle cx="360" cy="300" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="360" y="304" fill="#06301d">KONE</text><text x="360" y="282" fill="#bff0d5" font-size="8">screens centre</text></g>
+      </g>
+
+      <!-- Haaland threat -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="180" r="13" fill="#d23c43" stroke="#fff" stroke-width="1.4"/><text x="360" y="184">HAA</text><text x="360" y="162" fill="#ffd2d4" font-size="9">elite #9 in behind</text></g>
+      </g>
+
+      <!-- ball over the top denied -->
+      <path d="M360 196 C 360 230, 360 260, 360 282" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(355,288)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- pivot cover arc -->
+      <path d="M250 300 Q360 272 470 300" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none" opacity=".8"/>
+      <ellipse cx="360" cy="320" rx="150" ry="50" fill="#39d98a" opacity="0.10"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Screening / cover</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Ball over the top denied</span>
+    </div>
+
+    <p class="expl"><strong>A clean sheet — but read it honestly.</strong> France finally ended their six-game drought without conceding, which is a genuine psychological boost. But it came against a limited Iraq side that mustered just 0.6 xG and four touches in the French box; <strong>this tells us little about the back line's resilience against elite opposition.</strong> The far sterner exam arrives Friday: <strong>Norway and Erling Haaland</strong>, likely for top spot. The fixes that matter against a world-class No.9 who lives on the shoulder: <strong>a disciplined screening pivot (Koné/Tchouaméni) protecting the space in front of the centre-backs, and the full-backs holding shape rather than over-committing</strong> — the exact looseness Senegal exploited. France have the personnel to be the tournament's best defence; the clean sheet is a start, but Haaland will be the true measure. Get the rest-defence tight, and a France side scoring this freely becomes a genuine favourite to reach a third straight final.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next</h2>
+  <p>Qualification sealed, Mbappé level with Klose and chasing Messi, Dembélé off the mark, and a first clean sheet banked — a near-perfect night's work, storm and all. The picture is bright: France look settled in their attacking shape, ruthless in front of goal, and now have the defensive clean sheet to build belief on. The final group game against <strong>Norway</strong> is the real prize — likely a straight shootout for top spot and the more favourable knockout path, and a heavyweight test of France's defence against Haaland. Win it, and France enter the knockouts as one of the tournament's most feared sides, with the in-form Mbappé-Olise-Dembélé axis humming.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Group I · qualified</div><div class="g">France into Round of 32</div><div class="n">Through with a game to spare; the Norway result decides top spot &amp; the knockout path.</div></div>
+    <div class="nx"><div class="d">Fri 26 Jun · MD3</div><div class="g">Norway vs France</div><div class="n">Foxborough. The group decider — Haaland vs Saliba/Upamecano, likely for first place.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>A professional, comfortable, record-extending night for France — exactly what was needed. <strong>Mbappé's brace moved him level with Klose and kept him on Messi's trail, Dembélé finally broke his World Cup duck, Olise pulled every string, and the long-awaited clean sheet arrived</strong> — all while navigating a two-hour storm delay without losing focus. The honest caveats are that Iraq were limited and gifted France a goal, so the defensive solidity remains unproven against the elite. But the attacking blueprint is humming and qualification is secured. The Norway decider will tell us how good this France side really is; on this evidence, they look every inch contenders. <strong>Mbappé, 16 World Cup goals — and the chase is on.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil 3-0 Scotland — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#ffdf00;--bra2:#009b3a;--sco:#0065bf;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#ffdf00,#009b3a 60%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .b{color:var(--bra)}.scoreboard .s{color:#5a9fe0}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--bra)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .b{color:var(--bra)}.stat .v .s{color:#5a9fe0}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--green);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+  .neymar{background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .neymar .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .quote{background:#0d141d;border-left:3px solid var(--gold);border-radius:8px;padding:11px 15px;margin:12px 0;font-size:14px;color:#e4ddc9;font-style:italic}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(255,223,0,.16);color:var(--bra)}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(255,223,0,.14);color:var(--bra);border-color:#3a3a14">Group C · Matchday 3 · FT</span>
+  </div>
+  <h1>Brazil vs Scotland — Vinícius Lights Up Miami</h1>
+
+  <div class="scoreboard">
+    <span class="t b">🇧🇷 Brazil</span>
+    <span class="sc">3 – 0</span>
+    <span class="t s">Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+  </div>
+  <div class="meta">📍 Hard Rock Stadium, Miami · Group C · Full-time</div>
+  <div class="scorers">⚽ <b>Vinícius Jr 7', 45+3'</b> · <b>Cunha 60'</b> — Brazil top Group C, Neymar returns</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="b">4.46</span> · <span class="s">1.13</span></div></div>
+    <div class="stat"><div class="l">Vini goals</div><div class="v"><span class="b">2</span> (+1 VAR'd)</div></div>
+    <div class="stat"><div class="l">Bruno assists</div><div class="v"><span class="b">2</span> 🅰️</div></div>
+    <div class="stat"><div class="l">Group C</div><div class="v"><span class="b">WINNERS</span></div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">A commanding, 4.46-xG performance — Brazil's most convincing of the group, and Neymar's long-awaited return off the bench.</p>
+
+  <h2><span class="ic">🧭</span> The Story — Vinícius's Tournament, Brazil's Statement</h2>
+  <p class="lead">Brazil saved their best for last. After the lacklustre Morocco draw and the routine Haiti win, this was the <strong>commanding, ruthless display the talent always promised</strong> — and it was authored by a man having the tournament of his life. <strong>Vinícius Júnior was simply unplayable</strong>, especially in a first half where he had the ball in the net three times (one chalked off by VAR). He punished a Scott McKenna error inside seven minutes, struck again only for a build-up foul to be flagged, then rose to head home before the break. Matheus Cunha added a third after the interval, and the xG told the tale of total control: <strong>4.46 to 1.13.</strong> Brazil top Group C, march into the Round of 32 for a record 15th straight World Cup, and — in the night's emotional coda — welcomed Neymar back to the pitch.</p>
+
+  <div class="callout">
+    <div class="t">✅ The growing force — Ancelotti's Brazil click</div>
+    <p style="margin:8px 0 0">Each game has built on the last. The Cunha-led mobile front line that unlocked Haiti was even better here, with <strong>Bruno Guimarães pulling the strings (two assists)</strong> and Vinícius carrying his group-stage form — a goal in <em>all three</em> matches — to its peak. Brazil have gone from "oddly blunt" against Morocco to "every inch a growing force," and they did it against a Scotland side that came in with genuine hopes. The fixes have held; now the knockouts are the real test.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (7') — Vinícius pounces on the McKenna error</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Brazil · 1-0</span><span class="mt">Rayan's pass, a Scottish mistake, Vini finishes early</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="aR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · a defensive error pounced on inside seven minutes</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#0065bf" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">GK</text></g>
+        <!-- McKenna error -->
+        <g><circle cx="430" cy="150" r="11" fill="#004a8c" stroke="#fff" stroke-width="1.2"/><text x="430" y="154" font-size="8">McK</text><text x="430" y="172" fill="#ffb3b8" font-size="8">error ⚠</text></g>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Rayan supplies -->
+        <g><circle cx="560" cy="240" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="560" y="244" fill="#06301d">RAY</text><text x="560" y="262" fill="#bff0d5" font-size="9">the pass</text></g>
+        <!-- Vini latches on -->
+        <g><circle cx="320" cy="220" r="14" fill="#ffdf00" stroke="#fff" stroke-width="1.6"/><text x="320" y="224">VIN</text><text x="320" y="242" fill="#fff" font-size="9">steals in &amp; finishes</text></g>
+      </g>
+
+      <!-- error / loose ball to Vini -->
+      <path d="M420 158 C 390 180, 360 200, 336 212" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="5 4" fill="none" marker-end="url(#aR)"/>
+      <!-- Rayan involvement -->
+      <path d="M548 234 C 480 215, 400 205, 340 210" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="7 5" fill="none" opacity=".7" marker-end="url(#aY)"/>
+      <!-- Vini finish -->
+      <path d="M322 206 C 330 160, 345 100, 358 36" stroke="#ffdf00" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aY)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Scottish error</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Rayan's involvement</span>
+      <span><i style="border-top-color:#ffdf00"></i> Vinícius finish</span>
+    </div>
+
+    <p class="expl"><strong>The early blow that set the tone.</strong> Inside seven minutes, <strong>Vinícius punished a Scott McKenna mistake</strong>, latching onto the loose ball (with teenager Rayan involved in the build-up) and finishing to settle Brazil immediately. It was the perfect start — the kind of early goal that lets Brazil's flair players relax and take over. Vinícius's predatory instinct to gamble on a defender's error, then convert with composure, is exactly the cutting edge Brazil lacked against Morocco. From here, the floodgates were always likely to open.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (45+3') — Vini rises to head home</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Brazil · 2-0</span><span class="mt">Bruno Guimarães delivers, Vinícius climbs highest</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="aB2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · a delivery met with a powerful header on the stroke of half-time</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#0065bf" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">GK</text></g>
+        <circle cx="300" cy="120" r="10" fill="#004a8c" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="420" cy="120" r="10" fill="#004a8c" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Bruno delivers -->
+        <g><circle cx="150" cy="240" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.4"/><text x="150" y="244" fill="#06223f">BRU</text><text x="150" y="262" fill="#bcd9f6" font-size="9">delivery</text></g>
+        <!-- Vini header -->
+        <g><circle cx="370" cy="130" r="14" fill="#ffdf00" stroke="#fff" stroke-width="1.6"/><text x="370" y="134">VIN</text><text x="370" y="152" fill="#fff" font-size="9">rises highest</text></g>
+      </g>
+
+      <!-- Bruno cross -->
+      <path d="M162 232 C 240 175, 320 145, 356 138" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aB2)"/>
+      <!-- Vini header to goal -->
+      <path d="M368 116 C 365 90, 360 65, 358 36" stroke="#ffdf00" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aY2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Bruno Guimarães delivery</span>
+      <span><i style="border-top-color:#ffdf00"></i> Vinícius header</span>
+    </div>
+
+    <p class="expl"><strong>A different kind of goal — and a telling one.</strong> Just before the break, <strong>Bruno Guimarães delivered and Vinícius rose brilliantly to head home</strong> his second of the night, underlining his all-round quality. For a winger sometimes pigeonholed as a pure dribbler, scoring with a powerful header is a reminder of how complete his game has become. It also showcased Bruno's afternoon as the creative fulcrum — the first of his two assists. At 2-0 at the interval, having had a third effort ruled out by VAR, Vinícius had effectively decided the contest single-handedly before half-time.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 (60') — Cunha applies the finish off Bruno's craft</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Brazil · 3-0</span><span class="mt">Guimarães opens the angle, Cunha tucks it away</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+        <marker id="aB3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · slick play opens the angle for the No.9</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#0065bf" stroke="#fff" stroke-width="1.3"/><text x="360" y="44">GK</text></g>
+        <circle cx="320" cy="140" r="10" fill="#004a8c" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="400" cy="140" r="10" fill="#004a8c" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Bruno opens angle -->
+        <g><circle cx="470" cy="240" r="12" fill="#5aa0e6" stroke="#fff" stroke-width="1.4"/><text x="470" y="244" fill="#06223f">BRU</text><text x="470" y="262" fill="#bcd9f6" font-size="9">opens the angle</text></g>
+        <!-- Cunha finishes -->
+        <g><circle cx="330" cy="200" r="14" fill="#ffdf00" stroke="#fff" stroke-width="1.6"/><text x="330" y="204">CUN</text><text x="330" y="222" fill="#fff" font-size="9">tucks it home</text></g>
+      </g>
+
+      <!-- Bruno slips it to Cunha -->
+      <path d="M458 234 C 420 220, 380 210, 348 206" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aB3)"/>
+      <!-- Cunha finish -->
+      <path d="M334 186 C 345 140, 355 90, 362 36" stroke="#ffdf00" stroke-width="4" fill="none" stroke-dasharray="2 0" marker-end="url(#aY3)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Bruno Guimarães (2nd assist)</span>
+      <span><i style="border-top-color:#ffdf00"></i> Cunha finish</span>
+    </div>
+
+    <p class="expl"><strong>The third, and the front-line cohesion on show again.</strong> Just after the hour, <strong>slick play from Bruno Guimarães opened the angle and Matheus Cunha applied the final blow</strong> — the midfielder's second assist of the night. Cunha now has goals in back-to-back games and looks settled as Brazil's mobile focal point, exactly the No.9 solution that was missing in the opener. The goal capped a near-flawless team performance: Vinícius the destroyer, Bruno the creator, Cunha the finisher — the blend Brazil have been searching for all tournament, finally clicking in unison.</p>
+  </div>
+
+  <div class="neymar">
+    <div class="t">🇧🇷 Neymar returns — an emotional homecoming</div>
+    <p style="margin:8px 0 0">The night's other story was deeply personal. <strong>Neymar came off the bench in the 76th minute for his tournament debut</strong>, having been sidelined by a right calf injury for the first two games. The majority-Brazilian crowd at Hard Rock Stadium began chanting his name as he warmed up, and roared as he trotted on. Brazil's all-time leading scorer (79 goals) was visibly moved:</p>
+    <div class="quote">"I rate this as one of the most special days of my career... I got a bit emotional and cried alone afterwards, because it feels so good to live all of this one more time." — Neymar</div>
+    <p style="margin:6px 0 0">His reintegration is the great tactical question of Brazil's knockout run: how to fit a returning Neymar into a front line that has just found its rhythm <em>without</em> him.</p>
+  </div>
+
+  <h2><span class="ic">🔧</span> Knockout Tactic 1 — Integrating Neymar without breaking the rhythm</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Brazil · Knockouts 1</span><span class="mt">Neymar as the free No.10 linking Vini, Cunha &amp; Raphinha</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aY4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf00"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · Neymar links the line; the runners stretch in behind</text>
+
+      <!-- opp block -->
+      <g><circle cx="270" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="360" cy="100" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/><circle cx="450" cy="110" r="11" fill="#888" stroke="#fff" stroke-width="1.2"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Neymar free 10 -->
+        <g><circle cx="360" cy="265" r="14" fill="#ffdf00" stroke="#fff" stroke-width="1.6"/><text x="360" y="269">NEY</text><text x="360" y="287" fill="#fff" font-size="9">free No.10</text></g>
+        <!-- Vini left, Raphinha right -->
+        <g><circle cx="120" cy="210" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="120" y="214">VIN</text></g>
+        <g><circle cx="600" cy="210" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="600" y="214">RAP</text></g>
+        <!-- Cunha highest -->
+        <g><circle cx="360" cy="150" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="360" y="154" fill="#06301d">CUN</text><text x="360" y="132" fill="#bff0d5" font-size="8">runs in behind</text></g>
+      </g>
+
+      <!-- Neymar splits passes -->
+      <path d="M346 258 C 270 235, 180 220, 134 214" stroke="#ffdf00" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY4)"/>
+      <path d="M374 258 C 450 235, 540 220, 586 214" stroke="#ffdf00" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY4)"/>
+      <path d="M360 252 C 360 220, 360 190, 360 166" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG4)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf00;border-top-style:dashed"></i> Neymar's distribution</span>
+      <span><i style="border-top-color:#39d98a"></i> Cunha's run in behind</span>
+    </div>
+
+    <p class="expl"><strong>The defining knockout question.</strong> Brazil have just found their best football <em>without</em> Neymar — so Ancelotti's challenge is to add his quality without disrupting the balance. The smart solution is to deploy <strong>Neymar as a free-roaming No.10 just behind the front line</strong>, where his vision and final pass amplify the runners rather than competing with them for space: <strong>Vinícius and Raphinha stretch the flanks, Cunha runs in behind, and Neymar links it all together</strong> from central pockets. The risk is twofold — Neymar's match fitness after a calf injury (he'll need minutes managed) and the defensive cost of fielding another low-workrate creator. But used as an impact creator and game-state weapon rather than a guaranteed 90-minute starter, a fit Neymar gives Brazil a tactical dimension no other contender can match. Integrate him gradually; don't break what's working.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Knockout Tactic 2 — Game-management &amp; the test of a real opponent</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Brazil · Knockouts 2</span><span class="mt">Control transitions; the front line's defensive work matters now</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aR5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="356" width="220" height="70"/></g>
+      <text x="360" y="20" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Defending ↓ · a screening pivot &amp; tracking wingers shut the counter down</text>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- back four -->
+        <g><circle cx="220" cy="360" r="11" fill="#e6c200" stroke="#fff" stroke-width="1.2"/><text x="220" y="364">LB</text></g>
+        <g><circle cx="320" cy="372" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="320" y="376">MAR</text></g>
+        <g><circle cx="420" cy="372" r="12" fill="#ffdf00" stroke="#fff" stroke-width="1.3"/><text x="420" y="376">GAB</text></g>
+        <g><circle cx="520" cy="360" r="11" fill="#e6c200" stroke="#fff" stroke-width="1.2"/><text x="520" y="364">RB</text></g>
+        <!-- screening pivot -->
+        <g><circle cx="360" cy="300" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="360" y="304" fill="#06301d">CAS</text><text x="360" y="282" fill="#bff0d5" font-size="8">screens centre</text></g>
+        <!-- tracking winger -->
+        <g><circle cx="180" cy="250" r="11" fill="#ffdf00" stroke="#fff" stroke-width="1.2"/><text x="180" y="254">VIN</text><text x="180" y="232" fill="#fff" font-size="8">tracks back</text></g>
+      </g>
+
+      <!-- opp counter denied -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle"><g><circle cx="360" cy="180" r="11" fill="#ff5d6a" stroke="#fff" stroke-width="1.2"/><text x="360" y="184">9</text></g></g>
+      <path d="M360 196 C 360 230, 360 260, 360 282" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(355,288)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <path d="M250 300 Q360 272 470 300" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none" opacity=".8"/>
+      <ellipse cx="360" cy="320" rx="150" ry="50" fill="#39d98a" opacity="0.10"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Screening / cover</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Counter denied</span>
+    </div>
+
+    <p class="expl"><strong>The honest caveat — read the result in context.</strong> Brazil were imperious, but Scotland aided their own downfall with errors, and the knockouts bring far sterner tests. Two things must sharpen. First, <strong>game-management of transitions</strong>: Scotland actually rallied late and Alisson made a big save from McTominay — against a Croatia, France or Argentina, those moments are punished. A disciplined <strong>screening pivot (Casemiro/Fabinho) in front of the back line, and the wingers — yes, even Vinícius — tracking back</strong> to deny counters becomes non-negotiable. Second, the <strong>chance-conversion vs elite defences</strong>: a 4.46 xG against Scotland won't be repeated against a top back line, so Brazil must stay clinical with fewer opportunities. The talent and the attacking blend are now clearly there; the knockouts will test whether Brazil can defend a lead and punish limited chances against opponents who don't gift goals. Get that right, and they are genuine contenders.</p>
+  </div>
+
+  <h2><span class="ic">🗺️</span> What Happens Next — Into the Knockouts</h2>
+  <p>Group C winners, a record-extending 15th straight World Cup knockout appearance, Vinícius in the form of his life, Cunha settled at No.9, Bruno orchestrating, and Neymar back in the fold — Brazil enter the Round of 32 looking, as ESPN put it, "every inch a growing force." The momentum has built game on game, from the blunt Morocco draw to this commanding statement. The challenge now flips entirely: no more group-stage minnows, and every opponent a potential banana skin. <strong>Brazil face the runners-up of Group F in Houston on June 29</strong> — the knockouts begin, and the real measure of this side's title credentials starts now.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Group C · WINNERS</div><div class="g">Brazil into Round of 32</div><div class="n">Top of the group; a 15th consecutive World Cup knockout-stage appearance.</div></div>
+    <div class="nx"><div class="d">Mon 29 Jun · R32</div><div class="g">Brazil vs Group F runner-up</div><div class="n">Houston. The knockouts begin — win or go home, and the real test of Brazil's credentials.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>Brazil saved their best for last — a <strong>commanding, 4.46-xG demolition of Scotland inspired by an unplayable Vinícius Júnior</strong>, who scored in every group game, with Bruno Guimarães pulling the strings (two assists) and Cunha applying the finish. The Ancelotti project has visibly grown match by match, and the emotional return of Neymar adds a tantalising tactical wildcard for the knockouts. The honest notes: Scotland gifted chances and rallied late, so the defensive game-management and clinical edge remain to be proven against elite opposition. But the attacking blend has clicked, the talisman is flying, and Brazil look every inch a contender. The group stage was the warm-up; the real test starts in Houston.</p>
+  </div>
+
+</div>
+</body>
+</html>

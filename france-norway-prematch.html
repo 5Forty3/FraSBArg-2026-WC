@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France vs Norway — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#1a4fa0;--fra2:#3b82d6;--nor:#ba0c2f;--norw:#dfe3e8;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#ba0c2f);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .f{background:linear-gradient(135deg,#0e1a2e,#0d1117)}
+  .vsbar .n{background:linear-gradient(135deg,#2a0c12,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .f .nm{color:#6aa3e6}.vsbar .n .nm{color:#e8909a}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.france{border-left:3px solid var(--fra2)}
+  .card.norway{border-left:3px solid var(--nor)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .shock{background:linear-gradient(135deg,#241a0c,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .shock .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .grief{background:linear-gradient(135deg,#15171c,#0f1117);border:1px solid #2a2f38;border-left:3px solid #8b97a8;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .grief .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#aab6c6}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(57,217,138,.16);color:var(--green);border:1px solid #1f4533;margin-left:6px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:#6aa3e6}
+  .move .mtag.nor{background:rgba(186,12,47,.22);color:#e8909a}
+  .move .mtag.duel{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group I · Matchday 3 · Top-spot decider</span>
+  </div>
+  <h1>France vs Norway</h1>
+  <div class="sub">The group finale that lost its blockbuster billing — Norway rest Haaland, France load up</div>
+  <div class="meta">🕒 12:30 AM IST, Sat 27 Jun · 📍 Gillette Stadium, Foxborough (Boston)</div>
+
+  <div class="vsbar">
+    <div class="side f"><div class="nm">🇫🇷 France</div><div class="fm">4-2-3-1 · Stéphan (int.) · top of Group I · need only a draw</div></div>
+    <div class="mid">VS</div>
+    <div class="side n"><div class="nm">Norway 🇳🇴</div><div class="fm">heavily rotated · Solbakken · already through · Haaland &amp; Ødegaard rested</div></div>
+  </div>
+
+  <div class="shock">
+    <div class="t">⚡ Confirmed: the team sheets just changed everything</div>
+    <p style="margin:8px 0 0">This was billed as the <strong>Mbappé vs Haaland blockbuster</strong> — until the official lineups landed. With both sides already through to the Round of 32, <strong>Norway's Ståle Solbakken has rung the changes and named Erling Haaland AND Martin Ødegaard on the bench</strong>, handing the line to Crystal Palace's Jørgen Strand Larsen with Oscar Bobb and Andreas Schjelderup in support. <strong>France, by contrast, named a loaded XI</strong> — Mbappé starts, the dazzling Olise-Dembélé-Doué trio behind him. The fight for top spot (France need only a draw on goal difference) is on, but the heavyweight forward duel everyone wanted will, at most, arrive only from the bench.</p>
+  </div>
+
+  <div class="grief">
+    <div class="t">🖤 A French team playing with heavy hearts</div>
+    <p style="margin:8px 0 0">France take the field under an emotional cloud. <strong>Head coach Didier Deschamps is absent</strong>, having returned home on compassionate leave after the death of his mother; assistant <strong>Guy Stéphan leads the side on an interim basis.</strong> "I am thinking a lot about Didier and his family," Stéphan said. "I am just trying to make a difficult situation as normal as possible." Expect a French performance played for their absent leader — an added layer of motivation for a side already in ruthless form.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News — Confirmed XIs <span class="confirm">official sheets in</span></h2>
+  <p class="lead">For once, no guesswork — the official lineups have dropped, and they tell the story of two coaches with opposite priorities: France chasing the top seed at full tilt, Norway protecting their stars for the knockouts.</p>
+
+  <div class="card france">
+    <h3 style="margin-top:0">🇫🇷 France — loaded for top spot</h3>
+    <ul>
+      <li><strong>Mbappé starts</strong> and leads a frightening attack, chasing the Golden Boot (four goals, level with Haaland, one behind Messi). The <strong>Olise-central / Dembélé &amp; Doué wide</strong> shape that's clicked all tournament continues.</li>
+      <li><strong>Saliba is OUT injured</strong> — he missed training, so <strong>Maxence Lacroix earns a high-profile start</strong> alongside Upamecano, with Koundé and Théo Hernández at full-back.</li>
+      <li><strong>Tchouaméni captains</strong> the side (in Deschamps' and the usual leaders' absence) and anchors a double pivot with <strong>Manu Koné</strong>.</li>
+      <li><strong>The backdrop:</strong> France have scored six and conceded one across the group, finally kept a clean sheet vs Iraq, and look "ominously impressive." A draw secures top spot; they'll want the win and a perfect record.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Confirmed XI (4-2-3-1): Maignan; Koundé, Upamecano, Lacroix, T. Hernández; Tchouaméni (c), Koné; Dembélé, Olise, Doué; Mbappé.</p>
+  </div>
+
+  <div class="card norway">
+    <h3 style="margin-top:0">🇳🇴 Norway — stars wrapped in cotton wool</h3>
+    <ul>
+      <li><strong>Haaland &amp; Ødegaard both BENCHED</strong> — Solbakken, with qualification secure, prioritises fresh legs for the knockouts. A massive call that strips Norway of their two best players from the start.</li>
+      <li><strong>Jørgen Strand Larsen leads the line</strong>, supported by the genuinely dangerous <strong>Oscar Bobb</strong> and Andreas Schjelderup — a capable but far less fearsome front line than Haaland-Sørloth-Nusa.</li>
+      <li><strong>An entirely reworked midfield:</strong> Patrick Berg anchoring with Aursnes, Thorstvedt and Rangers' Thelo Aasgaard — untested as a unit at this level.</li>
+      <li><strong>The story so far:</strong> Norway have been the group-stage surprise — 4-1 over Iraq, 3-2 over Senegal, Haaland with four goals — but their carefree, front-foot approach has leaked goals (conceded in both games) and faced 27 shots. Even rotated, Bobb's pace on the break is their one real weapon.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Confirmed XI: Selvik; Østigård, Bjørkan, Falchener; Berg, Aursnes, Thorstvedt, Aasgaard, Schjelderup, Bobb; Strand Larsen. (Haaland, Ødegaard, Sørloth, Nusa on the bench.)</p>
+  </div>
+
+  <h2><span class="ic">♟️</span> The Tactical Reframe — Favourite Meets Second-String</h2>
+  <p>The rotation flips the calculus. Instead of containing the tournament's most lethal striker, France now face a Norway side missing its two stars — a heavy favourite against a weakened opponent, much like the Iraq game, but against more capable individuals on the break. France will dominate the ball and look to break a Norway side that has shown it can be got at defensively. The two live threads: how quickly France's loaded attack punishes a second-string back line, and whether <strong>Haaland's eventual introduction off the bench</strong> can rescue Norway's bid for top spot. Let's map the patterns.</p>
+
+  <h2><span class="ic">⚡</span> Tactical Move 1 — France's loaded attack vs a second-string defence</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Attack</span><span class="mt">Olise conducts, Mbappé &amp; Doué attack a makeshift back line</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3b82d6"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · a makeshift Norway back three is pulled apart</text>
+
+      <!-- Norway makeshift back line -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="290" cy="100" r="11" fill="#ba0c2f" stroke="#fff" stroke-width="1.2"/><text x="290" y="104">OST</text></g>
+        <g><circle cx="370" cy="92" r="11" fill="#ba0c2f" stroke="#fff" stroke-width="1.2"/><text x="370" y="96">BJO</text></g>
+        <g><circle cx="450" cy="100" r="11" fill="#ba0c2f" stroke="#fff" stroke-width="1.2"/><text x="450" y="104">FAL</text></g>
+        <text x="370" y="128" text-anchor="middle" font-size="10" fill="#f0b8c0">untested unit, gaps appear</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- Olise central -->
+        <g><circle cx="430" cy="270" r="13" fill="#1a4fa0" stroke="#fff" stroke-width="1.5"/><text x="430" y="274">OLI</text></g>
+        <!-- Dembele & Doue wide -->
+        <g><circle cx="600" cy="220" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="600" y="224">DEM</text></g>
+        <g><circle cx="120" cy="220" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="120" y="224">DOU</text></g>
+        <!-- Mbappe peeling -->
+        <g><circle cx="300" cy="210" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="300" y="214">MBA</text><text x="300" y="232" fill="#dceeff" font-size="9">spins in behind</text></g>
+      </g>
+
+      <!-- Olise vertical ball -->
+      <path d="M418 262 C 380 220, 340 180, 308 150" stroke="#3b82d6" stroke-width="3.5" stroke-dasharray="9 6" fill="none" marker-end="url(#aF)"/>
+      <!-- Mbappe run -->
+      <path d="M300 196 C 295 165, 292 138, 298 105" stroke="#3b82d6" stroke-width="4" fill="none" marker-end="url(#aF)"/>
+      <!-- finish -->
+      <path d="M300 100 C 320 75, 340 55, 360 34" stroke="#3b82d6" stroke-width="3" fill="none" stroke-dasharray="2 0" marker-end="url(#aF)"/>
+      <!-- Doue underlap -->
+      <path d="M132 212 C 180 180, 230 160, 270 145" stroke="#39d98a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aG)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3b82d6"></i> Mbappé run / finish</span>
+      <span><i style="border-top-color:#3b82d6;border-top-style:dashed"></i> Olise's vertical ball</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Doué's inside run</span>
+    </div>
+
+    <p class="expl"><strong>The mismatch France will exploit.</strong> Norway's defensive frailties were already the chink in their armour — they conceded in both group games and have kept just two clean sheets in 11 matches — and now they field an <strong>untested, makeshift back line</strong> without the structure of a settled unit. Against France's loaded front four that's a daunting task. The pattern is the same one that's worked all tournament: <strong>Olise conducts from central areas, Dembélé and Doué stretch the flanks, and Mbappé spins off the shoulder to attack the space behind.</strong> Doué returning to the XI adds another dribbler to overload Norway's makeshift full-backs. With this much quality against a second-string defence, France should create early and often — and Mbappé, chasing the Golden Boot, will be hunting goals from the first whistle.</p>
+  </div>
+
+  <h2><span class="ic">🏃</span> Tactical Move 2 — Norway's only hope: Bobb on the break</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag nor">Norway · Counter</span><span class="mt">Spring Bobb into the space behind France's high full-backs</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aN" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e8909a"/></marker>
+        <marker id="aNg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Norway breaking ↑ · attack the space behind France's advancing full-backs</text>
+
+      <!-- France back line, FB caught high -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="100" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="300" y="104">UPA</text></g>
+        <g><circle cx="400" cy="100" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="400" y="104">LAC</text></g>
+        <g opacity=".6"><circle cx="560" cy="245" r="11" fill="#1a4fa0" stroke="#fff" stroke-width="1.2"/><text x="560" y="249">KOU</text><text x="560" y="267" fill="#dceeff" font-size="8">caught high</text></g>
+        <text x="560" y="135" text-anchor="middle" font-size="10" fill="#f0b8c0">VACATED</text>
+        <path d="M510 150 q55 -18 110 0" stroke="#ff5d6a" stroke-dasharray="4 5" fill="none" opacity=".7"/>
+      </g>
+
+      <!-- Norway break -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="380" cy="320" r="12" fill="#ba0c2f" stroke="#fff" stroke-width="1.3"/><text x="380" y="324">BERG</text></g>
+        <g><circle cx="330" cy="240" r="12" fill="#ba0c2f" stroke="#fff" stroke-width="1.3"/><text x="330" y="244">SL</text></g>
+        <!-- Bobb storming -->
+        <g><circle cx="570" cy="320" r="13" fill="#e8909a" stroke="#fff" stroke-width="1.5"/><text x="570" y="324" fill="#3a0d12">BOBB</text><text x="570" y="344" fill="#fff" font-size="9">pace in transition</text></g>
+      </g>
+
+      <!-- Berg to Strand Larsen -->
+      <path d="M372 312 C 360 285, 350 262, 344 250" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aNg)"/>
+      <!-- lay wide to Bobb -->
+      <path d="M344 234 C 420 230, 510 290, 558 308" stroke="#39d98a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aNg)"/>
+      <!-- Bobb storms the channel -->
+      <path d="M562 308 C 548 250, 535 195, 470 150" stroke="#e8909a" stroke-width="4" fill="none" marker-end="url(#aN)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Win it → release</span>
+      <span><i style="border-top-color:#e8909a"></i> Bobb counter run</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Vacated full-back zone</span>
+    </div>
+
+    <p class="expl"><strong>The one road to an upset.</strong> Even shorn of Haaland and Ødegaard, Norway aren't toothless — and their single best route to a goal is <strong>Oscar Bobb's dribbling in transition.</strong> France's full-backs (Koundé and Théo Hernández) push high, leaving the channels behind them open — the exact space Senegal targeted in the opener. If Norway can win the ball and spring Bobb into that grass at pace, the Manchester City winger has the quality to hurt anyone one-on-one, with Strand Larsen offering a focal point. It's a slim hope against France's quality and a reorganised midfield, but it's real — and it's why France's rest-defence discipline (Tchouaméni screening, one full-back holding) matters even in a game they should control. Norway will sit a little deeper than usual and bet on these moments.</p>
+  </div>
+
+  <h2><span class="ic">💥</span> Tactical Move 3 — The Haaland card: what changes when he comes on</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag nor">Norway · The Bench</span><span class="mt">If chasing the game, Haaland transforms the threat</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aN3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e8909a"/></marker>
+        <marker id="aNw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="105" width="720" height="52"/><rect y="210" width="720" height="52"/><rect y="315" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><rect x="220" y="14" width="280" height="95"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Norway attacking ↑ · Haaland on the shoulder of a Saliba-less defence</text>
+
+      <!-- France CBs (Saliba absent) -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="320" cy="150" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="320" y="154">UPA</text></g>
+        <g><circle cx="420" cy="150" r="12" fill="#1a4fa0" stroke="#fff" stroke-width="1.3"/><text x="420" y="154">LAC</text><text x="420" y="170" fill="#dceeff" font-size="8">not Saliba</text></g>
+      </g>
+
+      <!-- Haaland on the shoulder + creator -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="370" cy="240" r="15" fill="#e8909a" stroke="#fff" stroke-width="1.7"/><text x="370" y="244" fill="#3a0d12">HAA</text><text x="370" y="262" fill="#fff" font-size="9">peels &amp; attacks the space</text></g>
+        <g><circle cx="540" cy="280" r="12" fill="#ba0c2f" stroke="#fff" stroke-width="1.3"/><text x="540" y="284">ODE</text><text x="540" y="300" fill="#f0b8c0" font-size="9">also on?</text></g>
+      </g>
+
+      <!-- Odegaard threads it -->
+      <path d="M528 272 C 470 250, 420 235, 388 232" stroke="#fff" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aNw)"/>
+      <!-- Haaland run between/across CBs -->
+      <path d="M362 226 C 355 195, 350 170, 360 130" stroke="#e8909a" stroke-width="4" fill="none" marker-end="url(#aN3)"/>
+      <!-- finish -->
+      <path d="M362 124 C 350 100, 340 80, 350 50" stroke="#e8909a" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aN3)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#e8909a"></i> Haaland run / finish</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Ødegaard through-ball</span>
+    </div>
+
+    <p class="expl"><strong>The sub that could flip the game.</strong> Solbakken hasn't dropped Haaland and Ødegaard from the squad — they're on the bench, a loaded card to play if Norway need a goal to steal top spot. <strong>If they're introduced, the threat transforms instantly</strong>: Haaland (four goals already, the tournament's best xG-per-shot) is a different proposition for a French defence <em>missing Saliba</em> — the one centre-back with extensive Premier League experience of marking him. Lacroix, on a high-profile first start, would face the sternest possible test. The sub-plot to watch: if France are comfortable, Haaland may stay wrapped up for the knockouts; but if Norway are chasing, his arrival against a Saliba-less back line is the most dangerous 20 minutes of France's group stage. France's game-management — keeping it tight, not inviting that scenario — is key.</p>
+  </div>
+
+  <h2><span class="ic">⚔️</span> Tactical Move 4 — The Mbappé–Haaland Golden Boot subplot</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag duel">Subplot</span><span class="mt">Two stars, four goals each, one race</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="400" rx="10" fill="#0d1320"/>
+      <text x="360" y="34" text-anchor="middle" font-size="14" font-weight="800" fill="#e8edf4">Golden Boot race — heading into Matchday 3</text>
+
+      <!-- Messi leader -->
+      <g>
+        <text x="60" y="96" font-size="12" fill="#8b97a8">Messi 🇦🇷</text>
+        <rect x="160" y="80" width="460" height="26" rx="6" fill="#19212e" stroke="#26303f"/>
+        <rect x="160" y="80" width="430" height="26" rx="6" fill="#8ec5f0"/>
+        <text x="604" y="98" font-size="13" font-weight="800" fill="#06223f" text-anchor="end">5 ⚽ (leads)</text>
+      </g>
+      <!-- Mbappe -->
+      <g>
+        <text x="60" y="150" font-size="12" fill="#8b97a8">Mbappé 🇫🇷</text>
+        <rect x="160" y="134" width="460" height="26" rx="6" fill="#19212e" stroke="#26303f"/>
+        <rect x="160" y="134" width="344" height="26" rx="6" fill="#3b82d6"/>
+        <text x="498" y="152" font-size="13" font-weight="800" fill="#fff" text-anchor="end">4 ⚽ · STARTS</text>
+      </g>
+      <!-- Haaland -->
+      <g>
+        <text x="60" y="204" font-size="12" fill="#8b97a8">Haaland 🇳🇴</text>
+        <rect x="160" y="188" width="460" height="26" rx="6" fill="#19212e" stroke="#26303f"/>
+        <rect x="160" y="188" width="344" height="26" rx="6" fill="#e8909a"/>
+        <text x="498" y="206" font-size="13" font-weight="800" fill="#3a0d12" text-anchor="end">4 ⚽ · BENCH</text>
+      </g>
+      <!-- Vini -->
+      <g>
+        <text x="60" y="258" font-size="12" fill="#8b97a8">Vinícius 🇧🇷</text>
+        <rect x="160" y="242" width="460" height="26" rx="6" fill="#19212e" stroke="#26303f"/>
+        <rect x="160" y="242" width="344" height="26" rx="6" fill="#39d98a"/>
+        <text x="498" y="260" font-size="13" font-weight="800" fill="#06301d" text-anchor="end">4 ⚽</text>
+      </g>
+
+      <rect x="60" y="300" width="600" height="74" rx="10" fill="#16110a" stroke="#3a2f12"/>
+      <text x="76" y="324" font-size="12" font-weight="800" fill="#e9b949">🎯 The asymmetry of opportunity</text>
+      <text x="76" y="346" font-size="11.5" fill="#e4ddc9">Mbappé STARTS vs a second-string defence — a prime chance to catch Messi and pull clear of Haaland,</text>
+      <text x="76" y="363" font-size="11.5" fill="#e4ddc9">who begins on the bench. The race could swing decisively in France's favour tonight.</text>
+    </svg>
+
+    <p class="expl"><strong>The personal duel inside the team game.</strong> Mbappé and Haaland arrive level on four World Cup goals, locked in a Golden Boot chase that Messi currently leads on five. Tonight hands Mbappé a significant edge: <strong>he starts against a heavily-rotated Norway defence, while Haaland begins on the bench.</strong> Against a makeshift back line with everything to play for, this is exactly the kind of game in which a striker of Mbappé's quality can grab a brace and surge up the scoring chart — while Haaland may get only 20-30 minutes, if any. For a player as motivated by records as Mbappé (already level with Klose on 16 career WC goals, chasing Messi's 18), the opportunity is enormous. Expect him to be relentless.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Players &amp; Sub-Battles</h2>
+  <ul>
+    <li><strong>Kylian Mbappé</strong> — starts with a Golden Boot in his sights and a makeshift defence to attack. The headline act.</li>
+    <li><strong>Michael Olise</strong> — France's in-form conductor; the creative hub who unlocks defences. Expect him to feast.</li>
+    <li><strong>Oscar Bobb</strong> — Norway's one genuine threat in this XI; his pace in transition is their only realistic route to a goal.</li>
+    <li><strong>Maxence Lacroix</strong> — a high-profile start deputising for the injured Saliba; his composure (especially if Haaland arrives) is a key sub-plot.</li>
+    <li><strong>The bench duel</strong> — Haaland &amp; Ødegaard vs France's game-management. Whether Norway need to unleash them defines the final 30 minutes.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>The team sheets have tilted this firmly France's way. A loaded French XI — Mbappé, Olise, Dembélé, Doué — against a Norway side that has rested its two best players is a sizeable mismatch, and France need only a draw to top the group anyway. Expect Les Bleus, playing with extra motivation for their absent grieving coach, to take control, punish Norway's makeshift defence, and chase the win that secures a perfect record and the top seed. The danger is purely in transition (Bobb) and on the bench (Haaland) — so France must manage the game smartly rather than leave the door open. But on quality and team-sheet alone, this should be a comfortable French afternoon.</p>
+    <div class="scoreline">🇫🇷 France 3 — 1 Norway</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: France's loaded attack — and probably Mbappé — breaks a second-string Norway, with the Vikings nicking a consolation through a Bobb counter or a late Haaland cameo. France top the group; a clean-sheet 2-0 or 3-0 is very live if they manage the transitions.</p>
+  </div>
+
+</div>
+</body>
+</html>

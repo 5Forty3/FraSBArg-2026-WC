@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Uruguay — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#c60b1e;--espy:#ffc400;--uru:#5aade2;--uruk:#1f3a63;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#5aade2);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .e{background:linear-gradient(135deg,#2a0e12,#160d0e)}
+  .vsbar .u{background:linear-gradient(135deg,#0e1c2e,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .e .nm{color:#ff6470}.vsbar .u .nm{color:#7cc0ee}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.spain{border-left:3px solid var(--espy)}
+  .card.uruguay{border-left:3px solid var(--uru)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .evo{background:linear-gradient(135deg,#1a1206,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px;margin:14px 0}
+  .evo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.18);color:var(--espy)}
+  .move .mtag.uru{background:rgba(90,173,226,.20);color:#7cc0ee}
+  .move .mtag.duel{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(233,185,73,.13);color:var(--gold);border-color:#3a2f12">Group H · Matchday 3 · Top-spot decider</span>
+  </div>
+  <h1>Spain vs Uruguay</h1>
+  <div class="sub">A clash of World Cup winners — Spain's evolving machine vs Bielsa's stubborn, dangerous Celeste</div>
+  <div class="meta">🕒 5:30 AM IST, Sat 27 Jun · 📍 Estadio Akron, Guadalajara</div>
+
+  <div class="vsbar">
+    <div class="side e"><div class="nm">🇪🇸 Spain</div><div class="fm">4-3-3 · De la Fuente · Euro 2024 champions · top of Group H · yet to concede</div></div>
+    <div class="mid">VS</div>
+    <div class="side u"><div class="nm">Uruguay 🇺🇾</div><div class="fm">4-2-3-1 · Bielsa · 2x World Cup winners · need a result to be safe</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">📊 The stakes — top spot &amp; survival</div>
+    <p style="margin:8px 0 0">A heavyweight finale in a wide-open Group H. <strong>Spain top the table on four points and a win seals first place</strong> (a draw likely does too, unless Cape Verde beat Saudi Arabia by five-plus). <strong>Uruguay sit second on two points and need at least a point to be sure of going through</strong>, with Cape Verde still alive. Both former champions; only one can be comfortable. Note the knockout incentive too — finishing top may steer the winner away from a potential England tie lying in wait for the runner-up.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News — Confirmed XIs <span class="confirm" style="background:rgba(57,217,138,.16);color:var(--green);border-color:#1f4533">official sheets in</span></h2>
+  <p class="lead">The official lineups landed — and De la Fuente sprang a surprise that overturned every prediction: <strong>both Dani Olmo AND Nico Williams start on the bench.</strong> Instead, Mikel Merino comes into midfield and Álex Baena takes the left wing, with Marcos Llorente at right-back. It's a more physical, rotated look than the side that battered Saudi Arabia — Spain keeping powder dry while still fielding Yamal and Oyarzabal.</p>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — the confirmed XI (with a twist)</h3>
+    <ul>
+      <li><strong>Lamine Yamal starts on the right</strong> — the one constant of Spain's attacking plan, fresh and a Golden Boot contender; the night's most dangerous weapon.</li>
+      <li><strong>Olmo &amp; Nico Williams BENCHED</strong> — the big surprise. Both were widely expected to start; instead they're held in reserve, a notable rotation/management call by De la Fuente with top spot in reach.</li>
+      <li><strong>Mikel Merino comes into midfield</strong> alongside Pedri and Rodri — a taller, more physical, box-arriving profile than Olmo, useful against Uruguay's physicality and on set-pieces.</li>
+      <li><strong>Álex Baena starts on the left</strong> in place of Nico Williams — providing width and set-piece delivery rather than raw pace; he set up Spain's fourth vs Saudi from a corner.</li>
+      <li><strong>Marcos Llorente at right-back</strong> over Porro; <strong>Oyarzabal leads the line</strong> (14 goals in his last 13 Spain starts), with <strong>Pedri</strong> the deep orchestrator (on a yellow card — one booking from a knockout ban). <strong>Spain are yet to concede</strong> at this World Cup.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Confirmed XI (4-3-3): Simón; Llorente, Cubarsí, Laporte, Cucurella; Merino, Pedri, Rodri; Yamal, Oyarzabal, Baena. (Olmo, N. Williams, Porro, Fabián, Gavi among the subs.)</p>
+  </div>
+
+  <div class="card uruguay">
+    <h3 style="margin-top:0">🇺🇾 Uruguay — Bielsa's wounded, dangerous Celeste</h3>
+    <ul>
+      <li><strong>Bielsa is without two key men</strong> — Ronald Araújo (centre-back) and Giorgian De Arrascaeta (creator), both injured. That weakens both their defensive spine and their craft.</li>
+      <li><strong>Darwin Núñez leads the line</strong> — restored up top, Uruguay's main aerial and transition threat and most clinical finisher.</li>
+      <li><strong>Federico Valverde is the engine</strong> — Uruguay's hopes "hinge on Valverde imposing himself against Pedri and Rodri." Win the midfield and they have a chance; lose it and the attack starves.</li>
+      <li><strong>Maximiliano Araújo</strong> (a Matchday-2 scorer) and Canobbio carry the wide threat; <strong>Juan Sanabria</strong> at left-back is a crossing outlet — but a defensive weak link Yamal can target (bottom-percentile duel numbers).</li>
+      <li><strong>The flaw:</strong> Uruguay have been undone by "sloppy, organisational mistakes" (Bielsa's words) — two draws from calamitous goals. Discipline under Spanish pressure is the question.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Confirmed XI (4-1-4-1): Muslera; Varela, Cáceres, Olivera, Sanabria; Ugarte; Canobbio, Bentancur, Valverde, M. Araújo; Núñez.</p>
+  </div>
+
+  <h2><span class="ic">📈</span> Spain's Tournament Evolution — From 0-0 to 4-0</h2>
+  <div class="evo">
+    <div class="t">📊 The transformation that defines Spain's tactical story</div>
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <text x="180" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="#e8edf4">MD1 · vs Cape Verde</text>
+      <text x="540" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="#e8edf4">MD2 · vs Saudi Arabia</text>
+      <line x1="360" y1="50" x2="360" y2="280" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+
+      <!-- MD1 -->
+      <g>
+        <rect x="40" y="60" width="280" height="40" rx="8" fill="#19212e" stroke="#26303f"/>
+        <text x="56" y="85" font-size="13" fill="#ff8e8e" font-weight="800">0 goals · 27 shots · 2.29 xG</text>
+        <text x="56" y="124" font-size="12" fill="#c5cedd">▸ No Yamal/Williams (70 mins)</text>
+        <text x="56" y="146" font-size="12" fill="#c5cedd">▸ Congested centrally — no width</text>
+        <text x="56" y="168" font-size="12" fill="#c5cedd">▸ Empty box on cut-backs</text>
+        <text x="56" y="190" font-size="12" fill="#c5cedd">▸ Frustrated by Vozinha &amp; a low block</text>
+        <text x="56" y="224" font-size="13" fill="#ff8e8e" font-weight="800">Dominance without a finish</text>
+      </g>
+      <!-- MD2 -->
+      <g>
+        <rect x="400" y="60" width="280" height="40" rx="8" fill="#19212e" stroke="#26303f"/>
+        <text x="416" y="85" font-size="13" fill="#5fd49b" font-weight="800">4 goals · 20 shots · won 4-0</text>
+        <text x="416" y="124" font-size="12" fill="#c5cedd">▸ Yamal &amp; Williams START</text>
+        <text x="416" y="146" font-size="12" fill="#c5cedd">▸ Olmo &amp; Baena gave real width</text>
+        <text x="416" y="168" font-size="12" fill="#c5cedd">▸ Oyarzabal: the poacher arrives (brace)</text>
+        <text x="416" y="190" font-size="12" fill="#c5cedd">▸ 3 goals in 24 mins — most dominant spell</text>
+        <text x="416" y="224" font-size="13" fill="#5fd49b" font-weight="800">The blueprint, unlocked</text>
+      </g>
+
+      <path d="M324 250 C 350 250, 360 250, 396 250" stroke="#e9b949" stroke-width="3" fill="none" marker-end="url(#evoArrow)"/>
+      <defs><marker id="evoArrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e9b949"/></marker></defs>
+      <text x="360" y="278" text-anchor="middle" font-size="11" fill="#e9b949" font-weight="700">the fix: width + a poacher</text>
+    </svg>
+    <p style="margin:12px 0 0;font-size:14px;color:#e4ddc9">Spain's tournament is a tale of two halves. The <strong>Cape Verde opener</strong> was dominance without an end product — 27 shots, 2.29 xG, zero goals — because they lacked width and a box presence. The <strong>Saudi Arabia demolition</strong> fixed all of it: Yamal and Nico Williams stretching the pitch, Olmo and Baena providing genuine width, and Oyarzabal finally giving Spain the clinical No.9 they'd missed for a decade. Against Uruguay, the challenge is to prove that blueprint works against a <em>far</em> better, more physical and disciplined opponent than the one it was forged on.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Tactical Move 1 — Width &amp; the Yamal–Williams double threat</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · Attack</span><span class="mt">Yamal isolates the weak side; Baena &amp; Merino supply the box</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Uruguay push up → space behind the full-backs for the wingers</text>
+
+      <!-- Uruguay line, pushing up -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="250" cy="120" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="250" y="124" fill="#0c1f33">VAR</text></g>
+        <g><circle cx="350" cy="110" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="350" y="114" fill="#0c1f33">GIM</text></g>
+        <g><circle cx="430" cy="110" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="430" y="114" fill="#0c1f33">CAC</text></g>
+        <g><circle cx="510" cy="120" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="510" y="124" fill="#0c1f33">OLI</text></g>
+        <text x="380" y="148" text-anchor="middle" font-size="10" fill="#bfe0f5">high line — space in behind</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Yamal right -->
+        <g><circle cx="610" cy="245" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="610" y="249">YAM</text><text x="610" y="268" fill="#fff" font-size="9">isolates LB</text></g>
+        <!-- Baena left -->
+        <g><circle cx="110" cy="245" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="110" y="249">BAE</text><text x="110" y="268" fill="#fff" font-size="9">width &amp; delivery</text></g>
+        <!-- Merino central -->
+        <g><circle cx="365" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="365" y="254">MER</text></g>
+        <!-- Oyarzabal -->
+        <g><circle cx="365" cy="170" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="365" y="174" fill="#06301d">OYA</text></g>
+      </g>
+
+      <!-- Olmo switches to Yamal -->
+      <path d="M378 244 C 460 225, 540 235, 595 244" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY)"/>
+      <!-- Yamal cuts in -->
+      <path d="M598 235 C 560 205, 510 175, 450 158" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aY)"/>
+      <!-- Nico runs in behind -->
+      <path d="M118 232 C 150 195, 190 165, 240 140" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aG)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Winger 1v1 / switch</span>
+      <span><i style="border-top-color:#39d98a"></i> Run in behind</span>
+    </div>
+
+    <p class="expl"><strong>Spain's primary weapon — and tailored to Uruguay's predicament.</strong> Because Uruguay likely <em>need</em> to win (or at least not lose), they will push up and commit numbers — and "the space behind their full-backs is exactly where Lamine Yamal thrives." Even with Nico Williams held on the bench, <strong>Yamal isolating the Uruguay left-back 1v1 on the right</strong> remains Spain's single most dangerous pattern — especially against Juan Sanabria, whose bottom-percentile duel numbers make him a target. On the left, <strong>Álex Baena offers width and quality delivery</strong> rather than Williams' raw pace, while Merino arrives late from midfield and Oyarzabal gambles in the box. The key battle is how Uruguay's left side copes with Yamal in transition — get him running at a makeshift back line missing Araújo, and Spain's most dangerous pattern is live. And in reserve, Spain hold a trump card: <strong>Nico Williams' pace off the bench</strong> to stretch tiring legs late, exactly when Uruguay may be chasing the game.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> Tactical Move 2 — Pedri &amp; Merino: control the centre, feed the poacher</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · Midfield</span><span class="mt">Win the Valverde battle, then feed the poacher</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aG2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · juego de posición — Merino arrives between lines, cut-back to a filled box</text>
+
+      <!-- Uruguay block -->
+      <g>
+        <circle cx="280" cy="100" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="92" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="100" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="155" r="10" fill="#3f8cc4" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="155" r="10" fill="#3f8cc4" stroke="#fff" stroke-width="1"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Pedri deep -->
+        <g><circle cx="360" cy="320" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="324">PED</text><text x="360" y="340" fill="#fff" font-size="9">deep orchestrator</text></g>
+        <!-- Merino between lines -->
+        <g><circle cx="360" cy="235" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="360" y="239">MER</text><text x="360" y="257" fill="#fff" font-size="9">arrives late</text></g>
+        <!-- Yamal wide right to cut back -->
+        <g><circle cx="600" cy="210" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="600" y="214">YAM</text></g>
+        <!-- Oyarzabal near post -->
+        <g><circle cx="320" cy="125" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="320" y="129" fill="#06301d">OYA</text><text x="320" y="147" fill="#bff0d5" font-size="9">near post</text></g>
+      </g>
+
+      <!-- Pedri to Olmo vertical -->
+      <path d="M360 308 C 360 290, 360 270, 360 252" stroke="#ffc400" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#aY2)"/>
+      <!-- Olmo to Yamal -->
+      <path d="M376 230 C 460 210, 540 205, 588 210" stroke="#ffc400" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aY2)"/>
+      <!-- cut-back to Oyarzabal -->
+      <path d="M592 200 C 520 150, 420 130, 338 128" stroke="#39d98a" stroke-width="3" stroke-dasharray="8 5" fill="none" marker-end="url(#aG2)"/>
+      <!-- finish -->
+      <path d="M318 110 C 325 85, 340 58, 352 34" stroke="#39d98a" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aG2)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Pedri/Merino distribution</span>
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Cut-back &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The control that everything hangs on.</strong> This match will be decided in midfield. <strong>If Pedri and Rodri control the centre, Uruguay's depleted attack starves; if Valverde imposes himself, Uruguay have a chance.</strong> Spain's <em>juego de posición</em> aims to dominate the ball, with <strong>Pedri orchestrating from deep</strong> and <strong>Mikel Merino — in tonight for Olmo — arriving late between the lines and into the box</strong>, a more physical box-presence than Olmo and a real aerial threat on Baena's set-piece deliveries. The lesson Spain learned from Cape Verde is that possession must translate into <em>penetration and a filled box</em>: so the pattern is finding the isolated Yamal, the winger reaching the byline, and the cut-back meeting <strong>Oyarzabal at the near post</strong> with Merino crashing the box behind. Against Uruguay's missing Araújo and a vulnerable left side, Spain's precision in the final third — the very thing absent in the opener — should find the gaps. And if it doesn't, <strong>Dani Olmo waits on the bench</strong> as the more incisive between-the-lines creator to unlock a stubborn block.</p>
+  </div>
+
+  <h2><span class="ic">🐎</span> Tactical Move 3 — Uruguay's threat: Valverde &amp; Núñez on the counter</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag uru">Uruguay · Counter</span><span class="mt">Win it through Valverde, hit Spain's high line with Núñez</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aU" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aade2"/></marker>
+        <marker id="aUg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Uruguay breaking ↑ · Valverde carries, Núñez attacks the space behind a high Spain line</text>
+
+      <!-- Spain back line high -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="320" cy="120" r="11" fill="#c60b1e" stroke="#fff" stroke-width="1.2"/><text x="320" y="124">CUB</text></g>
+        <g><circle cx="420" cy="120" r="11" fill="#c60b1e" stroke="#fff" stroke-width="1.2"/><text x="420" y="124">LAP</text></g>
+        <path d="M300 138 Q370 150 440 138" stroke="#ff5d6a" stroke-dasharray="4 5" fill="none" opacity=".6"/>
+        <text x="370" y="100" text-anchor="middle" font-size="9" fill="#ffb3b8">high line — space behind</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <!-- Valverde carrying -->
+        <g><circle cx="400" cy="300" r="13" fill="#5aade2" stroke="#fff" stroke-width="1.5"/><text x="400" y="304" fill="#0c1f33">VAL</text><text x="400" y="322" fill="#bfe0f5" font-size="9">drives forward</text></g>
+        <!-- Nunez running in behind -->
+        <g><circle cx="300" cy="210" r="14" fill="#5aade2" stroke="#fff" stroke-width="1.6"/><text x="300" y="214" fill="#0c1f33">NUN</text><text x="300" y="232" fill="#bfe0f5" font-size="9">runs in behind</text></g>
+      </g>
+
+      <!-- Valverde carry -->
+      <path d="M392 288 C 380 265, 370 245, 362 232" stroke="#5aade2" stroke-width="3" fill="none" marker-end="url(#aU)"/>
+      <!-- through ball to Nunez -->
+      <path d="M380 230 C 350 218, 325 215, 314 214" stroke="#5aade2" stroke-width="3.5" stroke-dasharray="9 6" fill="none" marker-end="url(#aU)"/>
+      <!-- Nunez run + finish -->
+      <path d="M298 196 C 295 165, 295 130, 320 70" stroke="#5aade2" stroke-width="3.5" fill="none" marker-end="url(#aU)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aade2"></i> Valverde carry / Núñez run</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Space behind Spain's high line</span>
+    </div>
+
+    <p class="expl"><strong>Why this is no gimme — the Bielsa danger.</strong> Spain's high defensive line and aggressive possession leave space in behind, and Uruguay are built to exploit exactly that on the transition. <strong>Federico Valverde is the key</strong>: if he wins his duel with Pedri and Rodri and drives Uruguay up the pitch, his power and range can spring the counter that Spain's dominant-but-high approach invites. <strong>Darwin Núñez's runs in behind</strong> are the finishing piece — direct, relentless, and a handful for any back line, especially one defending a lot of grass. Maxi Araújo's wide threat and Uruguay's set-piece power (a Bielsa staple) add to it. Spain have yet to concede, but they haven't faced a transitional threat of this calibre. Manage the counter — Rodri screening, a disciplined rest-defence — and Spain control it; switch off, and Bielsa's wounded Celeste can bite.</p>
+  </div>
+
+  <h2><span class="ic">⚔️</span> Tactical Move 4 — The match-defining duel: Yamal vs Uruguay's left side</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag duel">Key Duel</span><span class="mt">The teenager's right-wing menace vs a makeshift Celeste flank</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="105" width="720" height="52"/><rect y="210" width="720" height="52"/><rect y="315" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><rect x="220" y="14" width="280" height="95"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Yamal isolates the LB, cuts inside onto his left foot</text>
+
+      <!-- Uruguay LB + cover -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="470" cy="250" r="12" fill="#5aade2" stroke="#fff" stroke-width="1.3"/><text x="470" y="254" fill="#0c1f33">LB</text><text x="470" y="272" fill="#bfe0f5" font-size="9">isolated 1v1</text></g>
+        <g><circle cx="380" cy="150" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="380" y="154" fill="#0c1f33">CB</text></g>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Yamal wide right -->
+        <g><circle cx="600" cy="250" r="15" fill="#ffc400" stroke="#fff" stroke-width="1.7"/><text x="600" y="254">YAM</text><text x="600" y="274" fill="#fff" font-size="9">takes him on</text></g>
+        <!-- supplier -->
+        <g><circle cx="470" cy="330" r="11" fill="#e0ad00" stroke="#fff" stroke-width="1.2"/><text x="470" y="334">OLM</text></g>
+      </g>
+
+      <!-- feed to Yamal -->
+      <path d="M478 322 C 520 295, 560 275, 586 262" stroke="#e0ad00" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aY4)"/>
+      <!-- Yamal beats man, cuts in -->
+      <path d="M588 240 C 555 210, 510 180, 460 150" stroke="#ffc400" stroke-width="4" fill="none" marker-end="url(#aY4)"/>
+      <!-- curl to far corner -->
+      <path d="M460 144 C 440 110, 420 75, 408 36" stroke="#ffc400" stroke-width="3.5" fill="none" stroke-dasharray="2 0" marker-end="url(#aY4)"/>
+      <text x="500" y="120" font-size="10" fill="#ffe9a8">left foot, far corner</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Yamal carry &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The contest that likely decides the night.</strong> Every analyst points to the same flashpoint: <strong>Lamine Yamal against Uruguay's left side.</strong> "His dribbling and end product from the right are Spain's most dangerous weapon, and how Uruguay's left side copes with him in transition could decide how comfortable this gets." With Uruguay needing to commit forward and missing Araújo's defensive authority, the 18-year-old will get repeated 1v1s against a full-back he can beat for pace and trickery — cutting inside onto his left foot to shoot or cross. If Uruguay double him, Baena and Oyarzabal are freed elsewhere; if they don't, Yamal hurts them directly. Containing him — ideally without leaving the rest of Spain's attack 1v1 — is a problem Uruguay may not have the personnel to solve. This is where the game tilts.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Key Players &amp; Sub-Battles</h2>
+  <ul>
+    <li><strong>Lamine Yamal</strong> — Spain's match-winner and a Golden Boot contender; the right-wing duel is the game's fulcrum.</li>
+    <li><strong>Pedri &amp; Rodri vs Valverde</strong> — the midfield battle that decides whether Spain control it or Uruguay get a foothold.</li>
+    <li><strong>Mikel Oyarzabal</strong> — the poacher who finally gives Spain a clinical edge; in red-hot form (14 goals in his last 13 starts).</li>
+    <li><strong>Darwin Núñez</strong> — Uruguay's transition spearhead; their best route to testing Spain's unbeaten defence.</li>
+    <li><strong>The bench</strong> — Olmo &amp; Nico Williams held in reserve as game-changers; if Spain need to break a stubborn Uruguay, their introduction is the obvious lever.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Spain arrive at near-full strength, unbeaten in 12, yet to concede, and with the attacking blueprint finally humming — while Uruguay, missing Araújo and De Arrascaeta and prone to costly errors, look light up front in a game they may need to win. The talent gap is hard to ignore. But Bielsa's side are stubborn and dangerous when cornered, with Valverde and Núñez capable of punishing Spain's high line on the break, so this won't be the stroll the Saudi game was. Expect Spain to control possession, work Yamal into his duels, and edge clear if they take their chances — though a Uruguay counter or set-piece keeps it live. The European champions should have too much.</p>
+    <div class="scoreline">🇪🇸 Spain 2 — 0 Uruguay</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: Spain's quality and Yamal's threat tell against a depleted Uruguay, with the defence holding firm. A tense 1-0 or a Uruguay-scoring 2-1 is very live given Valverde and Núñez on the counter.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 1-0 Uruguay — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#c60b1e;--espy:#ffc400;--uru:#5aade2;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .e{color:#ff6470}.scoreboard .u{color:#7cc0ee}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#ff8e95}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff6470}.stat .v .u{color:#7cc0ee}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .warn{background:linear-gradient(135deg,#2a1010,#0f1117);border:1px solid #4a1a1a;border-left:3px solid var(--red);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .warn .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#ff8e8e}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}.rt .mid{color:var(--gold);font-weight:700}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.goal{background:rgba(255,196,0,.18);color:var(--espy)}
+  .move .mtag.prob{background:rgba(255,93,106,.16);color:#ff8e8e}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Calendar</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Group H · Matchday 3 · FT</span>
+  </div>
+  <h1>Uruguay vs Spain — Top of the Group, Bottom of the Form</h1>
+
+  <div class="scoreboard">
+    <span class="t u">🇺🇾 Uruguay</span>
+    <span class="sc">0 – 1</span>
+    <span class="t e">Spain 🇪🇸</span>
+  </div>
+  <div class="meta">📍 Estadio Akron, Guadalajara · Group H · Full-time</div>
+  <div class="scorers">⚽ <b>Baena 42'</b> (Muslera error) — Spain win the group, but a deeply concerning display</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Result</div><div class="v"><span class="e">Group winners</span></div></div>
+    <div class="stat"><div class="l">Uruguay's 1st corner</div><div class="v">80+ min 😶</div></div>
+    <div class="stat"><div class="l">Source verdict</div><div class="v">"zero quality"</div></div>
+    <div class="stat"><div class="l">Uruguay</div><div class="v"><span class="u">ELIMINATED</span></div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Spain top Group H unbeaten — but this was a scrappy, low-quality win decided by a goalkeeping howler, and a worrying watch ahead of the knockouts.</p>
+
+  <h2><span class="ic">🧭</span> The Story — A Win That Raised More Questions Than It Answered</h2>
+  <p class="lead">Spain are through as group winners, unbeaten — and yet this was, by some distance, their most concerning performance of the tournament. They were <strong>stifled throughout</strong> in a scrappy, physical, low-quality contest that one report bluntly called "over 90 minutes of horrendous football." The single goal that settled it came not from Spanish craft but from a <strong>horrific Fernando Muslera error</strong> — the 40-year-old keeper could only palm Álex Baena's shot into his own net, and was promptly hauled off at half-time. The uncomfortable truth your eyes confirmed: had Uruguay possessed even a half-decent cutting edge, Spain might not have won. As it was, Bielsa's blunt, error-prone Celeste <strong>barely threatened Unai Simón all night</strong> — and crash out, while Spain advance carrying real doubts.</p>
+
+  <div class="callout">
+    <div class="t">🧤 The goal — and the toothless opponent that flattered Spain</div>
+    <p style="margin:8px 0 0">Baena's 42nd-minute strike was Spain's reward for early pressure, but it was <strong>gifted by Muslera's third blunder of the tournament</strong> (he was arguably at fault for all four goals Uruguay conceded — had he saved any, they'd have gone through). Beyond that, Spain created little of substance. And the story of Uruguay's impotence tells the rest: they <strong>never took a clean shot at Simón's goal</strong>, their best moments a near-post Olivera effort (saved, 82') and a long-ranger comfortably gathered. The single most damning detail: <strong>Uruguay didn't win their first corner of the entire match until past the 80-minute mark</strong> — a staggering statistic for a side that <em>had</em> to win, and the whole story of their toothlessness in one number. Spain didn't so much win it as survive it.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Goal (42') — Baena's shot, Muslera's howler</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag goal">Spain · 1-0</span><span class="mt">A speculative strike the keeper turns into his own net</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aErr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · a hit-and-hope from the edge the keeper spills over the line</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.3"/><text x="360" y="44" fill="#0c1f33">MUS</text><text x="360" y="24" fill="#ffb3b8" font-size="9">palms into own net ⚠</text></g>
+        <circle cx="300" cy="130" r="10" fill="#3f8cc4" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="420" cy="130" r="10" fill="#3f8cc4" stroke="#fff" stroke-width="1" opacity=".85"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="380" cy="250" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="380" y="254">BAE</text><text x="380" y="272" fill="#fff" font-size="9">shot from the edge</text></g>
+      </g>
+
+      <!-- Baena's shot -->
+      <path d="M376 236 C 372 190, 368 120, 366 64" stroke="#ffc400" stroke-width="4" fill="none" marker-end="url(#aY)"/>
+      <!-- keeper spills over the line -->
+      <path d="M362 58 C 356 48, 352 44, 350 40" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="4 4" fill="none" marker-end="url(#aErr)"/>
+      <text x="450" y="150" font-size="10" fill="#ffb3b8">not kept out — own net</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Baena's strike</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Muslera's fatal spill</span>
+    </div>
+
+    <p class="expl"><strong>A goal that summed up the night — won by an error, not by quality.</strong> Álex Baena struck from the edge of the area, and while the finish carried venom, it was <strong>a save Fernando Muslera makes ninety-nine times out of a hundred</strong> — instead, the 40-year-old could only push it into his own net, his third such blunder of the tournament. Bielsa, who controversially coaxed Muslera out of retirement, hooked him at the break; the keeper was arguably culpable for all four goals Uruguay shipped in the group. For Spain, it was a fitting reflection of an off-night: the decisive moment came courtesy of the opponent's gift rather than the flowing, incisive football this side is built on. One moment of fortune was enough — because Uruguay offered nothing at the other end.</p>
+  </div>
+
+  <h2><span class="ic">🚨</span> What Was Missing? Almost Everything</h2>
+  <div class="warn">
+    <div class="t">⚠️ The anti-tiki-taka: Spain without their identity</div>
+    <p style="margin:8px 0 0">This was the <strong>opposite of the football this side is built on.</strong> Spain <strong>lost possession cheaply, played wayward balls to each other, and their passing into the penalty area was abysmal.</strong> The hallmark control and incisive combination play simply vanished. Pedri — usually the metronome — looked <strong>slow, safe and out of sorts</strong>, a genuine under-performer this tournament; even the metronomic Rodri was subpar; and Yamal, though dangerous in flashes, <strong>lost the ball repeatedly</strong> and was clearly short of full fitness (exhausted by half-time, hooked on 76'). When the technical platform misfires like this, the whole machine seizes — and Uruguay had found exactly how to make it happen.</p>
+  </div>
+
+  <h2><span class="ic">🥊</span> Problem 1 — Man-mark Yamal, attack the midfield: the blueprint to stifle Spain</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag prob">Spain's weakness</span><span class="mt">Aggression in the centre + a dedicated Yamal jailer breaks the rhythm</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aU" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aade2"/></marker>
+        <marker id="aX" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Uruguay jail Yamal &amp; swarm the midfield — Spain's passing lanes vanish</text>
+
+      <!-- Spain midfield trio crowded -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="320" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="324">ROD</text></g>
+        <g><circle cx="270" cy="280" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="270" y="284">PED</text></g>
+        <g><circle cx="450" cy="280" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="450" y="284">MER</text></g>
+        <!-- Yamal jailed wide right -->
+        <g><circle cx="610" cy="240" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="610" y="244">YAM</text></g>
+      </g>
+
+      <!-- Uruguay aggressive press, man-marking -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="265" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="300" y="269" fill="#0c1f33">UGA</text></g>
+        <g><circle cx="420" cy="263" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="420" y="267" fill="#0c1f33">BEN</text></g>
+        <g><circle cx="360" cy="290" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="360" y="294" fill="#0c1f33">VAL</text></g>
+        <!-- dedicated Yamal marker -->
+        <g><circle cx="585" cy="265" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/><text x="585" y="269" fill="#0c1f33">LB</text><text x="585" y="287" fill="#bfe0f5" font-size="8">glued to Yamal</text></g>
+      </g>
+
+      <!-- pressing arrows onto the trio -->
+      <path d="M306 276 L286 286" stroke="#5aade2" stroke-width="2.5" marker-end="url(#aU)"/>
+      <path d="M414 274 L434 284" stroke="#5aade2" stroke-width="2.5" marker-end="url(#aU)"/>
+      <path d="M360 301 L360 312" stroke="#5aade2" stroke-width="2.5" marker-end="url(#aU)"/>
+      <!-- pass into Yamal denied -->
+      <path d="M448 274 C 510 255, 560 248, 595 244" stroke="#ffc400" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(596,238)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- loose ball won, counter -->
+      <path d="M352 300 C 300 330, 230 330, 180 310" stroke="#5aade2" stroke-width="2.5" stroke-dasharray="7 5" fill="none" marker-end="url(#aU)"/>
+      <text x="200" y="290" font-size="9" fill="#bfe0f5">turnover → break</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aade2"></i> Uruguay press / man-mark</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Pass into Yamal denied</span>
+    </div>
+
+    <p class="expl"><strong>Uruguay wrote the playbook for stifling Spain — and others will copy it.</strong> Bielsa's side showed that if you <strong>man-mark Yamal out of the game and aggressively attack the ball in midfield</strong>, this Spain can be choked. The aggression was relentless, often crossing into the physical and cynical (two yellow cards for fouls on Spain's creators, a stoppage-time red for Canobbio), and it <strong>totally shifted Spain's shape</strong>: denied time on the ball, Pedri, Rodri and Merino were forced into hurried, wayward passes, and the supply line to Yamal was cut. The lesson is stark — Spain's brilliance is conditional on being allowed to settle into rhythm. Disrupt the midfield, glue a marker to Yamal, and the technical superiority evaporates. Rangnick's Austria, likely next, will have noted every minute of it.</p>
+  </div>
+
+  <h2><span class="ic">📉</span> Problem 2 — When shape is lost, the finesse goes with it</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag prob">Spain's weakness</span><span class="mt">Wayward passing, abysmal entries, no box presence</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aX2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · the final ball goes astray; the box is unoccupied</text>
+
+      <!-- Uruguay block -->
+      <g>
+        <circle cx="280" cy="100" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="92" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="100" r="11" fill="#5aade2" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="150" r="10" fill="#3f8cc4" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="150" r="10" fill="#3f8cc4" stroke="#fff" stroke-width="1"/>
+        <text x="360" y="128" text-anchor="middle" font-size="10" fill="#bfe0f5">compact &amp; aggressive</text>
+      </g>
+
+      <!-- Yamal in a Dembele-like spot but no shot -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="560" cy="230" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="560" y="234">YAM</text><text x="560" y="252" fill="#fff" font-size="9">good spot — no shot</text></g>
+        <!-- empty box marker -->
+        <text x="360" y="200" text-anchor="middle" font-size="11" fill="#ffb3b8">no body in the box</text>
+      </g>
+
+      <!-- Yamal hesitates: pass blocked / no shot -->
+      <path d="M548 222 C 500 195, 450 175, 410 165" stroke="#ffc400" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(405,160)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- the shot he didn't take (faded) -->
+      <path d="M556 218 C 520 165, 480 105, 450 50" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="3 6" fill="none" opacity=".45" marker-end="url(#aY2)"/>
+      <text x="470" y="120" font-size="9" fill="#ffe0a8" opacity=".8">the Dembélé shot — never came</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Hesitant pass (blocked)</span>
+      <span><i style="border-top-color:#ffc400;border-top-style:dotted"></i> The shot Yamal didn't take</span>
+    </div>
+
+    <p class="expl"><strong>The most damning detail — finesse that depends entirely on structure.</strong> When Spain lose their shape, they lose their soul: the <strong>passing into the penalty area was abysmal, the final ball repeatedly astray, and the box too often unoccupied.</strong> The most telling contrast came from Yamal himself — he found <strong>two or three positions strikingly similar to where Dembélé scored his Norway hat-trick</strong> (drifting in from the right, the angle open) and yet, where Dembélé shot first-time and ruthlessly, Yamal <strong>hesitated, looked for an extra pass, or hit a block — and never tested the keeper.</strong> Part of that is fitness (he's clearly short of sharpness), part decision-making on an off-night. But it crystallises the worry: this Spain is a <em>system</em> team whose individual moments dried up the instant the system stopped functioning. Against a side that won't gift a Muslera howler, that's a problem.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Performance Snapshot</h2>
+  <div class="ratings">
+    <div class="rt"><b>Pau Cubarsí</b> — <span class="good">The lone bright spot</span>. Excellent all group stage; more than ready for Uruguay's physicality and immense in the battle. The future of Spain's defence.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="bad">Off-night</span>. Dangerous in flashes but lost possession repeatedly, short of fitness, exhausted by half-time, hooked on 76'. Found Dembélé-like spots but never shot.</div>
+    <div class="rt"><b>Pedri</b> — <span class="bad">A real worry</span>. Slow, too safe, beaten in the physical battle. A genuine under-performer this World Cup — not the player of the last two seasons.</div>
+    <div class="rt"><b>Rodri</b> — <span class="bad">Subpar</span>. Even the metronome was off, unable to impose control as Uruguay swarmed the centre.</div>
+    <div class="rt"><b>Dani Olmo</b> — <span class="mid">Livelier off the bench</span>. Came on for the final quarter, looked sharper, won penalty appeals (waved away), dragged a shot wide — which only begs the question of the starting plan.</div>
+    <div class="rt"><b>Álex Baena</b> — <span class="mid">Goal &amp; graft</span>. Took his half-chance (with Muslera's help) and battled, but Spain's wide play lacked the cutting edge of the Saudi game.</div>
+  </div>
+
+  <h2><span class="ic">🔧</span> The Fix — Rediscover width &amp; restore the press-resistant build-up</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · The Path Back</span><span class="mt">Beat the man-marking with movement, width &amp; quicker circulation</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aGf" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aYf" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/><rect x="250" y="14" width="220" height="70"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · drag the markers out, switch fast, free Yamal &amp; the runners</text>
+
+      <!-- man-markers being pulled apart -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="150" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/></g>
+        <g><circle cx="430" cy="150" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/></g>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- deep switch hub -->
+        <g><circle cx="200" cy="300" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="200" y="304" fill="#06301d">CB</text><text x="200" y="320" fill="#bff0d5" font-size="9">switch hub</text></g>
+        <!-- Yamal freed wide right via switch -->
+        <g><circle cx="620" cy="230" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="620" y="234">YAM</text><text x="620" y="252" fill="#fff" font-size="9">1v1 isolated</text></g>
+        <!-- false-9 dropping to pull marker -->
+        <g><circle cx="360" cy="245" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="249">OYA</text><text x="360" y="265" fill="#fff" font-size="9">drops, drags marker</text></g>
+        <!-- overlapping FB -->
+        <g><circle cx="560" cy="320" r="11" fill="#e0ad00" stroke="#fff" stroke-width="1.2"/><text x="560" y="324">RB</text></g>
+      </g>
+
+      <!-- fast switch across -->
+      <path d="M212 292 C 360 255, 520 240, 604 234" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aGf)"/>
+      <!-- Oyarzabal drop drags CB (create gap) -->
+      <path d="M360 233 C 360 205, 370 180, 410 160" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#aYf)"/>
+      <!-- overlap underneath Yamal -->
+      <path d="M562 308 C 580 280, 590 255, 615 244" stroke="#e0ad00" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#aYf)"/>
+      <!-- Yamal attacks -->
+      <path d="M608 218 C 560 180, 510 150, 450 120" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aYf)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Fast switch of play</span>
+      <span><i style="border-top-color:#ffc400"></i> Yamal 1v1 / runner movement</span>
+    </div>
+
+    <p class="expl"><strong>How Spain get their game back.</strong> The antidote to aggressive man-marking is <strong>movement and speed of circulation</strong> — the very things missing tonight. Three concrete fixes. First, <strong>quicker, sharper switches of play</strong>: rather than slow, sideways possession that let Uruguay set their traps, Spain must move the ball fast from one flank to the other to isolate Yamal 1v1 before his marker arrives. Second, <strong>rotational movement</strong> — Oyarzabal dropping to drag a centre-back, midfielders interchanging — to break the man-orientation that glued Uruguay to Spain's players. Third, and most simply, <strong>genuine width and a filled box</strong>: the Saudi blueprint (Yamal and a second wide threat stretching the pitch, bodies attacking cut-backs) is the version of Spain that works, and it must return. Tellingly, Olmo's introduction added life — a hint that De la Fuente's starting plan was part of the problem. The talent is there; the structure and tempo must be rediscovered, fast.</p>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future of Spain in This World Cup</h2>
+  <p>Here is the honest, uncomfortable assessment. <strong>For the first time, this Spain looks ill-equipped to go all the way</strong> — not in the manner of a France or a Brazil, sides whose ceiling looks like a final. The tournament arc is revealing: the <strong>Cape Verde opener</strong> was a goalless draw but <em>still</em> featured exceptional, controlled possession — Spain simply lacked width and a poacher. The <strong>Saudi demolition</strong> rediscovered both and looked like a champion-in-waiting. But this <strong>Uruguay game exposed the deeper flaw the first two hinted at</strong>: when a physical, aggressive opponent denies them rhythm and man-marks their stars, Spain have no Plan B, and their technical finesse — the whole point of the team — disappears. A side that lives by structure can die by it.</p>
+  <p>There are mitigations, and Spain's backers will cling to them. <strong>Yamal is visibly below full fitness</strong> after his hamstring injury — a fit Yamal changes everything. <strong>Cubarsí looks a genuine star</strong>, and the defence remains miserly (Simón barely tested across three games, still few goals conceded from open play). And as one pundit noted, <strong>Spain are masters of pacing a tournament</strong> — you don't have to peak in the group stage, and they may yet be saving their best. But the warning signs are real and specific: Pedri and Rodri, the heartbeat, are off form; the coach's selections and substitutions look muddled; and the blueprint to beat them is now public. <strong>Austria and Rangnick — most likely next in the Round of 32 — will demand far more than Uruguay could.</strong> Spain have the talent to win this World Cup. On tonight's evidence, they are a long way from playing like they will.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Group H · WINNERS</div><div class="g">Spain top, 7 points</div><div class="n">Unbeaten and through — but Cape Verde's historic progress was the night's feel-good story, not Spain's display.</div></div>
+    <div class="nx"><div class="d">Thu · Round of 32</div><div class="g">Spain vs Group J runner-up</div><div class="n">Inglewood, California — likely Austria (Rangnick) or Algeria. A side that will press and disrupt exactly as Uruguay did.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>Spain top Group H, unbeaten, into the knockouts — and that is the only good news from a genuinely alarming night. This was a <strong>scrappy, low-quality win decided by a goalkeeping howler, against an opponent so blunt it never seriously threatened</strong>. Everything that defines Spain was missing: the control, the clean circulation, the incisive entries, the cutting edge. Uruguay revealed the recipe — man-mark Yamal, attack the midfield, make it physical — and watched Spain's finesse drain away. Pedri and Rodri were off, Yamal short of fitness and end product, the coach's plan muddled, and only Cubarsí emerged with real credit. Spain are masters at pacing a tournament and shouldn't be written off — but for the first time, they look beatable by anyone willing to fight, and a long way short of the relentless quality of the genuine favourites. <strong>The talent says contenders; the performance says pretenders. The knockouts will settle which is true.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -159,11 +159,22 @@
   .abtns{display:flex;gap:10px;margin-top:18px}
   .styletag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.3px;color:var(--gold-2);
     background:rgba(231,185,66,.08);border:1px solid #3a2f12;border-radius:8px;padding:7px 11px;margin-bottom:13px}
-  .abtns a .cd{font-size:11px;font-weight:700;opacity:.85;letter-spacing:0}
-  .abtns a{flex:1;text-align:center;text-decoration:none;font-size:13px;font-weight:800;padding:14px;border-radius:13px;transition:.15s}
+  .abtns a{flex:1;text-align:center;text-decoration:none;font-size:13px;font-weight:800;padding:14px;border-radius:13px;transition:.15s;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
   .abtns a.pre{background:var(--panel-2);border:1px solid var(--line-2);color:var(--txt)}
   .abtns a.post{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#0a0e14}
-  .abtns a.disabled{opacity:.4;pointer-events:none}
+  .abtns a.locked{opacity:.82}
+  .abtns a.locked .lock{font-size:11px;opacity:.8}
+  .abtns a.pre:active,.abtns a.post:active{transform:scale(.97)}
+  .abtns a.live{box-shadow:0 0 0 1px rgba(255,210,74,.4)}
+  .cdpanel{margin-top:12px}
+  .cdwin{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;
+    background:linear-gradient(135deg,#15110a,#0c1320);border:1px solid #3a2f12;border-radius:13px;padding:16px 14px}
+  .cdwin.ready{border-color:#1f4533;background:linear-gradient(135deg,#0e1f17,#0c1320)}
+  .cdttl{font-size:12px;font-weight:800;letter-spacing:.5px;color:var(--gold-2);text-transform:uppercase}
+  .cdwin.ready .cdttl{color:var(--green)}
+  .cdclock{font-size:30px;font-weight:900;letter-spacing:1px;color:#fff;font-variant-numeric:tabular-nums;
+    text-shadow:0 0 22px rgba(255,210,74,.3)}
+  .cdsub{font-size:11.5px;color:var(--muted)}
   .note{font-size:11.5px;color:var(--dim);text-align:center;margin-top:13px;font-style:italic}
 
   footer{max-width:920px;margin:0 auto;padding:26px 20px 46px;text-align:center;color:var(--dim);font-size:11.5px;border-top:1px solid var(--line)}
@@ -185,7 +196,7 @@
       <button role="tab" aria-selected="true" data-view="bracket">Bracket<span class="sm">Full tree</span></button>
       <button role="tab" aria-selected="false" data-view="r32">Round of 32<span class="sm">16 ties</span></button>
       <button role="tab" aria-selected="false" data-view="r16">Round of 16<span class="sm">Predicted</span></button>
-      <a class="segbtn" href="wc2026-calendar.html">Group Stage<span class="sm">All 72 games</span></a>
+      <a class="segbtn" href="wc2026-calendar.html">Group Stage<span class="sm">12 Games</span></a>
     </div>
   </div>
 </div>
@@ -270,10 +281,10 @@ const R32 = [
    verdict:"USA ride the wave",
    phil:"Pochettino's USMNT — high press, Pulisic & Balogun in transition, vertical intent — vs Bosnia's experienced, physical, counter-leaning side. Energy vs streetwise game-management.",
    pred:"Pulisic looks ready to take over a tournament. Home crowd and superior athleticism carry the USA past a dangerous but limited Bosnia."},
- {id:'L8', day:"Wed Jul 1", v:"Seattle", ist:"1:30 AM IST · Thu 2 Jul", ko:"2026-07-01T20:00:00Z", a:{iso:'be',n:"Belgium"}, b:{iso:'sn',n:"Senegal",sd:"3rd"}, win:'b', ours:false,
-   verdict:"Senegal's power prevails",
-   phil:"Belgium's golden-generation possession (De Bruyne, Lukaku) vs Senegal's elite athletic 4-3-3 — pace, power and the form of a side that hammered Iraq 5-0 to qualify. An ageing core vs rising energy.",
-   pred:"An upset call with conviction: Senegal are physically dominant and peaking while Belgium have looked laboured. The Lions of Teranga's intensity overwhelms a fading Belgium."},
+ {id:'L8', day:"Wed Jul 1", v:"Seattle", ist:"1:30 AM IST · Thu 2 Jul", ko:"2026-07-01T20:00:00Z", a:{iso:'be',n:"Belgium"}, b:{iso:'sn',n:"Senegal",sd:"3rd"}, win:'a', ours:false,
+   verdict:"Belgium's quality prevails",
+   phil:"Belgium's golden-generation craft (De Bruyne, Lukaku) vs Senegal's elite athletic 4-3-3 — pace and power against experience and guile. A heavyweight clash of styles.",
+   pred:"Senegal are physical and dangerous, but Belgium's individual quality and big-game know-how see them through. De Bruyne's class is the decisive edge in a tight, tense tie."},
  // RIGHT HALF (top→bottom of the printed bracket's right side)
  {id:'R1', day:"Mon Jun 29", v:"Houston", ist:"10:30 PM IST · Mon 29 Jun", ko:"2026-06-29T17:00:00Z", a:{iso:'br',n:"Brazil"}, b:{iso:'jp',n:"Japan"}, win:'a', ours:true, key:"Brazil",
    verdict:"Brazil's flair overwhelms",
@@ -284,14 +295,14 @@ const R32 = [
    deep:"School of thought: Ancelotti's pragmatic evolution of jogo bonito — a fluid, interchanging front line built on individual brilliance and ruthless transitions rather than rigid structure. The project grew game-by-game: blunt and frustrated vs Morocco (1-1), routine vs Haiti, then a commanding Scotland display (3-0) where it finally clicked — Vinícius the destroyer, Cunha the mobile false-nine, Bruno Guimarães the creative fulcrum. Vini scored in all three group games and looks the player of the tournament so far.",
    team:"Key men: Vinícius Jr (4 goals, unplayable), Matheus Cunha (the mobile 9 that solved the centre-forward question), Bruno Guimarães (the creator, 2 assists vs Scotland). Wildcard: Neymar, back from a calf injury — the great tactical question is how to fit him in without breaking the rhythm. Only ONE goal conceded all group stage.",
    pre:"brazil-japan-prematch.html", post:null},
- {id:'R2', day:"Tue Jun 30", v:"Dallas", ist:"10:30 PM IST · Tue 30 Jun", ko:"2026-06-30T17:00:00Z", a:{iso:'ci',n:"Ivory Coast"}, b:{iso:'no',n:"Norway"}, win:'a', ours:false,
-   verdict:"Ivory Coast spring it",
-   phil:"Pace and power: Ivory Coast's athletic, direct 4-3-3 (Diomande the breakout star) vs a Norway leaning on Haaland & Ødegaard returning. Transitions decide it.",
-   pred:"Norway have Haaland, but their defence leaks badly (27 shots faced, conceded every game). Ivory Coast's energy edges a high-tempo upset."},
- {id:'R3', day:"Tue Jun 30", v:"Mexico City", ist:"6:30 AM IST · Wed 1 Jul", ko:"2026-07-01T01:00:00Z", a:{iso:'mx',n:"Mexico",sd:"co-host"}, b:{iso:'ec',n:"Ecuador",sd:"3rd"}, win:'b', ours:false,
-   verdict:"Ecuador's steel upsets El Tri",
-   phil:"Mexico's slick possession 4-3-3 and a deafening home crowd vs Ecuador's muscular, disciplined block and lethal transitions — the side that just beat Germany.",
-   pred:"The boldest call of the round. Mexico are flying and at home, but Ecuador's defensive resilience and physical edge — fresh off downing Germany — make them a nightmare matchup. A coin-flip; we take Ecuador."},
+ {id:'R2', day:"Tue Jun 30", v:"Dallas", ist:"10:30 PM IST · Tue 30 Jun", ko:"2026-06-30T17:00:00Z", a:{iso:'ci',n:"Ivory Coast"}, b:{iso:'no',n:"Norway"}, win:'b', ours:false,
+   verdict:"Haaland fires Norway through",
+   phil:"Pace and power: Ivory Coast's athletic, direct 4-3-3 (Diomande the breakout star) vs Norway's front-foot threat — with Haaland and Ødegaard restored to the starting XI after being rested in the group finale. Firepower vs flair.",
+   pred:"With Haaland back in the starting eleven, Norway carry a match-winner of a different class. Their defence leaks, but Haaland's goals and Ødegaard's craft tip a high-tempo, open game Norway's way."},
+ {id:'R3', day:"Tue Jun 30", v:"Mexico City", ist:"6:30 AM IST · Wed 1 Jul", ko:"2026-07-01T01:00:00Z", a:{iso:'mx',n:"Mexico",sd:"co-host"}, b:{iso:'ec',n:"Ecuador",sd:"3rd"}, win:'a', ours:false,
+   verdict:"Mexico ride the Azteca wave",
+   phil:"Mexico's slick possession 4-3-3 and a deafening home crowd at the Azteca vs Ecuador's muscular, disciplined block and lethal transitions — the side that beat Germany. Home momentum vs defensive steel.",
+   pred:"Mexico won all three group games and are flying, with the altitude and a roaring Azteca behind them. That home advantage and form edge a tough, physical Ecuador in a tight one."},
  {id:'R4', day:"Wed Jul 1", v:"Atlanta", ist:"9:30 PM IST · Wed 1 Jul", ko:"2026-07-01T16:00:00Z", a:{iso:'gb',n:"England"}, b:{iso:'cd',n:"DR Congo",sd:"3rd"}, win:'a', ours:false,
    verdict:"England grind through",
    phil:"Tuchel's England — possession control, Bellingham arriving in the box, set-piece power — vs DR Congo's spirited, athletic, counter-attacking outsiders riding momentum.",
@@ -306,9 +317,9 @@ const R32 = [
    team:"Key men: Lionel Messi (6 goals, the orchestrator and dead-ball threat), Julián Álvarez & Lautaro Martínez (the front two), Lo Celso & Nico Paz (the creative succession), Otamendi (with Romero a knee doubt). E. Martínez the elite keeper. Bench depth the envy of the tournament.",
    pre:"argentina-capeverde-prematch.html", post:null},
  {id:'R6', day:"Fri Jul 3", v:"Dallas", ist:"11:30 PM IST · Fri 3 Jul", ko:"2026-07-03T18:00:00Z", a:{iso:'au',n:"Australia"}, b:{iso:'eg',n:"Egypt"}, win:'b', ours:false,
-   verdict:"Egypt & Salah edge it",
-   phil:"Two transition-minded sides happy to sit and strike. Australia's organised, hard-running block vs Egypt's Salah-led counters. Whoever blinks first likely loses the cagey battle.",
-   pred:"A tight, low-event game. Salah's individual brilliance is the most likely decisive factor; Egypt nick it."},
+   verdict:"Egypt edge it — if Salah is fit",
+   phil:"Two transition-minded sides happy to sit and strike. Australia's organised, hard-running low block vs Egypt's Salah-led counters. Whoever blinks first and commits men forward likely loses the cagey battle.",
+   pred:"The pundits and bookmakers lean Egypt: DraftKings make them clear favourites (~+150 vs Australia's +225, with 82% of bets on Egypt), and the model consensus is a 1-2 Egypt win. The big caveat is Salah's fitness — he limped off against Iran with his left leg bandaged and is a doubt. A fully-fit Salah is the difference and Egypt go through to face Argentina; without him it's a genuine coin-flip Australia could nick. We back Egypt, fitness permitting."},
  {id:'R7', day:"Thu Jul 2", v:"Vancouver", ist:"8:30 AM IST · Fri 3 Jul", ko:"2026-07-03T03:00:00Z", a:{iso:'ch',n:"Switzerland"}, b:{iso:'dz',n:"Algeria",sd:"3rd"}, win:'a', ours:false,
    verdict:"Switzerland's structure wins",
    phil:"Swiss tournament-football discipline — compact, organised, ruthless on the break — vs Algeria's technical, possession-minded flair. Pragmatism vs artistry.",
@@ -336,15 +347,15 @@ const R16 = [
    phil:"An Iberian derby and a tactical feast — Portugal's star-laden directness vs Spain's juego de posición. Pride, proximity and pedigree on the line.",
    form:"Form clash: Spain stuttering (a scrappy, error-won 1-0 over Uruguay) but with more cohesion; Portugal blunt up front (0-0 vs Colombia). Whoever rediscovers their finishing wins.",
    pred:"On talent and control Spain should edge a tight derby — but if a fit Yamal doesn't fire, Portugal's individual quality (and Ronaldo) can punish them. A coin-flip leaning faintly to Spain."},
- {id:'16L4', feeds:"Winners · USA / Senegal side", a:{iso:'us',n:"USA"}, b:{iso:'sn',n:"Senegal"}, win:'b', ours:false,
-   phil:"USA's high-energy press and home support vs Senegal's athletic power. Tempo vs raw physical dominance.",
-   pred:"The upset run continues: a peaking, powerful Senegal overpowers the co-hosts. Bold — but Senegal look the form side of this quarter."},
- {id:'16R1', feeds:"Winners · Brazil / Ivory Coast side", a:{iso:'br',n:"Brazil"}, b:{iso:'ci',n:"Ivory Coast"}, win:'a', ours:true,
-   phil:"Brazil's fluid, pace-laden front line vs Ivory Coast's athletic directness. A track meet that suits Brazil's superior finishing.",
-   pred:"Ivory Coast will threaten on the break, but Brazil's individual quality in transition is decisive. The Seleção advance."},
- {id:'16R2', feeds:"Winners · Ecuador / England side", a:{iso:'ec',n:"Ecuador"}, b:{iso:'gb',n:"England"}, win:'b', ours:false,
-   phil:"Ecuador's grit and transitions vs England's controlled possession and set-piece power. Steel vs structure.",
-   pred:"England's depth and quality grind down a stubborn Ecuador in a low-scoring tie; the Three Lions edge through."},
+ {id:'16L4', feeds:"Winners · USA / Belgium side", a:{iso:'us',n:"USA"}, b:{iso:'be',n:"Belgium"}, win:'b', ours:false,
+   phil:"USA's high-energy press and home support vs Belgium's golden-generation craft and experience. Youthful intensity against streetwise quality.",
+   pred:"The home crowd lifts the USA, but Belgium's individual class — De Bruyne pulling the strings — proves decisive in a competitive tie."},
+ {id:'16R1', feeds:"Winners · Brazil / Norway side", a:{iso:'br',n:"Brazil"}, b:{iso:'no',n:"Norway"}, win:'a', ours:true,
+   phil:"Brazil's fluid, pace-laden front line vs Norway's Haaland-led directness. The Seleção's collective quality against one of the world's most lethal strikers in transition.",
+   pred:"Haaland makes Norway dangerous on the break, but Brazil's depth, pace and front-line brilliance (Vinícius, Cunha, Bruno) should have too much. The Seleção advance — though Haaland is a constant threat."},
+ {id:'16R2', feeds:"Winners · Mexico / England side", a:{iso:'mx',n:"Mexico"}, b:{iso:'gb',n:"England"}, win:'b', ours:false,
+   phil:"Host nation fervour vs England's controlled possession and set-piece power. The Azteca's altitude and atmosphere against the Three Lions' depth and quality.",
+   pred:"Mexico's home crowd makes this a real test, but England's superior squad depth and big-match quality edge a tense, atmospheric tie."},
  {id:'16R3', feeds:"Winners · Argentina / Egypt side", a:{iso:'ar',n:"Argentina"}, b:{iso:'eg',n:"Egypt"}, win:'a', ours:true,
    phil:"Argentina's Messi-led 'La Tercera' vs Egypt's Salah-anchored counters. The champions' collective control vs one man's match-winning genius.",
    pred:"Salah makes Egypt dangerous, but Argentina's quality and tournament savvy see them through with room to spare."},
@@ -447,54 +458,80 @@ function openSheet(m,round){
   scrim.classList.add('show'); sheet.classList.add('show'); document.body.style.overflow='hidden';
 }
 
-/* ===== (D) Countdown-gated Pre/Post analysis buttons =====
-   Pre unlocks 1h before kickoff; Post unlocks at kickoff + 90 min (regulation only). */
+/* ===== (D) Clickable Pre/Post analysis buttons with countdown reveal =====
+   Pre unlocks 1h before kickoff; Post unlocks at kickoff + 90 min (regulation only).
+   Buttons are ALWAYS tappable: when locked, tapping reveals a live countdown panel;
+   when open (and the page is uploaded), tapping navigates to the analysis page. */
 function buildAnalysisButtons(m){
-  if(!m.ko){ // no kickoff time → simple soon states
-    return `<div class="abtns">
-      <a class="pre ${m.pre?'':'disabled'}" ${m.pre?`href="${m.pre}"`:''}>${m.pre?'🔍 Pre-Match':'🔍 Pre-Match · soon'}</a>
-      <a class="post disabled">📈 Post-Match · after FT</a></div>`;
-  }
   const now=Date.now();
-  const ko=new Date(m.ko).getTime();
-  const preOpen=ko-60*60*1000;      // 1 hour before
-  const postOpen=ko+90*60*1000;     // 90 minutes after kickoff
-  let pre, post, note='';
-  // PRE
-  if(!m.pre){ pre=`<a class="pre disabled">🔍 Pre-Match · soon</a>`; }
-  else if(now>=preOpen){ pre=`<a class="pre" href="${m.pre}">🔍 Pre-Match</a>`; }
-  else { pre=`<a class="pre disabled" data-cd="${preOpen}">🔍 Pre-Match<span class="cd"></span></a>`; }
-  // POST
-  if(now>=postOpen){
-    if(m.post) post=`<a class="post" href="${m.post}">📈 Post-Match</a>`;
-    else post=`<a class="post disabled">📈 Post-Match · soon</a>`;
-  } else {
-    post=`<a class="post disabled" data-cd="${postOpen}">📈 Post-Match<span class="cd"></span></a>`;
+  const ko = m.ko? new Date(m.ko).getTime() : null;
+  const preOpen = ko? ko-60*60*1000 : null;     // 1 hour before KO
+  const postOpen= ko? ko+90*60*1000 : null;     // 90 min after KO (regulation)
+  const preReady  = ko? now>=preOpen : false;
+  const postReady = ko? now>=postOpen : false;
+
+  // data attributes drive the click handler (onAnalysisTap)
+  const preBtn = `<a class="pre ${preReady&&m.pre?'live':'locked'}" data-kind="pre"
+      data-open="${preReady?1:0}" data-has="${m.pre?1:0}" ${preOpen?`data-at="${preOpen}"`:''}>
+      🔍 Pre-Match${preReady&&m.pre?'':' <span class="lock">🔒</span>'}</a>`;
+  const postBtn = `<a class="post ${postReady&&m.post?'live':'locked'}" data-kind="post"
+      data-open="${postReady?1:0}" data-has="${m.post?1:0}" ${postOpen?`data-at="${postOpen}"`:''}>
+      📈 Post-Match${postReady&&m.post?'':' <span class="lock">🔒</span>'}</a>`;
+
+  return `<div class="abtns">${preBtn}${postBtn}</div>
+    <div class="cdpanel" id="cdpanel" hidden></div>
+    <div class="note">Tap a button for its analysis · it unlocks 1 hour before kickoff (pre) and right after full-time (post).</div>`;
+}
+
+/* tap handler for the analysis buttons */
+function onAnalysisTap(a){
+  const kind=a.dataset.kind, isOpen=a.dataset.open==='1', has=a.dataset.has==='1';
+  const m=currentMatch; if(!m) return;
+  const panel=document.getElementById('cdpanel');
+  // OPEN + page exists → navigate
+  if(isOpen && has){ window.location.href = kind==='pre'? m.pre : m.post; return; }
+  // OPEN but page not uploaded yet
+  if(isOpen && !has){
+    panel.hidden=false;
+    panel.innerHTML=`<div class="cdwin ready"><span class="cdttl">${kind==='pre'?'🔍 Pre-Match':'📈 Post-Match'} analysis is live</span>
+      <span class="cdsub">The window is open — the standalone page will appear here once it's uploaded to the site.</span></div>`;
+    return;
   }
-  let html=`<div class="abtns">${pre}${post}</div>`;
-  if(!m.pre) html+=`<div class="note">Full standalone deep-dive drops closer to kickoff.</div>`;
-  else if(now<preOpen) html+=`<div class="note">Pre-match analysis unlocks 1 hour before kickoff · post-match right after full-time.</div>`;
-  return html;
+  // LOCKED → reveal countdown
+  const at=+a.dataset.at;
+  panel.hidden=false;
+  panel.dataset.target=at; panel.dataset.kind=kind;
+  renderCdPanel();
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-/* live-updating countdown labels inside the open sheet */
-function tickCountdowns(){
-  document.querySelectorAll('#m-body a[data-cd]').forEach(a=>{
-    const t=+a.dataset.cd, now=Date.now(), diff=t-now;
-    const cd=a.querySelector('.cd'); if(!cd) return;
-    if(diff<=0){ // unlock live
-      const href=a.classList.contains('pre')?currentMatch&&currentMatch.pre:currentMatch&&currentMatch.post;
-      a.classList.remove('disabled'); cd.textContent='';
-      if(href){ a.setAttribute('href',href); }
-      return;
-    }
-    const h=Math.floor(diff/3600000), mn=Math.floor((diff%3600000)/60000), sc=Math.floor((diff%60000)/1000);
-    cd.textContent = ' · '+(h>0?h+'h ':'')+mn+'m '+sc+'s';
-  });
+function renderCdPanel(){
+  const panel=document.getElementById('cdpanel'); if(!panel||panel.hidden) return;
+  const at=+panel.dataset.target, kind=panel.dataset.kind, diff=at-Date.now();
+  const title = kind==='pre'?'🔍 Pre-Match analysis':'📈 Post-Match analysis';
+  if(diff<=0){
+    panel.innerHTML=`<div class="cdwin ready"><span class="cdttl">${title} is unlocking…</span>
+      <span class="cdsub">Reopen this tie in a moment — the analysis window is now open.</span></div>`;
+    return;
+  }
+  const d=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000),
+        mn=Math.floor((diff%3600000)/60000), sc=Math.floor((diff%60000)/1000);
+  const big = (d>0?d+'d ':'')+String(h).padStart(2,'0')+':'+String(mn).padStart(2,'0')+':'+String(sc).padStart(2,'0');
+  panel.innerHTML=`<div class="cdwin"><span class="cdttl">${title} unlocks in</span>
+    <span class="cdclock">${big}</span>
+    <span class="cdsub">${kind==='pre'?'Opens 1 hour before kickoff.':'Opens right after full-time (90 mins).'}</span></div>`;
 }
+/* live tick for the open panel */
+function tickCountdowns(){ renderCdPanel(); }
 let currentMatch=null;
 setInterval(tickCountdowns,1000);
 function closeSheet(){ scrim.classList.remove('show'); sheet.classList.remove('show'); document.body.style.overflow=''; }
 scrim.addEventListener('click',closeSheet);
+
+/* tap on Pre/Post analysis buttons inside the sheet */
+mbody.addEventListener('click',e=>{
+  const a=e.target.closest('.abtns a'); if(!a) return;
+  e.preventDefault(); onAnalysisTap(a);
+});
 
 root.addEventListener('click',e=>{
   const card=e.target.closest('.tiecard'); if(!card) return;

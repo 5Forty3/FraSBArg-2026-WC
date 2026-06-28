@@ -48,6 +48,9 @@
   .seg button .sm{display:block;font-size:9px;font-weight:700;color:var(--dim);letter-spacing:.5px;margin-top:2px}
   .seg button[aria-selected="true"]{color:#0a0e14;background:linear-gradient(135deg,var(--gold),var(--gold-2))}
   .seg button[aria-selected="true"] .sm{color:#4a3a10}
+  .seg .segbtn{flex:1;text-align:center;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);background:transparent;border:none;border-radius:999px;padding:9px 6px;cursor:pointer;transition:.18s;line-height:1.1;display:flex;flex-direction:column;justify-content:center;align-items:center}
+  .seg .segbtn:hover{color:var(--gold)}
+  .seg .segbtn .sm{display:block;font-size:9px;font-weight:700;color:var(--dim);letter-spacing:.5px;margin-top:2px}
 
   .legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:11px;color:var(--muted);
     max-width:920px;margin:12px auto 0;padding:0 16px}
@@ -90,6 +93,7 @@
   .tiecard.marquee .lbl .rd{color:var(--gold-2)}
   .tiecard .lbl .vn{font-size:8.5px;color:var(--dim);text-align:right}
   .tiecard .pickline{font-size:10px;color:var(--muted);padding:6px 6px 1px;display:flex;justify-content:space-between;align-items:center}
+  .tiecard .timerow{font-size:9.5px;color:var(--gold-2);font-weight:700;letter-spacing:.2px;padding:7px 6px 0;margin-top:5px;border-top:1px solid var(--line);opacity:.92}
   .tiecard .pickline b{color:var(--win)}
   .tiecard .pickline .go{color:var(--gold);font-weight:800;font-size:9.5px;letter-spacing:.5px}
 
@@ -153,6 +157,9 @@
   .blk.phil .t{color:#6aa3e6}.blk.form .t{color:var(--green)}
   .blk p{font-size:13.5px;margin:0;color:#d3dbe6}
   .abtns{display:flex;gap:10px;margin-top:18px}
+  .styletag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.3px;color:var(--gold-2);
+    background:rgba(231,185,66,.08);border:1px solid #3a2f12;border-radius:8px;padding:7px 11px;margin-bottom:13px}
+  .abtns a .cd{font-size:11px;font-weight:700;opacity:.85;letter-spacing:0}
   .abtns a{flex:1;text-align:center;text-decoration:none;font-size:13px;font-weight:800;padding:14px;border-radius:13px;transition:.15s}
   .abtns a.pre{background:var(--panel-2);border:1px solid var(--line-2);color:var(--txt)}
   .abtns a.post{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#0a0e14}
@@ -178,6 +185,7 @@
       <button role="tab" aria-selected="true" data-view="bracket">Bracket<span class="sm">Full tree</span></button>
       <button role="tab" aria-selected="false" data-view="r32">Round of 32<span class="sm">16 ties</span></button>
       <button role="tab" aria-selected="false" data-view="r16">Round of 16<span class="sm">Predicted</span></button>
+      <a class="segbtn" href="wc2026-calendar.html">Group Stage<span class="sm">All 72 games</span></a>
     </div>
   </div>
 </div>
@@ -223,77 +231,89 @@ const F = {
 /* ===== ROUND OF 32 — official matchups, printed-bracket order ===== */
 const R32 = [
  // LEFT HALF (top→bottom of the printed bracket's left side)
- {id:'L1', day:"Mon Jun 29", v:"Boston", a:{iso:'de',n:"Germany"}, b:{iso:'py',n:"Paraguay"}, win:'a', ours:false,
+ {id:'L1', day:"Mon Jun 29", v:"Boston", ist:"2:00 AM IST · Tue 30 Jun", ko:"2026-06-29T20:30:00Z", a:{iso:'de',n:"Germany"}, b:{iso:'py',n:"Paraguay"}, win:'a', ours:false,
    verdict:"Germany's class tells",
    phil:"Nagelsmann's positional, full-back-driven Germany vs Paraguay's deep, combative low block and direct counters. Control vs chaos.",
    pred:"Germany lost a dead rubber to Ecuador but topped the group; their quality unlocks a stubborn Paraguay. Patience required."},
- {id:'L2', day:"Tue Jun 30", v:"New York / NJ", a:{iso:'fr',n:"France"}, b:{iso:'se',n:"Sweden",sd:"3rd"}, win:'a', ours:true, key:"France",
+ {id:'L2', day:"Tue Jun 30", v:"New York / NJ", ist:"2:30 AM IST · Wed 1 Jul", ko:"2026-06-30T21:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'se',n:"Sweden",sd:"3rd"}, win:'a', ours:true, key:"France",
    verdict:"France too strong",
    phil:"The tournament's scariest attack — Olise conducting, Dembélé & Mbappé interchanging at frightening speed — vs Sweden's compact, physical, counter-punching block.",
    form:"Perfect 9 pts, 10 goals: beat Senegal 3-1, Iraq 3-0, Norway 4-1 (Dembélé hat-trick). The fault line is defence — a reserve Norway out-xG'd them and won a penalty. Saliba's fitness key; Deschamps back from compassionate leave.",
    pred:"Sweden are organised but France's attacking ceiling is on another planet. Mbappé & Dembélé carve them open; the only question is whether the defence stays switched on.",
+   style:"4-2-3-1 · Deschamps (Stéphan interim) · vertical transition kings",
+   deep:"School of thought: pragmatic, tournament-hardened French football — sit a fraction deeper, win the ball, and unleash devastating vertical transitions through the world's fastest front line. The Senegal opener's second half established the blueprint that's run all tournament: Olise as the central conductor, Dembélé and Mbappé interchanging and attacking the channels at frightening speed. Dembélé's Norway hat-trick (cutting in from the right onto his left foot, three carbon copies) showed an in-form match-winner who takes the scoring weight off Mbappé.",
+   team:"Key men: Mbappé (all-time France top scorer, chasing the Golden Boot), Dembélé (4 goals, the in-form destroyer), Olise (the creative hub, 3 assists). Watch: Saliba's fitness and the rest-defence — the one fault line. Maignan a penalty-saving safety net.",
    pre:"france-sweden-prematch.html", post:null},
- {id:'L3', day:"Sun Jun 28", v:"Los Angeles", a:{iso:'za',n:"South Africa"}, b:{iso:'ca',n:"Canada",sd:"co-host"}, win:'b', ours:false,
+ {id:'L3', day:"Sun Jun 28", v:"Los Angeles", ist:"12:30 AM IST · Mon 29 Jun", ko:"2026-06-28T19:00:00Z", a:{iso:'za',n:"South Africa"}, b:{iso:'ca',n:"Canada",sd:"co-host"}, win:'b', ours:false,
    verdict:"Canada edge it at home",
    phil:"Canada's athletic, transition-heavy 4-3-3 vs South Africa's surprising, technical possession game. Bafana were the shock of Group A but lack a killer.",
    pred:"Home advantage and greater attacking quality see Canada through, though South Africa will make it awkward."},
- {id:'L4', day:"Mon Jun 29", v:"Monterrey", a:{iso:'nl',n:"Netherlands"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:false,
+ {id:'L4', day:"Mon Jun 29", v:"Monterrey", ist:"6:30 AM IST · Tue 30 Jun", ko:"2026-06-30T01:00:00Z", a:{iso:'nl',n:"Netherlands"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:false,
    verdict:"Dutch edge a classic",
    phil:"A heavyweight of styles: the Netherlands' structured positional possession vs Morocco's elite low-block-and-counter — the 2022 semi-finalists' signature.",
    pred:"The tie of the round. Morocco's organisation troubles the Dutch, but Netherlands' depth and set-piece threat edge a tight one."},
- {id:'L5', day:"Thu Jul 2", v:"Toronto", a:{iso:'pt',n:"Portugal"}, b:{iso:'hr',n:"Croatia"}, win:'a', ours:false,
+ {id:'L5', day:"Thu Jul 2", v:"Toronto", ist:"4:30 AM IST · Fri 3 Jul", ko:"2026-07-02T23:00:00Z", a:{iso:'pt',n:"Portugal"}, b:{iso:'hr',n:"Croatia"}, win:'a', ours:false,
    verdict:"Portugal edge the Euro-final rematch",
    phil:"A 2016 Euro-final rematch with Ronaldo AND Modrić still leading. Portugal's deep, talented squad and wide threats vs Croatia's masterful midfield control that slows any game to its tempo.",
    form:"Form note: Portugal finished 2nd in Group K after a goalless draw with Colombia — a worrying blunt streak up front despite huge talent. The goals have dried up.",
    pred:"Croatia's midfield could control it, but Portugal's depth and individual quality — if the finishing returns — sees them through a tight, tactical battle. A genuine toss-up."},
- {id:'L6', day:"Thu Jul 2", v:"Los Angeles", a:{iso:'es',n:"Spain"}, b:{iso:'at',n:"Austria",sd:"3rd"}, win:'a', ours:true, key:"Spain",
+ {id:'L6', day:"Thu Jul 2", v:"Los Angeles", ist:"12:30 AM IST · Fri 3 Jul", ko:"2026-07-02T19:00:00Z", a:{iso:'es',n:"Spain"}, b:{iso:'at',n:"Austria",sd:"3rd"}, win:'a', ours:true, key:"Spain",
    verdict:"Spain — but it won't be easy",
    phil:"Spain's juego de posición — Yamal's right-wing menace, Pedri's tempo, Oyarzabal the rediscovered poacher — vs Rangnick's Austria: aggressive gegenpressing, man-marking, physical disruption.",
    form:"A worrying trajectory: drew Cape Verde 0-0 (27 shots, no end product), thrashed Saudi 4-0 (blueprint clicked), then a scrappy 1-0 over Uruguay won by a keeper error in 'horrendous' football. Uruguay showed the recipe — man-mark Yamal, attack the midfield, get physical — and Austria will do EXACTLY that. Pedri & Rodri off-form, Yamal short of fitness.",
    pred:"The most dangerous tie for any of our four — Austria's press is precisely what stifled Spain vs Uruguay. Spain's quality should still edge it, but a fit, firing Yamal is essential. Real upset risk.",
+   style:"4-3-3 · De la Fuente · juego de posición",
+   deep:"School of thought: positional play (juego de posición) — dominate the ball, control space through structure, and overload the half-spaces. But the tournament has tested the philosophy. The Cape Verde opener was control without penetration (27 shots, 0 goals); the Saudi 4-0 unlocked it with Yamal's right-wing menace and Oyarzabal the rediscovered poacher. Then Uruguay exposed the fragility: man-mark Yamal, attack the midfield, get physical, and when Spain lose their shape their technical finesse vanishes with it. A system team that can die by its system.",
+   team:"Key men: Lamine Yamal (the match-winner, but short of fitness), Pedri (the metronome — alarmingly off-form this tournament), Oyarzabal (the No.9 solution), Rodri (anchor, also subpar lately). Cubarsí the one defender in flying form. Olmo & Nico Williams game-changing depth off the bench.",
    pre:"spain-austria-prematch.html", post:null},
- {id:'L7', day:"Wed Jul 1", v:"SF Bay Area", a:{iso:'us',n:"USA",sd:"co-host"}, b:{iso:'ba',n:"Bosnia",sd:"3rd"}, win:'a', ours:false,
+ {id:'L7', day:"Wed Jul 1", v:"SF Bay Area", ist:"5:30 AM IST · Thu 2 Jul", ko:"2026-07-02T00:00:00Z", a:{iso:'us',n:"USA",sd:"co-host"}, b:{iso:'ba',n:"Bosnia",sd:"3rd"}, win:'a', ours:false,
    verdict:"USA ride the wave",
    phil:"Pochettino's USMNT — high press, Pulisic & Balogun in transition, vertical intent — vs Bosnia's experienced, physical, counter-leaning side. Energy vs streetwise game-management.",
    pred:"Pulisic looks ready to take over a tournament. Home crowd and superior athleticism carry the USA past a dangerous but limited Bosnia."},
- {id:'L8', day:"Wed Jul 1", v:"Seattle", a:{iso:'be',n:"Belgium"}, b:{iso:'sn',n:"Senegal",sd:"3rd"}, win:'b', ours:false,
+ {id:'L8', day:"Wed Jul 1", v:"Seattle", ist:"1:30 AM IST · Thu 2 Jul", ko:"2026-07-01T20:00:00Z", a:{iso:'be',n:"Belgium"}, b:{iso:'sn',n:"Senegal",sd:"3rd"}, win:'b', ours:false,
    verdict:"Senegal's power prevails",
    phil:"Belgium's golden-generation possession (De Bruyne, Lukaku) vs Senegal's elite athletic 4-3-3 — pace, power and the form of a side that hammered Iraq 5-0 to qualify. An ageing core vs rising energy.",
    pred:"An upset call with conviction: Senegal are physically dominant and peaking while Belgium have looked laboured. The Lions of Teranga's intensity overwhelms a fading Belgium."},
  // RIGHT HALF (top→bottom of the printed bracket's right side)
- {id:'R1', day:"Mon Jun 29", v:"Houston", a:{iso:'br',n:"Brazil"}, b:{iso:'jp',n:"Japan"}, win:'a', ours:true, key:"Brazil",
+ {id:'R1', day:"Mon Jun 29", v:"Houston", ist:"10:30 PM IST · Mon 29 Jun", ko:"2026-06-29T17:00:00Z", a:{iso:'br',n:"Brazil"}, b:{iso:'jp',n:"Japan"}, win:'a', ours:true, key:"Brazil",
    verdict:"Brazil's flair overwhelms",
    phil:"Ancelotti's Brazil have rediscovered a fluid, interchanging front line — Vinícius the destroyer, Cunha the mobile 9, Bruno the creator — vs Japan's brave, technical, high-pressing 3-4-2-1.",
    form:"Grew game-by-game: blunt vs Morocco (1-1), routine vs Haiti (3-0), commanding vs Scotland (3-0, Vini scored in all three). Only ONE goal conceded in the group. Neymar back from injury as a wildcard.",
    pred:"Japan will press and commit, which plays into Brazil's pace in transition. Vinícius the difference; Brazil's growing momentum tells.",
+   style:"4-3-3 · Ancelotti · fluid, transition-lethal samba pragmatism",
+   deep:"School of thought: Ancelotti's pragmatic evolution of jogo bonito — a fluid, interchanging front line built on individual brilliance and ruthless transitions rather than rigid structure. The project grew game-by-game: blunt and frustrated vs Morocco (1-1), routine vs Haiti, then a commanding Scotland display (3-0) where it finally clicked — Vinícius the destroyer, Cunha the mobile false-nine, Bruno Guimarães the creative fulcrum. Vini scored in all three group games and looks the player of the tournament so far.",
+   team:"Key men: Vinícius Jr (4 goals, unplayable), Matheus Cunha (the mobile 9 that solved the centre-forward question), Bruno Guimarães (the creator, 2 assists vs Scotland). Wildcard: Neymar, back from a calf injury — the great tactical question is how to fit him in without breaking the rhythm. Only ONE goal conceded all group stage.",
    pre:"brazil-japan-prematch.html", post:null},
- {id:'R2', day:"Tue Jun 30", v:"Dallas", a:{iso:'ci',n:"Ivory Coast"}, b:{iso:'no',n:"Norway"}, win:'a', ours:false,
+ {id:'R2', day:"Tue Jun 30", v:"Dallas", ist:"10:30 PM IST · Tue 30 Jun", ko:"2026-06-30T17:00:00Z", a:{iso:'ci',n:"Ivory Coast"}, b:{iso:'no',n:"Norway"}, win:'a', ours:false,
    verdict:"Ivory Coast spring it",
    phil:"Pace and power: Ivory Coast's athletic, direct 4-3-3 (Diomande the breakout star) vs a Norway leaning on Haaland & Ødegaard returning. Transitions decide it.",
    pred:"Norway have Haaland, but their defence leaks badly (27 shots faced, conceded every game). Ivory Coast's energy edges a high-tempo upset."},
- {id:'R3', day:"Tue Jun 30", v:"Mexico City", a:{iso:'mx',n:"Mexico",sd:"co-host"}, b:{iso:'ec',n:"Ecuador",sd:"3rd"}, win:'b', ours:false,
+ {id:'R3', day:"Tue Jun 30", v:"Mexico City", ist:"6:30 AM IST · Wed 1 Jul", ko:"2026-07-01T01:00:00Z", a:{iso:'mx',n:"Mexico",sd:"co-host"}, b:{iso:'ec',n:"Ecuador",sd:"3rd"}, win:'b', ours:false,
    verdict:"Ecuador's steel upsets El Tri",
    phil:"Mexico's slick possession 4-3-3 and a deafening home crowd vs Ecuador's muscular, disciplined block and lethal transitions — the side that just beat Germany.",
    pred:"The boldest call of the round. Mexico are flying and at home, but Ecuador's defensive resilience and physical edge — fresh off downing Germany — make them a nightmare matchup. A coin-flip; we take Ecuador."},
- {id:'R4', day:"Wed Jul 1", v:"Atlanta", a:{iso:'gb',n:"England"}, b:{iso:'cd',n:"DR Congo",sd:"3rd"}, win:'a', ours:false,
+ {id:'R4', day:"Wed Jul 1", v:"Atlanta", ist:"9:30 PM IST · Wed 1 Jul", ko:"2026-07-01T16:00:00Z", a:{iso:'gb',n:"England"}, b:{iso:'cd',n:"DR Congo",sd:"3rd"}, win:'a', ours:false,
    verdict:"England grind through",
    phil:"Tuchel's England — possession control, Bellingham arriving in the box, set-piece power — vs DR Congo's spirited, athletic, counter-attacking outsiders riding momentum.",
    pred:"England have laboured but have the individual quality to break a stubborn opponent. Comfortable on paper, nervy in practice; the Three Lions advance."},
- {id:'R5', day:"Fri Jul 3", v:"Miami", a:{iso:'ar',n:"Argentina"}, b:{iso:'cv',n:"Cape Verde",sd:"3rd"}, win:'a', ours:true, key:"Argentina",
+ {id:'R5', day:"Fri Jul 3", v:"Miami", ist:"3:30 AM IST · Sat 4 Jul", ko:"2026-07-03T22:00:00Z", a:{iso:'ar',n:"Argentina"}, b:{iso:'cv',n:"Cape Verde",sd:"3rd"}, win:'a', ours:true, key:"Argentina",
    verdict:"Champions march on",
    phil:"Scaloni's 'La Tercera' — Bilardista steel fused with Menottista flair, all orbiting Messi — vs Cape Verde's heroic deep block (the wall that held Spain to 0-0). Patience vs the impossible-to-break.",
    form:"Imperious. Perfect 9 pts; Messi scored 6 (all-time WC top scorer at 18). Beat Algeria 3-0 (Messi hat-trick), Austria 2-0, Jordan 3-1 (rotated — bench depth on show). Conceded only ONCE all tournament. One question: too Messi-dependent if smothered.",
    pred:"Cape Verde's block is stubborn but Argentina have the patience, set-piece threat (Lo Celso, Messi) and quality to break it down. Don't gift the one counter. Comfortable, eventually.",
+   style:"4-4-2 / 4-3-3 · Scaloni · 'La Tercera' (Bilardismo + Menottismo)",
+   deep:"School of thought: 'La Tercera' — Scaloni's synthesis of Argentina's two great traditions, the defensive pragmatism of Bilardismo fused with the flair of Menottismo, all orbiting Messi. Imperious in the group: a perfect 9 points, only ONE goal conceded, Messi already on 6 (and the all-time WC top scorer at 18). The Jordan win revealed elite squad depth — Lo Celso's free-kick, lively cameos from Almada & Barco — and the mesmerising possession football (20+ pass sequences) that redefines them. The one question: an over-reliance on Messi if an elite side smothers him.",
+   team:"Key men: Lionel Messi (6 goals, the orchestrator and dead-ball threat), Julián Álvarez & Lautaro Martínez (the front two), Lo Celso & Nico Paz (the creative succession), Otamendi (with Romero a knee doubt). E. Martínez the elite keeper. Bench depth the envy of the tournament.",
    pre:"argentina-capeverde-prematch.html", post:null},
- {id:'R6', day:"Fri Jul 3", v:"Dallas", a:{iso:'au',n:"Australia"}, b:{iso:'eg',n:"Egypt"}, win:'b', ours:false,
+ {id:'R6', day:"Fri Jul 3", v:"Dallas", ist:"11:30 PM IST · Fri 3 Jul", ko:"2026-07-03T18:00:00Z", a:{iso:'au',n:"Australia"}, b:{iso:'eg',n:"Egypt"}, win:'b', ours:false,
    verdict:"Egypt & Salah edge it",
    phil:"Two transition-minded sides happy to sit and strike. Australia's organised, hard-running block vs Egypt's Salah-led counters. Whoever blinks first likely loses the cagey battle.",
    pred:"A tight, low-event game. Salah's individual brilliance is the most likely decisive factor; Egypt nick it."},
- {id:'R7', day:"Thu Jul 2", v:"Vancouver", a:{iso:'ch',n:"Switzerland"}, b:{iso:'dz',n:"Algeria",sd:"3rd"}, win:'a', ours:false,
+ {id:'R7', day:"Thu Jul 2", v:"Vancouver", ist:"8:30 AM IST · Fri 3 Jul", ko:"2026-07-03T03:00:00Z", a:{iso:'ch',n:"Switzerland"}, b:{iso:'dz',n:"Algeria",sd:"3rd"}, win:'a', ours:false,
    verdict:"Switzerland's structure wins",
    phil:"Swiss tournament-football discipline — compact, organised, ruthless on the break — vs Algeria's technical, possession-minded flair. Pragmatism vs artistry.",
    pred:"Switzerland have reached three straight R16s; their structure and big-game nous edge a talented but less disciplined Algeria."},
- {id:'R8', day:"Fri Jul 3", v:"Kansas City", a:{iso:'co',n:"Colombia"}, b:{iso:'gh',n:"Ghana",sd:"3rd"}, win:'a', ours:false,
+ {id:'R8', day:"Fri Jul 3", v:"Kansas City", ist:"7:00 AM IST · Sat 4 Jul", ko:"2026-07-04T01:30:00Z", a:{iso:'co',n:"Colombia"}, b:{iso:'gh',n:"Ghana",sd:"3rd"}, win:'a', ours:false,
    verdict:"Colombia's quality shows",
    phil:"Colombia's James-orchestrated, rhythmic possession and wide flair vs Ghana's pace-and-power transition game. South American craft vs African athleticism.",
    pred:"Colombia topped a group containing Portugal and look balanced and dangerous. James Rodríguez's class sees them past an enthusiastic Ghana."},
@@ -347,11 +367,13 @@ function tieCard(m,round){
   const winName=aWin?m.a.n:m.b.n;
   const lbl=m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):(round==='R16'?'Round of 16':'Round of 32'));
   const sub=m.v?m.v:(m.feeds||'');
+  const timerow = m.ist? `<div class="timerow">🕒 ${m.ist}${m.v?'  ·  📍 '+m.v:''}</div>` : (m.feeds?`<div class="timerow">${m.feeds}</div>`:'');
   return `<div class="tiecard ${m.ours?'ours':''} ${m.marquee?'marquee':''}" data-id="${m.id}" data-round="${round}">
-    <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${sub}</span></div>
+    <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${m.ist?'R32':sub}</span></div>
     ${rowHTML(m.a,aWin,bWin)}
     <div class="vsmini">VS</div>
     ${rowHTML(m.b,bWin,aWin)}
+    ${timerow}
     <div class="pickline"><span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span></div>
   </div>`;
 }
@@ -400,29 +422,77 @@ function renderList(which){
 /* ---------- modal ---------- */
 const scrim=document.getElementById('scrim'),sheet=document.getElementById('sheet'),mbody=document.getElementById('m-body');
 function openSheet(m,round){
+  currentMatch=m;
   document.getElementById('m-tag').textContent=(round==='R16'?'Round of 16':'Round of 32')+(m.marquee?' · 🔥 Marquee':(m.ours?' · ★ '+(m.key||'Our team'):''));
   document.getElementById('m-da').style.backgroundImage=`url('${flagURL(F[m.a.iso])}')`;
   document.getElementById('m-db').style.backgroundImage=`url('${flagURL(F[m.b.iso])}')`;
   document.getElementById('m-na').textContent=m.a.n;
   document.getElementById('m-nb').textContent=m.b.n;
-  document.getElementById('m-meta').textContent=(m.v?'📍 '+m.v+'  ·  ':'')+(m.day||m.feeds||'');
+  const timeStr = m.ist? m.ist : (m.day||m.feeds||'');
+  document.getElementById('m-meta').textContent=(m.v?'📍 '+m.v+'  ·  ':'')+(m.ist?'🕒 '+m.ist:(m.day||m.feeds||''));
   const aWin=m.win==='a',winName=aWin?m.a.n:m.b.n,winIso=aWin?m.a.iso:m.b.iso;
   let body=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;
+  if(m.style) body+=`<div class="styletag">▦ ${m.style}</div>`;
   if(m.phil) body+=`<div class="blk phil"><div class="t">⚙️ Footballing Philosophy</div><p>${m.phil}</p></div>`;
+  if(m.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 School of Thought &amp; Tactics</div><p>${m.deep}</p></div>`;
+  if(m.team) body+=`<div class="blk" style="border-left:3px solid #e7b942"><div class="t" style="color:var(--gold)">👥 Key Players &amp; Team Sheet</div><p>${m.team}</p></div>`;
   if(m.form) body+=`<div class="blk form"><div class="t">📈 Form in the World Cup</div><p>${m.form}</p></div>`;
   body+=`<h4>🔮 The Prediction</h4><p>${m.pred}</p>`;
   if(m.ours){
-    body+=`<div class="abtns">
-      <a class="pre ${m.pre?'':'disabled'}" ${m.pre?`href="${m.pre}"`:''}>${m.pre?'🔍 Pre-Match':'🔍 Pre-Match · soon'}</a>
-      <a class="post ${m.post?'':'disabled'}" ${m.post?`href="${m.post}"`:''}>${m.post?'📈 Post-Match':'📈 Post-Match · after FT'}</a>
-    </div>`;
-    if(!m.pre) body+=`<div class="note">Full standalone deep-dive drops closer to kickoff.</div>`;
+    body+=buildAnalysisButtons(m);
   } else {
     body+=`<div class="note">Inline tactical read above · deep-dive pages are reserved for our four teams.</div>`;
   }
   mbody.innerHTML=body; mbody.scrollTop=0;
   scrim.classList.add('show'); sheet.classList.add('show'); document.body.style.overflow='hidden';
 }
+
+/* ===== (D) Countdown-gated Pre/Post analysis buttons =====
+   Pre unlocks 1h before kickoff; Post unlocks at kickoff + 90 min (regulation only). */
+function buildAnalysisButtons(m){
+  if(!m.ko){ // no kickoff time → simple soon states
+    return `<div class="abtns">
+      <a class="pre ${m.pre?'':'disabled'}" ${m.pre?`href="${m.pre}"`:''}>${m.pre?'🔍 Pre-Match':'🔍 Pre-Match · soon'}</a>
+      <a class="post disabled">📈 Post-Match · after FT</a></div>`;
+  }
+  const now=Date.now();
+  const ko=new Date(m.ko).getTime();
+  const preOpen=ko-60*60*1000;      // 1 hour before
+  const postOpen=ko+90*60*1000;     // 90 minutes after kickoff
+  let pre, post, note='';
+  // PRE
+  if(!m.pre){ pre=`<a class="pre disabled">🔍 Pre-Match · soon</a>`; }
+  else if(now>=preOpen){ pre=`<a class="pre" href="${m.pre}">🔍 Pre-Match</a>`; }
+  else { pre=`<a class="pre disabled" data-cd="${preOpen}">🔍 Pre-Match<span class="cd"></span></a>`; }
+  // POST
+  if(now>=postOpen){
+    if(m.post) post=`<a class="post" href="${m.post}">📈 Post-Match</a>`;
+    else post=`<a class="post disabled">📈 Post-Match · soon</a>`;
+  } else {
+    post=`<a class="post disabled" data-cd="${postOpen}">📈 Post-Match<span class="cd"></span></a>`;
+  }
+  let html=`<div class="abtns">${pre}${post}</div>`;
+  if(!m.pre) html+=`<div class="note">Full standalone deep-dive drops closer to kickoff.</div>`;
+  else if(now<preOpen) html+=`<div class="note">Pre-match analysis unlocks 1 hour before kickoff · post-match right after full-time.</div>`;
+  return html;
+}
+/* live-updating countdown labels inside the open sheet */
+function tickCountdowns(){
+  document.querySelectorAll('#m-body a[data-cd]').forEach(a=>{
+    const t=+a.dataset.cd, now=Date.now(), diff=t-now;
+    const cd=a.querySelector('.cd'); if(!cd) return;
+    if(diff<=0){ // unlock live
+      const href=a.classList.contains('pre')?currentMatch&&currentMatch.pre:currentMatch&&currentMatch.post;
+      a.classList.remove('disabled'); cd.textContent='';
+      if(href){ a.setAttribute('href',href); }
+      return;
+    }
+    const h=Math.floor(diff/3600000), mn=Math.floor((diff%3600000)/60000), sc=Math.floor((diff%60000)/1000);
+    cd.textContent = ' · '+(h>0?h+'h ':'')+mn+'m '+sc+'s';
+  });
+}
+let currentMatch=null;
+setInterval(tickCountdowns,1000);
 function closeSheet(){ scrim.classList.remove('show'); sheet.classList.remove('show'); document.body.style.overflow=''; }
 scrim.addEventListener('click',closeSheet);
 

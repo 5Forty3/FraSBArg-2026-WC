@@ -159,6 +159,12 @@
   .abtns{display:flex;gap:10px;margin-top:18px}
   .styletag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.3px;color:var(--gold-2);
     background:rgba(231,185,66,.08);border:1px solid #3a2f12;border-radius:8px;padding:7px 11px;margin-bottom:13px}
+  .starblk{background:linear-gradient(180deg,#0c1320,#0a1017);border:1px solid var(--line-2);border-radius:14px;
+    padding:13px 13px 14px;margin:6px 0 12px;box-shadow:inset 0 0 40px rgba(0,0,0,.35)}
+  .starblk .t{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+  .staranim{display:block;width:100%;height:auto;border-radius:11px;border:1px solid #16302380;
+    box-shadow:0 8px 28px rgba(0,0,0,.5)}
+  .stardesc{font-size:13px;color:#cbd4e1;margin:11px 0 0;line-height:1.55}
   .abtns a{flex:1;text-align:center;text-decoration:none;font-size:13px;font-weight:800;padding:14px;border-radius:13px;transition:.15s;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
   .abtns a.pre{background:var(--panel-2);border:1px solid var(--line-2);color:var(--txt)}
   .abtns a.post{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#0a0e14}
@@ -254,7 +260,7 @@ const R32 = [
    style:"4-2-3-1 · Deschamps (Stéphan interim) · vertical transition kings",
    deep:"School of thought: pragmatic, tournament-hardened French football — sit a fraction deeper, win the ball, and unleash devastating vertical transitions through the world's fastest front line. The Senegal opener's second half established the blueprint that's run all tournament: Olise as the central conductor, Dembélé and Mbappé interchanging and attacking the channels at frightening speed. Dembélé's Norway hat-trick (cutting in from the right onto his left foot, three carbon copies) showed an in-form match-winner who takes the scoring weight off Mbappé.",
    team:"Key men: Mbappé (all-time France top scorer, chasing the Golden Boot), Dembélé (4 goals, the in-form destroyer), Olise (the creative hub, 3 assists). Watch: Saliba's fitness and the rest-defence — the one fault line. Maignan a penalty-saving safety net.",
-   pre:"france-sweden-prematch.html", post:null},
+   star:"mbappe", pre:"france-sweden-prematch.html", post:null},
  {id:'L3', day:"Sun Jun 28", v:"Los Angeles", ist:"12:30 AM IST · Mon 29 Jun", ko:"2026-06-28T19:00:00Z", a:{iso:'za',n:"South Africa"}, b:{iso:'ca',n:"Canada",sd:"co-host"}, win:'b', ours:false,
    verdict:"Canada edge it at home",
    phil:"Canada's athletic, transition-heavy 4-3-3 vs South Africa's surprising, technical possession game. Bafana were the shock of Group A but lack a killer.",
@@ -276,7 +282,7 @@ const R32 = [
    style:"4-3-3 · De la Fuente · juego de posición",
    deep:"School of thought: positional play (juego de posición) — dominate the ball, control space through structure, and overload the half-spaces. But the tournament has tested the philosophy. The Cape Verde opener was control without penetration (27 shots, 0 goals); the Saudi 4-0 unlocked it with Yamal's right-wing menace and Oyarzabal the rediscovered poacher. Then Uruguay exposed the fragility: man-mark Yamal, attack the midfield, get physical, and when Spain lose their shape their technical finesse vanishes with it. A system team that can die by its system.",
    team:"Key men: Lamine Yamal (the match-winner, but short of fitness), Pedri (the metronome — alarmingly off-form this tournament), Oyarzabal (the No.9 solution), Rodri (anchor, also subpar lately). Cubarsí the one defender in flying form. Olmo & Nico Williams game-changing depth off the bench.",
-   pre:"spain-austria-prematch.html", post:null},
+   star:"yamal", pre:"spain-austria-prematch.html", post:null},
  {id:'L7', day:"Wed Jul 1", v:"SF Bay Area", ist:"5:30 AM IST · Thu 2 Jul", ko:"2026-07-02T00:00:00Z", a:{iso:'us',n:"USA",sd:"co-host"}, b:{iso:'ba',n:"Bosnia",sd:"3rd"}, win:'a', ours:false,
    verdict:"USA ride the wave",
    phil:"Pochettino's USMNT — high press, Pulisic & Balogun in transition, vertical intent — vs Bosnia's experienced, physical, counter-leaning side. Energy vs streetwise game-management.",
@@ -294,7 +300,7 @@ const R32 = [
    style:"4-3-3 · Ancelotti · fluid, transition-lethal samba pragmatism",
    deep:"School of thought: Ancelotti's pragmatic evolution of jogo bonito — a fluid, interchanging front line built on individual brilliance and ruthless transitions rather than rigid structure. The project grew game-by-game: blunt and frustrated vs Morocco (1-1), routine vs Haiti, then a commanding Scotland display (3-0) where it finally clicked — Vinícius the destroyer, Cunha the mobile false-nine, Bruno Guimarães the creative fulcrum. Vini scored in all three group games and looks the player of the tournament so far.",
    team:"Key men: Vinícius Jr (4 goals, unplayable), Matheus Cunha (the mobile 9 that solved the centre-forward question), Bruno Guimarães (the creator, 2 assists vs Scotland). Wildcard: Neymar, back from a calf injury — the great tactical question is how to fit him in without breaking the rhythm. Only ONE goal conceded all group stage.",
-   pre:"brazil-japan-prematch.html", post:null},
+   star:"vini", pre:"brazil-japan-prematch.html", post:null},
  {id:'R2', day:"Tue Jun 30", v:"Dallas", ist:"10:30 PM IST · Tue 30 Jun", ko:"2026-06-30T17:00:00Z", a:{iso:'ci',n:"Ivory Coast"}, b:{iso:'no',n:"Norway"}, win:'b', ours:false,
    verdict:"Haaland fires Norway through",
    phil:"Pace and power: Ivory Coast's athletic, direct 4-3-3 (Diomande the breakout star) vs Norway's front-foot threat — with Haaland and Ødegaard restored to the starting XI after being rested in the group finale. Firepower vs flair.",
@@ -315,7 +321,7 @@ const R32 = [
    style:"4-4-2 / 4-3-3 · Scaloni · 'La Tercera' (Bilardismo + Menottismo)",
    deep:"School of thought: 'La Tercera' — Scaloni's synthesis of Argentina's two great traditions, the defensive pragmatism of Bilardismo fused with the flair of Menottismo, all orbiting Messi. Imperious in the group: a perfect 9 points, only ONE goal conceded, Messi already on 6 (and the all-time WC top scorer at 18). The Jordan win revealed elite squad depth — Lo Celso's free-kick, lively cameos from Almada & Barco — and the mesmerising possession football (20+ pass sequences) that redefines them. The one question: an over-reliance on Messi if an elite side smothers him.",
    team:"Key men: Lionel Messi (6 goals, the orchestrator and dead-ball threat), Julián Álvarez & Lautaro Martínez (the front two), Lo Celso & Nico Paz (the creative succession), Otamendi (with Romero a knee doubt). E. Martínez the elite keeper. Bench depth the envy of the tournament.",
-   pre:"argentina-capeverde-prematch.html", post:null},
+   star:"messi", pre:"argentina-capeverde-prematch.html", post:null},
  {id:'R6', day:"Fri Jul 3", v:"Dallas", ist:"11:30 PM IST · Fri 3 Jul", ko:"2026-07-03T18:00:00Z", a:{iso:'au',n:"Australia"}, b:{iso:'eg',n:"Egypt"}, win:'b', ours:false,
    verdict:"Egypt edge it — if Salah is fit",
    phil:"Two transition-minded sides happy to sit and strike. Australia's organised, hard-running low block vs Egypt's Salah-led counters. Whoever blinks first and commits men forward likely loses the cagey battle.",
@@ -447,6 +453,7 @@ function openSheet(m,round){
   if(m.phil) body+=`<div class="blk phil"><div class="t">⚙️ Footballing Philosophy</div><p>${m.phil}</p></div>`;
   if(m.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 School of Thought &amp; Tactics</div><p>${m.deep}</p></div>`;
   if(m.team) body+=`<div class="blk" style="border-left:3px solid #e7b942"><div class="t" style="color:var(--gold)">👥 Key Players &amp; Team Sheet</div><p>${m.team}</p></div>`;
+  if(m.star) body+=starPanel(m.star);
   if(m.form) body+=`<div class="blk form"><div class="t">📈 Form in the World Cup</div><p>${m.form}</p></div>`;
   body+=`<h4>🔮 The Prediction</h4><p>${m.pred}</p>`;
   if(m.ours){
@@ -456,6 +463,93 @@ function openSheet(m,round){
   }
   mbody.innerHTML=body; mbody.scrollTop=0;
   scrim.classList.add('show'); sheet.classList.add('show'); document.body.style.overflow='hidden';
+}
+
+/* ===== Animated tactical "Signature Move" panels for our 4 stars ===== */
+function starPanel(key){
+  const S={
+    mbappe:{name:"Kylian Mbappé",tag:"The run in behind",col:"#3b82d6",col2:"#7cb4e8",
+      desc:"Mbappé's signature: drift off the last shoulder, then explode into the channel as the vertical ball is played. Raw pace turns a half-yard into a one-on-one — the single hardest thing in football to defend."},
+    yamal:{name:"Lamine Yamal",tag:"Cut inside, curl far post",col:"#ff5d6a",col2:"#ffa3ab",
+      desc:"Yamal isolates the full-back on the right touchline, drops the shoulder to cut onto his left foot, and bends it across the keeper into the far corner. Width first, then the inswinging strike."},
+    vini:{name:"Vinícius Júnior",tag:"Cut in from the left",col:"#39d98a",col2:"#8df0c2",
+      desc:"Vini receives wide-left, attacks the full-back at speed, knifes inside onto his right, and finishes near post. Direct, repeatable, and almost impossible to contain one-on-one."},
+    messi:{name:"Lionel Messi",tag:"Drop, glide & the killer ball",col:"#7cb4e8",col2:"#bcd9f6",
+      desc:"Messi drops into the pocket between the lines, draws a marker, then slides the disguised through-ball for the runner. The brain, not the legs, unlocks the block."},
+  }[key];
+  if(!S) return '';
+  return `<div class="starblk">
+    <div class="t">✨ Signature Move · <b style="color:${S.col2}">${S.name}</b> — ${S.tag}</div>
+    ${starSVG(key,S)}
+    <p class="stardesc">${S.desc}</p>
+  </div>`;
+}
+function starSVG(key,S){
+  const pitch = `
+    <rect width="320" height="200" rx="10" fill="#0c1f17"/>
+    <rect x="6" y="6" width="308" height="188" rx="7" fill="none" stroke="#1f4a36" stroke-width="1.4"/>
+    <rect x="95" y="6" width="130" height="46" fill="none" stroke="#1f4a36" stroke-width="1.4"/>
+    <rect x="133" y="6" width="54" height="20" fill="none" stroke="#1f4a36" stroke-width="1.4"/>
+    <line x1="6" y1="166" x2="314" y2="166" stroke="#163a2a" stroke-width="1"/>`;
+  const defs = `<defs>
+      <marker id="ah-${key}" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="${S.col2}"/></marker>
+      <filter id="gl-${key}"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>`;
+
+  if(key==='mbappe'){
+    return `<svg viewBox="0 0 320 200" class="staranim">${defs}${pitch}
+      <circle cx="120" cy="70" r="7" fill="#c8102e" opacity=".8"/><circle cx="190" cy="68" r="7" fill="#c8102e" opacity=".8"/>
+      <circle cx="160" cy="150" r="8" fill="${S.col}"/><text x="160" y="153" font-size="7" fill="#fff" text-anchor="middle" font-weight="800">O</text>
+      <path d="M150,120 C150,100 150,70 178,44" fill="none" stroke="${S.col2}" stroke-width="2.5" stroke-dasharray="4 4" marker-end="url(#ah-${key})">
+        <animate attributeName="stroke-dashoffset" from="120" to="0" dur="1.3s" repeatCount="indefinite"/></path>
+      <path d="M160,142 C156,120 152,95 150,76" fill="none" stroke="${S.col}" stroke-width="2" opacity=".5"/>
+      <g filter="url(#gl-${key})">
+        <circle r="8.5" fill="${S.col2}"><animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.18;0.85;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M150,120 C150,100 150,70 178,44"/></circle>
+        <text font-size="7" fill="#06223f" text-anchor="middle" font-weight="900" dy="2.5"><animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.18;0.85;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M150,120 C150,100 150,70 178,44"/>M</text></g>
+      <circle r="3.4" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.55;0.82;1" calcMode="spline" keySplines="0 0 1 1;.3 0 .2 1;0 0 1 1" path="M160,142 C156,110 165,70 178,40"/></circle>
+      <circle cx="170" cy="14" r="0" fill="${S.col2}"><animate attributeName="r" values="0;13;0" keyTimes="0;0.5;1" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;.55;0" keyTimes="0;0.82;0.9;1" dur="2.6s" repeatCount="indefinite"/></circle>
+    </svg>`;
+  }
+  if(key==='yamal'){
+    return `<svg viewBox="0 0 320 200" class="staranim">${defs}${pitch}
+      <circle cx="150" cy="60" r="7" fill="#c8102e" opacity=".8"/><circle cx="250" cy="100" r="7" fill="#c8102e" opacity=".8"/>
+      <path d="M262,120 C250,95 215,75 168,52" fill="none" stroke="${S.col2}" stroke-width="2.5" stroke-dasharray="4 4" marker-end="url(#ah-${key})">
+        <animate attributeName="stroke-dashoffset" from="160" to="0" dur="1.6s" repeatCount="indefinite"/></path>
+      <path d="M168,50 C158,38 148,26 110,16" fill="none" stroke="${S.col}" stroke-width="2" opacity=".5"/>
+      <g filter="url(#gl-${key})">
+        <circle r="8.5" fill="${S.col2}"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;0.55;1;1" keyTimes="0;0.55;0.82;1" calcMode="spline" keySplines=".4 0 .5 1;.3 0 .2 1;0 0 1 1" path="M262,120 C250,95 215,75 168,52"/></circle>
+        <text font-size="6.5" fill="#5a0010" text-anchor="middle" font-weight="900" dy="2.3"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;0.55;1;1" keyTimes="0;0.55;0.82;1" calcMode="spline" keySplines=".4 0 .5 1;.3 0 .2 1;0 0 1 1" path="M262,120 C250,95 215,75 168,52"/>10</text></g>
+      <circle r="3.4" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.78;0.95;1" calcMode="spline" keySplines="0 0 1 1;.3 0 .4 1;0 0 1 1" path="M168,50 C150,30 140,22 108,15"/></circle>
+      <circle cx="108" cy="14" r="0" fill="${S.col2}"><animate attributeName="r" values="0;12;0" keyTimes="0;0.5;1" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;.55;0" keyTimes="0;0.9;0.96;1" dur="2.8s" repeatCount="indefinite"/></circle>
+    </svg>`;
+  }
+  if(key==='vini'){
+    return `<svg viewBox="0 0 320 200" class="staranim">${defs}${pitch}
+      <circle cx="170" cy="62" r="7" fill="#0065bf" opacity=".8"/><circle cx="70" cy="100" r="7" fill="#0065bf" opacity=".8"/>
+      <path d="M58,120 C72,96 110,78 158,54" fill="none" stroke="${S.col2}" stroke-width="2.5" stroke-dasharray="4 4" marker-end="url(#ah-${key})">
+        <animate attributeName="stroke-dashoffset" from="160" to="0" dur="1.6s" repeatCount="indefinite"/></path>
+      <path d="M158,52 C168,40 182,28 205,16" fill="none" stroke="${S.col}" stroke-width="2" opacity=".5"/>
+      <g filter="url(#gl-${key})">
+        <circle r="8.5" fill="${S.col2}"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;0.55;1;1" keyTimes="0;0.55;0.82;1" calcMode="spline" keySplines=".4 0 .5 1;.3 0 .2 1;0 0 1 1" path="M58,120 C72,96 110,78 158,54"/></circle>
+        <text font-size="6.5" fill="#063022" text-anchor="middle" font-weight="900" dy="2.3"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;0.55;1;1" keyTimes="0;0.55;0.82;1" calcMode="spline" keySplines=".4 0 .5 1;.3 0 .2 1;0 0 1 1" path="M58,120 C72,96 110,78 158,54"/>7</text></g>
+      <circle r="3.4" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.78;0.95;1" calcMode="spline" keySplines="0 0 1 1;.3 0 .4 1;0 0 1 1" path="M158,52 C176,32 188,24 208,15"/></circle>
+      <circle cx="208" cy="14" r="0" fill="${S.col2}"><animate attributeName="r" values="0;12;0" keyTimes="0;0.5;1" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;.55;0" keyTimes="0;0.9;0.96;1" dur="2.8s" repeatCount="indefinite"/></circle>
+    </svg>`;
+  }
+  // messi
+  return `<svg viewBox="0 0 320 200" class="staranim">${defs}${pitch}
+    <circle cx="120" cy="58" r="7" fill="#444" opacity=".7"/><circle cx="160" cy="54" r="7" fill="#444" opacity=".7"/><circle cx="200" cy="58" r="7" fill="#444" opacity=".7"/>
+    <circle cx="140" cy="92" r="7" fill="#444" opacity=".7"/><circle cx="185" cy="92" r="7" fill="#444" opacity=".7"/>
+    <circle cx="232" cy="112" r="7" fill="${S.col}"/><text x="232" y="115" font-size="6.5" fill="#06223f" text-anchor="middle" font-weight="900">A</text>
+    <path d="M150,135 C158,120 150,108 166,98" fill="none" stroke="${S.col2}" stroke-width="2.5" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" from="70" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+    <path d="M166,96 C190,92 215,100 230,108" fill="none" stroke="${S.col}" stroke-width="2" opacity=".5"/>
+    <g filter="url(#gl-messi)">
+      <circle r="8.5" fill="${S.col2}"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;0.45;0.55;1;1" keyTimes="0;0.45;0.6;0.85;1" calcMode="spline" keySplines=".4 0 .4 1;.3 0 .3 1;0 0 1 1;0 0 1 1" path="M150,135 C158,120 150,108 166,98"/></circle>
+      <text font-size="6.5" fill="#06223f" text-anchor="middle" font-weight="900" dy="2.3"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;0.45;0.55;1;1" keyTimes="0;0.45;0.6;0.85;1" calcMode="spline" keySplines=".4 0 .4 1;.3 0 .3 1;0 0 1 1;0 0 1 1" path="M150,135 C158,120 150,108 166,98"/>10</text></g>
+    <circle r="3.4" fill="#fff"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;0;1;1;1" keyTimes="0;0.6;0.8;0.95;1" calcMode="spline" keySplines="0 0 1 1;.3 0 .3 1;.3 0 .2 1;0 0 1 1" path="M166,96 C200,98 224,104 232,108 C234,90 215,50 200,18"/></circle>
+    <circle cx="198" cy="14" r="0" fill="${S.col2}"><animate attributeName="r" values="0;13;0" keyTimes="0;0.5;1" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;.55;0" keyTimes="0;0.92;0.97;1" dur="3s" repeatCount="indefinite"/></circle>
+  </svg>`;
 }
 
 /* ===== (D) Clickable Pre/Post analysis buttons with countdown reveal =====

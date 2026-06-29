@@ -147,6 +147,9 @@
   .smatch .nm{font-size:16px;font-weight:800;line-height:1.05}
   .smatch .vs{font-size:11px;font-weight:800;color:var(--dim)}
   .smeta{font-size:11.5px;color:var(--muted);margin-top:10px}
+  .sticky-analysis{margin:13px -20px -14px;padding:12px 20px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(231,185,66,.05),transparent)}
+  .sticky-analysis .abtns{margin-top:0}
+  .sticky-analysis .cdpanel{margin-top:10px}
   .sbody{padding:16px 20px 22px;overflow-y:auto;-webkit-overflow-scrolling:touch}
 
   .vpill{display:flex;align-items:center;gap:11px;background:linear-gradient(135deg,#15110a,transparent);
@@ -241,6 +244,7 @@
       <div class="side r"><span class="nm" id="m-nb"></span><span class="bigdisc" id="m-db"></span></div>
     </div>
     <div class="smeta" id="m-meta"></div>
+    <div class="sticky-analysis" id="m-analysis" hidden></div>
   </div>
   <div class="sbody" id="m-body"></div>
 </div>
@@ -480,10 +484,16 @@ function openSheet(m,round){
   if(m.star) body+=starPanel(m.star);
   if(m.form) body+=`<div class="blk form"><div class="t">📈 Form in the World Cup</div><p>${m.form}</p></div>`;
   body+=`<h4>🔮 The Prediction</h4><p>${m.pred}</p>`;
-  if(m.ours){
-    body+=buildAnalysisButtons(m);
-  } else {
+  if(!m.ours){
     body+=`<div class="note">Inline tactical read above · deep-dive pages are reserved for our four teams.</div>`;
+  }
+  // sticky analysis buttons live in the header (pinned), not the scrolling body
+  const aslot=document.getElementById('m-analysis');
+  if(m.ours){
+    aslot.hidden=false;
+    aslot.innerHTML=buildAnalysisButtons(m);
+  } else {
+    aslot.hidden=true; aslot.innerHTML='';
   }
   mbody.innerHTML=body; mbody.scrollTop=0;
   scrim.classList.add('show'); sheet.classList.add('show'); document.body.style.overflow='hidden';
@@ -597,8 +607,7 @@ function buildAnalysisButtons(m){
       📈 Post-Match${postReady&&m.post?'':' <span class="lock">🔒</span>'}</a>`;
 
   return `<div class="abtns">${preBtn}${postBtn}</div>
-    <div class="cdpanel" id="cdpanel" hidden></div>
-    <div class="note">Tap a button for its analysis · it unlocks 1 hour before kickoff (pre) and right after full-time (post).</div>`;
+    <div class="cdpanel" id="cdpanel" hidden></div>`;
 }
 
 /* tap handler for the analysis buttons */
@@ -645,8 +654,8 @@ setInterval(tickCountdowns,1000);
 function closeSheet(){ scrim.classList.remove('show'); sheet.classList.remove('show'); document.body.style.overflow=''; }
 scrim.addEventListener('click',closeSheet);
 
-/* tap on Pre/Post analysis buttons inside the sheet */
-mbody.addEventListener('click',e=>{
+/* tap on Pre/Post analysis buttons (now in the pinned header slot) */
+document.getElementById('m-analysis').addEventListener('click',e=>{
   const a=e.target.closest('.abtns a'); if(!a) return;
   e.preventDefault(); onAnalysisTap(a);
 });

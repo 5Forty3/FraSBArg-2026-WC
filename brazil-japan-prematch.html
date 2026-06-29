@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil vs Japan — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#ffdf3a;--bra2:#fff07a;--jpn:#1f6fd0;--jpn2:#5aa0e6;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#ffdf3a,#fff 50%,#1f6fd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .b{background:linear-gradient(135deg,#2a2706,#0d1117)}
+  .vsbar .j{background:linear-gradient(135deg,#0e1f33,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .b .nm{color:var(--bra2)}.vsbar .j .nm{color:var(--jpn2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.brazil{border-left:3px solid var(--bra)}
+  .card.japan{border-left:3px solid var(--jpn)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.bra{background:rgba(255,223,58,.16);color:var(--bra2)}
+  .move .mtag.jpn{background:rgba(31,111,208,.2);color:var(--jpn2)}
+  .move .mtag.key{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(255,223,58,.14);color:var(--bra2);border-color:#3a3514">Round of 32 · Win or go home</span>
+  </div>
+  <h1>Brazil vs Japan</h1>
+  <div class="sub">The five-time champions meet the tournament's most dangerous dark horse — the side that already beat them once</div>
+  <div class="meta">🕒 10:30 PM IST, Mon 29 Jun · 📍 NRG Stadium, Houston (12pm CDT / 1pm ET)</div>
+
+  <div class="vsbar">
+    <div class="side b"><div class="nm">🇧🇷 Brazil</div><div class="fm">4-3-3 · Ancelotti · Group C winners · 5× champions</div></div>
+    <div class="mid">VS</div>
+    <div class="side j"><div class="nm">Japan 🇯🇵</div><div class="fm">3-4-2-1 · Moriyasu · Group F runners-up · the dark horses</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a banana-skin of the highest order</div>
+    <p style="margin:8px 0 0">On paper, a five-time world champion against an Asian side should be routine. It won't be. <strong>Japan are the most credible "dark horse" in the tournament</strong> — they held both the Netherlands (2-2) and Sweden (1-1) and thrashed Tunisia 4-0 in Group F, and crucially they <strong>beat this very Brazil 3-2 in a friendly last October</strong>, the first time Japan had ever defeated the Seleção in 14 attempts. Brazil, for their part, have grown into the tournament after a flat 1-1 opener with Morocco, hitting form with back-to-back 3-0 wins over Haiti and Scotland. Ancelotti himself called Japan "one of the best teams" in the world. This is a genuine test — and the winner steps onto a collision course that could eventually lead to Argentina.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key absences confirmed</span></h2>
+  <p class="lead">The big stories are confirmed: <strong>Raphinha is out for Brazil, Neymar starts on the bench, and Japan are sweating on two key men.</strong> Exact XIs are predicted (managers haven't formally confirmed), but the injury/selection picture is clear.</p>
+
+  <div class="card brazil">
+    <h3 style="margin-top:0">🇧🇷 Brazil — the in-form Seleção (expected XI)</h3>
+    <ul>
+      <li><strong>Raphinha OUT (confirmed)</strong> — a thigh/hamstring injury sustained against Haiti rules out Brazil's primary right-sided creator and main set-piece taker. A significant loss.</li>
+      <li><strong>Rayan keeps his place</strong> — the 19-year-old Bournemouth-bound wonderkid retains the right-wing spot after a strong showing vs Scotland, opposite the in-form Vinícius.</li>
+      <li><strong>Neymar fully fit but benched (confirmed)</strong> — back from his calf injury (14-min cameo vs Scotland), he's a super-sub. Ancelotti has said his minutes depend on the game state — the tactical wildcard off the bench.</li>
+      <li><strong>Settled front line:</strong> Vinícius Jr (scored in all 3 group games, 4 goals) on the left, Matheus Cunha (3 goals in 2 starts) through the middle, Paquetá at No.10.</li>
+      <li><strong>Booking watch:</strong> Casemiro and Danilo are one yellow card from a suspension that would rule them out of the Round of 16. Militão & Rodrygo remain out for the whole tournament.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-3-3): Alisson; Danilo, Marquinhos, Gabriel Magalhães, Douglas Santos; Casemiro, Bruno Guimarães, Paquetá; Rayan, Cunha, Vinícius Jr. (Neymar benched. Not confirmed.)</p>
+  </div>
+
+  <div class="card japan">
+    <h3 style="margin-top:0">🇯🇵 Japan — the organised, fearless dark horses</h3>
+    <ul>
+      <li><strong>Itakura a doubt</strong> — the Ajax centre-back limped off in the 39th minute against Sweden; if he can't go, Shōgo Taniguchi deputises in the back three.</li>
+      <li><strong>Kubo highly doubtful</strong> — the Real Sociedad playmaker is still not training fully with a knee issue; his creative spark is a major possible absentee.</li>
+      <li><strong>Ueda leads the line</strong> — the Feyenoord striker (Eredivisie top scorer) has two goals already; Kamada and Maeda/Itō support in the pockets.</li>
+      <li><strong>The system:</strong> a flexible 3-4-2-1 with energetic wing-backs (Nakamura, Doan) who push high — Japan press hard and counter fast, and are happy to cede the ball.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (3-4-2-1): Suzuki; Tomiyasu, Taniguchi, Hiroki Itō; Doan, Sano, Tanaka, Nakamura; Kamada, Maeda; Ueda. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Who Wants the Ball?</h2>
+  <p>The fascinating quirk: <strong>both sides are at their most lethal on the counter.</strong> Brazil under Ancelotti have become a transition machine built around Vinícius's pace; Japan's whole identity is pressing and breaking at speed. If neither wants to take the initiative, this could be a cagey, even game Japan can live in. The team that's forced to build patiently against a set defence may be the one that struggles — and that's the question that decides the afternoon.</p>
+
+  <h2><span class="ic">🔑</span> Brazil's Key — Free Vinícius, exploit Japan's high wing-backs</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bra">Brazil · Attack</span><span class="mt">Vinícius 1v1 in the space behind Doan</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aB" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf3a"/></marker>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · the space behind Japan's high right wing-back (Doan) is the target</text>
+
+      <!-- Japan back three + high wing-back vacating -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="280" cy="120" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="110" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="120" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="145" font-size="10" fill="#bcd9f6">back three — only 3 to cover</text>
+        <!-- Doan pushed high (the vacated zone) -->
+        <g><circle cx="600" cy="300" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/><text x="600" y="304" fill="#fff">DOAN</text><text x="600" y="322" fill="#bcd9f6" font-size="8">caught high ↑</text></g>
+        <rect x="540" y="150" width="120" height="90" fill="#ffdf3a" opacity="0.1"/>
+        <text x="600" y="200" font-size="10" fill="#ffe98a">space in behind</text>
+      </g>
+
+      <!-- Brazil: Bruno turns, feeds Vini into the channel -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="300" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="360" y="304">BRU</text><text x="360" y="320" fill="#fff" font-size="9">turns on the half-turn</text></g>
+        <g><circle cx="560" cy="250" r="14" fill="#ffdf3a" stroke="#fff" stroke-width="1.6"/><text x="560" y="254">VINI</text><text x="560" y="272" fill="#fff" font-size="9">attacks the space</text></g>
+        <g><circle cx="430" cy="250" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="430" y="254">CUN</text></g>
+      </g>
+
+      <!-- pass + run -->
+      <path d="M372 292 C 440 270, 500 258, 545 252" stroke="#ffdf3a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aB)"/>
+      <path d="M566 236 C 580 200, 575 165, 545 135" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG)"/>
+      <text x="470" y="150" font-size="10" fill="#bff0d0">in behind &amp; cut back</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf3a;border-top-style:dashed"></i> Bruno's release pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Vinícius run in behind</span>
+    </div>
+
+    <p class="expl"><strong>The single most important duel of the game.</strong> Japan's 3-4-2-1 sends its wing-backs flying forward — and on Brazil's left, that means <strong>the space behind Ritsu Doan is there to be exploited by Vinícius Júnior.</strong> The mechanism is simple and devastating: <strong>Bruno Guimarães receiving on the half-turn</strong> and picking out the run before Japan's back three can shuffle across. If Bruno gets time facing goal, Vini (scorer in all three group games) and Cunha will feast on a defence with only three central defenders to cover the width. Japan's plan depends on denying Bruno that half-second; Brazil's depends on giving it to him. Win that, and Brazil's afternoon is comfortable.</p>
+  </div>
+
+  <h2><span class="ic">🗡️</span> Japan's Hope — Attack Brazil's makeshift right side</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag jpn">Japan · The Upset Plan</span><span class="mt">Isolate Nakamura against Brazil's no-natural-right-back flank</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aJ" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+        <marker id="aJ2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Japan attacking ↑ · target the channel where Danilo (34) gets exposed in transition</text>
+
+      <!-- Brazil right side exposed -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="160" cy="150" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="160" y="154" fill="#0a0e14">DAN</text><text x="160" y="172" fill="#ffe98a" font-size="8">34 · pace exposed</text></g>
+        <circle cx="300" cy="135" r="10" fill="#e0c000" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <circle cx="400" cy="135" r="10" fill="#e0c000" stroke="#fff" stroke-width="1" opacity=".85"/>
+        <rect x="60" y="170" width="130" height="90" fill="#5aa0e6" opacity="0.12"/>
+        <text x="125" y="220" font-size="10" fill="#bcd9f6">channel to attack</text>
+      </g>
+
+      <!-- Japan: Nakamura running at Danilo, Ueda waiting -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="120" cy="280" r="13" fill="#1f6fd0" stroke="#fff" stroke-width="1.5"/><text x="120" y="284">NAK</text><text x="120" y="302" fill="#bcd9f6" font-size="9">runs at Danilo</text></g>
+        <g><circle cx="330" cy="240" r="12" fill="#1f6fd0" stroke="#fff" stroke-width="1.3"/><text x="330" y="244">UED</text></g>
+        <g><circle cx="230" cy="300" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/><text x="230" y="304">KAM</text></g>
+      </g>
+
+      <!-- carry + cross -->
+      <path d="M120 267 C 122 235, 128 200, 140 170" stroke="#5aa0e6" stroke-width="3.5" fill="none" marker-end="url(#aJ)"/>
+      <path d="M135 165 C 200 150, 270 145, 318 140" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aJ)"/>
+      <path d="M330 226 C 340 180, 345 130, 350 70" stroke="#ff5d6a" stroke-width="3" fill="none" marker-end="url(#aJ2)"/>
+      <text x="400" y="180" font-size="10" fill="#ffb3b8">Ueda attacks the cross</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6"></i> Nakamura carry / cross</span>
+      <span><i style="border-top-color:#ff5d6a"></i> Ueda's run to finish</span>
+    </div>
+
+    <p class="expl"><strong>Japan's clearest route to a famous upset.</strong> Brazil have <strong>no natural right-back</strong> — the 34-year-old Danilo fills in, and his pace can be exposed in transition. Japan's plan, exactly as they sprung the 3-2 friendly win in October, is to <strong>get Keito Nakamura (and the wing-backs) isolated and running directly at that makeshift right side at speed</strong>, then deliver for Ayase Ueda — the in-form Eredivisie striker — to attack. The Samurai Blue won't see much of the ball, and they don't need to; their whole model is to absorb, win it, and break with numbers down the flanks before Casemiro can screen. If Brazil switch off in transition even once, Japan have the quality to punish them. This is a live upset threat, not a token one.</p>
+  </div>
+
+  <h2><span class="ic">🎭</span> The X-Factor — Neymar off the bench</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">Brazil · Super-Sub</span><span class="mt">A fit Neymar to unlock a tiring low block</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aN" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff07a"/></marker>
+        <marker id="aNg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · Neymar drops between the lines to unpick a deep, tiring Japan</text>
+
+      <g>
+        <circle cx="280" cy="105" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="98" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="105" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="320" cy="155" r="10" fill="#155ba8" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="155" r="10" fill="#155ba8" stroke="#fff" stroke-width="1"/>
+        <text x="360" y="132" text-anchor="middle" font-size="10" fill="#bcd9f6">deep, tiring block</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="240" r="14" fill="#fff07a" stroke="#fff" stroke-width="1.6"/><text x="360" y="244">NEY</text><text x="360" y="262" fill="#fff" font-size="9">between the lines</text></g>
+        <g><circle cx="250" cy="200" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="250" y="204">VINI</text></g>
+        <g><circle cx="470" cy="205" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="470" y="209">CUN</text></g>
+      </g>
+
+      <path d="M348 228 C 320 205, 290 195, 262 198" stroke="#fff07a" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#aN)"/>
+      <path d="M250 188 C 248 160, 255 120, 280 70" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aNg)"/>
+      <path d="M372 228 C 420 200, 460 150, 430 60" stroke="#fff07a" stroke-width="2.5" stroke-dasharray="3 6" fill="none" opacity=".5" marker-end="url(#aN)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#fff07a;border-top-style:dashed"></i> Neymar's killer pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Vinícius run / finish</span>
+    </div>
+
+    <p class="expl"><strong>Brazil's ace if the game gets sticky.</strong> If Japan's organised block frustrates Brazil into a cagey, scoreless hour, <strong>Ancelotti has a fully-fit Neymar to throw on</strong> — and his profile is perfect for the problem. Where pace alone struggles against a deep, compact defence, Neymar offers <strong>guile in the tight spaces between the lines</strong>: the disguised pass, the drawn foul, the moment of individual magic to unlock a packed box. His 14-minute cameo against Scotland already showed sharpness (a shot on target, three chances created, 92% passing). Against a Japan side that tires in the Houston heat after chasing the ball, a fresh Neymar dropping into the pocket to feed Vinícius and Cunha is exactly the kind of game-breaker that turns a nervy knockout into a comfortable one. The ultimate luxury option.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Respect Japan — they are organised, fearless, and have beaten this Brazil before. The friendly defeat in October is a genuine warning, and if Brazil are complacent or switch off in transition against Nakamura and Ueda, an upset is firmly on the table. But that October game came against a second-string Brazilian defence; here, with Marquinhos and Gabriel marshalling the back line and the Seleção <strong>purring after back-to-back 3-0 wins</strong>, the balance tips to Brazil. Vinícius is in the form of his international life, Cunha is firing, and Neymar waits as a luxury super-sub. Expect Japan to make it uncomfortable — perhaps even level for long spells — before Brazil's superior individual quality, and that lethal Vini-in-behind threat, tells. The champions advance, but they'll have to earn it.</p>
+    <div class="scoreline">🇧🇷 Brazil 2 — 1 Japan</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a tense, even contest where Japan threaten on the break, settled by Brazil's front-line class — possibly late, possibly via a Neymar intervention. A Japan upset is a real, live possibility, not a token caveat.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · Houston</div><div class="g">Winner advances</div><div class="n">To the Round of 16 in Houston on July 4, to face the winner of Ivory Coast vs Norway.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">A path toward Argentina</div><div class="n">Brazil sit in the opposite half to Spain — a potential blockbuster with Argentina looms much deeper in the draw.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -94,6 +94,11 @@
   .tiecard .lbl .vn{font-size:8.5px;color:var(--dim);text-align:right}
   .tiecard .pickline{font-size:10px;color:var(--muted);padding:6px 6px 1px;display:flex;justify-content:space-between;align-items:center}
   .tiecard .timerow{font-size:9.5px;color:var(--gold-2);font-weight:700;letter-spacing:.2px;padding:7px 6px 0;margin-top:5px;border-top:1px solid var(--line);opacity:.92}
+  .tiecard.done{border-color:#1f4533}
+  .tiecard.done .lbl .rd{color:var(--green)}
+  .disc-row .score{margin-left:auto;font-size:18px;font-weight:900;color:var(--muted);min-width:20px;text-align:center;font-variant-numeric:tabular-nums}
+  .disc-row .score.sw{color:#fff}
+  .tiecard .scorers{font-size:9.5px;color:var(--green);font-weight:700}
   .tiecard .pickline b{color:var(--win)}
   .tiecard .pickline .go{color:var(--gold);font-weight:800;font-size:9.5px;letter-spacing:.5px}
 
@@ -148,6 +153,10 @@
     border:1px solid #3a2f12;border-radius:13px;padding:12px 14px;margin-bottom:16px}
   .vpill .d{width:34px;height:34px;border-radius:50%;background-size:cover;background-position:center;flex-shrink:0;border:2px solid var(--win)}
   .vpill .tx{font-size:13px;color:#e4ddc9}.vpill .tx b{color:var(--win)}
+  .ftbanner{background:linear-gradient(135deg,#0e1f17,#0c1320);border:1px solid #1f4533;border-radius:13px;padding:13px 15px;margin-bottom:16px;text-align:center}
+  .ftscore{display:flex;align-items:center;justify-content:center;gap:14px;font-size:15px;color:#cbd4e1}
+  .ftscore b{font-size:26px;font-weight:900;color:#fff;letter-spacing:1px;font-variant-numeric:tabular-nums}
+  .ftmeta{font-size:11.5px;color:var(--green);font-weight:700;margin-top:7px}
   .sbody h4{font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:16px 0 7px;display:flex;gap:7px;align-items:center}
   .sbody h4:first-child{margin-top:0}
   .sbody p{font-size:14px;color:#d3dbe6;margin-bottom:10px}.sbody p b{color:#fff}
@@ -262,9 +271,10 @@ const R32 = [
    team:"Key men: Mbappé (all-time France top scorer, chasing the Golden Boot), Dembélé (4 goals, the in-form destroyer), Olise (the creative hub, 3 assists). Watch: Saliba's fitness and the rest-defence — the one fault line. Maignan a penalty-saving safety net.",
    star:"mbappe", pre:"france-sweden-prematch.html", post:null},
  {id:'L3', day:"Sun Jun 28", v:"Los Angeles", ist:"12:30 AM IST · Mon 29 Jun", ko:"2026-06-28T19:00:00Z", a:{iso:'za',n:"South Africa"}, b:{iso:'ca',n:"Canada",sd:"co-host"}, win:'b', ours:false,
-   verdict:"Canada edge it at home",
-   phil:"Canada's athletic, transition-heavy 4-3-3 vs South Africa's surprising, technical possession game. Bafana were the shock of Group A but lack a killer.",
-   pred:"Home advantage and greater attacking quality see Canada through, though South Africa will make it awkward."},
+   result:{sa:0, sb:1, done:true, scorers:"⚽ Eustáquio 90+2'", note:"Canada advance to the Round of 16 for the first time ever"},
+   verdict:"Canada edge it at home — confirmed",
+   phil:"Canada's athletic, transition-heavy 4-3-3 vs South Africa's surprising, technical possession game. Bafana were the shock of Group A but lacked a killer — and it showed.",
+   pred:"As predicted, Canada edged it — but it took until the death. Stephen Eustáquio chested down a cleared ball on the edge of the box and hammered home in the 92nd minute, sending Canada to the Round of 16 for the first time in their history. Alphonso Davies made his tournament debut off the bench at 75' after a hamstring injury. South Africa defended heroically (Williams 5 saves) but mustered just one shot on target. Canada next face the Netherlands or Morocco in Houston on July 4."},
  {id:'L4', day:"Mon Jun 29", v:"Monterrey", ist:"6:30 AM IST · Tue 30 Jun", ko:"2026-06-30T01:00:00Z", a:{iso:'nl',n:"Netherlands"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:false,
    verdict:"Dutch edge a classic",
    phil:"A heavyweight of styles: the Netherlands' structured positional possession vs Morocco's elite low-block-and-counter — the 2022 semi-finalists' signature.",
@@ -372,26 +382,34 @@ const R16 = [
 
 /* ---------- helpers ---------- */
 function discStyle(iso){ return `background-image:url('${flagURL(F[iso])}')`; }
-function rowHTML(t,isWin,isOut){
+function rowHTML(t,isWin,isOut,score){
   const nm=`tname${isWin?' win':''}${isOut?' out':''}`;
   const dc=`disc${isWin?' win':''}${isOut?' out':''}`;
   const sd=t.sd?`<span class="sd">${t.sd}</span>`:'';
-  const chk=isWin?`<span class="checkwin">↑ ADV</span>`:'';
-  return `<div class="disc-row ${isWin?'is-win':''}"><span class="${dc}" style="${discStyle(t.iso)}"></span><span class="${nm}">${t.n}${sd}</span>${chk}</div>`;
+  // if a score is provided, show it on the right; else show ADV pill for the winner
+  const right = score? score : (isWin?`<span class="checkwin">↑ ADV</span>`:'');
+  return `<div class="disc-row ${isWin?'is-win':''}"><span class="${dc}" style="${discStyle(t.iso)}"></span><span class="${nm}">${t.n}${sd}</span>${right}</div>`;
 }
 function tieCard(m,round){
   const aWin=m.win==='a',bWin=m.win==='b';
   const winName=aWin?m.a.n:m.b.n;
-  const lbl=m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):(round==='R16'?'Round of 16':'Round of 32'));
+  const done=m.result&&m.result.done;
+  const lbl=done?'✓ Full-time':(m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):(round==='R16'?'Round of 16':'Round of 32')));
   const sub=m.v?m.v:(m.feeds||'');
   const timerow = m.ist? `<div class="timerow">🕒 ${m.ist}${m.v?'  ·  📍 '+m.v:''}</div>` : (m.feeds?`<div class="timerow">${m.feeds}</div>`:'');
-  return `<div class="tiecard ${m.ours?'ours':''} ${m.marquee?'marquee':''}" data-id="${m.id}" data-round="${round}">
-    <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${m.ist?'R32':sub}</span></div>
-    ${rowHTML(m.a,aWin,bWin)}
+  // score badges if the match is complete
+  const scoreA = done? `<span class="score ${aWin?'sw':''}">${m.result.sa}</span>` : '';
+  const scoreB = done? `<span class="score ${bWin?'sw':''}">${m.result.sb}</span>` : '';
+  const pickOrResult = done
+    ? `<span class="scorers">${m.result.scorers}</span><span class="go">REPORT ›</span>`
+    : `<span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span>`;
+  return `<div class="tiecard ${m.ours?'ours':''} ${m.marquee?'marquee':''} ${done?'done':''}" data-id="${m.id}" data-round="${round}">
+    <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${m.ist?(done?'R32 · FT':'R32'):sub}</span></div>
+    ${rowHTML(m.a,aWin,bWin,scoreA)}
     <div class="vsmini">VS</div>
-    ${rowHTML(m.b,bWin,aWin)}
+    ${rowHTML(m.b,bWin,aWin,scoreB)}
     ${timerow}
-    <div class="pickline"><span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span></div>
+    <div class="pickline">${pickOrResult}</div>
   </div>`;
 }
 
@@ -448,7 +466,13 @@ function openSheet(m,round){
   const timeStr = m.ist? m.ist : (m.day||m.feeds||'');
   document.getElementById('m-meta').textContent=(m.v?'📍 '+m.v+'  ·  ':'')+(m.ist?'🕒 '+m.ist:(m.day||m.feeds||''));
   const aWin=m.win==='a',winName=aWin?m.a.n:m.b.n,winIso=aWin?m.a.iso:m.b.iso;
-  let body=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;
+  let body='';
+  if(m.result&&m.result.done){
+    body+=`<div class="ftbanner"><div class="ftscore"><span>${m.a.n}</span><b>${m.result.sa} – ${m.result.sb}</b><span>${m.b.n}</span></div>
+      <div class="ftmeta">${m.result.scorers} · Full-time${m.result.note?' · '+m.result.note:''}</div></div>`;
+  } else {
+    body+=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;
+  }
   if(m.style) body+=`<div class="styletag">▦ ${m.style}</div>`;
   if(m.phil) body+=`<div class="blk phil"><div class="t">⚙️ Footballing Philosophy</div><p>${m.phil}</p></div>`;
   if(m.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 School of Thought &amp; Tactics</div><p>${m.deep}</p></div>`;

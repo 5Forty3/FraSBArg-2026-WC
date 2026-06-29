@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil 2-1 Japan — Post-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#ffdf3a;--bra2:#fff07a;--jpn:#1f6fd0;--jpn2:#5aa0e6;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(23px,5vw,36px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#ffdf3a,#fff 55%,#1f6fd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:36px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  .scoreboard .b{color:var(--bra2)}.scoreboard .j{color:var(--jpn2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--bra2)}.scorers .jp{color:var(--jpn2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .b{color:var(--bra2)}.stat .v .j{color:var(--jpn2)}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:18px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .half{background:linear-gradient(135deg,#1a1406,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .half .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}.rt .mid{color:var(--gold);font-weight:700}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.jpn{background:rgba(31,111,208,.2);color:var(--jpn2)}
+  .move .mtag.bra{background:rgba(255,223,58,.16);color:var(--bra2)}
+  .move .mtag.future{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(255,223,58,.14);color:var(--bra2);border-color:#3a3514">Round of 32 · FT</span>
+  </div>
+  <h1>Brazil vs Japan — Comeback in the Cauldron</h1>
+
+  <div class="scoreboard">
+    <span class="t b">🇧🇷 Brazil</span>
+    <span class="sc">2 – 1</span>
+    <span class="t j">Japan 🇯🇵</span>
+  </div>
+  <div class="meta">📍 Houston Stadium · Round of 32 · Full-time (90+6')</div>
+  <div class="scorers">⚽ <b>Casemiro 56'</b>, <b>Martinelli 90+6'</b> — Japan: <span class="jp">Sano 29'</span></div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Result</div><div class="v"><span class="b">Comeback win</span></div></div>
+    <div class="stat"><div class="l">Winner</div><div class="v">90+6' 😮‍💨</div></div>
+    <div class="stat"><div class="l">Suzuki saves</div><div class="v">Heroic 🧤</div></div>
+    <div class="stat"><div class="l">Next</div><div class="v"><span class="b">Round of 16</span></div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Exactly as the preview warned — a live, genuine upset threat. Brazil were second-best for 45 minutes, then transformed after the break to escape via a stoppage-time winner.</p>
+
+  <h2><span class="ic">🧭</span> The Story — A Tale of Two Halves, and a Test Passed</h2>
+  <p class="lead">This was the banana-skin the preview promised, and for an hour it looked like it might claim the champions. <strong>Japan were magnificently organised</strong> — a compact two-bank-of-four block that clogged their own 18-yard box and strangled the space Brazil's forwards live in. For long stretches of the first half, <strong>Brazil genuinely ran out of ideas</strong>, recycling possession sideways with no way through. Then Japan struck on exactly the kind of transition the preview flagged: <strong>Kaishū Sano pounced on a stray Danilo pass, surged past Casemiro, and finished from distance.</strong> At the break, the unthinkable felt live — Japan looked the likelier scorers. But the second half brought a different Brazil entirely: <strong>waves of attack, rediscovered width, Vinícius unplayable, and a tactical reshape from Ancelotti</strong> that finally cracked the block. Casemiro atoned for his error with a thunderous header, Suzuki performed miracles to keep it level, and substitute <strong>Gabriel Martinelli broke Japanese hearts in the sixth minute of stoppage time.</strong> Survived — and learned plenty.</p>
+
+  <div class="callout">
+    <div class="t">🧱 Why Brazil were stifled — Japan's two banks of four</div>
+    <p style="margin:8px 0 0">Japan's plan was a masterclass in disciplined defending: <strong>a 4-4 block (eight outfield players) dropping deep and narrow, physically clogging the penalty area</strong> and denying Brazil's front three any room to receive between the lines. Vinícius, Cunha and Rayan kept finding bodies wherever they turned. With no space centrally, Brazil's first-half possession became sterile — sideways and slow, exactly the "ran out of ideas" feeling you saw. And every time Brazil over-committed, Japan's quick transitions (Sano, Nakamura) carried genuine venom. It was the blueprint for stifling Brazil — and it worked until half-time.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (29') — Sano's strike: a transition born of a Brazilian error</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag jpn">Japan · 0-1</span><span class="mt">Stray pass punished — Sano surges past Casemiro and fires</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aJ" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+        <marker id="aErr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Japan attacking ↑ · stray Danilo pass intercepted, Sano drives through the gap</text>
+
+      <!-- Brazil GK -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="360" cy="40" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="360" y="44">ALI</text>
+        <!-- Danilo loose pass origin -->
+        <g><circle cx="250" cy="300" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="250" y="304">DAN</text><text x="250" y="320" fill="#ffb3b8" font-size="8">stray pass ⚠</text></g>
+        <!-- Casemiro beaten -->
+        <g><circle cx="380" cy="240" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="380" y="244">CAS</text><text x="380" y="260" fill="#ffb3b8" font-size="8">surged past</text></g>
+      </g>
+
+      <!-- Sano intercept + drive + shot -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="320" cy="295" r="13" fill="#1f6fd0" stroke="#fff" stroke-width="1.5"/><text x="320" y="299">SANO</text></g>
+      </g>
+      <!-- the stray pass (red, intercepted) -->
+      <path d="M260 296 C 290 294, 305 295, 312 295" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="5 4" fill="none" marker-end="url(#aErr)"/>
+      <!-- Sano carry past Casemiro -->
+      <path d="M328 282 C 350 255, 365 235, 372 205" stroke="#5aa0e6" stroke-width="3.5" fill="none" marker-end="url(#aJ)"/>
+      <!-- shot from outside box -->
+      <path d="M374 196 C 372 150, 366 95, 352 56" stroke="#5aa0e6" stroke-width="3.5" fill="none" marker-end="url(#aJ)"/>
+      <text x="430" y="150" font-size="10" fill="#bcd9f6">clinical from distance</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Danilo's stray pass</span>
+      <span><i style="border-top-color:#5aa0e6"></i> Sano's drive &amp; shot</span>
+    </div>
+
+    <p class="expl"><strong>The error the preview feared — and Japan took it.</strong> The warning was explicit: switch off in transition against Sano and Nakamura and Japan have the quality to punish you. They did. A <strong>loose Danilo pass in midfield was intercepted by Kaishū Sano</strong>, who drove straight through the gap, <strong>surged past a flat-footed Casemiro</strong>, and lashed a right-footed strike from above the half-circle past Alisson. It was a goal of two halves itself: superb, fearless Japanese execution, but also a genuine <strong>defensive lapse from Brazil's two most experienced heads</strong> — Casemiro and Gabriel switching off in their own half. At 0-1 near the half-hour, against that block, Brazil suddenly had a real problem.</p>
+  </div>
+
+  <div class="half">
+    <div class="t">⏸️ Half-time read — Japan the likelier scorers</div>
+    <p style="margin:8px 0 0">An honest assessment at the break: <strong>Japan looked more likely to add to their lead than Brazil were to equalise.</strong> The Samurai Blue were compact, confident and lethal in transition; Brazil were sideways, frustrated and short of ideas against eight men behind the ball. Ancelotti's half-time was the most important fifteen minutes of Brazil's tournament so far — and he got it spectacularly right.</p>
+  </div>
+
+  <h2><span class="ic">🔄</span> The Ancelotti Reshape — width, crosses & Vini central</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bra">Brazil · 2nd-half shift</span><span class="mt">From sterile central possession to relentless wide overloads</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aB2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf3a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · stretch the block wide, whip crosses in, Vini central as a threat</text>
+
+      <!-- Japan compact block -->
+      <g>
+        <circle cx="280" cy="100" r="10" fill="#1f6fd0" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="340" cy="95" r="10" fill="#1f6fd0" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="400" cy="95" r="10" fill="#1f6fd0" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="460" cy="100" r="10" fill="#1f6fd0" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="320" cy="150" r="9" fill="#155ba8" stroke="#fff" stroke-width="1"/>
+        <circle cx="420" cy="150" r="9" fill="#155ba8" stroke="#fff" stroke-width="1"/>
+        <text x="370" y="128" text-anchor="middle" font-size="9" fill="#bcd9f6">compact, but stretched wide now</text>
+      </g>
+
+      <!-- Brazil wide men + Vini central + crosses -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="90" cy="200" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="90" y="204">D.S</text><text x="90" y="220" fill="#fff" font-size="8">overlap L</text></g>
+        <g><circle cx="630" cy="200" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="630" y="204">RAY</text><text x="630" y="220" fill="#fff" font-size="8">width R</text></g>
+        <g><circle cx="360" cy="210" r="14" fill="#ffdf3a" stroke="#fff" stroke-width="1.6"/><text x="360" y="214">VINI</text><text x="360" y="230" fill="#fff" font-size="9">now central</text></g>
+        <g><circle cx="300" cy="250" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="300" y="254">CAS</text></g>
+      </g>
+
+      <!-- crosses from both flanks -->
+      <path d="M100 188 C 180 150, 280 120, 340 102" stroke="#ffdf3a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aB2)"/>
+      <path d="M620 188 C 540 150, 440 120, 405 102" stroke="#ffdf3a" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aB2)"/>
+      <!-- Vini central run -->
+      <path d="M360 196 C 360 165, 360 130, 360 96" stroke="#ffdf3a" stroke-width="3" fill="none" marker-end="url(#aB2)"/>
+      <text x="200" y="120" font-size="9" fill="#ffe98a">wave after wave</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf3a;border-top-style:dashed"></i> Crosses from wide</span>
+      <span><i style="border-top-color:#ffdf3a"></i> Vini central threat</span>
+    </div>
+
+    <p class="expl"><strong>The decisive tactical call — and you read it perfectly.</strong> Ancelotti's half-time fix was exactly as you described: <strong>Brazil found width and started crossing relentlessly from wide areas</strong>, abandoning the sterile central possession that had played into Japan's hands. The mechanism worked on two levels. First, attacking the flanks <strong>stretched Japan's narrow block</strong>, finally creating the gaps that didn't exist in the first half. Second — and cleverly — <strong>Vinícius drifted more central</strong>, which both put Brazil's best player on the end of those crosses and, crucially, <strong>afforded the team a wider pitch</strong> by pulling a marker inside and freeing the overlapping full-backs. The result was 15 minutes of pure siege: wave after wave of Brazilian attack, Japan pinned entirely in their box. It was death by a thousand crosses — and it was only a matter of time.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (56') — Casemiro's redemption header</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bra">Brazil · 1-1</span><span class="mt">The error-maker storms the back post to atone</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aC" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf3a"/></marker>
+        <marker id="aCh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · cross from the right, Casemiro arrives unmarked at the back post</text>
+
+      <!-- GK + defenders ball-watching -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="340" cy="40" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/><text x="340" y="44">SUZ</text><text x="340" y="24" fill="#bcd9f6" font-size="8">flat-footed</text></g>
+        <circle cx="300" cy="80" r="9" fill="#155ba8" stroke="#fff" stroke-width="1" opacity=".8"/>
+        <circle cx="370" cy="78" r="9" fill="#155ba8" stroke="#fff" stroke-width="1" opacity=".8"/>
+      </g>
+
+      <!-- Rayan crosses from right -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="150" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="600" y="154">RAY</text><text x="600" y="170" fill="#fff" font-size="8">whips it in</text></g>
+        <!-- Casemiro arriving back post -->
+        <g><circle cx="440" cy="90" r="14" fill="#ffdf3a" stroke="#fff" stroke-width="1.6"/><text x="440" y="94">CAS</text><text x="440" y="112" fill="#fff" font-size="9">back-post header</text></g>
+      </g>
+
+      <!-- cross -->
+      <path d="M588 142 C 540 110, 490 95, 456 90" stroke="#ffdf3a" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#aC)"/>
+      <!-- Casemiro run to back post -->
+      <path d="M430 130 C 432 115, 436 102, 440 96" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#aCh)"/>
+      <!-- header into net -->
+      <path d="M432 82 C 410 60, 380 46, 352 38" stroke="#ffdf3a" stroke-width="3.5" fill="none" marker-end="url(#aC)"/>
+      <text x="470" y="160" font-size="10" fill="#ffe98a">thunderous &amp; unstoppable</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf3a;border-top-style:dashed"></i> The cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Casemiro's run &amp; header</span>
+    </div>
+
+    <p class="expl"><strong>Redemption, and a header of real quality.</strong> The man whose lapse gifted Sano the opener authored the equaliser — and it was no accident. <strong>Casemiro is a genuine aerial weapon</strong> (a stack of headed goals to his name this season), and from the wide delivery he <strong>timed his run to storm the back post unmarked and thunder a header past a flat-footed Suzuki.</strong> It came moments after he'd been denied by a goal-line clearance and a point-blank stop — Brazil's pressure was so relentless that the goal felt inevitable. Beyond the redemption narrative, it validated the tactical shift: <strong>this was a goal manufactured entirely by the new wide-and-cross approach</strong>, the kind of chance that simply didn't exist in the first half. 1-1, and now only one team was going to win it.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 (90+6') — Martinelli, the super-sub, breaks Japanese hearts</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bra">Brazil · 2-1</span><span class="mt">Bruno threads it; the second striker finishes in the 96th minute</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aM" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf3a"/></marker>
+        <marker id="aMr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · Bruno's incisive pass splits the tiring block; Martinelli finishes</text>
+
+      <!-- GK + last defenders, tired/spread -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="40" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/><text x="360" y="44">SUZ</text></g>
+        <circle cx="300" cy="105" r="9" fill="#155ba8" stroke="#fff" stroke-width="1" opacity=".75"/>
+        <circle cx="430" cy="108" r="9" fill="#155ba8" stroke="#fff" stroke-width="1" opacity=".75"/>
+        <text x="365" y="135" text-anchor="middle" font-size="9" fill="#bcd9f6">legs gone, gaps open</text>
+      </g>
+
+      <!-- Bruno (MotM) threads it; Vini left occupies; Martinelli 2nd striker -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="260" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="300" y="264">BRU</text><text x="300" y="280" fill="#fff" font-size="9">the killer pass</text></g>
+        <g><circle cx="170" cy="210" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="170" y="214">VINI</text><text x="170" y="230" fill="#fff" font-size="8">holds the left</text></g>
+        <g><circle cx="400" cy="170" r="14" fill="#ffdf3a" stroke="#fff" stroke-width="1.6"/><text x="400" y="174">MAR</text><text x="400" y="192" fill="#fff" font-size="9">2nd striker run</text></g>
+      </g>
+
+      <!-- Bruno's through ball -->
+      <path d="M312 250 C 350 220, 378 195, 392 180" stroke="#ffdf3a" stroke-width="3.5" fill="none" marker-end="url(#aM)"/>
+      <!-- Martinelli run + finish -->
+      <path d="M404 156 C 400 120, 388 80, 366 52" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aMr)"/>
+      <text x="455" y="120" font-size="10" fill="#bff0d0">two touches, off the post &amp; in</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf3a"></i> Bruno's through-ball</span>
+      <span><i style="border-top-color:#39d98a"></i> Martinelli run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The winner, and a vindication of the substitution.</strong> With extra time looming, the decisive blow came from the bench — exactly the squad-depth dividend Brazil hoped for. <strong>Gabriel Martinelli, on for Cunha and operating as a second striker alongside a left-sided Vinícius</strong>, timed his run as <strong>Bruno Guimarães (the Man of the Match) threaded an incisive pass</strong> through a tiring Japanese block that had finally lost its shape after an hour of chasing. Two touches, and Martinelli <strong>dinked it off Suzuki's hand, onto the post, and over the line in the sixth minute of stoppage time.</strong> The reshape that brought it was telling: with Vini pinning the left and Martinelli attacking centrally, Brazil had two penalty-box threats instead of one — and against eleven exhausted defenders, that was the difference. Heartbreak for Japan, who deserved extra time; relief and a lesson for Brazil.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Player Snapshot</h2>
+  <div class="ratings">
+    <div class="rt"><b>Vinícius Júnior</b> — <span class="good">Unplayable</span>. Twisted and turned from the left, regularly beating two men, drew defenders all night; the nutmeg-and-curl onto the post was sensational. Denied only by Suzuki. Moving central unlocked the game.</div>
+    <div class="rt"><b>Bruno Guimarães</b> — <span class="good">Man of the Match</span>. Controlled the second half and produced the killer pass for the winner. The metronome and the dagger.</div>
+    <div class="rt"><b>Casemiro</b> — <span class="mid">Error & redemption</span>. Switched off for Sano's goal, then thundered home the equaliser. Limped off injured late — a worry for the next round.</div>
+    <div class="rt"><b>Gabriel Martinelli</b> — <span class="good">Match-winner</span>. The super-sub delivered in the 96th minute, justifying the second-striker switch. Bench impact personified.</div>
+    <div class="rt"><b>Zion Suzuki (JPN)</b> — <span class="good">Heroic</span>. Three exceptional saves, including the miraculous thumb onto the post to deny Vini. Kept Japan alive and nearly stole extra time.</div>
+    <div class="rt"><b>Kaishū Sano (JPN)</b> — <span class="good">Brilliant</span>. Took his goal superbly and embodied Japan's fearless transition threat. Japan exit with immense credit.</div>
+  </div>
+
+  <h2><span class="ic">🔮</span> Future Tactics — What Brazil Must Carry Forward</h2>
+  <p>Brazil survived, and that matters — but the first half exposed a problem better teams will study. Two adjustments will define how deep they go.</p>
+
+  <h2><span class="ic">🧩</span> Future 1 — A Plan A against the low block (don't wait for half-time)</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">Brazil · Going Deeper</span><span class="mt">Start wide & vertical, not sideways & slow</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aF1b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffdf3a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · early width + runners beyond, instead of slow sideways recycling</text>
+
+      <!-- low block -->
+      <g>
+        <circle cx="280" cy="100" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/><circle cx="340" cy="95" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="400" cy="95" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/><circle cx="460" cy="100" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="320" cy="150" r="9" fill="#666" stroke="#fff" stroke-width="1"/><circle cx="420" cy="150" r="9" fill="#666" stroke="#fff" stroke-width="1"/>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="90" cy="220" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="90" y="224">LW</text></g>
+        <g><circle cx="630" cy="220" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="630" y="224">RW</text></g>
+        <!-- runner beyond the line -->
+        <g><circle cx="360" cy="250" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="360" y="254" fill="#06301d">9</text><text x="360" y="270" fill="#bff0d5" font-size="9">runs beyond, not to feet</text></g>
+        <g><circle cx="360" cy="330" r="11" fill="#ffdf3a" stroke="#fff" stroke-width="1.2"/><text x="360" y="334">BRU</text></g>
+      </g>
+
+      <!-- quick switch wide -->
+      <path d="M348 326 C 250 300, 150 260, 100 234" stroke="#ffdf3a" stroke-width="3" fill="none" marker-end="url(#aF1b)"/>
+      <!-- runner in behind between CBs -->
+      <path d="M360 238 C 360 200, 360 150, 372 110" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aF1)"/>
+      <text x="200" y="250" font-size="9" fill="#ffe98a">switch fast &amp; early</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffdf3a"></i> Early switch to width</span>
+      <span><i style="border-top-color:#39d98a"></i> Run beyond the block</span>
+    </div>
+
+    <p class="expl"><strong>The lesson: don't wait 45 minutes to play that way.</strong> Brazil's second-half approach — width, crosses, Vini central, runners attacking the box — should be the <strong>starting plan against any low block</strong>, not the emergency fix. The first-half sterility came from slow, sideways recycling that let Japan stay compact and comfortable. The antidote is built in now: <strong>fast switches of play to stretch the block early, and runners attacking beyond the last line rather than checking to feet.</strong> Deeper in the tournament, sides like Norway (next) or a potential England/Spain will defend just as deep — and Brazil won't always have six minutes of stoppage time to rescue them. Start fast, and the agonising hour becomes a comfortable one.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Future 2 — Tighten the transition defence (the recurring flaw)</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">Brazil · The Fix</span><span class="mt">Protect against the counter when committing bodies forward</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+        <marker id="aF2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="20" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Defending ↓ · keep two holders + the CBs alert when Brazil commit forward</text>
+
+      <!-- rest defence -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="360" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="300" y="364">MAR</text></g>
+        <g><circle cx="420" cy="360" r="12" fill="#ffdf3a" stroke="#fff" stroke-width="1.3"/><text x="420" y="364">GAB</text></g>
+        <g><circle cx="360" cy="300" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="360" y="304" fill="#06301d">CDM</text><text x="360" y="284" fill="#bff0d5" font-size="8">screens, stays home</text></g>
+      </g>
+
+      <!-- counter threat snuffed -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="180" r="11" fill="#1f6fd0" stroke="#fff" stroke-width="1.2"/><text x="360" y="184">CTR</text></g>
+      </g>
+      <path d="M360 192 C 360 225, 360 255, 360 288" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(355,294)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <path d="M260 300 Q360 278 460 300" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 5" fill="none" opacity=".8"/>
+      <ellipse cx="360" cy="325" rx="150" ry="48" fill="#39d98a" opacity="0.08"/>
+      <text x="360" y="340" text-anchor="middle" font-size="10" fill="#bff0d5">2 CBs + holder always behind the ball</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a;border-top-style:dashed"></i> Rest-defence cover</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Counter snuffed</span>
+    </div>
+
+    <p class="expl"><strong>The flaw that nearly cost them — and has all tournament.</strong> Japan's goal was the latest example of a recurring Brazilian vulnerability: <strong>conceding on the transition when caught upfield.</strong> The Morocco draw, and moments against Scotland, told the same story. As Brazil commit numbers forward to break down deep blocks (which they must), the discipline of the <strong>rest-defence becomes vital: two centre-backs plus a genuine holding midfielder screening must always stay home</strong>, ready to kill the first counter before it builds. With Casemiro possibly injured, this gets harder — Fabinho or a disciplined partner must shield Marquinhos and Gabriel. Against Norway's Haaland next, one lapse in transition is lethal. Win the game without gifting the break — that's the championship habit Brazil still need to nail.</p>
+  </div>
+
+  <h2><span class="ic">🟡</span> The Tournament for Brazil — Contenders, With a Caveat</h2>
+  <p>Step back, and the picture is encouraging with an asterisk. <strong>Brazil are into the Round of 16, unbeaten, having now won three in a row</strong> after the sluggish Morocco opener — and crucially, they've shown <strong>the character and squad depth to win ugly</strong>, the trait that separates champions from flat-track bullies. The Vinícius-Cunha-Bruno spine is humming, the bench changed a knockout game (Martinelli's winner, with Neymar and Endrick still in reserve), and Ancelotti's in-game management was vindicated. That is a genuine contender's profile.</p>
+  <p>But the caveats are real. <strong>The first-half struggle against a disciplined low block is a worry</strong> — better-organised sides will set up exactly as Japan did, and Brazil cannot bank on a stoppage-time rescue every round. <strong>The transition defence remains a soft spot</strong>, and a <strong>possible Casemiro injury</strong> would weaken the very area (the holding screen) that needs strengthening. Up next, <strong>Norway and an in-form Haaland</strong> — a side that won't see much of the ball but carries a world-class finisher on the break, which is precisely the profile that troubles this Brazil. Survive that, and the draw could open up. The talent says semi-final and beyond; the manner of these wins says they'll have to keep finding answers. <strong>Contenders — but with work still to do.</strong></p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · WON</div><div class="g">Brazil 2-1 Japan</div><div class="n">A character comeback win; three victories on the bounce, into the last 16 with their title hopes alive.</div></div>
+    <div class="nx"><div class="d">Round of 16 · Houston, Jul 4</div><div class="g">Brazil vs Norway</div><div class="n">Haaland back in the XI awaits — a world-class striker on the counter is exactly the test Brazil's transition defence must pass.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Bottom Line</h2>
+    <p>Exactly the test the preview promised — and Brazil passed it the hard way. Outplayed and out-organised for an hour by a fearless, superbly drilled Japan, the champions trailed to a Sano goal born of their own error and looked bereft of ideas against eight men behind the ball. Then Ancelotti's half-time reshape — <strong>width, relentless crossing, and Vinícius drifting central</strong> — transformed the game into a one-way siege. Casemiro atoned for his lapse with a thunderous header, Suzuki produced heroics to force the drama deep, and super-sub <strong>Martinelli settled it in the 96th minute</strong>. The lessons are clear: <strong>start fast against the block, and tighten the transition defence</strong>, especially with Haaland's Norway next and Casemiro a fitness doubt. But the headline is the one that matters in knockout football — <strong>they found a way.</strong> Brazil march on, contenders still, character intact. <strong>Vai, Brasil.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

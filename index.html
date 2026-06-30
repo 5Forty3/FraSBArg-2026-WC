@@ -97,6 +97,7 @@
   .tiecard.done{border-color:#1f4533}
   .tiecard.done .lbl .rd{color:var(--green)}
   .disc-row .score{margin-left:auto;font-size:18px;font-weight:900;color:var(--muted);min-width:20px;text-align:center;font-variant-numeric:tabular-nums}
+  .disc-row .score .penmark{font-size:9px;font-weight:800;color:var(--gold);vertical-align:super;margin-left:1px;letter-spacing:0}
   .disc-row .score.sw{color:#fff}
   .tiecard .scorers{font-size:9.5px;color:var(--green);font-weight:700}
   .tiecard .pickline b{color:var(--win)}
@@ -261,10 +262,11 @@ const F = {
 /* ===== ROUND OF 32 — official matchups, printed-bracket order ===== */
 const R32 = [
  // LEFT HALF (top→bottom of the printed bracket's left side)
- {id:'L1', day:"Mon Jun 29", v:"Boston", ist:"2:00 AM IST · Tue 30 Jun", ko:"2026-06-29T20:30:00Z", a:{iso:'de',n:"Germany"}, b:{iso:'py',n:"Paraguay"}, win:'a', ours:false,
-   verdict:"Germany's class tells",
-   phil:"Nagelsmann's positional, full-back-driven Germany vs Paraguay's deep, combative low block and direct counters. Control vs chaos.",
-   pred:"Germany lost a dead rubber to Ecuador but topped the group; their quality unlocks a stubborn Paraguay. Patience required."},
+ {id:'L1', day:"Mon Jun 29", v:"Boston", ist:"2:00 AM IST · Tue 30 Jun", ko:"2026-06-29T20:30:00Z", a:{iso:'de',n:"Germany"}, b:{iso:'py',n:"Paraguay"}, win:'b', ours:false,
+   result:{sa:1, sb:1, done:true, pens:"4-3 pens", scorers:"1-1 AET · Paraguay win 4-3 on penalties (Canale decisive; Gill 2 saves)", note:"The biggest upset of the tournament — Germany are OUT"},
+   verdict:"Paraguay stun Germany on penalties",
+   phil:"Nagelsmann's positional, full-back-driven Germany vs Paraguay's deep, combative low block and direct counters. Control vs chaos — and chaos, plus an inspired goalkeeper, won.",
+   pred:"A monumental upset. Germany looked horrible for long spells, grew into it after half-time, and had a goal controversially disallowed in extra time — but Paraguay's undying spirit and Orlando Gill's heroics in the shootout (two saves) sent the favourites crashing out 4-3 on penalties after a 1-1 draw. José Canale buried the decisive sudden-death kick. Paraguay march on to face the France/Sweden winner."},
  {id:'L2', day:"Tue Jun 30", v:"New York / NJ", ist:"2:30 AM IST · Wed 1 Jul", ko:"2026-06-30T21:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'se',n:"Sweden",sd:"3rd"}, win:'a', ours:true, key:"France",
    verdict:"France too strong",
    phil:"The tournament's scariest attack — Olise conducting, Dembélé & Mbappé interchanging at frightening speed — vs Sweden's compact, physical, counter-punching block.",
@@ -279,10 +281,11 @@ const R32 = [
    verdict:"Canada edge it at home — confirmed",
    phil:"Canada's athletic, transition-heavy 4-3-3 vs South Africa's surprising, technical possession game. Bafana were the shock of Group A but lacked a killer — and it showed.",
    pred:"As predicted, Canada edged it — but it took until the death. Stephen Eustáquio chested down a cleared ball on the edge of the box and hammered home in the 92nd minute, sending Canada to the Round of 16 for the first time in their history. Alphonso Davies made his tournament debut off the bench at 75' after a hamstring injury. South Africa defended heroically (Williams 5 saves) but mustered just one shot on target. Canada next face the Netherlands or Morocco in Houston on July 4."},
- {id:'L4', day:"Mon Jun 29", v:"Monterrey", ist:"6:30 AM IST · Tue 30 Jun", ko:"2026-06-30T01:00:00Z", a:{iso:'nl',n:"Netherlands"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:false,
-   verdict:"Dutch edge a classic",
-   phil:"A heavyweight of styles: the Netherlands' structured positional possession vs Morocco's elite low-block-and-counter — the 2022 semi-finalists' signature.",
-   pred:"The tie of the round. Morocco's organisation troubles the Dutch, but Netherlands' depth and set-piece threat edge a tight one."},
+ {id:'L4', day:"Mon Jun 29", v:"Monterrey", ist:"6:30 AM IST · Tue 30 Jun", ko:"2026-06-30T01:00:00Z", a:{iso:'nl',n:"Netherlands"}, b:{iso:'ma',n:"Morocco"}, win:'b', ours:false,
+   result:{sa:1, sb:1, done:true, pens:"pens", scorers:"1-1 AET (Gakpo; Diop 90') · Morocco win on penalties (Saibari decisive)", note:"Morocco deservedly advance — the Netherlands are OUT"},
+   verdict:"Morocco oust a flat Netherlands on penalties",
+   phil:"A heavyweight of styles: the Netherlands' structured possession vs Morocco's elite low-block-and-counter — the 2022 semi-finalists' signature. Morocco were the better, hungrier side.",
+   pred:"A deserved Moroccan upset. The Netherlands were flat and bereft of ideas — no flair, no cutting edge — while Morocco carried the greater intent all night (537 passes, twice the Dutch total). Gakpo's second-half opener was cancelled by Issa Diop's 91st-minute header, losing Van Dijk off Talbi's cross. A shootout full of misses (El Aynaoui hit the bar) ended with Ismael Saibari burying the decider. Morocco go on to face Canada."},
  {id:'L5', day:"Thu Jul 2", v:"Toronto", ist:"4:30 AM IST · Fri 3 Jul", ko:"2026-07-02T23:00:00Z", a:{iso:'pt',n:"Portugal"}, b:{iso:'hr',n:"Croatia"}, win:'a', ours:false,
    verdict:"Portugal edge the Euro-final rematch",
    phil:"A 2016 Euro-final rematch with Ronaldo AND Modrić still leading. Portugal's deep, talented squad and wide threats vs Croatia's masterful midfield control that slows any game to its tempo.",
@@ -358,12 +361,12 @@ const R32 = [
           (R5 Argentina ∧ R6 Egypt); (R7 Switzerland ∧ R8 Colombia)
    Spain (LEFT) & Argentina (RIGHT) can only meet in the FINAL. */
 const R16 = [
- {id:'16L1', feeds:"Winners · Germany / France side", a:{iso:'de',n:"Germany"}, b:{iso:'fr',n:"France"}, win:'b', ours:true, marquee:true,
-   phil:"Two title favourites colliding far too early. France's elite transition speed — Mbappé, Dembélé, Olise — vs Germany's positional, full-back-driven control. A would-be final landing in the last 16.",
-   pred:"The match of the round. France's attacking ceiling edges a brilliant Germany — but this is the tie that could end our run, or anyone's."},
- {id:'16L2', feeds:"Winners · Canada / Netherlands side", a:{iso:'ca',n:"Canada"}, b:{iso:'nl',n:"Netherlands"}, win:'b', ours:false,
-   phil:"Netherlands' positional structure vs Canada's home-crowd energy and transitions. Class against momentum.",
-   pred:"The Dutch quality and tournament experience prove too much; the co-hosts' run ends here."},
+ {id:'16L1', feeds:"Winners · Paraguay / France side", a:{iso:'py',n:"Paraguay"}, b:{iso:'fr',n:"France"}, win:'b', ours:true,
+   phil:"France's elite, transition-lethal attack vs Paraguay's deep, combative low block and giant-killing spirit — fresh off dumping out Germany. Star quality against organised defiance.",
+   pred:"Paraguay are the story of the round after stunning Germany, and their resilience plus a red-hot goalkeeper make them no easy out. But France's attacking ceiling — Mbappé, Dembélé, Olise — is on another level; the holders' beaten finalists should have far too much. Les Bleus advance, but Paraguay won't lie down."},
+ {id:'16L2', feeds:"Winners · Canada / Morocco side", a:{iso:'ca',n:"Canada"}, b:{iso:'ma',n:"Morocco"}, win:'b', ours:false,
+   phil:"Morocco's elite low-block-and-counter — the 2022 semi-finalists who just outplayed the Netherlands — vs Canada's athletic, transition-heavy home side. Organisation and experience against momentum.",
+   pred:"Canada have home advantage and belief, but Morocco look the form team after seeing off the Dutch, and their knockout pedigree and defensive steel are a class above. Morocco edge it and continue their run."},
  {id:'16L3', feeds:"Winners · Portugal / Spain side", a:{iso:'pt',n:"Portugal"}, b:{iso:'es',n:"Spain"}, win:'b', ours:true, marquee:true,
    phil:"An Iberian derby and a tactical feast — Portugal's star-laden directness vs Spain's juego de posición. Pride, proximity and pedigree on the line.",
    form:"Form clash: Spain stuttering (a scrappy, error-won 1-0 over Uruguay) but with more cohesion; Portugal blunt up front (0-0 vs Colombia). Whoever rediscovers their finishing wins.",
@@ -403,8 +406,10 @@ function tieCard(m,round){
   const sub=m.v?m.v:(m.feeds||'');
   const timerow = m.ist? `<div class="timerow">🕒 ${m.ist}${m.v?'  ·  📍 '+m.v:''}</div>` : (m.feeds?`<div class="timerow">${m.feeds}</div>`:'');
   // score badges if the match is complete
-  const scoreA = done? `<span class="score ${aWin?'sw':''}">${m.result.sa}</span>` : '';
-  const scoreB = done? `<span class="score ${bWin?'sw':''}">${m.result.sb}</span>` : '';
+  const penA = done&&m.result.pens&&aWin? '<span class="penmark">P</span>':'';
+  const penB = done&&m.result.pens&&bWin? '<span class="penmark">P</span>':'';
+  const scoreA = done? `<span class="score ${aWin?'sw':''}">${m.result.sa}${penA}</span>` : '';
+  const scoreB = done? `<span class="score ${bWin?'sw':''}">${m.result.sb}${penB}</span>` : '';
   const pickOrResult = done
     ? `<span class="scorers">${m.result.scorers}</span><span class="go">REPORT ›</span>`
     : `<span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span>`;
@@ -473,7 +478,7 @@ function openSheet(m,round){
   const aWin=m.win==='a',winName=aWin?m.a.n:m.b.n,winIso=aWin?m.a.iso:m.b.iso;
   let body='';
   if(m.result&&m.result.done){
-    body+=`<div class="ftbanner"><div class="ftscore"><span>${m.a.n}</span><b>${m.result.sa} – ${m.result.sb}</b><span>${m.b.n}</span></div>
+    body+=`<div class="ftbanner"><div class="ftscore"><span>${m.a.n}</span><b>${m.result.sa} – ${m.result.sb}${m.result.pens?' <small style="font-size:13px;color:#e7b942">('+m.result.pens+')</small>':''}</b><span>${m.b.n}</span></div>
       <div class="ftmeta">${m.result.scorers} · Full-time${m.result.note?' · '+m.result.note:''}</div></div>`;
   } else {
     body+=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;

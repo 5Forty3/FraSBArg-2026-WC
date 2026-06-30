@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France vs Sweden — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--swe:#f7d046;--swe2:#ffe27a;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#f7d046);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .f{background:linear-gradient(135deg,#0e1f33,#0d1117)}
+  .vsbar .s{background:linear-gradient(135deg,#2a2406,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .f .nm{color:var(--fra2)}.vsbar .s .nm{color:var(--swe2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.france{border-left:3px solid var(--fra)}
+  .card.sweden{border-left:3px solid var(--swe)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.swe{background:rgba(247,208,70,.16);color:var(--swe2)}
+  .move .mtag.key{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">Round of 32 · Win or go home</span>
+  </div>
+  <h1>France vs Sweden</h1>
+  <div class="sub">The title favourites and the tournament's most lethal attack begin their knockout march at MetLife</div>
+  <div class="meta">🕒 2:30 AM IST, Wed 1 Jul · 📍 MetLife Stadium, East Rutherford NJ (5pm ET / 21:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side f"><div class="nm">🇫🇷 France</div><div class="fm">4-2-3-1 · Deschamps · Group I winners (perfect) · favourites</div></div>
+    <div class="mid">VS</div>
+    <div class="side s"><div class="nm">Sweden 🇸🇪</div><div class="fm">3-4-3 · Potter · best 3rd-placed qualifier · house money</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a heavy favourite at the home of the final</div>
+    <p style="margin:8px 0 0">On paper, a mismatch — and the venue could not be more fitting. France begin their knockout run at <strong>MetLife Stadium, the very ground that will host the final on July 19</strong>, as <strong>heavy favourites (around -400)</strong> against a Sweden side that scraped in as one of the eight best third-placed teams. France were imperious in Group I — <strong>perfect nine points, 10 goals, their first flawless group since the 1998 triumph</strong> — powered by the most fearsome attack in the tournament. Sweden, by contrast, were unconvincing: a false-dawn win over Tunisia, a chastening <strong>5-1 hammering by the Netherlands</strong>, and a 1-1 draw with Japan, arriving with no clean sheet in 14 matches. Graham Potter's side are playing with house money. But knockout football allows no second chances — and France know it.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">The big stories are confirmed: <strong>Deschamps is back on the touchline, Saliba is expected to return, and Sweden have lost a key defender.</strong> Exact XIs are predicted (not officially confirmed), but the picture is clear.</p>
+
+  <div class="card france">
+    <h3 style="margin-top:0">🇫🇷 France — the tournament's deepest attack (expected XI)</h3>
+    <ul>
+      <li><strong>Deschamps back on the touchline (confirmed)</strong> — the manager returned home during the group stage following the death of his mother, and is back to lead the side. He has already confirmed he will <strong>step down after the tournament</strong> — a final World Cup tilt.</li>
+      <li><strong>Saliba expected to return (confirmed fit-ish)</strong> — rested against Norway with a back issue, the Arsenal centre-back has trained and is probable to start, restoring the elite Saliba-Upamecano pairing. Crucial against Sweden's strikers.</li>
+      <li><strong>Thuram out</strong> — a calf issue rules him out again, but France's attacking embarrassment of riches barely notices.</li>
+      <li><strong>Dembélé in red-hot form</strong> — his first-half hat-trick against Norway (4 group goals) means France's threat extends well beyond Mbappé; Olise (3 assists) is the creative hub, Doué and Barcola competing for the last forward spot.</li>
+      <li><strong>The double pivot:</strong> Tchouaméni and Rabiot screen the back four — Deschamps's preferred balance, freeing the front four.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Maignan; Koundé, Upamecano, Saliba, T. Hernández; Tchouaméni, Rabiot; Dembélé, Olise, Doué; Mbappé. (Not confirmed.)</p>
+  </div>
+
+  <div class="card sweden">
+    <h3 style="margin-top:0">🇸🇪 Sweden — two world-class strikers, a shaky platform</h3>
+    <ul>
+      <li><strong>Isak Hien OUT (confirmed)</strong> — the centre-back suffered a hamstring injury against Japan and is done for the tournament. A significant blow to an already-leaky defence.</li>
+      <li><strong>The strike pair is everything:</strong> Alexander Isak and Viktor Gyökeres are a Premier League-calibre duo who can hurt anyone — Sweden's entire hope rests on getting them service in an open game.</li>
+      <li><strong>Potter's back three:</strong> Lindelöf returns to a back line that has conceded freely (7 goals in 3 group games, 5 of them to the Dutch). The young Bergvall-Ayari pivot must protect it.</li>
+      <li><strong>Playing with freedom</strong> — no expectations after a winless qualifying campaign salvaged by a playoff. Dangerous precisely because they have nothing to lose.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (3-4-3): Zetterström; Lagerbielke, Lindelöf, Gudmundsson; Bernhardsson, Bergvall, Ayari, Stroud; Elanga, Gyökeres, Isak. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Will Sweden open the game up?</h2>
+  <p>The entire contest hinges on one question: <strong>can Sweden resist the temptation to chase the game, or will they get drawn into the open, transition-heavy track meet where France are simply unstoppable?</strong> France are at their most lethal when space appears behind a high line — exactly what happens when Sweden push men up to feed Gyökeres and Isak. France's one (slight) vulnerability is slow, settled possession against a deep, compact block; Sweden's only realistic path is to sit deep, stay patient, and hope their two stars can nick a chance on the break. But with a makeshift defence missing Hien, holding France out for 90 minutes is a tall order.</p>
+
+  <h2><span class="ic">🔑</span> France's Key — Mbappé & the runners attack the space behind</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Attack</span><span class="mt">Vertical balls in behind a high, shaky Swedish line</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+        <marker id="aFg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Tchouaméni/Olise feed runners into the space behind Sweden's line</text>
+
+      <!-- Swedish back three, high line, gaps -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="280" cy="150" r="11" fill="#f7d046" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="360" cy="145" r="11" fill="#f7d046" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="440" cy="150" r="11" fill="#f7d046" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="178" text-anchor="middle" font-size="10" fill="#ffe98a">back 3, no Hien — gaps in behind</text>
+        <rect x="500" y="60" width="140" height="80" fill="#5aa0e6" opacity="0.12"/>
+        <text x="570" y="105" font-size="10" fill="#bcd9f6">space to run into</text>
+      </g>
+
+      <!-- France: Olise/Tchouameni feed; Mbappe & Dembele run -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="320" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="360" y="324">OLI</text><text x="360" y="340" fill="#bcd9f6" font-size="9">threads it</text></g>
+        <g><circle cx="540" cy="240" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="540" y="244">MBA</text><text x="540" y="262" fill="#bcd9f6" font-size="9">spins in behind</text></g>
+        <g><circle cx="200" cy="240" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="200" y="244">DEM</text></g>
+      </g>
+
+      <!-- through ball + run -->
+      <path d="M372 310 C 440 285, 500 260, 535 250" stroke="#5aa0e6" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aF)"/>
+      <path d="M548 224 C 565 185, 575 145, 560 110" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aFg)"/>
+      <text x="470" y="160" font-size="10" fill="#bff0d0">in behind &amp; through on goal</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Olise's release pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé run in behind</span>
+    </div>
+
+    <p class="expl"><strong>France's most direct route to a comfortable evening.</strong> Sweden's defence is shaky, now <strong>missing Isak Hien</strong>, and will likely have to push up at some point to support its strikers — and <strong>the moment any space appears behind that back three, France's runners are lethal.</strong> The mechanism is simple and unstoppable: <strong>Olise or Tchouaméni picking out the vertical pass for Mbappé (and Dembélé) to attack the channels.</strong> Mbappé chasing a through-ball against a high, makeshift line is the single most dangerous picture in this tournament — pure pace turning a half-yard into a finish. France's whole game is built to create exactly this, and Sweden's profile (forced to commit men forward for Gyökeres and Isak) plays right into it. If the game opens up even slightly, France could win it at a canter.</p>
+  </div>
+
+  <h2><span class="ic">🗡️</span> Sweden's Hope — Gyökeres & Isak in a low-block-and-counter</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag swe">Sweden · The Upset Plan</span><span class="mt">Stay compact, then spring the two strikers on the break</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aS" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#f7d046"/></marker>
+        <marker id="aSg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Sweden attacking ↑ · win it deep, break fast into the space France's high line leaves</text>
+
+      <!-- France's high line (vulnerable in transition) -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="300" cy="135" r="10" fill="#3b82d6" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="420" cy="135" r="10" fill="#3b82d6" stroke="#fff" stroke-width="1.1"/>
+        <text x="360" y="115" text-anchor="middle" font-size="9" fill="#bcd9f6">France push high</text>
+      </g>
+
+      <!-- Sweden strikers breaking -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="300" r="12" fill="#f7d046" stroke="#fff" stroke-width="1.3"/><text x="300" y="304">AYA</text><text x="300" y="320" fill="#fff" font-size="9">wins it, releases</text></g>
+        <g><circle cx="420" cy="230" r="14" fill="#f7d046" stroke="#fff" stroke-width="1.6"/><text x="420" y="234">ISA</text><text x="420" y="252" fill="#fff" font-size="9">Isak runs the channel</text></g>
+        <g><circle cx="250" cy="220" r="13" fill="#f7d046" stroke="#fff" stroke-width="1.5"/><text x="250" y="224">GYO</text><text x="250" y="240" fill="#fff" font-size="9">Gyökeres central</text></g>
+      </g>
+
+      <!-- quick transition pass + runs -->
+      <path d="M310 290 C 350 265, 390 250, 408 240" stroke="#f7d046" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aS)"/>
+      <path d="M424 216 C 430 175, 425 130, 410 80" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aSg)"/>
+      <path d="M258 206 C 270 165, 280 120, 300 70" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#aSg)"/>
+      <text x="480" y="160" font-size="10" fill="#bff0d0">2 elite finishers in transition</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#f7d046;border-top-style:dashed"></i> Transition release</span>
+      <span><i style="border-top-color:#39d98a"></i> Isak / Gyökeres runs</span>
+    </div>
+
+    <p class="expl"><strong>Sweden's only realistic route to a shock.</strong> Graham Potter knows his side can't out-football France — so the plan must be disciplined and ruthless: <strong>sit in a compact mid-to-low block, frustrate France's slower build-up, and rely on the one area where they have genuine world-class quality — the Isak-Gyökeres strike pair on the counter.</strong> France's one vulnerability, hinted at all tournament (the reserve Norway out-xG'd them, they've conceded cheaply), is the <strong>transition moment when their full-backs and midfield push high.</strong> If Sweden can win the ball and release Isak into the channel or Gyökeres through the middle before France reset, two Premier League-calibre finishers will get chances. It requires near-perfect discipline for 90 minutes and a ruthless take of a rare opening — but with these two strikers, it is not impossible. France must respect the break.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> The Duel That Decides It — Saliba & Upamecano vs Isak & Gyökeres</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Key Battle</span><span class="mt">The tournament's best young CB pair vs two elite strikers</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aD" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5aa0e6"/></marker>
+        <marker id="aDx" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Sweden attacking ↑ · Saliba &amp; Upamecano must smother Isak &amp; Gyökeres to kill the tie</text>
+
+      <!-- France GK + CB pair -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="45" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="360" y="49">MAI</text></g>
+        <g><circle cx="300" cy="150" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="300" y="154">SAL</text><text x="300" y="172" fill="#bcd9f6" font-size="8">Saliba</text></g>
+        <g><circle cx="430" cy="150" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="430" y="154">UPA</text><text x="430" y="172" fill="#bcd9f6" font-size="8">Upamecano</text></g>
+      </g>
+
+      <!-- Sweden strikers -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="250" r="13" fill="#f7d046" stroke="#fff" stroke-width="1.5"/><text x="300" y="254">GYO</text></g>
+        <g><circle cx="430" cy="250" r="13" fill="#f7d046" stroke="#fff" stroke-width="1.5"/><text x="430" y="254">ISA</text></g>
+      </g>
+
+      <!-- service in, smothered -->
+      <path d="M360 320 C 340 295, 320 275, 305 264" stroke="#5aa0e6" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#aD)"/>
+      <!-- Gyokeres held -->
+      <path d="M300 237 C 300 215, 300 195, 300 172" stroke="#f7d046" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(295,166)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <path d="M430 237 C 430 215, 430 195, 430 172" stroke="#f7d046" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(425,166)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <text x="540" y="210" font-size="10" fill="#bcd9f6">stay tight, deny the turn</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5aa0e6;border-top-style:dashed"></i> Service to strikers</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Smothered by the CB pair</span>
+    </div>
+
+    <p class="expl"><strong>The single matchup that could keep Sweden in it — and why Saliba's fitness mattered so much.</strong> Sweden's hope lives entirely through Isak and Gyökeres, which makes the central-defensive duel decisive. <strong>William Saliba and Dayot Upamecano are arguably the best young centre-back pairing in the tournament</strong> — quick, strong, composed — and France rested Saliba precisely so he'd be available here. Their job is clear: <strong>stay tight, deny Isak and Gyökeres the turn, and win the physical and aerial duels</strong> so the two strikers never get a clean look. If France's elite pair smother the only genuine threat Sweden carry, there is simply no other route to goal for Potter's side — and the tie becomes a procession. If Saliba is below 100% and the pair give the strikers even half a yard, Sweden suddenly have a puncher's chance. Win this duel, win the game.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>This has the makings of a statement performance. France are the most complete attacking force in the tournament, in perfect form, with Dembélé and Mbappé sharing the goalscoring load and an elite defensive spine restored by Saliba's return. Sweden have two strikers capable of a moment of magic — and that, plus France's habit of starting slowly, means an early scare or a transition goal can't be dismissed. But the gulf is vast: Sweden's defence is shaky and short-handed without Hien, their qualifying and group form was poor, and holding this French attack scoreless for 90 minutes is beyond almost anyone. Expect France to weather any early Swedish ambition, then pull clear once the runners get in behind. The favourites advance, and likely in some style — though Isak or Gyökeres may grab a consolation. <strong>Allez les Bleus.</strong></p>
+    <div class="scoreline">🇫🇷 France 3 — 1 Sweden</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: France's pace in behind proves decisive, with Mbappé and Dembélé among the goals. Sweden's elite strike pair offer a consolation and a nervy moment — but only one outcome is realistic.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · MetLife</div><div class="g">Winner advances</div><div class="n">To the Round of 16 to face Paraguay — the giant-killers who stunned Germany on penalties.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">A favourable path opens</div><div class="n">With Germany already out, France's side of the draw has lost a major rival. The road toward the MetLife final looks kinder than expected.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

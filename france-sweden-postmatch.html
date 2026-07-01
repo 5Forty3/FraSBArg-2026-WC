@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France 3-0 Sweden — The Orchestra Plays On</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--swe:#f7d046;--swe2:#ffe27a;--blue:#5aa0e6;--red:#ff5d6a;--rom:#d98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.68}
+  .wrap{max-width:820px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:820px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  .badge.rom{background:rgba(217,140,255,.12);color:var(--rom);border-color:#3d2b4a}
+  h1{text-align:center;font-size:clamp(27px,5.5vw,44px);font-weight:800;margin-top:8px;line-height:1.12;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#d98cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--rom);font-size:14.5px;font-style:italic;margin-top:12px;letter-spacing:.2px}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .f{color:var(--fra2)}.scoreboard .s{color:var(--swe2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--fra2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .f{color:var(--fra2)}
+
+  .essay{margin-top:26px}
+  .dropcap::first-letter{float:left;font-size:58px;line-height:46px;padding:6px 12px 2px 0;color:var(--gold);font-weight:800}
+  h2{font-size:21px;font-weight:800;margin:34px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16.5px;font-weight:800;color:var(--gold);margin:22px 0 6px}
+  p{font-size:15.5px;color:#d7dee8;margin-bottom:15px}
+  p strong{color:#fff}
+  .lead{font-size:16.5px;color:#e4ebf3}
+  .pull{border-left:3px solid var(--rom);background:linear-gradient(135deg,#1a1226,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#ecd9ff;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.g1{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.g2{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.g3{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mtag.def{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mtag.future{background:rgba(217,140,255,.14);color:var(--rom)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d7dee8;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge rom">✦ A Special Piece</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">Round of 32 · FT</span>
+  </div>
+  <h1>The Orchestra Plays On</h1>
+  <div class="kicker">France flirt with the pure romance of football — and leave the beautiful game asking an old, uneasy question: who on earth can stop them?</div>
+
+  <div class="scoreboard">
+    <span class="t f">🇫🇷 France</span>
+    <span class="sc">3 – 0</span>
+    <span class="t s">Sweden 🇸🇪</span>
+  </div>
+  <div class="meta">📍 MetLife Stadium, East Rutherford · Round of 32 · Full-time · 80,677 in attendance</div>
+  <div class="scorers">⚽ <b>Mbappé 45'</b>, <b>Barcola 53'</b>, <b>Mbappé 74'</b> — xG 3.17 vs 0.67</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Expected goals</div><div class="v"><span class="f">3.17</span> – 0.67</div></div>
+    <div class="stat"><div class="l">Mbappé this WC</div><div class="v"><span class="f">6 goals</span></div></div>
+    <div class="stat"><div class="l">All-time WC</div><div class="v">18 · 1 off Messi</div></div>
+    <div class="stat"><div class="l">Posts struck</div><div class="v">3 🥅</div></div>
+  </div>
+
+  <div class="essay">
+
+  <p class="lead dropcap">On the eve of the 1982 World Cup, a great football pundit was asked to name his champion. He declined the direct answer and offered a riddle instead: <em>"Any team that can beat Brazil will go on to win it."</em> The meaning was clear enough. That Brazil — Zico, Sócrates, Falcão, Éder — was not merely the best team in the tournament; it was thought to be beyond defeat, a side whose artistry had placed it outside the ordinary contest of results. History, as it so often does, had other ideas, and Paolo Rossi wrote a crueller ending. But the romance survived the result. To this day many purists insist that tragic 1982 Brazil, eliminated and uncrowned, remains the greatest team ever to walk onto a football pitch — proof that how you play can outlive whether you win.</p>
+
+  <p>Rarely, and almost never in the modern game, does a team arrive that is at once overwhelmingly strong, stocked with indomitable superstars, and yet insists on playing with flair. What unfolded at MetLife on Tuesday night was a France side that, for ninety minutes, flirted openly with that same pure romance. This was not a 3-0. The scoreline is a statistic, and a misleading one — a thin accounting of a night that belonged to a different ledger entirely. It was breathtaking football of total dominance, and the number beside it barely gestures at what actually happened.</p>
+
+  <div class="pull">When Mbappé, Olise, Dembélé and Barcola surge forward together, it is less a football attack than an orchestration of music played out on a chessboard — one that happens to be a hundred and twenty yards long.
+    <span class="a">— The romance of this France front line</span>
+  </div>
+
+  <p>Watch them in flow and the vocabulary of tactics starts to feel inadequate. The intricate one-twos, the impossible through-balls, the switches of play that arrive a beat before the defence has finished thinking, the false runs that drag markers out of position like a magician's misdirection — all of it is magical. Physics itself struggles to account for the way the ball sticks and pings between Mbappé's two feet at that velocity; it should not be possible, and yet there it is, pure artistry masquerading as ball control. When France break in transition, the communication between Mbappé and Olise looks less like coaching and more like telepathy — a shared, wordless map of space and pace that no opponent has yet learned to read.</p>
+
+  <h2><span class="ic">🎼</span> The Conductor — Deschamps and the taming of the egos</h2>
+  <p>And here is the truest echo of 1982: not the flair alone, but the fact that eleven men, each a superstar in his own right, subordinate that stardom to a single, flowing whole. That is the rarest alchemy in the sport, and it does not happen by accident. It happens because of the man who returned to the touchline this week carrying his own private grief — <strong>Didier Deschamps</strong>, back in the dugout days after the death of his mother, and greeted by Mbappé sprinting the length of his celebration to embrace him.</p>
+  <p>Deschamps belongs to the rarest category in all of football: <strong>one of only two human beings ever to win the World Cup as both captain and coach</strong> (the other being Brazil's Mário Zagallo). Two, out of the eight-billion-plus of us. It is to his immense and often under-sung credit that he has taken a dressing room bristling with ego and ambition and strung it into one instrument, aimed not merely at winning matches but at winning them with artistry. That he has announced this will be his final tournament only sharpens the sense that we are watching something both at its peak and already passing into memory.</p>
+
+  <h2><span class="ic">⚽</span> Goal 1 (45') — Mbappé, the deft dagger before the interval</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g1">France · 1-0</span><span class="mt">A short-corner routine, a shift of the feet, and the far corner kissed</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="a1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · worked short corner → Dembélé → Mbappé shifts &amp; curls far post</text>
+
+      <!-- corner + short routine -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="60" cy="70" r="10" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="60" y="74" font-size="8">OLI</text></g>
+        <g><circle cx="140" cy="150" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="140" y="154" font-size="8">DEM</text></g>
+        <g><circle cx="330" cy="200" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="330" y="204">MBA</text><text x="330" y="222" fill="#bcd9f6" font-size="9">shifts onto right foot</text></g>
+      </g>
+      <!-- Swedish keeper -->
+      <g><circle cx="360" cy="40" r="11" fill="#f7d046" stroke="#fff" stroke-width="1.2"/><text x="360" y="44" font-size="8" fill="#0a0e14" text-anchor="middle">ZET</text></g>
+
+      <!-- short corner to Dembele, to Mbappe -->
+      <path d="M72 78 C 100 105, 120 128, 132 140" stroke="#7cb4e8" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#a1)"/>
+      <path d="M152 158 C 220 178, 280 192, 314 197" stroke="#7cb4e8" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#a1)"/>
+      <!-- curl to far corner -->
+      <path d="M340 188 C 370 140, 400 90, 408 52" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a1g)"/>
+      <text x="450" y="130" font-size="10" fill="#bff0d0">bent past the keeper</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Short-corner build-up</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé's curled finish</span>
+    </div>
+
+    <p class="expl"><strong>The timing was everything.</strong> For forty-four minutes Sweden had clung on — Zetterström, six-foot-six and inspired, throwing out a hand each time the French tide rose. Then, on the very cusp of the interval, the dam broke. A <strong>cleverly worked short corner between Olise and Dembélé</strong> pulled the Swedish structure a half-step out of shape, and Dembélé slid the ball to Mbappé inside the box. What followed was pure economy: one touch to <strong>shift the ball from left foot to right</strong>, a glance, and a caressed curl into the far corner — his seventeenth goal at a World Cup finals. There was no violence in it, only certainty. He wheeled away and ran straight to Deschamps, and for a moment the football and the human story became one thing. France went in at the break in complete control, having enjoyed more than seventy per cent of the ball — and, crucially, having finally converted dominance into the only currency that counts.</p>
+  </div>
+
+  <h2><span class="ic">🎨</span> Goal 2 (53') — Olise threads the needle for Barcola</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g2">France · 2-0</span><span class="mt">Turnover, and a pass through the eye of a needle</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="a2b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Tchouaméni wins it → Olise drives → the perfect through-ball</text>
+
+      <!-- Swedish line stepping up -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="290" cy="120" r="10" fill="#f7d046" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="370" cy="115" r="10" fill="#f7d046" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="450" cy="120" r="10" fill="#f7d046" stroke="#fff" stroke-width="1.1"/>
+        <text x="370" y="98" text-anchor="middle" font-size="9" fill="#ffe98a">Sweden step up to close Olise</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="330" cy="330" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="330" y="334" font-size="8">TCH</text><text x="330" y="350" fill="#bcd9f6" font-size="8">intercepts</text></g>
+        <g><circle cx="360" cy="240" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="244">OLI</text><text x="360" y="260" fill="#bcd9f6" font-size="9">drives centrally</text></g>
+        <g><circle cx="470" cy="185" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="470" y="189">BAR</text><text x="470" y="205" fill="#bcd9f6" font-size="9">slips the line</text></g>
+      </g>
+
+      <!-- transition + threaded pass -->
+      <path d="M338 320 C 350 295, 355 270, 358 254" stroke="#7cb4e8" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#a2b)"/>
+      <path d="M372 230 C 410 210, 445 197, 462 190" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a2)"/>
+      <!-- Barcola finish -->
+      <path d="M478 172 C 460 130, 430 85, 402 54" stroke="#7cb4e8" stroke-width="3" fill="none" marker-end="url(#a2b)"/>
+      <text x="520" y="150" font-size="10" fill="#bcd9f6">turned &amp; drilled home</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Turnover &amp; carry</span>
+      <span><i style="border-top-color:#39d98a"></i> Olise's threaded pass</span>
+    </div>
+
+    <p class="expl"><strong>If the first goal was the dagger, the second was the scalpel.</strong> Sweden emerged for the second half needing a response and instead conceded within eight minutes — and the goal was authored almost entirely by the man who would end the night without one to his own name. A <strong>loose Swedish pass was intercepted by Tchouaméni</strong>, who fed the ball forward to Olise. The Bayern playmaker did what he did all evening: he <strong>drove at the heart of the defence, drawing bodies toward him</strong>, waited for Sweden to commit, and then <strong>threaded a pass of impossible precision through the eye of the needle</strong> for Barcola, who took a touch to compose himself and drilled beyond Zetterström. It was Olise's second assist of the night and the clearest illustration of his genius: not the finish, but the vision and the courage to attempt the pass that ordinary players do not even see.</p>
+  </div>
+
+  <h2><span class="ic">🎻</span> The First Violin Who Never Got His Solo — Michael Olise</h2>
+  <p>History will record that Michael Olise did not score against Sweden. History will be a poor witness. For long stretches this was the Olise show — <strong>the most shots, the most touches, and the tournament's leading assist-maker growing his tally with two more.</strong> He turned in the thirty-fifth minute where he "shouldn't be let turn," got his head up, and curled a shot inches wide of the far post. Minutes later came the moment the night deserved to be remembered by: an <strong>acrobatic bicycle kick of such audacity it would have been a candidate for the goal of the tournament</strong> — only for the ball to crash against the post, with Dembélé lashing the rebound just wide.</p>
+  <p>To create that much, to shoot that often, to conduct the whole second-half symphony and walk off without a goal of one's own is a particular kind of cruelty. But it also speaks to the terrifying depth of this France side: their <strong>most influential attacker on the night was not even one of the two men who scored.</strong> When your supporting cast is this good, the leading man simply cannot be contained.</p>
+
+  <h2><span class="ic">⚽</span> Goal 3 (74') — Mbappé, the Henry-esque signature</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g3">France · 3-0</span><span class="mt">Olise the provider again; a curl from the left that Thierry Henry would applaud</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e9b949"/></marker>
+        <marker id="a3o" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise releases Mbappé, who cuts in from the left and bends it far post</text>
+
+      <g><circle cx="360" cy="40" r="11" fill="#f7d046" stroke="#fff" stroke-width="1.2"/><text x="360" y="44" font-size="8" fill="#0a0e14" text-anchor="middle">ZET</text></g>
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="430" cy="270" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="430" y="274">OLI</text><text x="430" y="292" fill="#bcd9f6" font-size="9">the release</text></g>
+        <g><circle cx="230" cy="200" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="230" y="204">MBA</text><text x="230" y="222" fill="#bcd9f6" font-size="9">cuts in from left</text></g>
+      </g>
+
+      <!-- Olise release to Mbappe -->
+      <path d="M418 262 C 350 235, 285 215, 246 206" stroke="#7cb4e8" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#a3o)"/>
+      <!-- Mbappe carries + bends far post -->
+      <path d="M244 190 C 280 155, 320 120, 356 96" stroke="#e9b949" stroke-width="3" fill="none" stroke-dasharray="2 0"/>
+      <path d="M356 96 C 390 78, 410 62, 405 50" stroke="#e9b949" stroke-width="3.5" fill="none" marker-end="url(#a3)"/>
+      <text x="300" y="130" font-size="10" fill="#ffe6a8">the Henry signature — inside &amp; bent far</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Olise's release</span>
+      <span><i style="border-top-color:#e9b949"></i> Mbappé cut-in &amp; curl</span>
+    </div>
+
+    <p class="expl"><strong>The signature, and the history.</strong> With sixteen minutes left and the game long settled, France produced the goal that felt like a thesis statement. <strong>Olise, inevitably, was the provider once more</strong> — threading Mbappé through on the counter. The captain took it in his stride down the left, angled infield, and <strong>bent a perfect right-footed finish into the far corner</strong> — a strike so evocative of Thierry Henry's trademark that the comparison wrote itself. It was Mbappé's second of the night, his <strong>eighteenth World Cup goal, and his sixth of this tournament — drawing him level with Lionel Messi in the Golden Boot race and to within a single goal of Messi's all-time record.</strong> Nine goals in nine World Cup knockout matches now, more than any player in history in those rounds. The torch is not so much being passed as wrestled toward the light.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> The Plugged Link — Saliba and the last question answered</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag def">France · The Fix</span><span class="mt">The one flaw — the defence — is now a fortress</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ad" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#f7d046"/></marker>
+        <marker id="adx" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Sweden attacking ↑ · Isak &amp; Gyökeres smothered — Saliba &amp; Upamecano deny everything</text>
+
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="45" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="360" y="49">MAI</text></g>
+        <g><circle cx="300" cy="150" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="300" y="154">SAL</text><text x="300" y="172" fill="#bcd9f6" font-size="8">Saliba, returned</text></g>
+        <g><circle cx="430" cy="150" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="430" y="154">UPA</text></g>
+      </g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="250" r="12" fill="#f7d046" stroke="#fff" stroke-width="1.4"/><text x="300" y="254">GYO</text></g>
+        <g><circle cx="430" cy="250" r="12" fill="#f7d046" stroke="#fff" stroke-width="1.4"/><text x="430" y="254">ISA</text></g>
+      </g>
+
+      <path d="M360 320 C 340 296, 320 276, 305 264" stroke="#f7d046" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#ad)"/>
+      <path d="M300 237 C 300 210, 300 190, 300 172" stroke="#f7d046" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(295,166)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <path d="M430 237 C 430 210, 430 190, 430 172" stroke="#f7d046" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(425,166)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <text x="545" y="205" font-size="10" fill="#bcd9f6">0.67 xG conceded all night</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#f7d046;border-top-style:dashed"></i> Sweden's rare service</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Smothered at source</span>
+    </div>
+
+    <p class="expl"><strong>The one weak link, plugged by another superstar.</strong> For all the romance of the attack, this France carried a genuine question mark all tournament — a defensive fragility that saw even a reserve Norway out-create them. On Tuesday, that question was answered emphatically, and the answer has a name: <strong>William Saliba.</strong> Restored to the heart of the back four after being carefully rested, he and Dayot Upamecano formed a partnership that reduced two Premier League-calibre strikers — Isak and Gyökeres — to near silence. <strong>Sweden mustered an xG of just 0.67 across ninety minutes</strong>; they rarely so much as threatened Maignan. When a side already possessing the most devastating attack in world football adds a genuinely elite defensive spine, the last plausible route to beating them begins to close. The orchestra, it turns out, has also learned to defend its own stage.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Kylian Mbappé</b> — <span class="good">Inevitable</span>. A brace, the deft opener and the Henry-esque third. Six for the tournament, 18 for his World Cup career — level with Messi for the Boot, one from the record. Ran straight to Deschamps. The story and the star as one.</div>
+    <div class="rt"><b>Michael Olise</b> — <span class="good">Man of the Match without a goal</span>. Two assists, most shots, most touches, a bicycle kick off the post. The tournament's leading creator, unlucky beyond words. The first violin who never got his solo.</div>
+    <div class="rt"><b>Bradley Barcola</b> — <span class="mid">Ruthless</span>. Took his chance with composure and edged the wide berth with his speed. Two for the tournament.</div>
+    <div class="rt"><b>Ousmane Dembélé</b> — <span class="mid">Provider</span>. The assist for the opener, a constant menace, a rebound just wide. Sharing the load beautifully.</div>
+    <div class="rt"><b>William Saliba</b> — <span class="good">The answer</span>. Returned and immediately turned the one weakness into a strength. Isak and Gyökeres barely breathed.</div>
+    <div class="rt"><b>Jacob Zetterström (SWE)</b> — <span class="mid">Kept the score respectable</span>. Several fine saves; on another night France score six. No blame attaches to Sweden's exit.</div>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Big Question — Who Can Beat This France, and How?</h2>
+  <p>Which returns us, inevitably, to 1982 and the pundit's riddle. How does one defeat this team? It is a genuinely difficult question to answer, because France now appear to have no obvious seam to attack. The attack is the best in the world and shares its goals across four or five men, so you cannot simply mark one and survive. The midfield controls tempo through Tchouaméni and Rabiot. And the defence — the one lever an opponent might once have pulled — has been reinforced by Saliba into something close to impregnable. This is a side that <strong>has already won a World Cup, and was denied the last one only by a legend's date with destiny</strong> — by the sense that the football gods owed Lionel Messi his coronation at least once. Take that singular narrative away, and France may well have won the previous two.</p>
+  <p>So who, and how? The honest answer is that beating this France likely requires a very specific and improbable confluence. It requires a side that can <strong>match their transition speed without losing its own shape</strong> — a rare thing. It requires a goalkeeper having the night of his life, as Zetterström half-threatened before the dam broke. It requires, above all, <strong>catching France in the one mode where they are merely very good rather than transcendent: the slow, settled game against a disciplined, deep, patient block that refuses to open up and offer the transitions they feast upon.</strong> A team that can defend for ninety minutes without cracking, take one of its handful of chances, and steal the game 1-0. It is not impossible — football always leaves a door ajar — but it asks for near-perfection sustained across two hours against a team built to punish the smallest lapse.</p>
+  <div class="pull">Any team that can beat this France will probably go on to win the World Cup. The only side in the tournament that looks capable of the same telepathic brilliance wears sky blue and white — and, by the mercy of the draw, could only meet them at the very end.
+    <span class="a">— The 1982 riddle, updated for New Jersey</span>
+  </div>
+  <p>If such a side exists, it is most likely one of two. The first is a <strong>Spain</strong> capable of the possession discipline to deny France the ball and the game — though their stuttering form makes that a distant hope. The second, and the one every neutral secretly craves, sits in the opposite half of the draw: <strong>Lionel Messi's Argentina</strong>, the reigning champions, the only other team at this tournament that plays with the same orchestral genius. By the architecture of the bracket, France and Argentina cannot meet before the final at this very stadium on July 19. Football, which so often disdains the script we write for it, has rarely been handed a more perfect one.</p>
+
+  <h2><span class="ic">🇫🇷</span> The Road Ahead</h2>
+  <p>The immediate future is kinder than France could have dared hope. <strong>Germany, the great rival on their side of the draw, are already gone</strong>, dumped out by Paraguay's penalty-shootout heroics — and it is precisely those giant-killers whom France now meet in the Round of 16. Paraguay will defend deep, spirited and organised, which is the one shape that can theoretically frustrate France; but the gulf in quality is vast, and Les Bleus have just shown they can break a stubborn side with a single moment before overwhelming it. Beyond that, the bracket has thinned invitingly. The talent says champions. The manner says champions with romance. And the only question left hanging over MetLife on Tuesday night was the oldest and most beautiful one in the sport: not whether France will win, but whether anyone alive can find a way to stop them.</p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · WON</div><div class="g">France 3-0 Sweden</div><div class="n">A statement of total dominance; xG 3.17-0.67, three posts struck, the score flattering to Sweden.</div></div>
+    <div class="nx"><div class="d">Round of 16 · Jul 4/5</div><div class="g">France vs Paraguay</div><div class="n">The giant-killers of Germany await in Philadelphia — deep and organised, but facing the tournament's most complete side.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>A 3-0 that was never a 3-0. France did not merely beat Sweden; they played, for stretches, the kind of football that outlives results — the intricate, telepathic, orchestral game that binds eleven superstars into a single flowing whole, conducted by a man returning to work through private grief and chasing one final coronation. Mbappé took his brace and his place at Messi's shoulder; Olise conducted a symphony and was robbed only of a goal; Saliba returned and sealed the one crack in the edifice. The beautiful game was honoured on Tuesday night, and it left behind the same uneasy wonder that trailed the great uncrowned Brazil of 1982. <strong>This France is playing football from another plane. Someone, somewhere in this draw, must find a way to bring them back to earth — and it is far from clear that anyone can.</strong> <em>Allez les Bleus.</em></p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

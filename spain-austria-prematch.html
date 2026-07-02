@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Austria — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#ff5d6a;--espy:#ffc400;--aut:#e23b3b;--aut2:#ff8080;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#e23b3b);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .e{background:linear-gradient(135deg,#2a0c12,#0d1117)}
+  .vsbar .a{background:linear-gradient(135deg,#2a0d0d,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .e .nm{color:#ff8e95}.vsbar .a .nm{color:var(--aut2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.spain{border-left:3px solid var(--esp)}
+  .card.austria{border-left:3px solid var(--aut)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.aut{background:rgba(226,59,59,.18);color:var(--aut2)}
+  .move .mtag.fix{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Round of 32 · Win or go home</span>
+  </div>
+  <h1>Spain vs Austria</h1>
+  <div class="sub">The stuttering favourites meet Rangnick's press — the exact test that has exposed them before</div>
+  <div class="meta">🕒 12:30 AM IST, Fri 3 Jul · 📍 SoFi Stadium, Inglewood, Los Angeles (3pm ET / 19:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side e"><div class="nm">🇪🇸 Spain</div><div class="fm">4-3-3 · De la Fuente · Group H winners · unbeaten in 34</div></div>
+    <div class="mid">VS</div>
+    <div class="side a"><div class="nm">Austria 🇦🇹</div><div class="fm">4-2-3-1 · Rangnick · high press · 1st knockout since 1954</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — favourites, but on a knife's edge</div>
+    <p style="margin:8px 0 0">On the surface, a mismatch: Spain are the reigning European champions, <strong>unbeaten in 34 matches, and yet to concede a single goal all tournament.</strong> Yet the numbers flatter a side that has stuttered — a shock goalless draw with Cape Verde, a fine 4-0 over Saudi Arabia, then an attritional, error-aided 1-0 over Uruguay that was, by common consent, "horrendous football." Now comes the most awkward possible opponent. <strong>Ralf Rangnick's Austria press high, press often, and play with fearless intensity</strong> — precisely the profile that stifled Spain against Uruguay. La Roja are heavy favourites and history is emphatically on their side, but Spain's poor recent record in World Cup knockout football, and the specific threat of an aggressive presser, make this far from the formality the odds suggest. One flat performance in a one-legged tie, and the tournament ends.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">The big stories are confirmed: <strong>both first-choice wide men are injured, Yamal is fully fit at last, and Austria are at full strength.</strong> Exact XIs are predicted (not officially confirmed), but the picture is clear.</p>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — depth tested out wide (expected XI)</h3>
+    <ul>
+      <li><strong>Nico Williams OUT (confirmed)</strong> — an adductor/hamstring strain against Uruguay rules out Spain's primary transition threat and left-sided release valve. A real dent.</li>
+      <li><strong>Yeremy Pino OUT (confirmed)</strong> — a shoulder/collarbone injury from the same game removes another wide option, thinning the flanks further.</li>
+      <li><strong>Lamine Yamal fully fit (confirmed)</strong> — eased back from an April hamstring tear across just 141 group-stage minutes, he is now, in his own camp's words, "ready to play as much as required," and looks sharper each game. Spain's talisman on the right.</li>
+      <li><strong>Álex Baena starts on the left</strong> — the Uruguay match-winner deputises for Williams; Oyarzabal operates as a false 9 in between, Yamal isolated on the right.</li>
+      <li><strong>Midfield is the battleground:</strong> Rodri anchors, Pedri and a third (Merino or, tellingly, Dani Olmo) must break Austria's first press. <strong>Gavi is fit and on the bench</strong> — a live option to change the game.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-3-3): Simón; Llorente, Cubarsí, Laporte, Cucurella; Rodri, Pedri, Olmo; Yamal, Oyarzabal, Baena. (Merino and Gavi key alternatives. Not confirmed.)</p>
+  </div>
+
+  <div class="card austria">
+    <h3 style="margin-top:0">🇦🇹 Austria — Rangnick's fearless pressing machine</h3>
+    <ul>
+      <li><strong>No injuries or suspensions (confirmed)</strong> — Rangnick has a fully fit squad and a settled, aggressive plan.</li>
+      <li><strong>The press is the identity:</strong> high, coordinated and relentless, aiming to suffocate Spain's build-up and win the ball high — exactly what unsettled La Roja against Uruguay.</li>
+      <li><strong>Arnautović leads the line</strong> with Sabitzer, Laimer and the Schlager brothers driving an energetic midfield; captain Alaba marshals the back line.</li>
+      <li><strong>The flaw: a leaky defence</strong> — six goals scored in the group but far from watertight (a wild 3-3 with Algeria saved only by a 96th-minute header). If Spain break the press, chances will come.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-2-3-1): A. Schlager; Posch, Danso, Alaba, Mwene; Seiwald, X. Schlager; Laimer, Wanner, Sabitzer; Arnautović. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Can Spain break the press cleanly?</h2>
+  <p>The entire game reduces to a single duel: <strong>Spain's build-up against Austria's high press.</strong> Here lies a delicious irony — beating a high press requires exactly the patient, composed, possession-based passing that Spain are built to provide. In theory, Austria's greatest strength should become their undoing: press aggressively, get played through, and the leaky defence is exposed in transition. But the Uruguay game proved the theory can fail in practice. When Pedri and Rodri are off their game and the opponent is physical and man-oriented, Spain's rhythm splutters, the passing into the box turns abysmal, and the whole machine seizes. The question is not whether Spain have the tools — they do — but whether Pedri, Rodri and the midfield show up in the sharpness that has eluded them.</p>
+
+  <h2><span class="ic">🕸️</span> Austria's Plan — Man-orient the press, smother the first pass</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag aut">Austria · The Threat</span><span class="mt">Press Spain's build-up, jail Yamal, force the turnover high</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff8080"/></marker>
+        <marker id="aX" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain building from the back ↓ · Austria press man-to-man, deny the clean first pass</text>
+
+      <!-- Spain build-up bottom -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="230" cy="360" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="230" y="364">CUB</text></g>
+        <g><circle cx="430" cy="360" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="364">LAP</text></g>
+        <g><circle cx="360" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="304">ROD</text><text x="360" y="320" fill="#fff" font-size="8">marked tight</text></g>
+        <!-- Yamal jailed wide right -->
+        <g><circle cx="620" cy="250" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="620" y="254">YAM</text><text x="620" y="270" fill="#fff" font-size="8">double-marked</text></g>
+      </g>
+
+      <!-- Austria pressers -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="255" cy="325" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="255" y="329">ARN</text></g>
+        <g><circle cx="405" cy="325" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="405" y="329">SAB</text></g>
+        <g><circle cx="360" cy="265" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="360" y="269">SEI</text></g>
+        <g><circle cx="595" cy="278" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="595" y="282">LB</text></g>
+        <g><circle cx="640" cy="215" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="640" y="219">RM</text></g>
+      </g>
+
+      <!-- press arrows -->
+      <path d="M262 337 L242 350" stroke="#ff8080" stroke-width="2.5" marker-end="url(#aA)"/>
+      <path d="M398 337 L418 350" stroke="#ff8080" stroke-width="2.5" marker-end="url(#aA)"/>
+      <path d="M360 277 L360 289" stroke="#ff8080" stroke-width="2.5" marker-end="url(#aA)"/>
+      <!-- pass to Yamal denied -->
+      <path d="M372 296 C 460 275, 545 258, 604 252" stroke="#ffc400" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(606,246)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- turnover -->
+      <path d="M352 312 C 300 335, 250 340, 210 325" stroke="#ff8080" stroke-width="2.5" stroke-dasharray="7 5" fill="none" marker-end="url(#aA)"/>
+      <text x="220" y="300" font-size="9" fill="#ffb3b8">win it high → shoot</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff8080"></i> Austria press / man-mark</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Pass to Yamal denied</span>
+    </div>
+
+    <p class="expl"><strong>The blueprint that has hurt Spain — and Rangnick wrote the book on it.</strong> Austria will do exactly what Uruguay did: <strong>press Spain's centre-backs and Rodri man-to-man, jam the passing lanes, and glue a marker (or two) to Lamine Yamal</strong> to cut off Spain's single most dangerous outlet. Rangnick openly named Yamal as the man they must deny "room and opportunities to start his dribbling." The aim is to force Spain into hurried, imprecise passes, win the ball high up the pitch, and attack a Spanish side momentarily out of shape. It is a high-risk, high-reward plan — if Spain break it, Austria's leaky defence is horribly exposed — but for spells it can absolutely disrupt La Roja's rhythm, exactly as it did against Uruguay. Spain's response in the opening 20 minutes will set the tone for the tie.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> Spain's Key — Yamal isolated 1v1, the one unstoppable weapon</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · Attack</span><span class="mt">Get Yamal facing his full-back with space to attack</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aE" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aEg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · switch fast to isolate Yamal 1v1, cut inside, curl or cut back</text>
+
+      <!-- Austria block -->
+      <g><circle cx="290" cy="110" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/><circle cx="370" cy="105" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/><circle cx="450" cy="110" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- deep switch -->
+        <g><circle cx="180" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="180" y="304">PED</text><text x="180" y="320" fill="#fff" font-size="8">switches it</text></g>
+        <!-- Yamal isolated -->
+        <g><circle cx="620" cy="240" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="620" y="244">YAM</text><text x="620" y="262" fill="#fff" font-size="9">1v1, space ahead</text></g>
+        <!-- Oyarzabal false 9 -->
+        <g><circle cx="380" cy="200" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="380" y="204">OYA</text></g>
+        <!-- lone FB on Yamal -->
+      </g>
+      <g font-size="9" fill="#fff" text-anchor="middle"><circle cx="590" cy="200" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/><text x="590" y="204">LB</text></g>
+
+      <!-- fast switch -->
+      <path d="M192 292 C 360 250, 520 240, 604 240" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aE)"/>
+      <!-- Yamal cut inside + finish -->
+      <path d="M608 226 C 560 190, 500 155, 430 120" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aEg)"/>
+      <text x="470" y="150" font-size="10" fill="#bff0d0">cut in &amp; curl far post</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Fast switch of play</span>
+      <span><i style="border-top-color:#39d98a"></i> Yamal 1v1 &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The one matchup Austria cannot legislate for.</strong> Even a well-drilled press can be undone by a single moment of individual genius — and Spain possess the tournament's most gifted teenager. The key is <strong>speed of circulation</strong>: rather than slow, sideways possession that lets Austria set their traps, Spain must <strong>move the ball quickly from one flank to the other to isolate Yamal 1v1 against the Austrian left-back before help arrives.</strong> With Nico Williams injured, Yamal carries an even heavier load, but a fit, sharp Yamal cutting inside onto his left foot is a nightmare no full-back relishes alone. If Spain can consistently manufacture that isolation — and free Oyarzabal's false-9 runs off the back of it — the leaky Austrian defence will crack. This, more than any patient passing move, may be Spain's likeliest route to goal.</p>
+  </div>
+
+  <h2><span class="ic">🔧</span> How Spain Improve — The Technical Upgrades That Change Everything</h2>
+  <p>Spain have won without convincing. To go deep — and to survive nights like this — they must rediscover the technical fluency that has been missing. Three levers can transform them, and De la Fuente has them all available tonight.</p>
+
+  <div class="move">
+    <div class="mh"><span class="mtag fix">Spain · The Fix</span><span class="mt">Pedri reborn · Olmo unleashed · the Gavi gamble</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aG" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="aGy" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Pedri receives &amp; drives; Olmo runs beyond; a fresh Gavi injects tempo</text>
+
+      <!-- Austria block tiring -->
+      <g><circle cx="300" cy="120" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1" opacity=".8"/><circle cx="420" cy="120" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1" opacity=".8"/><circle cx="360" cy="165" r="9" fill="#9c2020" stroke="#fff" stroke-width="1" opacity=".8"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Pedri drives -->
+        <g><circle cx="300" cy="300" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="300" y="304">PED</text><text x="300" y="320" fill="#fff" font-size="8">turns &amp; drives</text></g>
+        <!-- Olmo run beyond -->
+        <g><circle cx="450" cy="240" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="450" y="244" fill="#06301d">OLM</text><text x="450" y="260" fill="#bff0d5" font-size="8">runs beyond the line</text></g>
+        <!-- Gavi arriving fresh -->
+        <g><circle cx="210" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3" opacity=".9"/><text x="210" y="254">GAVI</text><text x="210" y="270" fill="#fff" font-size="8">fresh legs, tempo</text></g>
+      </g>
+
+      <!-- Pedri drive + threaded pass -->
+      <path d="M300 287 C 320 265, 340 250, 356 244" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="2 0" fill="none"/>
+      <path d="M366 240 C 400 232, 430 236, 444 240" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aGy)"/>
+      <!-- Olmo run in behind + finish -->
+      <path d="M456 226 C 460 190, 445 145, 410 110" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aG)"/>
+      <!-- Gavi feeding tempo -->
+      <path d="M222 262 C 250 280, 275 290, 290 296" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#aGy)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Pedri drive / Gavi tempo</span>
+      <span><i style="border-top-color:#39d98a"></i> Olmo run beyond</span>
+    </div>
+
+    <div class="expl">
+      <p><strong>1. Pedri rediscovering his best is the single biggest variable.</strong> When Pedri plays with his trademark grace — receiving on the half-turn under pressure, gliding away from the press, dictating tempo — Spain's whole game elevates. He has been a genuine under-performer this tournament, uncharacteristically slow and safe. But he remains the man best equipped to break Austria's press with a single turn, and against a high-pressing side there is <strong>space to be exploited the instant the first line is beaten.</strong> If the real Pedri turns up, Austria's aggression becomes suicidal.</p>
+      <p><strong>2. Using Dani Olmo fully — not as a late afterthought.</strong> Olmo offers something Spain's midfield has lacked: <strong>penetration, runs beyond the striker, and a genuine goal threat from deep.</strong> Where Pedri and Rodri circulate, Olmo attacks the space between and behind the defensive line — precisely the movement that unlocks a compact block. Starting him as the advanced midfielder (rather than saving him for the final quarter, as against Uruguay) gives Spain a vertical dimension and a second finisher off Oyarzabal and Yamal. His movement is the antidote to the sterile possession that has plagued them.</p>
+      <p><strong>3. The Gavi gamble — a change of energy and tempo.</strong> And if the game is tight, or legs tire against Austria's relentless running, <strong>Gavi is the wildcard De la Fuente can play.</strong> His fearless, front-foot intensity, his willingness to drive forward and press back, injects exactly the tempo and aggression that can knock a pressing side off its rhythm. Introducing Gavi — even for a spell — is a statement of intent: meet Austria's energy with energy, and use his forward carries to turn defence into attack. It is a gamble on chaos over control, but on a night when control has sometimes deserted Spain, a jolt of Gavi's dynamism could be the difference.</p>
+    </div>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">This is knockout football, and Spain's stuttering form makes a tight, drawn-out night entirely plausible — several pundits are tipping exactly that. Here is how the latter stages could unfold.</p>
+    <p style="margin:8px 0 0"><strong>Extra time favours Spain — if they manage it right.</strong> Austria's whole game is built on relentless, high-intensity pressing, and that is enormously energy-expensive. Over 120 minutes in the Los Angeles conditions, <strong>a pressing side typically fades</strong> — and this is precisely when Spain's superior technical quality and squad depth should tell. De la Fuente's bench is the key: <strong>a fresh Gavi to run at tiring legs, Ferran Torres or a second striker for a new goal threat, and the return of composure on the ball</strong> as Austria's press loses its snap. If Spain stay patient and avoid a sucker-punch in the chaos, the extra 30 minutes are their friend, not their enemy.</p>
+    <p style="margin:8px 0 0"><strong>Penalties are a genuine lottery — but Spain hold the edge.</strong> Spain's history from the spot is chequered, but this squad is well-stocked with composed takers: <strong>Oyarzabal (ice-cold from twelve yards, the Euro 2024 final winner), Yamal, Pedri, Baena and Rodri</strong> would form a strong five. In goal, Unai Simón is a capable shot-stopper who has kept three clean sheets here. Austria have their own takers in Sabitzer and Alaba, so it is no certainty — but if the tie reaches a shootout, Spain's greater big-game pedigree and quality of striker make them narrow favourites. The message for La Roja is simple: <strong>if you cannot win it in 90, do not panic — your depth and class are built to win the long game.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Everything points to a Spanish win, but few expect it to be comfortable. Spain have the superior talent, an impenetrable defence (no goals conceded all tournament), and history heavily in their favour — and Austria's greatest strength, the high press, is precisely the thing a possession side is built to punish, provided the key men perform. That is the caveat that matters: if Pedri and Rodri are sharp, if Olmo adds penetration and Yamal gets isolated 1v1, Spain win at a canter and their leaky opponents are picked apart. If instead Spain reprise the flat, imprecise display of the Uruguay game, Austria's intensity can drag them into a nervy, drawn-out battle that could stretch to extra time or beyond — where, ultimately, Spain's depth should still prevail. Expect a tense first hour, then Spanish class to tell. <strong>Vamos España.</strong></p>
+    <div class="scoreline">🇪🇸 Spain 2 — 0 Austria</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: Spain edge a cagey opening, then pull clear once Austria's press tires — Yamal and Oyarzabal the likeliest scorers. A one-goal game or extra time is very possible if the flat Spain returns; a shock Austrian win would rank among the tournament's biggest.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · SoFi Stadium</div><div class="g">Winner advances</div><div class="n">To the Round of 16 to face the winner of Portugal vs Croatia — a heavyweight European tie awaits.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">Spain's side of the draw</div><div class="n">Spain sit in the opposite half to Argentina — the two could only meet in the MetLife final on July 19.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

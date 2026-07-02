@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 3-0 Austria — La Roja Come to Life</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#ff5d6a;--espy:#ffc400;--aut:#e23b3b;--aut2:#ff8080;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(25px,5.2vw,40px);font-weight:800;margin-top:6px;line-height:1.12;
+    background:linear-gradient(90deg,#c60b1e,#ffc400 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14px;margin-top:10px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:37px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .e{color:#ff8e95}.scoreboard .a{color:var(--aut2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#ff8e95}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff8e95}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .half{background:linear-gradient(135deg,#1a1406,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .half .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.g{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.shape{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mtag.star{background:rgba(255,93,106,.16);color:#ff8e8e}
+  .move .mtag.def{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Round of 32 · FT</span>
+  </div>
+  <h1>La Roja Come to Life</h1>
+  <div class="kicker">Spain finally find their shape, their rhythm and their swagger — and served notice they are a contender at last</div>
+
+  <div class="scoreboard">
+    <span class="t e">🇪🇸 Spain</span>
+    <span class="sc">3 – 0</span>
+    <span class="t a">Austria 🇦🇹</span>
+  </div>
+  <div class="meta">📍 SoFi Stadium, Los Angeles · Round of 32 · Full-time</div>
+  <div class="scorers">⚽ <b>Oyarzabal 36'</b>, <b>Porro 66'</b>, <b>Oyarzabal 89'</b> — a first knockout win since 2010</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Result</div><div class="v"><span class="e">Cruise into R16</span></div></div>
+    <div class="stat"><div class="l">Clean sheets</div><div class="v">4 of 4 🧱</div></div>
+    <div class="stat"><div class="l">First KO win since</div><div class="v">2010 title</div></div>
+    <div class="stat"><div class="l">Next</div><div class="v"><span class="e">Por / Cro</span></div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">The scoreline undersold the dominance. This was Spain rediscovering the flowing, relentless football that had gone missing — and it was a joy to watch.</p>
+
+  <h2><span class="ic">🧭</span> The Story — The Awakening Everyone Was Waiting For</h2>
+  <p class="lead">For two and a half games, Spain had been all clean sheets and no conviction — winning without persuading anyone they were contenders. Against Austria, the fog lifted. <strong>La Roja settled at last into a coherent, flowing, ferociously dominant shape</strong>, ran their opponents ragged from the first whistle, and won 3-0 in a performance whose margin should have been far greater. It was, tellingly, <strong>Spain's first World Cup knockout victory since they lifted the trophy in 2010</strong>, and the first time since 1994 they have scored at least twice in a World Cup knockout match. More than the result, it was the manner: the intricate triangles, the trademark tiki-taka, the second and third waves of attack breaking on a drowning Austrian defence. Spain, at long last, have come to life — and the rest of the tournament should take note.</p>
+
+  <div class="callout">
+    <div class="t">🧩 The settled shape — full width, layered waves</div>
+    <p style="margin:8px 0 0">The transformation began with the team shape, which finally looked right. <strong>Cucurella and Baena down the left; Pedro Porro and a near-unstoppable, self-described "80% fit" Yamal down the right; Oyarzabal and Olmo through the centre; and Pedri operating just behind them all.</strong> This gave Spain genuine <strong>attacking width across the whole pitch</strong> and, crucially, a layered structure that produced wave after wave: when the first attack broke down, a second arrived, and then a third, because bodies were staggered at the right depths. Spain won the ball back with astonishing speed — frequently inside 12–13 seconds of losing it — and simply suffocated Austria. It was the most complete Spanish performance of the tournament by a distance.</p>
+  </div>
+
+  <h2><span class="ic">🌊</span> The Shape — Full Width and the Three Waves</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag shape">Spain · Structure</span><span class="mt">Layered attackers produce relentless second and third waves</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · width on both flanks, layered depth → wave 1, 2, 3</text>
+
+      <!-- Austria compressed -->
+      <g><circle cx="290" cy="95" r="9" fill="#e23b3b" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="360" cy="90" r="9" fill="#e23b3b" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="430" cy="95" r="9" fill="#e23b3b" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="325" cy="135" r="8" fill="#9c2020" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="395" cy="135" r="8" fill="#9c2020" stroke="#fff" stroke-width="1" opacity=".8"/><text x="360" y="118" text-anchor="middle" font-size="9" fill="#f0b8c0">pinned &amp; compressed</text></g>
+
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Wave 1: front -->
+        <g><circle cx="120" cy="185" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="120" y="189">BAE</text></g>
+        <g><circle cx="600" cy="185" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="600" y="189">YAM</text></g>
+        <g><circle cx="300" cy="205" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="300" y="209">OYA</text></g>
+        <g><circle cx="420" cy="205" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="420" y="209">OLM</text></g>
+        <text x="360" y="240" text-anchor="middle" font-size="9" fill="#ffe98a">WAVE 1</text>
+        <!-- Wave 2: full-backs / Pedri -->
+        <g><circle cx="160" cy="280" r="11" fill="#e0ad00" stroke="#fff" stroke-width="1.2"/><text x="160" y="284">CUC</text></g>
+        <g><circle cx="560" cy="280" r="11" fill="#e0ad00" stroke="#fff" stroke-width="1.2"/><text x="560" y="284">POR</text></g>
+        <g><circle cx="360" cy="290" r="12" fill="#e0ad00" stroke="#fff" stroke-width="1.3"/><text x="360" y="294">PED</text></g>
+        <text x="360" y="320" text-anchor="middle" font-size="9" fill="#ffe0a8">WAVE 2</text>
+        <!-- Wave 3: pivots -->
+        <g><circle cx="300" cy="370" r="11" fill="#c99a00" stroke="#fff" stroke-width="1.2"/><text x="300" y="374">ROD</text></g>
+        <g><circle cx="420" cy="370" r="11" fill="#c99a00" stroke="#fff" stroke-width="1.2"/><text x="420" y="374">LAP</text></g>
+        <text x="360" y="400" text-anchor="middle" font-size="9" fill="#e6c98a">WAVE 3 · rest-defence</text>
+      </g>
+
+      <!-- wave arrows -->
+      <path d="M360 355 C 360 340, 360 330, 360 305" stroke="#ffc400" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#aW)" opacity=".7"/>
+      <path d="M360 275 C 360 260, 360 250, 360 222" stroke="#ffc400" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#aW)" opacity=".8"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Wave 1 (front)</span>
+      <span><i style="border-top-color:#e0ad00;border-top-style:dashed"></i> Wave 2 / 3 support</span>
+    </div>
+
+    <p class="expl"><strong>The structure that finally clicked.</strong> The genius of the setup was its depth. With <strong>Baena and Cucurella providing width and overlap on the left, Yamal and the overlapping Porro on the right, Oyarzabal and Olmo occupying the centre, and Pedri floating behind</strong>, Spain attacked with a layered staircase of runners. When the first wave was repelled, the ball dropped to a second line arriving on the edge of the box, and behind them a third. Austria could never fully clear their lines because there was always another red shirt arriving. And the counter-pressing was ferocious: <strong>possession regained within twelve or thirteen seconds, again and again</strong>, so the waves simply kept coming. Austria, short of pace up front and unable to launch quick counters — Cubarsí's recovery speed snuffed out what little they mustered — were left to defend for their lives.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (36') — Oyarzabal turns home Cucurella's cross</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Spain · 1-0</span><span class="mt">The breakthrough the relentless pressure deserved</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="a1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Cucurella finds a yard on the left, low cross, Oyarzabal redirects</text>
+
+      <g><circle cx="360" cy="40" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="360" y="44" font-size="8" fill="#fff" text-anchor="middle">SCH</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="140" cy="170" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="140" y="174">CUC</text><text x="140" y="190" fill="#fff" font-size="8">a yard of space</text></g>
+        <g><circle cx="345" cy="130" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="345" y="134" fill="#06301d">OYA</text><text x="345" y="152" fill="#bff0d5" font-size="9">first-time redirect</text></g>
+      </g>
+
+      <!-- Cucurella low cross -->
+      <path d="M152 162 C 220 140, 290 132, 330 130" stroke="#ffc400" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#a1)"/>
+      <!-- finish -->
+      <path d="M352 118 C 358 95, 360 70, 358 52" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a1g)"/>
+      <text x="430" y="110" font-size="10" fill="#bff0d0">soft but far from easy</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Cucurella's low cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Oyarzabal's finish</span>
+    </div>
+
+    <p class="expl"><strong>Relentless pressure, finally rewarded.</strong> The lead, when it came just after the half-hour, was overdue. Spain had already been denied — <strong>Cucurella slammed home a corner only for it to be chalked off for a foul on the keeper</strong> — and had spurned a stream of openings. The goal itself was pure quality: <strong>Marc Cucurella found a yard of space on the left, and picked out Mikel Oyarzabal near the penalty spot with a low cross.</strong> The Real Sociedad man made the <strong>first-time redirect look effortless — which it emphatically was not</strong> — to break the deadlock. It was scant reward for a first-half onslaught that also brought a Baena free-kick crashing off the crossbar and a blocked Yamal follow-up. On another night, Spain lead by four at the interval; Alexander Schlager's four fine saves alone kept it to one.</p>
+  </div>
+
+  <div class="half">
+    <div class="t">⏸️ Half-time — 1-0, but it should have been a rout</div>
+    <p style="margin:8px 0 0">A deserved lead that flattered Austria. Spain had produced <strong>wave upon wave of attack, at least four excellent Austrian saves, a disallowed goal, and a Baena free-kick off the bar with Yamal denied on the rebound.</strong> Austria, pace-less up front and pinned in their own half, offered next to nothing. The only Spanish frustration was the scoreline — 1-0 did not remotely reflect the gulf. What followed after the restart would remove all doubt.</p>
+  </div>
+
+  <h2><span class="ic">✨</span> The Yamal Show — Genius at 80 Per Cent</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag star">Spain · The Talisman</span><span class="mt">Double-marked all night, and still uncontainable</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aY" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Yamal glides horizontally across the box, beguiling five defenders</text>
+
+      <!-- five Austrian defenders in a line, ball-watching -->
+      <g font-size="8" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="560" cy="150" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/><text x="560" y="153">LIM</text></g>
+        <circle cx="470" cy="135" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="380" cy="125" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="290" cy="130" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="200" cy="145" r="10" fill="#e23b3b" stroke="#fff" stroke-width="1.1"/>
+        <text x="360" y="105" text-anchor="middle" font-size="9" fill="#f0b8c0">five defenders, all beaten by the run</text>
+      </g>
+
+      <!-- Yamal's horizontal glide across -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="620" cy="210" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="620" y="214">YAM</text></g>
+      </g>
+      <path d="M606 205 C 520 195, 420 188, 320 185 C 250 183, 200 182, 160 182" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aY)"/>
+      <text x="360" y="210" text-anchor="middle" font-size="10" fill="#ffe98a">the ball glued to his feet, in disbelief they watch</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Yamal's horizontal dribble</span>
+    </div>
+
+    <p class="expl"><strong>Even at four-fifths fitness, the best show in town.</strong> By his own estimate only "80% fit," Lamine Yamal was still the most watchable player on the pitch. Austria did exactly as Rangnick had promised, <strong>marking him with two defenders</strong> — one of them Lima — for much of the night, and still it wasn't enough: <strong>Yamal stole the ball out from between his markers on nearly a dozen occasions.</strong> The signature moment came when he <strong>ran horizontally across the face of the goal, gliding past five Austrian defenders who could only watch in disbelief</strong>, the ball apparently magnetised to his boots. He was denied a deserved goal only by fine margins — a shot blocked here, an effort cleared off the line by Alaba there. That Spain could remove him with ten minutes to go, the game long won, and bring on Gavi, only underlined the luxury. A fit Yamal in the latter rounds is a genuinely frightening prospect.</p>
+  </div>
+
+  <h2><span class="ic">🎨</span> The Second Half — Tiki-Taka Reborn</h2>
+  <p>If the first half was dominance, the second was a statement of identity. <strong>Spain began the second half brilliantly, and for a spell made it literally impossible for Austria to escape their own half</strong> — it took the Austrians a full twelve minutes after the restart to so much as reach the Spanish half. The intricate triangles, the one-touch combinations, the patient probing that shifts the opposition side to side until a gap yawns open: <strong>the trademark tiki-taka was all there</strong>, and it was glorious. Pedri, so out of sorts earlier in the tournament, visibly grew in confidence — operating <strong>a touch deeper than his natural station, with so many bodies ahead of him</strong>, he began to dictate. Olmo, the game-changer in the No.10 role, was desperately unlucky, several of his shots smothered by desperate Austrian blocks. When Rangnick threw on five attacking changes and the game opened up, it merely gave Spain more room to torment. The pressure could only end one way.</p>
+
+  <h2><span class="ic">⚽</span> Goal 2 (66') — Porro caps the team goal of the tournament</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Spain · 2-0</span><span class="mt">A flowing move across the width, finished by the overlapping full-back</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="a2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · sustained passing across the width → Baena byline cross → Porro header</text>
+
+      <g><circle cx="360" cy="40" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="360" y="44" font-size="8" fill="#fff" text-anchor="middle">SCH</text></g>
+
+      <!-- passing chain across the front of the box -->
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="560" cy="250" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="560" y="254">POR</text></g>
+        <g><circle cx="440" cy="270" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="440" y="274">PED</text></g>
+        <g><circle cx="320" cy="265" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="320" y="269">OLM</text></g>
+        <g><circle cx="180" cy="230" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="180" y="234">BAE</text><text x="180" y="250" fill="#fff" font-size="8">reaches byline</text></g>
+        <!-- Porro arriving late at back post -->
+        <g><circle cx="430" cy="95" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="430" y="99" fill="#06301d">POR</text><text x="430" y="117" fill="#bff0d5" font-size="9">arrives from deep</text></g>
+      </g>
+
+      <!-- passing chain -->
+      <path d="M550 244 C 500 258, 465 265, 452 268" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a2)"/>
+      <path d="M428 268 C 390 270, 350 268, 332 266" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a2)"/>
+      <path d="M308 258 C 260 248, 220 238, 192 232" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a2)"/>
+      <!-- Baena byline cross -->
+      <path d="M188 216 C 240 150, 340 110, 412 100" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#a2)"/>
+      <!-- Porro header -->
+      <path d="M424 82 C 410 68, 390 56, 372 48" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a2g)"/>
+      <text x="250" y="150" font-size="9" fill="#ffe98a">worked across the pitch first</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Passing chain &amp; byline cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Porro's header</span>
+    </div>
+
+    <p class="expl"><strong>A goal that distilled everything great about the performance.</strong> The second was the reward for all that patient dominance — and for many watching, <strong>a candidate for the team goal of the tournament.</strong> Spain worked the ball across the full width of the pitch in a sustained sequence of intricate passes just in front of the box, shifting Austria from one side to the other until the gap appeared. <strong>Cucurella and then Baena carried it left; Baena reached the byline and whipped in a pinpoint cross; and Pedro Porro, the right-back, arrived from deep at the perfect moment to power a header</strong> beyond Schlager. It was Porro's first international goal on his 20th cap — and a fitting one, because it was manufactured entirely by the collective. The full-back finishing a move built on the opposite flank was the perfect emblem of a team playing as one flowing organism again.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> The Unsung Truth — This Spanish Defence Is Superb</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag def">Spain · The Foundation</span><span class="mt">Clean sheets built on aerial timing, work-rate and a modern balance</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="adx" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+        <marker id="adg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Austria attacking ↑ · aerial balls to tall subs met with perfect timing; Cucurella covers</text>
+
+      <!-- Austria tall striker + cross -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="180" cy="300" r="11" fill="#e23b3b" stroke="#fff" stroke-width="1.2"/><text x="180" y="304">SAB</text></g>
+        <g><circle cx="380" cy="150" r="12" fill="#e23b3b" stroke="#fff" stroke-width="1.3"/><text x="380" y="154">KAL</text><text x="380" y="170" fill="#f0b8c0" font-size="8">tall sub</text></g>
+      </g>
+      <!-- Spain defenders -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="185" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="360" y="189" fill="#06301d">LAP</text><text x="360" y="205" fill="#bff0d5" font-size="8">wins the header</text></g>
+        <g><circle cx="300" cy="230" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="300" y="234">CUB</text></g>
+        <g><circle cx="250" cy="285" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="250" y="289">CUC</text><text x="250" y="305" fill="#fff" font-size="8">tracks &amp; covers</text></g>
+        <g><circle cx="420" cy="260" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="420" y="264">ROD</text><text x="420" y="276" fill="#fff" font-size="8">screens</text></g>
+      </g>
+
+      <!-- cross in -->
+      <path d="M192 292 C 260 230, 330 185, 366 168" stroke="#ff5d6a" stroke-width="2.5" stroke-dasharray="6 4" fill="none"/>
+      <!-- Laporte header clear -->
+      <path d="M360 170 C 360 200, 340 240, 300 275" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#adg)"/>
+      <!-- Cucurella cover arc -->
+      <path d="M262 275 Q 300 245 340 250" stroke="#39d98a" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity=".8"/>
+      <text x="470" y="180" font-size="10" fill="#bff0d0">impeccable aerial timing</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Austria's aerial ball</span>
+      <span><i style="border-top-color:#39d98a"></i> Headed clear / covered</span>
+    </div>
+
+    <p class="expl"><strong>Amid all the flair, the foundation is a back line that simply does not concede.</strong> With so much happening at the other end, it is easy to overlook that <strong>Spain have now kept a clean sheet in all four matches — only the second side, after Mexico, to do so in this tournament.</strong> When Austria turned to their tall substitutes and started launching aerial balls into the box, Spain answered with <strong>impeccable timing and perfectly judged jumps to meet everything in the air.</strong> And the deeper truth is about balance: the workhorses often forgotten in the glow of the attack — <strong>Rodri and Laporte screening and sweeping in front of and behind the line, and Cucurella, whose defensive diligence matches his attacking supply yet who somehow stays fresh for the full ninety.</strong> This is the great evolution from the purist, sometimes-brittle tiki-taka of the Luis Enrique era to De la Fuente's more complete, two-way side. The romance up front is real — but it is built on a defence that is quietly one of the best at the tournament.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 (89') — Oyarzabal's second, the exclamation mark</h2>
+  <p>The scoring was rounded off in the dying minutes, and again it flowed from the left. <strong>Cucurella — inevitably — raced into space and slid a perfectly weighted pass into the box, and Oyarzabal, beating the offside trap, calmly stroked his second of the night into the corner.</strong> It was his fourth of the tournament and, remarkably, his 17th goal in 16 Spain starts — a striker quietly enjoying a prolific competition. By then the game had long been an exhibition; the third was merely the number the performance had always deserved. Between Oyarzabal's brace, Porro's header and a supporting cast that changed nothing when the substitutes arrived, Spain's <strong>bench strength</strong> — Gavi on for Yamal, Ferran Torres for Baena, Merino for Olmo, all slotting in seamlessly — was its own quiet warning to the rest of the field.</p>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Mikel Oyarzabal</b> — <span class="good">Two goals, ruthless</span>. A brace of composed finishes; four for the tournament, 17 in 16 starts. The false-9 experiment is paying off handsomely.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="good">Unplayable at 80%</span>. Double-marked all night, stole the ball a dozen times, glided past five men in one run. Unlucky not to score (cleared off the line). A frightening watch.</div>
+    <div class="rt"><b>Marc Cucurella</b> — <span class="good">Two assists &amp; a full shift</span>. Supplied both Oyarzabal goals, reached the byline at will, and did all his defensive work while staying fresh for 90. The model modern full-back.</div>
+    <div class="rt"><b>Dani Olmo</b> — <span class="good">The game-changer</span>. His presence in the No.10 role transformed Spain's penetration. Desperately unlucky — several shots blocked. The missing piece found.</div>
+    <div class="rt"><b>Pedri</b> — <span class="mid">Growing into it</span>. Flashes of the real Pedri, played slightly deeper amid so many bodies ahead. Grew in confidence in the second half. Not yet peak, but trending up.</div>
+    <div class="rt"><b>Pedro Porro</b> — <span class="good">First international goal</span>. A perfectly timed run from deep to head home the pick of the goals. An attacking threat down the right all night.</div>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — A Contender Emerges, on the Wrong Side of the Draw</h2>
+  <p>Make no mistake: this was the night Spain announced themselves as genuine contenders. The stuttering, unconvincing side of the group stage is gone; in its place stands a team that has <strong>rediscovered its identity, settled its best shape, and paired mesmeric attacking football with a miserly, well-drilled defence.</strong> When Olmo pulls the strings behind Oyarzabal, when Yamal is fit and flying, when Pedri finds his rhythm and Cucurella and Porro bomb on from full-back, Spain look like a side capable of winning the whole thing. The four-from-four clean-sheet record is the platform; the flair is the ceiling. La Roja are coming to the boil at exactly the right time.</p>
+  <p>The one shadow is the draw. Spain sit on the <strong>same side as France</strong> — the tournament's other team playing football from another planet — which means the two juggernauts are on a collision course before any final. It is, frankly, a shame that a resurgent Spain and a rampant France could meet in a semi-final rather than the showpiece; one of these thrilling sides will knock the other out too early. But that is a worry for later rounds. First comes a <strong>Round-of-16 meeting, most likely with Portugal</strong> (or Croatia), in Dallas on Monday.</p>
+  <p>Portugal would be a formidable step up — a squad laden with talent and, in Cristiano Ronaldo, a serial matchwinner, even if their own tournament has been curiously blunt in front of goal (a goalless draw with Colombia among their group results). The tactical battle would be fascinating: <strong>Spain's possession dominance and half-space penetration against Portugal's individual quality and threat in transition.</strong> On tonight's evidence, Spain will fear no one. If Olmo keeps unlocking defences, if Yamal climbs from 80% toward full fitness, and if Pedri completes his return to form, La Roja have the tools to go all the way — and to give France, should they meet, the game of the tournament. The awakening is real. <strong>Vamos España.</strong></p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · WON</div><div class="g">Spain 3-0 Austria</div><div class="n">A first knockout win since 2010, a fourth straight clean sheet, and the most complete display of their tournament.</div></div>
+    <div class="nx"><div class="d">Round of 16 · Dallas, Mon</div><div class="g">Spain vs Portugal / Croatia</div><div class="n">Most likely a heavyweight clash with Portugal — Spain's possession game against Ronaldo's matchwinning threat.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>A 3-0 that could, and perhaps should, have been six — and a performance that changes the complexion of Spain's tournament entirely. After weeks of winning without convincing, La Roja finally settled into their best shape and produced the flowing, relentless, joyous football that has been their promise all along: <strong>full width, layered waves, ferocious counter-pressing, an 80%-fit Yamal still bewitching five men at a time, Olmo unlocking the No.10 role, and a team goal for the ages finished by Porro.</strong> Beneath the flair sits a defence that has not conceded all tournament — the modern balance that separates this side from the purist teams of the past. The awakening could hardly be better timed. Spain are contenders now, and only the cruelty of the bracket — sharing France's half — tempers the excitement. First, Portugal await. On this evidence, La Roja will relish it. <strong>Vamos España.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

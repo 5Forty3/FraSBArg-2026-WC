@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs Cape Verde — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#6ab7e8;--arg1:#7cc0ec;--arg2:#a9d8f5;--cpv:#1f4fae;--cpv2:#5a8fe0;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#7cc0ec,#fff 50%,#1f4fae);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .ar{background:linear-gradient(135deg,#0e2536,#0d1117)}
+  .vsbar .cv{background:linear-gradient(135deg,#0d1a3a,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .ar .nm{color:var(--arg2)}.vsbar .cv .nm{color:var(--cpv2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.arg{border-left:3px solid var(--arg1)}
+  .card.cpv{border-left:3px solid var(--cpv)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.cpv{background:rgba(31,79,174,.24);color:var(--cpv2)}
+  .move .mtag.key{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Round of 32 · Win or go home</span>
+  </div>
+  <h1>Argentina vs Cape Verde</h1>
+  <div class="sub">The reigning champions and Messi's masterpiece meet the fairytale of the tournament — the smallest nation ever to reach a World Cup knockout</div>
+  <div class="meta">🕒 3:30 AM IST, Sat 4 Jul · 📍 Hard Rock Stadium, Miami Gardens (6pm ET / 22:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side ar"><div class="nm">🇦🇷 Argentina</div><div class="fm">4-4-2 · Scaloni · holders · perfect Group J · unbeaten in 9 WC games</div></div>
+    <div class="mid">VS</div>
+    <div class="side cv"><div class="nm">Cape Verde 🇨🇻</div><div class="fm">4-1-4-1 · Bubista · debut knockout · 3 clean-sheet draws</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a David vs Goliath for the ages, in Messi's backyard</div>
+    <p style="margin:8px 0 0">This is the great romance of the Round of 32 given a home. Argentina — reigning world champions, <strong>perfect through Group J, unbeaten in nine World Cup matches, riding a ten-game winning streak</strong> — take on <strong>Cape Verde, the smallest nation ever (population ~525,000) to reach a World Cup knockout stage.</strong> The Blue Sharks got here without winning a game: three draws, three clean-sheet-heavy performances, including a stunning goalless hold of Spain on opening night. It is a genuine fairytale. And the venue could not be more poetic — <strong>Hard Rock Stadium in Miami, the home of Messi's Inter Miami</strong>, where the great man will play in front of what will feel like a home crowd. Cape Verde's president has publicly backed a 1-0 shock; Scaloni has pointedly refused to dismiss them. But history and quality are emphatic: Argentina are -600 favourites and rightly so. The only real questions are the margin, and whether an all-time goalkeeping display can keep it close.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">The big news is good for Argentina: <strong>a fully fit squad, Messi and the first-choice XI restored, and Romero back from a knock.</strong> Cape Verde are settled and organised, missing only one attacking midfielder. Exact XIs are predicted (not officially confirmed).</p>
+
+  <div class="card arg">
+    <h3 style="margin-top:0">🇦🇷 Argentina — champions at full strength (expected XI)</h3>
+    <ul>
+      <li><strong>Messi returns to the starting XI (confirmed)</strong> — rested and used only as a second-half substitute against Jordan, the captain is back from the first whistle. He has <strong>six goals (75% of Argentina's tournament total), co-leads the Golden Boot with Mbappé, and is the first player ever to score in seven consecutive World Cup games.</strong> He turns this into a home game in Miami.</li>
+      <li><strong>Romero fit again (confirmed)</strong> — back from a minor knee complaint to partner Lisandro Martínez at centre-back, restoring Argentina's first-choice, miserly defence (just one goal conceded all group stage).</li>
+      <li><strong>Álvarez fully recovered</strong> — over the ankle problem that limited him early; he and Lautaro Martínez compete to partner Messi up top, with Scaloni keen to rekindle the Messi–Álvarez axis from Qatar.</li>
+      <li><strong>De Paul & Mac Allister restored</strong> — the engine room returns after rotation, with Almada's dribbling a live option on the left. No injuries anywhere in the camp.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-4-2): E. Martínez; Molina, Romero, L. Martínez, Medina; De Paul, Mac Allister, Enzo, Almada; Messi, L. Martínez / Álvarez. (Not confirmed.)</p>
+  </div>
+
+  <div class="card cpv">
+    <h3 style="margin-top:0">🇨🇻 Cape Verde — the fearless, disciplined fairytale</h3>
+    <ul>
+      <li><strong>Vozinha is the story (confirmed starter)</strong> — the 40-year-old goalkeeper produced an all-time display to shut out Spain and will start again. If Cape Verde are to stay in this, he must stand on his head once more.</li>
+      <li><strong>Telmo Arcanjo OUT</strong> — a hamstring injury removes a creative midfield option; Sidny Cabral returns at left-back after suspension.</li>
+      <li><strong>The plan is the block:</strong> a compact, disciplined 4-1-4-1 mid-to-low block, physical and concentrated, funnelling play wide — the exact template that frustrated Spain. Captain Ryan Mendes (98 caps) and Monteiro provide the experience and the rare counter-threat.</li>
+      <li><strong>The flaw: no cutting edge</strong> — the lowest scorers of all 32 knockout teams, with striker Livramento yet to find the net. They can defend for their lives, but scoring against Argentina is another matter entirely.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-1-4-1): Vozinha; Moreira, Lopes, Borges, S. Cabral; K. Pina; Mendes, Duarte, Monteiro, Rodrigues; Livramento. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Patience vs the Parked Bus</h2>
+  <p>This is not a stylistic puzzle so much as a <strong>stage gap</strong>, and it reduces to a single, familiar knockout problem: <strong>how does a vastly superior side break down a disciplined, deep, low block that has made shutting up shop an art form?</strong> Cape Verde will cede possession happily, compress the space in front of their back four, deny Argentina central combinations, and dare them to find a way through a settled structure marshalled by an inspired goalkeeper. Argentina, for their part, do not need to rush. Scaloni's side has the patience, the guile and the set-piece threat to prise open even the most stubborn defence — the danger is not losing, but frustration: forcing it, over-committing, and gifting Cape Verde the one counter-attack or set-piece that could make for a nervy night. Composure is everything.</p>
+
+  <h2><span class="ic">🕊️</span> Argentina's School of Thought — Scaloni's 'La Tercera'</h2>
+  <p>Argentina arrive as the finest expression of <strong>'La Tercera' — Scaloni's synthesis of Argentina's two great footballing traditions</strong>, the defensive pragmatism of Bilardismo fused with the flair and possession of Menottismo, all orbiting the genius of Messi. It is a philosophy built for exactly this kind of night: <strong>control the game, stay defensively watertight (one goal conceded in the group), and trust that quality — Messi's above all — will eventually unlock any door.</strong> The group stage revealed both the imperious form (a Messi hat-trick against Algeria) and the enviable depth (rotated heroes against Jordan). The one lingering question the whole tournament has posed is whether Argentina lean too heavily on Messi — he has scored or made 75% of their goals — and against a packed block, others must step up.</p>
+
+  <h2><span class="ic">🧱</span> Cape Verde's Plan — The Vozinha-Led Low Block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag cpv">Cape Verde · The Wall</span><span class="mt">Two banks, compressed centre, funnel Argentina wide</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aC" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5a8fe0"/></marker>
+        <marker id="aCx" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Cape Verde pack the centre; play forced wide; Vozinha sweeps</text>
+
+      <!-- Vozinha -->
+      <g><circle cx="360" cy="42" r="12" fill="#1f4fae" stroke="#fff" stroke-width="1.3"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">VOZ</text><text x="360" y="24" font-size="8" fill="#bcd9f6" text-anchor="middle">the wall</text></g>
+      <!-- back four compact -->
+      <g font-size="8" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="300" cy="95" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="345" cy="90" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="390" cy="90" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="435" cy="95" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/>
+        <!-- midfield bank + pivot -->
+        <circle cx="290" cy="150" r="9" fill="#173d86" stroke="#fff" stroke-width="1"/>
+        <circle cx="345" cy="150" r="9" fill="#173d86" stroke="#fff" stroke-width="1"/>
+        <circle cx="395" cy="150" r="9" fill="#173d86" stroke="#fff" stroke-width="1"/>
+        <circle cx="450" cy="150" r="9" fill="#173d86" stroke="#fff" stroke-width="1"/>
+        <circle cx="370" cy="185" r="9" fill="#0f2c66" stroke="#fff" stroke-width="1"/>
+        <text x="365" y="128" text-anchor="middle" font-size="9" fill="#bcd9f6">two compact banks · centre sealed</text>
+      </g>
+
+      <!-- Argentina forced wide -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="300" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="360" y="304">MES</text></g>
+        <g><circle cx="90" cy="230" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="90" y="234">MED</text></g>
+        <g><circle cx="630" cy="230" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="630" y="234">MOL</text></g>
+      </g>
+
+      <!-- central pass denied -->
+      <path d="M360 288 C 360 250, 365 215, 368 198" stroke="#7cc0ec" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+      <g transform="translate(363,192)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <!-- forced wide -->
+      <path d="M348 296 C 250 280, 150 255, 104 238" stroke="#5a8fe0" stroke-width="2.5" stroke-dasharray="7 5" fill="none" marker-end="url(#aC)"/>
+      <path d="M372 296 C 470 280, 570 255, 616 238" stroke="#5a8fe0" stroke-width="2.5" stroke-dasharray="7 5" fill="none" marker-end="url(#aC)"/>
+      <text x="200" y="270" font-size="9" fill="#bcd9f6">funnelled to the flanks</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Central route sealed</span>
+      <span><i style="border-top-color:#5a8fe0;border-top-style:dashed"></i> Argentina funnelled wide</span>
+    </div>
+
+    <p class="expl"><strong>The blueprint that held Spain — and Cape Verde's only realistic path to glory.</strong> Bubista's side will do exactly what earned them a goalless draw with Spain: <strong>drop into a compact, disciplined block, jam the central channels where Messi does his damage, and funnel Argentina out to the flanks</strong>, where Molina and Medina are less likely to conjure a decisive moment. Behind it all stands Vozinha, sweeping and shot-stopping, capable of another one-man masterclass. The plan asks for near-perfect concentration for 90+ minutes and total discipline against the temptation to chase the ball. It is a wall built to frustrate — and if Cape Verde can keep it goalless deep into the game, the pressure and the nerves start, ever so slightly, to shift. This is how the smallest nation dreams of the biggest upset.</p>
+  </div>
+
+  <h2><span class="ic">🔑</span> Argentina's Key — Free Messi in the pocket, break the block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · Attack</span><span class="mt">Messi drops between the lines; the disguised ball unlocks it</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aM" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="aMg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi drops into the pocket, draws a marker, threads the runner</text>
+
+      <!-- Cape Verde block -->
+      <g><circle cx="300" cy="105" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="100" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="105" r="10" fill="#1f4fae" stroke="#fff" stroke-width="1.1"/><circle cx="330" cy="150" r="9" fill="#173d86" stroke="#fff" stroke-width="1"/><circle cx="400" cy="150" r="9" fill="#173d86" stroke="#fff" stroke-width="1"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi in pocket -->
+        <g><circle cx="360" cy="230" r="14" fill="#7cc0ec" stroke="#fff" stroke-width="1.6"/><text x="360" y="234">MES</text><text x="360" y="250" fill="#fff" font-size="9">between the lines</text></g>
+        <!-- runners -->
+        <g><circle cx="470" cy="185" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="470" y="189" fill="#06301d">LAU</text><text x="470" y="205" fill="#bff0d5" font-size="8">runs the channel</text></g>
+        <g><circle cx="250" cy="190" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="250" y="194">ALM</text></g>
+      </g>
+      <!-- marker drawn to Messi -->
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="360" cy="185" r="9" fill="#0f2c66" stroke="#fff" stroke-width="1"/></g>
+      <path d="M360 176 L360 214" stroke="#5a8fe0" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+
+      <!-- Messi disguised through ball -->
+      <path d="M374 222 C 410 205, 440 195, 458 190" stroke="#7cc0ec" stroke-width="3.5" fill="none" marker-end="url(#aM)"/>
+      <!-- Lautaro run + finish -->
+      <path d="M474 171 C 470 135, 440 100, 400 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aMg)"/>
+      <text x="520" y="150" font-size="10" fill="#bff0d0">disguised pass splits the block</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's disguised through-ball</span>
+      <span><i style="border-top-color:#39d98a"></i> Lautaro run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The single move most likely to unpick the lock.</strong> Against a deep block, brute force rarely works — <strong>the brain does.</strong> Messi's genius is at its most devastating precisely here: <strong>dropping into the pocket between Cape Verde's defensive and midfield lines, drawing a marker toward him, and sliding the disguised through-ball</strong> for the run of Lautaro (or Álvarez) into the channel behind. If Cape Verde stay disciplined and refuse to follow him, Messi gets time and space to pick his moment; if they send a man to press, a gap opens for the very runner Argentina want to release. It is the classic unsolvable question the low block cannot answer. Add Argentina's other route — <strong>set pieces, where Messi's delivery and the aerial threat of Romero and Lisandro Martínez make them lethal</strong> — and the champions have more than enough keys for this door. The first goal is everything: once it lands, the block must come out, and the game opens up entirely in Argentina's favour.</p>
+  </div>
+
+  <h2><span class="ic">🗡️</span> Cape Verde's Faint Hope — the rare counter & set-piece steal</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag cpv">Cape Verde · The Dream</span><span class="mt">Nick one on the break or from a set piece, then defend for life</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aB" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5a8fe0"/></marker>
+        <marker id="aBg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Cape Verde attacking ↑ · win it deep, break fast into the space Argentina's full-backs leave</text>
+
+      <!-- Argentina high line -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="300" cy="140" r="10" fill="#7cc0ec" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="420" cy="140" r="10" fill="#7cc0ec" stroke="#fff" stroke-width="1.1"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#cfe6d6">Argentina push high</text>
+      </g>
+
+      <!-- Cape Verde break -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="300" r="12" fill="#5a8fe0" stroke="#fff" stroke-width="1.3"/><text x="300" y="304">MON</text><text x="300" y="320" fill="#fff" font-size="8">wins &amp; releases</text></g>
+        <g><circle cx="440" cy="230" r="13" fill="#5a8fe0" stroke="#fff" stroke-width="1.5"/><text x="440" y="234">LIV</text><text x="440" y="250" fill="#fff" font-size="8">the lone runner</text></g>
+        <g><circle cx="230" cy="235" r="11" fill="#5a8fe0" stroke="#fff" stroke-width="1.2"/><text x="230" y="239">ROD</text></g>
+      </g>
+
+      <path d="M312 290 C 350 265, 395 245, 428 236" stroke="#5a8fe0" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aB)"/>
+      <path d="M446 216 C 452 175, 445 130, 425 80" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aBg)"/>
+      <text x="510" y="160" font-size="10" fill="#bff0d0">the one chance — take it</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5a8fe0;border-top-style:dashed"></i> Transition release</span>
+      <span><i style="border-top-color:#39d98a"></i> Livramento's run</span>
+    </div>
+
+    <p class="expl"><strong>Improbable, but not quite impossible.</strong> Cape Verde did score twice against Uruguay, so the counter-threat is real if slight. Their dream scenario is simple and rare: <strong>survive the early waves, keep it goalless, win the ball deep, and spring a lightning break</strong> through Monteiro or Rodrigues into the acres that Argentina's high, attacking full-backs (Molina, Medina) can leave behind — with Livramento the lone runner, finally finding the goal that has eluded him. The other route is a set piece; the Blue Sharks have earned plenty of corners this tournament. But the odds are stark: <strong>this is the toughest defence they have faced by a distance</strong>, marshalled by Romero and Lisandro Martínez, screened by Argentina's midfield, and backed by the world's best penalty-saving goalkeeper in Emiliano Martínez. To win, Cape Verde must take the one half-chance they get — and then repel everything for the rest of the night. Fairytales need a hero's finish; theirs has yet to score.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it stays goalless — Extra Time &amp; Penalties</div>
+    <p style="margin:8px 0 0">Given Cape Verde's clean-sheet habit and Vozinha's brilliance, a tight, drawn-out night is the underdog's entire game plan — so it is worth war-gaming the latter stages.</p>
+    <p style="margin:8px 0 0"><strong>Extra time overwhelmingly favours Argentina.</strong> Defending a low block for 120 minutes against relentless quality is physically brutal, and concentration inevitably frays. Argentina's <strong>bench is arguably the best at the tournament</strong> — the ability to introduce Álvarez, Lo Celso, Nico Paz or Almada as fresh legs against tiring defenders is a decisive edge. The longer it goes, the more likely the wall finally cracks; a late Argentina goal in the 90–120 minute window would be no surprise at all.</p>
+    <p style="margin:8px 0 0"><strong>And if it somehow reaches penalties — Argentina could hardly be better placed.</strong> This is the ultimate ace: in <strong>Emiliano "Dibu" Martínez they possess the definitive modern penalty-shootout goalkeeper</strong>, a specialist whose mind-games and saves won the 2022 World Cup and multiple Copa Américas. Add ice-cold takers led by <strong>Messi, plus Lautaro, Álvarez and Mac Allister</strong>, and Argentina are as close to a shootout certainty as the format allows. Cape Verde's dream of taking the champions to the lottery would, cruelly, be walking straight into Argentina's greatest strength. The message for the holders: <strong>if the goal will not come, do not panic — every extra minute, and every avenue beyond 90, tilts further your way.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Respect Cape Verde — their defensive discipline is genuine, Vozinha is capable of another masterclass, and the romance of their run deserves every plaudit. A stubborn, goalless first hour is entirely plausible, and Argentina must guard against frustration and the odd counter. But the gulf in quality is simply too vast. Argentina are the champions, at full strength, defensively watertight, blessed with the best player of his generation in his own Miami backyard, and armed with every tool — patient possession, Messi's genius in the pocket, a lethal set-piece threat, and a bench and a goalkeeper built for the long game — to break down even the most stubborn wall. Expect Argentina to be patient, to prise the door open (perhaps not early), and then to pull clear once the first goal lands. Cape Verde's fairytale ends with heads held high; the holders march on. <strong>Vamos Argentina.</strong></p>
+    <div class="scoreline">🇦🇷 Argentina 3 — 0 Cape Verde</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a patient, controlled win that opens up after the breakthrough — Messi and Lautaro the likeliest scorers. A tight, low-scoring game or even extra time is the underdog's best hope; a Cape Verde win would be the greatest upset in World Cup history.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · Miami</div><div class="g">Winner advances</div><div class="n">To the Round of 16 to face the winner of Australia vs Egypt — a likely date with Salah's Egypt.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">The road to a title defence</div><div class="n">Argentina sit in the opposite half to France and Spain — the champions could only meet France in the MetLife final on July 19.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

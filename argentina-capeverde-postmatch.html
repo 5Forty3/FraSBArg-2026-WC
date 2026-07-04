@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina 3-2 Cape Verde — The Disjointed Symphony</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--cpv:#1f4fae;--cpv2:#5a8fe0;--blue:#5aa0e6;--red:#ff5d6a;--rom:#d98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(25px,5.2vw,40px);font-weight:800;margin-top:6px;line-height:1.12;
+    background:linear-gradient(90deg,#7cc0ec,#fff 55%,#1f4fae);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14px;margin-top:10px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:37px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .e{color:var(--arg2)}.scoreboard .a{color:var(--cpv2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--arg2)}.scorers .cv{color:var(--cpv2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:var(--arg2)}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+
+  .pull{border-left:3px solid var(--arg);background:linear-gradient(135deg,#0e2233,#0f1117);border-radius:0 10px 10px 0;
+    padding:15px 18px;margin:18px 0;font-size:16.5px;font-style:italic;color:#dbeaf6;line-height:1.55}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .silver{background:linear-gradient(135deg,#0e2018,#0f1117);border:1px solid #1f4533;border-left:3px solid var(--green);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .silver .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+  .weak{background:linear-gradient(135deg,#241010,#0f1117);border:1px solid #4a2020;border-left:3px solid var(--red);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .weak .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#ff8e8e}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.cpv{background:rgba(31,79,174,.24);color:var(--cpv2)}
+  .move .mtag.weak{background:rgba(255,93,106,.16);color:#ff8e8e}
+  .move .mtag.future{background:rgba(217,140,255,.14);color:var(--rom)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Round of 32 · AET</span>
+  </div>
+  <h1>The Disjointed Symphony</h1>
+  <div class="kicker">Argentina swung from the sublime to the ridiculous, survived the fright of their lives — and won the way champions so often do: the hard way</div>
+
+  <div class="scoreboard">
+    <span class="t e">🇦🇷 Argentina</span>
+    <span class="sc">3 – 2</span>
+    <span class="t a">Cape Verde 🇨🇻</span>
+  </div>
+  <div class="meta">📍 Hard Rock Stadium, Miami · Round of 32 · After Extra Time (a.e.t.)</div>
+  <div class="scorers">⚽ <b>Messi 29'</b>, <b>L. Martínez 91'</b>, <b>Borges OG 111'</b> — Cape Verde: <span class="cv">Duarte 59', Cabral 103'</span></div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="e">2.16</span> – 0.45</div></div>
+    <div class="stat"><div class="l">Messi milestone</div><div class="v">20th WC goal</div></div>
+    <div class="stat"><div class="l">Vozinha saves</div><div class="v">8 🧤</div></div>
+    <div class="stat"><div class="l">Scoring streak</div><div class="v">8 WC games</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">The closest Argentina have been pushed since the 2022 final — and against the smallest nation ever to reach a World Cup knockout. A scare, a survival, and a warning.</p>
+
+  <h2><span class="ic">🧭</span> The Story — Sublime, Then Ridiculous, Then Champions</h2>
+  <p class="lead">This was a strangely disjointed symphony. For forty-five minutes Argentina were a study in clinical control — total possession, no space conceded, the ball won back the instant it was lost, Cape Verde pinned and gasping. And then, almost inexplicably, the champions seemed to shift down a gear and simply let go of the game. The opening quarter of the second half saw them cede possession, drop their intensity, and — literally walking rather than pressing — invite the smallest nation ever to reach a World Cup knockout to attack their goal. Cape Verde, with nothing to lose, accepted the invitation twice. <strong>Argentina swung from the sublime to the ridiculous and back again</strong>, needing an extra-time own goal from a Messi corner to finally see off the bravest of underdogs, 3-2. They march on. But they were given the fright of their lives.</p>
+
+  <div class="callout">
+    <div class="t">🎚️ The theme of the night — a team shifting gears mid-match</div>
+    <p style="margin:8px 0 0">The defining feature of this performance was its jarring inconsistency. <strong>Argentina found rhythm in some passages and threw it all away in others</strong>, as if changing gears within the same game — purring one moment, stalling the next. When they were good, they were untouchable: the first half was as complete a 45 minutes as they have played. When they switched off — invariably after taking the lead — they became passive, static and vulnerable, gifting a well-drilled, fearless opponent the space and belief to punish them. That oscillation, more than the scoreline, is the story of the night, and the source of both the reassurance and the alarm Argentina take from Miami.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 1 (29') — Messi's sublime control and finish</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · 1-0</span><span class="mt">A magnetic touch with the outside of the left boot, then the dagger</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="a1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Lisandro's pass, Messi's outside-of-the-boot control, the finish</text>
+
+      <!-- Vozinha rushing -->
+      <g><circle cx="360" cy="55" r="12" fill="#1f4fae" stroke="#fff" stroke-width="1.3"/><text x="360" y="59" font-size="8" fill="#fff" text-anchor="middle">VOZ</text><text x="360" y="37" font-size="8" fill="#bcd9f6" text-anchor="middle">rushes out</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Lisandro deep -->
+        <g><circle cx="200" cy="290" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="200" y="294">LIS</text><text x="200" y="310" fill="#fff" font-size="8">the vision pass</text></g>
+        <!-- Messi -->
+        <g><circle cx="420" cy="185" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="420" y="189" fill="#06301d">MESSI</text><text x="420" y="205" fill="#bff0d5" font-size="9">magnetic control</text></g>
+      </g>
+
+      <!-- pass into the box -->
+      <path d="M212 282 C 300 250, 380 210, 410 194" stroke="#7cc0ec" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#a1)"/>
+      <!-- Messi flick past keeper -->
+      <path d="M430 172 C 420 135, 400 95, 372 62" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a1g)"/>
+      <text x="470" y="140" font-size="10" fill="#bff0d0">flicked past the onrushing keeper</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Lisandro's pass into the box</span>
+      <span><i style="border-top-color:#39d98a"></i> Messi's control &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>Pure vision, pure genius — a goal from the sublime end of the spectrum.</strong> The breakthrough was a moment of the highest class. A raking pass was slid into the box — the assist coming, in fact, from centre-back Lisandro Martínez — and Messi did the rest with a touch that defied physics: <strong>a magnetic pick-up with the outside of his left boot that killed the ball dead and took him past his marker in a single motion, before he flicked a sublime finish past the onrushing Vozinha.</strong> It was Messi's <strong>seventh goal of the tournament and his record-extending 20th at World Cups, in his record 30th appearance — the first player ever to score in eight consecutive World Cup games.</strong> At that moment, with Argentina in total command, the only question seemed to be the margin. Football, and Cape Verde, had other ideas.</p>
+  </div>
+
+  <h2><span class="ic">📉</span> The Weakness Exposed — When Argentina Dropped the Gears</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag weak">Argentina · The Flaw</span><span class="mt">Lead taken, intensity gone — the passive lull that let Cape Verde in</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5a8fe0"/></marker>
+        <marker id="awx" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Cape Verde attacking ↑ · Argentina drop off &amp; walk — acres open, the equaliser arrives</text>
+
+      <!-- Argentina passive, dropped deep, gaps between -->
+      <g font-size="8.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="250" cy="120" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2" opacity=".85"/>
+        <circle cx="470" cy="120" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2" opacity=".85"/>
+        <circle cx="300" cy="175" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2" opacity=".7"/>
+        <circle cx="430" cy="175" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2" opacity=".7"/>
+        <text x="360" y="150" text-anchor="middle" font-size="9" fill="#ffb3b8">passive · walking · huge gaps between lines</text>
+      </g>
+      <!-- big open zone -->
+      <rect x="330" y="230" width="120" height="70" fill="#5a8fe0" opacity="0.14"/>
+      <text x="390" y="270" font-size="10" fill="#bcd9f6" text-anchor="middle">acres of space</text>
+
+      <!-- Cape Verde attacking into it -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="250" cy="330" r="11" fill="#1f4fae" stroke="#fff" stroke-width="1.2"/><text x="250" y="334">MEN</text><text x="250" y="350" fill="#bcd9f6" font-size="8">turns, feeds</text></g>
+        <g><circle cx="390" cy="270" r="13" fill="#1f4fae" stroke="#fff" stroke-width="1.5"/><text x="390" y="274">DUA</text><text x="390" y="290" fill="#bcd9f6" font-size="8">turns &amp; fires</text></g>
+      </g>
+
+      <path d="M262 322 C 300 305, 350 290, 380 280" stroke="#5a8fe0" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aw)"/>
+      <path d="M398 258 C 400 200, 390 130, 372 62" stroke="#5a8fe0" stroke-width="3.5" fill="none" marker-end="url(#aw)"/>
+      <text x="470" y="180" font-size="10" fill="#bcd9f6">drilled inside the far post</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5a8fe0;border-top-style:dashed"></i> Cape Verde attack the space</span>
+      <span><i style="border-top-color:#5a8fe0"></i> Duarte's equaliser</span>
+    </div>
+
+    <p class="expl"><strong>The single most alarming aspect of the night — and it is a real, recurring flaw.</strong> Having controlled the first half with total authority, Argentina came out for the second and, inexplicably, <strong>lost intensity, dropped their pace, and surrendered their coordination.</strong> They stopped pressing, they conceded possession cheaply, and — as you'd notice from the stands — they were <strong>walking, not running</strong>, allowing a Cape Verde side that had been suffocated for 45 minutes to suddenly find acres of space. On 59 minutes it cost them: <strong>Ryan Mendes fed Deroy Duarte, who turned and drilled low inside the far post</strong> for a historic equaliser. This was the team that had been defensively immaculate for three-and-a-half games simply zoning out — forgetting both its pressing intensity and its own possession football. It is baffling, and it is dangerous. The lulls, especially after scoring, are the fault line that better teams will exploit ruthlessly.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 2 (91') — Lisandro Martínez's extra-time piledriver</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · 2-1</span><span class="mt">Straight from the restart of extra time — a corner, a thunderbolt</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="a2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi's corner is cleared to the edge; Lisandro lashes it home</text>
+
+      <g><circle cx="360" cy="42" r="12" fill="#1f4fae" stroke="#fff" stroke-width="1.3"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">VOZ</text></g>
+      <!-- crowded box -->
+      <g font-size="7" fill="#fff" text-anchor="middle"><circle cx="320" cy="95" r="9" fill="#173d86" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="400" cy="95" r="9" fill="#173d86" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="360" cy="120" r="9" fill="#173d86" stroke="#fff" stroke-width="1" opacity=".8"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi at corner -->
+        <g><circle cx="55" cy="70" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="55" y="74" font-size="8">MES</text><text x="55" y="90" fill="#fff" font-size="8">corner</text></g>
+        <!-- Lisandro edge of box -->
+        <g><circle cx="330" cy="230" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="330" y="234" fill="#06301d">LIS</text><text x="330" y="250" fill="#bff0d5" font-size="9">left-foot piledriver</text></g>
+      </g>
+
+      <!-- corner in, half-cleared -->
+      <path d="M66 78 C 160 120, 250 165, 320 210" stroke="#7cc0ec" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#a2)"/>
+      <!-- rocket to near top corner -->
+      <path d="M342 216 C 360 160, 372 100, 386 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a2g)"/>
+      <text x="440" y="150" font-size="10" fill="#bff0d0">rifled high past Vozinha</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Messi's corner</span>
+      <span><i style="border-top-color:#39d98a"></i> Lisandro's strike</span>
+    </div>
+
+    <p class="expl">Regulation ended 1-1, Vozinha having produced save after save — including a stunning stop to deny Messi's quickly-taken free-kick that was destined for the top corner — to force the extra half-hour. And Argentina, as if remembering who they were, struck almost immediately. <strong>Barely two minutes into extra time, from a Messi corner, Lisandro Martínez rifled a left-footed piledriver high past Vozinha</strong> — the centre-back with a goal and an assist on the night, an unlikely hero. It should have been the decisive blow. Against this Cape Verde, nothing was decisive until the final whistle.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Goal 3 for CV (103') — Cabral's stunner, and the wall that was Vozinha</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag cpv">Cape Verde · 2-2</span><span class="mt">A goal for the ages — and a goalkeeping masterclass at the other end</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5a8fe0"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Cape Verde attacking ↑ · Cabral cuts in from the left and curls it into the far corner</text>
+
+      <g><circle cx="360" cy="45" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="49" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+      <!-- Argentina defenders backing off -->
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="430" cy="150" r="10" fill="#7cc0ec" stroke="#fff" stroke-width="1.1" opacity=".8"/><circle cx="330" cy="150" r="10" fill="#7cc0ec" stroke="#fff" stroke-width="1.1" opacity=".8"/></g>
+
+      <!-- Cabral cutting in from left -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="150" cy="230" r="14" fill="#1f4fae" stroke="#fff" stroke-width="1.6"/><text x="150" y="234">CAB</text><text x="150" y="250" fill="#bcd9f6" font-size="9">cuts inside</text></g>
+      </g>
+      <!-- carry in -->
+      <path d="M164 222 C 220 205, 270 195, 300 190" stroke="#5a8fe0" stroke-width="3" stroke-dasharray="2 0" fill="none"/>
+      <!-- curler to far corner -->
+      <path d="M304 186 C 340 150, 400 95, 408 52" stroke="#5a8fe0" stroke-width="3.5" fill="none" marker-end="url(#a3)"/>
+      <text x="430" y="130" font-size="10" fill="#bcd9f6">curled into the far corner — unstoppable</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5a8fe0"></i> Cabral's cut-in &amp; curl</span>
+    </div>
+
+    <p class="expl"><strong>Nothing to lose, and it showed in a goal of pure brilliance.</strong> Cape Verde's second was the embodiment of their fearless spirit. <strong>Sidny Lopes Cabral cut inside from the left edge of the area and bent an unstoppable right-footed curler into the far corner</strong> — a strike good enough to win any match, and one that may stand forever as the greatest goal in Cape Verdean history. It made it 2-2 in extra time and had Argentina staring at either penalties or the greatest upset the World Cup has ever seen. And credit must go, too, to the man at the other end: <strong>the 40-year-old Vozinha, a second-division goalkeeper, produced eight saves — several of them stunners that would have beaten most keepers nine times in ten</strong> — denying Messi on three or four massive openings. For 110 minutes, the fairytale was alive because of him.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Winner (111') — Messi's corner, Romero's head, the cruellest touch</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · 3-2</span><span class="mt">The wand of a left foot delivers; a header, a deflection, heartbreak</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="a4g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="a4r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff8e8e"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi corner → Romero header → deflects off Borges → in</text>
+
+      <g><circle cx="360" cy="42" r="12" fill="#1f4fae" stroke="#fff" stroke-width="1.3"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">VOZ</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Messi corner -->
+        <g><circle cx="55" cy="70" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="55" y="74" font-size="8">MES</text><text x="55" y="90" fill="#fff" font-size="8">the corner</text></g>
+        <!-- Romero rising -->
+        <g><circle cx="330" cy="130" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="330" y="134" fill="#06301d">ROM</text><text x="330" y="150" fill="#bff0d5" font-size="9">rises to head</text></g>
+        <!-- Borges deflection -->
+        <g><circle cx="380" cy="105" r="11" fill="#ff8e8e" stroke="#fff" stroke-width="1.2"/><text x="380" y="109" font-size="8" fill="#3a0a0a">BOR</text></g>
+      </g>
+
+      <!-- corner delivery -->
+      <path d="M66 78 C 160 110, 260 122, 316 128" stroke="#7cc0ec" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#a4)"/>
+      <!-- Romero header -->
+      <path d="M340 120 C 356 108, 368 104, 376 102" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#a4g)"/>
+      <!-- deflection into net -->
+      <path d="M388 98 C 400 78, 395 62, 378 50" stroke="#ff8e8e" stroke-width="3.5" fill="none" marker-end="url(#a4r)"/>
+      <text x="470" y="110" font-size="10" fill="#ffc9cc">flicked off Borges, past Vozinha</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Messi's corner</span>
+      <span><i style="border-top-color:#39d98a"></i> Romero header</span>
+      <span><i style="border-top-color:#ff8e8e"></i> Borges deflection (OG)</span>
+    </div>
+
+    <p class="expl">With penalties looming and the tension unbearable, Argentina finally found the decisive moment — and, fittingly, it came from the wand of a left foot that had been denied all night. <strong>Messi curled an inch-perfect corner into the box, Cristian Romero rose to meet it, and the ball flicked off Cape Verde's Diney Borges and past the helpless Vozinha</strong> — an own goal to break the underdogs' hearts. It was credited to Romero before the official change, but the author, in truth, was Messi and his set-piece delivery. Even then Argentina were not safe; Emiliano Martínez had to make two smart late saves to preserve the win. But it was enough. The champions were through — by the skin of their teeth.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Lionel Messi</b> — <span class="good">Sublime, and denied</span>. The outside-of-the-boot goal, the corner for the winner, but also 3-4 huge chances spurned (mostly to Vozinha). 20th WC goal, 8 straight games. Genius amid the chaos.</div>
+    <div class="rt"><b>Lisandro Martínez</b> — <span class="good">Unlikely hero</span>. An assist for Messi's opener and a thunderous extra-time goal of his own. Immense at both ends.</div>
+    <div class="rt"><b>Vozinha (CPV)</b> — <span class="good">Otherworldly</span>. Eight saves, several jaw-dropping. The 40-year-old second-division keeper was the reason the fairytale lasted 110 minutes.</div>
+    <div class="rt"><b>Sidny Lopes Cabral (CPV)</b> — <span class="good">A goal for eternity</span>. The greatest goal in his nation's history. Fearless.</div>
+    <div class="rt"><b>The Argentina midfield</b> — <span class="bad">Zoned out</span>. Immaculate in the first half, passive and static in the second. The lulls that nearly cost everything.</div>
+    <div class="rt"><b>Lionel Scaloni</b> — <span class="mid">Caught out</span>. For the first time in years looked short of answers as the game slipped — predictable changes, no clear contingency. A rare off night.</div>
+  </div>
+
+  <div class="silver">
+    <div class="t">🥈 The Silver Lining — This Is How Champions Win</div>
+    <p style="margin:8px 0 0">For all the alarm, there is a genuine and important positive to carry forward: <strong>this was a tough, scrappy, hard-fought victory — and that is precisely how Argentina, and most World Cup winners, actually win.</strong> The opponents came back from a deficit not once but twice; penalties loomed on the horizon; and still Argentina refused to fold and found a way to win the match. One could sense throughout that <strong>whenever they truly chose to, they could shift gears and score at will</strong>, even against a deep, disciplined block and a goalkeeper in the form of his life. That knowledge — that the class is always there to be summoned — is the mark of a champion. World Cups are rarely won by overwhelming every opponent; they are won by grinding through nights exactly like this. Barring the odd anomaly — Brazil in 1970, France in 2018 — the trophy goes to the team that learns to win ugly. On that measure, Argentina passed a test they didn't know they were sitting.</p>
+  </div>
+
+  <div class="weak">
+    <div class="t">⚠️ The Real Weakness — The Lulls, and a Contingency Plan</div>
+    <p style="margin:8px 0 0">But the concern is just as real, and it must be addressed. <strong>The way Argentina lost intensity and dropped their pace, action and coordination for long passages — especially after scoring — is a genuine flaw.</strong> It was as if they zoned out, and a side defensively immaculate for three-and-a-half games suddenly folded, forgetting its own possession football entirely. Most troubling was that, for the first time in years, <strong>Scaloni himself looked short of answers</strong> — caught unaware by the shift in momentum and reaching for the same predictable changes rather than a fix. He needs a contingency plan now: a way to arrest these lulls and, crucially, to <strong>use his squad depth more decisively — finding roles for the likes of Lo Celso, Nico Paz and even Álvarez to inject control and penetration</strong> when the rhythm drains away. The talent to win the tournament is unquestionable. But if these passages of passivity are not plugged, a better side than Cape Verde will not let Argentina off the hook.</p>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — Egypt Next, and the Questions to Answer</h2>
+
+  <div class="move">
+    <div class="mh"><span class="mtag future">Argentina · The Fix</span><span class="mt">Use the bench to kill the lulls — control &amp; penetration off the seat</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="af" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d98cff"/></marker>
+        <marker id="afg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/><circle cx="360" cy="220" r="52"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · fresh legs re-impose control (Lo Celso/Paz) &amp; penetrate (Álvarez)</text>
+
+      <!-- opponent block -->
+      <g><circle cx="300" cy="110" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="105" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="110" r="10" fill="#888" stroke="#fff" stroke-width="1.1"/><circle cx="330" cy="155" r="9" fill="#666" stroke="#fff" stroke-width="1"/><circle cx="400" cy="155" r="9" fill="#666" stroke="#fff" stroke-width="1"/></g>
+
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Lo Celso / Paz re-impose control -->
+        <g><circle cx="250" cy="300" r="12" fill="#d98cff" stroke="#fff" stroke-width="1.3"/><text x="250" y="304">LoC</text><text x="250" y="320" fill="#fff" font-size="8">keeps the ball</text></g>
+        <g><circle cx="360" cy="285" r="12" fill="#d98cff" stroke="#fff" stroke-width="1.3"/><text x="360" y="289">PAZ</text><text x="360" y="301" fill="#fff" font-size="8">dictates tempo</text></g>
+        <!-- Alvarez runs beyond -->
+        <g><circle cx="450" cy="230" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="450" y="234" fill="#06301d">ALV</text><text x="450" y="250" fill="#bff0d5" font-size="8">runs beyond</text></g>
+        <!-- Messi still the hub -->
+        <g><circle cx="300" cy="230" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="300" y="234">MES</text></g>
+      </g>
+
+      <!-- control passes -->
+      <path d="M262 293 C 290 280, 300 275, 310 262" stroke="#d98cff" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#af)"/>
+      <path d="M348 278 C 330 265, 320 255, 312 244" stroke="#d98cff" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#af)"/>
+      <!-- Messi releases Alvarez beyond -->
+      <path d="M312 224 C 360 210, 410 220, 438 230" stroke="#7cc0ec" stroke-width="3" fill="none" marker-end="url(#af)"/>
+      <path d="M456 216 C 460 175, 445 130, 415 90" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#afg)"/>
+      <text x="530" y="170" font-size="10" fill="#bff0d0">tempo + a runner beyond</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#d98cff;border-top-style:dashed"></i> Fresh legs re-impose control</span>
+      <span><i style="border-top-color:#39d98a"></i> Álvarez penetration</span>
+    </div>
+
+    <p class="expl"><strong>The contingency Scaloni must build.</strong> The antidote to the lulls is not to defend deeper but to <strong>re-impose control through the ball</strong> — and Argentina's bench is loaded with exactly the profiles to do it. When the rhythm drains, introducing a <strong>Lo Celso or a Nico Paz to keep possession ticking and calm the tempo</strong>, alongside <strong>Julián Álvarez to run beyond and stretch a tiring block</strong>, gives Scaloni a proactive lever rather than a reactive one. The Messi–Álvarez axis from Qatar is right there to be rekindled. The lesson from Miami is that Argentina cannot simply "manage" a lead by sitting off; they must keep playing. With the right in-game changes, the passivity becomes a passing choice, not a fatal drift.</p>
+  </div>
+  <p>Argentina advance to a Round-of-16 tie with <strong>Egypt</strong>, who edged Australia on penalties, in Atlanta on Tuesday — a meeting that pits Messi against his great contemporary rival Mohamed Salah, even if Salah's own tournament has been hampered by fitness. On paper it is eminently winnable; Egypt are organised but limited going forward, and Argentina's quality should tell. But this performance is a warning that no tie can be taken lightly, and that Argentina's own lapses are a bigger threat than most opponents. If the champions again take a lead and then disengage, even a functional Egypt side carries enough to punish them.</p>
+  <p>Look further, and the challenges sharpen. Waiting in a potential <strong>quarter-final is Colombia</strong> — who dismissed Ghana with a comfortable, dominant 1-0 and possess, in a rhythmic possession game and genuine attacking talent, exactly the kind of quality that could exploit an Argentine lull far more clinically than Cape Verde managed. This is where the silver lining and the weakness meet: Argentina have proved they can win ugly and summon their class when it matters, which is the champion's gift — but they have also shown a recurring passivity that a Colombia, and beyond them the France or Spain lurking in the other half, would punish without mercy. <strong>The talent says they can retain the World Cup. The lulls say they must fix something first.</strong> Scaloni has a week, and a bench full of solutions, to find the answer. <strong>Vamos Argentina.</strong></p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 32 · WON (AET)</div><div class="g">Argentina 3-2 Cape Verde</div><div class="n">A hard-fought escape against the tournament's greatest underdog story; the champions survive their biggest scare since the 2022 final.</div></div>
+    <div class="nx"><div class="d">Round of 16 · Atlanta, Tue</div><div class="g">Argentina vs Egypt</div><div class="n">Messi vs Salah. Winnable, but a warning heeded — the lulls must not return. Colombia may loom in the quarters.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>A disjointed symphony, and a survival for the ages. Argentina were, by turns, sublime and ridiculous — imperious for a first half graced by a Messi goal of pure genius, then passive and static enough to let the smallest nation ever to reach a World Cup knockout twice haul themselves level, the second time with a goal for eternity. It took a Messi corner, a Romero header and the cruellest of deflections to finally settle it in extra time, with Vozinha's eight-save masterclass ensuring Cape Verde left as heroes. The silver lining is real and reassuring: <strong>this is how champions win — ugly, hard, refusing to fold — and the sense that Argentina can shift gears and score whenever they truly choose to never quite left.</strong> But so is the warning: <strong>the lulls, the zoning out, and a rare night where even Scaloni looked without answers must be fixed.</strong> Egypt await, and beyond them tougher tests still. The champions march on — chastened, alive, and with work to do. <strong>Vamos Argentina.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

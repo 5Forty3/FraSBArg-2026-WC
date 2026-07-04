@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France vs Paraguay — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--par:#d1273a;--par2:#ff7a88;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#d1273a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .f{background:linear-gradient(135deg,#0e1f33,#0d1117)}
+  .vsbar .p{background:linear-gradient(135deg,#2a0c11,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .f .nm{color:var(--fra2)}.vsbar .p .nm{color:var(--par2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.france{border-left:3px solid var(--fra)}
+  .card.paraguay{border-left:3px solid var(--par)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.par{background:rgba(209,39,58,.2);color:var(--par2)}
+  .move .mtag.key{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">Round of 16 · Win or go home</span>
+  </div>
+  <h1>France vs Paraguay</h1>
+  <div class="sub">The tournament favourites meet the giant-killers — the deep block that toppled Germany faces the attack that doesn't miss</div>
+  <div class="meta">🕒 2:30 AM IST, Sun 5 Jul · 📍 Lincoln Financial Field, Philadelphia (5pm ET / 21:00 GMT) · 🌡️ ~39°C heat</div>
+
+  <div class="vsbar">
+    <div class="side f"><div class="nm">🇫🇷 France</div><div class="fm">4-2-3-1 · Deschamps · favourites · 4/4 wins, 13 goals</div></div>
+    <div class="mid">VS</div>
+    <div class="side p"><div class="nm">Paraguay 🇵🇾</div><div class="fm">4-4-1-1 · Alfaro · Germany-slayers · the deep block</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — the attack that doesn't miss vs the block that toppled Germany</div>
+    <p style="margin:8px 0 0">This tie can be reduced to a single sentence. <strong>Paraguay pulled off the shock of the tournament, dumping four-time winners Germany out on penalties</strong> — and they did it the only way they can: defending deep, riding their luck, and taking their one moment while Germany created chance after chance and could not finish. Now they meet <strong>a France side that is better than Germany in the exact area that decides these games — putting chances away.</strong> Les Bleus have been the outstanding team of the World Cup, winning all four games and scoring 13 goals, most recently dismantling Sweden 3-0. Paraguay will sit in, frustrate, protect their shootout hero Orlando Gill, and pray to nick a goal on the counter or a set piece. The two nations have history — in the 1998 Round of 16, France needed a 114th-minute golden goal to break Paraguay down. But this France, ruthless where Germany was wasteful, are heavy favourites. A brutal Philadelphia heat of nearly 39°C is Paraguay's unlikeliest ally.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">France carry two midfield question marks but otherwise a settled, fearsome side; Paraguay are near full-strength with one defensive doubt. Exact XIs are predicted (not officially confirmed).</p>
+
+  <div class="card france">
+    <h3 style="margin-top:0">🇫🇷 France — the same fearsome machine (expected XI)</h3>
+    <ul>
+      <li><strong>Tchouaméni a doubt (confirmed)</strong> — a thigh issue that flared in the group stage puts the key holding midfielder in question; <strong>Manu Koné is primed to deputise</strong> in the double pivot alongside Rabiot if he can't go.</li>
+      <li><strong>Thuram out (confirmed)</strong> — a lingering calf problem rules him out entirely, but France's attacking riches barely register the loss.</li>
+      <li><strong>Saliba expected to start</strong> — Deschamps may be tempted to rest him (ongoing back issue), but you don't gamble in the knockouts; the elite Saliba-Upamecano pairing should continue.</li>
+      <li><strong>The front four unchanged</strong> — the Sweden-conquering quartet of Dembélé, Olise, Barcola and Mbappé starts again, with Doué pushing Barcola for the left-sided berth against a deep block.</li>
+      <li><strong>Mbappé chasing history:</strong> 18 World Cup goals, one behind Messi's all-time record of 19, and already the most knockout-stage goals ever (10). Olise has 5 assists but is still hunting his first goal of the tournament.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Maignan; Koundé, Upamecano, Saliba, Digne; Tchouaméni (or Koné), Rabiot; Dembélé, Olise, Barcola; Mbappé. (Not confirmed.)</p>
+  </div>
+
+  <div class="card paraguay">
+    <h3 style="margin-top:0">🇵🇾 Paraguay — the fearless, disciplined giant-killers</h3>
+    <ul>
+      <li><strong>Orlando Gill is the story</strong> — the shootout hero who buried Germany's hopes will need to produce another monumental performance. If Paraguay are to survive, Gill likely has to stand on his head again.</li>
+      <li><strong>Alderete a doubt</strong> — the Sunderland centre-back is yet to fully recover from a knee injury and may miss out, a blow to the deep block; Velázquez is the likely replacement.</li>
+      <li><strong>The plan is the block:</strong> a compact, disciplined low block (a back four becoming a back five out of possession), protecting Gill and looking to spring Julio Enciso — scorer against Germany, Paraguay's first-ever knockout goal — on the counter.</li>
+      <li><strong>Set pieces the other hope:</strong> with Enciso, Diego Gómez and Almirón, Paraguay carry a genuine dead-ball threat — one of the few ways they can realistically breach France.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-4-1-1): Gill; Cáceres, G. Gómez, Canale, Alonso; Cubas, Galarza, D. Gómez; Almirón, Enciso; Ávalos. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Breaking the Block vs Nicking the Moment</h2>
+  <p>The whole tie is a study in contrasts. France are most lethal when a game opens up and Mbappé can run into space — but Paraguay have no intention of opening anything up. So France's challenge shifts from their comfort zone (transition) to the harder art of <strong>breaking down a deep, compact block that has made frustration its craft.</strong> This is precisely where Germany came unstuck: they dominated the ball (76% possession, 21 shots) but managed only six on target and could not finish. France's advantage is stark and simple — <strong>they possess the finishers Germany lacked.</strong> Paraguay's entire game plan is to endure, stay compact, protect Gill, and take the one half-chance the counter or a set piece might offer. Whoever wins the battle between France's patience and Paraguay's discipline wins the tie.</p>
+
+  <h2><span class="ic">🔑</span> France's Key — Mbappé & Olise unpick the deep block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Attack</span><span class="mt">Olise's vision releases Mbappé against a compressed defence</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="aFg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise threads Mbappé through a compressed Paraguay block</text>
+
+      <!-- Paraguay deep block, compact -->
+      <g><circle cx="290" cy="95" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="345" cy="90" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="400" cy="90" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="455" cy="95" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="320" cy="140" r="9" fill="#9c1c2b" stroke="#fff" stroke-width="1"/><circle cx="410" cy="140" r="9" fill="#9c1c2b" stroke="#fff" stroke-width="1"/><text x="372" y="120" text-anchor="middle" font-size="9" fill="#ffb3bb">deep, compact — Germany couldn't break it</text></g>
+      <g><circle cx="360" cy="42" r="11" fill="#d1273a" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">GILL</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Olise -->
+        <g><circle cx="360" cy="255" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="360" y="259">OLI</text><text x="360" y="275" fill="#bcd9f6" font-size="9">impossible angle</text></g>
+        <!-- Mbappe run -->
+        <g><circle cx="520" cy="200" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="520" y="204">MBA</text><text x="520" y="220" fill="#bcd9f6" font-size="9">runs the channel</text></g>
+        <!-- Dembele occupying -->
+        <g><circle cx="200" cy="200" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="200" y="204">DEM</text></g>
+      </g>
+
+      <!-- threaded pass -->
+      <path d="M373 247 C 430 225, 480 210, 508 204" stroke="#7cb4e8" stroke-width="3.5" fill="none" marker-end="url(#aF)"/>
+      <!-- Mbappe run + finish -->
+      <path d="M524 186 C 530 150, 510 105, 470 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aFg)"/>
+      <text x="560" y="150" font-size="10" fill="#bff0d0">in behind &amp; buried</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8"></i> Olise's threaded pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The reason this won't be a repeat of Germany's failure.</strong> Paraguay's block is superb, but France carry a weapon Germany lacked: <strong>the combination of Michael Olise's vision and Mbappé's finishing.</strong> Olise can pick out Mbappé or Dembélé inside the box "from seemingly impossible angles," and where Germany's forwards squandered chance after chance, <strong>France's front men are ruthless.</strong> The mechanism against a deep block is patience then precision: move Paraguay side to side, wait for the half-yard, and let Olise release Mbappé into the channel behind — the one run no compact defence can fully legislate for. If Paraguay drop off and invite pressure, Mbappé <em>will</em> find the space eventually, and unlike Germany's strikers, he tends to score. How long Gill and his block can keep him quiet will decide how comfortable this gets — but the dam is likely to break.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Paraguay's Plan — The Germany Blueprint, protect Gill, spring Enciso</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag par">Paraguay · The Upset Plan</span><span class="mt">Endure, absorb, and strike once through Enciso or a set piece</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aP" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff7a88"/></marker>
+        <marker id="aPg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Paraguay attacking ↑ · win it deep, spring Enciso into the space France's high line leaves</text>
+
+      <!-- France high line -->
+      <g font-size="9" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="300" cy="140" r="10" fill="#3b82d6" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="420" cy="140" r="10" fill="#3b82d6" stroke="#fff" stroke-width="1.1"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#bcd9f6">France push high &amp; commit</text>
+      </g>
+
+      <!-- Paraguay break -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="300" r="12" fill="#d1273a" stroke="#fff" stroke-width="1.3"/><text x="300" y="304">D.G</text><text x="300" y="320" fill="#ffb3bb" font-size="8">wins &amp; releases</text></g>
+        <g><circle cx="440" cy="230" r="13" fill="#d1273a" stroke="#fff" stroke-width="1.5"/><text x="440" y="234">ENC</text><text x="440" y="250" fill="#ffb3bb" font-size="8">Enciso breaks</text></g>
+        <g><circle cx="230" cy="235" r="11" fill="#d1273a" stroke="#fff" stroke-width="1.2"/><text x="230" y="239">ALM</text></g>
+      </g>
+
+      <path d="M312 290 C 350 265, 400 245, 428 236" stroke="#ff7a88" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aP)"/>
+      <path d="M448 216 C 455 175, 448 130, 428 80" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aPg)"/>
+      <text x="520" y="160" font-size="10" fill="#bff0d0">the one chance — take it</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff7a88;border-top-style:dashed"></i> Transition release</span>
+      <span><i style="border-top-color:#39d98a"></i> Enciso's break</span>
+    </div>
+
+    <p class="expl"><strong>The only script that has ever worked for Paraguay — and it nearly always needs a hero in goal.</strong> Alfaro's side will reprise the Germany plan to the letter: <strong>sit in a compact, disciplined block, endure the pressure, protect Orlando Gill, and hope to nick a single goal on the counter through Julio Enciso or from a set piece.</strong> The dream scenario is an early goal — exactly what made the Germany tie so uncomfortable — to force France to chase and open up further. Enciso, who scored Paraguay's first-ever World Cup knockout goal against Germany, is the outlet; Diego Gómez and Almirón the support. But the margin is brutal: France finish the chances Germany fluffed, and holding this attack scoreless requires near-perfection for 90+ minutes plus, in all likelihood, another Gill masterclass. Add the sapping 39°C heat — which could just tilt a late, tiring game Paraguay's way — and the underdogs have a puncher's hope. A tall order, but not an impossible one.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> The Duel That Decides It — Gill vs the French finishers</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Key Battle</span><span class="mt">The shootout hero against the most ruthless attack in the tournament</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aD" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · a barrage of shots; Gill must repel wave after wave</text>
+
+      <!-- Gill in goal -->
+      <g><circle cx="360" cy="42" r="14" fill="#d1273a" stroke="#fff" stroke-width="1.6"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">GILL</text><text x="360" y="72" font-size="9" fill="#ffb3bb" text-anchor="middle">the shootout hero</text></g>
+
+      <!-- French shooters -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="230" cy="230" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="230" y="234">MBA</text></g>
+        <g><circle cx="490" cy="230" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="490" y="234">DEM</text></g>
+        <g><circle cx="360" cy="270" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="360" y="274">OLI</text></g>
+      </g>
+
+      <!-- three shots at goal -->
+      <path d="M240 218 C 290 160, 330 100, 350 58" stroke="#7cb4e8" stroke-width="3" fill="none" marker-end="url(#aD)"/>
+      <path d="M480 218 C 430 160, 390 100, 370 58" stroke="#7cb4e8" stroke-width="3" fill="none" marker-end="url(#aD)"/>
+      <path d="M360 256 C 360 190, 360 120, 360 62" stroke="#7cb4e8" stroke-width="3" fill="none" marker-end="url(#aD)"/>
+      <text x="540" y="180" font-size="10" fill="#bcd9f6">wave after wave — can he hold?</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8"></i> French shots rain in</span>
+    </div>
+
+    <p class="expl"><strong>The matchup that will decide how close this stays.</strong> If Paraguay's block holds its shape, the tie funnels down to one man: <strong>Orlando Gill, the goalkeeper who saved two penalties to eliminate Germany.</strong> He will be under near-constant siege from the most ruthless attack in the competition — Mbappé, Dembélé, Olise and Barcola raining shots from every angle. To keep Paraguay alive long enough to snatch their moment, <strong>Gill likely has to produce another performance for the ages.</strong> It is not impossible — he has done it once already, and goalkeepers win World Cup knockout ties — but doing it against France's volume and quality of chance, in stifling heat, is a far taller order than even the Germany night. If Gill is beaten early, the floodgates open. If he stands firm, Paraguay's dream stays alive into the closing stages, where anything can happen.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Paraguay's entire model — frustrate, endure, drag the favourite deep — makes a long, tight night their explicit aim, and in the Philadelphia furnace it is a live possibility. Here's how the latter stages shape up.</p>
+    <p style="margin:8px 0 0"><strong>Extra time slightly favours France, but with a caveat.</strong> France's superior squad depth — a bench with Doué, Barcola, Cherki, Mateta and more — means fresh, game-breaking quality across 120 minutes, and the longer a packed block defends, the more likely it cracks. But the <strong>39°C heat is the wildcard:</strong> it saps everyone, and a French side that has done most of the running could tire, while Paraguay are built for exactly this kind of grinding, low-energy attrition. The 1998 precedent — France needing a 114th-minute golden goal to pass Paraguay — is a warning that Les Bleus can be dragged the distance. Still, quality should tell before the lottery.</p>
+    <p style="margin:8px 0 0"><strong>And penalties would be Paraguay's dream — and France's nightmare.</strong> This is the great equaliser and Paraguay's clearest path to another miracle: <strong>Orlando Gill is a proven shootout hero, fresh off saving two against Germany</strong>, and Paraguay's takers (Enciso, Diego Gómez, Almirón) held their nerve on the biggest stage. France, by contrast, carry the scars of losing the 2022 final to Argentina on penalties. If Paraguay can survive to a shootout, the psychological edge and their goalkeeper make them genuinely dangerous — the one scenario where the gulf in quality is neutralised. France's imperative is emphatic: <strong>win this in normal time, and do not let Gill drag you into a coin-flip.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Respect Paraguay — their block is superb, their nerve proven, and Gill is a genuine matchwinner who has already authored one miracle. The heat, the deep defending and the threat of a shootout mean France cannot be complacent, and an early Paraguayan goal or a Gill masterclass could make for a long, nervy evening. But the gulf is decisive, and it lives in the one area that matters most: France finish the chances Germany squandered. Expect Paraguay to frustrate for a while, France to probe patiently, and then Mbappé and Olise's quality to prise the block open — after which the floodgates should open. The favourites advance, most likely in some comfort once the first goal lands, though Paraguay will make them earn it. <strong>Allez les Bleus.</strong></p>
+    <div class="scoreline">🇫🇷 France 3 — 0 Paraguay</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a patient French win that opens up after the breakthrough — Mbappé and Dembélé among the goals, Olise finally on the scoresheet. A tight, low-scoring game or extra time is Paraguay's best hope, with a shootout their dream scenario.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · Philadelphia</div><div class="g">Winner advances</div><div class="n">To the quarter-final in Boston on July 9 to face Morocco — who dispatched Canada 3-0.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">Morocco await, and Spain looms</div><div class="n">A likely QF with a dangerous Morocco, then a potential semi-final collision with Spain on France's side of the draw.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -63,6 +63,14 @@
   /* ===== BRACKET WRAP ===== */
   .bracket-wrap{max-width:1180px;margin:0 auto;padding:18px 0 30px}
   .hint{text-align:center;font-size:11px;color:var(--dim);margin:0 0 8px;letter-spacing:.5px}
+  .halves-wrap{max-width:960px;margin:0 auto;padding:0 16px}
+  .halves-intro{margin-bottom:16px}
+  .halves{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){ .halves{grid-template-columns:1fr;gap:10px} }
+  .half-col{display:flex;flex-direction:column;gap:12px}
+  .half-hd{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--gold);margin:2px 0 2px}
+  .half-hd .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),transparent)}
 
   /* MATCH NODE rows */
   .disc-row{display:flex;align-items:center;gap:10px;padding:5px 6px;border-radius:12px}
@@ -172,6 +180,8 @@
   .abtns{display:flex;gap:10px;margin-top:18px}
   .styletag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.3px;color:var(--gold-2);
     background:rgba(231,185,66,.08);border:1px solid #3a2f12;border-radius:8px;padding:7px 11px;margin-bottom:13px}
+  .feedsline{font-size:11.5px;color:var(--muted);background:rgba(90,160,230,.08);border:1px solid #24384d;
+    border-radius:8px;padding:8px 11px;margin-bottom:12px;font-weight:600}
   .starblk{background:linear-gradient(180deg,#0c1320,#0a1017);border:1px solid var(--line-2);border-radius:14px;
     padding:13px 13px 14px;margin:6px 0 12px;box-shadow:inset 0 0 40px rgba(0,0,0,.35)}
   .starblk .t{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
@@ -212,9 +222,9 @@
 <div class="ctrl">
   <div class="ctrl-in">
     <div class="seg" role="tablist">
-      <button role="tab" aria-selected="true" data-view="bracket">Bracket<span class="sm">Full tree</span></button>
-      <button role="tab" aria-selected="false" data-view="r32">Round of 32<span class="sm">16 ties</span></button>
-      <button role="tab" aria-selected="false" data-view="r16">Round of 16<span class="sm">Predicted</span></button>
+      <button role="tab" aria-selected="true" data-view="r16">Round of 16<span class="sm">8 ties</span></button>
+      <button role="tab" aria-selected="false" data-view="qf">Quarter Final<span class="sm">Projected</span></button>
+      <button role="tab" aria-selected="false" data-view="bracket">Bracket<span class="sm">Full tree</span></button>
       <a class="segbtn" href="wc2026-calendar.html">Group Stage<span class="sm">12 Games</span></a>
     </div>
   </div>
@@ -372,31 +382,94 @@ const R32 = [
           (R5 Argentina ∧ R6 Egypt); (R7 Switzerland ∧ R8 Colombia)
    Spain (LEFT) & Argentina (RIGHT) can only meet in the FINAL. */
 const R16 = [
- {id:'16L1', feeds:"Winners · Paraguay / France side", a:{iso:'py',n:"Paraguay"}, b:{iso:'fr',n:"France"}, win:'b', ours:true,
+ {id:'16L1', v:"Philadelphia", ist:"2:30 AM IST · Sun 5 Jul", ko:"2026-07-04T21:00:00Z", a:{iso:'py',n:"Paraguay"}, b:{iso:'fr',n:"France"}, win:'b', ours:true, key:"France",
+   style:"4-2-3-1 · Deschamps · vertical transition kings",
    phil:"France's elite, transition-lethal attack vs Paraguay's deep, combative low block and giant-killing spirit — fresh off dumping out Germany. Star quality against organised defiance.",
-   pred:"Paraguay are the story of the round after stunning Germany, and their resilience plus a red-hot goalkeeper make them no easy out. But France's attacking ceiling — Mbappé, Dembélé, Olise — is on another level; the holders' beaten finalists should have far too much. Les Bleus advance, but Paraguay won't lie down."},
- {id:'16L2', feeds:"Winners · Canada / Morocco side", a:{iso:'ca',n:"Canada"}, b:{iso:'ma',n:"Morocco"}, win:'b', ours:false,
+   deep:"School of thought: pragmatic, tournament-hardened French football — sit a fraction deeper, win the ball, and unleash devastating vertical transitions through the world's fastest front line. Against a Paraguay side that will park two banks and defend for their lives (as they did to eliminate Germany on penalties), France's challenge shifts from their comfort zone (transition) to breaking a low block — where Olise's creativity and Mbappé's movement between the lines become the keys.",
+   team:"Key men: Mbappé (level with Messi for the Golden Boot on 6), Dembélé (the in-form destroyer, Sweden brace), Olise (the tournament's creative hub, unlucky not to score vs Sweden). Saliba's return has plugged the one defensive question. Watch: patience against Paraguay's Gill, the shootout hero in goal.",
+   form:"Imperious. Perfect Group I, then a statement 3-0 dismantling of Sweden (Mbappé 2, Barcola) with an xG of 3.17. The attack is humming and the defence, with Saliba back, looks watertight. Peaking at the right time.",
+   star:"mbappe",
+   pred:"Paraguay are the story of the tournament after stunning Germany, and their resilience plus a red-hot goalkeeper make them no easy out. But France's attacking ceiling — Mbappé, Dembélé, Olise — is on another level; the holders should have far too much. Les Bleus advance, but Paraguay won't lie down."},
+ {id:'16L2', v:"Houston", ist:"10:30 PM IST · Sat 4 Jul", ko:"2026-07-04T17:00:00Z", a:{iso:'ca',n:"Canada"}, b:{iso:'ma',n:"Morocco"}, win:'b', ours:false,
    phil:"Morocco's elite low-block-and-counter — the 2022 semi-finalists who just outplayed the Netherlands — vs Canada's athletic, transition-heavy home side. Organisation and experience against momentum.",
+   form:"Morocco edged the Netherlands on penalties after a gritty 1-1; Canada saw off South Africa 1-0 with a late Eustáquio strike. Morocco look the more battle-hardened knockout side.",
    pred:"Canada have home advantage and belief, but Morocco look the form team after seeing off the Dutch, and their knockout pedigree and defensive steel are a class above. Morocco edge it and continue their run."},
- {id:'16L3', feeds:"Winners · Portugal / Spain side", a:{iso:'pt',n:"Portugal"}, b:{iso:'es',n:"Spain"}, win:'b', ours:true, marquee:true,
+ {id:'16L3', v:"Dallas", ist:"12:30 AM IST · Tue 7 Jul", ko:"2026-07-06T19:00:00Z", a:{iso:'pt',n:"Portugal"}, b:{iso:'es',n:"Spain"}, win:'b', ours:true, key:"Spain", marquee:true,
+   style:"4-3-3 · De la Fuente · juego de posición",
    phil:"An Iberian derby and a tactical feast — Portugal's star-laden directness vs Spain's juego de posición. Pride, proximity and pedigree on the line.",
-   form:"Form clash: Spain stuttering (a scrappy, error-won 1-0 over Uruguay) but with more cohesion; Portugal blunt up front (0-0 vs Colombia). Whoever rediscovers their finishing wins.",
-   pred:"On talent and control Spain should edge a tight derby — but if a fit Yamal doesn't fire, Portugal's individual quality (and Ronaldo) can punish them. A coin-flip leaning faintly to Spain."},
- {id:'16L4', feeds:"Winners · USA / Belgium side", a:{iso:'us',n:"USA"}, b:{iso:'be',n:"Belgium"}, win:'b', ours:false,
+   deep:"School of thought: positional play (juego de posición) — dominate the ball, control space through structure, overload the half-spaces. Spain finally came alive against Austria: the settled shape (Cucurella + Baena left, Porro + Yamal right, Oyarzabal + Olmo centre, Pedri behind), the layered waves, the tiki-taka reborn. Against Portugal they meet a side that will cede possession and threaten in transition through Ronaldo and pace — the classic possession-vs-directness chess match.",
+   team:"Key men: Lamine Yamal (climbing from 80% fitness toward his devastating best), Oyarzabal (the false-9 solution, 4 goals), Pedri (growing back into form), Cucurella (two assists vs Austria). The one side, after Mexico, to keep a clean sheet in every game. Bench depth to scare anyone.",
+   form:"Spain roared to life with a commanding 3-0 over Austria — full width, relentless waves, a Porro team goal for the ages — after a stuttering group stage. Four clean sheets from four. A genuine contender has emerged.",
+   star:"yamal",
+   pred:"On talent and control Spain should edge a tight derby — but if a fit Yamal doesn't fire, Portugal's individual quality (and a Ronaldo who finally scored a knockout goal) can punish them. A coin-flip leaning to a resurgent Spain."},
+ {id:'16L4', v:"Seattle", ist:"5:30 AM IST · Tue 7 Jul", ko:"2026-07-07T00:00:00Z", a:{iso:'us',n:"USA"}, b:{iso:'be',n:"Belgium"}, win:'b', ours:false,
    phil:"USA's high-energy press and home support vs Belgium's golden-generation craft and experience. Youthful intensity against streetwise quality.",
-   pred:"The home crowd lifts the USA, but Belgium's individual class — De Bruyne pulling the strings — proves decisive in a competitive tie."},
- {id:'16R1', feeds:"Winners · Brazil / Norway side", a:{iso:'br',n:"Brazil"}, b:{iso:'no',n:"Norway"}, win:'a', ours:true,
+   form:"Belgium survived an epic 3-2 AET scare against Senegal (a controversial late Tielemans penalty); the USA ground out a gritty 2-0 over Bosnia despite going down to ten men. Belgium wobbled; the USA showed character.",
+   pred:"The home crowd lifts the USA — and Balogun's suspension is a blow — but Belgium's individual class, De Bruyne pulling the strings, should prove decisive in a competitive tie."},
+ {id:'16R1', v:"New York / NJ", ist:"1:30 AM IST · Mon 6 Jul", ko:"2026-07-05T20:00:00Z", a:{iso:'br',n:"Brazil"}, b:{iso:'no',n:"Norway"}, win:'a', ours:true, key:"Brazil",
+   style:"4-3-3 · Ancelotti · fluid, transition-lethal samba pragmatism",
    phil:"Brazil's fluid, pace-laden front line vs Norway's Haaland-led directness. The Seleção's collective quality against one of the world's most lethal strikers in transition.",
-   pred:"Haaland makes Norway dangerous on the break, but Brazil's depth, pace and front-line brilliance (Vinícius, Cunha, Bruno) should have too much. The Seleção advance — though Haaland is a constant threat."},
- {id:'16R2', feeds:"Winners · Mexico / England side", a:{iso:'mx',n:"Mexico"}, b:{iso:'gb',n:"England"}, win:'b', ours:false,
+   deep:"School of thought: Ancelotti's pragmatic evolution of jogo bonito — fluid, interchanging, ruthless in transition. But the Japan game exposed the flaw: Brazil struggled badly against a disciplined low block for an hour before the second-half reshape (width, crossing) rescued them. Against Norway they face the opposite threat — not a block, but a lethal counter-striker in Haaland. The rest-defence discipline (Casemiro's screen) becomes everything.",
+   team:"Key men: Vinícius Jr (4 group goals, unplayable on his day), Casemiro (error then redemption vs Japan — and a fitness doubt), Bruno Guimarães (the creator), Martinelli (the super-sub matchwinner). The transition defence vs Haaland is the tie's defining question.",
+   form:"Brazil came from behind to beat Japan 2-1 with a stoppage-time Martinelli winner — a character win, but the first-half struggles against a low block and the transition-defence lapse for Japan's goal are real worries against Haaland.",
+   star:"vini",
+   pred:"Haaland makes Norway dangerous on the break, but Brazil's depth, pace and front-line brilliance should have too much — provided their transition defence, which wobbled against Japan, doesn't gift Haaland a chance. The Seleção advance, but it's a live test."},
+ {id:'16R2', v:"Mexico City", ist:"5:30 AM IST · Mon 6 Jul", ko:"2026-07-06T00:00:00Z", a:{iso:'mx',n:"Mexico"}, b:{iso:'gb',n:"England"}, win:'b', ours:false,
    phil:"Host nation fervour vs England's controlled possession and set-piece power. The Azteca's altitude and atmosphere against the Three Lions' depth and quality.",
-   pred:"Mexico's home crowd makes this a real test, but England's superior squad depth and big-match quality edge a tense, atmospheric tie."},
- {id:'16R3', feeds:"Winners · Argentina / Egypt side", a:{iso:'ar',n:"Argentina"}, b:{iso:'eg',n:"Egypt"}, win:'a', ours:true,
-   phil:"Argentina's Messi-led 'La Tercera' vs Egypt's Salah-anchored counters. The champions' collective control vs one man's match-winning genius.",
-   pred:"Salah makes Egypt dangerous, but Argentina's quality and tournament savvy see them through with room to spare."},
- {id:'16R4', feeds:"Winners · Switzerland / Colombia side", a:{iso:'ch',n:"Switzerland"}, b:{iso:'co',n:"Colombia"}, win:'b', ours:false,
+   form:"Mexico cruised past Ecuador 2-0, a fourth straight win, riding the Azteca wave; England survived a huge scare against DR Congo (2-1, both Kane), rescued by their keeper's opposite number failing where Mpasi nearly starred. England laboured.",
+   pred:"Mexico's home crowd and altitude make this a real test, but England's superior squad depth and big-match quality — and Kane's ruthlessness — edge a tense, atmospheric tie."},
+ {id:'16R3', v:"Atlanta", ist:"9:30 PM IST · Tue 7 Jul", ko:"2026-07-07T16:00:00Z", a:{iso:'ar',n:"Argentina"}, b:{iso:'eg',n:"Egypt"}, win:'a', ours:true, key:"Argentina", marquee:true,
+   style:"4-4-2 / 4-3-3 · Scaloni · 'La Tercera' (Bilardismo + Menottismo)",
+   phil:"Argentina's Messi-led 'La Tercera' vs Egypt's Salah-anchored counters. The champions' collective control vs one man's match-winning genius — a Messi vs Salah headline.",
+   deep:"School of thought: 'La Tercera' — Scaloni's fusion of Bilardista steel and Menottista flair, orbiting Messi. But the Cape Verde scare exposed a real flaw: Argentina's alarming lulls, dropping intensity and coordination after taking the lead, nearly costing them everything in a 3-2 AET escape. The fix — using the bench (Lo Celso, Nico Paz, Álvarez) to re-impose control — is the tactical question. Against Egypt's low block and Salah's counters, the lulls cannot return.",
+   team:"Key men: Lionel Messi (7 goals, all-time WC top scorer at 20, scored in 8 straight WC games — and in his element), Lisandro Martínez (goal and assist vs Cape Verde), Julián Álvarez (the penetration option), E. Martínez (the shootout master). The concern: the passivity that let Cape Verde in.",
+   form:"Argentina survived an almighty scare to beat Cape Verde 3-2 after extra time — sublime in the first half, alarmingly passive in the second. A hard, scrappy win (how champions win) but the lulls are a warning. Messi remains imperious.",
+   star:"messi",
+   pred:"Salah makes Egypt dangerous, but a half-fit Salah and a limited Egypt attack should be within Argentina's control — provided the champions don't switch off as they did against Cape Verde. Quality and tournament savvy see them through, but the intensity must hold."},
+ {id:'16R4', v:"Vancouver", ist:"1:30 AM IST · Wed 8 Jul", ko:"2026-07-07T20:00:00Z", a:{iso:'ch',n:"Switzerland"}, b:{iso:'co',n:"Colombia"}, win:'b', ours:false,
    phil:"Swiss organisation vs Colombian rhythm and James' craft. Discipline against creativity.",
-   pred:"Colombia's greater attacking quality unlocks the Swiss block in a tight, well-matched tie."},
+   form:"Switzerland ground out a clinical 2-0 over Algeria (a third straight win, a WC first for them); Colombia were dominant in a 1-0 defeat of Ghana (2.06 xG). Colombia look the more threatening going forward.",
+   pred:"Colombia's greater attacking quality and rhythm should unlock the disciplined Swiss block in a tight, well-matched tie — and set up a potential quarter-final with Argentina."},
+];
+
+/* ---------- Quarter-final projections (predicted; fills as R16 completes) ---------- */
+const QF = [
+ {id:'QF1', v:"Foxborough", ist:"6:30 AM IST · Fri 10 Jul", ko:"2026-07-10T01:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:true, key:"France", half:"upper",
+   feeds:"Winner 16L1 (Paraguay/France) vs Winner 16L2 (Canada/Morocco)",
+   style:"4-2-3-1 · Deschamps · vertical transition kings",
+   phil:"France's devastating transition attack vs Morocco's elite, disciplined low-block-and-counter — the 2022 semi-finalists. The tournament's most lethal front line against its most stubborn defence. A genuine test of France's ability to break a world-class block.",
+   deep:"School of thought: this is the fascinating clash of France's vertical, transition-based football against a Moroccan side built to deny exactly that — dropping deep, compact, and springing Hakimi and the counter. France's key becomes patience and Olise's guile to unpick a block that won't gift them the space they feast on.",
+   team:"Key men: Mbappé, Dembélé, Olise — the front three that dismantled Sweden. Saliba's return steadies the back. Morocco's threat: Hakimi's overlaps and a counter that punished the Netherlands.",
+   form:"Projected: France to come through Paraguay, Morocco past Canada. If so, France arrive as the tournament's form side; Morocco as its most dangerous underdog.",
+   star:"mbappe",
+   pred:"A projected heavyweight quarter-final. France's attacking ceiling should edge even a superbly organised Morocco — but the Atlas Lions are the one side capable of frustrating Les Bleus into a nervy night. France favoured, with respect."},
+ {id:'QF2', v:"Los Angeles", ist:"5:30 AM IST · Sat 11 Jul", ko:"2026-07-11T00:00:00Z", a:{iso:'es',n:"Spain"}, b:{iso:'be',n:"Belgium"}, win:'a', ours:true, key:"Spain", half:"upper",
+   feeds:"Winner 16L3 (Portugal/Spain) vs Winner 16L4 (USA/Belgium)",
+   style:"4-3-3 · De la Fuente · juego de posición",
+   phil:"Spain's positional dominance and relentless waves vs Belgium's golden-generation craft and De Bruyne's guile. Control and youth against experience and individual quality.",
+   deep:"School of thought: Spain's juego de posición, resurgent after the Austria awakening, against a Belgium side that relies on moments of De Bruyne magic and Lukaku's presence. Spain's midfield control (Pedri, Rodri) should dominate territory; the question is whether Belgium's quality can punish on the break.",
+   team:"Key men: Yamal, Oyarzabal, Pedri, Cucurella — the settled, flowing Spain. Belgium's threat: De Bruyne's passing and set-piece delivery, Lukaku's hold-up.",
+   form:"Projected: Spain to win the Iberian derby with Portugal, Belgium past the USA. A resurgent Spain would arrive with real momentum; an ageing Belgium having laboured.",
+   star:"yamal",
+   pred:"A projected last-eight tie Spain should control. Their possession dominance and defensive solidity edge a Belgium side over-reliant on individual moments. Spain favoured to reach the semis."},
+ {id:'QF3', v:"Miami", ist:"7:30 AM IST · Sat 11 Jul", ko:"2026-07-11T02:00:00Z", a:{iso:'br',n:"Brazil"}, b:{iso:'gb',n:"England"}, win:'a', ours:true, key:"Brazil", half:"lower",
+   feeds:"Winner 16R1 (Brazil/Norway) vs Winner 16R2 (Mexico/England)",
+   style:"4-3-3 · Ancelotti · fluid, transition-lethal samba pragmatism",
+   phil:"Brazil's flair and pace vs England's structure, depth and set-piece power. Samba improvisation against Three Lions pragmatism — a classic of contrasting football cultures.",
+   deep:"School of thought: Ancelotti's Brazil, growing into the tournament, against a Tuchel England built on control and set pieces. Brazil's front-line brilliance (Vinícius) against England's organised block and Kane's ruthlessness. Brazil's transition defence — shaky vs Japan — would again be tested by England's directness.",
+   team:"Key men: Vinícius, Bruno Guimarães, Martinelli for Brazil; Kane, Bellingham, Saka for England. A meeting of two deep, talented squads.",
+   form:"Projected: Brazil past Norway, England past Mexico. Both have laboured and survived scares in the R16 projections — neither is yet at its peak.",
+   star:"vini",
+   pred:"A projected coin-flip of a quarter-final. Brazil's individual quality in the final third gives them the edge over a solid England, but this is the kind of tie that could swing on a single moment or a set piece. Brazil favoured, narrowly."},
+ {id:'QF4', v:"Kansas City", ist:"11:30 PM IST · Sat 11 Jul", ko:"2026-07-11T18:00:00Z", a:{iso:'ar',n:"Argentina"}, b:{iso:'co',n:"Colombia"}, win:'a', ours:true, key:"Argentina", half:"lower",
+   feeds:"Winner 16R3 (Argentina/Egypt) vs Winner 16R4 (Switzerland/Colombia)",
+   style:"4-4-2 / 4-3-3 · Scaloni · 'La Tercera'",
+   phil:"Argentina's Messi-orchestrated control vs Colombia's rhythmic possession and attacking talent. A South American heavyweight clash — and the kind of quality opponent that could ruthlessly punish Argentina's lulls.",
+   deep:"School of thought: the great test of whether Argentina have fixed the passivity that Cape Verde exposed. Colombia, unlike Cape Verde, have the rhythmic possession game and attacking quality (James, Díaz) to make the champions pay for any drop in intensity. Scaloni's contingency plan — bench control, the Messi-Álvarez axis — would be under the microscope.",
+   team:"Key men: Messi, Lisandro Martínez, Álvarez, Dibu Martínez for Argentina; James Rodríguez, Luis Díaz for Colombia. A meeting of two proud footballing nations.",
+   form:"Projected: Argentina past Egypt, Colombia past Switzerland. Argentina would arrive as champions but with the Cape Verde warning ringing; Colombia dominant and dangerous.",
+   star:"messi",
+   pred:"A projected blockbuster. Argentina's quality and Messi's genius favour them, but Colombia are precisely the well-organised, technically gifted side that could exploit an Argentine lull. The champions favoured — but this would be their toughest test yet."},
 ];
 
 /* ---------- helpers ---------- */
@@ -413,7 +486,8 @@ function tieCard(m,round){
   const aWin=m.win==='a',bWin=m.win==='b';
   const winName=aWin?m.a.n:m.b.n;
   const done=m.result&&m.result.done;
-  const lbl=done?'✓ Full-time':(m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):(round==='R16'?'Round of 16':'Round of 32')));
+  const roundName = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':'Round of 32');
+  const lbl=done?'✓ Full-time':(m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):roundName));
   const sub=m.v?m.v:(m.feeds||'');
   const timerow = m.ist? `<div class="timerow">🕒 ${m.ist}${m.v?'  ·  📍 '+m.v:''}</div>` : (m.feeds?`<div class="timerow">${m.feeds}</div>`:'');
   // score badges if the match is complete
@@ -424,8 +498,9 @@ function tieCard(m,round){
   const pickOrResult = done
     ? `<span class="scorers">${m.result.scorers}</span><span class="go">REPORT ›</span>`
     : `<span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span>`;
+  const roundLbl = round==='R16'?'R16':(round==='QF'?'QF':'R32');
   return `<div class="tiecard ${m.ours?'ours':''} ${m.marquee?'marquee':''} ${done?'done':''}" data-id="${m.id}" data-round="${round}">
-    <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${m.ist?(done?'R32 · FT':'R32'):sub}</span></div>
+    <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${m.ist?(done?roundLbl+' · FT':roundLbl):sub}</span></div>
     ${rowHTML(m.a,aWin,bWin,scoreA)}
     <div class="vsmini">VS</div>
     ${rowHTML(m.b,bWin,aWin,scoreB)}
@@ -464,22 +539,42 @@ function renderBracket(){
 
   root.innerHTML=`<p class="hint">↔ swipe rounds sideways · tap any tie for tactics</p>`+desk+mob;
 }
-function renderList(which){
-  const data=which==='r32'?R32:R16, round=which==='r32'?'R32':'R16';
-  let html=`<div style="max-width:620px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;gap:12px">`;
-  if(which==='r16'){
-    html+=`<div class="blk form"><div class="t">⚡ Predicted Round of 16</div><p>Assumes our R32 winners advance. The bracket is fixed — <b>Spain (left half) and Argentina (right half) can only meet in the final.</b> The marquee ties: a brutal <b>France–Germany</b> collision and the <b>Portugal–Spain</b> Iberian derby.</p></div>`;
+function renderHalves(which){
+  const isR16 = which==='r16';
+  const data = isR16 ? R16 : QF;
+  const round = isR16 ? 'R16' : 'QF';
+  let upper, lower, title, note;
+  if(isR16){
+    upper = data.filter(m=>m.id.startsWith('16L'));
+    lower = data.filter(m=>m.id.startsWith('16R'));
+    title = 'Round of 16';
+    note = `The last 16. <b>Spain (upper half) and Argentina (lower half) can only meet in the final.</b> Tap any tie for full analysis — our four teams (France, Spain, Brazil, Argentina) carry deep tactical breakdowns, form and signature-move animations.`;
+  } else {
+    upper = data.filter(m=>m.half==='upper');
+    lower = data.filter(m=>m.half==='lower');
+    title = 'Quarter-Finals';
+    note = `Projected quarter-finals, assuming our predicted R16 winners advance. Fully functional cards — tap any tie for the tactical preview. <b>France and Spain (upper half) could collide in a semi-final; Argentina sits in the lower half.</b>`;
   }
-  data.forEach(m=>{ html+=tieCard(m,round); });
-  html+=`</div>`;
-  root.innerHTML=html;
+  const col = (arr,label)=>`<div class="half-col">
+      <div class="half-hd"><span>${label}</span><span class="ln"></span></div>
+      ${arr.map(m=>tieCard(m,round)).join('')}
+    </div>`;
+  root.innerHTML = `<div class="halves-wrap">
+    <div class="blk form halves-intro"><div class="t">⚡ ${title}</div><p>${note}</p></div>
+    <div class="halves">
+      ${col(upper, isR16?'Upper half':'Upper half')}
+      ${col(lower, isR16?'Lower half':'Lower half')}
+    </div>
+  </div>`;
 }
+function renderList(which){ renderHalves(which); }
 
 /* ---------- modal ---------- */
 const scrim=document.getElementById('scrim'),sheet=document.getElementById('sheet'),mbody=document.getElementById('m-body');
 function openSheet(m,round){
   currentMatch=m;
-  document.getElementById('m-tag').textContent=(round==='R16'?'Round of 16':'Round of 32')+(m.marquee?' · 🔥 Marquee':(m.ours?' · ★ '+(m.key||'Our team'):''));
+  const roundTag = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':'Round of 32');
+  document.getElementById('m-tag').textContent=roundTag+(m.marquee?' · 🔥 Marquee':(m.ours?' · ★ '+(m.key||'Our team'):''));
   document.getElementById('m-da').style.backgroundImage=`url('${flagURL(F[m.a.iso])}')`;
   document.getElementById('m-db').style.backgroundImage=`url('${flagURL(F[m.b.iso])}')`;
   document.getElementById('m-na').textContent=m.a.n;
@@ -494,6 +589,7 @@ function openSheet(m,round){
   } else {
     body+=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;
   }
+  if(m.feeds && !m.result) body+=`<div class="feedsline">🔗 ${m.feeds}</div>`;
   if(m.style) body+=`<div class="styletag">▦ ${m.style}</div>`;
   if(m.phil) body+=`<div class="blk phil"><div class="t">⚙️ Footballing Philosophy</div><p>${m.phil}</p></div>`;
   if(m.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 School of Thought &amp; Tactics</div><p>${m.deep}</p></div>`;
@@ -680,7 +776,10 @@ document.getElementById('m-analysis').addEventListener('click',e=>{
 root.addEventListener('click',e=>{
   const card=e.target.closest('.tiecard'); if(!card) return;
   const id=card.dataset.id,round=card.dataset.round;
-  const m=round==='R16'?R16.find(x=>x.id===id):R32.find(x=>x.id===id);
+  let m;
+  if(round==='R16') m=R16.find(x=>x.id===id);
+  else if(round==='QF') m=QF.find(x=>x.id===id);
+  else m=R32.find(x=>x.id===id);
   if(m) openSheet(m,round);
 });
 document.querySelectorAll('.seg button').forEach(b=>{
@@ -688,7 +787,9 @@ document.querySelectorAll('.seg button').forEach(b=>{
     document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-selected','false'));
     b.setAttribute('aria-selected','true');
     const v=b.dataset.view;
-    if(v==='bracket') renderBracket(); else renderList(v);
+    if(v==='bracket') renderBracket();
+    else if(v==='qf') renderHalves('qf');
+    else renderHalves('r16');
     window.scrollTo({top:document.querySelector('.ctrl').offsetTop-1,behavior:'smooth'});
   });
 });
@@ -697,7 +798,7 @@ sheet.addEventListener('touchstart',e=>{sy=e.touches[0].clientY;},{passive:true}
 sheet.addEventListener('touchmove',e=>{const dy=e.touches[0].clientY-sy; if(dy>0&&mbody.scrollTop<=0) sheet.style.transform=`translateY(${dy}px)`;},{passive:true});
 sheet.addEventListener('touchend',e=>{const dy=e.changedTouches[0].clientY-sy; sheet.style.transform=''; if(dy>120) closeSheet();});
 
-renderBracket();
+renderHalves('r16');
 </script>
 </body>
 </html>

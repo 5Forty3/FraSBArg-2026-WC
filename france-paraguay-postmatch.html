@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France 1-0 Paraguay — The Day the Music Stopped</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--par:#d1273a;--par2:#ff7a88;--blue:#5aa0e6;--red:#ff5d6a;--amber:#e9b949;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.13);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(25px,5.2vw,40px);font-weight:800;margin-top:6px;line-height:1.12;
+    background:linear-gradient(90deg,#3b82d6,#fff 55%,#8b97a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14px;margin-top:10px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:37px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .f{color:var(--fra2)}.scoreboard .p{color:var(--par2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--fra2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .f{color:var(--fra2)}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+
+  .pull{border-left:3px solid var(--muted);background:linear-gradient(135deg,#161b22,#0f1117);border-radius:0 10px 10px 0;
+    padding:15px 18px;margin:18px 0;font-size:16.5px;font-style:italic;color:#cfd8e3;line-height:1.55}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--fra2);font-weight:700}
+  .crit{background:linear-gradient(135deg,#241010,#0f1117);border:1px solid #4a2020;border-left:3px solid var(--red);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .crit .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#ff8e8e}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.par{background:rgba(209,39,58,.2);color:var(--par2)}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.g{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mtag.future{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📉 Post-Match Analysis</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">Round of 16 · FT</span>
+  </div>
+  <h1>The Day the Music Stopped</h1>
+  <div class="kicker">France ground out a joyless, forgettable win — the orchestra fell silent, and only a penalty and their name got them through</div>
+
+  <div class="scoreboard">
+    <span class="t f">🇫🇷 France</span>
+    <span class="sc">1 – 0</span>
+    <span class="t p">Paraguay 🇵🇾</span>
+  </div>
+  <div class="meta">📍 Lincoln Financial Field, Philadelphia · Round of 16 · Full-time · ~38°C heat warning</div>
+  <div class="scorers">⚽ <b>Mbappé 70' (pen)</b> — xG 1.36 vs 0.15</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">France xG</div><div class="v"><span class="f">1.36</span></div></div>
+    <div class="stat"><div class="l">Paraguay SoT</div><div class="v">1 shot</div></div>
+    <div class="stat"><div class="l">Mbappé this WC</div><div class="v">7 · = Messi</div></div>
+    <div class="stat"><div class="l">Temperature</div><div class="v">~38°C 🥵</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">A result that flatters no one. France advance, but this was a performance to file away and forget as quickly as possible.</p>
+
+  <h2><span class="ic">🧭</span> The Story — The Orchestra Falls Silent</h2>
+  <p class="lead">It takes some doing to render a match lifeless when one of the most fearsome forward lines the modern game has produced is on the pitch — and yet, somehow, France managed it. Only the other day, this analysis placed these Bleus on a pedestal once reserved for the great, romantic Brazil side of 1982 (see <a href="france-sweden-postmatch.html" style="color:var(--fra2);font-weight:700">"The Orchestra Plays On"</a>, after the Sweden demolition). On a stifling Philadelphia afternoon, that same orchestra was brought crashing back down to earth. <strong>There was no creative passing, no space carved in front of goal, no dribbling, no flair — virtually nothing</strong> against a Paraguay side that parked its bus, defended for its life, and fouled its way through ninety minutes. France won 1-0 on a late Mbappé penalty. The scoreline is the only kind thing that can be said about the display.</p>
+
+  <div class="callout">
+    <div class="t">🔗 The contrast with Argentina's scare</div>
+    <p style="margin:8px 0 0">We thought <strong>Argentina had suffered a bad day against Cape Verde</strong> — but that, at least, was a high-tempo, open contest in which the champions showed character and never gave up, coming from behind twice (see <a href="argentina-capeverde-postmatch.html">"The Disjointed Symphony"</a>). This was something flatter and more troubling: <strong>a France side that hardly threatened the goal for long stretches and then edged it on a single spot-kick.</strong> Where Argentina's struggle had pulse and fight, France's was inert. Had this been almost any opponent with even modest attacking prowess — even Cape Verde, for that matter — a French performance this listless would have been punished. Instead they got away with it. Sometimes that is all a champion needs. But it should be forgotten, fast.</p>
+  </div>
+
+  <h2><span class="ic">🧱</span> How France Were Stifled — The Anatomy of a Non-Performance</h2>
+  <p>The tactical explanation begins, of course, with Paraguay — but it does not end there. Gustavo Alfaro's side executed their plan to perfection, and France, for reasons of heat, occasion, or simple flatness, walked straight into it without ever finding an answer. Here is how the game was strangled.</p>
+
+  <div class="move">
+    <div class="mh"><span class="mtag par">Paraguay · The Bus</span><span class="mt">Two banks of four, zero space, everything funnelled sideways</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="a1x" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · two rigid banks kill the centre; France passed sideways all day</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#d1273a" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">GILL</text></g>
+      <!-- back four -->
+      <g><circle cx="270" cy="95" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="335" cy="90" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="400" cy="90" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="465" cy="95" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/></g>
+      <!-- midfield four -->
+      <g><circle cx="285" cy="150" r="9" fill="#9c1c2b" stroke="#fff" stroke-width="1"/><circle cx="345" cy="150" r="9" fill="#9c1c2b" stroke="#fff" stroke-width="1"/><circle cx="405" cy="150" r="9" fill="#9c1c2b" stroke="#fff" stroke-width="1"/><circle cx="450" cy="150" r="9" fill="#9c1c2b" stroke="#fff" stroke-width="1"/></g>
+      <text x="367" y="122" text-anchor="middle" font-size="9" fill="#ffb3bb">two banks of four — no gaps to thread</text>
+
+      <!-- France passing sideways in front -->
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="180" cy="250" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="180" y="254">DIG</text></g>
+        <g><circle cx="360" cy="270" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="360" y="274">OLI</text></g>
+        <g><circle cx="540" cy="250" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="540" y="254">KOU</text></g>
+        <g><circle cx="440" cy="215" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="440" y="219">MBA</text><text x="440" y="235" fill="#bcd9f6" font-size="8">crowded out</text></g>
+      </g>
+
+      <!-- sterile sideways passing -->
+      <path d="M192 248 C 260 258, 300 266, 348 268" stroke="#7cb4e8" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a1)"/>
+      <path d="M372 268 C 440 262, 490 256, 528 252" stroke="#7cb4e8" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a1)"/>
+      <!-- attempted central ball, blocked -->
+      <path d="M440 203 C 430 185, 415 170, 400 160" stroke="#7cb4e8" stroke-width="2.5" fill="none"/>
+      <g transform="translate(394,154)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <text x="560" y="290" font-size="9" fill="#9fb2c4">U-shaped possession, no penetration</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Sterile sideways passing</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Central route blocked</span>
+    </div>
+
+    <p class="expl"><strong>Reason one: Paraguay's block was excellent — and France had no plan to break it.</strong> Alfaro set two rigid banks of four barely thirty yards apart, conceding the ball and the flanks while sealing the central lanes where Mbappé and Olise do their damage. That much was expected. What was <em>not</em> expected was how meekly France accepted it. Rather than moving Paraguay with speed and disguise, Les Bleus circulated the ball in slow, U-shaped possession across the back and half-spaces, never once quickening the tempo to pull a marker out of position. The through-balls that sliced Sweden apart never came; the vertical passing lanes were shut, and France did not have the patience — or, on the day, the wit — to prise them open. It was possession without purpose.</p>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · The Malaise</span><span class="mt">The four horsemen, becalmed — no runs, no dribbles, no flair</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a2x" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · static forwards, feet not moving — no runs in behind, no dribbles</text>
+
+      <!-- Paraguay line -->
+      <g><circle cx="290" cy="120" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="115" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><circle cx="430" cy="120" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/></g>
+
+      <!-- static French forwards (no arrows = no movement) -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="200" cy="220" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="200" y="224">DEM</text><text x="200" y="240" fill="#9fb2c4" font-size="8">static</text></g>
+        <g><circle cx="360" cy="230" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.4"/><text x="360" y="234">MBA</text><text x="360" y="250" fill="#9fb2c4" font-size="8">no runs in behind</text></g>
+        <g><circle cx="520" cy="220" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="520" y="224">BAR</text><text x="520" y="240" fill="#9fb2c4" font-size="8">static</text></g>
+        <g><circle cx="360" cy="300" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="360" y="304">OLI</text></g>
+      </g>
+
+      <!-- the run that never came (ghosted X) -->
+      <path d="M360 216 C 360 185, 360 160, 360 138" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="4 5" fill="none" opacity=".55"/>
+      <g transform="translate(354,132)" opacity=".7"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="3"/></g>
+      <text x="470" y="150" font-size="10" fill="#9fb2c4">the run in behind never came</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#5a6b7d;border-top-style:dashed"></i> Movement that never happened</span>
+    </div>
+
+    <p class="expl"><strong>Reason two: the attacking quartet simply did not turn up.</strong> This is the damning part. A front line of Mbappé, Dembélé, Olise and Barcola should terrorise any low block through sheer movement — dragging markers, spinning in behind, running the channels, beating a man. On this day there was none of it. The forwards were static, the dribbles never materialised, the diagonal runs that stretch a deep line were absent. <strong>Not one member of the vaunted attack merited a word of praise; collectively they resembled players from a lowly division rather than the most feared unit at the World Cup.</strong> Whether it was the ~38°C heat sapping the legs, the flatness of the occasion, or complacency against a side ranked 41st in the world, the effect was the same: a toothless France, generating just 1.36 xG, who created almost nothing from open play and needed a refereeing decision to win.</p>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag par">Paraguay · The Dark Arts</span><span class="mt">Cynical fouling that broke every rhythm — and went unpunished</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="a3f" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2.4"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · every time a move began to flow, a cynical foul stopped it dead</text>
+
+      <!-- France trying to build a move -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="240" cy="330" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="240" y="334">OLI</text></g>
+        <g><circle cx="380" cy="270" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="380" y="274">MBA</text><text x="380" y="290" fill="#9fb2c4" font-size="8">chopped down</text></g>
+      </g>
+      <!-- Paraguay foulers -->
+      <g font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="360" cy="235" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><text x="360" y="239">CAC</text></g>
+        <g><circle cx="300" cy="290" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><text x="300" y="294">GAL</text></g>
+      </g>
+
+      <!-- pass then foul -->
+      <path d="M252 322 C 300 305, 340 290, 366 278" stroke="#7cb4e8" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a3)"/>
+      <g transform="translate(374,258)"><path d="M0,0 L13,13 M13,0 L0,13" stroke="#ff5d6a" stroke-width="3.2"/></g>
+      <text x="470" y="250" font-size="10" fill="#ffb3bb">foul — no card. Rhythm broken.</text>
+      <text x="470" y="270" font-size="9" fill="#9fb2c4">repeated all afternoon</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> French build-up</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Cynical foul, unpunished</span>
+    </div>
+
+    <p class="expl"><strong>Reason three: a fractious, foul-strewn game that no one was allowed to play.</strong> Paraguay did not only defend deep — they defended <em>dirty</em>, and got away with it. Referee Ilgiz Tantashev let a stream of cynical, rhythm-breaking fouls go unpunished: Cáceres kicking Mbappé, Galarza striking out at Koundé off the ball, challenge after challenge that killed any move before it could build momentum. Tempers duly boiled over at full time, and Paraguay were branded a "disgrace" in some quarters for their off-the-ball conduct. It was, in fairness, a shrewd if ugly tactic against a passive opponent — and it worked, because France never generated the sustained flow that might have overwhelmed it. A more ruthless, more motivated France would have brushed it aside; this one let itself be dragged into the mud.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Goal (70') — The Penalty That Spared France</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">France · 1-0</span><span class="mt">A substitute, a stray knee, and Mbappé's ice-cold spot-kick</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="a4g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <circle cx="360" cy="150" r="3" fill="#fff"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Doué runs onto a ball, Gómez's knee collides — VAR — penalty</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#d1273a" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">GILL</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Olise feeds Doue -->
+        <g><circle cx="240" cy="240" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="240" y="244">OLI</text></g>
+        <g><circle cx="400" cy="180" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="400" y="184">DOU</text><text x="400" y="200" fill="#bcd9f6" font-size="8">onrushing</text></g>
+        <!-- Mbappe on the spot -->
+        <g><circle cx="360" cy="290" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="360" y="294" fill="#06301d">MBA</text><text x="360" y="310" fill="#bff0d5" font-size="8">the penalty</text></g>
+      </g>
+      <!-- Gomez knee (foul) -->
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="415" cy="165" r="10" fill="#d1273a" stroke="#fff" stroke-width="1.1"/><text x="415" y="169">D.G</text></g>
+      <g transform="translate(404,168)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="2.6"/></g>
+
+      <!-- Olise pass to Doue -->
+      <path d="M252 232 C 310 210, 360 195, 388 187" stroke="#7cb4e8" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a4)"/>
+      <!-- penalty into corner -->
+      <path d="M372 282 C 400 200, 405 110, 402 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a4g)"/>
+      <text x="470" y="120" font-size="10" fill="#bff0d0">coolly slotted — his 7th of the WC</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Olise's through-ball to Doué</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé's penalty</span>
+    </div>
+
+    <p class="expl"><strong>Fittingly, the breakthrough came not from open play but from a spot-kick.</strong> On 70 minutes, substitute Désiré Doué — one of the few to inject any urgency — chased an Olise ball into the box, and Diego Gómez's knee collided with the onrushing forward. After a VAR review, referee Tantashev pointed to the spot. <strong>Mbappé stepped up and coolly slotted beyond Gill</strong> for his seventh goal of the tournament — drawing him level with Messi in the Golden Boot race and marking France's 150th World Cup goal in their history. It was the striker's 19th career World Cup goal, one shy of Messi's all-time record. That France's only goal of a lifeless afternoon arrived from twelve yards, and that Gill still denied Mbappé twice more with stunning late saves to keep the margin at one, tells the whole story: France did not so much win this game as survive it.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Kylian Mbappé</b> — <span class="mid">The penalty, and little else</span>. Tucked away the spot-kick (7th of the WC, level with Messi) but was starved and stifled from open play, denied late by Gill. Efficient, not electric.</div>
+    <div class="rt"><b>The attacking quartet</b> — <span class="bad">Anonymous</span>. Dembélé, Olise, Barcola: no dribbles, no runs, no flair. A collective no-show unbecoming of the tournament's most feared line.</div>
+    <div class="rt"><b>Manu Koné</b> — <span class="mid">Steady deputy</span>. Slotted in for the injured Tchouaméni (groin) and did the unglamorous work; even forced a fine Gill save. One of the few with an excuse for the flatness.</div>
+    <div class="rt"><b>Orlando Gill (PAR)</b> — <span class="good">Magnificent again</span>. The shootout hero denied Mbappé repeatedly, including two stunning late stops. Beaten only from the spot. Paraguay's one shining light.</div>
+    <div class="rt"><b>Paraguay's block</b> — <span class="mid">Effective but grubby</span>. Superbly disciplined defensively; disgraceful off the ball. Frustrated France for 70 minutes before the dam finally, narrowly, broke.</div>
+    <div class="rt"><b>Didier Deschamps</b> — <span class="bad">No Plan B</span>. Watched his side sleepwalk against a bus and was slow to change it. The heat is mitigation, not exoneration — a champion needs an answer to this.</div>
+  </div>
+
+  <div class="crit">
+    <div class="t">⚠️ The Honest Verdict — Forget This One, Fast</div>
+    <p style="margin:8px 0 0">There is no dressing this up. <strong>This was a lifeless, joyless, forgettable France performance</strong> — the antithesis of the Sweden display that had us reaching for 1982 Brazil comparisons. There was no creative passing, no space in front of goal, no dribbling, no flair; the attack looked becalmed and, frankly, ordinary. <strong>Had the opponent carried even a fraction of genuine attacking threat, France's listlessness would have been punished.</strong> They were spared partly by their own name and quality — the ability to win ugly is, after all, a champion's trait — and partly by Paraguay's total lack of ambition beyond survival. But no one from the French attack deserves a word of praise from this one. The kindest thing to do is to file it away, blame the furnace-like heat and the flat occasion, and move on quickly. Champions are allowed the odd terrible day. They are not allowed two.</p>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — A Warning Before the Hard Part Begins</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">France · The Road Ahead</span><span class="mt">Morocco next — a far better side that will punish a repeat</span></div>
+
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a5" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="300" rx="10" fill="#0d141d"/>
+      <g font-family="inherit">
+        <text x="30" y="46" font-size="15" font-weight="800" fill="#7cb4e8">R16 ✓</text>
+        <text x="30" y="66" font-size="11" fill="#8b97a8">France 1-0 Paraguay</text>
+        <circle cx="150" cy="40" r="6" fill="#3b82d6"/>
+        <line x1="160" y1="40" x2="250" y2="40" stroke="#26303f" stroke-width="2"/>
+
+        <text x="270" y="46" font-size="15" font-weight="800" fill="#e9b949">QF · Boston, Thu</text>
+        <text x="270" y="66" font-size="11" fill="#8b97a8">vs Morocco — beat Canada 3-0</text>
+        <circle cx="410" cy="40" r="6" fill="#e9b949"/>
+        <line x1="420" y1="40" x2="510" y2="40" stroke="#26303f" stroke-width="2" stroke-dasharray="5 4"/>
+
+        <text x="530" y="46" font-size="15" font-weight="800" fill="#39d98a">SF?</text>
+        <text x="530" y="66" font-size="11" fill="#8b97a8">Spain looms</text>
+        <circle cx="600" cy="40" r="6" fill="#39d98a"/>
+
+        <rect x="30" y="100" width="660" height="76" rx="8" fill="#101722" stroke="#26303f"/>
+        <text x="45" y="126" font-size="13" font-weight="800" fill="#ff8e8e">⚠ The warning</text>
+        <text x="45" y="148" font-size="12" fill="#cdd6e2">Morocco are no Paraguay — the first African side in back-to-back WC quarters, they</text>
+        <text x="45" y="166" font-size="12" fill="#cdd6e2">defend deep AND counter with real venom (Hakimi, Ounahi). A repeat display gets punished.</text>
+
+        <rect x="30" y="192" width="660" height="86" rx="8" fill="#101722" stroke="#26303f"/>
+        <text x="45" y="218" font-size="13" font-weight="800" fill="#39d98a">✓ The reassurance</text>
+        <text x="45" y="240" font-size="12" fill="#cdd6e2">Champions win ugly and survive off-days. The quality is untouched; Mbappé keeps scoring.</text>
+        <text x="45" y="258" font-size="12" fill="#cdd6e2">Wake the orchestra back up, and France remain the team to beat. One bad day, not a crisis.</text>
+      </g>
+    </svg>
+
+    <p class="expl"><strong>The stakes rise sharply from here — and that is exactly why this performance matters.</strong> France's reward for surviving Paraguay is a Boston quarter-final on Thursday against <strong>Morocco, who dispatched Canada 3-0 and have become the first African nation to reach back-to-back World Cup quarter-finals.</strong> Crucially, Morocco are a vastly superior side to Paraguay: they too can defend deep and compact, but unlike the Albirroja they carry a genuine, venomous counter-attack through Hakimi and Ounahi, and the quality to punish exactly the kind of passive, ponderous display France just produced. <strong>A repeat of this against Morocco would very likely end France's tournament.</strong> Beyond that, a resurgent Spain looms as a possible semi-final on the same side of the draw. The reassurance is that this remains a squad of staggering quality that has merely had one bad day — and the very definition of a champion is the ability to win ugly and move on. But the message from Philadelphia is unambiguous: <strong>the orchestra must wake up, and quickly, because the easy part of the draw is now over.</strong></p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · WON</div><div class="g">France 1-0 Paraguay</div><div class="n">A joyless, stifled win on a late Mbappé penalty. Advanced on quality and name, not performance.</div></div>
+    <div class="nx"><div class="d">Quarter-Final · Boston, Thu</div><div class="g">France vs Morocco</div><div class="n">A serious step up — deep defending AND a lethal counter. A repeat of this display would be punished.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>The music stopped in Philadelphia. Days after we placed this France on a pedestal beside the immortal Brazil of 1982, they delivered a performance so lifeless it barely belonged at a World Cup — no creativity, no space, no dribbling, no flair, and an attacking quartet that resembled strangers to one another. They were stifled by an excellent, cynical Paraguay block, becalmed by the ~38°C heat, and flat in a way that any better-armed opponent would have punished. They won because they are France, because Mbappé buries penalties, and because Paraguay had nothing beyond defiance. <strong>File it away, forget it, and wake up — because Morocco await in Boston, and a repeat of this ends the dream.</strong> The talent is intact; the standard, on this day, was not. Champions get one free pass like this. Just one. <strong>Allez les Bleus — and please, play like it next time.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil vs Norway — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --bra:#f2d024;--bra2:#ffe45e;--brg:#1f9d55;--nor:#c8102e;--nor2:#ff6b7d;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#1f9d55,#ffe45e 50%,#c8102e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .b{background:linear-gradient(135deg,#0d2417,#0d1117)}
+  .vsbar .n{background:linear-gradient(135deg,#2a0910,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .b .nm{color:var(--bra2)}.vsbar .n .nm{color:var(--nor2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.brazil{border-left:3px solid var(--brg)}
+  .card.norway{border-left:3px solid var(--nor)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.bra{background:rgba(31,157,85,.2);color:#5fd996}
+  .move .mtag.nor{background:rgba(200,16,46,.2);color:var(--nor2)}
+  .move .mtag.key{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge" style="background:rgba(31,157,85,.18);color:#5fd996;border-color:#1c4a30">Round of 16 · Win or go home</span>
+  </div>
+  <h1>Brazil vs Norway</h1>
+  <div class="sub">Vinícius against Haaland — the Seleção's flair meets the tournament's most lethal striker, and a hoodoo Brazil have never broken</div>
+  <div class="meta">🕒 1:30 AM IST, Mon 6 Jul · 📍 MetLife Stadium, East Rutherford NJ (4pm ET / 20:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side b"><div class="nm">🇧🇷 Brazil</div><div class="fm">4-3-3 · Ancelotti · favourites · tournament-leading 9.4 xG</div></div>
+    <div class="mid">VS</div>
+    <div class="side n"><div class="nm">Norway 🇳🇴</div><div class="fm">4-3-3 · Solbakken · Haaland's dark horses · 1st WC since 1998</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — flair, firepower, and a Norwegian hoodoo</div>
+    <p style="margin:8px 0 0">A blockbuster of contrasting stars. Brazil arrive as favourites, with the <strong>tournament's highest expected-goals tally (9.4)</strong> and, in Vinícius Júnior, its most in-form Brazilian — but they scraped past Japan 2-1 with a 95th-minute winner and looked anything but invincible. Norway, back at a World Cup <strong>for the first time in 28 years</strong>, are the tournament's great dark horse, powered by an <strong>Erling Haaland who has already scored five goals in three games.</strong> Two quirks sharpen the intrigue: <strong>Brazil have NEVER beaten Norway</strong> in four attempts (two draws, two Norway wins, including a famous 2-1 at the 1998 World Cup — a game Norway boss Ståle Solbakken played in), and <strong>Brazil have been eliminated from each of their last six World Cup knockout ties against European opponents</strong> since beating Germany in the 2002 final. The Seleção are the better side. History, and Haaland, say it will be anything but comfortable.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">Brazil are missing more confirmed starters than any other Round-of-16 side — and one absence, in particular, reshapes their attack. Norway are close to full strength. Exact XIs are predicted (not officially confirmed).</p>
+
+  <div class="card brazil">
+    <h3 style="margin-top:0">🇧🇷 Brazil — depleted but still deep (expected XI)</h3>
+    <ul>
+      <li><strong>Paquetá OUT (confirmed)</strong> — a hamstring injury against Japan rules out the primary creative link between midfield and attack. His movement and vision between the lines are a real loss; <strong>Matheus Cunha likely drops into the No.10</strong>, with Danilo Oliveira an option to stay disciplined in midfield.</li>
+      <li><strong>Raphinha OUT (confirmed)</strong> — back in individual training after his own hamstring issue, but will not be risked from the start; he could make the bench. <strong>Rayan continues on the right.</strong></li>
+      <li><strong>Casemiro fit but a concern</strong> — he scored to spark the Japan comeback, but the 34-year-old has looked "worryingly leggy," and faces a stern test screening against Ødegaard. His mobility is a genuine question mark against Norway's directness.</li>
+      <li><strong>Vinícius the talisman</strong> — 4 goals, Brazil's top scorer, the first Brazilian since Ronaldo & Rivaldo in 2002 to score in all three group games. He drew a blank against Japan and will be desperate to fire.</li>
+      <li>Ancelotti has publicly refused to build a special "anti-Haaland plan," trusting Marquinhos and Gabriel's experience.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-3-3): Alisson; Danilo, Marquinhos, Gabriel, D. Santos; Casemiro, Guimarães, D. Oliveira; Rayan, Cunha, Vinícius. (Not confirmed.)</p>
+  </div>
+
+  <div class="card norway">
+    <h3 style="margin-top:0">🇳🇴 Norway — Haaland and a fearless supporting cast</h3>
+    <ul>
+      <li><strong>Haaland is the tournament's story</strong> — 5 goals in 3 games, a goal in every appearance, ranking in the 100th percentile for xG per 90. He has scored <strong>9 goals in 14 career meetings against Gabriel and Marquinhos</strong> from his Man City days — an ominous record.</li>
+      <li><strong>Ryerson a doubt</strong> — the first-choice right-back has a thigh issue; Marcus Pedersen likely deputises, and could be the man tasked with containing Vinícius.</li>
+      <li><strong>The aerial threat is real:</strong> Haaland and Alexander Sørloth both stand 6'4", a genuine problem for Brazil's back line from crosses and set pieces.</li>
+      <li><strong>Ødegaard pulls the strings</strong> — the captain is the creative fulcrum; one pass from him into Haaland's channel is the game Norway want. Nusa adds pace on the left.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-3-3): Nyland; Pedersen, Ajer, Heggem, Møller Wolfe; Ødegaard, Berge, Berg; Sørloth, Haaland, Nusa. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Brazil's Control vs Norway's Transition Venom</h2>
+  <p>The tie splits cleanly along two axes. With the ball, <strong>Brazil want to dominate through Guimarães and Casemiro and release Vinícius one-on-one</strong> — but the loss of Paquetá removes the connective movement between the lines, and Norway will happily cede possession to sit in and strike. Without the ball, Brazil face the sterner examination: <strong>their defensive spine is not quick, Casemiro's legginess is exposed by direct running, and Norway's whole game is built to punish exactly that.</strong> Norway showed against Japan's blueprint that Brazil can be got at in transition — one Ødegaard pass into the channel for Haaland's straight-line pace is all it takes. Whoever wins the battle between Brazil's need to control and Norway's desire to make it chaotic and vertical takes the tie. Brazil have more ways to score; Norway have the single most efficient way.</p>
+
+  <h2><span class="ic">🔑</span> Brazil's Key — Vinícius isolated 1v1 against a makeshift full-back</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bra">Brazil · Attack</span><span class="mt">Feed Vinícius in space against Pedersen and let him go to work</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aB" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffe45e"/></marker>
+        <marker id="aBg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Brazil attacking ↑ · switch to isolate Vinícius on the left, drive at the makeshift full-back</text>
+
+      <!-- Norway block -->
+      <g><circle cx="300" cy="110" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="380" cy="105" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="450" cy="110" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <!-- Guimaraes switch -->
+        <g><circle cx="470" cy="300" r="12" fill="#ffe45e" stroke="#fff" stroke-width="1.3"/><text x="470" y="304">BG8</text><text x="470" y="320" fill="#fff" font-size="8">switches it</text></g>
+        <!-- Vini isolated left -->
+        <g><circle cx="110" cy="230" r="14" fill="#ffe45e" stroke="#fff" stroke-width="1.6"/><text x="110" y="234">VINI</text><text x="110" y="252" fill="#fff" font-size="8">1v1, space to run</text></g>
+        <!-- Cunha central -->
+        <g><circle cx="360" cy="205" r="12" fill="#ffe45e" stroke="#fff" stroke-width="1.3"/><text x="360" y="209">CUN</text></g>
+      </g>
+      <!-- lone Norway FB -->
+      <g font-size="9" fill="#fff" text-anchor="middle"><circle cx="150" cy="185" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><text x="150" y="189">PED</text></g>
+
+      <!-- switch -->
+      <path d="M458 296 C 320 258, 190 238, 126 232" stroke="#ffe45e" stroke-width="3.5" fill="none" marker-end="url(#aB)"/>
+      <!-- Vini cut inside + finish -->
+      <path d="M124 218 C 170 180, 240 140, 330 110" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aBg)"/>
+      <text x="270" y="150" font-size="10" fill="#bff0d0">drive inside &amp; strike / cutback</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffe45e"></i> Switch of play</span>
+      <span><i style="border-top-color:#39d98a"></i> Vinícius 1v1 &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>Brazil's clearest, most repeatable route to goal.</strong> Ancelotti's game plan is built to <strong>get Vinícius the ball in space on the left and let him attack his full-back one-on-one</strong> — and Norway present an inviting target there. With first-choice right-back Ryerson a doubt, the makeshift Marcus Pedersen may be handed the unenviable job of containing the tournament's most electric dribbler. The mechanism: dominate the ball, switch play quickly to isolate Vinícius before help arrives, and let him drive inside onto his right or reach the byline for a cutback. Norway are yet to keep a clean sheet all tournament, and a motivated Vinícius — goalless against Japan and hunting the Golden Boot — running at a reserve full-back is a mismatch Brazil must exploit relentlessly. If Vinícius fires, Brazil win comfortably.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Norway's Threat — one Ødegaard pass, and Haaland is gone</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag nor">Norway · The Danger</span><span class="mt">Absorb, then spring Haaland behind a slow, high Brazilian line</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aN" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b7d"/></marker>
+        <marker id="aNg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Norway attacking ↑ · Ødegaard threads Haaland behind Brazil's slow, high line</text>
+
+      <!-- Brazil high line, mobility issues -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="140" r="11" fill="#ffe45e" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="420" cy="140" r="11" fill="#ffe45e" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#cfe6d6">Marquinhos &amp; Gabriel — high, not quick</text>
+        <!-- leggy Casemiro fails to screen -->
+        <g><circle cx="360" cy="255" r="11" fill="#e0c020" stroke="#fff" stroke-width="1.2" opacity=".85"/><text x="360" y="259">CAS</text><text x="360" y="275" fill="#ffb3b8" font-size="8">screen beaten</text></g>
+      </g>
+
+      <!-- Norway: Odegaard + Haaland -->
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="330" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="300" y="334">ØDE</text><text x="300" y="350" fill="#ffb3b8" font-size="8">the killer pass</text></g>
+        <g><circle cx="440" cy="230" r="14" fill="#c8102e" stroke="#fff" stroke-width="1.6"/><text x="440" y="234">HAA</text><text x="440" y="250" fill="#ffb3b8" font-size="8">straight-line pace</text></g>
+      </g>
+
+      <!-- Odegaard through ball past Casemiro -->
+      <path d="M312 322 C 350 295, 400 258, 428 240" stroke="#ff6b7d" stroke-width="3.5" fill="none" marker-end="url(#aN)"/>
+      <!-- Haaland run in behind + finish -->
+      <path d="M446 216 C 452 175, 445 130, 420 78" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aNg)"/>
+      <text x="520" y="160" font-size="10" fill="#bff0d0">in behind &amp; buried</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b7d"></i> Ødegaard's through-ball</span>
+      <span><i style="border-top-color:#39d98a"></i> Haaland run in behind</span>
+    </div>
+
+    <p class="expl"><strong>The single sequence that could end Brazil's tournament — and it is a live danger, not a hypothetical.</strong> Norway's route is brutally simple: <strong>absorb Brazilian pressure, then release Haaland into the space behind a Brazilian back line that is high but not fast.</strong> The vulnerability is well-documented: Brazil rank among the worst at the tournament for opponent direct-attack speed, Casemiro's legginess leaves the screen exposed, and the Paquetá injury forces a reshuffle that can loosen the central structure. Haaland's numbers are frightening — 5 goals in 3 games, and 9 in 14 career meetings against Gabriel and Marquinhos — and he needs only <strong>one Ødegaard pass into the channel</strong> to be through. Add the 6'4" aerial threat he and Sørloth carry from crosses and set pieces, and Norway have multiple ways to hurt a defence that has looked shaky. Brazil's rest-defence discipline — screening the counter, not over-committing full-backs — is the tie's hinge.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> The Duel That Decides It — Vinícius vs Haaland, flair vs force</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Headline Duel</span><span class="mt">Two of the planet's best forwards, two very different weapons</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="30" x2="360" y2="290" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <!-- Vini side -->
+      <text x="40" y="55" font-size="15" font-weight="800" fill="#5fd996">🇧🇷 Vinícius Júnior</text>
+      <text x="40" y="80" font-size="12" fill="#cdd6e2">4 goals — Brazil's top scorer</text>
+      <text x="40" y="104" font-size="12" fill="#cdd6e2">Scored in all 3 group games (1st Brazilian</text>
+      <text x="40" y="122" font-size="12" fill="#cdd6e2">since Ronaldo/Rivaldo, 2002)</text>
+      <text x="40" y="150" font-size="12" fill="#8b97a8">Weapon: 1v1 dribbling, pace inside-out,</text>
+      <text x="40" y="168" font-size="12" fill="#8b97a8">chaos against a makeshift full-back</text>
+      <rect x="40" y="196" width="280" height="70" rx="8" fill="#101722" stroke="#1c4a30"/>
+      <text x="55" y="222" font-size="12.5" font-weight="800" fill="#5fd996">Needs:</text>
+      <text x="55" y="244" font-size="12" fill="#cdd6e2">space in wide areas &amp; quick service —</text>
+      <text x="55" y="260" font-size="12" fill="#cdd6e2">and to end his goalless Japan hangover</text>
+      <!-- Haaland side -->
+      <text x="392" y="55" font-size="15" font-weight="800" fill="#ff6b7d">🇳🇴 Erling Haaland</text>
+      <text x="392" y="80" font-size="12" fill="#cdd6e2">5 goals in 3 games — 100th pct xG/90</text>
+      <text x="392" y="104" font-size="12" fill="#cdd6e2">9 goals in 14 career games vs</text>
+      <text x="392" y="122" font-size="12" fill="#cdd6e2">Gabriel &amp; Marquinhos (Man City)</text>
+      <text x="392" y="150" font-size="12" fill="#8b97a8">Weapon: straight-line pace in behind,</text>
+      <text x="392" y="168" font-size="12" fill="#8b97a8">6'4" aerial power, clinical finishing</text>
+      <rect x="392" y="196" width="288" height="70" rx="8" fill="#101722" stroke="#4a1520"/>
+      <text x="407" y="222" font-size="12.5" font-weight="800" fill="#ff6b7d">Needs:</text>
+      <text x="407" y="244" font-size="12" fill="#cdd6e2">one Ødegaard pass into the channel —</text>
+      <text x="407" y="260" font-size="12" fill="#cdd6e2">and Brazil's high line to hold too high</text>
+    </svg>
+
+    <p class="expl"><strong>The tie will likely be settled by which of these two gets his moment first.</strong> It is a fascinating clash of styles: <strong>Vinícius, all chaos and 1v1 destruction in wide areas, against Haaland, all straight-line force and ruthless finishing in the box.</strong> Vinícius needs space and service to torment a makeshift Norwegian full-back; Haaland needs just one ball over the top to exploit Brazil's slow spine. The team that better protects against the other's strength — Brazil screening the counter to starve Haaland, Norway doubling and shepherding Vinícius away from the middle — gains the edge. On balance, Brazil have more players capable of a decisive moment (Cunha, Rayan, the returning Martinelli off the bench), while Norway lean far more heavily on their No.9. But if Haaland gets even one clean look, all bets are off. This is the matchup the neutral craves.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Brazil's laboured, late win over Japan and their dismal recent knockout record against European sides make a tight, nervy night entirely plausible. Here's how the closing stages shape up.</p>
+    <p style="margin:8px 0 0"><strong>Extra time favours Brazil — on paper.</strong> Despite the injuries, Brazil's bench remains deeper and more talented than Norway's — the ability to introduce a returning Raphinha, Endrick, or the Japan super-sub Martinelli offers game-breaking quality as legs tire, and Norway lean so heavily on Haaland that fatigue blunts them more. But the caveat is Brazil's own fragility: <strong>the longer the game stays level, the more chances Haaland gets, and the more the psychological weight of that six-game European knockout hoodoo grows.</strong> Brazil will want to win this well inside 90.</p>
+    <p style="margin:8px 0 0"><strong>Penalties would tighten the knot considerably.</strong> Brazil have the pedigree and a world-class goalkeeper in <strong>Alisson</strong>, but the ghosts of 2022 — their shock quarter-final shootout exit to Croatia — still linger, and their record from the spot in recent knockouts is jittery. Norway would fancy their nerve, with Haaland and Ødegaard among reliable takers. It would be far from the formality Brazil's talent suggests. The message for the Seleção is clear: <strong>use your superior firepower to settle this in normal time, and do not let Haaland drag it into the lottery where your history haunts you.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>Respect Norway — Haaland is the most lethal finisher at the tournament, Brazil have never beaten them, and the Seleção's leaky, slow-spined defence and dreadful recent record against European knockout opposition make this a genuine banana skin. An early Haaland goal, or a Vinícius off-night, and the hoodoo could strike again. But Brazil's overall quality, depth and tournament-leading attacking numbers should ultimately tell. Expect a cagey, open, end-to-end contest — Vinícius the difference at one end if he rediscovers his group-stage form, with Brazil's greater range of match-winners edging a Norway side that lives and dies by its No.9. It will be close, and probably feature goals at both ends, but the Seleção should just have too much. <strong>Rumo ao hexa.</strong></p>
+    <div class="scoreline">🇧🇷 Brazil 2 — 1 Norway</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: an open, entertaining tie settled by Brazil's superior depth — Vinícius and Cunha the danger, Haaland grabbing one to make it nervy. A Norway win, or extra time, is a very live possibility given the hoodoo and Haaland's form.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · MetLife</div><div class="g">Winner advances</div><div class="n">To the quarter-final to face England or Mexico — a likely heavyweight clash with Kane's England in Miami.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">Brazil's side of the draw</div><div class="n">Brazil sit in the lower half with Argentina — the two great rivals could only meet in the MetLife final on July 19.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

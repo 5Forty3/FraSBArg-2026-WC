@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Portugal — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#e63946;--espy:#ffc400;--por:#0f7a3d;--por2:#3ed37e;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#e63946,#fff 50%,#0f7a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .e{background:linear-gradient(135deg,#2a0c11,#0d1117)}
+  .vsbar .p{background:linear-gradient(135deg,#0c2417,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .e .nm{color:#ff8e95}.vsbar .p .nm{color:var(--por2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.spain{border-left:3px solid var(--esp)}
+  .card.portugal{border-left:3px solid var(--por)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .lesson{background:linear-gradient(135deg,#1a1406,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .lesson .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .lesson a{color:#ff8e8e;font-weight:700}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.por{background:rgba(15,122,61,.24);color:var(--por2)}
+  .move .mtag.key{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge marq">🔥 Marquee Tie · Iberian Derby</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Round of 16 · Win or go home</span>
+  </div>
+  <h1>Spain vs Portugal</h1>
+  <div class="sub">The Iberian derby — the tournament's most complete side against the great tournament survivors, and a clash of generations in Yamal and Ronaldo</div>
+  <div class="meta">🕒 12:30 AM IST, Tue 7 Jul · 📍 AT&T Stadium, Arlington (Dallas) — indoor, climate-controlled 21°C (3pm ET / 19:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side e"><div class="nm">🇪🇸 Spain</div><div class="fm">4-2-3-1 · De la Fuente · unbeaten in 35 · 0 goals conceded</div></div>
+    <div class="mid">VS</div>
+    <div class="side p"><div class="nm">Portugal 🇵🇹</div><div class="fm">4-2-3-1 · Martínez · the crunch-match specialists · fully fit</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — the tie of the round, and a genuinely even one</div>
+    <p style="margin:8px 0 0">This is the standout fixture of the Round of 16, and unusually for a tie involving one of our four, it is a genuinely balanced one. <strong>Spain arrive as the tournament's outstanding team on paper</strong> — reigning European champions, unbeaten in 35, yet to concede a single goal in four games, and fresh off a commanding 3-0 dismantling of Austria that finally showed their best. Yet Spain have <strong>not been fully consistent</strong>: a flat goalless draw with Cape Verde and a laboured win over Uruguay preceded the awakening, and for all their control they have converted just 8 goals from 8.06 xG. <strong>Portugal, by contrast, are lower in raw talent but have developed a habit of delivering when it matters</strong> — they survived a mammoth scare to beat Croatia 2-1 in the last 32, and, crucially, <strong>they beat this very Spain side on penalties in the 2025 Nations League final.</strong> This matchup does not frighten them. Two sides that both average over 60% possession, two of the best midfields at the tournament, and no safety net. It is, refreshingly, a coin that could land either way.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">Portugal are at full strength; Spain are settled but still without two wide men. Exact XIs are predicted (not officially confirmed), though both look close to their last outings.</p>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — settled, but still short out wide (expected XI)</h3>
+    <ul>
+      <li><strong>Nico Williams & Yeremy Pino still OUT (confirmed)</strong> — the adductor and shoulder injuries persist, so <strong>Baena continues on the left</strong> with Yamal on the right and Oyarzabal as the false 9. Neither has been ruled out of later rounds.</li>
+      <li><strong>Managed workloads, no fresh injuries</strong> — Yamal, Porro, Olmo and Laporte didn't train fully on Friday, but purely as load management; the same XI that beat Austria is expected.</li>
+      <li><strong>The engine room is the strength:</strong> Rodri and Pedri controlling, with Olmo's penetration the difference-maker — Spain's best football this tournament has come with Olmo on the pitch.</li>
+      <li><strong>Oyarzabal in form:</strong> 4 goals (joint tournament top scorer), 17 in his last 16 Spain starts. Yamal (climbing toward full fitness) the biggest threat from the right.</li>
+      <li><strong>The record is staggering:</strong> unbeaten in 35, four clean sheets from four, just 0.86 xG conceded all tournament — and the fewest penalty-area touches allowed of any nation.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Simón; Porro, Cubarsí, Laporte, Cucurella; Rodri, Pedri; Yamal, Olmo, Baena; Oyarzabal. (Not confirmed.)</p>
+  </div>
+
+  <div class="card portugal">
+    <h3 style="margin-top:0">🇵🇹 Portugal — fully fit, and unafraid of this fixture</h3>
+    <ul>
+      <li><strong>Full squad available (confirmed)</strong> — Martínez has no injury concerns and is expected to keep faith with a winning formula, meaning minimal changes from the Croatia win.</li>
+      <li><strong>Ronaldo starts, in his last World Cup</strong> — the 41-year-old keeps his place despite being an early substitute against Croatia (a withdrawal he was unhappy about). He finally scored his first-ever World Cup knockout goal last round; his work rate against Spain's press will be scrutinised.</li>
+      <li><strong>Gonçalo Ramos the ace off the bench</strong> — the Croatia matchwinner averages a goal or assist every 37 minutes at this World Cup, the best ratio in the squad, but is again likely restricted to a super-sub role.</li>
+      <li><strong>Bruno Fernandes the fulcrum:</strong> Portugal's chief creator and set-piece threat, with Vitinha and João Neves anchoring; Leão's pace on the left a serious weapon against Porro. Neto/Conceição compete on the right.</li>
+      <li><strong>The caveat:</strong> Portugal looked vulnerable defensively against Croatia (who had more shots), and were it not for a technology-aided offside call, might have been taken to extra time.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-2-3-1): Costa; Cancelo, Dias, Veiga, Mendes; J. Neves, Vitinha; Neto, Fernandes, Leão; Ronaldo. (Not confirmed.)</p>
+  </div>
+
+  <div class="lesson">
+    <div class="t">🧊 The Norway Lesson — and the Goalkeepers' World Cup</div>
+    <p style="margin:8px 0 0">Two themes from this tournament loom over this tie. First, <strong>yesterday's shock: Norway's old-school, patient European defending eliminated a Brazil side of vastly greater flair</strong> (see <a href="brazil-norway-postmatch.html">"The Old World Strikes Back"</a>). The expected-goals story told it all — Brazil dominated the xG and lost anyway, undone by discipline, ruthlessness and a goalkeeper in the form of his life. The warning for Spain is unmistakable: <strong>control and superior possession guarantee nothing against a well-organised side that defends with intent and strikes on the moment</strong> — and Portugal, unlike Norway, carry genuine attacking threat on the break through Leão and Fernandes. Second, this has quietly become <strong>a goalkeepers' World Cup</strong>: for all the goals, shot-stoppers from the lesser and unheralded nations — Vozinha for Cape Verde, Gill for Paraguay, Nyland for Norway — have repeatedly defied the odds. Both Diogo Costa and Unai Simón are elite; in a tight derby, a single save could decide everything.</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Two Paths, One Ticket</h2>
+  <p>This is a rare knockout tie with a credible route to victory for both sides, and it will likely be decided in midfield, where two of the tournament's best engine rooms collide. <strong>Spain's path is control:</strong> dominate the ball (they average a tournament-high 68% possession), squeeze Portugal into their own half, and use Yamal's isolation and Olmo's penetration to prise open a defence that looked shaky against Croatia. If Spain play at a high tempo, they are, on current evidence, virtually unbeatable — and their bench depth means they can freshen that intensity late. <strong>Portugal's path is patience and punch:</strong> concede possession without conceding chances, stay compact and disciplined, and rely on the individual quality of Fernandes, Leão and Ronaldo — plus their proven set-piece threat and big-game temperament — to strike on transition or from a dead ball. Both plans are viable. The tie hinges on whether Spain's control produces the goals their xG says it should, or whether Portugal's crunch-match know-how and cutting edge make the difference.</p>
+
+  <h2><span class="ic">🔑</span> Spain's Path — Control, tempo, and Yamal isolated</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · The Control Game</span><span class="mt">Dominate possession, raise the tempo, free Yamal 1v1</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aE" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aEg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Pedri/Olmo circulate, quick switch to isolate Yamal on Nuno Mendes</text>
+
+      <!-- Portugal block -->
+      <g><circle cx="300" cy="110" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><circle cx="370" cy="105" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><circle cx="440" cy="110" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="180" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="180" y="304">PED</text><text x="180" y="320" fill="#fff" font-size="8">controls tempo</text></g>
+        <g><circle cx="360" cy="270" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="360" y="274">OLM</text></g>
+        <g><circle cx="620" cy="240" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="620" y="244">YAM</text><text x="620" y="262" fill="#fff" font-size="9">1v1, space ahead</text></g>
+      </g>
+      <g font-size="9" fill="#fff" text-anchor="middle"><circle cx="590" cy="200" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><text x="590" y="204">NM</text></g>
+
+      <path d="M192 292 C 360 250, 520 240, 604 240" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aE)"/>
+      <path d="M608 226 C 560 190, 500 155, 430 120" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aEg)"/>
+      <text x="470" y="150" font-size="10" fill="#bff0d0">cut in &amp; curl / cutback</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Fast switch of play</span>
+      <span><i style="border-top-color:#39d98a"></i> Yamal 1v1 &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>Spain's clearest route — and the version of them that looks unstoppable.</strong> When La Roja play at a high tempo, as they did in flashes against Austria, few teams in the world can live with them. The plan is familiar: <strong>monopolise the ball through Rodri, Pedri and Olmo, move Portugal from side to side, then switch quickly to isolate Lamine Yamal against Nuno Mendes.</strong> That specific duel is a delicious sub-plot — Mendes relished tormenting Yamal in the 2025 Nations League final, and the teenager will be desperate for revenge. If Spain can consistently free Yamal one-on-one and get Olmo running beyond Oyarzabal, they will manufacture chances against a Portuguese defence that Croatia repeatedly breached. The one caveat is conversion: Spain's underwhelming 8-from-8.06-xG return is the single statistic Portugal will cling to. Control has never been Spain's problem; ruthlessness has.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Portugal's Path — Compact, clinical, and lethal in transition</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag por">Portugal · The Upset Blueprint</span><span class="mt">Absorb, then strike through Leão's pace and Fernandes's guile</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aP" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3ed37e"/></marker>
+        <marker id="aPg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Portugal attacking ↑ · win it, release Leão behind Porro; Fernandes &amp; Ronaldo arrive</text>
+
+      <!-- Spain high line -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="140" r="10" fill="#ffc400" stroke="#fff" stroke-width="1.1"/>
+        <circle cx="420" cy="140" r="10" fill="#ffc400" stroke="#fff" stroke-width="1.1"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#ffe98a">Spain push high (Porro advanced)</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="330" cy="310" r="12" fill="#0f7a3d" stroke="#fff" stroke-width="1.3"/><text x="330" y="314">BF</text><text x="330" y="330" fill="#bff0d5" font-size="8">wins &amp; releases</text></g>
+        <g><circle cx="470" cy="235" r="13" fill="#0f7a3d" stroke="#fff" stroke-width="1.5"/><text x="470" y="239">LEÃO</text><text x="470" y="255" fill="#bff0d5" font-size="8">pace in behind</text></g>
+        <g><circle cx="250" cy="235" r="12" fill="#0f7a3d" stroke="#fff" stroke-width="1.3"/><text x="250" y="239">CR7</text><text x="250" y="255" fill="#bff0d5" font-size="8">the poacher</text></g>
+      </g>
+
+      <path d="M342 300 C 390 275, 440 250, 458 240" stroke="#3ed37e" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aP)"/>
+      <path d="M478 221 C 485 180, 470 130, 430 82" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aPg)"/>
+      <path d="M258 221 C 270 180, 290 130, 330 82" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#aPg)"/>
+      <text x="540" y="170" font-size="10" fill="#bff0d0">2 finishers arriving late</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#3ed37e;border-top-style:dashed"></i> Transition release</span>
+      <span><i style="border-top-color:#39d98a"></i> Leão / Ronaldo runs</span>
+    </div>
+
+    <p class="expl"><strong>Portugal's genuine, credible route — and one the Norway result just validated.</strong> Martínez's men can't out-possess Spain, so they won't try. Instead: <strong>sit compact, stay disciplined, deny the space between the lines, and back their superior individual quality on the counter and from set pieces.</strong> The danger is obvious and real — <strong>Rafael Leão's pace attacking the space behind Pedro Porro</strong> (Spain's attacking right-back) is a mismatch Portugal will target relentlessly, with Bruno Fernandes threading the passes and Ronaldo lurking as the poacher for the one chance that matters. Portugal have the best set-piece delivery in this tie through Fernandes, and Spain's tendency to commit full-backs high leaves them exposed in exactly the way Brazil were against Norway. Add Gonçalo Ramos's game-changing threat off the bench, and Portugal have the tools to win a low-scoring, transition-based contest — which is precisely the kind of game their temperament suits. They beat this Spain a year ago; they will not fear doing it again.</p>
+  </div>
+
+  <h2><span class="ic">⚖️</span> The Balance — Spain's Edge, and the Late-Substitution Warning</h2>
+
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Even Tie</span><span class="mt">Two credible paths to the quarter-finals</span></div>
+
+    <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="340" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="26" x2="360" y2="314" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="52" font-size="15" font-weight="800" fill="#ffc400">🇪🇸 Spain's path — CONTROL</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="82">▸ Tournament-high 68% possession</text>
+        <text x="34" y="106">▸ 4 clean sheets, 0 goals conceded</text>
+        <text x="34" y="130">▸ Yamal &amp; Olmo unlock a shaky defence</text>
+        <text x="34" y="154">▸ Deeper bench to raise the tempo late</text>
+      </g>
+      <rect x="34" y="176" width="300" height="128" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="48" y="202" font-size="12.5" font-weight="800" fill="#ffc400">If they play at Austria tempo:</text>
+      <text x="48" y="226" font-size="12" fill="#cdd6e2">virtually unbeatable — they win comfortably.</text>
+      <text x="48" y="256" font-size="12.5" font-weight="800" fill="#ff8e8e">The doubt:</text>
+      <text x="48" y="280" font-size="12" fill="#cdd6e2">8 goals from 8.06 xG — control, but no</text>
+      <text x="48" y="296" font-size="12" fill="#cdd6e2">ruthlessness. And late-sub management.</text>
+      <text x="392" y="52" font-size="15" font-weight="800" fill="#3ed37e">🇵🇹 Portugal's path — PUNCH</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="82">▸ Sit compact, deny space between lines</text>
+        <text x="392" y="106">▸ Leão's pace behind Porro; Fernandes guile</text>
+        <text x="392" y="130">▸ Best set-piece delivery in the tie</text>
+        <text x="392" y="154">▸ Beat this Spain on pens a year ago</text>
+      </g>
+      <rect x="392" y="176" width="300" height="128" rx="8" fill="#101722" stroke="#1c4a30"/>
+      <text x="406" y="202" font-size="12.5" font-weight="800" fill="#3ed37e">If it stays tight &amp; low-scoring:</text>
+      <text x="406" y="226" font-size="12" fill="#cdd6e2">their crunch-match nerve &amp; cutting edge tell.</text>
+      <text x="406" y="256" font-size="12.5" font-weight="800" fill="#ff8e8e">The warning to Spain:</text>
+      <text x="406" y="280" font-size="12" fill="#cdd6e2">Norway just proved xG dominance ≠ a win.</text>
+      <text x="406" y="296" font-size="12" fill="#cdd6e2">Portugal punish far better than Cape Verde.</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Spain: control</span>
+      <span><i style="border-top-color:#3ed37e"></i> Portugal: punch</span>
+    </div>
+  </div>
+
+  <p>On balance, Spain remain the more complete side, and their control-plus-clean-sheet platform makes them deserved favourites in regulation. But two grounded cautions temper that. First, as Norway proved, <strong>xG dominance is not a result</strong> — and Portugal are far better equipped than Cape Verde or Paraguay to punish a profligate Spain. Second, and more specific: <strong>Spain must be wary of their own in-game management.</strong> The lesson of Brazil's exit — that late, reactive coaching changes can be fatal against a resilient opponent — is one Spain themselves learned the hard way in their <strong>opening-match stumble against Cape Verde, where tempo drained and substitutions came too late</strong> to prevent a frustrating goalless draw. If this game is tight late on, De la Fuente must manage it proactively — using his formidable bench (Ferran Torres, Merino, and the wildcard energy of Gavi) to <em>raise</em> the tempo, not merely to preserve it. Get that right, and Spain's depth should tell. Get it wrong, and Portugal are exactly the kind of streetwise side to make them pay.</p>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Both the market and the models flag a real chance of this going the distance — Opta gives a 25% probability of extra time, and seven of the last eight meetings between these sides produced two goals or fewer. The latter stages could well decide it.</p>
+    <p style="margin:8px 0 0"><strong>Extra time should favour Spain — if managed well.</strong> Spain's bench is deeper and more dynamic than Portugal's, and the ability to introduce fresh, tempo-raising quality across 120 minutes is a genuine edge, especially in the climate-controlled comfort of the Dallas dome (no heat to sap them). But the caveat above applies doubly: this is precisely when proactive changes matter, and precisely where an ageing Portugal side will look to hang on and drag the tie toward its preferred conclusion.</p>
+    <p style="margin:8px 0 0"><strong>Penalties would tilt toward Portugal — and history proves it.</strong> This is the uncomfortable truth for Spain: <strong>the last time these teams met in a knockout, the 2025 Nations League final, Portugal won the shootout.</strong> Portugal have the nerveless takers (Fernandes, Ronaldo) and, in Diogo Costa, an elite penalty-saving goalkeeper. Spain's own shootout history is chequered, though Oyarzabal is ice-cold from twelve yards. In a "goalkeepers' World Cup" where unheralded keepers keep deciding ties, a shootout is the great leveller — and the one scenario where Portugal's edge is clearest. Spain's imperative: <strong>win this inside 90, and don't let their crunch-match specialists drag it to the lottery they just beat you in.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline</h2>
+    <p>This is the most finely balanced tie any of our four has faced, and it deserves a grounded, two-sided read. Spain are the better, more complete team — the control, the clean sheets, the midfield superiority and the deeper bench all point their way, and if they play at their Austria tempo and finally add ruthlessness to their dominance, they win comfortably. But Portugal are the ultimate tournament survivors: lower in talent, yet armed with elite individuals, a lethal transition threat through Leão and Fernandes, the best big-game temperament of any Spain opponent so far, and the not-insignificant fact that they beat this exact side on penalties a year ago. Norway's win over Brazil is a fresh, stark reminder that flair without a finish can be undone by discipline and a moment of quality. Expect a tight, tactical, low-scoring derby that Spain's superior control should just edge — but which could very plausibly swing Portugal's way, or all the way to the lottery of penalties. <strong>Vamos España — but respect the neighbours.</strong></p>
+    <div class="scoreline">🇪🇸 Spain 1 — 0 Portugal <span style="font-size:14px;color:var(--muted)">(or extra time)</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a cagey, controlled Spanish win in a low-scoring game — Yamal or Oyarzabal the difference. But Portugal's transition threat and shootout pedigree make extra time, or a Portuguese upset, very live outcomes. A genuine coin-flip dressed as a favourite's tie.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · Dallas</div><div class="g">Winner advances</div><div class="n">To the quarter-final in Los Angeles on July 10 to face the USA or Belgium.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">France looms in the upper half</div><div class="n">Spain and France sit in the same half — the two could collide in a blockbuster semi-final before any final.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

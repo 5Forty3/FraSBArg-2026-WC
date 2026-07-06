@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 1-0 Portugal — Grinding Out the Derby</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#e63946;--espy:#ffc400;--por:#0f7a3d;--por2:#3ed37e;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(255,196,0,.13);color:var(--espy);border:1px solid #3a3014}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(25px,5.2vw,40px);font-weight:800;margin-top:6px;line-height:1.12;
+    background:linear-gradient(90deg,#e63946,#fff 55%,#ffc400);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14px;margin-top:10px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:37px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .e{color:#ff8e95}.scoreboard .p{color:var(--por2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#ff8e95}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff8e95}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+
+  .pull{border-left:3px solid var(--espy);background:linear-gradient(135deg,#1a1406,#0f1117);border-radius:0 10px 10px 0;
+    padding:15px 18px;margin:18px 0;font-size:16.5px;font-style:italic;color:#f0e6cf;line-height:1.55}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .cr7{background:linear-gradient(135deg,#0c2417,#0f1117);border:1px solid #1c4a30;border-left:3px solid var(--por);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .cr7 .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--por2)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.por{background:rgba(15,122,61,.24);color:var(--por2)}
+  .move .mtag.g{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.future{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge marq">🔥 Iberian Derby</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Round of 16 · FT</span>
+  </div>
+  <h1>Grinding Out the Derby</h1>
+  <div class="kicker">A cagey, apprehensive Iberian standoff — settled at the death, and won without Spain's wings ever firing</div>
+
+  <div class="scoreboard">
+    <span class="t e">🇪🇸 Spain</span>
+    <span class="sc">1 – 0</span>
+    <span class="t p">Portugal 🇵🇹</span>
+  </div>
+  <div class="meta">📍 AT&T Stadium, Arlington (Dallas) · Round of 16 · Full-time</div>
+  <div class="scorers">⚽ <b>Merino 90+1'</b> — and the end of Cristiano Ronaldo's World Cup career</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="e">1.77</span> – 0.56</div></div>
+    <div class="stat"><div class="l">Shots (on tgt)</div><div class="v"><span class="e">15 (6)</span> – 9 (2)</div></div>
+    <div class="stat"><div class="l">Costa saves</div><div class="v">5 🧤</div></div>
+    <div class="stat"><div class="l">Spain streak</div><div class="v">36 unbeaten</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Exactly as predicted: a tight, low-scoring 1-0. Spain were the better side without ever truly convincing — and won it anyway.</p>
+
+  <h2><span class="ic">🧭</span> The Story — Apprehension, Then One Decisive Blow</h2>
+  <p class="lead">For long stretches this was a game defined by mutual apprehension — two evenly-matched neighbours, wary of each other, with little to separate them. As predicted, it finished 1-0. Spain were the better side, edging the expected goals (1.77 to 0.56) and the chances, yet for much of the night they looked oddly out of sorts, their rhythm stuttering against a disciplined, deep-lying Portugal. And Portugal, for all their organisation, were carrying a passenger: a 41-year-old talisman who could not muster a goal on the night he needed one most. Neither side could find the breakthrough their nerves would allow — until, in the first minute of stoppage time, <strong>Mikel Merino arrived off the bench to slide home the winner</strong> and send Spain to the quarter-finals. It was not vintage La Roja. But champions find ways to win the ugly ones, and Spain, at last, did.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The prediction, and the reality</div>
+    <p style="margin:8px 0 0">Our <a href="spain-portugal-prematch.html" style="color:var(--espy);font-weight:700">pre-match analysis</a> called it a genuine coin-flip that Spain's control should just edge in a tight, low-scoring derby — and pegged the scoreline at exactly 1-0. So it proved. Spain's superior possession and defensive platform told, but the margin was as slim as feared, and the manner underlined the caveat we raised: this Spain controls without always convincing, and needed a moment of quality — and a substitute — to break a stubborn opponent. The clean-sheet streak rolls on; the ruthlessness question lingers still.</p>
+  </div>
+
+  <h2><span class="ic">🚫</span> The Puzzle — Spain's Two Flanks Both Misfired</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · The Malfunction</span><span class="mt">Neither the Cucurella-Baena left nor the Porro-Yamal right clicked</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="a1x" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1,1 L9,9 M9,1 L1,9" stroke="#ff5d6a" stroke-width="2.2"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · both wide combinations shut down; Costa &amp; the block mop up</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#0f7a3d" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">COSTA</text></g>
+      <!-- Portugal compact block -->
+      <g><circle cx="300" cy="105" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="100" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="105" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><circle cx="240" cy="130" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/><circle cx="480" cy="130" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1"/></g>
+      <text x="360" y="80" text-anchor="middle" font-size="9" fill="#bff0d5">disciplined, compact — deny the wide overload</text>
+
+      <!-- Left combo -->
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="90" cy="330" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="90" y="334">CUC</text></g>
+        <g><circle cx="150" cy="250" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="150" y="254">BAE</text><text x="150" y="270" fill="#ff9ba1" font-size="8">left combo — stifled</text></g>
+      </g>
+      <!-- Right combo -->
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="630" cy="330" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="630" y="334">POR</text></g>
+        <g><circle cx="580" cy="250" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.4"/><text x="580" y="254">YAM</text><text x="580" y="270" fill="#ff9ba1" font-size="8">right combo — shut down</text></g>
+      </g>
+
+      <!-- left combo blocked -->
+      <path d="M100 322 C 120 300, 135 280, 145 264" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a1)"/>
+      <path d="M158 238 C 190 200, 220 165, 250 145" stroke="#ffc400" stroke-width="2.5" fill="none"/>
+      <g transform="translate(244,139)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="2.6"/></g>
+      <!-- right combo blocked -->
+      <path d="M620 322 C 600 300, 588 280, 582 264" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a1)"/>
+      <path d="M568 238 C 535 200, 505 165, 476 145" stroke="#ffc400" stroke-width="2.5" fill="none"/>
+      <g transform="translate(470,139)"><path d="M0,0 L11,11 M11,0 L0,11" stroke="#ff5d6a" stroke-width="2.6"/></g>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Spain's wide build-up</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> Both combos snuffed out</span>
+    </div>
+
+    <p class="expl"><strong>The most striking feature of Spain's win: they got almost nothing from their fabled wide play — and won regardless.</strong> All tournament, Spain's threat has flowed through the flanks, but tonight <strong>both channels malfunctioned.</strong> Down the left, the <strong>Cucurella-Baena combination never found its rhythm</strong>, its overlaps and cutbacks repeatedly smothered by Portugal's compact, disciplined defending. Down the right, the marquee <strong>Porro-Yamal partnership was shut down</strong> — Yamal, so often the game's decisive force, was doubled and shepherded away from danger (first by Nuno Mendes, then Semedo after Mendes limped off), his shots and crosses cut out or saved. That Spain still won, with their two primary attacking sources both nullified, speaks to their control and their bench. But it was a night the wings drew a blank — and it took a goal from central midfield to rescue them.</p>
+  </div>
+
+  <h2><span class="ic">😔</span> The Wasteful Edge — Oyarzabal and the chances that went begging</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · Profligacy</span><span class="mt">The clear chances came — and were spurned</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="360" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="60"/><rect y="120" width="720" height="60"/><rect y="240" width="720" height="60"/></g>
+      <rect x="230" y="40" width="260" height="90" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="130" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="130" stroke="#fff" stroke-width="3"/>
+      <g><circle cx="360" cy="95" r="15" fill="#0f7a3d" stroke="#fff" stroke-width="1.8"/><text x="360" y="99" font-size="8" fill="#fff" text-anchor="middle">COSTA</text></g>
+      <text x="360" y="150" text-anchor="middle" font-size="11" fill="#ffd6a0">Spain's high-danger chances — dragged wide or saved</text>
+
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="230" cy="270" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.4"/><text x="230" y="274">OYA</text><text x="230" y="292" fill="#fff" font-size="8">8' &amp; later — dragged wide</text></g>
+        <g><circle cx="500" cy="270" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.4"/><text x="500" y="274">YAM</text><text x="500" y="292" fill="#fff" font-size="8">denied by Costa</text></g>
+      </g>
+
+      <!-- Oyarzabal drag wide (misses left post) -->
+      <path d="M242 258 C 280 200, 300 150, 300 112 C 300 96, 260 70, 218 52" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#a2)"/>
+      <text x="150" y="70" font-size="9" fill="#ff9ba1">wide of the post</text>
+      <!-- Yamal saved -->
+      <path d="M488 258 C 440 200, 400 150, 372 108" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#a2)"/>
+      <text x="540" y="150" font-size="9" fill="#bff0d5">Costa saves</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Spain's spurned chances</span>
+    </div>
+
+    <p class="expl"><strong>Spain's persistent flaw resurfaced: they made the chances, but nearly failed to take them.</strong> The clearest fell to <strong>Mikel Oyarzabal, the tournament's joint-top scorer, who dragged an eighth-minute effort wide when clean through</strong> — a golden opening — and spurned another high-danger chance in a manner his manager will have found hard to watch. Yamal, too, was denied when he did work an opening. It was the same story that has shadowed Spain all tournament: a gulf between their control and their conversion, an xG that flatters relative to goals. Against a lesser side it wouldn't matter; against a stubborn Portugal it nearly cost them a place in the quarter-finals, and would have been unforgivable had Merino not intervened. Spain create enough to win comfortably. They just don't finish enough to.</p>
+  </div>
+
+  <div class="cr7">
+    <div class="t">👑 The End of an Era — Ronaldo's Last World Cup</div>
+    <p style="margin:8px 0 0">And so it ends. <strong>Cristiano Ronaldo's illustrious World Cup career is over</strong>, concluded not with a flourish but with a quiet, goalless evening in Dallas. The 41-year-old — playing, by his own admission, in his final World Cup — huffed and probed but could not find the goal his farewell demanded: an early effort dragged wide, a scrappy stab from an Unai Simón spill that was scrambled clear, and little else. In truth, on a night against elite opposition, <strong>Portugal looked a side carrying their ageing icon rather than being carried by him</strong> — a hard thing to say of a five-time Ballon d'Or winner, but the evidence of the night. Many will argue Martínez should have freed the team of the weight and started a more mobile, pressing front line; the decision to leave both Rafael Leão and super-sub Gonçalo Ramos on the bench looks, in hindsight, a grave one. Ronaldo leaves the World Cup stage as its most prolific-ever scorer across editions, but without the one prize that always eluded him. An era closes.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Winner (90+1') — Merino, off the bench, at the death</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Spain · 1-0</span><span class="mt">A quick free-kick, a run in behind, and the substitute's decisive slide</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="a3g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · quick restart: Rodri → Ferran → Merino slips in behind &amp; finishes</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#0f7a3d" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">COSTA</text></g>
+      <!-- Portugal caught out on the restart -->
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="300" cy="130" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1" opacity=".75"/><circle cx="430" cy="130" r="10" fill="#0f7a3d" stroke="#fff" stroke-width="1.1" opacity=".75"/><text x="365" y="112" font-size="9" fill="#bff0d5">caught on the quick free-kick</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="250" cy="330" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="250" y="334">ROD</text><text x="250" y="350" fill="#fff" font-size="8">quick restart</text></g>
+        <g><circle cx="400" cy="270" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="400" y="274">FER</text><text x="400" y="290" fill="#fff" font-size="8">the slip pass</text></g>
+        <g><circle cx="470" cy="185" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="470" y="189" fill="#06301d">MER</text><text x="470" y="205" fill="#bff0d5" font-size="9">runs in behind</text></g>
+      </g>
+
+      <path d="M262 322 C 300 305, 350 285, 388 276" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#a3)"/>
+      <path d="M412 262 C 435 240, 452 215, 462 200" stroke="#ffc400" stroke-width="3" fill="none" marker-end="url(#a3)"/>
+      <path d="M478 172 C 480 135, 460 95, 405 60" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#a3g)"/>
+      <text x="530" y="150" font-size="10" fill="#bff0d0">slid beyond Costa (90+1')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Quick restart &amp; slip pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Merino run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>Fittingly, the goal that broke the deadlock came not from the flanks but through the middle — and from a substitute.</strong> With the game drifting toward extra time and both sets of nerves fraying, Spain pounced on a moment of alertness. <strong>A quick free-kick restart deep in the Portuguese half caught Portugal napping: Rodri fed Ferran Torres, who slipped Mikel Merino in behind the back line, and the midfielder — on for Pedri minutes earlier — slid the ball beyond Diogo Costa</strong> in the first minute of stoppage time. It was the archetypal champion's goal: patient toil rewarded by one sharp, decisive combination when it mattered most, executed by fresh legs from the bench. The very bench depth our pre-match flagged as Spain's edge delivered precisely when the starters could not. Cruel on Portugal, who had defended so diligently — but Spain earned it.</p>
+  </div>
+
+  <h2><span class="ic">🧤</span> Diogo Costa — the Goalkeepers' World Cup, continued</h2>
+  <p>One more strand of this tournament ran through the night: the goalkeepers. <strong>Diogo Costa produced five saves and very nearly dragged Portugal to extra time single-handedly</strong>, denying Yamal on multiple occasions and repelling Spain's better openings with the calm authority that has made him one of the world's finest. He was, until the 91st minute, on course to be the latest keeper to define a knockout tie — following Vozinha, Gill and Nyland in a World Cup that has belonged, to a striking degree, to its goalkeepers. At the other end, Unai Simón's crucial first-half double save preserved the clean sheet that ultimately made Merino's goal enough. In a game of such fine margins, the shot-stoppers were, once again, central characters. Costa lost, but he was Portugal's best player by some distance.</p>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Mikel Merino</b> — <span class="good">The matchwinner</span>. On for Pedri, and decisive within minutes — a perfectly-timed run and a cool finish at the death. The substitute who settled a derby.</div>
+    <div class="rt"><b>Diogo Costa (POR)</b> — <span class="good">Portugal's best, in defeat</span>. Five saves, denied Yamal repeatedly, almost forced extra time. The goalkeepers' World Cup rolls on.</div>
+    <div class="rt"><b>Rodri</b> — <span class="good">The metronome</span>. Pulled the strings all night and provided the assist's first touch. Spain's control flowed through him.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="mid">Shackled</span>. Doubled-marked and denied by Costa; the Porro-Yamal right never clicked. Quiet by his standards, but drew defenders all night.</div>
+    <div class="rt"><b>Mikel Oyarzabal</b> — <span class="bad">Wasteful</span>. Dragged a golden 8th-minute chance wide and spurned another. The profligacy that nearly cost Spain.</div>
+    <div class="rt"><b>Cristiano Ronaldo (POR)</b> — <span class="bad">A quiet farewell</span>. Couldn't muster a goal in his final World Cup match; Portugal looked to be carrying him. An era ends without the crown.</div>
+  </div>
+
+  <div class="pull">Spain looked out of sorts for long spells, their wings never fired, and their finishing let them down — and still they won. That, in the end, is what separates the contenders from the rest.
+    <span class="a">— The mark of a side that finds a way</span>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — Through, but Questions Remain</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">Spain · The Road Ahead</span><span class="mt">Into the quarters — but the ruthlessness gap must close</span></div>
+
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="300" rx="10" fill="#0d141d"/>
+      <text x="30" y="46" font-size="15" font-weight="800" fill="#ffc400">R16 ✓</text>
+      <text x="30" y="66" font-size="11" fill="#8b97a8">Spain 1-0 Portugal</text>
+      <circle cx="150" cy="40" r="6" fill="#e63946"/>
+      <line x1="160" y1="40" x2="250" y2="40" stroke="#26303f" stroke-width="2"/>
+      <text x="270" y="46" font-size="15" font-weight="800" fill="#e9b949">QF · LA, Jul 10</text>
+      <text x="270" y="66" font-size="11" fill="#8b97a8">vs USA / Belgium</text>
+      <circle cx="410" cy="40" r="6" fill="#e9b949"/>
+      <line x1="420" y1="40" x2="510" y2="40" stroke="#26303f" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="530" y="46" font-size="15" font-weight="800" fill="#5aa0e6">SF?</text>
+      <text x="530" y="66" font-size="11" fill="#8b97a8">France looms</text>
+      <circle cx="600" cy="40" r="6" fill="#5aa0e6"/>
+
+      <rect x="30" y="100" width="660" height="76" rx="8" fill="#101722" stroke="#26303f"/>
+      <text x="45" y="126" font-size="13" font-weight="800" fill="#39d98a">✓ The positives</text>
+      <text x="45" y="148" font-size="12" fill="#cdd6e2">Five clean sheets from five — still unbreached. Won ugly, off the bench, when not at</text>
+      <text x="45" y="166" font-size="12" fill="#cdd6e2">their best. That resilience is the champion's trait Brazil so badly lacked.</text>
+
+      <rect x="30" y="192" width="660" height="86" rx="8" fill="#101722" stroke="#26303f"/>
+      <text x="45" y="218" font-size="13" font-weight="800" fill="#ff8e8e">⚠ The concerns</text>
+      <text x="45" y="240" font-size="12" fill="#cdd6e2">The wings misfired, Oyarzabal missed sitters, the finishing lagged the xG again.</text>
+      <text x="45" y="258" font-size="12" fill="#cdd6e2">Against France in a potential semi, this profligacy would be punished without mercy.</text>
+    </svg>
+
+    <p class="expl"><strong>Spain march on — but this was a night that answered one question and raised another.</strong> On the positive side, La Roja showed the trait that Brazil so conspicuously lacked twenty-four hours earlier: <strong>the ability to win ugly, to grind out a tight one without their best stuff, and to strike from the bench when the starters faltered.</strong> Five games, five clean sheets — the defensive foundation is genuinely elite, and the depth that produced Merino is a weapon few can match. But the concerns are real and recurring: <strong>the wide play malfunctioned, the finishing again lagged badly behind the chance creation, and Oyarzabal's misses would have been fatal against a sharper side.</strong> A quarter-final against the USA or Belgium awaits in Los Angeles, and beyond it, potentially, a semi-final collision with France — the tournament's other juggernaut, sitting in the same half. Against Mbappé's France, this profligacy in front of goal simply cannot recur. Spain have the control and the defence of champions. To go all the way, they must rediscover the ruthlessness. <strong>Vamos España — but sharpen up.</strong></p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · WON</div><div class="g">Spain 1-0 Portugal</div><div class="n">A gritty, late derby win — five clean sheets from five, and through without the wings ever firing.</div></div>
+    <div class="nx"><div class="d">Quarter-Final · LA, Jul 10</div><div class="g">Spain vs USA / Belgium</div><div class="n">A winnable last-eight tie — but the finishing must improve, with France potentially looming in the semis.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Exactly the 1-0 the head said it would be — a cagey, apprehensive Iberian derby settled by the finest of margins. Spain were the better team without ever hitting their heights: their vaunted flanks, both left and right, drew a blank; their finishing again betrayed them, Oyarzabal the chief culprit; and for long spells they looked out of sorts against a disciplined Portugal. But Portugal were carrying an ageing icon who could not deliver on his farewell, Diogo Costa's brilliance could only delay the inevitable, and when the decisive moment came it was <strong>Merino, off the bench, through the middle, at the death</strong> — the champion's knack of finding a way. <strong>Ronaldo's World Cup ends; Spain's continues.</strong> They are through, unbreached in five games, and still not close to their ceiling. The defence is ready. The finishing is not. Fix that, and they can win it all. <strong>Vamos España.</strong></p>
+  </div>
+
+</div>
+</body>
+</html>

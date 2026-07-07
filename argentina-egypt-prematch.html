@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs Egypt — Pre-Match Tactical Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--egy:#c8102e;--egy2:#ff6b7d;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#7cc0ec,#fff 50%,#c8102e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .ar{background:linear-gradient(135deg,#0e2536,#0d1117)}
+  .vsbar .eg{background:linear-gradient(135deg,#2a0910,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .ar .nm{color:var(--arg2)}.vsbar .eg .nm{color:var(--egy2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.arg{border-left:3px solid var(--arg)}
+  .card.egy{border-left:3px solid var(--egy)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.egy{background:rgba(200,16,46,.2);color:var(--egy2)}
+  .move .mtag.key{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge marq">🔥 Marquee Tie · Messi vs Salah</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Round of 16 · Win or go home</span>
+  </div>
+  <h1>Argentina vs Egypt</h1>
+  <div class="sub">The battle of the number 10s — Messi against Salah — as the champions, still shaken by Cape Verde, meet the Pharaohs' Salah-led defiance</div>
+  <div class="meta">🕒 9:30 PM IST, Tue 7 Jul · 📍 Mercedes-Benz Stadium, Atlanta (12pm ET / 16:00 GMT) · 🌡️ ~33°C heat</div>
+
+  <div class="vsbar">
+    <div class="side ar"><div class="nm">🇦🇷 Argentina</div><div class="fm">4-4-2 · Scaloni · holders · 4/4 wins · but shaken vs Cape Verde</div></div>
+    <div class="mid">VS</div>
+    <div class="side eg"><div class="nm">Egypt 🇪🇬</div><div class="fm">4-2-3-1 · Hassan · Salah-led · 1st R16 since 1934 (on merit)</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a spicy duel of number 10s, and a champion with questions</div>
+    <p style="margin:8px 0 0">This is the tie the neutrals wanted: <strong>Lionel Messi against Mohamed Salah</strong>, two of the era's defining forwards, in a straight knockout. Argentina remain the tournament's outstanding side on paper — four wins from four, Messi the Golden Boot leader on seven goals — but they arrive with genuine questions after <strong>surviving an almighty scare against Cape Verde, needing a 111th-minute own goal to escape 3-2 after extra time</strong> (see <a href="argentina-capeverde-postmatch.html" style="color:var(--arg2);font-weight:700">"The Disjointed Symphony"</a>). Scaloni admitted his players were "absolutely knackered" after that 120-minute slog. Egypt, meanwhile, are living a fairytale of their own — through to the last 16 <strong>for the first time since 1934, and the first time ever on merit</strong> — having ground out a penalty-shootout win over Australia. They are hard to beat but light on goals, and their hopes rest almost entirely on Salah. The numbers are emphatic: Opta gives Argentina a 69% regulation win, Egypt just 12%. But as Cape Verde proved, this Argentina has vulnerabilities — and in Salah, Egypt carry a weapon the Blue Sharks did not.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">The big question for Argentina is rotation after their exhausting extra-time win; for Egypt, it's the fitness of a patched-up defence and a not-fully-sharp Salah. Exact XIs are predicted (not officially confirmed).</p>
+
+  <div class="card arg">
+    <h3 style="margin-top:0">🇦🇷 Argentina — tired legs and rotation calls (expected XI)</h3>
+    <ul>
+      <li><strong>Fatigue is the theme (confirmed)</strong> — Scaloni called his side "absolutely knackered" after 120 minutes against Cape Verde, and Molina, Enzo and Medina couldn't complete full recovery sessions. Expect freshening changes.</li>
+      <li><strong>Rotation likely:</strong> Nicolás Tagliafico, Leandro Paredes and Julián Álvarez are all pushing for starts. Álvarez may partner Messi up top, with Lautaro (who lasted only an hour last time) the alternative.</li>
+      <li><strong>Injury doubts:</strong> Facundo Medina (physical discomfort/cramp) and Nico González (ankle) are doubtful; Tagliafico is ready at left-back.</li>
+      <li><strong>The Romero–Lisandro question:</strong> the world-class centre-back pair both had uncertain moments against Cape Verde's far weaker attack — a worry against Salah and Marmoush in transition.</li>
+      <li><strong>Messi, imperious:</strong> 7 goals (Golden Boot co-leader), the all-time WC record scorer on 20, first to score in eight consecutive WC games, and a record 12 goal involvements in WC knockouts. Argentina remain heavily reliant on his magic.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-4-2): E. Martínez; Molina, Romero, L. Martínez, Tagliafico; De Paul, Mac Allister, Enzo, Almada; Messi, Álvarez / Lautaro. (Paredes pushing. Not confirmed.)</p>
+  </div>
+
+  <div class="card egy">
+    <h3 style="margin-top:0">🇪🇬 Egypt — Salah, discipline, and a patched-up back line</h3>
+    <ul>
+      <li><strong>Salah fit and central (confirmed)</strong> — he played all 120 minutes against Australia despite a hamstring scare (and dinked a Panenka in the shootout), though at times looked reluctant to sprint at full pace. A fully-firing Salah is Egypt's one route to a result.</li>
+      <li><strong>Defensive injuries bite:</strong> left-back Ahmed Fatouh (hamstring) and Mohamed Abdelmonem are out; Karim Hafez and Ramy Rabia are doubts — untimely against Argentina's firepower. Mohanad Lasheen returns from suspension in midfield.</li>
+      <li><strong>The plan is the block-and-counter:</strong> Hossam Hassan's side defend deep and in numbers, doubling up on Messi, and look to spring Salah, Marmoush and Ashour on the break — the transitional threat that troubled everyone they've faced.</li>
+      <li><strong>Hard to beat, light on goals:</strong> three of their four games were level after 90 minutes; the attack depends on individual brilliance or a set piece, with Salah the dead-ball threat.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-2-3-1): Shobeir; Hany, Ibrahim, Rabia, Hafez; Fathy, Ateya; Ashour, Salah, Marmoush; Zico. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Control vs the Cape Verde Blueprint</h2>
+  <p>Egypt's path is no secret, because it nearly worked spectacularly for someone else. <strong>They will follow the Cape Verde blueprint to the letter: sit deep, stay compact, funnel Argentina wide, double-mark Messi, and attack the champions' flanks and their centre-backs with pace in transition.</strong> Cape Verde fired 16 shots at Argentina's goal doing exactly this — and Egypt, crucially, have something the Blue Sharks lacked: a genuinely world-class finisher in Salah, plus Marmoush and Ashour to run the channels. Argentina's counter is control: <strong>establish midfield dominance early through Enzo, Mac Allister and De Paul, starve Egypt of transitions, and let Messi's genius unlock a packed block.</strong> The defining sub-plot is fatigue — Argentina's 120-minute exertions three days ago, in 33°C Atlanta heat, against a side that thrives on making games long and awkward. If the champions control the tempo, they win comfortably. If they're leggy and loose, as they were against Cape Verde, Egypt have the tools to make it very uncomfortable indeed.</p>
+
+  <h2><span class="ic">🔑</span> Argentina's Key — Messi in the pocket, unlock the block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · Attack</span><span class="mt">Free Messi between the lines; Álvarez &amp; Enzo attack the space</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aM" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="aMg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi drops in, drags a marker, threads Álvarez behind</text>
+
+      <!-- Egypt block -->
+      <g><circle cx="300" cy="105" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="100" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="105" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="330" cy="150" r="9" fill="#9c1020" stroke="#fff" stroke-width="1"/><circle cx="400" cy="150" r="9" fill="#9c1020" stroke="#fff" stroke-width="1"/><text x="365" y="80" text-anchor="middle" font-size="9" fill="#ffb3bb">deep block · double-marks Messi</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="235" r="14" fill="#7cc0ec" stroke="#fff" stroke-width="1.6"/><text x="360" y="239">MESSI</text><text x="360" y="255" fill="#fff" font-size="8">drops into the pocket</text></g>
+        <g><circle cx="470" cy="185" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="470" y="189" fill="#06301d">ALV</text><text x="470" y="205" fill="#bff0d5" font-size="8">runs the channel</text></g>
+        <g><circle cx="250" cy="200" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="250" y="204">ENZO</text></g>
+      </g>
+      <!-- marker pulled to Messi -->
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="360" cy="185" r="9" fill="#9c1020" stroke="#fff" stroke-width="1"/></g>
+      <path d="M360 176 L360 219" stroke="#ff6b7d" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+
+      <path d="M374 227 C 410 210, 440 195, 458 190" stroke="#7cc0ec" stroke-width="3.5" fill="none" marker-end="url(#aM)"/>
+      <path d="M474 171 C 478 135, 462 100, 420 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aMg)"/>
+      <text x="530" y="150" font-size="10" fill="#bff0d0">the disguised through-ball</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's disguised pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Álvarez run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The move that beats a deep block, and the one Argentina must lean on.</strong> Egypt will double- and triple-up on Messi, but that is precisely the trap: <strong>when he drops into the pocket between the lines and pulls a marker toward him, he opens the very space between Egypt's defence and midfield that Julián Álvarez and Enzo Fernández are built to exploit.</strong> The defining tactical question for Hossam Hassan's double pivot is whether to follow Messi (and expose that gap) or hold shape (and let him orchestrate). Either way, Messi's genius is the answer to a packed block — a disguised through-ball for the run behind, or a set-piece delivery for Argentina's aerial threat. The key for Scaloni is to make Messi's brilliance a shared enterprise rather than a solo act: if Álvarez and Enzo feed off the space he creates, Argentina prise Egypt open. If they stand and watch, as too often against Cape Verde, it stays uncomfortable.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Egypt's Threat — Salah &amp; Ashour in transition</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag egy">Egypt · The Danger</span><span class="mt">Win it deep, spring Salah at Argentina's tiring, shaky back line</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aS" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b7d"/></marker>
+        <marker id="aSg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Egypt attacking ↑ · Ashour wins it, releases Salah at Romero &amp; Lisandro in transition</text>
+
+      <!-- Argentina line, tired -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="140" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2" opacity=".9"/>
+        <circle cx="420" cy="140" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2" opacity=".9"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#cfe6d6">Romero &amp; Lisandro — tired legs, shaky vs CV</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="320" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="300" y="324">ASH</text><text x="300" y="340" fill="#ffb3bb" font-size="8">wins &amp; releases</text></g>
+        <g><circle cx="450" cy="235" r="14" fill="#c8102e" stroke="#fff" stroke-width="1.6"/><text x="450" y="239">SALAH</text><text x="450" y="255" fill="#ffb3bb" font-size="8">runs in behind</text></g>
+        <g><circle cx="230" cy="240" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="230" y="244">MAR</text><text x="230" y="260" fill="#ffb3bb" font-size="8">Marmoush overlaps</text></g>
+      </g>
+
+      <path d="M312 312 C 350 288, 405 255, 435 242" stroke="#ff6b7d" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aS)"/>
+      <path d="M456 221 C 462 178, 452 130, 425 80" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aSg)"/>
+      <text x="540" y="165" font-size="10" fill="#bff0d0">Egypt's clearest route to a goal</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b7d;border-top-style:dashed"></i> Transition release</span>
+      <span><i style="border-top-color:#39d98a"></i> Salah's run in behind</span>
+    </div>
+
+    <p class="expl"><strong>Egypt's one genuine, credible path to the upset — and it is more dangerous than Cape Verde's.</strong> The Pharaohs cannot out-possess Argentina, so they won't try. Instead: <strong>defend deep, absorb, win the ball, and release Salah and Ashour into the space behind Argentina's centre-backs before the champions can reset.</strong> This is the tie's key vulnerability: Romero and Lisandro Martínez, world-class on their day, had visible moments of uncertainty against Cape Verde's far inferior attack — and now face an elite finisher in Salah, running at them with tired legs after their extra-time marathon. Marmoush's pace and Ashour's late runs into the pockets add support. If Argentina push their full-backs high (Molina, especially) and lose the ball in midfield, Salah in transition is exactly the picture that could produce a goal — and against a champion that has looked jittery when leads slip, a single Egyptian strike would ignite a very nervy evening. Salah needs one clean chance. Egypt's whole game is designed to manufacture it.</p>
+  </div>
+
+  <h2><span class="ic">🥊</span> The Duel That Defines It — Messi vs Salah</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">Battle of the No.10s</span><span class="mt">The Golden Boot leader against Egypt's one-man hope</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="30" x2="360" y2="290" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="54" font-size="15" font-weight="800" fill="#a9d8f5">🇦🇷 Lionel Messi</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="84">▸ 7 goals — Golden Boot co-leader</text>
+        <text x="34" y="108">▸ All-time WC top scorer (20)</text>
+        <text x="34" y="132">▸ Scored in 8 straight WC games</text>
+        <text x="34" y="156">▸ Record 12 WC knockout goal involvements</text>
+      </g>
+      <rect x="34" y="180" width="300" height="112" rx="8" fill="#101722" stroke="#2a3f52"/>
+      <text x="48" y="206" font-size="12.5" font-weight="800" fill="#a9d8f5">The engine of everything:</text>
+      <text x="48" y="228" font-size="12" fill="#cdd6e2">involved in nearly all Argentina's good play.</text>
+      <text x="48" y="256" font-size="12.5" font-weight="800" fill="#ff8e8e">The worry:</text>
+      <text x="48" y="278" font-size="12" fill="#cdd6e2">a team over-reliant on one 39-year-old.</text>
+      <text x="392" y="54" font-size="15" font-weight="800" fill="#ff6b7d">🇪🇬 Mohamed Salah</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="84">▸ 1 goal, xG 1.94 — Egypt's talisman</text>
+        <text x="392" y="108">▸ Played 120 mins vs Australia (hamstring scare)</text>
+        <text x="392" y="132">▸ Panenka in the shootout — ice-cold</text>
+        <text x="392" y="156">▸ By far Egypt's likeliest source of a goal</text>
+      </g>
+      <rect x="392" y="180" width="296" height="112" rx="8" fill="#101722" stroke="#4a1520"/>
+      <text x="406" y="206" font-size="12.5" font-weight="800" fill="#ff6b7d">The one-man hope:</text>
+      <text x="406" y="228" font-size="12" fill="#cdd6e2">a moment of magic or a set piece.</text>
+      <text x="406" y="256" font-size="12.5" font-weight="800" fill="#ff8e8e">The worry:</text>
+      <text x="406" y="278" font-size="12" fill="#cdd6e2">not fully sharp; if silenced, Egypt rarely score.</text>
+    </svg>
+
+    <p class="expl"><strong>Two number 10s, two very different burdens.</strong> Both teams lean heavily on their talisman, but the contrast is instructive. <strong>Messi is in the form of his life, orchestrating everything</strong> — the difference is that when Egypt double-mark him, Argentina still have Álvarez, Lautaro, Enzo and Almada to hurt you. <strong>Salah, by contrast, is Egypt's near-sole route to goal</strong>, and he arrives not quite at full sharpness after a hamstring scare and a draining 120 minutes. If Argentina can shackle Salah — and Cuti Romero relishes exactly that kind of man-to-man scrap — Egypt's attack largely evaporates. If Salah gets loose in transition, he is world-class enough to punish the champions on his own. This is the fulcrum: Argentina have redundancy in attack; Egypt do not. That asymmetry, more than anything, is why Argentina are such heavy favourites — but it is also why one Salah moment could change everything.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Egypt have gone to 90+ minutes level in three of four games and needed penalties to reach this stage; dragging Argentina deep is their explicit plan. And given the champions' fatigue and the heat, a long night is far from unthinkable — so the latter stages matter.</p>
+    <p style="margin:8px 0 0"><strong>Extra time is a double-edged sword for Argentina.</strong> On quality, their bench is superior — Lautaro, Paredes, Lo Celso, Nico Paz offer fresh, game-breaking options that Egypt cannot match. But the caveat is stark: <strong>Argentina have already played 120 draining minutes three days ago, in Atlanta's 33°C heat, and Scaloni called them "knackered."</strong> Another extended contest could sap them badly — exactly the war of attrition Egypt want. Argentina's clear imperative is to settle this inside 90 and avoid a second consecutive marathon.</p>
+    <p style="margin:8px 0 0"><strong>Penalties, however, remain Argentina's trump card.</strong> This is where the champions are almost uniquely strong: in <strong>Emiliano "Dibu" Martínez they have the definitive modern shootout goalkeeper</strong>, a two-time Copa América and World Cup shootout hero, with Messi, Álvarez and Lautaro among ice-cold takers. Egypt showed real nerve to beat Australia on spot-kicks (Salah's Panenka included), so it's no gift — but if this tie reaches a shootout, Argentina's pedigree and their goalkeeper make them strong favourites. The message for the holders: if the goal won't come, don't panic — the shootout is your friend.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline — the honest read</h2>
+    <p>Let's be honest and clear-eyed, as this project tries to be: <strong>Argentina should win, and the numbers (Opta 69%, models 72-75%) are right to make them heavy favourites.</strong> They have the best player in the tournament in his best form, redundancy in attack that Egypt cannot match, the superior bench, and the ultimate insurance policy of Dibu Martínez should it reach penalties. Egypt are light on goals, patched-up at the back, and reliant on a Salah who isn't quite at full tilt. The most likely outcome is a controlled, professional Argentine win — not necessarily glamorous, but efficient. <strong>And yet honesty also demands the caveats.</strong> Cape Verde exposed real, specific vulnerabilities — shaky centre-backs, an over-reliance on Messi, a tendency to switch off — and Egypt, unlike the Blue Sharks, have a genuinely world-class finisher to punish them. Add the fatigue of a second marathon in four days and the sapping heat, and the door is ajar for a nervy, uncomfortable evening, an Egyptian goal against the run of play, and the drama Argentina keep flirting with. My honest prediction: Argentina control it and win, but Egypt's discipline and Salah make them work, and it may not be settled until late. <strong>Argentina to advance — but respect the Pharaohs. Vamos Argentina.</strong></p>
+    <div class="scoreline">🇦🇷 Argentina 2 — 0 Egypt</div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a controlled Argentine win, Messi decisive and Álvarez/Lautaro adding a second. But a tight, low-scoring game, a Salah moment, or extra time are all live given the fatigue — and a shock Egyptian win, while unlikely (~12%), is not impossible if Argentina are as loose as they were against Cape Verde.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · Atlanta</div><div class="g">Winner advances</div><div class="n">To the quarter-final in Kansas City on July 11 to face Colombia or Switzerland.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">Argentina's lower-half path</div><div class="n">With Brazil eliminated by Norway, Argentina's side of the draw has opened up — a genuine chance to reach the MetLife final.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

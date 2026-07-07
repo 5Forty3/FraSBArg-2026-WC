@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina 3-2 Egypt — When Fantasy Became Reality</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--egy:#c8102e;--egy2:#ff6b7d;--blue:#5aa0e6;--red:#ff5d6a;--rom:#d98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(124,192,236,.14);color:var(--arg2);border:1px solid #2a3f52}
+  .badge.epic{background:rgba(217,140,255,.12);color:var(--rom);border-color:#3d2b4a}
+  h1{text-align:center;font-size:clamp(25px,5.2vw,42px);font-weight:800;margin-top:6px;line-height:1.12;
+    background:linear-gradient(90deg,#7cc0ec,#fff 50%,#d98cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--rom);font-size:14.5px;margin-top:12px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .a{color:var(--arg2)}.scoreboard .e{color:var(--egy2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--arg2)}.scorers .eg{color:var(--egy2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .a{color:var(--arg2)}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:56px;line-height:44px;padding:6px 12px 2px 0;color:var(--rom);font-weight:800}
+
+  .pull{border-left:3px solid var(--rom);background:linear-gradient(135deg,#1a1226,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#ecd9ff;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.egy{background:rgba(200,16,46,.2);color:var(--egy2)}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.miss{background:rgba(255,93,106,.16);color:#ff8e8e}
+  .move .mtag.gk{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mtag.future{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge epic">✦ An Instant Classic</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Round of 16 · FT</span>
+  </div>
+  <h1>When Fantasy Became Reality</h1>
+  <div class="kicker">Two down with eleven minutes left, the world writing their obituary — and then Argentina did the only thing Argentina knows how to do: believe</div>
+
+  <div class="scoreboard">
+    <span class="t a">🇦🇷 Argentina</span>
+    <span class="sc">3 – 2</span>
+    <span class="t e">Egypt 🇪🇬</span>
+  </div>
+  <div class="meta">📍 Mercedes-Benz Stadium, Atlanta · Round of 16 · Full-time</div>
+  <div class="scorers">⚽ <b>Romero 79', Messi 84', Enzo 90+3'</b> · Egypt: <span class="eg">Ibrahim 15', Zico 67'</span></div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">The comeback</div><div class="v"><span class="a">2-0 down → 3-2</span></div></div>
+    <div class="stat"><div class="l">In the space of</div><div class="v">~11 minutes</div></div>
+    <div class="stat"><div class="l">Messi this WC</div><div class="v">8 · Boot lead</div></div>
+    <div class="stat"><div class="l">Shobeir saves</div><div class="v">Messi pen +</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Perhaps the greatest comeback in World Cup knockout history. Argentina were dead and buried. Then they weren't.</p>
+
+  <div class="essay">
+  <p class="lead dropcap">There is a place Argentina go that no map of a football pitch can chart — a place beyond the reality of grass and lines and scorelines, out on the very edge of the world where sport dissolves into folklore. On a delirious night in Atlanta, they went there again. Two goals down to Egypt with eleven minutes left, a missed Messi penalty behind them, the entire watching world already composing the obituary of the defending champions, Argentina did the one thing that cannot be coached, bought, or explained. They believed. And belief, for this team, is not a sentiment — it is a weapon, a birthright, the single inheritance handed down from Diego Maradona in 1986 and carried ever since on the edge of fantasy.</p>
+
+  <p>This is how Argentina win World Cups. Not by overwhelming the world from the first whistle, but by finding, at the exact moment all seems lost, that final reserve of faith in themselves that no other footballing nation possesses in quite the same measure. When everyone else has given up on them, they refuse to give up on themselves. It is the undying spirit to rule in the one arena left available to rule — the football pitch — when everything else has been stripped away. Tonight, once again, that spirit turned reality into magic, and the folklore of the game gained another chapter.</p>
+
+  <div class="pull">Maradona did it in 1986, and ever since, Argentina have lived on the edge of the world and the cusp of fantasy. To think the Hand of God and the goal that followed it were two contrasting acts is to misunderstand the Argentine character entirely — both were the same undying will to win, in the only kingdom this nation is permitted to rule.
+    <span class="a">— The inheritance of belief</span>
+  </div>
+
+  <h2><span class="ic">🧭</span> The Story — Death, and Resurrection, in Eleven Minutes</h2>
+  <p>For large stretches, this was not the story it became. Argentina, in truth, played well for long swaths — they created chance after chance, laid siege, and were denied over and over: <strong>half a dozen times by an inspired Egyptian goalkeeper, and as many again by desperate defensive blocks on the line.</strong> Egypt, ruthlessly efficient, took two of the precious few chances they fashioned and turned them into a two-goal lead. When Zico made it 2-0 in the 67th minute, and with Messi's earlier penalty saved still hanging in the Atlanta air, the conclusion seemed inescapable: the champions were out. Hadn't Messi missed from the spot? Wasn't this, finally, the reckoning that Cape Verde had foreshadowed?</p>
+  <p>And then, in the space of eleven impossible minutes, fantasy became reality. <strong>Romero on 79. Messi on 84. Enzo on 90+3.</strong> Three goals, no reply, a two-goal deficit obliterated and a place in the quarter-finals seized from the jaws of elimination. Egypt, who had defended so bravely and led so deservedly, were left broken by a force they could not have prepared for — not a tactic, but a conviction. This match, on paper, should never have been this hard. But that was never the point. The point is what great teams do when it <em>is</em> this hard: they escape through sheer, unbreakable belief.</p>
+
+  <h2><span class="ic">⚽</span> Egypt Goal 1 (15') — Ibrahim's thunderous header</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag egy">Egypt · 1-0</span><span class="mt">Their first shot of the game — and a bolt from the blue</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="e1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b7d"/></marker>
+        <marker id="e1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Egypt attacking ↑ · Ateya's curled ball to the back post → Ibrahim's forehead</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="140" cy="250" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="140" y="254">ATE</text><text x="140" y="270" fill="#ffb3bb" font-size="8">curls to back post</text></g>
+        <g><circle cx="440" cy="120" r="14" fill="#c8102e" stroke="#fff" stroke-width="1.6"/><text x="440" y="124">IBR</text><text x="440" y="140" fill="#ffb3bb" font-size="8">rises unmarked</text></g>
+      </g>
+      <path d="M152 244 C 280 150, 380 120, 424 120" stroke="#ff6b7d" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#e1)"/>
+      <path d="M432 106 C 420 88, 400 70, 380 56" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#e1g)"/>
+      <text x="500" y="110" font-size="10" fill="#bff0d0">headed home — total shock</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b7d;border-top-style:dashed"></i> Ateya's cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Ibrahim's header</span>
+    </div>
+
+    <p class="expl"><strong>A bolt from the blue that set the tone for the drama to come.</strong> It was, remarkably, <strong>Egypt's first shot of the entire game</strong> — Marawan Ateya curling a high ball to the back post, where <strong>Yasser Ibrahim climbed unmarked to thunder a header past Emiliano Martínez.</strong> The first time Argentina had trailed all tournament, and total surprise in Atlanta. It was the perfect encapsulation of Egypt's night: hard to beat, clinical with the little they created, and utterly unafraid. As their coach Hossam Hassan had defiantly insisted beforehand, "We're no underdogs — we are a civilization 7,000 years old." For 79 minutes, his side made those words look prophetic.</p>
+  </div>
+
+  <h2><span class="ic">🚫</span> The Turning Point That Wasn't (21') — Messi's penalty saved</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag miss">The Miss</span><span class="mt">Shobeir denies Messi from the spot — and the doubt sets in</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="m1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+      </defs>
+      <rect width="720" height="360" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="60"/><rect y="120" width="720" height="60"/><rect y="240" width="720" height="60"/></g>
+      <rect x="230" y="40" width="260" height="90" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="130" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="130" stroke="#fff" stroke-width="3"/>
+      <circle cx="360" cy="230" r="3" fill="#fff"/>
+      <text x="360" y="150" text-anchor="middle" font-size="11" fill="#ffd6a0">the spot — Shobeir guesses right, huge save</text>
+
+      <!-- keeper diving to save -->
+      <g><circle cx="415" cy="100" r="15" fill="#c8102e" stroke="#fff" stroke-width="1.8"/><text x="415" y="104" font-size="8" fill="#fff" text-anchor="middle">SHO</text><text x="415" y="128" font-size="9" fill="#ffb3bb" text-anchor="middle">saves!</text></g>
+      <!-- Messi -->
+      <g><circle cx="360" cy="245" r="14" fill="#7cc0ec" stroke="#fff" stroke-width="1.6"/><text x="360" y="249" font-size="9" fill="#0a0e14" text-anchor="middle">MESSI</text></g>
+      <!-- penalty saved path -->
+      <path d="M360 231 C 380 180, 400 135, 412 112" stroke="#7cc0ec" stroke-width="3" fill="none" marker-end="url(#m1)"/>
+      <text x="500" y="200" font-size="10" fill="#ff9ba1">saved low to the keeper's left</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's penalty — saved</span>
+    </div>
+
+    <p class="expl"><strong>The moment the football gods seemed to turn their backs — and the doubt crept in.</strong> Six minutes after falling behind, Argentina won a penalty and the chance to level immediately. Up stepped Messi — and <strong>Mostafa Shobeir, utterly inspired, dived to deny him.</strong> It was Messi's second missed penalty of this tournament (after Austria) and the fourth he has missed in his World Cup career outside shootouts. Worse still, Shobeir was only warming up: before the interval he would also keep out Mac Allister with a stunning point-blank reflex stop and deny Álvarez, while Messi rattled the post with a curling free-kick. Everything that could conspire against Argentina did. In another chapter of this "goalkeepers' World Cup," a previously unheralded shot-stopper was writing his name in lights — and dragging the champions toward the exit. The narrative was set: this was not going to be Argentina's day.</p>
+  </div>
+
+  <h2><span class="ic">🧤</span> The Wall — Shobeir and the chances that wouldn't go in</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag gk">Egypt · The Hero (for 79 minutes)</span><span class="mt">Save after save — the keeper single-handedly kept Egypt ahead</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="g1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+      </defs>
+      <rect width="720" height="360" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="60"/><rect y="120" width="720" height="60"/><rect y="240" width="720" height="60"/></g>
+      <rect x="230" y="40" width="260" height="90" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="130" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="130" stroke="#fff" stroke-width="3"/>
+      <g><circle cx="360" cy="92" r="16" fill="#c8102e" stroke="#fff" stroke-width="1.8"/><text x="360" y="96" font-size="8" fill="#fff" text-anchor="middle">SHO</text></g>
+      <text x="360" y="150" text-anchor="middle" font-size="11" fill="#ffd6a0">6+ saves &amp; as many blocks on the line — Argentina denied everywhere</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="120" cy="270" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="120" y="274">MAC</text><text x="120" y="290" fill="#fff" font-size="8">point-blank stop</text></g>
+        <g><circle cx="360" cy="290" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="360" y="294">MESSI</text><text x="360" y="310" fill="#fff" font-size="8">post from FK</text></g>
+        <g><circle cx="600" cy="270" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="600" y="274">ALV</text><text x="600" y="290" fill="#fff" font-size="8">inches wide</text></g>
+      </g>
+      <path d="M132 260 C 200 190, 300 140, 344 106" stroke="#7cc0ec" stroke-width="2.5" fill="none" marker-end="url(#g1)"/>
+      <path d="M360 278 C 360 210, 350 160, 340 116" stroke="#7cc0ec" stroke-width="2.5" fill="none" marker-end="url(#g1)"/>
+      <path d="M588 260 C 520 190, 420 140, 376 106" stroke="#7cc0ec" stroke-width="2.5" fill="none" marker-end="url(#g1)"/>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Argentina attempts — all denied</span>
+    </div>
+
+    <p class="expl"><strong>For 79 minutes, one man alone kept the greatest upset alive.</strong> The scoreline flattered no one — Argentina battered the Egyptian goal, creating chance after chance, and were repelled at every turn. <strong>Shobeir was simply magnificent</strong>: the penalty save, the reflex denial of Mac Allister "from another planet," the stop from Álvarez — and where he was beaten, the woodwork or a body on the line intervened. This is the strand that has defined the entire tournament — Vozinha, Gill, Nyland, Costa, and now Shobeir, unheralded goalkeepers from lesser nations producing the performances of their lives to defy the giants. For an hour and change, it looked as though Shobeir's heroics would author the shock of the World Cup. But belief, unlike a goalkeeper, does not tire — and Argentina simply kept coming.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Egypt Goal 2 (67') — Zico strikes, and the world says it's over</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag egy">Egypt · 2-0</span><span class="mt">Punishment on the break — and, it seemed, the killer blow</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="e2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b7d"/></marker>
+        <marker id="e2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Egypt attacking ↑ · a break down the right, Hassan's cutback, Zico finishes</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="140" r="10" fill="#7cc0ec" stroke="#fff" stroke-width="1.1" opacity=".85"/>
+        <circle cx="420" cy="140" r="10" fill="#7cc0ec" stroke="#fff" stroke-width="1.1" opacity=".85"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#cfe6d6">Argentina caught pushing for the equaliser</text>
+      </g>
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="600" cy="200" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="600" y="204">HAS</text><text x="600" y="220" fill="#ffb3bb" font-size="8">right-wing run</text></g>
+        <g><circle cx="380" cy="180" r="14" fill="#c8102e" stroke="#fff" stroke-width="1.6"/><text x="380" y="184">ZICO</text><text x="380" y="200" fill="#ffb3bb" font-size="8">finishes with aplomb</text></g>
+      </g>
+      <path d="M340 300 C 450 270, 555 225, 588 208" stroke="#ff6b7d" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#e2)"/>
+      <path d="M588 194 C 500 175, 430 178, 396 182" stroke="#ff6b7d" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#e2)"/>
+      <path d="M378 166 C 375 130, 372 95, 370 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#e2g)"/>
+      <text x="470" y="150" font-size="10" fill="#bff0d0">2-0 — the champions on the brink</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b7d;border-top-style:dashed"></i> Egypt's break &amp; cutback</span>
+      <span><i style="border-top-color:#39d98a"></i> Zico's finish</span>
+    </div>
+
+    <p class="expl"><strong>The moment that should have been decisive — and the let-off that preceded it.</strong> Egypt had already thought they'd made it 2-0 on 58 minutes, when Salah sliced Argentina open with an inch-perfect pass for Zico — only for a <strong>hugely contentious VAR review to disallow it for a foul on Lisandro Martínez more than 100 yards away and 15 seconds earlier</strong>, a decision that summed up the modern game's uneasy relationship with technology. Argentina survived that scare, but not the next: on <strong>67 minutes, fine work from Hassan down the right wing carved out a cutback that Zico finished with aplomb.</strong> 2-0. Now it was real. With Messi's penalty saved and barely twenty minutes left, the champions looked dead and buried, and around the world, the verdict was being written: the holders were going home. Egypt, magnificent and fearless, were on the cusp of history. They had not reckoned with what comes next.</p>
+  </div>
+
+  <h2><span class="ic">🔥</span> The Comeback Begins (79') — Romero heads in Messi's cross</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · 2-1</span><span class="mt">The captain delivers, the centre-back becomes a striker</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="c1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="c1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi's whipped cross from the right → Romero's header</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c8102e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">SHO</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="230" r="13" fill="#7cc0ec" stroke="#fff" stroke-width="1.5"/><text x="600" y="234">MESSI</text><text x="600" y="250" fill="#fff" font-size="8">the cross</text></g>
+        <g><circle cx="370" cy="130" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="370" y="134" fill="#06301d">ROM</text><text x="370" y="150" fill="#bff0d5" font-size="8">the CB, up top</text></g>
+      </g>
+      <path d="M588 224 C 500 175, 430 145, 388 134" stroke="#7cc0ec" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#c1)"/>
+      <path d="M362 116 C 358 96, 356 78, 356 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#c1g)"/>
+      <text x="450" y="110" font-size="10" fill="#bff0d0">headed in — game on (79')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Messi's cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Romero's header</span>
+    </div>
+
+    <p class="expl"><strong>The spark. And, of course, it was Messi who struck it.</strong> On 79 minutes, with hope all but extinguished, the captain floated a beautiful cross from the right — and <strong>Cristian Romero, the centre-half, threw himself forward like a striker to head Argentina back into the tie.</strong> 2-1. Suddenly the Mercedes-Benz Stadium, and a nation watching an ocean away, remembered who these players were and what they were capable of. It was the same Romero who had looked shaky earlier, now hurling his body toward redemption — the very embodiment of a team that, when it matters most, finds another gear no opponent can legislate for. The clock said there was almost no time. Argentine belief said there was all the time in the world.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Equaliser (84') — Messi, inevitable, atones</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · 2-2</span><span class="mt">A first-time left-foot rifle — the penalty miss erased</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="c2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="c2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · the ball drops in the box, Messi rifles it first-time</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c8102e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">SHO</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="260" cy="230" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="260" y="234">ENZO</text><text x="260" y="250" fill="#fff" font-size="8">lays it off</text></g>
+        <g><circle cx="380" cy="200" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="380" y="204" fill="#06301d">MESSI</text><text x="380" y="220" fill="#bff0d5" font-size="8">first-time zurdazo</text></g>
+      </g>
+      <path d="M272 224 C 310 214, 345 208, 366 204" stroke="#7cc0ec" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#c2)"/>
+      <path d="M392 188 C 400 140, 390 95, 372 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#c2g)"/>
+      <text x="460" y="140" font-size="10" fill="#bff0d0">smashed home — 2-2 (84')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> The lay-off</span>
+      <span><i style="border-top-color:#39d98a"></i> Messi's finish</span>
+    </div>
+
+    <p class="expl"><strong>Of course it was him. It is always him.</strong> Four minutes after Romero's header, the ball dropped invitingly in the Egyptian box, and <strong>Messi met it first-time with his left foot — a venomous zurdazo smashed high past the helpless Shobeir</strong> to complete his personal redemption arc in the space of an hour: from the villain who missed a penalty to the hero who levelled a knockout tie he was supposed to have lost. It was his <strong>eighth goal of the tournament — moving him clear at the top of the Golden Boot race, ahead of Mbappé and Haaland — and extended his record to scoring in eight consecutive World Cup matches</strong> and a sixth-straight knockout game. The stadium detonated. The bunkered Egyptians, who had defended the impossible for so long, could feel it slipping. And Argentina, scenting blood, did not stop to draw breath.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Winner (90+3') — Enzo, at the death, delirium</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · 3-2</span><span class="mt">Lautaro's cross, Enzo's header — the resurrection complete</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="c3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="c3g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e9b949"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Lautaro's cross from the left → Enzo arrives to head the winner</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c8102e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">SHO</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="130" cy="220" r="13" fill="#7cc0ec" stroke="#fff" stroke-width="1.5"/><text x="130" y="224">LAU</text><text x="130" y="240" fill="#fff" font-size="8">the cross</text></g>
+        <g><circle cx="360" cy="130" r="14" fill="#e9b949" stroke="#fff" stroke-width="1.6"/><text x="360" y="134" fill="#3a2f00">ENZO</text><text x="360" y="150" fill="#ffe6a8" font-size="8">arrives in the middle</text></g>
+      </g>
+      <path d="M142 214 C 240 165, 310 140, 344 134" stroke="#7cc0ec" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#c3)"/>
+      <path d="M360 116 C 358 96, 356 78, 356 58" stroke="#e9b949" stroke-width="3.5" fill="none" marker-end="url(#c3g)"/>
+      <text x="450" y="110" font-size="10" fill="#ffe6a8">headed in — 3-2, bedlam (90+3')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Lautaro's cross</span>
+      <span><i style="border-top-color:#e9b949"></i> Enzo's winning header</span>
+    </div>
+
+    <p class="expl"><strong>And then, delirium.</strong> Deep into stoppage time, with Egypt finally broken and clinging on, substitute <strong>Lautaro Martínez swung a cross into the middle from the left, and Enzo Fernández — arriving with perfect timing — powered a header past Shobeir</strong> to complete the most improbable of turnarounds. 3-2. From two down with eleven minutes left to victory in the 93rd — three unanswered goals, a two-goal deficit not merely erased but overturned. The Argentina bench emptied onto the touchline; a nation erupted; Buenos Aires shook. It was, by any measure, one of the great comebacks in the history of the World Cup knockout stage — and utterly, unmistakably, Argentine. Egypt, who had been eleven minutes from the greatest day in their footballing history, were left shattered by a force that has no tactical answer: the refusal of this team to accept defeat.</p>
+  </div>
+
+  <h2><span class="ic">🧠</span> How They Did It — The Anatomy of the Comeback</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">Argentina · The Turnaround</span><span class="mt">Throw bodies forward, overload the box, trust Messi &amp; belief</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="h1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · full-backs high, CBs pushed up, box flooded — relentless crosses</text>
+
+      <!-- Egypt deep bunker -->
+      <g><circle cx="290" cy="95" r="9" fill="#c8102e" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="345" cy="90" r="9" fill="#c8102e" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="400" cy="90" r="9" fill="#c8102e" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="320" cy="135" r="8" fill="#9c1020" stroke="#fff" stroke-width="1" opacity=".8"/><circle cx="380" cy="135" r="8" fill="#9c1020" stroke="#fff" stroke-width="1" opacity=".8"/><text x="360" y="115" text-anchor="middle" font-size="9" fill="#ffb3bb">Egypt bunkered — but overwhelmed</text></g>
+
+      <!-- Argentina flooding the box -->
+      <g font-size="8.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="120" cy="230" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="120" y="234">LAU</text></g>
+        <g><circle cx="600" cy="230" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="600" y="234">MESSI</text></g>
+        <g><circle cx="300" cy="190" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="300" y="194">ROM</text></g>
+        <g><circle cx="420" cy="190" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="420" y="194">ENZO</text></g>
+        <g><circle cx="360" cy="240" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="244">ALV</text></g>
+      </g>
+      <!-- crosses raining in -->
+      <path d="M132 224 C 220 175, 300 150, 344 138" stroke="#7cc0ec" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#h1)"/>
+      <path d="M588 224 C 500 175, 420 150, 376 138" stroke="#7cc0ec" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#h1)"/>
+      <text x="360" y="290" text-anchor="middle" font-size="10" fill="#bcd9f6">wave after wave — belief did the rest</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Relentless crosses into a flooded box</span>
+    </div>
+
+    <p class="expl"><strong>Tactically, the comeback was almost brutally simple — but it worked because of who was executing it, and with what conviction.</strong> Trailing 2-0, Scaloni's side abandoned caution entirely: <strong>full-backs pushed high, centre-backs (Romero especially) surged forward at every set piece and cross, and the Egyptian box was simply flooded with bodies.</strong> Where earlier Argentina's crossing had been repelled, now the sheer weight and relentlessness of it — allied to Messi's quality of delivery — overwhelmed a bunkered, tiring Egypt. Both the Romero and Enzo goals came from exactly this: a cross from wide, an Argentine head arriving with more desire than its marker. It is not sophisticated. But sophistication was never the point. <strong>The point was belief — the willingness to keep throwing bodies and faith at the problem long after others would have accepted their fate.</strong> That is the Argentine gift, and it turned a near-certain elimination into folklore.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Lionel Messi</b> — <span class="good">Villain to hero, again</span>. Missed a penalty, hit the post, then produced the cross for Romero and the rifled equaliser. 8 goals, sole Golden Boot lead, scoring in a record 8 straight WC games. Immortal.</div>
+    <div class="rt"><b>Cristian Romero</b> — <span class="good">The redemption header</span>. Shaky early, then hurled himself forward to spark the comeback with a striker's header. Bodies and belief.</div>
+    <div class="rt"><b>Enzo Fernández</b> — <span class="good">The winner</span>. Arrived at the perfect moment to head home Lautaro's cross deep in stoppage time. Ice in the chaos.</div>
+    <div class="rt"><b>Mostafa Shobeir (EGY)</b> — <span class="good">Hero, then heartbreak</span>. Saved Messi's penalty and denied Argentina half a dozen times. The latest keeper to nearly define a tie — undone only at the death.</div>
+    <div class="rt"><b>Yasser Ibrahim & Zico (EGY)</b> — <span class="mid">So close to history</span>. Took Egypt's two chances superbly and led for 79 minutes. Broken hearts, heads held high.</div>
+    <div class="rt"><b>Lionel Scaloni</b> — <span class="good">Held his nerve</span>. Threw on Lautaro, flooded the box, trusted his players. Bold and rewarded — a world away from the timid Cape Verde management.</div>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — Champions, Living on the Edge</h2>
+  <p>Let us be honest, as this project always tries to be: <strong>this should not have been so hard.</strong> Argentina were, for the second knockout round running, taken to the brink by a side they ought to have beaten in comfort — and the recurring flaws remain real. The centre-backs wobbled again. The finishing was profligate until it wasn't. A dependence on Messi's genius, and on a collective refusal to lose, papered over cracks that a France or a Spain would exploit without mercy. On pure performance, there are warning signs flashing.</p>
+  <p>And yet. There is a reason this Argentina cannot be dismissed, and it is the very thing that makes them so dangerous: <strong>they possess a champion's soul that transcends tactics and form.</strong> Twice now in this knockout run they have been staring at elimination, and twice they have summoned something from beyond the reach of analysis to survive. That is not luck; it is the accumulated inheritance of 1986 and 2022, the deep, unshakeable belief that when the moment demands it, they will find a way. A quarter-final in Kansas City now awaits — against <strong>Colombia or Switzerland</strong> — and with <strong>Brazil already eliminated by Norway, Argentina's side of the draw has opened invitingly</strong>. The path to the MetLife final is there. They will need to play far better to walk it. But if there is one team you would never, ever bet against once the knockout drama begins, it is this one. <strong>Fantasy has become reality once more. Vamos Argentina.</strong></p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Round of 16 · WON (3-2)</div><div class="g">The great escape</div><div class="n">Two down with 11 to play, three unanswered goals — one of the great World Cup knockout comebacks.</div></div>
+    <div class="nx"><div class="d">Quarter-Final · Kansas City, Jul 11</div><div class="g">vs Colombia / Switzerland</div><div class="n">With Brazil gone, the lower half has opened up. The champions march on — on the edge of fantasy, as ever.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Some nights belong to tactics. This one belonged to something older and stranger — the peculiar, unteachable magic that Argentina, alone among footballing nations, seem to carry as a birthright. Two goals down with eleven minutes left, a Messi penalty saved, the world already mourning the champions — and then Romero, Messi and Enzo, in the space of a quarter of an hour, dragged reality across the threshold into fantasy. Egypt were magnificent and deserve every ounce of sympathy; Shobeir was heroic, Ibrahim and Zico clinical, and for 79 minutes they authored the shock of the tournament. But you cannot legislate for belief, and Argentina have more of it than anyone alive. <strong>Maradona lit this flame in 1986, and it has never gone out.</strong> The champions were dead. Now they march to Kansas City, and the folklore of the game has one more chapter. <strong>Vamos Argentina.</strong></p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -71,6 +71,17 @@
   .half-hd{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:1.5px;
     text-transform:uppercase;color:var(--gold);margin:2px 0 2px}
   .half-hd .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),transparent)}
+  .finals-grid{display:flex;flex-direction:column;gap:22px;max-width:820px;margin:0 auto}
+  .finals-row{}
+  .finals-lbl{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;text-align:center}
+  .finals-lbl.fin{color:var(--gold)}
+  .finals-lbl.third{color:var(--dim)}
+  .finals-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .finals-cards.two{grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .fcell{display:flex;flex-direction:column}
+  @media(max-width:640px){ .finals-cards,.finals-cards.two{grid-template-columns:1fr} }
+  .tiecard.thefinal{border-color:var(--gold);box-shadow:0 0 0 1px rgba(233,185,66,.35),0 8px 30px rgba(233,185,66,.08);
+    background:linear-gradient(135deg,rgba(233,185,66,.06),rgba(18,24,34,.9))}
 
   /* MATCH NODE rows */
   .disc-row{display:flex;align-items:center;gap:10px;padding:5px 6px;border-radius:12px}
@@ -222,8 +233,8 @@
 <div class="ctrl">
   <div class="ctrl-in">
     <div class="seg" role="tablist">
-      <button role="tab" aria-selected="true" data-view="r16">Round of 16<span class="sm">8 ties</span></button>
-      <button role="tab" aria-selected="false" data-view="qf">Quarter Final<span class="sm">Projected</span></button>
+      <button role="tab" aria-selected="true" data-view="qf">Quarter Final<span class="sm">4 ties</span></button>
+      <button role="tab" aria-selected="false" data-view="finals">Finals<span class="sm">SF · 3rd · Final</span></button>
       <button role="tab" aria-selected="false" data-view="bracket">Bracket<span class="sm">Full tree</span></button>
       <a class="segbtn" href="wc2026-calendar.html">Group Stage<span class="sm">12 Games</span></a>
     </div>
@@ -261,12 +272,13 @@
 </div>
 
 <script>
-function flagURL(iso){ return `https://flagcdn.com/w160/${iso}.png`; }
+function flagURL(iso){ if(iso==='_tbd') return ''; return `https://flagcdn.com/w160/${iso}.png`; }
 const F = {
   de:'de', py:'py', fr:'fr', se:'se', za:'za', ca:'ca', nl:'nl', ma:'ma',
   pt:'pt', hr:'hr', es:'es', at:'at', us:'us', ba:'ba', be:'be', sn:'sn',
   br:'br', jp:'jp', ci:'ci', no:'no', mx:'mx', ec:'ec', gb:'gb-eng', cd:'cd',
-  ar:'ar', cv:'cv', au:'au', eg:'eg', ch:'ch', dz:'dz', co:'co', gh:'gh'
+  ar:'ar', cv:'cv', au:'au', eg:'eg', ch:'ch', dz:'dz', co:'co', gh:'gh',
+  _tbd:'_tbd'
 };
 
 /* ===== ROUND OF 32 — official matchups, printed-bracket order ===== */
@@ -450,15 +462,15 @@ const R16 = [
 
 /* ---------- Quarter-final projections (predicted; fills as R16 completes) ---------- */
 const QF = [
- {id:'QF1', v:"Foxborough", ist:"6:30 AM IST · Fri 10 Jul", ko:"2026-07-10T01:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:true, key:"France", half:"upper",
-   feeds:"Winner 16L1 (Paraguay/France) vs Winner 16L2 (Canada/Morocco)",
+ {id:'QF1', v:"Foxborough", ist:"1:30 AM IST · Fri 10 Jul", ko:"2026-07-09T20:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'ma',n:"Morocco"}, win:'a', ours:true, key:"France", half:"upper",
+   feeds:"France (beat Paraguay) vs Morocco (beat Canada) — CONFIRMED",
    style:"4-2-3-1 · Deschamps · vertical transition kings",
    phil:"France's devastating transition attack vs Morocco's elite, disciplined low-block-and-counter — the 2022 semi-finalists. The tournament's most lethal front line against its most stubborn defence. A genuine test of France's ability to break a world-class block.",
    deep:"School of thought: this is the fascinating clash of France's vertical, transition-based football against a Moroccan side built to deny exactly that — dropping deep, compact, and springing Hakimi and the counter. France's key becomes patience and Olise's guile to unpick a block that won't gift them the space they feast on.",
    team:"Key men: Mbappé, Dembélé, Olise — the front three that dismantled Sweden. Saliba's return steadies the back. Morocco's threat: Hakimi's overlaps and a counter that punished the Netherlands.",
    form:"Projected: France to come through Paraguay, Morocco past Canada. If so, France arrive as the tournament's form side; Morocco as its most dangerous underdog.",
-   star:"mbappe",
-   pred:"A projected heavyweight quarter-final. France's attacking ceiling should edge even a superbly organised Morocco — but the Atlas Lions are the one side capable of frustrating Les Bleus into a nervy night. France favoured, with respect."},
+   star:"mbappe", pre:"france-morocco-prematch.html",
+   pred:"A heavyweight quarter-final and a rematch of the 2022 semi-final (France won 2-0). France's attacking ceiling should edge even a superbly organised Morocco — but the Atlas Lions, unbeaten in 34 and armed with Hakimi's wide threat, are the one side capable of frustrating Les Bleus into a nervy night, and are dangerous in a shootout. France favoured, but narrowly."},
  {id:'QF2', v:"Los Angeles", ist:"5:30 AM IST · Sat 11 Jul", ko:"2026-07-11T00:00:00Z", a:{iso:'es',n:"Spain"}, b:{iso:'be',n:"Belgium"}, win:'a', ours:true, key:"Spain", half:"upper",
    feeds:"Spain (beat Portugal) vs Belgium (beat USA) — CONFIRMED",
    style:"4-3-3 · De la Fuente · juego de posición",
@@ -484,8 +496,28 @@ const QF = [
    pred:"Argentina are clear favourites — their quality is a level above — but Switzerland are precisely the disciplined, nerveless side that could drag them into another attritional, nervy knockout night. If it goes to penalties, Argentina's Dibu Martínez is a huge edge. The champions should advance, but as this knockout run has shown, never comfortably."},
 ];
 
+/* ---------- Finals stage: 2 semis, 3rd place, final ---------- */
+const SF = [
+ {id:'SF1', slot:'sf', v:"Dallas", ist:"12:30 AM IST · Wed 15 Jul", ko:"2026-07-14T19:00:00Z", a:{iso:'_tbd',n:"Winner QF1"}, b:{iso:'_tbd',n:"Winner QF2"}, ours:false,
+   feeds:"Winner QF1 (France/Morocco) vs Winner QF2 (Spain/Belgium) · Match 101",
+   phil:"The upper-half semi-final. On current projections a France–Spain colossus looms — the tournament's most fearsome attack against its most complete side and meanest defence. Two of our teams could meet here, guaranteeing one an exit.",
+   pred:"To be confirmed after the quarter-finals. If it becomes France vs Spain, expect a heavyweight tactical duel: France's vertical transitions and Mbappé's finishing against Spain's positional control and clean-sheet platform. Whoever wins reaches the MetLife final."},
+ {id:'SF2', slot:'sf', v:"Atlanta", ist:"12:30 AM IST · Thu 16 Jul", ko:"2026-07-15T19:00:00Z", a:{iso:'_tbd',n:"Winner QF3"}, b:{iso:'_tbd',n:"Winner QF4"}, ours:false,
+   feeds:"Winner QF3 (Norway/England) vs Winner QF4 (Argentina/Switzerland) · Match 102",
+   phil:"The lower-half semi-final. With Brazil gone, Argentina — if they come through Switzerland — are favourites to reach the final from this side, against the Norway/England winner. The champions' likely path to a MetLife showpiece runs through here.",
+   pred:"To be confirmed after the quarter-finals. Argentina, on their extraordinary knockout form and with Messi leading the Golden Boot race, would be favourites against either Norway (Haaland) or England (Kane). The winner books a place in the final."},
+ {id:'TP', slot:'third', v:"Miami", ist:"2:30 AM IST · Sun 19 Jul", ko:"2026-07-18T21:00:00Z", a:{iso:'_tbd',n:"Loser SF1"}, b:{iso:'_tbd',n:"Loser SF2"}, ours:false,
+   feeds:"Loser SF1 vs Loser SF2 · Third-Place Play-off · Match 103",
+   phil:"The bronze-medal match — the two beaten semi-finalists meet in Miami, 24 hours before the final. Often a free-flowing, pressure-off spectacle between two of the tournament's best four sides.",
+   pred:"To be confirmed after the semi-finals. A consolation for two heavyweights denied the final — pride, and a place on the World Cup podium, on the line."},
+ {id:'FIN', slot:'final', v:"New York / NJ", ist:"12:30 AM IST · Mon 20 Jul", ko:"2026-07-19T19:00:00Z", a:{iso:'_tbd',n:"Winner SF1"}, b:{iso:'_tbd',n:"Winner SF2"}, ours:false, marquee:true,
+   feeds:"Winner SF1 vs Winner SF2 · THE FINAL · Match 104 · MetLife Stadium",
+   phil:"The World Cup Final. The last act, at MetLife Stadium in East Rutherford — the same ground where Argentina dream of lifting the trophy again. Two nations, one match, football immortality. The first-ever live World Cup Final halftime show (Coldplay's Chris Martin curating, Shakira among performers) frames the occasion.",
+   pred:"To be confirmed after the semi-finals. Whoever reaches here will be 90 minutes — or 120, or a shootout — from the greatest prize in the sport. On current form, a France–Argentina final would be a dream: Mbappé vs Messi, one last time, for the crown."},
+];
+
 /* ---------- helpers ---------- */
-function discStyle(iso){ return `background-image:url('${flagURL(F[iso])}')`; }
+function discStyle(iso){ if(iso==='_tbd') return 'background:linear-gradient(135deg,#2a3446,#1a2230);'; return `background-image:url('${flagURL(F[iso])}')`; }
 function rowHTML(t,isWin,isOut,score){
   const nm=`tname${isWin?' win':''}${isOut?' out':''}`;
   const dc=`disc${isWin?' win':''}${isOut?' out':''}`;
@@ -498,8 +530,9 @@ function tieCard(m,round){
   const aWin=m.win==='a',bWin=m.win==='b';
   const winName=aWin?m.a.n:m.b.n;
   const done=m.result&&m.result.done;
-  const roundName = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':'Round of 32');
-  const lbl=done?'✓ Full-time':(m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):roundName));
+  const isFinal=round==='FIN';
+  const roundName = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':(round==='SF'?'Semi-Final':(round==='TP'?'3rd-Place Play-off':(isFinal?'The Final':'Round of 32'))));
+  const lbl=done?'✓ Full-time':(isFinal?'🏆 World Cup Final':(m.marquee?'🔥 Marquee tie':(m.ours?'★ '+(m.key||'Our tie'):roundName)));
   const sub=m.v?m.v:(m.feeds||'');
   const timerow = m.ist? `<div class="timerow">🕒 ${m.ist}${m.v?'  ·  📍 '+m.v:''}</div>` : (m.feeds?`<div class="timerow">${m.feeds}</div>`:'');
   // score badges if the match is complete
@@ -509,9 +542,11 @@ function tieCard(m,round){
   const scoreB = done? `<span class="score ${bWin?'sw':''}">${m.result.sb}${penB}</span>` : '';
   const pickOrResult = done
     ? `<span class="scorers">${m.result.scorers}</span><span class="go">REPORT ›</span>`
-    : `<span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span>`;
-  const roundLbl = round==='R16'?'R16':(round==='QF'?'QF':'R32');
-  return `<div class="tiecard ${m.ours?'ours':''} ${m.marquee?'marquee':''} ${done?'done':''}" data-id="${m.id}" data-round="${round}">
+    : (m.win
+        ? `<span>Pick: <b>${winName}</b></span><span class="go">TACTICS ›</span>`
+        : `<span style="color:var(--dim)">Awaiting teams</span><span class="go">PREVIEW ›</span>`);
+  const roundLbl = round==='R16'?'R16':(round==='QF'?'QF':(round==='SF'?'SF':(round==='TP'?'3RD':(isFinal?'FINAL':'R32'))));
+  return `<div class="tiecard ${m.ours?'ours':''} ${(m.marquee||isFinal)?'marquee':''} ${done?'done':''} ${isFinal?'thefinal':''}" data-id="${m.id}" data-round="${round}">
     <div class="lbl"><span class="rd">${lbl}</span><span class="vn">${m.ist?(done?roundLbl+' · FT':roundLbl):sub}</span></div>
     ${rowHTML(m.a,aWin,bWin,scoreA)}
     <div class="vsmini">VS</div>
@@ -560,12 +595,12 @@ function renderHalves(which){
     upper = data.filter(m=>m.id.startsWith('16L'));
     lower = data.filter(m=>m.id.startsWith('16R'));
     title = 'Round of 16';
-    note = `The last 16. <b>Spain (upper half) and Argentina (lower half) can only meet in the final.</b> Tap any tie for full analysis — our four teams (France, Spain, Brazil, Argentina) carry deep tactical breakdowns, form and signature-move animations.`;
+    note = `The last 16. <b>Spain (upper half) and Argentina (lower half) can only meet in the final.</b> Tap any tie for full analysis.`;
   } else {
     upper = data.filter(m=>m.half==='upper');
     lower = data.filter(m=>m.half==='lower');
     title = 'Quarter-Finals';
-    note = `Projected quarter-finals, assuming our predicted R16 winners advance. Fully functional cards — tap any tie for the tactical preview. <b>France and Spain (upper half) could collide in a semi-final; Argentina sits in the lower half.</b>`;
+    note = `The last eight. <b>France &amp; Spain (upper half) are on a collision course for a semi-final; Argentina sits in the lower half.</b> Tap any tie for the full tactical breakdown, team form and signature-move animations — pre/post analysis unlocks around kickoff.`;
   }
   const col = (arr,label)=>`<div class="half-col">
       <div class="half-hd"><span>${label}</span><span class="ln"></span></div>
@@ -574,8 +609,35 @@ function renderHalves(which){
   root.innerHTML = `<div class="halves-wrap">
     <div class="blk form halves-intro"><div class="t">⚡ ${title}</div><p>${note}</p></div>
     <div class="halves">
-      ${col(upper, isR16?'Upper half':'Upper half')}
-      ${col(lower, isR16?'Lower half':'Lower half')}
+      ${col(upper, 'Upper half')}
+      ${col(lower, 'Lower half')}
+    </div>
+  </div>`;
+}
+function renderFinals(){
+  const sfs = SF.filter(m=>m.slot==='sf');
+  const tp = SF.find(m=>m.slot==='third');
+  const fin = SF.find(m=>m.slot==='final');
+  const note = `The final stage. <b>Two semi-finals</b> feed <b>the Final at MetLife on July 19</b>, with the beaten semi-finalists meeting in the <b>third-place play-off</b>. Cards fill with teams as the quarter-finals are decided — tap any for the storyline, schedule and (once played) the goals.`;
+  root.innerHTML = `<div class="halves-wrap">
+    <div class="blk form halves-intro"><div class="t">🏆 The Finals · Semis, Bronze &amp; the Final</div><p>${note}</p></div>
+    <div class="finals-grid">
+      <div class="finals-row">
+        <div class="finals-lbl">Semi-Finals · Jul 14–15</div>
+        <div class="finals-cards">${sfs.map(m=>tieCard(m,'SF')).join('')}</div>
+      </div>
+      <div class="finals-row">
+        <div class="finals-cards two">
+          <div class="fcell">
+            <div class="finals-lbl third">3rd-Place · Jul 18</div>
+            ${tieCard(tp,'TP')}
+          </div>
+          <div class="fcell">
+            <div class="finals-lbl fin">🏆 The Final · Jul 19</div>
+            ${tieCard(fin,'FIN')}
+          </div>
+        </div>
+      </div>
     </div>
   </div>`;
 }
@@ -585,10 +647,15 @@ function renderList(which){ renderHalves(which); }
 const scrim=document.getElementById('scrim'),sheet=document.getElementById('sheet'),mbody=document.getElementById('m-body');
 function openSheet(m,round){
   currentMatch=m;
-  const roundTag = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':'Round of 32');
-  document.getElementById('m-tag').textContent=roundTag+(m.marquee?' · 🔥 Marquee':(m.ours?' · ★ '+(m.key||'Our team'):''));
-  document.getElementById('m-da').style.backgroundImage=`url('${flagURL(F[m.a.iso])}')`;
-  document.getElementById('m-db').style.backgroundImage=`url('${flagURL(F[m.b.iso])}')`;
+  const roundTag = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':(round==='SF'?'Semi-Final':(round==='TP'?'Third-Place Play-off':(round==='FIN'?'The Final':'Round of 32'))));
+  document.getElementById('m-tag').textContent=roundTag+(m.marquee?' · 🔥 '+(round==='FIN'?'World Cup Final':'Marquee'):(m.ours?' · ★ '+(m.key||'Our team'):''));
+  const daEl=document.getElementById('m-da'), dbEl=document.getElementById('m-db');
+  daEl.style.backgroundImage = m.a.iso==='_tbd'?'none':`url('${flagURL(F[m.a.iso])}')`;
+  daEl.style.background = m.a.iso==='_tbd'?'linear-gradient(135deg,#2a3446,#1a2230)':'';
+  daEl.style.backgroundImage = m.a.iso==='_tbd'?'none':`url('${flagURL(F[m.a.iso])}')`;
+  dbEl.style.backgroundImage = m.b.iso==='_tbd'?'none':`url('${flagURL(F[m.b.iso])}')`;
+  dbEl.style.background = m.b.iso==='_tbd'?'linear-gradient(135deg,#2a3446,#1a2230)':'';
+  dbEl.style.backgroundImage = m.b.iso==='_tbd'?'none':`url('${flagURL(F[m.b.iso])}')`;
   document.getElementById('m-na').textContent=m.a.n;
   document.getElementById('m-nb').textContent=m.b.n;
   const timeStr = m.ist? m.ist : (m.day||m.feeds||'');
@@ -598,7 +665,7 @@ function openSheet(m,round){
   if(m.result&&m.result.done){
     body+=`<div class="ftbanner"><div class="ftscore"><span>${m.a.n}</span><b>${m.result.sa} – ${m.result.sb}${m.result.pens?' <small style="font-size:13px;color:#e7b942">('+m.result.pens+')</small>':''}</b><span>${m.b.n}</span></div>
       <div class="ftmeta">${m.result.scorers} · Full-time${m.result.note?' · '+m.result.note:''}</div></div>`;
-  } else {
+  } else if(m.win){
     body+=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;
   }
   if(m.feeds && !m.result) body+=`<div class="feedsline">🔗 ${m.feeds}</div>`;
@@ -791,6 +858,7 @@ root.addEventListener('click',e=>{
   let m;
   if(round==='R16') m=R16.find(x=>x.id===id);
   else if(round==='QF') m=QF.find(x=>x.id===id);
+  else if(round==='SF'||round==='TP'||round==='FIN') m=SF.find(x=>x.id===id);
   else m=R32.find(x=>x.id===id);
   if(m) openSheet(m,round);
 });
@@ -800,8 +868,8 @@ document.querySelectorAll('.seg button').forEach(b=>{
     b.setAttribute('aria-selected','true');
     const v=b.dataset.view;
     if(v==='bracket') renderBracket();
-    else if(v==='qf') renderHalves('qf');
-    else renderHalves('r16');
+    else if(v==='finals') renderFinals();
+    else renderHalves('qf');
     window.scrollTo({top:document.querySelector('.ctrl').offsetTop-1,behavior:'smooth'});
   });
 });
@@ -810,7 +878,7 @@ sheet.addEventListener('touchstart',e=>{sy=e.touches[0].clientY;},{passive:true}
 sheet.addEventListener('touchmove',e=>{const dy=e.touches[0].clientY-sy; if(dy>0&&mbody.scrollTop<=0) sheet.style.transform=`translateY(${dy}px)`;},{passive:true});
 sheet.addEventListener('touchend',e=>{const dy=e.changedTouches[0].clientY-sy; sheet.style.transform=''; if(dy>120) closeSheet();});
 
-renderHalves('r16');
+renderHalves('qf');
 </script>
 </body>
 </html>

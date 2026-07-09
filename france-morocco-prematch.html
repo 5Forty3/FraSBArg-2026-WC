@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France vs Morocco — Quarter-Final Pre-Match Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--mar:#c1272d;--mar2:#ff6b70;--marg:#0f7a3d;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#c1272d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .f{background:linear-gradient(135deg,#0e1f33,#0d1117)}
+  .vsbar .m{background:linear-gradient(135deg,#2a0a0c,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .f .nm{color:var(--fra2)}.vsbar .m .nm{color:var(--mar2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.france{border-left:3px solid var(--fra)}
+  .card.morocco{border-left:3px solid var(--mar)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .hist{background:linear-gradient(135deg,#1a1406,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .hist .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.mar{background:rgba(193,39,45,.2);color:var(--mar2)}
+  .move .mtag.key{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · QF Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge marq">🔥 Quarter-Final · 2022 Semi Rematch</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">Last 8 · Win or go home</span>
+  </div>
+  <h1>France vs Morocco</h1>
+  <div class="sub">The last-eight opener — the tournament's most balanced side against the Atlas Lions, unbeaten in 34, in a rematch of the 2022 semi-final</div>
+  <div class="meta">🕒 1:30 AM IST, Fri 10 Jul · 📍 Gillette Stadium (Boston Stadium), Foxborough (4pm ET / 20:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side f"><div class="nm">🇫🇷 France</div><div class="fm">4-2-3-1 · Deschamps · favourites · 5/5 wins, never trailed</div></div>
+    <div class="mid">VS</div>
+    <div class="side m"><div class="nm">Morocco 🇲🇦</div><div class="fm">4-2-3-1 · Ouahbi · unbeaten in 34 · back-to-back QFs</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a heavyweight opener, and unfinished business</div>
+    <p style="margin:8px 0 0">The quarter-finals begin with a genuine blockbuster — and a rematch loaded with history. <strong>France, the tournament favourites, have been the most complete side in North America</strong>: five wins from five, never once behind, 13 goals scored, and Kylian Mbappé leading the charge. Yet they were far from convincing in edging Paraguay 1-0, needing a late penalty to break down a low block. <strong>Morocco arrive as the great African hope — the first nation to reach back-to-back World Cup quarter-finals, unbeaten in 34 matches</strong>, and fresh off a commanding 3-0 dismissal of Canada. And they carry a grudge: <strong>these sides last met in the 2022 semi-final, which France won 2-0</strong> to reach the final, ending Morocco's fairytale. Four years on, the Atlas Lions know Les Bleus intimately, and they have the tools — a rugged block and lethal wide transitions — to exploit exactly the kind of laboured French performance Paraguay provoked. France should win. But this is the most dangerous "should" of the round.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">France carry one lingering midfield absence but are otherwise settled and fearsome; Morocco lose a key attacking piece. Exact XIs are predicted (not officially confirmed), though both look close to their last outings.</p>
+
+  <div class="card france">
+    <h3 style="margin-top:0">🇫🇷 France — settled, deadly, one midfield doubt (expected XI)</h3>
+    <ul>
+      <li><strong>Tchouaméni still out (confirmed)</strong> — the adductor/groin issue that kept him out against Paraguay lingers; though Deschamps says he's "feeling better," he's not expected to start. <strong>Manu Koné continues</strong> in the double pivot with Rabiot.</li>
+      <li><strong>Thuram back for the bench (confirmed)</strong> — recovered from his calf problem and available as attacking depth, deepening an already frightening squad.</li>
+      <li><strong>The front four unchanged</strong> — Dembélé, Olise, Barcola and Mbappé, with Doué (who won the Paraguay penalty) the game-changer in reserve.</li>
+      <li><strong>Mbappé the talisman:</strong> 7 goals (joint Golden Boot race, one behind Messi), 19 career WC goals, and already the record-holder for most knockout-stage goals ever. He wears the armband and is the single biggest threat on the pitch.</li>
+      <li><strong>Deschamps makes history:</strong> this is his 25th World Cup match as a manager, equalling Helmut Schön's all-time record.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Maignan; Koundé, Upamecano, Saliba, Digne; Koné, Rabiot; Dembélé, Olise, Barcola; Mbappé. (Not confirmed.)</p>
+  </div>
+
+  <div class="card morocco">
+    <h3 style="margin-top:0">🇲🇦 Morocco — the disciplined unbeaten, minus a key man</h3>
+    <ul>
+      <li><strong>Saibari OUT (confirmed)</strong> — a significant blow: the standout attacking midfielder, who scored the winning penalty against the Netherlands and struck in all three group games, is ruled out with a hamstring injury. <strong>Soufiane Rahimi</strong> (a sub scorer vs Canada) is the likely replacement.</li>
+      <li><strong>Ounahi the in-form creator:</strong> his second-half brace turned the Canada tie; his movement between the lines is Morocco's central creative and goal threat.</li>
+      <li><strong>Hakimi the danger:</strong> the captain's overlapping runs from right-back are Morocco's single most dangerous attacking weapon — and, ominously for France, he loves this stage.</li>
+      <li><strong>Brahim Díaz the schemer:</strong> four assists at the tournament, the creative link feeding the front line.</li>
+      <li><strong>The identity is the block:</strong> Ouahbi keeps the shape that has carried them — Bounou; a back four of Mazraoui, Riad, Diop, Hakimi; El Aynaoui and Bouaddi shielding — sitting deep and springing wide, backed by a 34-match unbeaten run.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-2-3-1): Bounou; Hakimi, Diop, Riad, Mazraoui; El Aynaoui, Bouaddi; Díaz, Ounahi, El Khannouss; Rahimi. (Not confirmed.)</p>
+  </div>
+
+  <div class="hist">
+    <div class="t">🕰️ The History — Al Bayt, 2022, and the wound that never healed</div>
+    <p style="margin:8px 0 0">This is not a first meeting on the biggest stage. In the <strong>2022 World Cup semi-final in Qatar, France beat Morocco 2-0</strong> (Theo Hernández inside two minutes, Kolo Muani late) to reach the final — ending the most romantic run in the tournament's history, as Morocco became the first African and first Arab nation to reach the last four. Four years on, the emotional charge is obvious: <strong>Morocco want revenge, and they have spent four years studying exactly how France hurt them.</strong> A different manager (Ouahbi, not Regragui), a different striker picture, but the same core of Hakimi, Ounahi and a fanatical support that turns every "neutral" venue Moroccan. France know a fully-motivated Morocco is one of the hardest outs in world football — and this time, the Atlas Lions arrive not as romantics, but as a battle-tested side unbeaten in 34.</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Breaking the Block vs the Wide Counter</h2>
+  <p>The shape of this game is predictable, and it is exactly the puzzle France laboured over against Paraguay. <strong>Morocco will cede possession, sit in a compact, disciplined mid-to-low block, and look to spring their lethal wide transitions</strong> — Hakimi bombing forward from right-back, El Khannouss and Díaz carrying, Ounahi arriving late. France's challenge is once again to break down a well-drilled defensive side without over-committing and exposing themselves to exactly that counter. <strong>France's answer is their transition quality and individual ceiling</strong> — Mbappé's runs in behind, Olise's creativity, Dembélé's directness. The defining sub-plots: can Koné adequately screen the space Tchouaméni usually protects against Morocco's counters? And can France's full-backs, especially Koundé, contain Hakimi without sacrificing their own attacking width? Whoever wins the battle between France's need to break the block and Morocco's desire to punish them in transition takes the tie. It is a chess match France should win — but Morocco are grandmasters of exactly this game.</p>
+
+  <h2><span class="ic">🔑</span> France's Key — Mbappé &amp; Olise unlock the Atlas block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Attack</span><span class="mt">Patience, then Olise releases Mbappé behind a compressed line</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aF" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="aFg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Olise threads Mbappé through the Moroccan block</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c1272d" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">BONO</text></g>
+      <g><circle cx="300" cy="105" r="10" fill="#c1272d" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="100" r="10" fill="#c1272d" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="105" r="10" fill="#c1272d" stroke="#fff" stroke-width="1.1"/><circle cx="330" cy="150" r="9" fill="#8c1c22" stroke="#fff" stroke-width="1"/><circle cx="400" cy="150" r="9" fill="#8c1c22" stroke="#fff" stroke-width="1"/><text x="365" y="80" text-anchor="middle" font-size="9" fill="#ffb0b3">disciplined, compact — knows France cold</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="255" r="13" fill="#3b82d6" stroke="#fff" stroke-width="1.5"/><text x="360" y="259">OLI</text><text x="360" y="275" fill="#bcd9f6" font-size="9">the disguised pass</text></g>
+        <g><circle cx="520" cy="200" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="520" y="204">MBA</text><text x="520" y="220" fill="#bff0d5" font-size="9">runs the channel</text></g>
+        <g><circle cx="200" cy="200" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="200" y="204">DEM</text></g>
+      </g>
+
+      <path d="M373 247 C 430 225, 480 210, 508 204" stroke="#7cb4e8" stroke-width="3.5" fill="none" marker-end="url(#aF)"/>
+      <path d="M524 186 C 530 150, 510 105, 470 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aFg)"/>
+      <text x="560" y="150" font-size="10" fill="#bff0d0">in behind &amp; buried</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8"></i> Olise's threaded pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>France's clearest route past a side built to frustrate them.</strong> Morocco's block is disciplined and, unlike Paraguay's, tactically sophisticated — but France carry weapons few can match. The mechanism is patience then precision: <strong>circulate the ball, move Morocco side to side, and wait for Olise to release Mbappé into the channel behind Morocco's full-backs</strong> — the one run a compact defence can never fully legislate for. With Hakimi committed high on the right, the space behind him is France's target; Mbappé drifting into that left channel against a covering centre-back is the matchup France want all night. The caveat, as ever, is patience: against Paraguay, France were ponderous and needed a penalty. If they force it, Morocco will punish the turnover. If they probe smartly, Mbappé's movement and Olise's vision should eventually tell.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Morocco's Threat — Hakimi and the wide counter</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag mar">Morocco · The Danger</span><span class="mt">Absorb, then spring Hakimi &amp; Ounahi into the space France leave</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aM" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b70"/></marker>
+        <marker id="aMg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Morocco attacking ↑ · win it, release Hakimi down the right; Ounahi &amp; Rahimi arrive</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="140" r="11" fill="#7cb4e8" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="420" cy="140" r="11" fill="#7cb4e8" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#bcd9f6">France committed high — Koné's screen exposed</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="300" cy="315" r="12" fill="#c1272d" stroke="#fff" stroke-width="1.3"/><text x="300" y="319">OUN</text><text x="300" y="335" fill="#ffb0b3" font-size="8">wins &amp; springs it</text></g>
+        <g><circle cx="560" cy="235" r="13" fill="#c1272d" stroke="#fff" stroke-width="1.5"/><text x="560" y="239">HAK</text><text x="560" y="255" fill="#ffb0b3" font-size="8">overlap &amp; cross</text></g>
+        <g><circle cx="380" cy="200" r="12" fill="#c1272d" stroke="#fff" stroke-width="1.3"/><text x="380" y="204">RAH</text><text x="380" y="216" fill="#ffb0b3" font-size="8">attacks the cross</text></g>
+      </g>
+
+      <path d="M312 308 C 400 285, 500 255, 548 242" stroke="#ff6b70" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aM)"/>
+      <path d="M556 222 C 520 180, 450 150, 398 130" stroke="#ff6b70" stroke-width="3" fill="none" marker-end="url(#aM)"/>
+      <path d="M382 186 C 380 150, 375 110, 370 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aMg)"/>
+      <text x="470" y="150" font-size="10" fill="#bff0d0">the cross-and-finish</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b70;border-top-style:dashed"></i> Transition &amp; Hakimi overlap</span>
+      <span><i style="border-top-color:#39d98a"></i> Rahimi attacks the cross</span>
+    </div>
+
+    <p class="expl"><strong>Morocco's genuine, well-honed route to the upset — and the reason France cannot switch off.</strong> The Atlas Lions won't out-possess France, so they won't try. Instead: <strong>defend deep and compact, soak up pressure, and spring their devastating wide transitions the instant they win the ball.</strong> The focal point is <strong>Achraf Hakimi, whose overlapping runs from right-back are Morocco's single most dangerous weapon</strong> — bursting into the space France's own attacking full-backs vacate, delivering for Rahimi and the late-arriving Ounahi. Brahim Díaz's four assists show the supply line is humming. The vulnerability France must guard is the space in front of their back four: with Koné (not Tchouaméni) screening, an aggressive Moroccan counter could find the pockets that Paraguay, a lesser side, occasionally reached. If France lose the ball in bad areas, Morocco have the pace and precision to make one counter count — and one goal, against this disciplined a defence, could be enough.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> The Duel That Could Decide It — Mbappé vs Hakimi, friends and foes</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Headline Duel</span><span class="mt">PSG club-mates, national rivals — the flank where the tie may turn</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="30" x2="360" y2="290" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="54" font-size="15" font-weight="800" fill="#7cb4e8">🇫🇷 Kylian Mbappé</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="84">▸ 7 goals — joint Golden Boot race</text>
+        <text x="34" y="108">▸ 19 career WC goals · most-ever KO goals</text>
+        <text x="34" y="132">▸ Scored in 4 of 5 games this tournament</text>
+        <text x="34" y="156">▸ Targets the space behind Hakimi's overlaps</text>
+      </g>
+      <rect x="34" y="180" width="300" height="112" rx="8" fill="#101722" stroke="#274055"/>
+      <text x="48" y="206" font-size="12.5" font-weight="800" fill="#7cb4e8">France's trump card:</text>
+      <text x="48" y="228" font-size="12" fill="#cdd6e2">individual ceiling no defence can fully cover.</text>
+      <text x="48" y="256" font-size="12.5" font-weight="800" fill="#39d98a">Key battle:</text>
+      <text x="48" y="278" font-size="12" fill="#cdd6e2">attacks the channel his club-mate vacates.</text>
+      <text x="392" y="54" font-size="15" font-weight="800" fill="#ff6b70">🇲🇦 Achraf Hakimi</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="84">▸ Morocco's most dangerous attacker</text>
+        <text x="392" y="108">▸ 57.5 passes/90 — 95th percentile</text>
+        <text x="392" y="132">▸ Assisted Ounahi's opener vs Canada</text>
+        <text x="392" y="156">▸ Overlapping runs are the whole plan</text>
+      </g>
+      <rect x="392" y="180" width="296" height="112" rx="8" fill="#101722" stroke="#4a1518"/>
+      <text x="406" y="206" font-size="12.5" font-weight="800" fill="#ff6b70">Morocco's engine:</text>
+      <text x="406" y="228" font-size="12" fill="#cdd6e2">creates &amp; defends the right flank.</text>
+      <text x="406" y="256" font-size="12.5" font-weight="800" fill="#ff8e8e">The dilemma:</text>
+      <text x="406" y="278" font-size="12" fill="#cdd6e2">attack Mbappé's side, or contain it?</text>
+    </svg>
+
+    <p class="expl"><strong>The tie may hinge on one flank — and one friendship.</strong> Kylian Mbappé and Achraf Hakimi are close friends and PSG team-mates, and tonight they are direct adversaries on the same strip of grass. <strong>Hakimi's whole game is to attack; Mbappé's is to punish the space he leaves behind.</strong> If Hakimi bombs forward and Morocco's cover is a fraction slow, Mbappé in that left channel is the single most likely source of a French goal. If Morocco force Hakimi to stay disciplined and defend Mbappé, they blunt their own best attacking weapon. That tension — Hakimi's dual role as Morocco's chief creator and the man tasked with the tournament's deadliest finisher — is the fulcrum of the whole contest. Whoever wins their personal duel likely tilts the tie.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Morocco's model — frustrate, stay compact, drag the favourite deep — makes a long, tight night their explicit aim, and their tournament pedigree (they've already won a shootout, over the Netherlands) means France cannot assume a comfortable 90 minutes. The latter stages could well decide it.</p>
+    <p style="margin:8px 0 0"><strong>Extra time favours France's depth — with a caveat.</strong> France's bench is arguably the best at the tournament — Thuram now back, plus Doué, Cherki and more — offering fresh, game-breaking quality across 120 minutes that Morocco, for all their organisation, cannot match. The longer a packed block defends, the more likely France's superior firepower cracks it. But Morocco are supremely fit and drilled for exactly this attritional battle, and the emotional charge of the 2022 rematch could carry them.</p>
+    <p style="margin:8px 0 0"><strong>Penalties would be Morocco's equaliser.</strong> This is the great leveller and a real Moroccan strength: <strong>they beat the Netherlands on penalties in this very tournament, and famously eliminated Spain on spot-kicks in 2022</strong>, with Bounou a proven shootout goalkeeper. France, by contrast, still carry the scars of losing the 2022 final to Argentina on penalties. In a "goalkeepers' World Cup," a shootout is exactly the scenario where Morocco's nerve and their keeper neutralise France's superior talent. France's imperative: <strong>win this in normal time, and don't let Morocco's discipline drag them into a lottery the Atlas Lions have mastered.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline — the honest read</h2>
+    <p>Honesty first: <strong>France are rightly favourites</strong> — the tournament's most complete and balanced side, with the best player on the pitch in Mbappé, the deepest bench, and a settled, high-quality XI. Their individual ceiling should, over 90 or 120 minutes, prove too much for even this excellent Morocco. But the caveats are real and specific, and they were on full display against Paraguay: <strong>France labour against deep blocks, and Morocco are a vastly better, more dangerous version of that puzzle</strong> — disciplined, unbeaten in 34, armed with a lethal wide counter through Hakimi, and carrying four years of motivation from the 2022 defeat. This has all the makings of a tight, tense, low-scoring quarter-final that France edge through a moment of Mbappé or Olise quality — but which Morocco, with one clean counter or a shootout, are entirely capable of winning. My honest prediction: France advance, but narrowly, and only after being made to sweat. <strong>Allez les Bleus — and beware the Atlas Lions.</strong></p>
+    <div class="scoreline">🇫🇷 France 1 — 0 Morocco <span style="font-size:14px;color:var(--muted)">(or extra time)</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a cagey, low-scoring French win settled by Mbappé or an Olise-crafted moment. But Morocco's discipline, wide threat and shootout pedigree make extra time — or a genuine Moroccan upset — very live outcomes. The tightest of the favourites' ties.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Quarter-Final · Boston</div><div class="g">Winner advances</div><div class="n">To the semi-final in Dallas on July 14 to face the winner of Spain vs Belgium.</div></div>
+    <div class="nx"><div class="d">The bigger picture</div><div class="g">A France–Spain semi looms</div><div class="n">Win here, and a mouth-watering last-four clash with Spain (or Belgium) awaits — two of our teams potentially colliding before the final.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

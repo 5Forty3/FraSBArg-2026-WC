@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France 2-0 Morocco — The Clinical Machine</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--mar:#c1272d;--mar2:#ff6b70;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(59,130,214,.14);color:var(--fra2);border:1px solid #274055}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(25px,5.2vw,42px);font-weight:800;margin-top:6px;line-height:1.12;
+    background:linear-gradient(90deg,#3b82d6,#fff 55%,#e9b949);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14.5px;margin-top:12px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .f{color:var(--fra2)}.scoreboard .m{color:var(--mar2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--fra2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .f{color:var(--fra2)}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:56px;line-height:44px;padding:6px 12px 2px 0;color:var(--fra);font-weight:800}
+
+  .pull{border-left:3px solid var(--fra);background:linear-gradient(135deg,#0e1f33,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#dcebfb;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--fra2);font-weight:700}
+  .respect{background:linear-gradient(135deg,#1a0a0c,#0f1117);border:1px solid #4a1518;border-left:3px solid var(--mar);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .respect .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--mar2)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.miss{background:rgba(255,93,106,.16);color:#ff8e8e}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.g{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.future{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · QF Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge marq">🔥 Quarter-Final · Semis Bound</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">Last 8 · FT</span>
+  </div>
+  <h1>The Clinical Machine</h1>
+  <div class="kicker">France barely moved out of second gear — and still dismantled Morocco with a measured, ruthless precision that said everything about the level they hold in reserve</div>
+
+  <div class="scoreboard">
+    <span class="t f">🇫🇷 France</span>
+    <span class="sc">2 – 0</span>
+    <span class="t m">Morocco 🇲🇦</span>
+  </div>
+  <div class="meta">📍 Gillette Stadium (Boston), Foxborough · Quarter-Final · Full-time</div>
+  <div class="scorers">⚽ <b>Mbappé 60', Dembélé 66'</b> · Mbappé penalty saved 28' (Bounou)</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Shots (on tgt)</div><div class="v"><span class="f">22 (8)</span> – 5 (1)</div></div>
+    <div class="stat"><div class="l">1st-half xG</div><div class="v"><span class="f">1.87</span> – 0.04</div></div>
+    <div class="stat"><div class="l">Mbappé this WC</div><div class="v">8 · Boot co-lead</div></div>
+    <div class="stat"><div class="l">France run</div><div class="v">6/6 wins</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Exactly as predicted: a low-scoring French win, settled by a moment of Mbappé quality. Only the manner — utterly in control — exceeded the billing.</p>
+
+  <div class="essay">
+  <div class="callout">
+    <div class="t">🎯 The prediction, and the reality</div>
+    <p style="margin:8px 0 0">Our <a href="france-morocco-prematch.html">pre-match analysis</a> called this the tightest of the favourites' ties and predicted a low-scoring 1-0 French win settled by a moment of Mbappé or Olise quality. The scoreline landed one goal higher, but the essence was spot-on: France controlled, laboured for an hour against a superb defensive display exactly as they had against Paraguay, then broke through with individual class. The one twist the preview didn't foresee — that Mbappé would miss a penalty, then immediately atone — only underlined the theme: France have so much quality that even an off-moment barely dents them.</p>
+  </div>
+
+  <p class="lead dropcap">There are victories that tell you how good a team is, and there are victories that tell you how much better they could be. France's 2-0 dismissal of Morocco was the second kind. This was a performance of clinical, almost detached control — the sense throughout that Les Bleus were operating comfortably within themselves, dispensing a measured defeat rather than chasing a statement. You watch this France and you understand two things at once: how devastating they are, and that this was nowhere near their ceiling. They were holding back, and it was still more than enough.</p>
+
+  <p>Morocco, to their immense credit, defended ferociously — deep, disciplined, bodies thrown in front of everything for an hour. And for that hour the scoreboard flattered them, kept at 0-0 by a heroic goalkeeper and their own desperate resistance. But there was never any real doubt. At half-time, level and under siege, the truth was already plain: France's front four were each carrying the threat to score at any moment, the pressure was relentless and rising, and the dam would break. When it did, it broke quickly and beautifully — and then France, almost graciously, stopped. As if to spare an opponent they knew they could have buried.</p>
+
+  <div class="pull">The smile on Deschamps's face said it all. Level at the break, his side camped in the Moroccan half, he looked less like a worried manager and more like a man posing a single, patient question to the Atlas Lions: how long, exactly, do you think you can keep defending?
+    <span class="a">— The calm of a team that knows its own level</span>
+  </div>
+
+  <h2><span class="ic">🧭</span> The Story — Siege, Frustration, and the Inevitable Break</h2>
+  <p>The pattern was set from the first whistle and never truly changed: France on the ball, Morocco behind it. Les Bleus racked up a remarkable <strong>1.87 expected goals in the first half alone — the most by any side who failed to score by the interval at this entire tournament</strong> — while Morocco's first-half xG was a barely-registering 0.04. It was, statistically, one of the most one-sided goalless halves imaginable. Yassine Bounou saved brilliantly from Upamecano's early header, kept out Doué, tipped a Digne rocket onto the bar — and, most dramatically, denied Mbappé from the penalty spot on 28 minutes after a long VAR delay. Morocco's plan, and their goalkeeper, were holding.</p>
+  <p>But this is the difference between a good team and a great one: France never panicked, never forced it, simply kept the vice tightening until the pressure told. On the hour, it did — and once the first goal came, the second followed almost immediately, the resistance broken in the space of six devastating minutes. From there, the game was effectively over, and France, sensing it, eased off rather than pressing for the rout their dominance entitled them to. A ruthless, professional, strangely serene afternoon's work.</p>
+
+  <h2><span class="ic">❌</span> The Miss (28') — Bounou denies Mbappé from the spot</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag miss">The Penalty</span><span class="mt">A long VAR wait, a hesitant effort — and a record-breaking save</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="p1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+      </defs>
+      <rect width="720" height="360" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="60"/><rect y="120" width="720" height="60"/><rect y="240" width="720" height="60"/></g>
+      <rect x="230" y="40" width="260" height="90" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="130" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="130" stroke="#fff" stroke-width="3"/>
+      <circle cx="360" cy="230" r="3" fill="#fff"/>
+      <text x="360" y="150" text-anchor="middle" font-size="11" fill="#ffd6a0">the spot — Bounou guesses right (his record 4th WC pen save)</text>
+
+      <g><circle cx="305" cy="100" r="15" fill="#c1272d" stroke="#fff" stroke-width="1.8"/><text x="305" y="104" font-size="8" fill="#fff" text-anchor="middle">BONO</text><text x="305" y="128" font-size="9" fill="#ffb0b3" text-anchor="middle">saves!</text></g>
+      <g><circle cx="360" cy="245" r="14" fill="#3b82d6" stroke="#fff" stroke-width="1.6"/><text x="360" y="249" font-size="9" fill="#fff" text-anchor="middle">MBA</text></g>
+      <path d="M360 231 C 345 185, 325 138, 312 112" stroke="#7cb4e8" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#p1)"/>
+      <text x="470" y="205" font-size="10" fill="#ff9ba1">tame, to the keeper's right — saved</text>
+    </svg>
+
+    <div class="legend"><span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Mbappé's penalty — saved</span></div>
+
+    <p class="expl"><strong>The one moment that gave Morocco genuine hope — and the tournament's goalkeeping story, once more.</strong> Kylian Mbappé was felled by Noussair Mazraoui, and after a lengthy VAR review, stepped up on 28 minutes. But the wait seemed to unsettle him: the effort was tame and hesitant, and <strong>Yassine Bounou, guessing correctly, kept it out — his fourth penalty save in World Cup history, a record for any goalkeeper since 1966.</strong> In a tournament that has belonged to its goalkeepers — Vozinha, Gill, Nyland, Costa, Shobeir — Bounou added his name in lights, and for a while it looked as though his heroics might author an upset. Remarkably, Mbappé would join a tiny club: only the fourth player in 60 years to miss a penalty, score, and assist in the same World Cup match — the second in three days, after Messi did it against Egypt. The miss, in the end, was a mere footnote to his afternoon.</p>
+  </div>
+
+  <h2><span class="ic">🧤</span> The Bounou Wall — how Morocco stayed alive</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag miss">Morocco · The Resistance</span><span class="mt">A goalkeeping masterclass, and a back line throwing itself in the way</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="w1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+      </defs>
+      <rect width="720" height="360" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="60"/><rect y="120" width="720" height="60"/><rect y="240" width="720" height="60"/></g>
+      <rect x="230" y="40" width="260" height="90" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="130" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="130" stroke="#fff" stroke-width="3"/>
+      <g><circle cx="360" cy="92" r="16" fill="#c1272d" stroke="#fff" stroke-width="1.8"/><text x="360" y="96" font-size="8" fill="#fff" text-anchor="middle">BONO</text></g>
+      <text x="360" y="150" text-anchor="middle" font-size="11" fill="#ffd6a0">early Upamecano header · Doué stop · Digne onto the bar</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="130" cy="270" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="130" y="274">UPA</text><text x="130" y="290" fill="#fff" font-size="8">header, saved</text></g>
+        <g><circle cx="360" cy="290" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="360" y="294">DOUÉ</text><text x="360" y="310" fill="#fff" font-size="8">denied</text></g>
+        <g><circle cx="600" cy="270" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="600" y="274">DIGNE</text><text x="600" y="290" fill="#fff" font-size="8">onto the bar</text></g>
+      </g>
+      <path d="M142 260 C 210 190, 300 140, 344 106" stroke="#7cb4e8" stroke-width="2.5" fill="none" marker-end="url(#w1)"/>
+      <path d="M360 278 C 360 210, 355 160, 350 116" stroke="#7cb4e8" stroke-width="2.5" fill="none" marker-end="url(#w1)"/>
+      <path d="M588 260 C 520 190, 430 145, 380 100" stroke="#7cb4e8" stroke-width="2.5" fill="none" marker-end="url(#w1)"/>
+    </svg>
+
+    <div class="legend"><span><i style="border-top-color:#7cb4e8"></i> France attempts — all repelled (1st half)</span></div>
+
+    <p class="expl"><strong>For an hour, Morocco's defiance was total — and it had a name.</strong> The reason the Atlas Lions were still level at the break, despite being pinned back and out-shot 13-1 in the first half, was almost entirely down to <strong>Bounou and a back line that hurled itself in front of everything.</strong> The 35-year-old saved Upamecano's early header, produced a fine stop from Doué, tipped Digne's long-range effort onto the crossbar, and saved the penalty — a masterclass in the tournament's defining position. Behind him, Diop, Riad and the full-backs blocked, cleared and scrambled with the ferocity that has made Morocco the pride of Africa. It could not last against this opponent — but it was a rearguard worthy of far more than the 2-0 scoreline suggests.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Breakthrough (60') — Mbappé atones, in style</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">France · 1-0</span><span class="mt">Doué threads it, Mbappé opens his body and curls a beauty</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="g1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="g1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Doué's pass through El Aynaoui's legs → Mbappé curls it far corner</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c1272d" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">BONO</text></g>
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="430" cy="150" r="9" fill="#8c1c22" stroke="#fff" stroke-width="1"/><text x="430" y="168" font-size="8" fill="#ffb0b3">El Aynaoui (nutmegged)</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="300" cy="230" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="300" y="234">DOUÉ</text><text x="300" y="250" fill="#bcd9f6" font-size="8">the killer pass</text></g>
+        <g><circle cx="500" cy="215" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="500" y="219">MBA</text><text x="500" y="235" fill="#bff0d5" font-size="8">opens body, curls it</text></g>
+      </g>
+
+      <path d="M312 224 C 370 205, 430 200, 486 210" stroke="#7cb4e8" stroke-width="3.5" fill="none" marker-end="url(#g1)"/>
+      <path d="M512 202 C 520 155, 470 100, 400 64" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#g1g)"/>
+      <text x="545" y="150" font-size="10" fill="#bff0d0">far corner — a beauty (60')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8"></i> Doué's threaded pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé's curler</span>
+    </div>
+
+    <p class="expl"><strong>When the moment came, it came with trademark power and precision.</strong> Désiré Doué — again the game-changer — slipped a lovely pass through the legs of Neil El Aynaoui to release Mbappé at the edge of the box. And the captain did the rest exactly as you'd script it: <strong>opening up his body and whipping a sensational curling effort past Bounou into the far corner</strong>, the goalkeeper barely sighting it through the crowded area. It was his <strong>eighth goal of the tournament — drawing him level with Messi in the Golden Boot race — and the 20th of his World Cup career, one behind Messi's all-time record of 21.</strong> Redemption for the penalty miss, delivered in the most emphatic way possible: not a scrappy tap-in, but a strike of pure class from a player operating on a different plane. The dam had broken, and it had broken beautifully.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> Game Over (66') — Dembélé makes it two, and it's academic</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">France · 2-0</span><span class="mt">Mbappé's lay-off, Dembélé drives and finishes low — six minutes later</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="d1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="d1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · Mbappé's run drags markers, lays it back; Dembélé drives &amp; finishes low</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c1272d" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">BONO</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="480" cy="180" r="12" fill="#3b82d6" stroke="#fff" stroke-width="1.3"/><text x="480" y="184">MBA</text><text x="480" y="200" fill="#bcd9f6" font-size="8">run &amp; lay-off</text></g>
+        <g><circle cx="330" cy="255" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="330" y="259">DEM</text><text x="330" y="275" fill="#bff0d5" font-size="8">drives at the heart</text></g>
+      </g>
+
+      <path d="M468 190 C 430 210, 380 230, 346 246" stroke="#7cb4e8" stroke-width="3" stroke-dasharray="5 4" fill="none" marker-end="url(#d1)"/>
+      <path d="M344 244 C 380 190, 380 120, 372 64" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#d1g)"/>
+      <text x="410" y="150" font-size="10" fill="#bff0d0">low into the bottom corner (66')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8;border-top-style:dashed"></i> Mbappé's lay-off</span>
+      <span><i style="border-top-color:#39d98a"></i> Dembélé's finish</span>
+    </div>
+
+    <p class="expl"><strong>And barely had Morocco regathered themselves when the tie was settled for good.</strong> Just six minutes after Mbappé's opener, the roles reversed: <strong>Mbappé took a pass and laid it back for Ousmane Dembélé, who strode forward menacingly at the retreating Moroccan defence before steering a low finish into the bottom corner</strong> — a touch from Bounou's outstretched hand not quite enough to keep it out. Note, as ever, the intelligence of Mbappé's decoy run to open the space for his teammate. It was <strong>Dembélé's fifth goal of the tournament</strong>, and it made the game academic. Two goals in six minutes, two moments of genuine class, and a contest that had been a stalemate for an hour was suddenly, irreversibly, over. This is what France's ceiling looks like when it briefly reveals itself: lethal, fast, and utterly clinical.</p>
+  </div>
+
+  <div class="respect">
+    <div class="t">🦁 Credit to Morocco — and a note on the intensity</div>
+    <p style="margin:8px 0 0">Morocco leave with their heads high, having again established themselves as Africa's standard-bearers — back-to-back deep runs, and a goalkeeper who was magnificent. Their defending for an hour was courageous and organised. Yet one honest observation: <strong>this was not quite the Morocco of their earlier, ferocious best — the intensity that felled the Netherlands wasn't fully there.</strong> One wonders whether, deep down, they sensed from the outset that they were up against a superior machine, and that the energy of belief was harder to summon against opponents they know so intimately. There is a poignant subtext, too: many of these players came through the French youth pipeline alongside Mbappé, Olise and company at U-19 level — footballing brothers, separated by a senior allegiance. Perhaps that familiarity, and the memory of 2022, weighed on them. Whatever the cause, France sensed it, and never needed to reach top gear.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Kylian Mbappé</b> — <span class="good">Villain to hero</span>. Missed a penalty, then scored a stunning curler and assisted Dembélé. 8 goals, level with Messi for the Golden Boot; 20th career WC goal. A different plane.</div>
+    <div class="rt"><b>Ousmane Dembélé</b> — <span class="good">Ruthless</span>. Drove at the heart of Morocco and finished low for his 5th of the tournament. The perfect foil to Mbappé.</div>
+    <div class="rt"><b>Désiré Doué</b> — <span class="good">The unlocker</span>. Off the bench again and again the difference — the nutmeg pass for the opener was sublime. "When there are no spaces, Doué is a killer."</div>
+    <div class="rt"><b>Yassine Bounou (MAR)</b> — <span class="good">Heroic in defeat</span>. A record 4th WC penalty save plus a string of stops kept Morocco alive for an hour. The goalkeepers' World Cup, again.</div>
+    <div class="rt"><b>Achraf Hakimi (MAR)</b> — <span class="mid">Contained</span>. His free-kick before half-time was Morocco's best moment; otherwise France's structure denied him the space to hurt them.</div>
+    <div class="rt"><b>Didier Deschamps</b> — <span class="good">Serene</span>. His calm, knowing smile at the break said it all. Record-equalling 25th WC match as a manager, managed with total control.</div>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — France, Favourites, and a Semi-Final Colossus</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">France · The Road Ahead</span><span class="mt">Into the semis — and a likely date with Spain</span></div>
+
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="300" rx="10" fill="#0d141d"/>
+      <text x="30" y="46" font-size="15" font-weight="800" fill="#7cb4e8">QF ✓</text>
+      <text x="30" y="66" font-size="11" fill="#8b97a8">France 2-0 Morocco</text>
+      <circle cx="150" cy="40" r="6" fill="#3b82d6"/>
+      <line x1="160" y1="40" x2="250" y2="40" stroke="#26303f" stroke-width="2"/>
+      <text x="270" y="46" font-size="15" font-weight="800" fill="#e9b949">SF · Dallas, Jul 14</text>
+      <text x="270" y="66" font-size="11" fill="#8b97a8">vs Spain / Belgium</text>
+      <circle cx="440" cy="40" r="6" fill="#e9b949"/>
+      <line x1="450" y1="40" x2="540" y2="40" stroke="#26303f" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="560" y="46" font-size="15" font-weight="800" fill="#39d98a">FINAL?</text>
+      <text x="560" y="66" font-size="11" fill="#8b97a8">Jul 19</text>
+      <circle cx="650" cy="40" r="6" fill="#39d98a"/>
+
+      <rect x="30" y="100" width="660" height="76" rx="8" fill="#101722" stroke="#26303f"/>
+      <text x="45" y="126" font-size="13" font-weight="800" fill="#39d98a">✓ Why they're favourites</text>
+      <text x="45" y="148" font-size="12" fill="#cdd6e2">Six wins from six, still without a real scare. Mbappé & Dembélé firing, Doué</text>
+      <text x="45" y="166" font-size="12" fill="#cdd6e2">unplayable off the bench, the deepest squad left — and gears still in reserve.</text>
+
+      <rect x="30" y="192" width="660" height="86" rx="8" fill="#101722" stroke="#26303f"/>
+      <text x="45" y="218" font-size="13" font-weight="800" fill="#ff8e8e">⚠ The one watch-point</text>
+      <text x="45" y="240" font-size="12" fill="#cdd6e2">Mbappé iced his ankle after being subbed (a precaution). And a Spain semi would</text>
+      <text x="45" y="258" font-size="12" fill="#cdd6e2">be a different order of test — the one side able to match France's control & quality.</text>
+    </svg>
+
+    <p class="expl"><strong>France march on, and they do so as the clear favourites to reach a third consecutive World Cup final — a feat only two nations have ever achieved.</strong> The evidence is overwhelming: <strong>six wins from six, not a single genuine scare, and the unmistakable sense that they haven't yet had to show their best.</strong> Mbappé and Dembélé are among the tournament's form players, Doué is the most dangerous substitute in the competition, and the squad depth — with Thuram now back — is unmatched. The only minor concern is the sight of Mbappé applying ice to his ankle after being substituted, though it appeared precautionary and he moved freely in the celebrations. Now comes the real test: a <strong>semi-final in Dallas on July 14 against the winner of Spain vs Belgium.</strong> Should it be Spain — as many expect — it would be a genuine colossus: the tournament's most complete side and meanest defence against its most explosive attack. Two of our teams, France and Spain, potentially colliding one step from the final. On this evidence, France fear no one. But Spain would be the first side capable of asking questions this Morocco simply could not. <strong>Allez les Bleus — the gears are still in reserve.</strong></p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Quarter-Final · WON (2-0)</div><div class="g">Clinical, in control</div><div class="n">A measured dismissal of a brave Morocco — six wins from six, and the ceiling still unseen.</div></div>
+    <div class="nx"><div class="d">Semi-Final · Dallas, Jul 14</div><div class="g">vs Spain / Belgium</div><div class="n">A likely France–Spain last-four blockbuster looms — two of our teams, one final place. The tie of the tournament.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Exactly the 2-0 the head predicted — but the story was the manner. France were clinical, measured and utterly in control, dispensing a defeat rather than chasing a rout, and leaving the clear impression that this was some way short of their peak. Morocco defended ferociously and, in Bounou, had a hero who saved a Mbappé penalty and kept them level for an hour; they leave as Africa's proud standard-bearers, if perhaps a shade below their most ferocious intensity. But there was never real doubt. When France chose to move through the gears — for six devastating minutes on the hour — the difference in level was stark: a curling Mbappé beauty, a driving Dembélé finish, and a contest settled. Les Bleus are into the semi-finals, six wins from six, favourites for the final, and still holding something back. The Atlas Lions were beaten by a machine that never had to fully switch on. <strong>Allez les Bleus.</strong></p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

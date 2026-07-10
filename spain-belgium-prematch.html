@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Belgium — Quarter-Final Pre-Match Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#e63946;--espy:#ffc400;--bel:#c8102e;--bel2:#ff6b7d;--belg:#f4c430;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#e63946,#fff 50%,#f4c430);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .e{background:linear-gradient(135deg,#2a0c11,#0d1117)}
+  .vsbar .b{background:linear-gradient(135deg,#2a1a06,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .e .nm{color:#ff8e95}.vsbar .b .nm{color:var(--belg)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  .oddsbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .odds{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .odds.fav{border-color:#3a3014;background:linear-gradient(135deg,#1a1406,#101722)}
+  .odds .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .odds .v{font-size:20px;font-weight:800;margin-top:4px}
+  .odds.fav .v{color:var(--espy)}
+  .odds .p{font-size:11px;color:var(--muted);margin-top:2px}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.spain{border-left:3px solid var(--esp)}
+  .card.belgium{border-left:3px solid var(--belg)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:#ff8e95;font-weight:700}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.bel{background:rgba(244,196,48,.18);color:var(--belg)}
+  .move .mtag.key{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · QF Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge marq">🔥 Quarter-Final · Strength vs Strength</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Last 8 · Win or go home</span>
+  </div>
+  <h1>Spain vs Belgium</h1>
+  <div class="sub">The tournament's meanest defence against one of its most dangerous attacks — control versus the counter, with a semi-final against France the prize</div>
+  <div class="meta">🕒 12:30 AM IST, Sat 11 Jul · 📍 SoFi Stadium (Los Angeles Stadium), Inglewood — canopy roof, ~27°C (3pm ET / 19:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side e"><div class="nm">🇪🇸 Spain</div><div class="fm">4-2-3-1 · De la Fuente · favourites · record 6 clean sheets, 0 conceded</div></div>
+    <div class="mid">VS</div>
+    <div class="side b"><div class="nm">Belgium 🇧🇪</div><div class="fm">4-2-3-1 · Rudi Garcia · the counter-punchers · De Bruyne back</div></div>
+  </div>
+
+  <div class="oddsbar">
+    <div class="odds fav"><div class="l">Spain</div><div class="v">-163</div><div class="p">~62–64% · model 64%</div></div>
+    <div class="odds"><div class="l">Draw (90 mins)</div><div class="v">+300</div><div class="p">tight, low-scoring</div></div>
+    <div class="odds"><div class="l">Belgium</div><div class="v">+425</div><div class="p">~19–25% upset</div></div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:2px">Odds via bet365 / consensus. PrizePicks: Spain 75% to advance. A rare case where model and market fully agree — Spain are the side to beat.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a classic knockout contrast, and a clear favourite</div>
+    <p style="margin:8px 0 0">This is the purest strength-versus-strength tie of the round: <strong>the tournament's stingiest defence against one of its most stacked attacks.</strong> Spain arrive as heavy favourites and outright tournament co-favourites, having reached the last eight <strong>without conceding a single goal — a World Cup-record six straight clean sheets, more than ten hours of football</strong> — and fresh off a gritty 1-0 win over Portugal (see <a href="spain-portugal-postmatch.html">"Grinding Out the Derby"</a>). They control games (65.6% possession, second-highest) and grind out the narrow wins. Belgium, the eternal bridesmaids still chasing a first world title, took a louder, messier route — blitzing New Zealand and the USA while shipping goals of their own — and now must find a way through a wall no one has breached. Rudi Garcia has revived them, and in De Bruyne, Lukaku and De Ketelaere they carry enough quality to hurt anyone. But the numbers are emphatic: bet365 price Spain at -163, Belgium out at +425, and both the betting markets and the analytical models land on the same side. Spain should win. The question is whether Belgium's counter can produce the goal that has eluded everyone else.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">Spain are settled and near-full strength; Belgium absorb a significant midfield blow but welcome back their talisman. Exact XIs are predicted (not officially confirmed).</p>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — the settled, watertight machine (expected XI)</h3>
+    <ul>
+      <li><strong>Nico Williams still OUT (confirmed)</strong> — the adductor issue persists, so <strong>Baena continues on the left</strong> with Yamal on the right and Oyarzabal leading the line. Otherwise no injury or suspension concerns.</li>
+      <li><strong>The defence is the story:</strong> Simón behind Cubarsí and Laporte has been imperious — <strong>zero goals conceded all tournament, a record six consecutive World Cup clean sheets.</strong> Spain also win a tournament-high 66% of their aerial duels and make the fewest errors leading to shots (just 2).</li>
+      <li><strong>Rodri &amp; Pedri run it:</strong> the midfield control that has strangled every opponent — Rodri's positional discipline the platform, Pedri and Olmo the penetration.</li>
+      <li><strong>Oyarzabal the marksman:</strong> Spain's leading scorer (4 goals, 9 shots on target), and their most reliable route to a goal; Yamal the biggest individual threat from the right.</li>
+      <li><strong>The one flaw:</strong> conversion — Spain create far more than they score, and their flanks misfired against Portugal. Against a compact Belgium, ruthlessness in the final third is the question again.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Simón; Porro, Cubarsí, Laporte, Cucurella; Rodri, Pedri; Yamal, Olmo, Baena; Oyarzabal. (Not confirmed.)</p>
+  </div>
+
+  <div class="card belgium">
+    <h3 style="margin-top:0">🇧🇪 Belgium — De Bruyne returns, but Onana is a big loss</h3>
+    <ul>
+      <li><strong>Onana OUT with an ACL injury (confirmed)</strong> — a serious midfield blow suffered against the USA. <strong>Hans Vanaken and Tielemans</strong> are expected to form the double pivot, with Raskin an option.</li>
+      <li><strong>De Bruyne back (confirmed):</strong> Rudi Garcia's bold call to bench De Bruyne and Doku against the USA paid off, but the talisman is expected to return here — Belgium's chief line-breaker and creator, tasked with finding pockets between Spain's lines.</li>
+      <li><strong>The identity is cede-and-counter:</strong> Belgium are content to give Spain the ball and hit on the break — but ominously, their direct attacks have produced zero goals this tournament, and they carry the lowest pass-completion (85.5%) of the eight quarter-finalists.</li>
+      <li><strong>The threats:</strong> De Ketelaere (in form, scored twice vs USA), Lukaku's presence, Trossard and Lukebakio's pace, and Courtois — a world-class goalkeeper who could be decisive in a tight game.</li>
+      <li><strong>The history weighs heavy:</strong> Spain have won nine of the last eleven meetings between the nations.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-2-3-1): Courtois; Castagne, Ngoy, Mechele, De Cuyper; Vanaken, Tielemans; Lukebakio, De Bruyne, Trossard; De Ketelaere. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Control vs the Counter</h2>
+  <p>This is the classic knockout chess match, and the battle-lines are clear. <strong>Spain will dominate the ball</strong> — as they do against everyone — <strong>and try to suffocate Belgium with sustained possession, quick rest-defence, and the positional control that has kept six straight clean sheets.</strong> Their aim: pin Belgium deep, work the ball wide to Yamal and Baena, and prise open a back line with Oyarzabal's movement and Olmo's late runs. <strong>Belgium, by contrast, will happily cede possession and look to strike on the transition</strong> — the cede-and-counter model — trusting De Bruyne to find the pockets and release Lukaku, De Ketelaere and their pace in behind. The defining sub-plots: can Belgium, without Onana and carrying the lowest pass-accuracy of the eight, actually retain the ball long enough to build those counters? And can Spain, so dominant but so wasteful, finally add the ruthlessness their control deserves? Strength meets strength — but one of these strengths (Spain's defence) has been flawless, and the other (Belgium's counter) has yet to produce a single goal.</p>
+
+  <h2><span class="ic">🔑</span> The Duel That Defines It — Rodri vs De Bruyne</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Midfield Fulcrum</span><span class="mt">Spain's metronome against Belgium's line-breaker</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="30" x2="360" y2="290" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="54" font-size="15" font-weight="800" fill="#ffc400">🇪🇸 Rodri</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="84">▸ The platform for Spain's control</text>
+        <text x="34" y="108">▸ Positional discipline &amp; distribution</text>
+        <text x="34" y="132">▸ Screens the defence — the reason</text>
+        <text x="34" y="150" font-size="11" fill="#8b97a8">   Spain concede so little</text>
+        <text x="34" y="174">▸ Reads &amp; smothers danger early</text>
+      </g>
+      <rect x="34" y="196" width="300" height="96" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="48" y="222" font-size="12.5" font-weight="800" fill="#ffc400">His job today:</text>
+      <text x="48" y="244" font-size="12" fill="#cdd6e2">deny De Bruyne the pockets between</text>
+      <text x="48" y="262" font-size="12" fill="#cdd6e2">the lines — starve Belgium's counter</text>
+      <text x="48" y="280" font-size="12" fill="#cdd6e2">at source.</text>
+      <text x="392" y="54" font-size="15" font-weight="800" fill="#f4c430">🇧🇪 Kevin De Bruyne</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="84">▸ Belgium's chief creator &amp; line-breaker</text>
+        <text x="392" y="108">▸ 8 goals in recent competitive games</text>
+        <text x="392" y="132">▸ Threat from deep — one pass changes</text>
+        <text x="392" y="150" font-size="11" fill="#8b97a8">   any game</text>
+        <text x="392" y="174">▸ Back after being rested vs USA</text>
+      </g>
+      <rect x="392" y="196" width="296" height="96" rx="8" fill="#101722" stroke="#4a3a12"/>
+      <text x="406" y="222" font-size="12.5" font-weight="800" fill="#f4c430">His job today:</text>
+      <text x="406" y="244" font-size="12" fill="#cdd6e2">find the half-second of space to</text>
+      <text x="406" y="262" font-size="12" fill="#cdd6e2">release the runners — the only real</text>
+      <text x="406" y="280" font-size="12" fill="#cdd6e2">route to cracking Spain's wall.</text>
+    </svg>
+
+    <p class="expl"><strong>The whole tie may pivot on one duel in the centre of the pitch.</strong> Spain's remarkable defensive record is not just about their back four — it is built on <strong>Rodri's screening and the midfield compactness that denies opponents any room between the lines.</strong> Belgium's one genuine path to goal runs through <strong>Kevin De Bruyne finding those very pockets</strong> — the half-yard of space from which he can slide Lukaku or De Ketelaere through, or bend one of his trademark deliveries. If Rodri and Pedri smother that space, as they have all tournament, Belgium's cede-and-counter plan starves for supply and Spain grind them down. If De Bruyne — even at this stage of his career — can conjure the moments that have defined him, Belgium have the one weapon capable of beating the tournament's meanest defence. Contain De Bruyne, and Spain almost certainly win. Let him breathe, and the upset lives.</p>
+  </div>
+
+  <h2><span class="ic">🇪🇸</span> Spain's Key — Break the block, back the aerial edge</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · Attack</span><span class="mt">Work Yamal wide, overload the box, exploit the 66% aerial edge</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aE" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="aEg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Yamal isolates his full-back, cuts back for the aerial overload</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c8102e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">COURT</text></g>
+      <g><circle cx="300" cy="105" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="100" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="105" r="10" fill="#c8102e" stroke="#fff" stroke-width="1.1"/><text x="360" y="80" text-anchor="middle" font-size="9" fill="#ffb3bb">Belgium bank deep — cede possession</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="620" cy="230" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="620" y="234">YAM</text><text x="620" y="250" fill="#fff" font-size="8">1v1 &amp; cutback</text></g>
+        <g><circle cx="430" cy="180" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="184">OYA</text><text x="430" y="166" fill="#fff" font-size="8">attacks the near post</text></g>
+        <g><circle cx="330" cy="200" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="330" y="204">OLM</text></g>
+      </g>
+
+      <path d="M608 224 C 560 205, 500 195, 450 188" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#aE)"/>
+      <path d="M424 166 C 410 130, 400 95, 388 62" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aEg)"/>
+      <text x="470" y="130" font-size="10" fill="#bff0d0">headed / swept home</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Yamal beats his man &amp; cuts back</span>
+      <span><i style="border-top-color:#39d98a"></i> Oyarzabal attacks the delivery</span>
+    </div>
+
+    <p class="expl"><strong>Spain's clearest route through a side that will invite them on.</strong> Belgium will sit deep and cede the ball, so Spain must break a block — the same puzzle they solved late against Portugal. The mechanism: <strong>circulate patiently, then get Lamine Yamal isolated one-on-one on the right, where he can beat his man and deliver.</strong> Crucially, Spain hold a decisive edge in the air — <strong>they win a tournament-high 66% of their aerial duels</strong>, so cutbacks and crosses toward Oyarzabal and the arriving Olmo are a genuine weapon, not just a hopeful ball. The caveat is the one that has shadowed Spain all tournament: they create far more than they finish, and both flanks drew a blank against Portugal. Against Courtois — one of the finest goalkeepers alive — half-chances won't do. Spain must be patient, use their aerial superiority, and finally be ruthless when the openings come.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Belgium's Threat — Cede, spring, and trust the quality</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bel">Belgium · The Counter</span><span class="mt">Absorb, win it, and release De Ketelaere &amp; Lukaku through De Bruyne</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aB" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#f4c430"/></marker>
+        <marker id="aBg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Belgium attacking ↑ · De Bruyne receives in the pocket, springs the runners in behind</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="140" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="420" cy="140" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#ffe98a">Spain's high line — the space to attack</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="330" cy="300" r="13" fill="#c8102e" stroke="#fff" stroke-width="1.4"/><text x="330" y="304">KDB</text><text x="330" y="320" fill="#ffd98a" font-size="8">the pass that unlocks</text></g>
+        <g><circle cx="470" cy="235" r="13" fill="#c8102e" stroke="#fff" stroke-width="1.5"/><text x="470" y="239">CDK</text><text x="470" y="255" fill="#ffd98a" font-size="8">runs the channel</text></g>
+        <g><circle cx="250" cy="235" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="250" y="239">LUK</text><text x="250" y="255" fill="#ffd98a" font-size="8">occupies the CBs</text></g>
+      </g>
+
+      <path d="M342 292 C 390 268, 440 250, 458 242" stroke="#f4c430" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aB)"/>
+      <path d="M478 221 C 484 178, 474 130, 448 80" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aBg)"/>
+      <text x="540" y="165" font-size="10" fill="#bff0d0">the one chance they need</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#f4c430;border-top-style:dashed"></i> De Bruyne's release</span>
+      <span><i style="border-top-color:#39d98a"></i> De Ketelaere's run</span>
+    </div>
+
+    <p class="expl"><strong>Belgium's blueprint for the upset — clear, but unproven against this opposition.</strong> The Red Devils won't try to out-play Spain; they'll <strong>sit off, concede possession, stay compact, and back the individual quality of De Bruyne to spring their forwards on the counter</strong> the moment they win it. The picture they want: De Bruyne receiving in a pocket, Lukaku pinning the centre-backs, and De Ketelaere or the pace of Trossard/Lukebakio darting into the space behind a Spanish line that pushes high. It is a legitimate plan — Spain's high defensive line can be run in behind, and one De Bruyne pass can undo any structure. But two warnings loom large: <strong>Belgium's direct attacks have produced zero goals all tournament, and no team has scored against Spain at all.</strong> Without the injured Onana to help retain the ball, sustaining pressure will be hard. Belgium likely get one or two clean looks all night — and against Simón's Spain, they will need to take them.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Every model flags this as a tight, low-scoring affair — Squawka, bet365 and the correct-score markets all lean toward a 1-0 and Under 2.5 goals, with extra time and penalties explicitly in play if the sides are level at 90. Given Spain's profligacy and Belgium's obduracy, a long night is very possible.</p>
+    <p style="margin:8px 0 0"><strong>Extra time favours Spain.</strong> Their depth is superior — Ferran Torres, Merino (the Portugal matchwinner off the bench) and Gavi's energy give De la Fuente game-changing options, and Spain's fitness and control tend to tell in the closing stages. Belgium, ageing in key areas and now short of Onana, would find another 30 minutes of chasing the ball a serious physical ask.</p>
+    <p style="margin:8px 0 0"><strong>Penalties are Belgium's best hope — because of one man.</strong> A shootout is the great leveller, and in <strong>Thibaut Courtois, Belgium have one of the world's premier goalkeepers</strong>, entirely capable of winning a shootout on his own. Spain's own shootout history is chequered, though Oyarzabal is ice-cold from the spot. In a "goalkeepers' World Cup", a Courtois-decided shootout is the single most realistic route to a Belgian upset — which is exactly why Spain must find a way to win this inside 90 or 120 minutes and avoid handing Belgium the lottery their goalkeeper could master.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline — who wins, and why</h2>
+    <p>The honest, research-backed read is unambiguous: <strong>Spain should win, and deserve their status as clear favourites.</strong> Both the betting markets (bet365 -163, ~62–64%) and the analytical models (Squawka 64%, PrizePicks 75% to advance) land firmly on La Roja, and the logic is sound — the tournament's only side yet to concede, a record six clean sheets, midfield control few can live with, the superior bench, and a decisive aerial edge. Belgium are dangerous, De Bruyne can unlock anyone, and Courtois keeps them alive in any scenario — but their counter has produced no goals all tournament, they've lost Onana, and no one has breached Spain's wall in over ten hours of football. My prediction aligns with the numbers: <strong>Spain to win a tight, low-scoring quarter-final</strong>, most likely settled by a single moment of Yamal or Oyarzabal quality, exactly as against Portugal — with extra time and even penalties (where Courtois makes Belgium dangerous) live if Spain's chronic wastefulness persists. Spain advance and set up the France semi-final everyone wants. <strong>Vamos España — but take your chances this time.</strong></p>
+    <div class="scoreline">🇪🇸 Spain 1 — 0 Belgium <span style="font-size:14px;color:var(--muted)">(or extra time)</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a controlled, low-scoring Spanish win — clean sheet number seven, decided by one Yamal/Oyarzabal moment. Belgium's realistic hope is dragging it to a Courtois-led shootout. A Belgian win is possible (~19–25%) but would require them to do what no team has managed: score against Spain.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Quarter-Final · Los Angeles</div><div class="g">Winner advances</div><div class="n">To the semi-final in Dallas on July 14 — against a France side already through after beating Morocco 2-0.</div></div>
+    <div class="nx"><div class="d">The prize</div><div class="g">🇫🇷 France awaits</div><div class="n">Win, and Spain face France in a genuine last-four colossus — two of our teams, one final place. The tie of the tournament.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

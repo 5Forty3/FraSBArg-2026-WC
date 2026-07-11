@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 2-1 Belgium — The Armada That Holds Something Back</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#e63946;--espy:#ffc400;--bel:#c8102e;--bel2:#ff6b7d;--belg:#f4c430;--fra:#3b82d6;--fra2:#7cb4e8;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(255,196,0,.13);color:var(--espy);border:1px solid #3a3014}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,40px);font-weight:800;margin-top:6px;line-height:1.14;
+    background:linear-gradient(90deg,#e63946,#fff 55%,#ffc400);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14.5px;margin-top:12px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .e{color:#ff8e95}.scoreboard .b{color:var(--belg)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#ff8e95}.scorers .bel{color:var(--belg)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff8e95}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:56px;line-height:44px;padding:6px 12px 2px 0;color:var(--espy);font-weight:800}
+
+  .pull{border-left:3px solid var(--espy);background:linear-gradient(135deg,#1a1406,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#f0e6cf;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--espy);font-weight:700}
+  .philo{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid #b98cff;border-radius:10px;padding:14px 16px;margin:16px 0}
+  .philo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.bel{background:rgba(244,196,48,.18);color:var(--belg)}
+  .move .mtag.key{background:rgba(90,160,230,.16);color:var(--blue)}
+  .move .mtag.g{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.future{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · QF Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge marq">🔥 Quarter-Final · Semis Bound</span>
+    <span class="badge" style="background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014">Last 8 · FT</span>
+  </div>
+  <h1>The Armada That Holds Something Back</h1>
+  <div class="kicker">Spain won again — late, laboured, and through Merino off the bench once more — but a night of so much talent and so little abandon left the same question hanging: what is holding this side back?</div>
+
+  <div class="scoreboard">
+    <span class="t e">🇪🇸 Spain</span>
+    <span class="sc">2 – 1</span>
+    <span class="t b">Belgium 🇧🇪</span>
+  </div>
+  <div class="meta">📍 SoFi Stadium (Los Angeles), Inglewood · Quarter-Final · Full-time</div>
+  <div class="scorers">⚽ <b>Fabián Ruiz 30', Merino 88'</b> · Belgium: <span class="bel">De Ketelaere 41'</span></div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="e">2.08</span> – 0.38</div></div>
+    <div class="stat"><div class="l">Shots</div><div class="v"><span class="e">16</span> – 5</div></div>
+    <div class="stat"><div class="l">Clean sheet run</div><div class="v">Ended (6)</div></div>
+    <div class="stat"><div class="l">Merino</div><div class="v">2nd sub winner</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">As predicted, a tight low-scoring Spanish win settled by a bench moment — and Merino, again, was the man. The margin, and the manner, told the familiar story.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The prediction, and the reality</div>
+    <p style="margin:8px 0 0">Our <a href="spain-belgium-prematch.html">pre-match analysis</a> called it a tight, low-scoring Spanish win — a 1-0 settled by a Yamal or Oyarzabal moment, with Merino's bench impact flagged from the Portugal game. The scoreline finished one goal busier at each end, but the essence held perfectly: Spain dominated (xG 2.08–0.38, 16 shots to 5), laboured for long spells, conceded their first goal of the tournament, and were rescued late by <strong>Merino off the bench — his second consecutive winner as a substitute.</strong> Everything we said about Spain's control-without-ruthlessness, and about a Courtois-shaped obstacle, came to pass. They are through. But this was the win of a team that keeps finding a way rather than blowing anyone away.</p>
+  </div>
+
+  <div class="essay">
+  <p class="lead dropcap">There is a peculiar tension at the heart of this Spain side, and ninety-plus minutes in Los Angeles laid it bare once more. Here is a team of extravagant, generational talent — arguably the deepest well of technical quality in the tournament — and yet it plays as though some invisible hand restrains it, as though it is forever winning matches at seventy per cent of what it could be. Belgium, a strong and proud opponent for all their years, were beaten 2-1. But it was a tiring, laboured victory over an ageing team, decided not by a flood of the brilliance Spain so obviously possess, but by a substitute turning in a rebound at the death. Good teams win these. Great teams, with this much ability, are supposed to make them look easier than this.</p>
+
+  <p>And yet — and this is the paradox — winning ugly is itself a kind of greatness, and it is the greatness that lifts trophies. The heartbreak, for a purist, is the sense of what is being left on the table. So much raw talent, so little abandon. But Spain keep advancing, and they advance now to the tie of the tournament.</p>
+
+  <h2><span class="ic">🧭</span> Rodri — The Central Character of the Armada</h2>
+  <p>If one man explained this match, it was Rodri. Once again he was <strong>the central character of the Spanish Armada — the fulcrum around which everything turns.</strong> It is Rodri who builds from the back, who receives under pressure and, crucially, who takes the game vertical when a lesser controller would only recycle it sideways. All tournament, the story has been the same: <strong>no opponent has yet found a way to stifle him, to force him into purely horizontal, sterile possession.</strong> Belgium tried, harrying him through Witsel and Vanaken, and still he dictated — the metronome setting Spain's tempo, the platform for their control, and the reason they concede so rarely. He is the least flashy of Spain's stars and the most indispensable.</p>
+
+  <div class="pull">Nobody has managed to stifle Rodri into the horizontal all tournament — to stop him taking the game forward. That single duel, more than any other, is what will make Spain versus France so fascinating: because France, of anyone left, have the engine and the athleticism to try.
+    <span class="a">— The battle that may decide the semi-final</span>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag key">Spain · The Engine</span><span class="mt">Rodri receives, resists the sideways ball, and drives Spain vertical</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="rV" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="rH" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b70"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="50"/><rect y="100" width="720" height="50"/><rect y="200" width="720" height="50"/><rect y="300" width="720" height="50"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="372" rx="4"/><line x1="14" y1="200" x2="706" y2="200"/></g>
+      <text x="360" y="392" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Rodri rejects the safe sideways ball and plays forward through the lines</text>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="300" r="15" fill="#ffc400" stroke="#fff" stroke-width="1.7"/><text x="360" y="304">RODRI</text><text x="360" y="322" fill="#fff" font-size="8">receives under pressure</text></g>
+        <g><circle cx="470" cy="170" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="470" y="174">PEDRI</text></g>
+        <g><circle cx="600" cy="130" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.4"/><text x="600" y="134">YAM</text></g>
+      </g>
+      <!-- Belgium pressers -->
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="320" cy="255" r="9" fill="#c8102e" stroke="#fff" stroke-width="1"/><circle cx="405" cy="255" r="9" fill="#c8102e" stroke="#fff" stroke-width="1"/></g>
+
+      <!-- horizontal option (rejected) -->
+      <path d="M338 308 C 250 312, 170 312, 120 308" stroke="#ff6b70" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#rH)" opacity=".6"/>
+      <text x="150" y="330" font-size="9" fill="#ffb0b3">the sideways ball — declined</text>
+      <!-- vertical drive -->
+      <path d="M372 290 C 420 250, 450 205, 462 184" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#rV)"/>
+      <path d="M482 162 C 520 140, 560 132, 588 132" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#rV)"/>
+      <text x="470" y="215" font-size="10" fill="#bff0d0">forward, through the lines</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b70;border-top-style:dashed"></i> The safe sideways ball (rejected)</span>
+      <span><i style="border-top-color:#39d98a"></i> Rodri drives it vertical</span>
+    </div>
+
+    <p class="expl"><strong>This is the mechanism that makes Spain tick — and Rodri is the only one who can run it.</strong> Possession-heavy sides live or die by whether their deepest midfielder can progress the ball forward or merely keep it moving side to side. Rodri, uniquely, does the former under the heaviest pressure: <strong>he absorbs the press, shields the ball, and picks the vertical pass — into Pedri's feet, out to Yamal, through a line — that turns sterile control into genuine threat.</strong> Belgium's whole midfield plan was to deny him that, and they couldn't. It is why Spain have conceded so little (their rest-defence starts with him) and created so much. The tantalising question, now, is France — because in Tchouaméni (if fit), Koné and Rabiot, Les Bleus have the athletic, ball-winning engine most likely to finally make Rodri go sideways. Win that duel, and Spain control the semi. Lose it, and they may be forced into exactly the passive, horizontal football that has always been the ceiling on this team.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Opener (30') — Fabián Ruiz pounces on the rebound</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Spain · 1-0</span><span class="mt">Courtois parries, Fabián Ruiz is quickest to react</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="o1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="o1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="120" width="720" height="55"/><rect y="240" width="720" height="55"/></g>
+      <rect x="230" y="40" width="260" height="95" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="135" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="135" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="160" text-anchor="middle" font-size="11" fill="#ffd6a0">Courtois can't hold it — Fabián Ruiz first to the loose ball</text>
+
+      <g><circle cx="330" cy="95" r="15" fill="#c8102e" stroke="#fff" stroke-width="1.8"/><text x="330" y="99" font-size="8" fill="#fff" text-anchor="middle">COURT</text><text x="330" y="122" font-size="8" fill="#ffb3bb" text-anchor="middle">spills it</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="180" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="180" y="254">initial</text><text x="180" y="270" fill="#fff" font-size="8">shot, saved</text></g>
+        <g><circle cx="440" cy="200" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="440" y="204">F.RUIZ</text><text x="440" y="220" fill="#bff0d5" font-size="8">pounces</text></g>
+      </g>
+      <path d="M192 244 C 250 190, 300 145, 322 112" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#o1)"/>
+      <path d="M428 190 C 400 150, 380 120, 366 96" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#o1g)"/>
+      <text x="470" y="240" font-size="10" fill="#bff0d0">tucked away (30')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Initial shot, parried</span>
+      <span><i style="border-top-color:#39d98a"></i> Fabián Ruiz finishes the rebound</span>
+    </div>
+
+    <p class="expl"><strong>A goal born of persistence rather than a flourish — fittingly for this Spain.</strong> On the half-hour, Spain's pressure finally forced an opening: a shot that even the great Thibaut Courtois could only parry, and <strong>Fabián Ruiz was sharpest to the rebound, tucking it away</strong> to reward the sustained siege. It was, tellingly, the first of two Spanish goals that came from a saved shot dropping to a Spaniard who didn't miss the second time — a sign both of relentless pressure and of a finishing touch that needed a second bite. For half an hour Spain had knocked and knocked; now the door creaked open. And with the tournament's meanest defence behind them, a 1-0 lead felt, briefly, like it might be all they needed.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Reply (41') — De Ketelaere ends the record</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag bel">Belgium · 1-1</span><span class="mt">The first goal Spain conceded all tournament — 10+ hours ended</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="e1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#f4c430"/></marker>
+        <marker id="e1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="120" width="720" height="55"/><rect y="240" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="372" rx="4"/><rect x="200" y="14" width="320" height="110"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="392" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Belgium attacking ↑ · a rare clean break — De Ketelaere finds the finish</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#0a0e14" text-anchor="middle">SIMÓN</text></g>
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="230" cy="250" r="12" fill="#c8102e" stroke="#fff" stroke-width="1.3"/><text x="230" y="254">KDB</text><text x="230" y="270" fill="#ffd98a" font-size="8">the release</text></g>
+        <g><circle cx="430" cy="175" r="14" fill="#c8102e" stroke="#fff" stroke-width="1.6"/><text x="430" y="179">CDK</text><text x="430" y="195" fill="#ffd98a" font-size="8">the finish</text></g>
+      </g>
+      <path d="M242 244 C 320 215, 390 195, 418 184" stroke="#f4c430" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#e1)"/>
+      <path d="M436 162 C 420 130, 400 95, 380 60" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#e1g)"/>
+      <text x="500" y="150" font-size="10" fill="#bff0d0">past Simón — 1-1 (41')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#f4c430;border-top-style:dashed"></i> Belgium's break</span>
+      <span><i style="border-top-color:#39d98a"></i> De Ketelaere's finish</span>
+    </div>
+
+    <p class="expl"><strong>A moment of genuine history, and a jolt to Spanish nerves.</strong> Just before half-time, Belgium did what no team had managed in more than ten hours of football: <strong>they scored against Spain. Charles De Ketelaere — Belgium's in-form forward — finished to make it 1-1, ending Spain's World Cup-record run of six consecutive clean sheets and their unbeaten-goal streak in a single stroke.</strong> It was a reminder that even the meanest defence is not impregnable, and that Belgium, for all their limitations, carried the individual quality to punish a rare lapse. For a side that had drawn so much confidence from never conceding, the psychological jolt was real — and it forced Spain to do something they hadn't all tournament: come from level, late, against a stubborn opponent. Their answer, once again, came from the bench.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Winner (88') — Merino, off the bench, again</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Spain · 2-1</span><span class="mt">Lammens spills Cubarsí's shot — Merino is there, as he always is</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="w1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="w1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="120" width="720" height="55"/><rect y="240" width="720" height="55"/></g>
+      <rect x="230" y="40" width="260" height="95" fill="none" stroke="#fff" stroke-width="3"/>
+      <line x1="230" y1="40" x2="230" y2="135" stroke="#fff" stroke-width="3"/><line x1="490" y1="40" x2="490" y2="135" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="160" text-anchor="middle" font-size="11" fill="#ffd6a0">sub keeper Lammens spills Cubarsí's shot — Merino pounces</text>
+
+      <g><circle cx="345" cy="95" r="15" fill="#c8102e" stroke="#fff" stroke-width="1.8"/><text x="345" y="99" font-size="7" fill="#fff" text-anchor="middle">LAMM</text><text x="345" y="122" font-size="8" fill="#ffb3bb" text-anchor="middle">parries it loose</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="190" cy="250" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="190" y="254">CUB</text><text x="190" y="270" fill="#fff" font-size="8">the shot</text></g>
+        <g><circle cx="450" cy="185" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="450" y="189">MER</text><text x="450" y="205" fill="#bff0d5" font-size="8">super-sub, again</text></g>
+      </g>
+      <path d="M202 244 C 260 190, 310 145, 334 112" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#w1)"/>
+      <path d="M438 176 C 415 140, 395 115, 378 96" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#w1g)"/>
+      <text x="500" y="230" font-size="10" fill="#bff0d0">turned home — 2-1 (88')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Cubarsí's shot, spilled</span>
+      <span><i style="border-top-color:#39d98a"></i> Merino's winner</span>
+    </div>
+
+    <p class="expl"><strong>Different opponent, same script — and the same hero.</strong> With the game drifting toward extra time, De la Fuente turned again to Mikel Merino, sending him on for Olmo. Within roughly two minutes he had won the tie: <strong>Pau Cubarsí drove in a shot, Belgium's substitute goalkeeper Senne Lammens — on for the injured Courtois — could only spill it, and Merino was there to turn home the rebound</strong> in the 88th minute. It was his <strong>second consecutive game-winning goal off the bench, after the identical late act against Portugal</strong> four days earlier. There is a lesson buried in it: for all the questions about Spain's starters, their bench and their pragmatism keep delivering exactly when required. It was fitting, too, that both Spanish goals came from a spilled save — a night of relentless pressure that finally, twice, broke through on the second attempt. Cruel on Belgium; deserved, on the balance of play, by Spain.</p>
+  </div>
+
+  <div class="callout">
+    <div class="t">🩹 A note on Belgium's misfortune — and their farewell</div>
+    <p style="margin:8px 0 0">Belgium were dealt a brutal hand. They lost captain <strong>Youri Tielemans to an injury in the warm-up</strong>, and then <strong>Thibaut Courtois — imperious as ever, denying Yamal and Oyarzabal repeatedly — went off injured on 73 minutes</strong>, forcing on the untested Lammens whose spill decided the tie. Whether Courtois stays on and saves Cubarsí's shot is one of the game's great what-ifs. Producing just 0.38 xG, Belgium rode their luck and their goalkeeper for long spells, but they defended with the resilience their name demands. This, in all likelihood, is the final bow of Belgium's "Golden Generation" — De Bruyne, Lukaku and company — a group of immense talent that, agonisingly, never quite won the prize their gifts promised. They deserve respect on the way out.</p>
+  </div>
+
+  <h2><span class="ic">🔬</span> The Individuals — Talent, and the Missing Spark</h2>
+  <p>The collective story was clear, but the individual picture explains why this Spain intrigues and frustrates in equal measure. It is a squad brimming with talent that, player by player, seems to be operating just below its own summit.</p>
+  <div class="ratings">
+    <div class="rt"><b>Rodri</b> — <span class="good">The indispensable one</span>. The central character again: built from the back, took it vertical, and was never stifled into sideways football. Spain's engine and their difference-maker.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="mid">Unstoppable, until the finish</span>. Almost impossible to contain around the box — beat men at will — but he still seems to lack the confidence to end his dazzling dribbles with a decisive strike. One goal all tournament for all his brilliance.</div>
+    <div class="rt"><b>Pedri</b> — <span class="mid">Gifted, but muted</span>. Still elegant on the ball, yet the incisive, line-splitting through-balls that define him at his best have gone quiet. The vision is there; the killer pass, less so.</div>
+    <div class="rt"><b>Cucurella</b> — <span class="mid">A tale of two halves</span>. Arguably the best left-back in the tournament, yet virtually absent going forward in the first 45 — then far more influential after the break. Consistency, again, the theme.</div>
+    <div class="rt"><b>Baena & Nico (sub)</b> — <span class="mid">Willing foils, inconsistent</span>. A good balance on the left to Yamal's right, but neither has strung together the sustained end-product to fully unlock this side.</div>
+    <div class="rt"><b>Mikel Merino</b> — <span class="good">The super-sub, again</span>. On for Olmo, decisive within two minutes. Two straight game-winners off the bench. Spain's pragmatic ace in the hole.</div>
+  </div>
+
+  <div class="pull">Yamal is almost impossible to stop around the goal — but he plays as though something restrains him from finishing his artistry with a strike. Pedri's vision flickers where it once blazed. Cucurella arrives only after the interval. It is the story of the whole team in miniature: an abundance of talent, and an invisible hand holding it back from true greatness.
+    <span class="a">— So much gifted, so little unleashed</span>
+  </div>
+
+  <div class="philo">
+    <div class="t">🎭 The Philosophy — De la Fuente's Pragmatism vs the Purist's Dream</div>
+    <p style="margin:8px 0 0">Here is the deeper truth this tournament keeps revealing about Spain, and it is one that will divide hearts. This is <strong>not the Spain of the tiki-taka gospel — not a side bent on hypnotic, total domination of the ball as an end in itself.</strong> Under Luis de la Fuente, Spain have become something more pragmatic: a team that controls, defends ferociously, absorbs a blow, and finds a way to win in a laboured, unglamorous fashion — often through a substitute, often late. For the purist, there is real heartbreak in this. One thinks of <strong>Luis Enrique's Spain — bolder, more romantic, committed to the beautiful ideal — which for all its aesthetic courage did not lift the biggest prizes.</strong> And here is De la Fuente, less doctrinaire, arguably less thrilling, winning a European Championship and now marching through a World Cup by the simple, ruthless expedient of <em>winning matches.</em> It breaks a romantic's heart that the pragmatist succeeds where the idealist fell short. But football, in the end, remembers the trophies — and this method, for all that it leaves talent unspent, keeps working.</p>
+  </div>
+
+  <h2><span class="ic">🔮</span> The Future — Spain vs France: The Tie of the Tournament</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag future">Semi-Final · Dallas, Jul 14</span><span class="mt">Two of the world's most talented teams, one final place</span></div>
+
+    <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="330" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="28" x2="360" y2="302" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="52" font-size="15" font-weight="800" fill="#ffc400">🇪🇸 Spain</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="82">▸ Control &amp; possession (65%+)</text>
+        <text x="34" y="106">▸ Rodri-Pedri midfield mastery</text>
+        <text x="34" y="130">▸ Elite defence (1 goal in 6 games)</text>
+        <text x="34" y="154">▸ Yamal's dribbling · deepest bench</text>
+      </g>
+      <rect x="34" y="178" width="300" height="118" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="48" y="204" font-size="12.5" font-weight="800" fill="#ffc400">Edge:</text>
+      <text x="48" y="226" font-size="12" fill="#cdd6e2">midfield control &amp; ball retention —</text>
+      <text x="48" y="244" font-size="12" fill="#cdd6e2">if Rodri stays vertical, Spain dictate.</text>
+      <text x="48" y="270" font-size="12.5" font-weight="800" fill="#ff8e8e">Worry:</text>
+      <text x="48" y="290" font-size="12" fill="#cdd6e2">wasteful finishing vs a lethal France.</text>
+      <text x="392" y="52" font-size="15" font-weight="800" fill="#7cb4e8">🇫🇷 France</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="82">▸ Vertical transitions &amp; pace</text>
+        <text x="392" y="106">▸ Mbappé — 8 goals, ruthless</text>
+        <text x="392" y="130">▸ Dembélé &amp; Doué firing</text>
+        <text x="392" y="154">▸ 6/6 wins · gears still in reserve</text>
+      </g>
+      <rect x="392" y="178" width="296" height="118" rx="8" fill="#101722" stroke="#274055"/>
+      <text x="406" y="204" font-size="12.5" font-weight="800" fill="#7cb4e8">Edge:</text>
+      <text x="406" y="226" font-size="12" fill="#cdd6e2">clinical finishing &amp; transition speed —</text>
+      <text x="406" y="244" font-size="12" fill="#cdd6e2">they punish what Spain leave open.</text>
+      <text x="406" y="270" font-size="12.5" font-weight="800" fill="#ff8e8e">Worry:</text>
+      <text x="406" y="290" font-size="12" fill="#cdd6e2">can they wrest the ball from Rodri &amp; co?</text>
+    </svg>
+
+    <p class="expl"><strong>And so we arrive at the tie the whole tournament has been building toward: Spain vs France, in Dallas, for a place in the final.</strong> It is, on paper, the clash of the two most talented teams left standing — and a fascinating collision of philosophies. <strong>Spain will want to do to France what they've done to everyone: monopolise the ball, control through Rodri and Pedri, and strangle the game.</strong> But France are the one side with the athletic midfield engine — Tchouaméni (fitness permitting), Koné, Rabiot — capable of pressing Spain, contesting Rodri, and forcing the horizontal, sterile possession that is this Spain's ceiling. And where Spain labour to finish, <strong>France are lethally efficient: Mbappé (8 goals, level with Messi), Dembélé and Doué will punish any of the openings Spain's high line concedes on the counter.</strong> The defining questions: can Spain's control survive France's press, and can Spain's profligacy survive against a side that needs only a half-chance? If Spain play at their theoretical peak, they can win — their defence and midfield are that good. But on the evidence of this laboured tournament, they must finally unleash the talent they keep holding back. Against France, 70 per cent will not be enough. <strong>Vamos España — but this time, no restraint.</strong></p>
+  </div>
+
+  <div class="callout" style="border-left-color:var(--gold)">
+    <div class="t" style="color:var(--gold)">✦ The FraSBArg scorecard — three down to two, one to go</div>
+    <p style="margin:8px 0 0">A moment to take stock of our original quartet. <strong>France and Spain have both come through to the semi-finals with flying colours</strong> — France clinical and imperious, Spain resilient and effective. <strong>Argentina, our third survivor, march on too</strong> after their miraculous comeback against Egypt, awaiting their quarter-final with Switzerland. <strong>Only Brazil — always the weak link of the four — has fallen</strong>, undone by Norway. Now comes the cruel arithmetic of the bracket: because France and Spain sit in the same half, <strong>this semi-final guarantees that one of our teams goes out</strong>. Two of the quartet have passed the test; one more still stands alone in the other half. Whatever happens in Dallas, the dream of a FraSBArg final lives on through Argentina — and, for one of France or Spain, through to the last act at MetLife.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Quarter-Final · WON (2-1)</div><div class="g">Late, laboured, through</div><div class="n">Merino's second straight sub winner sends Spain to the last four — but the clean-sheet run, and the sense of untapped talent, both ended here.</div></div>
+    <div class="nx"><div class="d">Semi-Final · Dallas, Jul 14</div><div class="g">🇪🇸 Spain vs France 🇫🇷</div><div class="n">The tie of the tournament. Two of our four, one final place — and a guaranteed heartbreak for one.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Spain are into their first World Cup semi-final since their triumphant 2010, and they got there exactly as this tournament has taught us to expect: dominant on the numbers, laboured in the flesh, and rescued by Mikel Merino off the bench for the second game running. Belgium — brave, unlucky with injuries to Tielemans and Courtois, and bidding a poignant farewell to their Golden Generation — were beaten but far from disgraced. The abiding image of Spain remains a paradox: a team of breathtaking talent that plays as though something restrains it, winning in a pragmatic, unglamorous style that would break a purist's heart even as it keeps delivering results. Rodri was again the central character, untouchable in his control; Yamal dazzled without finishing; Pedri and Cucurella flickered rather than blazed. It has been enough. Now comes France, and a semi-final that will demand every ounce of the greatness Spain keep in reserve. Two of our teams, one ticket to MetLife. <strong>Vamos España — the restraint must end in Dallas.</strong></p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

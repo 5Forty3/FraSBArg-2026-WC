@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs Switzerland — Quarter-Final Pre-Match Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--sui:#d52b1e;--sui2:#ff6b60;--blue:#5aa0e6;--red:#ff5d6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(57,217,138,.13);color:var(--green);border:1px solid #1f4533}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;margin-top:6px;
+    background:linear-gradient(90deg,#7cc0ec,#fff 50%,#d52b1e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .ar{background:linear-gradient(135deg,#0e2536,#0d1117)}
+  .vsbar .su{background:linear-gradient(135deg,#2a0a08,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .ar .nm{color:var(--arg2)}.vsbar .su .nm{color:var(--sui2)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  .oddsbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .odds{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .odds.fav{border-color:#2a3f52;background:linear-gradient(135deg,#0e2536,#101722)}
+  .odds .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .odds .v{font-size:20px;font-weight:800;margin-top:4px}
+  .odds.fav .v{color:var(--arg2)}
+  .odds .p{font-size:11px;color:var(--muted);margin-top:2px}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.arg{border-left:3px solid var(--arg)}
+  .card.sui{border-left:3px solid var(--sui)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .warn{background:linear-gradient(135deg,#1a1406,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .warn .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.sui{background:rgba(213,43,30,.2);color:var(--sui2)}
+  .move .mtag.key{background:rgba(233,185,73,.16);color:var(--gold)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:24px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · QF Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Pre-Match Analysis</span>
+    <span class="badge marq">🔥 Quarter-Final · Champions on the Edge</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Last 8 · Win or go home</span>
+  </div>
+  <h1>Argentina vs Switzerland</h1>
+  <div class="sub">The last of our four to reach the last eight — the champions, twice reborn from the brink, against the tournament's most stubborn, never-say-die Swiss wall</div>
+  <div class="meta">🕒 6:30 AM IST, Sun 12 Jul · 📍 Arrowhead Stadium (Kansas City Stadium) — low 80s°F (9pm ET / 01:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side ar"><div class="nm">🇦🇷 Argentina</div><div class="fm">4-4-2 · Scaloni · holders · 5/5 wins · but twice to the brink</div></div>
+    <div class="mid">VS</div>
+    <div class="side su"><div class="nm">Switzerland 🇨🇭</div><div class="fm">4-2-3-1 · Yakin · never trailed all tournament · 1st QF since 1954</div></div>
+  </div>
+
+  <div class="oddsbar">
+    <div class="odds fav"><div class="l">Argentina</div><div class="v">-145</div><div class="p">~-325 to advance</div></div>
+    <div class="odds"><div class="l">Draw (90 mins)</div><div class="v">+260</div><div class="p">shootout live</div></div>
+    <div class="odds"><div class="l">Switzerland</div><div class="v">+490</div><div class="p">~+250 to advance</div></div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:2px">Odds via FanDuel / consensus (TFA 4/5). Argentina clear favourites — but the "Over 2.5 / both teams to score" angle is popular given Argentina's leaky knockout defence.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The context — the champions live on the edge, one more time</div>
+    <p style="margin:8px 0 0">The last of our quartet to take the quarter-final stage, and Argentina arrive in a now-familiar state: <strong>utterly brilliant and utterly nerve-shredding in equal measure.</strong> Five wins from five, Messi the sole Golden Boot leader on eight goals, and a staggering eleven-to-twelve-match winning run — yet they have reached this point by the skin of their teeth, needing extra time to see off Cape Verde and then <strong>a miraculous three-goals-in-thirteen-minutes comeback from 2-0 down to stun Egypt</strong> (see <a href="argentina-egypt-postmatch.html">"When Fantasy Became Reality"</a>). Switzerland, by contrast, are the quiet men of the tournament — <strong>the only nation yet to trail at any point, unbeaten in regulation, and through to their first quarter-final since they hosted in 1954</strong> after out-lasting Colombia and winning on penalties. It is the ultimate contrast: the champions who thrive in chaos against the Swiss who thrive in control. The odds (Argentina -145, ~-325 to advance) reflect a genuine gap in quality. But as Cape Verde and Egypt proved, this Argentina invites danger — and Switzerland are built to punish exactly that.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News <span class="confirm">XIs predicted · key news confirmed</span></h2>
+  <p class="lead">Argentina are, for once, fully fit and settled; Switzerland absorb injuries and carry two key men on yellow-card tightropes. Exact XIs are predicted (not officially confirmed).</p>
+
+  <div class="card arg">
+    <h3 style="margin-top:0">🇦🇷 Argentina — fully fit, and finally settled (expected XI)</h3>
+    <ul>
+      <li><strong>A fully fit squad (confirmed)</strong> — Scaloni has no injury concerns for the first time in the knockouts. Romero is available and expected to partner Lisandro Martínez in central defence.</li>
+      <li><strong>The Scaloni system — four central midfielders, no natural width:</strong> De Paul, Paredes, Enzo and Mac Allister pack the middle, with the full-backs (Molina, Tagliafico) asked to supply all the width. It's a system that dominates central areas but can leave Argentina <strong>unbalanced in possession and exposed on the counter</strong> — the very flaw Switzerland will target.</li>
+      <li><strong>The strike partnership:</strong> Lautaro Martínez (who set up Enzo's winner vs Egypt) is likely to partner Messi, with Julián Álvarez not quite right after an ankle knock. A selection call at left-back too, between Tagliafico and the fit-again Medina.</li>
+      <li><strong>Messi, imperious and inevitable:</strong> 8 goals (sole Golden Boot lead), 21 career WC goals, and the first man to score in six consecutive World Cup knockout matches. He remains the difference in any game.</li>
+      <li><strong>The warning sign:</strong> Argentina have conceded in both knockout games and Emiliano Martínez has an uncharacteristically low save percentage this tournament — the defence is not the fortress it was in 2022.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-4-2): E. Martínez; Molina, Romero, L. Martínez, Tagliafico; De Paul, Paredes, Enzo, Mac Allister; Messi, Lautaro. (Not confirmed.)</p>
+  </div>
+
+  <div class="card sui">
+    <h3 style="margin-top:0">🇨🇭 Switzerland — the stubborn wall, minus a breakout star</h3>
+    <ul>
+      <li><strong>Manzambi OUT (confirmed)</strong> — a real blow: the emerging attacker who forced his way in and scored three group-stage goals has failed to recover from a knee injury. <strong>Michel Aebischer (muscle) and Luca Jaquez are also doubtful/out</strong>, straining Yakin's options.</li>
+      <li><strong>Yellow-card tightropes:</strong> the influential Granit Xhaka and Denis Zakaria are both one booking from a semi-final ban — a factor that may temper their aggression.</li>
+      <li><strong>The identity is control-and-counter:</strong> a compact midfield block (Freuler, Xhaka) that wins the ball and springs Embolo, Ndoye and the decisive Rubén Vargas — but they also like to keep the ball themselves, and have not trailed once all tournament.</li>
+      <li><strong>Kobel the difference-maker:</strong> Gregor Kobel was the penalty-shootout hero against Colombia and is a genuinely elite goalkeeper — Switzerland's record of conceding just three goals from 4.37 xG is largely his doing.</li>
+      <li><strong>Fresh legs a concern:</strong> like Argentina, they went 120 minutes in the last round (a goalless slog with Colombia), so Yakin may freshen a side that could tire late.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Projected XI (4-2-3-1): Kobel; Zakaria, Elvedi, Akanji, Rodríguez; Freuler, Xhaka; Ndoye, Rieder, Vargas; Embolo. (Not confirmed.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Chaos vs Control</h2>
+  <p>This is a fascinating clash of temperaments. <strong>Argentina will dominate the ball and pack the midfield</strong>, using their four-central-midfielder system to control central areas, feed Messi between the lines, and work openings through sheer weight of quality. Switzerland, disciplined and organised, will do what has carried them: <strong>sit in a compact block, refuse to be broken, and hit on the counter through Embolo, Ndoye and Vargas the instant they win it.</strong> The defining sub-plots are two Argentine vulnerabilities that the numbers lay bare. First, <strong>Scaloni's lack of natural width leaves the champions unbalanced and open to the counter</strong> — precisely Switzerland's route to goal. Second, <strong>Argentina's knockout defence has leaked in every game</strong>, and Kobel's Switzerland, while low on goals, carry enough transition threat to punish it. The counter-question is whether Switzerland — missing Manzambi, tight on cards, and reliant on a low block — can create enough to trouble a side that, whatever its flaws, simply refuses to lose. Control versus chaos; the Swiss plan versus the Argentine soul.</p>
+
+  <h2><span class="ic">🔑</span> Argentina's Key — Messi unlocks the Swiss block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · Attack</span><span class="mt">Messi drifts, drags a marker, and threads Lautaro through the block</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aM" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="aMg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi drops off, drags a Swiss man, slips Lautaro in behind</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#d52b1e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">KOBEL</text></g>
+      <!-- Swiss block -->
+      <g><circle cx="300" cy="105" r="10" fill="#d52b1e" stroke="#fff" stroke-width="1.1"/><circle cx="360" cy="100" r="10" fill="#d52b1e" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="105" r="10" fill="#d52b1e" stroke="#fff" stroke-width="1.1"/><circle cx="330" cy="150" r="9" fill="#a01f16" stroke="#fff" stroke-width="1"/><circle cx="400" cy="150" r="9" fill="#a01f16" stroke="#fff" stroke-width="1"/><text x="360" y="80" text-anchor="middle" font-size="9" fill="#ffb0aa">compact block — never trailed all tournament</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="240" r="14" fill="#7cc0ec" stroke="#fff" stroke-width="1.6"/><text x="360" y="244">MESSI</text><text x="360" y="260" fill="#fff" font-size="8">drops into the pocket</text></g>
+        <g><circle cx="480" cy="185" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="480" y="189" fill="#06301d">LAU</text><text x="480" y="205" fill="#bff0d5" font-size="8">runs the channel</text></g>
+      </g>
+      <g font-size="8" fill="#fff" text-anchor="middle"><circle cx="360" cy="190" r="9" fill="#a01f16" stroke="#fff" stroke-width="1"/></g>
+      <path d="M360 181 L360 224" stroke="#ff6b60" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+
+      <path d="M374 232 C 415 212, 450 195, 468 190" stroke="#7cc0ec" stroke-width="3.5" fill="none" marker-end="url(#aM)"/>
+      <path d="M484 171 C 490 135, 474 100, 430 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aMg)"/>
+      <text x="540" y="150" font-size="10" fill="#bff0d0">the disguised through-ball</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's disguised pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Lautaro run &amp; finish</span>
+    </div>
+
+    <p class="expl"><strong>The move Argentina must lean on against a side built to deny space.</strong> Switzerland will sit deep and compact, so the champions have to unpick a low block — and the answer, as ever, is the man wearing ten. <strong>When Messi drops into the pocket between the Swiss defence and midfield, he forces a horrible choice: follow him (and open the gap behind) or hold shape (and let him orchestrate).</strong> Either way, the space appears for Lautaro Martínez — or the late runs of Enzo and Mac Allister — to attack in behind. Argentina's central overload should let them monopolise the ball; the question is patience and precision against a disciplined, Kobel-protected defence that has conceded just three goals all tournament. If Messi is on song, few walls survive him. But Switzerland's is the sternest low block Argentina have faced since the group stage.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Switzerland's Threat — the counter Argentina keep inviting</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag sui">Switzerland · The Danger</span><span class="mt">Win it, exploit the width Argentina vacate, spring Embolo &amp; Vargas</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="aS" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b60"/></marker>
+        <marker id="aSg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><line x1="14" y1="220" x2="706" y2="220"/></g>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Switzerland attacking ↑ · win it centrally, hit the space behind Argentina's advanced full-backs</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="180" cy="150" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/>
+        <circle cx="560" cy="150" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/>
+        <text x="360" y="120" text-anchor="middle" font-size="9" fill="#cfe6d6">Argentina's full-backs pushed high — space in behind on both flanks</text>
+      </g>
+
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="330" cy="315" r="12" fill="#d52b1e" stroke="#fff" stroke-width="1.3"/><text x="330" y="319">XHA</text><text x="330" y="335" fill="#ffb0aa" font-size="8">wins &amp; springs it</text></g>
+        <g><circle cx="560" cy="235" r="13" fill="#d52b1e" stroke="#fff" stroke-width="1.5"/><text x="560" y="239">NDO</text><text x="560" y="255" fill="#ffb0aa" font-size="8">runs the vacated flank</text></g>
+        <g><circle cx="410" cy="210" r="12" fill="#d52b1e" stroke="#fff" stroke-width="1.3"/><text x="410" y="214">EMB</text><text x="410" y="226" fill="#ffb0aa" font-size="8">attacks the cross</text></g>
+      </g>
+
+      <path d="M342 308 C 420 285, 510 255, 548 242" stroke="#ff6b60" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#aS)"/>
+      <path d="M556 222 C 520 180, 460 150, 424 128" stroke="#ff6b60" stroke-width="3" fill="none" marker-end="url(#aS)"/>
+      <path d="M410 196 C 405 155, 400 110, 392 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#aSg)"/>
+      <text x="470" y="150" font-size="10" fill="#bff0d0">the cross-and-finish</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b60;border-top-style:dashed"></i> Transition into vacated width</span>
+      <span><i style="border-top-color:#39d98a"></i> Embolo attacks the cross</span>
+    </div>
+
+    <p class="expl"><strong>Switzerland's clearest, and most realistic, route to the upset — and it aims squarely at Argentina's structural flaw.</strong> Because Scaloni fields four central midfielders and pushes his full-backs high for width, <strong>Argentina are repeatedly left unbalanced and exposed to the counter</strong> — space opens behind Molina and Tagliafico the instant possession turns over. Switzerland are built to exploit exactly this: <strong>win the ball in their compact block, and release the pace of Dan Ndoye and Rubén Vargas into that vacated width, with Breel Embolo attacking the cross.</strong> Argentina's leaky knockout defence — beaten in both games so far, with Dibu Martínez not at his 2022 best — makes this a genuine threat, not a theoretical one. The caveat for Switzerland is supply: without Manzambi and with Xhaka and Zakaria on yellow-card tightropes, sustaining and finishing these counters is the hard part. But they need only one or two clean breaks — and against this Argentine defence, that might be enough to make it a very long night.</p>
+  </div>
+
+  <h2><span class="ic">🧤</span> The X-Factor — Kobel, and the Goalkeepers' World Cup</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Swiss Wall's Last Line</span><span class="mt">Kobel — the shootout hero who could drag Switzerland through</span></div>
+
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="300" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="28" x2="360" y2="272" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="52" font-size="15" font-weight="800" fill="#a9d8f5">🇦🇷 Argentina's edge</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="82">▸ Messi — 8 goals, sole Golden Boot lead</text>
+        <text x="34" y="106">▸ Quality in every department</text>
+        <text x="34" y="130">▸ Two comebacks — refuse to lose</text>
+        <text x="34" y="154">▸ Dibu Martínez, the shootout master</text>
+      </g>
+      <rect x="34" y="176" width="300" height="96" rx="8" fill="#101722" stroke="#2a3f52"/>
+      <text x="48" y="202" font-size="12.5" font-weight="800" fill="#a9d8f5">The champions' trump:</text>
+      <text x="48" y="224" font-size="12" fill="#cdd6e2">if it reaches penalties, Dibu is arguably</text>
+      <text x="48" y="242" font-size="12" fill="#cdd6e2">the best shootout keeper alive — a huge</text>
+      <text x="48" y="260" font-size="12" fill="#cdd6e2">edge over most opponents.</text>
+      <text x="392" y="52" font-size="15" font-weight="800" fill="#ff6b60">🇨🇭 Switzerland's hope</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="82">▸ Gregor Kobel — elite, in form</text>
+        <text x="392" y="106">▸ Shootout hero vs Colombia</text>
+        <text x="392" y="130">▸ Just 3 conceded from 4.37 xG</text>
+        <text x="392" y="154">▸ Never trailed all tournament</text>
+      </g>
+      <rect x="392" y="176" width="296" height="96" rx="8" fill="#101722" stroke="#4a1512"/>
+      <text x="406" y="202" font-size="12.5" font-weight="800" fill="#ff6b60">The great leveller:</text>
+      <text x="406" y="224" font-size="12" fill="#cdd6e2">a Kobel-led low block plus a shootout</text>
+      <text x="406" y="242" font-size="12" fill="#cdd6e2">is the one scenario where the gap in</text>
+      <text x="406" y="260" font-size="12" fill="#cdd6e2">quality can be neutralised.</text>
+    </svg>
+
+    <p class="expl"><strong>This tie could come down to a battle of goalkeepers — the tournament's defining theme.</strong> Vozinha, Gill, Nyland, Costa, Shobeir, Bounou — this has been a World Cup of goalkeepers dragging lesser sides toward glory, and in <strong>Gregor Kobel, Switzerland have their own hero</strong>: the man who won the Colombia shootout and whose brilliance explains a defensive record (three conceded from 4.37 xG) far better than the sum of its parts. If Switzerland's block holds and Kobel produces another masterclass, a low-scoring stalemate — and a shootout — becomes very plausible. And yet here Argentina hold the ultimate trump card: <strong>Emiliano "Dibu" Martínez, the greatest shootout goalkeeper of his era.</strong> The irony is delicious — a "goalkeepers' World Cup" tie where a Kobel-inspired Swiss upset could still founder on the one keeper even better in a shootout. If it goes the distance, Argentina's man between the sticks may be the decisive edge.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Given Switzerland's block, Kobel's form, and Argentina's habit of making things hard, a long night is entirely plausible — and both sides have just played 120 minutes in the previous round, so fatigue is a shared factor in the Kansas City warmth.</p>
+    <p style="margin:8px 0 0"><strong>Extra time slightly favours Argentina — on quality and will.</strong> Their bench (Álvarez, Nico Paz, Lo Celso) and, above all, their extraordinary mental resilience — twice reborn from the brink already — give them an edge in a war of attrition. But Switzerland's discipline and Kobel make them exactly the kind of side to hang on and drag the tie toward its preferred conclusion, and Argentina's tiring, ageing core is a real question over 120 minutes.</p>
+    <p style="margin:8px 0 0"><strong>Penalties would, unusually, favour the favourite.</strong> Normally a shootout is the great equaliser, but here Argentina hold a rare edge even in the lottery: <strong>Dibu Martínez is the definitive modern shootout goalkeeper</strong>, a World Cup and Copa América hero from twelve yards, with Messi and Lautaro ice-cold takers. Switzerland's Kobel is no slouch — he just won one — so it's no formality. But if this goes all the way, Argentina's goalkeeper tilts the odds back toward the champions. The Swiss imperative: win it in normal time, because the shootout is the one lottery Argentina have mastered.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline — the honest read</h2>
+    <p>The honest, odds-aligned verdict is clear: <strong>Argentina should win, and are rightly strong favourites</strong> (-145, ~-325 to advance). They have the best player in the tournament in his best form, quality in every department, the superior bench, the ultimate shootout insurance in Dibu Martínez, and — most intangibly but most importantly — a proven, almost supernatural refusal to lose that Switzerland simply cannot match. But honesty also demands the caveats, and they are real: <strong>Argentina's four-midfielder system leaves them unbalanced and open to the counter, their knockout defence has leaked in every game, and Switzerland — disciplined, unbeaten in regulation, and armed with Kobel — are the ideal side to exploit both flaws.</strong> This is not a night for a comfortable procession. Expect Argentina to control possession and eventually find a way through Messi's genius, but to be made deeply uncomfortable by the Swiss counter, with a real chance of conceding and another nervy, late finish. My honest prediction: Argentina win, but the hard way once again — and don't be shocked if it needs extra time or a Dibu-decided shootout. <strong>Vamos Argentina — but the Swiss will make you suffer for it.</strong></p>
+    <div class="scoreline">🇦🇷 Argentina 2 — 1 Switzerland <span style="font-size:14px;color:var(--muted)">(or extra time)</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a controlled-but-nervy Argentine win, Messi decisive, but Switzerland's counter and Kobel making it a fight — with the popular "both teams to score" angle very live given Argentina's leaky defence. A Swiss shootout upset (~+250 to advance) is a genuine, not fanciful, outcome.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Quarter-Final · Kansas City</div><div class="g">Winner advances</div><div class="n">To the semi-final in Atlanta on July 15 to face England, who beat Norway 2-1 in extra time.</div></div>
+    <div class="nx"><div class="d">The FraSBArg picture</div><div class="g">The last of our four</div><div class="n">France &amp; Spain are already in the semis (and meet each other). Win here, and Argentina carry the flag into the other semi — the dream of a FraSBArg final still alive.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

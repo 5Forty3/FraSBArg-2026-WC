@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina 3-1 Switzerland — Masters of Time, Prisoners of a Plan</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--sui:#d52b1e;--sui2:#ff6b60;--eng:#e8edf4;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(124,192,236,.14);color:var(--arg2);border:1px solid #2a3f52}
+  .badge.epic{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,40px);font-weight:800;margin-top:6px;line-height:1.14;
+    background:linear-gradient(90deg,#7cc0ec,#fff 55%,#e9b949);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14.5px;margin-top:12px;font-style:italic}
+
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .a{color:var(--arg2)}.scoreboard .s{color:var(--sui2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--arg2)}.scorers .su{color:var(--sui2)}
+
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .a{color:var(--arg2)}
+
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:56px;line-height:44px;padding:6px 12px 2px 0;color:var(--arg);font-weight:800}
+
+  .pull{border-left:3px solid var(--arg);background:linear-gradient(135deg,#0e2536,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#dcebfb;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .reimagine{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid var(--pur);border-radius:10px;padding:15px 17px;margin:18px 0}
+  .reimagine .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+  .crit{background:linear-gradient(135deg,#1a1406,#0f1117);border:1px solid #3a2f12;border-left:3px solid var(--gold);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .crit .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.sui{background:rgba(213,43,30,.2);color:var(--sui2)}
+  .move .mtag.red{background:rgba(255,93,106,.16);color:#ff8e8e}
+  .move .mtag.g{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.future{background:rgba(185,140,255,.16);color:var(--pur)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · QF Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge epic">✦ Champions on the Brink, Again</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Quarter-Final · FT (AET)</span>
+  </div>
+  <h1>Masters of Time, Prisoners of a Plan</h1>
+  <div class="kicker">Argentina reached the semi-finals again — but a night of stagnation, a red card that changed everything, and one Álvarez thunderbolt exposed both the genius and the fatal narrowness of a team built entirely around one man</div>
+
+  <div class="scoreboard">
+    <span class="t a">🇦🇷 Argentina</span>
+    <span class="sc">3 – 1</span>
+    <span class="t s">Switzerland 🇨🇭</span>
+  </div>
+  <div class="meta">📍 Arrowhead Stadium (Kansas City) · Quarter-Final · After Extra Time</div>
+  <div class="scorers">⚽ <b>Mac Allister 10', Álvarez 112', Lautaro 120+1'</b> · Switzerland: <span class="su">Ndoye 67'</span> · 🟥 Embolo 72'</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="a">2.00</span> – 0.53</div></div>
+    <div class="stat"><div class="l">Messi</div><div class="v">Record 10th WC assist</div></div>
+    <div class="stat"><div class="l">Álvarez golazo</div><div class="v">112' from range</div></div>
+    <div class="stat"><div class="l">Argentina run</div><div class="v">12 WC unbeaten</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">Predicted 2-1; finished 3-1 after extra time. The champions are through — but they were second-best for long spells against ten men's worth of Swiss resistance.</p>
+
+  <div class="reimagine">
+    <div class="t">🌍 A thought before kick-off — does the World Cup need reimagining?</div>
+    <p style="margin:8px 0 0">First, the good news for our project: <strong>the last of our quartet is in. We picked three of the four semi-finalists — a 75% hit rate — with Brazil the sole weak link, undone by Norway.</strong> And history was made: for the first time since FIFA rankings began in 1992, <strong>the top four ranked nations — Argentina, France, Spain and England — have all reached the semi-finals.</strong> Yet watching these games, a worry grows. Most of these giants already look <em>tired</em> — leg-weary, laboured, running on fumes. This expanded 48-team World Cup has added an extra round and an extra match, piled onto the end of a gruelling, unbroken club season. The spectacle is suffering for it: fewer moments of freshness, more attritional slogs decided by fatigue and fine margins. If the World Cup wishes to remain the greatest sporting event on earth, it may need to <strong>reimagine itself</strong> — the calendar, the load, the rest — before the world's best are reduced to shadows of themselves by the time the biggest matches arrive.</p>
+  </div>
+
+  <div class="essay">
+  <p class="lead dropcap">There is a particular kind of Argentine performance that thrills and disturbs in equal measure, and Kansas City delivered it in full. For seventy minutes and more, the defending champions were barely present in the match they were supposedly controlling — a goal to the good through an early set-piece, and then absent, passive, seemingly content to let Switzerland come. The Swiss, playing their first quarter-final in seventy years, sensed a monumental upset. And then football's cruel machinery intervened on the Europeans' behalf: a red card, harsh in its trigger and self-inflicted in its cause, reduced them to ten. From that moment Argentina laid siege — and eventually, through an Álvarez thunderbolt of outrageous audacity, they broke the wall. 3-1 flatters them enormously. This was a night that raised more questions about Argentina than it answered.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The prediction, and the reality</div>
+    <p style="margin:8px 0 0">Our <a href="argentina-switzerland-prematch.html">pre-match analysis</a> predicted a 2-1 Argentine win "the hard way", warned that their four-midfielder system leaves them "unbalanced and exposed to the counter", and flagged that Switzerland's disciplined block and Kobel could make it "a very long night". All of it came to pass — the leaky defence conceded again, the Swiss counter drew level, and it took extra time and a moment of individual genius to settle it. The one twist no model could predict: a red card that turned a genuine upset bid into an eventual, laboured Argentine win.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Opener (10') — Messi's corner, Mac Allister's head, against the run</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Argentina · 1-0</span><span class="mt">An inch-perfect Messi corner — and a record 10th World Cup assist</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="o1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="o1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="120" width="720" height="55"/><rect y="240" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="372" rx="4"/><rect x="230" y="14" width="260" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="392" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi's corner from the right → Mac Allister's header</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#d52b1e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">KOBEL</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="655" cy="90" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.3"/><text x="655" y="94">MESSI</text><text x="655" y="110" fill="#fff" font-size="8">the corner</text></g>
+        <g><circle cx="370" cy="150" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="370" y="154" fill="#06301d">MAC</text><text x="370" y="170" fill="#bff0d5" font-size="8">rises to head</text></g>
+      </g>
+      <path d="M644 84 C 540 60, 440 70, 388 138" stroke="#7cc0ec" stroke-width="3.5" stroke-dasharray="7 5" fill="none" marker-end="url(#o1)"/>
+      <path d="M362 134 C 358 108, 356 84, 356 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#o1g)"/>
+      <text x="450" y="120" font-size="10" fill="#bff0d0">nodded in (10')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Messi's corner</span>
+      <span><i style="border-top-color:#39d98a"></i> Mac Allister's header</span>
+    </div>
+
+    <p class="expl"><strong>Against the run of play, and of course it flowed from Messi.</strong> Switzerland had begun the brighter, but on ten minutes Argentina won a corner and the captain did the rest: <strong>an inch-perfect delivery from the right that Alexis Mac Allister needed only to nod towards goal.</strong> It was a moment of quiet history — <strong>Messi's record 10th career World Cup assist, the first player ever to reach double figures.</strong> For the first time in this knockout run, Argentina had the luxury of an early lead, and one imagined they might now play with freedom, seize the game, and pour forward. Instead, the opposite unfolded — and what followed was, for a lover of Latin American football, genuinely dispiriting.</p>
+  </div>
+
+  <h2><span class="ic">⏳</span> The Riquelme Disease — Masters of Time, Who Forgot to Attack</h2>
+  <p>What Argentina did with their lead was deploy the one art every Argentine generation inherits like a birthright: <strong>the control of the pace of the game.</strong> They slowed everything to a crawl, drained the tempo, and turned the match into a exercise in time-management. There is a lineage here — this is the nation that produced <strong>Juan Román Riquelme, arguably the greatest artist of the modern era, a man who did not so much play with time as bend it to his will</strong>, dictating the rhythm of ninety minutes with the ball glued to his boot. It is a beautiful, distinctly Argentine skill. But on this night they took the artistry to a self-defeating extreme: <strong>they slowed the game down so completely that they forgot the very purpose of attacking it.</strong> Switzerland dominated possession through the first half — without ever truly threatening — while Argentina simply sat back, defended, and let the clock tick. A one-goal lead became a hiding place rather than a springboard.</p>
+
+  <div class="pull">Argentina are such masters of slowing the game down — heirs to Riquelme, who controlled time itself on the pitch — that sometimes, like all artists lost in their craft, they take it too far. Tonight they slowed the match so thoroughly that they forgot the purpose of attack itself.
+    <span class="a">— The genius and the self-sabotage of controlling time</span>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · The Stagnation</span><span class="mt">Everything funnels to Messi — and without him on the ball, the team stops</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="s1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/><rect y="312" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Sterile circulation — the ball goes around Messi, never forward, until he drops to collect it</text>
+
+      <!-- Messi central, everything orbits -->
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="360" cy="220" r="16" fill="#7cc0ec" stroke="#fff" stroke-width="1.8"/><text x="360" y="224">MESSI</text></g>
+        <g><circle cx="180" cy="150" r="11" fill="#a9d8f5" stroke="#fff" stroke-width="1.2"/><text x="180" y="154">DP</text></g>
+        <g><circle cx="180" cy="300" r="11" fill="#a9d8f5" stroke="#fff" stroke-width="1.2"/><text x="180" y="304">PAR</text></g>
+        <g><circle cx="360" cy="360" r="11" fill="#a9d8f5" stroke="#fff" stroke-width="1.2"/><text x="360" y="364">MAC</text></g>
+        <g><circle cx="360" cy="90" r="11" fill="#a9d8f5" stroke="#fff" stroke-width="1.2"/><text x="360" y="94">ENZO</text></g>
+      </g>
+      <!-- sterile passes around, not forward -->
+      <path d="M196 156 C 260 130, 300 120, 346 210" stroke="#7cc0ec" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity=".7" marker-end="url(#s1)"/>
+      <path d="M348 348 C 300 320, 250 310, 192 306" stroke="#7cc0ec" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity=".7" marker-end="url(#s1)"/>
+      <path d="M360 104 C 360 130, 360 160, 360 202" stroke="#7cc0ec" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity=".7" marker-end="url(#s1)"/>
+      <path d="M196 294 C 260 270, 300 260, 346 232" stroke="#7cc0ec" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity=".7" marker-end="url(#s1)"/>
+
+      <!-- Swiss wall ahead -->
+      <g><circle cx="480" cy="120" r="9" fill="#d52b1e" stroke="#fff" stroke-width="1"/><circle cx="540" cy="170" r="9" fill="#d52b1e" stroke="#fff" stroke-width="1"/><circle cx="560" cy="240" r="9" fill="#d52b1e" stroke="#fff" stroke-width="1"/><circle cx="520" cy="300" r="9" fill="#d52b1e" stroke="#fff" stroke-width="1"/><text x="540" y="90" text-anchor="middle" font-size="9" fill="#ffb0aa">Swiss block waits — no penetration comes</text></g>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Sideways, sterile possession around Messi</span>
+    </div>
+
+    <p class="expl"><strong>This is the structural truth this match laid bare — Argentina's greatest boon is also their greatest bane.</strong> Every Argentine move in the opposition half is oriented toward one aim: get the ball to Messi's feet. Often the team simply passes it <em>around</em> him, and around itself, with Messi drifting and apparently disinterested — until, suddenly, he receives, turns, and beguiles the entire defence. When the ball is at his feet, anything can happen; even magic. Three and four Swiss players surrounded him all night, and still he made the best moves, beating them at times and manufacturing the game's few clear openings. But the flip side is damning: <strong>this has reduced Argentina to something close to a one-trick pony.</strong> Shut Messi off — swarm him, as Switzerland did — and there is no evident Plan B. No second point of gravity, no alternative source of threat, no structural way to hurt you that doesn't route through the number ten.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Equaliser (67') — Ndoye punishes the passivity</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag sui">Switzerland · 1-1</span><span class="mt">Rodríguez slips Ndoye in — and Dibu is finally beaten</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="e1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b60"/></marker>
+        <marker id="e1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/><rect y="312" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><line x1="14" y1="210" x2="706" y2="210"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Switzerland attacking ↑ · Rodríguez's slipped pass → Ndoye rolls it under Martínez</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="240" cy="250" r="12" fill="#d52b1e" stroke="#fff" stroke-width="1.3"/><text x="240" y="254">ROD</text><text x="240" y="270" fill="#ffb0aa" font-size="8">the slipped pass</text></g>
+        <g><circle cx="450" cy="175" r="14" fill="#d52b1e" stroke="#fff" stroke-width="1.6"/><text x="450" y="179">NDO</text><text x="450" y="195" fill="#ffb0aa" font-size="8">rolls it in</text></g>
+      </g>
+      <path d="M252 244 C 330 215, 405 190, 434 182" stroke="#ff6b60" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#e1)"/>
+      <path d="M448 161 C 430 128, 405 92, 380 58" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#e1g)"/>
+      <text x="510" y="150" font-size="10" fill="#bff0d0">under Dibu's leg — 1-1 (67')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff6b60;border-top-style:dashed"></i> Rodríguez's pass</span>
+      <span><i style="border-top-color:#39d98a"></i> Ndoye's finish</span>
+    </div>
+
+    <p class="expl"><strong>It had been coming — and it was thoroughly deserved.</strong> In the second half Switzerland found belief. They kept attacking relentlessly, and Argentina, stunned, retreated ever deeper into their own corner. After forcing Emiliano Martínez into a couple of genuine saves, the Swiss broke through: <strong>Ricardo Rodríguez slipped a tidy pass to Dan Ndoye, who rolled a composed finish right under the goalkeeper's outstretched leg.</strong> 1-1, and no more than the Europeans merited. This is the point worth dwelling on: unlike the Cape Verde and Egypt games — where Argentina, whatever the scoreline, were the <em>dominant</em> side denied only by heroic goalkeeping or a parked bus — here they were simply second-best. They did not attack the ball. They did not try to possess it with any real intent. They had shut themselves off, and a good side punished them for it. For a team of this pedigree, it bordered on the shameful.</p>
+  </div>
+
+  <h2><span class="ic">🟥</span> The Turning Point (72') — Embolo's needless dive, and the red</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag red">The Red Card</span><span class="mt">A second yellow for simulation — a self-inflicted wound at the worst time</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="360" rx="10" fill="#0d141d"/>
+      <text x="360" y="46" text-anchor="middle" font-size="14" font-weight="800" fill="#ff8e8e">72' — Embolo goes down under Paredes… but Paredes never touched him</text>
+
+      <!-- pitch strip -->
+      <rect x="60" y="80" width="600" height="150" rx="8" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect x="60" y="80" width="150" height="150"/><rect x="360" y="80" width="150" height="150"/></g>
+
+      <g font-size="10" font-weight="700" text-anchor="middle">
+        <circle cx="300" cy="150" r="14" fill="#d52b1e" stroke="#fff" stroke-width="1.6"/><text x="300" y="154" fill="#fff">EMB</text><text x="300" y="250" fill="#ff8e8e" font-size="11">goes to ground — simulation</text>
+        <circle cx="380" cy="150" r="13" fill="#7cc0ec" stroke="#fff" stroke-width="1.4"/><text x="380" y="154" fill="#0a0e14">PAR</text><text x="380" y="120" fill="#a9d8f5" font-size="10">no contact</text>
+      </g>
+      <!-- red card icon -->
+      <rect x="470" y="110" width="34" height="46" rx="4" fill="#ff3b46" stroke="#fff" stroke-width="1.5"/>
+      <text x="540" y="140" font-size="12" font-weight="800" fill="#ff8e8e">2nd yellow → RED</text>
+
+      <text x="360" y="290" text-anchor="middle" font-size="12" fill="#cdd6e2">VAR review (via the "mistaken identity" protocol) confirms the dive · Switzerland down to 10</text>
+      <text x="360" y="316" text-anchor="middle" font-size="11.5" fill="#8b97a8">A stunt that was utterly needless — Argentina were out of the game at 1-1</text>
+    </svg>
+
+    <p class="expl"><strong>And then, football's fickle fortune swung decisively to the side that least deserved it in that moment.</strong> Five minutes after equalising, with all the momentum theirs, Switzerland self-destructed. Breel Embolo — who had been jostling and niggling with Romero and Lisandro Martínez all night — went down under a supposed Paredes challenge and was shown a second yellow for simulation after a VAR review. And here is the maddening part: <strong>it was a genuine dive, and a completely needless one.</strong> Paredes never touched him; the video was unambiguous. Worse, it was pointless — <strong>Embolo pulled off that stunt at the very moment his side was on top and Argentina were adrift, in a game being watched microscopically by VAR.</strong> There was no reason to go looking for a foul he didn't need. It was gamesmanship taken one fatal step too far, and it cost Switzerland their striker, their momentum, and ultimately the tie. A cruel, self-inflicted wound.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> The Golazo (112') — Álvarez, the only way past ten men</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Argentina · 2-1</span><span class="mt">A curling thunderbolt from distance — the only way through the wall</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="g1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><rect x="230" y="14" width="260" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Álvarez cuts in from the left and curls it into the far top corner</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#d52b1e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">KOBEL</text></g>
+      <!-- 10-man swiss wall packed in box -->
+      <g><circle cx="290" cy="95" r="8" fill="#d52b1e" stroke="#fff" stroke-width="1" opacity=".85"/><circle cx="330" cy="90" r="8" fill="#d52b1e" stroke="#fff" stroke-width="1" opacity=".85"/><circle cx="370" cy="90" r="8" fill="#d52b1e" stroke="#fff" stroke-width="1" opacity=".85"/><circle cx="410" cy="95" r="8" fill="#d52b1e" stroke="#fff" stroke-width="1" opacity=".85"/><circle cx="310" cy="125" r="8" fill="#d52b1e" stroke="#fff" stroke-width="1" opacity=".85"/><circle cx="390" cy="125" r="8" fill="#d52b1e" stroke="#fff" stroke-width="1" opacity=".85"/><text x="360" y="150" text-anchor="middle" font-size="9" fill="#ffb0aa">10 men, box packed — no way inside</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="230" cy="290" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="230" y="294">ALV</text><text x="230" y="312" fill="#bff0d5" font-size="8">cuts in from the left</text></g>
+      </g>
+      <path d="M244 282 C 300 250, 330 220, 350 200" stroke="#39d98a" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
+      <path d="M352 196 C 400 150, 440 100, 452 60" stroke="#39d98a" stroke-width="4" fill="none" marker-end="url(#g1g)"/>
+      <text x="470" y="150" font-size="11" fill="#bff0d0" font-weight="700">the curl — top corner (112')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#39d98a"></i> Álvarez cuts in &amp; curls the golazo</span>
+    </div>
+
+    <p class="expl"><strong>It took something extraordinary to break a ten-man Swiss wall defending for its life — and Julián Álvarez produced it.</strong> After Embolo's dismissal, Argentina laid siege to the Swiss goal for the rest of normal time and all of extra time — wave after wave, header after header, every route inside the box throttled by bodies. And that is exactly why the winning goal, when it came, could <em>only</em> have come from where it did: <strong>far outside the penalty area. Álvarez drifted in from the left and whipped a curling thunderbolt into the far top corner, beyond Kobel's reach</strong> — a strike of sheer audacity, power and precision that will be remembered long after the rest of this game is forgotten. It was the only way to score, because everything closer had been suffocated. Lautaro Martínez added a third in the 121st minute — a rebound from Almada's break as Switzerland finally had to chase the game — to make a desperately hard night look, on the scoreboard, almost comfortable. It was nothing of the sort.</p>
+  </div>
+
+  <h2><span class="ic">🧩</span> The Plan-B Problem — Almada, width, and Scaloni's stubbornness</h2>
+  <div class="crit">
+    <div class="t">⚠️ The tactical critique — a team with no second idea</div>
+    <p style="margin:8px 0 0">Here is what the siege exposed. As Argentina chased the ten-man wall, Scaloni eventually threw on <strong>four strikers to force the issue and avoid penalties — yet made no genuine tactical shift</strong>, no structural change to how the team actually creates. This is a side that plays with <strong>a four-man midfield and no natural width at all</strong>, because it is built, wholly and deliberately, around Messi. And the telling evidence came from the bench: <strong>when Thiago Almada came on, he immediately opened up the left side of the pitch</strong> — providing the width and directness that Ángel Di María once gave this team, and that it has sorely lacked. One wonders what a side with Almada (or a starting Lo Celso, or Nico Paz) might look like — with a second axis of threat, a reason for defenders to worry about something other than the number ten. But Scaloni refuses, and perhaps, with a magician in your midst, there is no other way: you build everything around him, and the De Pauls, Mac Allisters and Fernández become supporting artisans whose job is to feed the genius. There is simply no room for a second point of gravity. It is why, when Álvarez scored his belter, it was almost the only meaningful thing he did all night — a passenger, otherwise, in the Messi jigsaw.</p>
+  </div>
+
+  <div class="pull">Shut Messi off and Argentina have no Plan B — no second point of gravity, no alternative threat. Almada opened the left in minutes off the bench; imagine him starting. But with a magician in your midst, perhaps you simply build the whole cathedral around him, and everyone else becomes a bricklayer.
+    <span class="a">— The price of building a team around one man</span>
+  </div>
+
+  <h2><span class="ic">👴</span> Not Ageing — Aged</h2>
+  <p>And so to the uncomfortable conclusion this tournament keeps pointing toward. <strong>This is not an ageing team. This is an aged team. Period.</strong> These are tired legs that have now dragged themselves through three brutal knockout ties — two of them going the full 120 minutes — on top of a long club season, in an expanded tournament that asks more than ever. By any rational measure, these weary limbs should not carry Argentina much further. And yet they keep defying the odds, keep walking the brink and surviving, propelled by something that does not show up in the physical data: an almost supernatural collective will, and the certainty that while Messi breathes, they are never beaten. It is magnificent and it is precarious in equal measure. The body says they are spent. The soul says otherwise. So far, in this tournament of the improbable, the soul keeps winning the argument.</p>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Lionel Messi</b> — <span class="good">The one constant</span>. Quiet by his standards and swarmed by three or four all night, yet still the source of everything — the assist for Mac Allister and a record 10th WC assist. When the ball reaches his feet, magic remains possible.</div>
+    <div class="rt"><b>Julián Álvarez</b> — <span class="mid">A passenger, then a hero</span>. Anonymous in the Messi jigsaw for 110 minutes — then the audacious golazo that won the tie. Proof of quality, and of how little the system gives him otherwise.</div>
+    <div class="rt"><b>Alexis Mac Allister</b> — <span class="good">The early header</span>. Took his moment from Messi's corner; a diligent, selfless shift in the engine room.</div>
+    <div class="rt"><b>Thiago Almada (sub)</b> — <span class="good">The width they lacked</span>. Transformed the left the moment he arrived, teed up the third. A glimpse of a Plan B Scaloni won't start.</div>
+    <div class="rt"><b>Dan Ndoye & Switzerland</b> — <span class="mid">Should have had more</span>. The better side for long spells; Ndoye's goal was deserved. Undone by a self-inflicted red and Argentine resolve.</div>
+    <div class="rt"><b>Breel Embolo</b> — <span class="bad">The costly dive</span>. Combative all night, then a needless simulation for a second yellow that handed Argentina the tie. Gamesmanship one step too far.</div>
+  </div>
+
+  <h2><span class="ic">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> The Semi-Final — Can England Stop Messi &amp; Co?</h2>
+  <p>Argentina's reward is a semi-final against <strong>England in Atlanta</strong> — and on the evidence of the quarter-finals, it is a tie the champions will fancy, tired legs and all. Because England were, if anything, even less convincing: they laboured past Norway 2-1 in extra time in a performance so poor that <strong>their own manager, Thomas Tuchel, openly criticised the way his side played.</strong> For long spells Norway looked the better team; England were rescued by Bellingham's individual brilliance rather than any collective coherence. The question hangs heavy: <strong>can this England — hapless for long stretches, dependent on moments — really find a way to stop Messi and a side that, whatever its flaws, simply refuses to die?</strong></p>
+
+  <div class="move">
+    <div class="mh"><span class="mtag future">Semi-Final · Atlanta, Jul 15</span><span class="mt">Argentina's Messi-axis vs England's Bellingham-reliance</span></div>
+
+    <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="330" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="28" x2="360" y2="302" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="52" font-size="15" font-weight="800" fill="#a9d8f5">🇦🇷 Argentina</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="34" y="82">▸ Everything through Messi (10 WC assists)</text>
+        <text x="34" y="106">▸ Masters of tempo &amp; game control</text>
+        <text x="34" y="130">▸ Unbreakable will — 12 WC unbeaten</text>
+        <text x="34" y="154">▸ But: aged legs, no Plan B, leaky defence</text>
+      </g>
+      <rect x="34" y="178" width="300" height="118" rx="8" fill="#101722" stroke="#2a3f52"/>
+      <text x="48" y="204" font-size="12.5" font-weight="800" fill="#a9d8f5">Edge:</text>
+      <text x="48" y="226" font-size="12" fill="#cdd6e2">big-game nous, Messi's genius, and the</text>
+      <text x="48" y="244" font-size="12" fill="#cdd6e2">shootout insurance of Dibu Martínez.</text>
+      <text x="48" y="270" font-size="12.5" font-weight="800" fill="#ff8e8e">Risk:</text>
+      <text x="48" y="290" font-size="12" fill="#cdd6e2">fatigue &amp; a one-dimensional attack.</text>
+      <text x="392" y="52" font-size="15" font-weight="800" fill="#e8edf4">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</text>
+      <g font-size="12" fill="#cdd6e2">
+        <text x="392" y="82">▸ Bellingham the talisman (6 goals)</text>
+        <text x="392" y="106">▸ Kane's poaching &amp; set-piece threat</text>
+        <text x="392" y="130">▸ Deep, athletic squad</text>
+        <text x="392" y="154">▸ But: incoherent — Tuchel slammed them</text>
+      </g>
+      <rect x="392" y="178" width="296" height="118" rx="8" fill="#101722" stroke="#2a3546"/>
+      <text x="406" y="204" font-size="12.5" font-weight="800" fill="#e8edf4">Edge:</text>
+      <text x="406" y="226" font-size="12" fill="#cdd6e2">fresher legs (90 mins to Argentina's 120)</text>
+      <text x="406" y="244" font-size="12" fill="#cdd6e2">and individual match-winners.</text>
+      <text x="406" y="270" font-size="12.5" font-weight="800" fill="#ff8e8e">Risk:</text>
+      <text x="406" y="290" font-size="12" fill="#cdd6e2">no rhythm; can they cage Messi?</text>
+    </svg>
+
+    <p class="expl"><strong>On paper, England have the tools — but they must show a coherence they have entirely lacked.</strong> The one clear advantage they hold is freshness: England won inside 120 minutes but expended less than an Argentina side that has now gone to extra time twice and been dragged to the limit three times. Fresh legs against aged ones could matter enormously in the Atlanta heat. But football is rarely so simple, and Argentina's edge is the intangible: <strong>a serial winner's DNA, a magician who needs only a half-yard, and Dibu Martínez waiting in any shootout.</strong> If England are to win, they must do what Switzerland nearly did — cage Messi, stay compact, and take their moments — but without the discipline collapsing into the passivity that Bellingham alone rescued against Norway.</p>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag future">The Key Battle</span><span class="mt">England must swarm Messi — and pray their own creator delivers</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="k1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#a9d8f5"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/><rect y="312" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="372" rx="4"/><line x1="14" y1="200" x2="706" y2="200"/></g>
+      <text x="360" y="392" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">The Messi question — England must collapse bodies onto him without leaving Álvarez/Lautaro space</text>
+
+      <!-- Messi surrounded by 3 england -->
+      <g font-size="10" font-weight="700" text-anchor="middle">
+        <circle cx="300" cy="250" r="15" fill="#7cc0ec" stroke="#fff" stroke-width="1.7"/><text x="300" y="254" fill="#0a0e14">MESSI</text>
+        <circle cx="250" cy="215" r="10" fill="#e8edf4" stroke="#0a0e14" stroke-width="1"/><text x="250" y="219" fill="#0a0e14" font-size="8">RICE</text>
+        <circle cx="345" cy="215" r="10" fill="#e8edf4" stroke="#0a0e14" stroke-width="1"/><text x="345" y="219" fill="#0a0e14" font-size="8">STON</text>
+        <circle cx="300" cy="300" r="10" fill="#e8edf4" stroke="#0a0e14" stroke-width="1"/><text x="300" y="304" fill="#0a0e14" font-size="8">GUE</text>
+      </g>
+      <text x="300" y="335" text-anchor="middle" font-size="9" fill="#bcd9f6">3 bodies collapse on Messi…</text>
+      <!-- space opens for Argentine runners -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="520" cy="150" r="12" fill="#a9d8f5" stroke="#fff" stroke-width="1.3"/><text x="520" y="154">LAU</text>
+        <circle cx="470" cy="110" r="11" fill="#a9d8f5" stroke="#fff" stroke-width="1.2"/><text x="470" y="114">ALV</text>
+      </g>
+      <text x="560" y="120" font-size="9" fill="#bff0d0">…space behind for the runners</text>
+      <path d="M314 238 C 380 200, 440 165, 506 156" stroke="#a9d8f5" stroke-width="3" fill="none" marker-end="url(#k1)"/>
+      <text x="360" y="185" font-size="9" fill="#dcebfb">Messi still finds the pass</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#a9d8f5"></i> The through-ball England must prevent</span>
+    </div>
+
+    <p class="expl"><strong>The tactical crux of the semi is the same question Switzerland posed — and nearly answered.</strong> England will have to <strong>collapse two or three bodies onto Messi whenever he receives</strong>, as everyone now does, to smother the game's single decisive player. Rice, Stones and Guéhi have the athleticism to try. But the danger of over-committing to Messi is the space it concedes behind — for the runs of Lautaro, Álvarez and the arriving midfielders — and Messi, even swarmed, retains the vision to find that pass, as he did all night against Switzerland. For England, the mirror-image question looms: with their own attack so reliant on Bellingham's individual moments and Kane's poaching, can they generate enough themselves against a side that, however aged, still knows how to win the biggest games? It has the makings of a classic — and, given the 2022 final, a tantalising sense of destiny about Argentina's march.</p>
+  </div>
+
+  <h2><span class="ic">🏆</span> The Future — Three of Our Four, and a Familiar Feeling</h2>
+  <p>Take stock of where our quartet stands: <strong>France, Spain and Argentina have all reached the semi-finals — three of our four, with only Brazil, the weak link, fallen.</strong> France and Spain meet each other in the upper-half semi, guaranteeing one of them the exit; Argentina stand alone in the lower half against England. It means the dream of a FraSBArg final is not just alive but likely — at least one of our teams is certain to reach the MetLife showpiece, and possibly two.</p>
+  <p>And for Argentina specifically, there is a familiar, almost eerie feeling building. This is a team that should, by every physical logic, be running on empty — aged, twice taken to the brink, dragging tired legs through an unforgiving schedule. And yet here they are, one win from another final, propelled by the same self-belief and the same magician that carried them in Qatar. <strong>Perhaps it is destined to be a repeat of 2022</strong> — and perhaps the only force capable of stopping these aged, brilliant, brink-walking legends is not any opponent, but the simple, cruel arithmetic of exhaustion finally catching up with them. For now, though, they march on. They always seem to. <strong>Vamos Argentina.</strong></p>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Quarter-Final · WON (3-1 AET)</div><div class="g">Survived, not soared</div><div class="n">Second-best for long spells, rescued by a red card and an Álvarez golazo — but through to the last four once more.</div></div>
+    <div class="nx"><div class="d">Semi-Final · Atlanta, Jul 15</div><div class="g">🇦🇷 Argentina vs England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="n">Aged brilliance vs incoherent freshness. Can England — slammed by Tuchel — cage Messi? A 2022 echo hangs in the air.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Argentina are into the semi-finals, and the scoreboard reads 3-1, but do not be fooled: this was a night that flattered them and exposed them in equal measure. For seventy minutes they were absent — masters of time who slowed the game into oblivion and forgot to attack it, heirs to Riquelme who mistook control for purpose. Switzerland, the better side for long spells, deserved their equaliser and might have caused the upset of the tournament, only to self-destruct through Embolo's needless dive. From there Argentina laid siege to ten men, and it took an Álvarez golazo of pure audacity — the only way past that wall — to break them. The deeper truths linger: a team utterly dependent on Messi with no Plan B, a coach who won't unlock the width Almada offers, and legs that are not ageing but aged. And still they win. Still they march. Next, England — hapless against Norway, slammed by their own manager — must find a way to stop them. On this evidence, that is a very tall order. <strong>Vamos Argentina — on the brink, as ever, and somehow still standing.</strong></p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

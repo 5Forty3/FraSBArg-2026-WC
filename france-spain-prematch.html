@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France vs Spain — Semi-Final Pre-Match Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --fra:#3b82d6;--fra2:#7cb4e8;--esp:#e63946;--espy:#ffc400;--esp2:#ff8e95;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.14);color:var(--gold);border:1px solid #3a2f12}
+  .badge.f{background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055}
+  .badge.s{background:rgba(255,196,0,.14);color:var(--espy);border-color:#3a3014}
+  h1{text-align:center;font-size:clamp(25px,5.4vw,42px);font-weight:800;margin-top:6px;line-height:1.1;
+    background:linear-gradient(90deg,#3b82d6,#fff 50%,#ffc400);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14.5px;margin-top:10px;font-style:italic}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .f{background:linear-gradient(135deg,#0e1f33,#0d1117)}
+  .vsbar .s{background:linear-gradient(135deg,#2a1a06,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .f .nm{color:var(--fra2)}.vsbar .s .nm{color:var(--espy)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+
+  .oddsbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .odds{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .odds .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .odds .v{font-size:20px;font-weight:800;margin-top:4px}
+  .odds .p{font-size:11px;color:var(--muted);margin-top:2px}
+  .odds.cf{border-color:#3a2f12;background:linear-gradient(135deg,#16110a,#101722)}
+  .odds.cf .v{color:var(--gold)}
+
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.france{border-left:3px solid var(--fra)}
+  .card.spain{border-left:3px solid var(--esp)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--fra2);font-weight:700}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(57,217,138,.16);color:var(--green);border:1px solid #1f4533;margin-left:6px}
+  .philo{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid var(--pur);border-radius:10px;padding:15px 17px;margin:16px 0}
+  .philo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.fra{background:rgba(59,130,214,.18);color:var(--fra2)}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.key{background:rgba(185,140,255,.16);color:var(--pur)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:22px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · SF Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Semi-Final Pre-Match</span>
+    <span class="badge" style="background:rgba(233,185,73,.16);color:var(--gold);border-color:#3a2f12">🔥 The Tie of the Tournament</span>
+    <span class="badge" style="background:rgba(185,140,255,.16);color:var(--pur);border-color:#3a2b4a">2 of our 4 · one goes out</span>
+  </div>
+  <h1>France vs Spain</h1>
+  <div class="sub">A final, a round early. The tournament's most explosive attack against its most complete controllers — and a guaranteed heartbreak for one of our own</div>
+  <div class="meta">🕒 12:30 AM IST, Wed 15 Jul · 📍 AT&amp;T Stadium (Dallas), Arlington — roofed, climate-controlled (3pm ET / 19:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side f"><div class="nm">🇫🇷 France</div><div class="fm">4-2-3-1 · Deschamps · 6/6 wins · 16 goals · the counter-punch</div></div>
+    <div class="mid">VS</div>
+    <div class="side s"><div class="nm">Spain 🇪🇸</div><div class="fm">4-2-3-1 · De la Fuente · the control machine · unbeaten in 36*</div></div>
+  </div>
+
+  <div class="oddsbar">
+    <div class="odds cf"><div class="l">The read</div><div class="v">Coin-flip</div><div class="p">too close to call</div></div>
+    <div class="odds"><div class="l">France edge</div><div class="v">Ruthlessness</div><div class="p">Mbappé on the break</div></div>
+    <div class="odds"><div class="l">Spain edge</div><div class="v">Midfield</div><div class="p">Rodri's control</div></div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:2px">Bookmakers split near-evenly; models lean marginally to Spain on midfield control, France favoured by some as tournament outright. Their last three meetings were all one-goal games. *Spain unbeaten in 36, shootouts aside.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The context — a heavyweight collision, and a cruel bracket</div>
+    <p style="margin:8px 0 0">This is the match the whole tournament has been building toward: <strong>the top two seeds, the two pre-tournament favourites, meeting a round before the final.</strong> France have been imperious — six wins from six, a tournament-high 16 goals, and a front line so devastating it has dispatched every test (see <a href="france-morocco-postmatch.html">"The Clinical Machine"</a>). Spain have been the benchmark for control, conceding just one goal all tournament until Belgium and grinding out narrow wins with something always in reserve (see <a href="spain-belgium-postmatch.html">"The Armada That Holds Something Back"</a>). It is a classic contrast of styles — the counter-punch against the possession game — with real edge from recent history: <strong>Spain knocked France out of the Euro 2024 semi-final (2-1), when a 16-year-old Yamal announced himself with a goal for the ages, and have won seven of the last ten meetings.</strong> But the cruellest truth is the bracket: <strong>two of our four are here, and one of France or Spain is certain to go home tonight.</strong></p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News — Confirmed Line-Ups <span class="confirm">✓ XIs confirmed</span></h2>
+  <p class="lead">Both managers have named their hands, and there are notable calls on each side — including two you flagged in advance, both correct.</p>
+
+  <div class="card france">
+    <h3 style="margin-top:0">🇫🇷 France — pace over polish, and the anchor returns (confirmed XI)</h3>
+    <ul>
+      <li><strong>Two changes from the Morocco quarter-final.</strong> <strong>Aurélien Tchouaméni returns from a thigh injury</strong> to reclaim his defensive-midfield anchor role, with Manu Koné dropping to the bench.</li>
+      <li><strong>Barcola in for Doué (confirmed) — as you called it.</strong> Deschamps has chosen <strong>Bradley Barcola over Désiré Doué on the left</strong>, with French reports clear on the reasoning: he wants <strong>pace over technical perfection against Spain</strong> — a direct signal that France intend to attack the space behind Spain's high line.</li>
+      <li><strong>Mbappé fit and firing:</strong> the captain's minor ankle knock from the Morocco game is cleared ("completely fine"). He has 8 of France's 16 goals and finishes the one chance he gets.</li>
+      <li><strong>The front three chemistry:</strong> Mbappé, Dembélé and Olise have 23 goals between them at this World Cup — the story of the tournament, now with Barcola's pace added.</li>
+      <li><strong>Deschamps' farewell milestone:</strong> a record 26th World Cup match as manager, on the tournament that ends his 14-year reign — and France have progressed from their last four WC semis, winning the last three without conceding.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Confirmed XI (4-2-3-1): Maignan; Koundé, Upamecano, Saliba, Digne; Tchouaméni, Rabiot; Dembélé, Olise, Barcola; Mbappé. Bench: Koné, Doué, Kanté, Cherki, Thuram, Mateta.</p>
+  </div>
+
+  <div class="card spain">
+    <h3 style="margin-top:0">🇪🇸 Spain — physicality kept, Pedri benched again (confirmed XI)</h3>
+    <ul>
+      <li><strong>No changes from the Portugal quarter-final — which means Pedri stays on the bench, as you called it.</strong> De la Fuente keeps <strong>Fabián Ruiz alongside Rodri</strong> for extra physicality and ball-progression in the double pivot; Fabián opened the scoring against Belgium and retains his place.</li>
+      <li><strong>Pedri's underperformance, as we've noted:</strong> the gifted playmaker's line-splitting vision has faded this tournament, and De la Fuente clearly prefers Fabián's steel against France's athletic midfield. Pedri may yet influence it from the bench.</li>
+      <li><strong>Baena starts left, Nico Williams benched:</strong> the fit-again Nico Williams is a game-changing option in reserve (possibly as early as half-time if Baena struggles against Koundé), but Baena keeps the shirt. Yamal-Porro on the right.</li>
+      <li><strong>The defence unchanged:</strong> Simón behind Cubarsí and Laporte — the platform for a record six clean sheets before De Ketelaere finally breached them. They win a tournament-high 66% of aerial duels.</li>
+      <li><strong>Oyarzabal leads the line:</strong> Spain's top scorer (4 goals), unshowy but effective; Merino — twice a late match-winner off the bench — waits as the finisher once more.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Confirmed XI (4-2-3-1): Simón; Porro, Cubarsí, Laporte, Cucurella; Rodri, Fabián; Yamal, Olmo, Baena; Oyarzabal. Bench: Pedri, Merino, Zubimendi, Nico Williams, Ferran Torres.</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Grand Tactical Battle — Control vs the Counter</h2>
+  <p>Strip this tie to its essence and it is the purest stylistic collision football offers. <strong>Spain want the ball, and want to use it to drag France's block around until it cracks</strong> — Rodri setting the tempo, Fabián progressing it, Olmo running beyond, Yamal stretching the width. If Spain win the middle third, they can choke the life out of the game and suffocate France's attack at source. <strong>France are built to live with less of the ball and punish you the instant they win it</strong> — the Tchouaméni-Rabiot double pivot protecting the back four and springing Mbappé, Dembélé and Olise into the transitions where they are as lethal as anyone alive. The whole match is a question of which identity imposes itself: does Spain's possession turn France into passive chasers, or does France's press-and-counter turn Spain's control into sterile, harmless sideways passing? Three sub-battles will decide it.</p>
+
+  <h2><span class="ic">🔑</span> Battle #1 — The Midfield War: Rodri &amp; Fabián vs Tchouaméni &amp; Rabiot</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Game Within the Game</span><span class="mt">Whoever controls this zone controls the tie</span></div>
+
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="360" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="30" x2="360" y2="330" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="52" font-size="14" font-weight="800" fill="#ffc400">🇪🇸 Rodri &amp; Fabián</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="34" y="80">▸ Rodri: the metronome — sets tempo,</text>
+        <text x="34" y="97" font-size="10.5" fill="#8b97a8">   never yet stifled into the horizontal</text>
+        <text x="34" y="120">▸ Fabián: physicality + progression,</text>
+        <text x="34" y="137" font-size="10.5" fill="#8b97a8">   picked over Pedri for this fight</text>
+        <text x="34" y="160">▸ Goal: dominate the middle third,</text>
+        <text x="34" y="177" font-size="10.5" fill="#8b97a8">   pin France back, starve the counter</text>
+      </g>
+      <rect x="30" y="196" width="300" height="128" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="46" y="222" font-size="12.5" font-weight="800" fill="#ffc400">If Spain win here:</text>
+      <text x="46" y="244" font-size="12" fill="#cdd6e2">France get pinned back, the front three</text>
+      <text x="46" y="262" font-size="12" fill="#cdd6e2">starve, and Spain choke the game to</text>
+      <text x="46" y="280" font-size="12" fill="#cdd6e2">death — control tells over 90+ minutes.</text>
+      <text x="46" y="306" font-size="11" fill="#8df0c2">This is Spain's single biggest edge.</text>
+
+      <text x="392" y="52" font-size="14" font-weight="800" fill="#7cb4e8">🇫🇷 Tchouaméni &amp; Rabiot</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="80">▸ Tchouaméni: back from injury — the</text>
+        <text x="392" y="97" font-size="10.5" fill="#8b97a8">   screen France sorely missed</text>
+        <text x="392" y="120">▸ Rabiot: legs, aggression, box-to-box</text>
+        <text x="392" y="143">▸ Goal: disrupt Rodri's rhythm, win it</text>
+        <text x="392" y="160" font-size="10.5" fill="#8b97a8">   early, and spring the transition</text>
+      </g>
+      <rect x="390" y="196" width="300" height="128" rx="8" fill="#101722" stroke="#274055"/>
+      <text x="406" y="222" font-size="12.5" font-weight="800" fill="#7cb4e8">If France win here:</text>
+      <text x="406" y="244" font-size="12" fill="#cdd6e2">the screen holds, Rodri is forced wide</text>
+      <text x="406" y="262" font-size="12" fill="#cdd6e2">and sideways, and every turnover</text>
+      <text x="406" y="280" font-size="12" fill="#cdd6e2">becomes a Mbappé sprint the other way.</text>
+      <text x="406" y="306" font-size="11" fill="#bcd9f6">Tchouaméni's fitness is pivotal.</text>
+    </svg>
+
+    <p class="expl"><strong>This zone probably decides the tie — and it is why Tchouaméni's return matters so much.</strong> All tournament, the story of Spain has been that <strong>no one has managed to stifle Rodri into horizontal, sterile possession</strong> — he takes the game vertical under any pressure, and it is the engine of everything Spain do. France's task is precisely to be the first side to break that: <strong>Tchouaméni, fresh from injury, and Rabiot must disrupt Rodri's rhythm, deny Fabián the progression, and win the ball high enough to launch the counter.</strong> If Spain's pair dictate the tempo, France get pinned back and their front three starve. If France's screen holds, every Spanish turnover becomes a transition into the fastest attack in the tournament. The sub-plot the whole match hinges on: is Tchouaméni — declared "not 100%" by Deschamps but started anyway — fit enough to win a 90-plus-minute midfield war against the best controller alive?</p>
+  </div>
+
+  <h2><span class="ic">🇫🇷</span> Battle #2 — France's Weapon: Mbappé in behind the high line</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag fra">France · Attack</span><span class="mt">Win it in midfield, and release Mbappé into the space behind Cubarsí &amp; Laporte</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="fA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cb4e8"/></marker>
+        <marker id="fAg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · turnover → Dembélé releases Mbappé beyond Spain's high line</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#c8102e" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">SIMÓN</text></g>
+      <!-- Spain high line -->
+      <g><circle cx="300" cy="150" r="10" fill="#ffc400" stroke="#fff" stroke-width="1.1"/><circle cx="420" cy="150" r="10" fill="#ffc400" stroke="#fff" stroke-width="1.1"/><text x="360" y="135" text-anchor="middle" font-size="9" fill="#ffe98a">Cubarsí &amp; Laporte — a high line to run behind</text></g>
+
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="250" cy="300" r="12" fill="#7cb4e8" stroke="#fff" stroke-width="1.3"/><text x="250" y="304">DEM</text><text x="250" y="320" fill="#bcd9f6" font-size="8">wins it, threads it</text></g>
+        <g><circle cx="470" cy="200" r="14" fill="#39d98a" stroke="#fff" stroke-width="1.6"/><text x="470" y="204">MBA</text><text x="470" y="220" fill="#bff0d5" font-size="8">explodes in behind</text></g>
+      </g>
+      <path d="M262 293 C 330 260, 400 225, 452 208" stroke="#7cb4e8" stroke-width="3.5" fill="none" marker-end="url(#fA)"/>
+      <path d="M482 188 C 500 140, 470 95, 410 62" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#fAg)"/>
+      <text x="540" y="150" font-size="10" fill="#bff0d0">one chance, one goal</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cb4e8"></i> Dembélé's release</span>
+      <span><i style="border-top-color:#39d98a"></i> Mbappé's run in behind</span>
+    </div>
+
+    <p class="expl"><strong>This is France's entire game plan in one image — and the reason Deschamps picked pace over polish.</strong> Spain hold a high defensive line to compress the game and sustain their press; against most opponents it works beautifully. But <strong>against Mbappé, that high line is a mortal risk.</strong> The moment France win the ball — through Tchouaméni's screen or a Dembélé interception — the vertical ball is on, and <strong>Mbappé's signature is to drift off the last shoulder and explode into the channel behind Cubarsí and Laporte.</strong> Raw pace turns a half-yard into a one-on-one with Simón, and unlike Spain's own wasteful forwards, <strong>Mbappé finishes the one chance he gets.</strong> France may not see much of the ball; they may not need to. Choosing Barcola over Doué doubles down on this — another burst of pace to attack the same space. If Spain over-commit to control and leave that line exposed, one transition could settle a semi-final.</p>
+  </div>
+
+  <h2><span class="ic">🇪🇸</span> Battle #3 — Spain's Weapon: Yamal vs Digne, and breaking the block</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · Attack</span><span class="mt">Yamal isolates Digne, cuts inside onto his left, and bends the far-post strike</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="sA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="sAg" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/><rect x="285" y="14" width="150" height="55"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Yamal 1v1 on the right, cuts inside onto his left foot, curls it far post</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">MAIG</text></g>
+      <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+        <g><circle cx="150" cy="215" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="150" y="219">DIGNE</text><text x="150" y="235" fill="#bcd9f6" font-size="8">the duel to manage</text></g>
+      </g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="240" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.6"/><text x="600" y="244">YAM</text><text x="600" y="260" fill="#fff" font-size="8">isolates the full-back</text></g>
+        <g><circle cx="430" cy="200" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="204">OYA</text><text x="430" y="186" fill="#fff" font-size="8">near-post threat</text></g>
+      </g>
+      <path d="M588 232 C 540 210, 500 195, 470 188" stroke="#ffc400" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#sA)"/>
+      <path d="M582 226 C 520 175, 440 110, 392 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#sAg)"/>
+      <text x="470" y="140" font-size="10" fill="#bff0d0">the curl far post — Yamal's signature</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Cut inside / lay to Oyarzabal</span>
+      <span><i style="border-top-color:#39d98a"></i> Yamal's curling strike</span>
+    </div>
+
+    <p class="expl"><strong>Spain's most dangerous individual matchup — and a painful echo for France.</strong> The single most dangerous zone for Spain is <strong>Lamine Yamal on the right against Lucas Digne</strong>. Yamal's signature is to isolate the full-back on the touchline, drop the shoulder to cut inside onto his left foot, and bend it across the goalkeeper into the far corner — the very move, more or less, with which he <strong>knocked France out of the Euro 2024 semi-final as a 16-year-old.</strong> France must manage that duel for the full 90 minutes and beyond; if Digne is caught one-on-one too often, Spain have their opening. The broader Spanish task is the one that has dogged them all tournament: <strong>they dominate and create, but they do not finish</strong> — needing late Merino goals to escape the last two rounds. Against France, that profligacy could be fatal. Spain will have the ball and the territory. The question is whether, for once, they are ruthless with it — because half-chances won't beat a France team this dangerous the other way.</p>
+  </div>
+
+  <div class="philo">
+    <div class="t">🎭 The Deeper Story — Deschamps' Pragmatism meets De la Fuente's</div>
+    <p style="margin:8px 0 0">There is a lovely irony threaded through this tie: <strong>these are two pragmatists, not two romantics.</strong> Deschamps has never been a purist — his France win through defensive solidity and the ruthless exploitation of transition, and in his farewell tournament he has relaxed the reins just enough to let a generational front line loose. De la Fuente, likewise, has quietly buried the tiki-taka gospel: his Spain control, but they also grind, sit on leads, and win ugly through substitutes — a more physical, more pragmatic Spain than the purist ideal. It is why <strong>Luis Enrique's beautiful, romantic Spain lifted less than this one does.</strong> Two coaches who prize winning over aesthetics, two of the deepest squads in the world, and a combined refusal to lose — Deschamps' France unbeaten all tournament, De la Fuente's Spain unbeaten in 36 bar shootouts. Something has to give. When two pragmatists meet, the margins are microscopic, and the first mistake usually decides it.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Every indicator points to a tight, low-scoring, one-goal tie — their last three meetings were all decided by a single goal, and this has the feel of another that could need 120 minutes. Both have elite benches to change a game late: France with Doué, Cherki, Thuram and Kanté; Spain with Merino (twice a late matchwinner), Pedri and the pace of Nico Williams.</p>
+    <p style="margin:8px 0 0"><strong>Extra time is a genuine coin-flip.</strong> France's front-line quality can win it in a single transition at any moment; Spain's control and finisher's bench (Merino) can equally conjure another late goal. Neither tires easily. If anything, the roofed, climate-controlled Dallas venue removes the heat-fatigue factor that has plagued other ties — so expect quality, not attrition, to decide any extra period.</p>
+    <p style="margin:8px 0 0"><strong>Penalties would tilt toward France — and haunt Spain.</strong> This is Spain's historic Achilles heel: <strong>one win from five World Cup shootouts, and they lost the 2024 Nations League final on penalties too.</strong> France, by contrast, have Maignan and a squad of ice-cold takers, and their shootout pedigree is strong (their only recent shootout loss being the 2022 final itself). If this reaches spot-kicks, the psychological edge — and the history — sits firmly with Les Bleus. Spain's imperative is emphatic: win it in normal or extra time, and do not let their old shootout demons anywhere near this one.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline — the honest coin-flip</h2>
+    <p>Every fibre of analysis lands on the same uncomfortable, thrilling conclusion: <strong>this is too close to call — a genuine coin-flip between the two best teams in the tournament.</strong> The logic cuts both ways. Spain should control the ball and, if Rodri and Fabián master the midfield, can strangle France and win the way they beat them at Euro 2024. But France carry the single most dangerous weapon left in the competition — <strong>Mbappé's pace against a high line, and the ruthlessness to punish the one opening Spain concede</strong> — and if Tchouaméni's screen holds, every turnover is a dagger. My honest read: Spain will likely have more of the ball, but <strong>France are better equipped to win the decisive moment</strong>, and their edge in ruthlessness and shootout nerve tips an impossibly tight tie by the barest margin. Expect a tense, cagey, one-goal semi-final — quite possibly settled in extra time or on penalties. But do not mistake a prediction for confidence: flip a coin, and you would not be wrong either way. <strong>One of our four is going home tonight — and it breaks the heart to say it.</strong></p>
+    <div class="scoreline">🇫🇷 France 1 — 1 Spain <span style="font-size:13px;color:var(--muted)">→ France to edge extra time / penalties</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a tight, low-scoring classic where Spain see more of the ball but France's transition threat and shootout pedigree prove decisive. Genuinely, though — a coin-flip. Whoever lands the first blow may win it. Whoever wins reaches the MetLife final on July 19.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Semi-Final · Dallas · The winner</div><div class="g">→ MetLife Final, Jul 19</div><div class="n">To face the winner of the other semi — England vs Argentina in Atlanta on July 15.</div></div>
+    <div class="nx"><div class="d">The FraSBArg reality</div><div class="g">One of ours falls</div><div class="n">France &amp; Spain are two of our four. Tonight guarantees one an exit — but also sends one of our own into the final.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

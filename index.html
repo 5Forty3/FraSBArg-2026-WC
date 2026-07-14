@@ -193,6 +193,13 @@
     background:rgba(231,185,66,.08);border:1px solid #3a2f12;border-radius:8px;padding:7px 11px;margin-bottom:13px}
   .feedsline{font-size:11.5px;color:var(--muted);background:rgba(90,160,230,.08);border:1px solid #24384d;
     border-radius:8px;padding:8px 11px;margin-bottom:12px;font-weight:600}
+  .sidetoggle{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;font-weight:800;margin:6px 0 12px;
+    padding:8px 12px;background:linear-gradient(135deg,#141c28,#0f1520);border:1px solid var(--line-2);border-radius:10px}
+  .sidetoggle span{color:var(--muted);transition:.15s}
+  .sidetoggle span.on{color:#fff;text-decoration:underline;text-underline-offset:3px}
+  .sidetoggle .sep{color:#4a5768;font-weight:600}
+  .sidetoggle .hint{margin-left:auto;font-size:10.5px;font-weight:600;color:#5a6b7d;text-transform:uppercase;letter-spacing:.5px}
+  @media(max-width:460px){.sidetoggle .hint{width:100%;margin-left:0;margin-top:2px}}
   .starblk{background:linear-gradient(180deg,#0c1320,#0a1017);border:1px solid var(--line-2);border-radius:14px;
     padding:13px 13px 14px;margin:6px 0 12px;box-shadow:inset 0 0 40px rgba(0,0,0,.35)}
   .starblk .t{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
@@ -233,8 +240,8 @@
 <div class="ctrl">
   <div class="ctrl-in">
     <div class="seg" role="tablist">
-      <button role="tab" aria-selected="true" data-view="qf">Quarter Final<span class="sm">4 ties</span></button>
-      <button role="tab" aria-selected="false" data-view="finals">Finals<span class="sm">SF · 3rd · Final</span></button>
+      <button role="tab" aria-selected="true" data-view="finals">Finals<span class="sm">SF · 3rd · Final</span></button>
+      <button role="tab" aria-selected="false" data-view="qf">Quarter Final<span class="sm">4 ties</span></button>
       <button role="tab" aria-selected="false" data-view="bracket">Bracket<span class="sm">Full tree</span></button>
       <a class="segbtn" href="wc2026-calendar.html">Group Stage<span class="sm">12 Games</span></a>
     </div>
@@ -509,13 +516,23 @@ const QF = [
 /* ---------- Finals stage: 2 semis, 3rd place, final ---------- */
 const SF = [
  {id:'SF1', slot:'sf', v:"Dallas", ist:"12:30 AM IST · Wed 15 Jul", ko:"2026-07-14T19:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'es',n:"Spain"}, ours:true, key:"France/Spain", marquee:true,
+   pre:"france-spain-prematch.html",
    feeds:"France (beat Morocco 2-0) vs Spain (beat Belgium 2-1) — CONFIRMED · Match 101",
-   phil:"The tie of the tournament. Two of our four — France and Spain — collide in the last four, guaranteeing one an exit. The most explosive attack (Mbappé, Dembélé) against the most complete control side and (until Belgium) meanest defence. A clash of philosophies: France's vertical transitions vs Spain's Rodri-orchestrated possession.",
-   deep:"The defining battle: can France's athletic midfield engine (Tchouaméni/Koné/Rabiot) finally stifle Rodri into horizontal, sterile possession — something no side has managed all tournament? And can Spain's wasteful finishing survive against a France side that punishes half-chances with ruthless efficiency? If Spain play at their peak they can win; but they must unleash the talent they keep holding back.",
-   team:"Key men: Mbappé (8 goals, Golden Boot co-leader), Dembélé, Doué for France; Rodri, Yamal, Pedri, Merino for Spain. Two of the deepest squads in the tournament.",
-   form:"France dispatched Morocco 2-0, clinical and with gears in reserve (6/6 wins). Spain edged Belgium 2-1 via a late Merino winner, but conceded their first goal of the tournament.",
-   star:"yamal",
-   pred:"A coin-flip between the tournament's two most talented teams. France's clinical edge and transition speed vs Spain's control and midfield mastery. Whoever wins the Rodri-vs-France's-press battle likely reaches the MetLife final. Honestly too close to call — but France's ruthlessness in front of goal may just tip a tight one."},
+   intro:"The tie of the tournament — a final a round early. Two of our four collide in the last four, and one of France or Spain is guaranteed to go out. The most explosive attack in North America against the most complete control side and (until Belgium) the meanest defence. Tap either flag or name above to switch between the two teams' philosophy and tactics.",
+   sides:{
+     a:{ team:"France",
+        phil:"France's identity under Deschamps is devastating verticality: sit a fraction deeper, concede the ball if need be, and punish you in transition with the most lethal front line at the tournament. Mbappé (8 goals), Dembélé and Olise have 23 goals between them — pace, trickery and ruthless finishing. This is not tiki-taka; it is the counter-punch as an art form, and it has delivered six wins from six and a third straight final in its sights.",
+        deep:"The tactical crux: France's double pivot of the returning Tchouaméni and Rabiot must protect the back four and, crucially, disrupt Rodri's rhythm — because if Spain's midfield dictates, France get pinned back. Deschamps has picked Barcola over Doué specifically for pace over technical perfection, a clear signal that France intend to hit the space behind Spain's high line. The moment-to-moment battle: Cubarsí and Laporte holding that line against Mbappé's runs. Unlike most, Mbappé finishes the one chance he gets — so France may need only a handful of transitions to win it.",
+        team:"CONFIRMED XI (4-2-3-1): Maignan; Koundé, Upamecano, Saliba, Digne; Tchouaméni, Rabiot; Dembélé, Olise, Barcola; Mbappé. Two changes from the Morocco QF — Tchouaméni returns from injury for Koné, and Barcola replaces Doué. Bench: Koné, Doué, Kanté, Cherki, Thuram, Mateta. Deschamps takes charge of a record 26th WC match on his farewell tournament.",
+        star:"mbappe" },
+     b:{ team:"Spain",
+        phil:"Spain, under De la Fuente, are the tournament's benchmark for control — technical mastery in possession and telepathy without the ball, conceding just one goal all tournament until Belgium. Yet this is a more pragmatic Spain than the tiki-taka gospel: they strangle games, grind out narrow wins (three of five by a single goal), and have needed late Merino magic to pass the last two rounds. Reigning European champions, unbeaten in 36 (shootouts aside), they keep something in reserve — and this is the night they may finally have to unleash it.",
+        deep:"Spain want the ball and want to use it to drag France's block around until it cracks — Rodri sets the tempo, Fabián Ruiz adds physicality alongside him (Pedri benched again), Olmo runs beyond, and Yamal stretches the width while Baena and Oyarzabal rotate. The key duel is Yamal drifting inside onto his left foot against Lucas Digne — a matchup France must manage for 90+ minutes. If Spain win the middle third, they can choke the life out of the game. The question, as ever, is ruthlessness: they create far more than they finish, and against France that profligacy could be fatal.",
+        team:"CONFIRMED XI (4-2-3-1): Simón; Porro, Cubarsí, Laporte, Cucurella; Rodri, Fabián; Yamal, Olmo, Baena; Oyarzabal. No changes from the Portugal QF — Pedri stays benched, Fabián keeps the physical midfield role. Bench: Pedri, Merino, Zubimendi, Nico Williams, Ferran Torres. De la Fuente has won 12 of 13 as coach.",
+        star:"yamal" }
+   },
+   form:"France dispatched Morocco 2-0, clinical with gears in reserve (6/6 wins, tournament-high 16 goals). Spain edged Belgium 2-1 via a late Merino winner — but conceded their first goal of the tournament, ending a record clean-sheet run. History: Spain knocked France out of the Euro 2024 semi (2-1, Yamal's wondergoal) and have won 7 of the last 10 meetings; France won their only prior WC meeting (3-1, 2006).",
+   pred:"A coin-flip between the two most talented teams left — a final a round early. The game within the game is Rodri (and Fabián) against Tchouaméni and Rabiot: if Spain's pair dictate tempo, France get pinned back; if the French screen holds, they break Spain and spring Mbappé. Spain's control may tell over 90+ minutes, but France's ruthlessness — and Mbappé finishing the one chance he gets — makes them lethal on the counter. Expect a tight, one-goal tie that could need extra time. Honestly too close to call, but the side that lands the first blow may decide it. One of our four goes out tonight."},
  {id:'SF2', slot:'sf', v:"Atlanta", ist:"12:30 AM IST · Thu 16 Jul", ko:"2026-07-15T19:00:00Z", a:{iso:'gb',n:"England"}, b:{iso:'ar',n:"Argentina"}, ours:true, key:"Argentina", marquee:true,
    feeds:"England (beat Norway 2-1 AET) vs Argentina (beat Switzerland 3-1 AET) — CONFIRMED · Match 102",
    phil:"The lower-half semi-final, and a heavyweight. Messi's champions — aged, twice-reborn, and utterly dependent on their magician — against a fresher but incoherent England side that laboured past Norway. A tantalising echo of the 2022 final looms if Argentina reach MetLife.",
@@ -665,6 +682,7 @@ function renderList(which){ renderHalves(which); }
 const scrim=document.getElementById('scrim'),sheet=document.getElementById('sheet'),mbody=document.getElementById('m-body');
 function openSheet(m,round){
   currentMatch=m;
+  currentSide='a';
   const roundTag = round==='R16'?'Round of 16':(round==='QF'?'Quarter-Final':(round==='SF'?'Semi-Final':(round==='TP'?'Third-Place Play-off':(round==='FIN'?'The Final':'Round of 32'))));
   document.getElementById('m-tag').textContent=roundTag+(m.marquee?' · 🔥 '+(round==='FIN'?'World Cup Final':'Marquee'):(m.ours?' · ★ '+(m.key||'Our team'):''));
   const daEl=document.getElementById('m-da'), dbEl=document.getElementById('m-db');
@@ -678,6 +696,32 @@ function openSheet(m,round){
   document.getElementById('m-nb').textContent=m.b.n;
   const timeStr = m.ist? m.ist : (m.day||m.feeds||'');
   document.getElementById('m-meta').textContent=(m.v?'📍 '+m.v+'  ·  ':'')+(m.ist?'🕒 '+m.ist:(m.day||m.feeds||''));
+  // If this match has per-team sides, make the header clickable to toggle
+  const naEl=document.getElementById('m-na'), nbEl=document.getElementById('m-nb');
+  if(m.sides){
+    daEl.style.cursor='pointer'; dbEl.style.cursor='pointer'; naEl.style.cursor='pointer'; nbEl.style.cursor='pointer';
+    daEl.onclick=naEl.onclick=()=>selectSide(m,'a');
+    dbEl.onclick=nbEl.onclick=()=>selectSide(m,'b');
+    selectSide(m, currentSide||'a');
+  } else {
+    daEl.style.cursor=''; dbEl.style.cursor=''; naEl.style.cursor=''; nbEl.style.cursor='';
+    daEl.onclick=dbEl.onclick=naEl.onclick=nbEl.onclick=null;
+    renderSheetBody(m, null);
+  }
+  scrim.classList.add('show'); sheet.classList.add('show'); document.body.style.overflow='hidden';
+}
+let currentSide='a';
+function selectSide(m, side){
+  currentSide=side;
+  const naEl=document.getElementById('m-na'), nbEl=document.getElementById('m-nb');
+  // highlight the active team
+  naEl.style.opacity = side==='a'?'1':'.5';
+  nbEl.style.opacity = side==='b'?'1':'.5';
+  naEl.style.textDecoration = side==='a'?'underline':'none';
+  nbEl.style.textDecoration = side==='b'?'underline':'none';
+  renderSheetBody(m, side);
+}
+function renderSheetBody(m, side){
   const aWin=m.win==='a',winName=aWin?m.a.n:m.b.n,winIso=aWin?m.a.iso:m.b.iso;
   let body='';
   if(m.result&&m.result.done){
@@ -687,17 +731,29 @@ function openSheet(m,round){
     body+=`<div class="vpill"><span class="d" style="background-image:url('${flagURL(F[winIso])}')"></span><span class="tx"><b>Predicted: ${winName}</b> — ${m.verdict||(m.pred.split('.')[0])}.</span></div>`;
   }
   if(m.feeds && !m.result) body+=`<div class="feedsline">🔗 ${m.feeds}</div>`;
-  if(m.style) body+=`<div class="styletag">▦ ${m.style}</div>`;
-  if(m.phil) body+=`<div class="blk phil"><div class="t">⚙️ Footballing Philosophy</div><p>${m.phil}</p></div>`;
-  if(m.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 School of Thought &amp; Tactics</div><p>${m.deep}</p></div>`;
-  if(m.team) body+=`<div class="blk" style="border-left:3px solid #e7b942"><div class="t" style="color:var(--gold)">👥 Key Players &amp; Team Sheet</div><p>${m.team}</p></div>`;
-  if(m.star) body+=starPanel(m.star);
-  if(m.form) body+=`<div class="blk form"><div class="t">📈 Form in the World Cup</div><p>${m.form}</p></div>`;
+  if(m.intro) body+=`<div class="blk form"><div class="t">📌 The Tie</div><p>${m.intro}</p></div>`;
+  if(m.sides && side){
+    // per-team toggleable content
+    const S=m.sides[side];
+    const accent = side==='a' ? '#3b82d6' : '#e63946';
+    body+=`<div class="sidetoggle"><span class="${side==='a'?'on':''}">🇫🇷 ${m.sides.a.team}</span><span class="sep">↔</span><span class="${side==='b'?'on':''}">🇪🇸 ${m.sides.b.team}</span><span class="hint">tap a flag/name above to switch</span></div>`;
+    if(S.phil) body+=`<div class="blk phil"><div class="t">⚙️ ${S.team} · Footballing Philosophy</div><p>${S.phil}</p></div>`;
+    if(S.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 ${S.team} · School of Thought &amp; Tactics</div><p>${S.deep}</p></div>`;
+    if(S.team_) body+=`<div class="blk" style="border-left:3px solid #e7b942"><div class="t" style="color:var(--gold)">👥 ${S.team} · Confirmed Team Sheet</div><p>${S.team_}</p></div>`;
+    if(S.team) body+=`<div class="blk" style="border-left:3px solid #e7b942"><div class="t" style="color:var(--gold)">👥 ${S.team} · Confirmed Team Sheet</div><p>${S.team}</p></div>`;
+    if(S.star) body+=starPanel(S.star);
+  } else {
+    if(m.style) body+=`<div class="styletag">▦ ${m.style}</div>`;
+    if(m.phil) body+=`<div class="blk phil"><div class="t">⚙️ Footballing Philosophy</div><p>${m.phil}</p></div>`;
+    if(m.deep) body+=`<div class="blk phil" style="border-left-color:#7c5cff"><div class="t" style="color:#a892ff">🧠 School of Thought &amp; Tactics</div><p>${m.deep}</p></div>`;
+    if(m.team) body+=`<div class="blk" style="border-left:3px solid #e7b942"><div class="t" style="color:var(--gold)">👥 Key Players &amp; Team Sheet</div><p>${m.team}</p></div>`;
+    if(m.star) body+=starPanel(m.star);
+  }
+  if(m.form) body+=`<div class="blk form"><div class="t">📈 Form &amp; History</div><p>${m.form}</p></div>`;
   body+=`<h4>🔮 The Prediction</h4><p>${m.pred}</p>`;
   if(!m.ours){
     body+=`<div class="note">Inline tactical read above · deep-dive pages are reserved for our four teams.</div>`;
   }
-  // sticky analysis buttons live in the header (pinned), not the scrolling body
   const aslot=document.getElementById('m-analysis');
   if(m.ours){
     aslot.hidden=false;
@@ -706,7 +762,6 @@ function openSheet(m,round){
     aslot.hidden=true; aslot.innerHTML='';
   }
   mbody.innerHTML=body; mbody.scrollTop=0;
-  scrim.classList.add('show'); sheet.classList.add('show'); document.body.style.overflow='hidden';
 }
 
 /* ===== Animated tactical "Signature Move" panels for our 4 stars ===== */
@@ -896,7 +951,7 @@ sheet.addEventListener('touchstart',e=>{sy=e.touches[0].clientY;},{passive:true}
 sheet.addEventListener('touchmove',e=>{const dy=e.touches[0].clientY-sy; if(dy>0&&mbody.scrollTop<=0) sheet.style.transform=`translateY(${dy}px)`;},{passive:true});
 sheet.addEventListener('touchend',e=>{const dy=e.changedTouches[0].clientY-sy; sheet.style.transform=''; if(dy>120) closeSheet();});
 
-renderHalves('qf');
+renderFinals();
 </script>
 </body>
 </html>

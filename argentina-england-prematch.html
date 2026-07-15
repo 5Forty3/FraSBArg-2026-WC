@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs England — Semi-Final Pre-Match Analysis</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--eng:#e8edf4;--eng2:#c7d3e3;--engr:#cf142b;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(124,192,236,.14);color:var(--arg2);border:1px solid #2a3f52}
+  .badge.marq{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5.2vw,40px);font-weight:800;margin-top:6px;line-height:1.1;
+    background:linear-gradient(90deg,#7cc0ec,#fff 50%,#cf142b);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14.5px;margin-top:10px;font-style:italic}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .a{background:linear-gradient(135deg,#0e2536,#0d1117)}
+  .vsbar .e{background:linear-gradient(135deg,#2a0a0f,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .a .nm{color:var(--arg2)}.vsbar .e .nm{color:var(--eng)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--muted);background:#0c1117}
+  .oddsbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .odds{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .odds .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .odds .v{font-size:20px;font-weight:800;margin-top:4px}
+  .odds .p{font-size:11px;color:var(--muted);margin-top:2px}
+  .odds.fav{border-color:#3a2f12;background:linear-gradient(135deg,#16110a,#101722)}
+  .odds.fav .v{color:var(--gold)}
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.arg{border-left:3px solid var(--arg)}
+  .card.eng{border-left:3px solid var(--engr)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .confirm{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(57,217,138,.16);color:var(--green);border:1px solid #1f4533;margin-left:6px}
+  .unconf{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:999px;background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12;margin-left:6px}
+  .planb{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid var(--pur);border-radius:10px;padding:15px 17px;margin:16px 0}
+  .planb .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.eng{background:rgba(207,20,43,.2);color:#ff8e95}
+  .move .mtag.key{background:rgba(185,140,255,.16);color:var(--pur)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:16px 18px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:22px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · SF Pre-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">🔍 Semi-Final Pre-Match</span>
+    <span class="badge marq">🔥 The Last of Our Four</span>
+    <span class="badge" style="background:rgba(185,140,255,.16);color:var(--pur);border-color:#3a2b4a">Winner meets Spain</span>
+  </div>
+  <h1>Argentina vs England</h1>
+  <div class="sub">The champions, aged and magnificent, against a fresher England — and the question that has shadowed this whole tournament: what happens if Messi is stopped?</div>
+  <div class="meta">🕒 12:30 AM IST, Thu 16 Jul · 📍 Atlanta Stadium (Mercedes-Benz), Atlanta — roofed, climate-controlled (3pm ET / 19:00 GMT)</div>
+
+  <div class="vsbar">
+    <div class="side a"><div class="nm">🇦🇷 Argentina</div><div class="fm">4-4-2 · Scaloni · holders · Messi 8 goals · never lost a WC semi (5/5)</div></div>
+    <div class="mid">VS</div>
+    <div class="side e"><div class="nm">England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="fm">4-2-3-1 · Tuchel · 1st final since 1966? · Kane &amp; Bellingham 6 each</div></div>
+  </div>
+
+  <div class="oddsbar">
+    <div class="odds"><div class="l">England</div><div class="v">-125</div><div class="p">Kalshi 36%</div></div>
+    <div class="odds fav"><div class="l">The read</div><div class="v">Coin-flip</div><div class="p">draw 34% — tightest of the four</div></div>
+    <div class="odds"><div class="l">Argentina</div><div class="v">+115</div><div class="p">Squawka model 53% to advance</div></div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:2px">The market makes England marginal favourites; the models lean Argentina. Rarely have the two disagreed so evenly. The clearest consensus is on the low side — Under 2.5 goals.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The context — the last of our four, and a rivalry with history</div>
+    <p style="margin:8px 0 0">Three of our quartet reached the last four; France have already fallen to Spain in a chastening 2-0 (see <a href="france-spain-postmatch.html">"The Triumph of the Purists"</a>), and Spain await at MetLife. So it comes to this: <strong>Argentina, the last of our four still standing in the other half, must beat England to keep the dream of a FraSBArg final alive.</strong> The champions arrive as they have all tournament — <strong>bereft of logic and reason, yet somehow knowing only how to win</strong>, having flirted with elimination at every single knockout stage (extra time against Cape Verde, 2-0 down to Egypt, second-best to Switzerland until a red card turned it). England have been marginally more measured, though hardly convincing: their own manager criticised the Norway performance. The fixture carries its own weight of history — 1966, 1986, 1998, 2002 — but the football question is cleaner and sharper than the folklore. <strong>Remarkably, in his entire career, Lionel Messi has never faced England.</strong> Tonight, at 39, he does — with a World Cup final at stake.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> Team News</h2>
+
+  <div class="card arg">
+    <h3 style="margin-top:0">🇦🇷 Argentina — fully fit, and a genuine selection intrigue <span class="unconf">XI not officially published</span></h3>
+    <ul>
+      <li><strong>No injury concerns (confirmed)</strong> — Scaloni faces selection decisions rather than fitness ones. But the physical toll is real: <strong>Cristian Romero was withdrawn at half-time of extra time against Switzerland through sheer exhaustion</strong> and was to be assessed before kick-off, with Facundo Medina pushing to start alongside Lisandro Martínez.</li>
+      <li><strong>The Simeone question — the big one.</strong> Reports (and word from the broadcasters) suggest <strong>Giuliano Simeone starts on the right</strong> — and the logic is exactly right: it would finally give Argentina <strong>a source of width that doesn't come from a full-back.</strong> He is among the squad members who have curiously barely featured this summer. If true, it is the most meaningful tactical shift Scaloni has made all tournament. Treat it as likely, not certain, until the sheet drops.</li>
+      <li><strong>The midfield call:</strong> Paredes has been Argentina's best-performing midfielder in the knockouts and anchors. The question is Mac Allister or De Paul — <strong>De Paul has struggled badly in the knockouts</strong> after a strong start. Enzo Fernández, familiar with half the England squad, completes it.</li>
+      <li><strong>Up front:</strong> Messi (8 goals, sole Golden Boot lead, a tournament-high 21 chances created) with Álvarez expected to start after his extra-time wonderstrike; Lautaro (xG 3.00 from just 2 goals) is overdue.</li>
+      <li><strong>Reports of a back three</strong> have circulated in Argentina — but that would be uncharacteristic of Scaloni, who tweaks subtly rather than revolutionises.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Likely XI (4-4-2): E. Martínez; Molina, Romero, L. Martínez, Tagliafico; Simeone, Mac Allister, Paredes, Fernández; Messi, Álvarez. <em>Sources split on whether Simeone starts or the usual four-central-midfielder shape holds. Not officially confirmed.</em></p>
+  </div>
+
+  <div class="card eng">
+    <h3 style="margin-top:0">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England — a clean bill of health, and Rice confirmed <span class="confirm">✓ key news confirmed</span></h3>
+    <ul>
+      <li><strong>Declan Rice is confirmed to start (confirmed).</strong> He was taken off at half-time against Norway with a sickness bug and looked exhausted afterwards, but has shaken it off and <strong>trained fully — his first full session since the quarter-final.</strong> Tuchel confirmed a fully fit squad in his press conference.</li>
+      <li><strong>Out:</strong> Jarell Quansah serves the second and final game of his suspension (red card vs Mexico); Jordan Henderson is out of the tournament with a broken wrist.</li>
+      <li><strong>Saka returns:</strong> Madueke disappointed against Norway and <strong>Saka was far livelier off the bench — his direct running shifted the momentum before Bellingham's winner</strong> — so he is expected to start. Reece James, back from a hamstring issue, is expected at right-back.</li>
+      <li><strong>Kane's milestone:</strong> leading the line for his <strong>121st cap, surpassing Wayne Rooney as England's most-capped outfield player.</strong> He and Bellingham are on six goals each, joint-second behind Messi.</li>
+      <li><strong>The physical edge:</strong> England win a tournament-high average of 14 aerial duels per game to Argentina's 9.83 — making set-pieces a genuine avenue. Rice alone has taken 26 corners.</li>
+    </ul>
+    <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">Expected XI (4-2-3-1): Pickford; James, Konsa, Guéhi, O'Reilly; Rice, Anderson; Saka, Bellingham, Gordon; Kane. (Spence pushes O'Reilly at left-back; Stones an option in defence.)</p>
+  </div>
+
+  <h2><span class="ic">⚙️</span> The Tactical Battle — Structure vs Spontaneity</h2>
+  <p>This is a contest between a team with a system and a team with a genius. <strong>England are the more balanced, deeper side</strong> — Tuchel's structure, Rice and Anderson's double pivot, Bellingham arriving late from the ten, Kane's poaching, and the tournament's most potent set-piece threat. They will look to smother Argentina's rhythm and win the physical, aerial battles. <strong>Argentina do the simple things at an elite level: control the midfield, feed Messi in dangerous areas, and defend the box with numbers and know-how.</strong> They average 60% possession and 90% pass accuracy — the ball will be theirs. But as we have written all tournament, <strong>their structural flaws in possession are masked by Messi's magic</strong>, and the whole edifice rests on one 39-year-old's ability to conjure. England's defence has been the nagging doubt (they've conceded in three straight; Pickford has made 12 saves). Argentina's has leaked in every knockout game. Something has to give — and the market's clearest lean, oddly, is that it stays tight and low.</p>
+
+  <h2><span class="ic">🔒</span> Battle #1 — England's Plan: Cage Messi with Rice and Anderson</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag eng">England · The Cage</span><span class="mt">Collapse the pivot onto Messi's pockets — the Switzerland blueprint, better executed</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="cg1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff8e95"/></marker>
+        <marker id="cg2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#a9d8f5"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi drops into the pocket — Rice, Anderson and a centre-back converge</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#cf142b" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="7" fill="#fff" text-anchor="middle">PICK</text></g>
+      <!-- England back line -->
+      <g font-size="8.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="250" cy="130" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="250" y="134">JAMES</text>
+        <circle cx="325" cy="118" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="325" y="122">KONSA</text>
+        <circle cx="400" cy="118" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="400" y="122">GUÉHI</text>
+        <circle cx="475" cy="130" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="475" y="134">O'R</text>
+      </g>
+      <!-- the cage -->
+      <path d="M290 195 L430 195 L410 265 L310 265 Z" fill="#ff8e95" opacity=".16" stroke="#ff8e95" stroke-opacity=".6" stroke-width="2" stroke-dasharray="5 4"/>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="300" cy="200" r="12" fill="#e8edf4" stroke="#cf142b" stroke-width="1.5"/><text x="300" y="204">RICE</text>
+        <circle cx="420" cy="200" r="12" fill="#e8edf4" stroke="#cf142b" stroke-width="1.5"/><text x="420" y="204">AND</text>
+      </g>
+      <!-- Messi caged -->
+      <g><circle cx="360" cy="240" r="15" fill="#7cc0ec" stroke="#ff5d6a" stroke-width="2.5"/><text x="360" y="244" font-size="9" fill="#0a0e14" text-anchor="middle">MESSI</text></g>
+      <text x="360" y="290" text-anchor="middle" font-size="10" fill="#ffb0b3">three bodies, no time, no half-yard</text>
+      <!-- converging arrows -->
+      <g stroke="#ff8e95" stroke-width="2.5">
+        <path d="M306 213 L344 232" marker-end="url(#cg1)"/>
+        <path d="M414 213 L376 232" marker-end="url(#cg1)"/>
+        <path d="M395 132 L368 222" marker-end="url(#cg1)" stroke-dasharray="5 4"/>
+      </g>
+      <!-- but the space behind -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="560" cy="185" r="12" fill="#a9d8f5" stroke="#fff" stroke-width="1.3"/><text x="560" y="189">ALV</text>
+      </g>
+      <path d="M374 232 C 450 215, 520 195, 546 188" stroke="#a9d8f5" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#cg2)" opacity=".9"/>
+      <text x="600" y="225" font-size="9" fill="#bcd9f6" text-anchor="end">…but over-commit, and he still finds it</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff8e95;border-top-style:dashed"></i> England collapse onto Messi</span>
+      <span><i style="border-top-color:#a9d8f5;border-top-style:dashed"></i> The pass he finds anyway</span>
+    </div>
+
+    <p class="expl"><strong>England's entire defensive plan will be built around one man — as everyone's now is.</strong> The template exists: Switzerland swarmed Messi with three and four bodies all night in the quarter-final and very nearly caused the upset. <strong>Rice and Anderson must smother the pockets between the lines where Messi operates, with a centre-back stepping to meet him whenever he drops.</strong> England have the athleticism and discipline to do it, and Rice — confirmed fit — is the ideal profile. But the danger is the same one Switzerland lived with: <strong>over-commit to Messi and the space behind opens for Álvarez, Lautaro and the arriving Enzo.</strong> Even swarmed, Messi has created a tournament-high 21 chances; he does not need to beat you, only to see the pass. England's task is to cage him without unbalancing themselves — the hardest defensive assignment in football.</p>
+  </div>
+
+  <h2><span class="ic">❓</span> Battle #2 — And If Messi <em>Is</em> Stopped? The Plan B Question</h2>
+  <p>Here is the question that matters most, and the one this tournament keeps refusing to answer. Suppose England's cage works. Suppose Messi is contained for forty-five minutes — swarmed, starved, reduced to walking. <strong>What then? Does Argentina have a second idea?</strong></p>
+
+  <p>The evidence so far is damning. Against Switzerland, Messi was hunted by three and four defenders for ninety minutes and Argentina, as we wrote, were <strong>a one-trick pony with no evident Plan B</strong> — a team of four central midfielders and no natural width, whose every move in the opposition half is oriented toward getting the ball to one pair of feet. When Scaloni finally needed to break a ten-man wall, he threw on four strikers and made <strong>no genuine tactical shift at all.</strong> The system is not a system; it is a delivery mechanism for a magician.</p>
+
+  <div class="planb">
+    <div class="t">🎭 The Lo Celso question — will Scaloni finally surprise us?</div>
+    <p style="margin:8px 0 0">So: will he? If Messi is caged and the game is stuck at 0-0 with an hour gone, <strong>does Scaloni finally reach for Giovani Lo Celso — or Nico Paz, or Almada — and give Argentina a second point of gravity?</strong></p>
+    <p style="margin:10px 0 0"><strong>The honest answer: probably not, and that is the story.</strong> Scaloni tweaks; he does not revolutionise. Reports of a back three are almost certainly noise. He has spent this entire tournament declining to start Lo Celso or Paz, and <strong>the likes of Paz and Barco are considered unlikely to be trusted at this stage</strong>. His instinct, when the door won't open, is to add more strikers to the battering ram rather than find a different door.</p>
+    <p style="margin:10px 0 0"><strong>But if he does — if Lo Celso comes on with half an hour left — the game changes shape entirely.</strong> Lo Celso is not a runner or a winger; he is a <em>second creator</em>. His arrival would mean Argentina no longer route everything through Messi's feet: a second man who can receive between the lines, turn, and slide a pass. And that changes England's arithmetic instantly. Rice and Anderson cannot collapse on Messi if someone else is also picking locks — the moment you have two creators, the cage stops working, because you cannot cage both. <strong>The paradox is that Lo Celso's value isn't what he does; it's what he frees Messi to do.</strong> Give Messi one team-mate that England must genuinely respect, and the three bodies around him become two, and two is all he has ever needed.</p>
+    <p style="margin:10px 0 0"><strong>And there is the tell we already saw:</strong> when Almada came off the bench against Switzerland he immediately opened up the left side — the Di María role this team has missed for years. The evidence that a Plan B works is already on tape. Scaloni just has to believe it before the 110th minute rather than after.</p>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Plan B, Drawn</span><span class="mt">What Argentina look like if Lo Celso (or Simeone's width) creates a second axis</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="pb1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#b98cff"/></marker>
+        <marker id="pb2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/><rect y="312" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/><rect x="200" y="14" width="320" height="110"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="412" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Two points of gravity — England cannot collapse on both. The cage breaks.</text>
+
+      <g><circle cx="360" cy="40" r="10" fill="#cf142b" stroke="#fff" stroke-width="1.2"/><text x="360" y="44" font-size="7" fill="#fff" text-anchor="middle">PICK</text></g>
+      <!-- england forced to split -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="270" cy="185" r="12" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="270" y="189">RICE</text>
+        <circle cx="450" cy="185" r="12" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="450" y="189">AND</text>
+      </g>
+      <text x="360" y="150" text-anchor="middle" font-size="10" fill="#ffb0b3">the pivot is stretched — pulled two ways</text>
+      <g stroke="#ff8e95" stroke-width="2" stroke-dasharray="4 4" opacity=".7">
+        <path d="M270 200 L250 240"/><path d="M450 200 L470 240"/>
+      </g>
+
+      <!-- Messi one side, Lo Celso other -->
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="230" cy="265" r="14" fill="#7cc0ec" stroke="#fff" stroke-width="1.6"/><text x="230" y="269">MESSI</text>
+        <circle cx="490" cy="265" r="14" fill="#b98cff" stroke="#fff" stroke-width="1.6"/><text x="490" y="269">LO C</text>
+      </g>
+      <text x="230" y="295" text-anchor="middle" font-size="9" fill="#bcd9f6">axis one</text>
+      <text x="490" y="295" text-anchor="middle" font-size="9" fill="#d9c2ff">axis two — must be respected</text>
+
+      <!-- simeone width -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="640" cy="200" r="12" fill="#a9d8f5" stroke="#fff" stroke-width="1.3"/><text x="640" y="204">SIM</text>
+      </g>
+      <text x="640" y="228" text-anchor="middle" font-size="8.5" fill="#bcd9f6">real width at last</text>
+
+      <!-- the striker -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="360" cy="160" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="360" y="164" fill="#06301d">ALV</text>
+      </g>
+
+      <!-- passes: both axes feed the striker -->
+      <path d="M244 255 C 290 210, 330 180, 346 168" stroke="#b98cff" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#pb1)"/>
+      <path d="M476 255 C 430 210, 390 180, 374 168" stroke="#b98cff" stroke-width="3" fill="none" marker-end="url(#pb1)"/>
+      <path d="M628 208 C 560 180, 440 150, 378 148" stroke="#b98cff" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#pb1)" opacity=".8"/>
+      <path d="M360 146 C 360 110, 360 80, 360 56" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#pb2)"/>
+      <text x="392" y="105" font-size="10" fill="#bff0d0">the finish</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#b98cff"></i> Two creators — the supply England can't cut</span>
+      <span><i style="border-top-color:#39d98a"></i> Álvarez finishes</span>
+    </div>
+
+    <p class="expl"><strong>This is the Argentina that could actually beat a well-drilled England — and the one we may never see.</strong> With <strong>a second creator (Lo Celso) on the opposite axis and genuine width from Simeone</strong> instead of an overlapping full-back, Argentina become a team rather than a delivery service. England's pivot gets stretched: Rice cannot shade toward Messi if Lo Celso is unmarked on the other side, and the full-backs cannot tuck in if Simeone is holding the touchline. Suddenly the three bodies around Messi become two, and Álvarez has service from multiple angles. <strong>The prize isn't Lo Celso's passing — it's the two yards of space it hands Messi.</strong> Whether Scaloni's conservatism permits it is the single most interesting question of the night. If Simeone genuinely starts, it is at least a first step: the tacit admission, after six matches, that Messi alone may not be enough.</p>
+  </div>
+
+  <h2><span class="ic">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> Battle #3 — England's Threat: Bellingham's runs and the set-piece hammer</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag eng">England · Attack</span><span class="mt">Bellingham arriving late, and Rice's deliveries onto a 14-duel aerial advantage</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="eb1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff8e95"/></marker>
+        <marker id="eb2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="130"/><rect x="285" y="14" width="150" height="60"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">England attacking ↑ · Rice's corner into the mixer, or Bellingham's late run through the middle</text>
+
+      <g><circle cx="360" cy="42" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+      <!-- corner delivery -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="60" cy="80" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="60" y="84">RICE</text>
+      </g>
+      <text x="60" y="106" text-anchor="middle" font-size="8.5" fill="#ffc9cd">26 corners taken</text>
+      <path d="M74 86 C 180 120, 280 130, 330 118" stroke="#ff8e95" stroke-width="3" stroke-dasharray="7 5" fill="none" marker-end="url(#eb1)"/>
+      <!-- Kane attacking it -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="345" cy="120" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="345" y="124" fill="#06301d">KANE</text>
+      </g>
+      <text x="345" y="146" text-anchor="middle" font-size="8.5" fill="#bff0d5">England 14 aerials/game vs Arg 9.8</text>
+      <path d="M340 106 C 348 86, 352 70, 356 58" stroke="#39d98a" stroke-width="3" fill="none" marker-end="url(#eb2)"/>
+
+      <!-- Bellingham late run -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="520" cy="300" r="13" fill="#e8edf4" stroke="#cf142b" stroke-width="1.5"/><text x="520" y="304">BELL</text>
+      </g>
+      <text x="520" y="326" text-anchor="middle" font-size="8.5" fill="#ffc9cd">6 goals · arrives late, unmarked</text>
+      <path d="M512 288 C 480 230, 450 170, 430 118" stroke="#ff8e95" stroke-width="3" fill="none" marker-end="url(#eb1)"/>
+      <text x="580" y="220" font-size="9" fill="#ffb0b3" text-anchor="end">the run Argentina's midfield</text>
+      <text x="580" y="234" font-size="9" fill="#ffb0b3" text-anchor="end">has struggled to track</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff8e95"></i> Rice's delivery / Bellingham's late run</span>
+      <span><i style="border-top-color:#39d98a"></i> The finish</span>
+    </div>
+
+    <p class="expl"><strong>England's two genuine weapons are unglamorous and dangerous.</strong> The first is aerial: <strong>they win 14 duels a game to Argentina's 9.83, and Rice has taken 26 corners</strong> — against a side that has conceded in every knockout match, set-pieces are a real avenue for Kane, Guéhi and Konsa. The second is <strong>Bellingham, arguably the player of the tournament</strong>: six goals from midfield off an xG of 3.63, defined by late, unmarked runs into the box — precisely the movement Argentina's ageing midfield has struggled to track. Both of his goals against Norway came from that instinct. If England cannot play through Argentina, they will try to go over and around them, and trust their talisman to arrive at the right moment. It is not beautiful. It has been enough so far.</p>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ If it goes to Extra Time — or Penalties</div>
+    <p style="margin:8px 0 0">Both sides came through their quarter-finals in extra time, so both know the drill — but the toll is not equal. <strong>Argentina have now gone to 120 minutes twice</strong> and were dragged to the brink three times; Romero was hooked through exhaustion. England, on aggregate, have expended less. In a roofed, climate-controlled Atlanta the heat won't be a factor, so raw fatigue is the variable — and it favours England.</p>
+    <p style="margin:8px 0 0"><strong>Yet extra time is where Argentina live.</strong> Twice already they have found something in the 112th minute that logic said wasn't there. Their bench (Lo Celso, Almada, Nico Paz, Lautaro) is decent, and their mental resilience is not a statistic you can model. England's counter is Tuchel's proven ability to change games with substitutions and tweaks — the more reliable mechanism, if the less romantic one.</p>
+    <p style="margin:8px 0 0"><strong>Penalties tilt sharply to Argentina.</strong> This is where the coin-flip stops being a coin-flip: <strong>Emiliano Martínez is the definitive modern shootout goalkeeper</strong>, and Messi, Lautaro and Álvarez are ice-cold from twelve yards. England's shootout history needs no rehearsing. If this reaches spot-kicks, the champions are firm favourites — which makes England's imperative clear: <strong>win it inside 90.</strong></p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> Verdict &amp; Predicted Scoreline — the honest read</h2>
+    <p>The market says England (-125); the models say Argentina (Squawka 53%); the truth is that this is as close to a genuine 50-50 as this tournament has produced. <strong>England are the better-organised, deeper, fresher team, and they are right to be marginal favourites</strong> — Bellingham is in the form of his life, the set-piece threat is real, Rice is fit, and Argentina were second-best against Switzerland until a red card rescued them. That is a beatable version of the champions. <strong>And yet.</strong> Argentina have never lost a World Cup semi-final in five attempts. They have the best player in the tournament, the shootout insurance of Dibu Martínez, and a refusal to die that has now survived Cape Verde, Egypt and Switzerland. <strong>The whole thing turns on the question you asked: if England cage Messi, does Scaloni find a second idea?</strong> If Simeone's width is real and Lo Celso comes on when the game demands it, Argentina break the cage and win. If Scaloni holds his nerve too long, as he has all summer, England's structure grinds them down. My honest lean, by the barest margin: <strong>Argentina — because Messi and Dibu are two answers England may not have</strong> — but I would not argue with anyone who called it the other way. <strong>The last of our four. Vamos Argentina.</strong></p>
+    <div class="scoreline">🇦🇷 Argentina 1 — 1 England <span style="font-size:13px;color:var(--muted)">→ Argentina to edge extra time / penalties</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: tight, low-scoring (the market's clearest lean is Under 2.5), decided by one moment or one shootout. Both defences leak, so both-teams-to-score is live — but semis tighten. Whoever wins faces Spain at MetLife on July 19.</p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Semi-Final · Atlanta · The winner</div><div class="g">→ 🇪🇸 Spain, MetLife, Jul 19</div><div class="n">Spain await, having dismantled France 2-0 with a technical masterclass — and conceded just one goal all tournament.</div></div>
+    <div class="nx"><div class="d">The FraSBArg reality</div><div class="g">Argentina carry the flag</div><div class="n">Brazil fell to Norway; France fell to Spain. Win tonight and two of our four contest the final — Argentina vs Spain.</div></div>
+  </div>
+
+</div>
+</body>
+</html>

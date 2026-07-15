@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina 2-1 England — Messi is Now Immortal</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--eng:#e8edf4;--engr:#cf142b;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(124,192,236,.14);color:var(--arg2);border:1px solid #2a3f52}
+  .badge.epic{background:rgba(233,185,73,.16);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(26px,5.6vw,44px);font-weight:800;margin-top:6px;line-height:1.08;
+    background:linear-gradient(90deg,#7cc0ec,#fff 50%,#e9b949);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14.5px;margin-top:12px;font-style:italic}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .a{color:var(--arg2)}.scoreboard .e{color:var(--eng)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:var(--arg2)}
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .a{color:var(--arg2)}
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:56px;line-height:44px;padding:6px 12px 2px 0;color:var(--arg);font-weight:800}
+  .pull{border-left:3px solid var(--arg);background:linear-gradient(135deg,#0e2536,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#dcebfb;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .pull.gold{border-left-color:var(--gold);background:linear-gradient(135deg,#1a1406,#0f1117);color:#f0e6cf}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .immortal{background:linear-gradient(135deg,#1c1608,#0f1117);border:1px solid #4a3c14;border-left:3px solid var(--gold);border-radius:10px;padding:16px 18px;margin:18px 0}
+  .immortal .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .crit{background:linear-gradient(135deg,#1a0a0c,#0f1117);border:1px solid #4a1518;border-left:3px solid var(--engr);border-radius:10px;padding:14px 16px;margin:16px 0}
+  .crit .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#ff8e95}
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.eng{background:rgba(207,20,43,.2);color:#ff8e95}
+  .move .mtag.g{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+  .nextfix .nx a{color:var(--arg2);font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · SF Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge epic">✦ Argentina to the Final</span>
+    <span class="badge" style="background:rgba(233,185,73,.16);color:var(--gold);border-color:#3a2f12">🐐 The GOAT Debate, Settled</span>
+  </div>
+  <h1>Messi is Now Immortal</h1>
+  <div class="kicker">Argentina played their finest match of the tournament and England were undone not by a system but by a man — two assists in the last six minutes, and an argument two decades old finally put to rest</div>
+
+  <div class="scoreboard">
+    <span class="t a">🇦🇷 Argentina</span>
+    <span class="sc">2 – 1</span>
+    <span class="t e">England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+  </div>
+  <div class="meta">📍 Atlanta Stadium, Atlanta · Semi-Final · Full-time</div>
+  <div class="scorers">⚽ <b>Enzo Fernández 85', Lautaro Martínez 90+2'</b> · England: Gordon 55' · 🅰️ Messi assisted both</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Possession</div><div class="v"><span class="a">64%</span> – 36%</div></div>
+    <div class="stat"><div class="l">xG</div><div class="v"><span class="a">~1.9</span> – 0.53</div></div>
+    <div class="stat"><div class="l">Kane + Bellingham</div><div class="v">1 shot total</div></div>
+    <div class="stat"><div class="l">Messi assists</div><div class="v">Both goals</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">We predicted 1-1 with Argentina to edge it late, and warned England's imperative was to win inside 90. They led with 35 minutes to go — and bunkered. Argentina, and Messi, did the rest.</p>
+
+  <div class="essay">
+  <p class="lead dropcap">Yesterday Spain played the best match of their tournament. Today the world champions answered with the best of theirs — better even than those delirious final twenty minutes against Egypt. It was a complete team effort, a performance of relentless, suffocating siege football against eleven men who had decided to defend a one-goal lead with thirty-five minutes still to play. And yet, for all the collective excellence, it was Messi in every single frame. Messi in the build-up, Messi at the corner flag, Messi wriggling out of triple-teams, Messi lofting the ball into places no other footballer alive would have seen. Two assists in the last six minutes. A final reached. And something larger settled.</p>
+
+  <div class="immortal">
+    <div class="t">🐐 The debate is over — and it isn't close any more</div>
+    <p style="margin:8px 0 0">For two decades a question has haunted Argentine football: who is the greatest of them all? And Maradona always held that special, unassailable place, because he had done the one thing Messi supposedly could not — <strong>he dragged a B-grade team to two World Cup finals and won one of them, almost single-handedly.</strong> That was the trump card. That was the argument.</p>
+    <p style="margin:10px 0 0"><strong>Tonight it became moot. Messi has now gone one better than Maradona.</strong> He has taken this side — flawed, aged, structurally naive, utterly dependent on him — to <strong>back-to-back World Cup finals</strong>, having already won the last one. He leads this tournament's scoring charts at 39. He holds the record for World Cup assists, now stretched further still. He has done it in a modern game infinitely more physical, more analysed, more <em>designed</em> to stop exactly what he does. And he has done it while every opponent knows precisely what is coming and still cannot prevent it.</p>
+    <p style="margin:10px 0 0">The Argentine debate is finished. And with it, so is the larger one. <strong>Lionel Messi is the greatest footballer the world has ever produced.</strong> There is nothing this little maestro cannot do on a football pitch. Tonight he created magic again, and again, and again — and made himself immortal.</p>
+  </div>
+
+  <div class="pull gold">Maradona's claim rested on carrying a lesser team to two finals. Messi has now carried a lesser team to two finals — and won the first. The argument that protected Maradona for forty years has just been beaten at its own game.
+    <span class="a">— The greatest of all time, no longer debatable</span>
+  </div>
+
+  <h2><span class="ic">🧊</span> The First Hour — a game of ice, and a single crack</h2>
+  <p>For a long time this was not a football match but a wrestle. <strong>Neither side managed a single shot in the opening thirty minutes — the first time that has happened to start a World Cup match since 1966.</strong> The fouls came thick and constant (nineteen by half-time, twelve of them Argentina's), tempers frayed, and referee Ismail Elfath had to stop play to cool it down. Argentina were dragging England down to their level, and England were content to be dragged. Messi's first genuine spark came on 37 minutes — wriggling through multiple tackles before Anderson simply wiped him out and took the game's first yellow.</p>
+  <p>Then, at 55 minutes, came the only ten seconds all night in which England looked like a football team.</p>
+
+  <h2><span class="ic">⚽</span> The Goal (55') — Gordon, and England's one clean moment</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag eng">England · 1-0</span><span class="mt">The only time England had control: one clean transition, one tap-in</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ga1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff8e95"/></marker>
+        <marker id="ga2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="130"/><rect x="285" y="14" width="150" height="60"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">England attacking ↑ · a rare clean break — Rogers wide, Gordon arriving at the back post</text>
+      <g><circle cx="360" cy="42" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+      <g font-size="9.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="620" cy="180" r="12" fill="#e8edf4" stroke="#cf142b" stroke-width="1.4"/><text x="620" y="184">ROGERS</text>
+        <circle cx="300" cy="105" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="300" y="109" fill="#06301d">GORDON</text>
+      </g>
+      <text x="620" y="204" text-anchor="middle" font-size="8.5" fill="#ffc9cd">the wide cross</text>
+      <text x="300" y="132" text-anchor="middle" font-size="8.5" fill="#bff0d5">streaking in, unmarked</text>
+      <!-- transition origin -->
+      <g><circle cx="500" cy="330" r="10" fill="#e8edf4" stroke="#cf142b" stroke-width="1.2"/><text x="500" y="334" font-size="8" fill="#0a0e14" text-anchor="middle">ENG</text></g>
+      <text x="500" y="356" text-anchor="middle" font-size="9" fill="#ffb0b3">turnover — England break</text>
+      <path d="M498 318 C 540 280, 590 230, 612 194" stroke="#ff8e95" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#ga1)"/>
+      <path d="M608 172 C 520 130, 400 100, 316 102" stroke="#ff8e95" stroke-width="3.5" fill="none" marker-end="url(#ga1)"/>
+      <path d="M292 94 C 320 78, 340 64, 352 56" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#ga2)"/>
+      <text x="430" y="86" font-size="10" fill="#bff0d0">tapped home — 1-0 (55')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ff8e95"></i> England's transition &amp; Rogers' cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Gordon's finish</span>
+    </div>
+
+    <p class="expl"><strong>Ten seconds of control, and it produced a goal.</strong> It came in transition — the one phase of the game England could reasonably hope to win. <strong>Anthony Gordon streaked down the left, arrived at exactly the right moment on Morgan Rogers' wide cross, and tapped it home.</strong> It was clean, well-worked, and entirely deserved on the balance of a turgid hour. Argentina had been ponderous, England disciplined. Had England then gone looking for a second — pressed their advantage, kept Argentina honest, trusted Kane and Bellingham to hurt a leaky defence — this might have been a very different evening. <strong>Instead, this proved to be the last meaningful attacking act England produced all night.</strong> They never created another great chance. They chose, instead, to defend for thirty-five minutes against Lionel Messi.</p>
+  </div>
+
+  <div class="crit">
+    <div class="t">🚨 The coaching catastrophe — ten tall defenders and no imagination</div>
+    <p style="margin:8px 0 0">What Thomas Tuchel did next will be discussed in England for years. With a one-goal lead and thirty-five minutes remaining, <strong>England did not merely sit back — they systematically dismantled their own capacity to attack.</strong> The goalscorer Gordon was withdrawn for a defender, Konsa. <strong>Declan Rice and Reece James were replaced by the 6'7" Dan Burn and the 6'4" Nico O'Reilly.</strong> The shape became a back five. By the end, England were effectively fielding a wall of tall defenders and nothing else — no outlet, no threat, no way of relieving even a moment of pressure. The consequence was arithmetic: <strong>36% possession, 0.53 expected goals, five shots all match and only two on target.</strong> Most damning of all — <strong>Harry Kane and Jude Bellingham, who had scored twelve goals between them at this tournament, managed one shot between them tonight.</strong> Their stars were rendered non-existent, not by Argentina, but by their own manager's instructions.</p>
+    <p style="margin:10px 0 0">And opposite him, the contrast could not have been sharper. <strong>Scaloni — so often criticised in these pages for his conservatism — sharpened his shape</strong>: Paredes off for the pacy Nico González on 64 minutes, De Paul on for Simeone, and Lautaro Martínez introduced to become the super-sub who won it. One coach added attackers to chase a game. The other added centre-backs to survive one. Only one of them was right.</p>
+  </div>
+
+  <h2><span class="ic">🎼</span> The De Paul Effect — the bodyguard arrives, and the ball starts flowing</h2>
+  <p>The complexion of the match changed completely the moment Rodrigo De Paul came on. It is no accident that he is known as <strong>Messi's bodyguard and mentor</strong> — his role in this side has never been about his own numbers. <strong>He arrived and immediately began choreographing the flow of the ball toward Messi on the right</strong>, where the maestro could turn, face up, and begin his trademark work. Almost at once the chances came: <strong>De Paul's exquisite cross on 76 minutes found Mac Allister, whose header smacked the inside of the post.</strong> Three or four more followed, virtually all of them manufactured by Messi himself — inch-perfect balls into the box that a better, braver team would have converted every time. Mac Allister hit the woodwork twice. Nico González was denied by a fine diving Pickford save. Argentina were, for a spell, desperately unlucky.</p>
+
+  <div class="pull">This team is nothing without its magician — and everything with him. Three and four English defenders swarmed Messi all night, and still he found openings from impossible positions, conjuring chances out of angles that did not exist.
+    <span class="a">— The one-man gravity of the Argentine attack</span>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Equaliser (85') — the short corner, and Messi's improvisation</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Argentina · 1-1</span><span class="mt">High balls weren't beating the giants — so Messi changed the method entirely</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="en1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="en2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="130"/><rect x="285" y="14" width="150" height="60"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · short corner → Messi carries infield → lays it off → Enzo bends it home</text>
+      <g><circle cx="360" cy="42" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.3"/><text x="360" y="46" font-size="7" fill="#0a0e14" text-anchor="middle">PICK</text></g>
+      <!-- the tall english wall packed in the box -->
+      <g opacity=".9">
+        <circle cx="290" cy="95" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="330" cy="88" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="372" cy="88" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="412" cy="95" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="310" cy="122" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="392" cy="122" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+      </g>
+      <text x="352" y="148" text-anchor="middle" font-size="9" fill="#ffb0b3">6'7" Burn, 6'4" O'Reilly — a forest of tall men</text>
+      <!-- corner flag -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="660" cy="60" r="12" fill="#7cc0ec" stroke="#fff" stroke-width="1.4"/><text x="660" y="64">MESSI</text>
+      </g>
+      <text x="640" y="88" text-anchor="middle" font-size="8.5" fill="#bcd9f6">the short corner</text>
+      <!-- short pass out and return -->
+      <g font-size="8" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="640" cy="140" r="10" fill="#a9d8f5" stroke="#fff" stroke-width="1.1"/><text x="640" y="144">ARG</text>
+      </g>
+      <path d="M656 72 L644 128" stroke="#7cc0ec" stroke-width="2.5" stroke-dasharray="4 3" fill="none" marker-end="url(#en1)"/>
+      <text x="690" y="105" font-size="9" fill="#bcd9f6" text-anchor="end">1 · short</text>
+      <!-- Messi receives back and carries infield -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="560" cy="185" r="13" fill="#7cc0ec" stroke="#fff" stroke-width="1.5"/><text x="560" y="189">MESSI</text>
+      </g>
+      <path d="M634 150 C 610 165, 585 178, 574 182" stroke="#7cc0ec" stroke-width="2.5" fill="none" marker-end="url(#en1)"/>
+      <text x="600" y="215" font-size="9" fill="#bcd9f6">2 · gets it back, drives infield</text>
+      <!-- lay-off to Enzo -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="430" cy="235" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="430" y="239" fill="#06301d">ENZO</text>
+      </g>
+      <text x="430" y="262" text-anchor="middle" font-size="8.5" fill="#bff0d5">space outside the box</text>
+      <path d="M547 192 C 510 208, 465 226, 446 232" stroke="#7cc0ec" stroke-width="3.5" fill="none" marker-end="url(#en1)"/>
+      <text x="500" y="252" font-size="9" fill="#bcd9f6">3 · the lay-off</text>
+      <!-- the strike, bending to upper right -->
+      <path d="M424 222 C 420 170, 408 110, 392 58" stroke="#39d98a" stroke-width="4" fill="none" marker-end="url(#en2)"/>
+      <text x="250" y="200" font-size="10.5" font-weight="700" fill="#bff0d0">4 · thunderous right foot, bending</text>
+      <text x="250" y="218" font-size="10.5" font-weight="700" fill="#bff0d0">to the upper corner — 1-1 (85')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's short corner &amp; lay-off</span>
+      <span><i style="border-top-color:#39d98a"></i> Enzo's strike</span>
+    </div>
+
+    <p class="expl"><strong>This is the goal that proves the point about Messi — not the assist itself, but the thinking behind it.</strong> Argentina had been lofting cross after cross into a box now populated by giants, and Messi read what everyone else was too slow to see: <strong>the high ball was never going to beat a forest of six-foot-seven defenders. So he improvised. He started taking the corners short</strong> — winning the ball back on the ground, drawing defenders out, and manufacturing a better angle from open play instead of gifting the tall men exactly what they were built for. And it worked immediately. <strong>Messi took the quick corner, got the return, drove infield toward the box, and laid it into the space outside the area where Enzo Fernández — who had blazed narrowly over from distance barely a minute earlier, and had been banging away at Pickford all afternoon — unleashed a thunderous right-footed strike that bent past the goalkeeper into the upper corner.</strong> The goal of his life. And its architect had solved the puzzle three moves earlier. The provider? Messi. Who else.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Winner (90+2') — the cruellest irony of all</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Argentina · 2-1</span><span class="mt">Mac Allister hits the post — Messi keeps his head, resets, and lofts it perfectly</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="lm1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="lm2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="lm3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffb0b3"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="130"/><rect x="285" y="14" width="150" height="60"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Mac Allister strikes the right post → Messi collects, resets, lofts it → Lautaro heads home</text>
+      <g><circle cx="360" cy="42" r="11" fill="#e8edf4" stroke="#cf142b" stroke-width="1.3"/><text x="360" y="46" font-size="7" fill="#0a0e14" text-anchor="middle">PICK</text></g>
+      <!-- the post -->
+      <line x1="410" y1="16" x2="410" y2="28" stroke="#ffb0b3" stroke-width="5"/>
+      <text x="455" y="30" font-size="10" fill="#ffb0b3">the right post</text>
+      <!-- tall wall again -->
+      <g opacity=".9">
+        <circle cx="300" cy="98" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="345" cy="92" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="392" cy="100" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+        <circle cx="325" cy="128" r="9" fill="#e8edf4" stroke="#cf142b" stroke-width="1.1"/>
+      </g>
+      <text x="250" y="130" text-anchor="middle" font-size="9" fill="#ffb0b3">the tall wall — but no imagination</text>
+      <!-- Mac Allister shot hitting post -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="470" cy="230" r="12" fill="#a9d8f5" stroke="#fff" stroke-width="1.3"/><text x="470" y="234">MAC</text>
+      </g>
+      <path d="M462 218 C 440 160, 420 90, 412 34" stroke="#ffb0b3" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#lm3)"/>
+      <text x="530" y="150" font-size="9" fill="#ffb0b3">1 · smashes the post, stays in play</text>
+      <!-- Messi collects -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="590" cy="175" r="14" fill="#7cc0ec" stroke="#fff" stroke-width="1.6"/><text x="590" y="179">MESSI</text>
+      </g>
+      <text x="600" y="205" text-anchor="middle" font-size="8.5" fill="#bcd9f6">2 · collects the rebound, stays calm,</text>
+      <text x="600" y="219" text-anchor="middle" font-size="8.5" fill="#bcd9f6">holds it until the play resets</text>
+      <!-- the loft -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="330" cy="165" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="330" y="169" fill="#06301d">LAU</text>
+      </g>
+      <text x="330" y="192" text-anchor="middle" font-size="8.5" fill="#bff0d5">the super-sub, unmarked</text>
+      <path d="M576 168 C 500 130, 400 128, 344 156" stroke="#7cc0ec" stroke-width="3.5" fill="none" marker-end="url(#lm1)"/>
+      <text x="470" y="118" font-size="10" fill="#bcd9f6">3 · the inch-perfect loft</text>
+      <path d="M322 152 C 320 120, 330 80, 344 56" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#lm2)"/>
+      <text x="190" y="175" font-size="10.5" font-weight="700" fill="#bff0d0">4 · headed into the left side</text>
+      <text x="190" y="193" font-size="10.5" font-weight="700" fill="#bff0d0">— 2-1 (90+2')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffb0b3;border-top-style:dashed"></i> Mac Allister off the post</span>
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's cross</span>
+      <span><i style="border-top-color:#39d98a"></i> Lautaro's header</span>
+    </div>
+
+    <p class="expl"><strong>And then the dagger — and the irony of it is almost too perfect.</strong> <strong>Mac Allister's shot smashed against the right post and stayed in play. Where a lesser player would have snatched at the rebound in the frenzy of stoppage time, Messi collected it and simply… waited. He kept possession, calm amid chaos, holding the ball long enough for the play to reset and for bodies to find their positions — and then lofted a cross of absurd precision to the back post.</strong> Lautaro Martínez, the substitute, rose and headed it into the left side of the net. Argentina had scored twice in seven minutes to win a World Cup semi-final. <strong>And here is the irony: England had loaded the pitch with giants precisely to win headers — 6'7", 6'4", a back five built for aerial war — and were beaten by a header. They had the height. They simply had no imagination to fight against such magic.</strong> You cannot defend a delivery that good with size alone. Someone has to think.</p>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Lionel Messi</b> — <span class="good">Immortal</span>. Two assists in six minutes, both moments of pure invention. Triple-teamed all night and still the source of every chance. At 39, the greatest there has ever been.</div>
+    <div class="rt"><b>Enzo Fernández</b> — <span class="good">The goal of his life</span>. Banged away at Pickford all afternoon, blazed one over, then bent an unstoppable strike into the top corner from outside the box.</div>
+    <div class="rt"><b>Lautaro Martínez</b> — <span class="good">The super-sub</span>. On, and decisive: the stoppage-time header that sends Argentina to the final. Exactly why Scaloni's attacking changes were right.</div>
+    <div class="rt"><b>Rodrigo De Paul</b> — <span class="good">The choreographer</span>. Messi's bodyguard and mentor changed the game's complexion the moment he arrived, orchestrating the ball to the right and delivering the cross that hit Mac Allister's post.</div>
+    <div class="rt"><b>Alexis Mac Allister</b> — <span class="mid">Cruel luck</span>. Hit the woodwork twice, including the rebound that led directly to the winner. Deserved a goal; got an assist by accident of physics.</div>
+    <div class="rt"><b>Anthony Gordon (ENG)</b> — <span class="mid">Scored, then withdrawn</span>. Took his moment superbly in England's only clean attack — and was then substituted for a defender. That decision summarises the night.</div>
+    <div class="rt"><b>Kane &amp; Bellingham (ENG)</b> — <span class="bad">Non-existent</span>. Twelve tournament goals between them; one shot between them tonight. Not outplayed so much as switched off by their own manager's plan.</div>
+    <div class="rt"><b>Thomas Tuchel (ENG)</b> — <span class="bad">The fatal error</span>. Chose to defend a one-goal lead for 35 minutes with a wall of tall centre-backs. England's bunkering will be debated for years.</div>
+  </div>
+
+  <div class="callout">
+    <div class="t">🎯 The prediction, and the reality</div>
+    <p style="margin:8px 0 0">Our <a href="argentina-england-prematch.html">pre-match analysis</a> predicted 1-1 with Argentina edging it late, and stated England's imperative plainly: <strong>"win it inside 90."</strong> They led with thirty-five minutes to play and chose instead to defend — the one strategy the analysis warned would fail. We also asked whether Scaloni would finally find a Plan B if Messi were caged. The answer was better than expected: <strong>Simeone did start (giving Argentina real width for the first time all tournament), and when it was needed, Scaloni added Nico González, De Paul and Lautaro rather than retreating.</strong> The Plan B arrived at last — and it won a World Cup semi-final.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Argentina are in the World Cup final, and they got there by playing their finest football of the tournament — but more than that, they got there because they have Lionel Messi and nobody else does. England had one clean moment in ninety-five minutes and scored from it; then they built a fortress of tall men and invited the greatest player in history to solve them. He did, twice, in six minutes: first by realising that high balls would never beat giants and switching to short corners to manufacture the angle for Enzo's thunderbolt, then by collecting a rebound in stoppage-time bedlam, calmly resetting the play, and lofting a cross so perfect that even a forest of six-footers could only watch Lautaro head it home. Kane and Bellingham managed one shot between them. Tuchel's bunker will be dissected for a generation. And the oldest debate in Argentine football is finished forever: Maradona carried a lesser team to two finals; Messi has now done the same, and won one, and stands on the brink of a second, at thirty-nine, in the most hostile tactical era the game has known. <strong>He is not merely the greatest Argentine. He is the greatest of all time. Messi is now immortal — and one match from a perfect ending. Vamos Argentina.</strong></p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">🏆 THE FINAL · MetLife, Jul 19</div><div class="g">🇦🇷 Argentina vs Spain 🇪🇸</div><div class="n">The dream final — two of our four. The magician against the machine. <a href="argentina-spain-final-preview.html">Read the full final preview →</a></div></div>
+    <div class="nx"><div class="d">The FraSBArg story</div><div class="g">Two of four, in the final</div><div class="n">Brazil fell to Norway, France to Spain. Our two best remain — and one of them will lift the World Cup.</div></div>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

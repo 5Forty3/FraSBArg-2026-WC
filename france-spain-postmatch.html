@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain 2-0 France — The Triumph of the Purists</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --esp:#e63946;--espy:#ffc400;--fra:#3b82d6;--fra2:#7cb4e8;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#13202f 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 20px;max-width:860px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(255,196,0,.13);color:var(--espy);border:1px solid #3a3014}
+  .badge.epic{background:rgba(233,185,73,.14);color:var(--gold);border-color:#3a2f12}
+  h1{text-align:center;font-size:clamp(24px,5vw,40px);font-weight:800;margin-top:6px;line-height:1.14;
+    background:linear-gradient(90deg,#e63946,#fff 55%,#ffc400);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kicker{text-align:center;color:var(--muted);font-size:14.5px;margin-top:12px;font-style:italic}
+  .scoreboard{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 6px}
+  .scoreboard .t{font-size:17px;font-weight:800}
+  .scoreboard .sc{font-size:38px;font-weight:800;letter-spacing:3px;color:#fff;background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:6px 20px}
+  .scoreboard .e{color:#ff8e95}.scoreboard .f{color:var(--fra2)}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:2px}
+  .scorers{text-align:center;font-size:13.5px;color:#cdd6e2;margin-top:8px}
+  .scorers b{color:#ff8e95}
+  .statsbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0 4px}
+  @media(max-width:560px){.statsbar{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v{font-size:15px;font-weight:800;margin-top:5px}
+  .stat .v .e{color:#ff8e95}
+  h2{font-size:20px;font-weight:800;margin:32px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:56px;line-height:44px;padding:6px 12px 2px 0;color:var(--espy);font-weight:800}
+  .pull{border-left:3px solid var(--espy);background:linear-gradient(135deg,#1a1406,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#f0e6cf;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--espy);font-weight:700}
+  .philo{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid var(--pur);border-radius:10px;padding:15px 17px;margin:18px 0}
+  .philo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.g{background:rgba(57,217,138,.16);color:var(--green)}
+  .move .mtag.future{background:rgba(185,140,255,.16);color:var(--pur)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+  .ratings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+  @media(max-width:560px){.ratings{grid-template-columns:1fr}}
+  .rt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px}
+  .rt b{color:#fff}.rt .good{color:var(--green);font-weight:700}.rt .mid{color:var(--gold);font-weight:700}.rt .bad{color:#ff8e8e;font-weight:700}
+  .verdict{margin-top:26px;background:linear-gradient(135deg,#16110a,#0f1117);border:1px solid #3a2f12;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .nextfix{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .nextfix .nx{flex:1 1 200px;background:#0d141d;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .nextfix .nx .d{font-size:11px;color:var(--gold);font-weight:700}
+  .nextfix .nx .g{font-size:16px;font-weight:800;margin-top:3px}
+  .nextfix .nx .n{font-size:12px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · SF Post-Match</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tagrow">
+    <span class="badge">📈 Post-Match Analysis</span>
+    <span class="badge epic">✦ Semi-Final · Spain to the Final</span>
+    <span class="badge" style="background:rgba(59,130,214,.16);color:var(--fra2);border-color:#274055">France eliminated</span>
+  </div>
+  <h1>The Triumph of the Purists</h1>
+  <div class="kicker">Spain did not merely beat France — they dismantled the most fearsome attack in world football with passing, shape and geometry, and proved that pace and power alone cannot win a World Cup against puritanical football</div>
+
+  <div class="scoreboard">
+    <span class="t e">🇪🇸 Spain</span>
+    <span class="sc">2 – 0</span>
+    <span class="t f">France 🇫🇷</span>
+  </div>
+  <div class="meta">📍 AT&amp;T Stadium (Dallas), Arlington · Semi-Final · Full-time</div>
+  <div class="scorers">⚽ <b>Oyarzabal 22' (pen), Porro 58'</b> · Yamal goal disallowed (offside, 61') · 🟨 Mbappé (foul on Simón)</div>
+
+  <div class="statsbar">
+    <div class="stat"><div class="l">Simón's 1st save</div><div class="v">64th minute</div></div>
+    <div class="stat"><div class="l">Spain conceded</div><div class="v"><span class="e">1 goal</span> · all tournament</div></div>
+    <div class="stat"><div class="l">Clean-sheet record</div><div class="v">650+ mins</div></div>
+    <div class="stat"><div class="l">France's 16 goals</div><div class="v">0 tonight</div></div>
+  </div>
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px">We called it a coin-flip and leaned narrowly to France. Spain answered by producing their most complete performance of the tournament — and it wasn't close.</p>
+
+  <div class="callout">
+    <div class="t">🎯 The prediction, and the reality</div>
+    <p style="margin:8px 0 0">Our <a href="france-spain-prematch.html">pre-match analysis</a> framed this as a coin-flip hinging on the midfield war — "if Spain's pair dictate the tempo, France get pinned back and their front three starve" — and leaned, narrowly, to France's ruthlessness. <strong>The first half of that sentence proved exactly right; the lean did not.</strong> Rodri and Fabián did not merely win the midfield, they annexed it. France's front three starved so completely that <strong>Unai Simón did not make a save until the 64th minute.</strong> The high line we flagged as "a mortal risk" against Mbappé instead became the instrument of his execution. Full credit to Spain: they answered every question we posed, and did it with the ball at their feet.</p>
+  </div>
+
+  <div class="essay">
+  <p class="lead dropcap">There are nights when football stops being a contest of athletes and becomes an argument between ideas — and in Dallas, one idea won so comprehensively that the other never got a word in. Spain played a purely technical game: the perfect passing, the triangles and quadrangles forming and dissolving in midfield, and, most impressively of all, an absolute defensive shape that never gave the most feared attack in world football an inch of space anywhere near the penalty area. This was not a smash-and-grab or a backs-to-the-wall rearguard. This was a demonstration. France — 16 goals in six games, Mbappé and Dembélé and Olise, the most explosive front line on earth — were rendered, for an hour, entirely mute.</p>
+
+  <p>And there is a delicious irony in the manner of it. It is a testament to Spain's <em>miserliness of technique</em> — that peculiar Spanish habit of passing the ball so beautifully that they occasionally forget another team is playing at all — that <strong>the only two shots on target in this match were the two goals Spain scored.</strong> Until the hour mark, that was the entire ledger of the World Cup semi-final between the world's number one and number three: two shots on target, two goals, both Spanish. France's first meaningful test of Unai Simón's palms did not arrive until the 64th minute.</p>
+
+  <div class="pull">Spain pass the ball so beautifully that they sometimes forget there is another team on the pitch. Until the hour, the only two shots on target in a World Cup semi-final were the two goals Spain had scored. That is not dominance. That is a different sport being played by one side.
+    <span class="a">— The miserliness of technique</span>
+  </div>
+
+  <h2><span class="ic">🕸️</span> How Mbappé Was Erased — the high line as a weapon</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · The Line</span><span class="mt">Cubarsí, Laporte and a millimetre-perfect trap that swallowed the world's fastest man</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="hl1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="hl2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · the ball is played, the line steps as one — Mbappé is caught, again and again</text>
+      <g><circle cx="360" cy="105" r="13" fill="#e63946" stroke="#fff" stroke-width="1.5"/><text x="360" y="109" font-size="7" fill="#fff" text-anchor="middle">SIMÓN</text><text x="360" y="128" font-size="8.5" fill="#ffc9cd" text-anchor="middle">sweeper-keeper — races out</text></g>
+      <line x1="30" y1="200" x2="690" y2="200" stroke="#ffc400" stroke-width="3" stroke-dasharray="10 6" opacity=".9"/>
+      <text x="620" y="192" font-size="10" font-weight="700" fill="#ffc400" text-anchor="end">the high line — held as one</text>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="230" cy="200" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="230" y="204">CUC</text>
+        <circle cx="330" cy="200" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="330" y="204">LAP</text>
+        <circle cx="430" cy="200" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="204">CUB</text>
+        <circle cx="530" cy="200" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="530" y="204">POR</text>
+      </g>
+      <g stroke="#ffc400" stroke-width="2" opacity=".75">
+        <path d="M230 220 L230 206" marker-end="url(#hl1)"/>
+        <path d="M330 220 L330 206" marker-end="url(#hl1)"/>
+        <path d="M430 220 L430 206" marker-end="url(#hl1)"/>
+        <path d="M530 220 L530 206" marker-end="url(#hl1)"/>
+      </g>
+      <text x="360" y="245" text-anchor="middle" font-size="9" fill="#ffe98a">↑ step together, on the trigger</text>
+      <g><circle cx="400" cy="172" r="14" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2.5"/><text x="400" y="176" font-size="9" fill="#fff" text-anchor="middle">MBA</text><text x="400" y="152" font-size="9" fill="#ff8e8e" text-anchor="middle">caught — flag up</text></g>
+      <g><circle cx="250" cy="330" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="250" y="334" font-size="8" fill="#fff" text-anchor="middle">DEM</text></g>
+      <path d="M262 322 C 320 280, 370 235, 392 190" stroke="#ff5d6a" stroke-width="3" stroke-dasharray="6 5" fill="none" marker-end="url(#hl2)" opacity=".85"/>
+      <text x="175" y="292" font-size="9.5" fill="#ffb0b3">the vertical ball — a half-second late</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Spain's high line, stepping as one</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> France's release ball — caught offside</span>
+    </div>
+
+    <p class="expl"><strong>This is the tactical heart of the night, and it was executed with almost cruel precision.</strong> We wrote before the match that Spain's high line was "a mortal risk" against Mbappé's pace. It proved the opposite: <strong>the high back line Spain deployed was so brilliantly, millimetrically accurate that it almost always caught the super-pacy Mbappé</strong> — stepping as one unit on the trigger of the pass, turning his greatest weapon into his cage. And behind it, Unai Simón operated as an aggressive sweeper, racing yards outside his box to slide in and snuff out a breakaway before Mbappé could settle the ball. The result was total erasure: <strong>the Golden Boot co-leader was simply absent from the match until the hour mark</strong>, when he finally produced his first trademark run from the left — and Simón was quick enough to react and parry it behind. Pace is a weapon only if there is space to run into. Spain, quite simply, deleted the space.</p>
+  </div>
+
+  <h2><span class="ic">🚫</span> No Air to Breathe — the shape that suffocated a front five</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · The Shape</span><span class="mt">Not an inch near the box — the most feared attack in football, denied oxygen</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="180" y="14" width="360" height="150"/><rect x="270" y="14" width="180" height="70"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">France attacking ↑ · every French runner shadowed, every lane closed, every entry pass pre-empted</text>
+      <path d="M170 90 L550 90 L580 210 L140 210 Z" fill="#ffc400" opacity=".13" stroke="#ffc400" stroke-opacity=".45" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="360" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffe98a">the compact Spanish block — no gaps between the lines</text>
+      <g><circle cx="360" cy="45" r="11" fill="#e63946" stroke="#fff" stroke-width="1.3"/><text x="360" y="49" font-size="7" fill="#fff" text-anchor="middle">SIMÓN</text></g>
+      <g font-size="8.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="240" cy="130" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="240" y="134">CUC</text>
+        <circle cx="320" cy="118" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="320" y="122">LAP</text>
+        <circle cx="410" cy="118" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="410" y="122">CUB</text>
+        <circle cx="490" cy="130" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="490" y="134">POR</text>
+        <circle cx="300" cy="190" r="12" fill="#ff8e95" stroke="#fff" stroke-width="1.3"/><text x="300" y="194">RODRI</text>
+        <circle cx="430" cy="190" r="12" fill="#ff8e95" stroke="#fff" stroke-width="1.3"/><text x="430" y="194">FAB</text>
+      </g>
+      <g font-size="8.5" font-weight="700" text-anchor="middle">
+        <circle cx="360" cy="255" r="12" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2"/><text x="360" y="259" fill="#fff">MBA</text>
+        <circle cx="200" cy="290" r="11" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2"/><text x="200" y="294" fill="#fff">BAR</text>
+        <circle cx="530" cy="290" r="11" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2"/><text x="530" y="294" fill="#fff">DEM</text>
+        <circle cx="360" cy="330" r="11" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2"/><text x="360" y="334" fill="#fff">OLI</text>
+      </g>
+      <g stroke="#ff5d6a" stroke-width="2.5" opacity=".8">
+        <path d="M348 244 L316 202" stroke-dasharray="4 4"/><path d="M372 244 L418 202" stroke-dasharray="4 4"/>
+        <path d="M212 282 L288 200" stroke-dasharray="4 4"/><path d="M518 282 L442 200" stroke-dasharray="4 4"/>
+      </g>
+      <g stroke="#ff3b46" stroke-width="3">
+        <path d="M330 218 L346 234"/><path d="M346 218 L330 234"/>
+        <path d="M244 236 L260 252"/><path d="M260 236 L244 252"/>
+        <path d="M460 236 L476 252"/><path d="M476 236 L460 252"/>
+      </g>
+      <text x="640" y="335" font-size="10" fill="#ffb0b3" text-anchor="end">every entry lane · closed</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Spain's compact block</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> French passing lanes — cut</span>
+    </div>
+
+    <p class="expl"><strong>And if Mbappé was patchy, the rest of the mighty French front line was worse — because Spain's shape gave none of them a breath of air.</strong> <strong>Ousmane Dembélé — the reigning Ballon d'Or holder, brilliant one day and absent the next, as he has been his entire career — was utterly missing: not a single cross into the box all night.</strong> Barcola and Olise were so ineffective that both had to be replaced; Deschamps shuffled Olise to the right and Dembélé into a central No.10 role at half-time in a desperate search for a spark that never came. The reason is drawn above: <strong>Spain's block left no gaps between the lines, Rodri and Fabián screened every entry pass, and the full-backs tucked in to deny the half-spaces.</strong> France's celebrated ability to create offence out of thin air met a team that had removed the air from the stadium. A front five that had scored sixteen goals in six games managed nothing of substance for an hour.</p>
+  </div>
+
+  <h2><span class="ic">🔺</span> Triangles and Quadrangles — the tiki-taka returns</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · The Geometry</span><span class="mt">Rodri, Fabián, Olmo, Yamal — the shapes that made a semi-final look like a training drill</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="tk" markerWidth="8" markerHeight="8" refX="5.5" refY="2.6" orient="auto"><path d="M0,0 L6,2.6 L0,5.2 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/><rect y="312" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/></g>
+      <text x="360" y="410" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain in possession — triangles form, dissolve and reform; France chase shadows</text>
+      <path d="M200 280 L330 210 L200 150 Z" fill="#ffc400" opacity=".10" stroke="#ffc400" stroke-opacity=".5" stroke-width="1.5"/>
+      <path d="M330 210 L470 150 L580 220 L450 285 Z" fill="#ffc400" opacity=".10" stroke="#ffc400" stroke-opacity=".5" stroke-width="1.5"/>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="200" cy="280" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="200" y="284">CUC</text>
+        <circle cx="200" cy="150" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="200" y="154">LAP</text>
+        <circle cx="330" cy="210" r="14" fill="#ff8e95" stroke="#fff" stroke-width="1.6"/><text x="330" y="214">RODRI</text>
+        <circle cx="470" cy="150" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="470" y="154">OLMO</text>
+        <circle cx="580" cy="220" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.4"/><text x="580" y="224">YAM</text>
+        <circle cx="450" cy="285" r="12" fill="#ff8e95" stroke="#fff" stroke-width="1.3"/><text x="450" y="289">FAB</text>
+      </g>
+      <g stroke="#ffc400" stroke-width="2.5" fill="none" opacity=".95">
+        <path d="M212 274 L318 216" marker-end="url(#tk)"/>
+        <path d="M330 196 L206 160" marker-end="url(#tk)"/>
+        <path d="M212 158 L316 202" marker-end="url(#tk)"/>
+        <path d="M344 204 L456 156" marker-end="url(#tk)"/>
+        <path d="M482 156 L568 212" marker-end="url(#tk)"/>
+        <path d="M572 232 L462 280" marker-end="url(#tk)"/>
+        <path d="M438 280 L344 220" marker-end="url(#tk)"/>
+      </g>
+      <g font-size="8" fill="#fff" text-anchor="middle" opacity=".75">
+        <circle cx="270" cy="240" r="9" fill="#3b82d6" stroke="#fff" stroke-width="1"/>
+        <circle cx="400" cy="185" r="9" fill="#3b82d6" stroke="#fff" stroke-width="1"/>
+        <circle cx="510" cy="255" r="9" fill="#3b82d6" stroke="#fff" stroke-width="1"/>
+      </g>
+      <text x="650" y="330" font-size="10" fill="#ffe98a" text-anchor="end">one touch, two touch, the shape moves</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Spain's circulation — triangles &amp; quadrangles</span>
+    </div>
+
+    <p class="expl"><strong>This is what a controlled World Cup semi-final looks like when one team has the technical keys to it.</strong> Spain were effective and highly technical, and at moments they showed genuine, gorgeous <strong>tiki-taka</strong> — the old religion, briefly resurrected: <strong>Yamal, Olmo and Fabián Ruiz combining in a one-touch sequence inside the box that the broadcast rightly called the beautiful game on full display.</strong> The mechanism is the geometry above: triangles forming around Rodri, dissolving, reforming as quadrangles further up; every player an angle for the man on the ball; France's midfielders chasing shapes rather than opponents. It can best be described as <strong>easing themselves to victory</strong>. And presiding over it all was <strong>Rodri, outstanding once more — protecting his defence, screening every counter at source, and dictating the tempo with the same untouchable authority no side has managed to disturb all tournament.</strong> France's entire identity is the transition — the moment everything changes in an instant. Spain's midfield technicality never let the moment exist.</p>
+  </div>
+
+  <h2><span class="ic">⚽</span> The Second Goal (58') — Olmo, Porro and the give-and-go that killed it</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag g">Spain · 2-0</span><span class="mt">A textbook 1-2 — Olmo the creator, Porro the finisher, France caught ball-watching</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="pg1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="pg2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="pgr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#fff"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="130"/><rect x="285" y="14" width="150" height="60"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Porro plays it into Olmo and sprints; Doué doesn't track; Olmo returns it — finish</text>
+      <g><circle cx="360" cy="42" r="11" fill="#3b82d6" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#fff" text-anchor="middle">MAIG</text></g>
+      <g><circle cx="562" cy="212" r="11" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2"/><text x="562" y="216" font-size="8" fill="#fff" text-anchor="middle">DOUÉ</text><text x="562" y="235" font-size="8.5" fill="#ff9ba1" text-anchor="middle">doesn't track the run</text></g>
+      <g font-size="10" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <g><circle cx="600" cy="285" r="13" fill="#39d98a" stroke="#fff" stroke-width="1.5"/><text x="600" y="289">PORRO</text><text x="600" y="307" fill="#bff0d5" font-size="8">plays &amp; goes</text></g>
+        <g><circle cx="430" cy="185" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.5"/><text x="430" y="189">OLMO</text><text x="430" y="166" fill="#ffe98a" font-size="8">the sweet lay-off</text></g>
+      </g>
+      <path d="M588 278 C 530 240, 470 205, 446 192" stroke="#ffc400" stroke-width="3" fill="none" marker-end="url(#pg1)"/>
+      <text x="524" y="248" font-size="11" font-weight="800" fill="#ffe98a">1</text>
+      <path d="M600 270 C 592 210, 552 155, 502 128" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5" fill="none" marker-end="url(#pgr)" opacity=".85"/>
+      <text x="646" y="196" font-size="9" fill="#e8edf4" text-anchor="end">the give-and-go run</text>
+      <path d="M442 176 C 460 150, 472 136, 486 126" stroke="#ffc400" stroke-width="3" fill="none" marker-end="url(#pg1)"/>
+      <text x="446" y="146" font-size="11" font-weight="800" fill="#ffe98a">2</text>
+      <g><circle cx="494" cy="118" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="494" y="122" font-size="8" fill="#06301d" text-anchor="middle">POR</text></g>
+      <path d="M482 108 C 444 86, 406 64, 382 52" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#pg2)"/>
+      <text x="424" y="92" font-size="10" fill="#bff0d0">beats Maignan — 2-0 (58')</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Olmo &amp; Porro's 1-2</span>
+      <span><i style="border-top-color:#fff;border-top-style:dashed"></i> Porro's untracked run</span>
+      <span><i style="border-top-color:#39d98a"></i> The finish</span>
+    </div>
+
+    <p class="expl"><strong>The goal that ended the contest was, fittingly, a piece of pure technical football — and a French lapse.</strong> <strong>Dani Olmo, brilliant throughout as he has been all tournament, was the main creator</strong>: Pedro Porro fed it into him and continued his run; Olmo, with the awareness that has defined his campaign, laid <strong>a sweet pass back into the full-back's path in a classic give-and-go</strong>; Porro arrived and beat Maignan. The French error was glaring — <strong>Désiré Doué, just introduced from the bench, was marking Porro, watched the ball go and did not follow the run, and no French player picked him up.</strong> The players' faces afterwards said everything: someone had blown an assignment. But note the deeper point — even Spain's <em>full-back</em> was an attacking weapon, arriving in the box because the geometry invited him there. This is what happens when a team's shape means everyone is a passing option and everyone is a runner. <strong>Three minutes later, Yamal — full of tricks all night — produced a beautiful finish that was chalked off for one of the tightest offsides you will see.</strong> Mercy, of a sort.</p>
+  </div>
+
+  <div class="callout">
+    <div class="t">😤 The moment that captured it all — Mbappé's yellow card</div>
+    <p style="margin:8px 0 0">Late on, with France's attack devoid of ideas and inspiration, the frustration boiled over into a single, perfectly emblematic image: <strong>Kylian Mbappé, the world's most dangerous forward, chasing a hopeless ball into the Spanish goalmouth and needlessly fouling Unai Simón — and collecting a yellow card for it.</strong> There was nothing to be gained; the ball was gone; the game was gone. It was the act of a great player reduced to flailing at a problem he could not solve, on a night when everything he does best had been methodically dismantled. The broadcasters reached for the very same image: France's frustration, one wrote, was best summarised by Mbappé being booked for a foul on the goalkeeper. When the Golden Boot leader's defining contribution is a cynical foul on the opposition keeper, the tactical argument is already over.</p>
+  </div>
+
+  <div class="philo">
+    <div class="t">🎭 The Grand Argument — pace and power vs puritanical football</div>
+    <p style="margin:8px 0 0">Step back and this becomes the most interesting tactical fixture of the modern game, played twice now with the same result. <strong>France were completely outplayed — again — exactly as they were two years ago in the Euro 2024 semi-final.</strong> This is a recurring, and revealing, order of battle: <strong>arguably the best attacking team in the world right now meets the best technical team in the world, and fails utterly. Twice.</strong> France's greatness flows from transition play — the ability to change everything in a single moment, to turn a stray pass into a goal in six seconds. But transition requires a moment of chaos to exploit, and <strong>this is precisely where Spain's midfield technicality intervenes: they simply never surrender the moment.</strong> Rodri screens, the triangles reform, the ball comes back, and the chaos France need never arrives. There, laid bare, is a pure clash of footballing philosophy — and the verdict is stark: <strong>pace, power and attacking force alone cannot win you World Cups against puritanical football.</strong> For a purist, that is genuinely heartening. The idea won.</p>
+  </div>
+
+  <div class="pull">Arguably the best attacking team on earth met the best technical team on earth — and failed completely, for the second time in two years. Pace and power alone cannot beat puritanical football. For the purists, that is a heartening night.
+    <span class="a">— The philosophy, vindicated</span>
+  </div>
+
+  <h2><span class="ic">📋</span> The Performers</h2>
+  <div class="ratings">
+    <div class="rt"><b>Rodri</b> — <span class="good">Outstanding, again</span>. Protected the defence, screened every French transition at source, and dictated tempo untouched. The central character of the Armada, as ever.</div>
+    <div class="rt"><b>Dani Olmo</b> — <span class="good">Brilliant, as all tournament</span>. The main creator of the second goal with a sublime lay-off, plus a back-heel that nearly made another. Spain's most consistently excellent player.</div>
+    <div class="rt"><b>Marc Cucurella</b> — <span class="good">At his best, both ways</span>. Superb going forward and utterly reliable at the back — the complete full-back display we've been waiting for.</div>
+    <div class="rt"><b>Lamine Yamal</b> — <span class="good">Full of tricks</span>. Won the penalty, tormented Digne all night, and had a beautiful goal disallowed for the tightest of offsides. Turned 19 the day before.</div>
+    <div class="rt"><b>Unai Simón</b> — <span class="good">Sweeper and saviour</span>. Raced from his box to snuff out a breakaway, then made his first actual save on 64 minutes. Now 650+ minutes without conceding — a World Cup record.</div>
+    <div class="rt"><b>Ousmane Dembélé</b> — <span class="bad">Absent</span>. The reigning Ballon d'Or winner, inconsistent as ever across his career — brilliant one day, missing the next. Tonight: not a single cross into the box.</div>
+    <div class="rt"><b>Kylian Mbappé</b> — <span class="bad">Erased, then frustrated</span>. Caught by the high line all night, absent until the hour, and his lasting contribution a needless yellow card for fouling Simón.</div>
+    <div class="rt"><b>Barcola &amp; Olise</b> — <span class="bad">Both replaced</span>. Deschamps' pace-over-polish gamble on Barcola never fired; Olise was shuffled and then withdrawn. No spark from either flank.</div>
+  </div>
+
+  <h2><span class="ic">🔮</span> And Still Not Their Best — the frightening thought</h2>
+  <p>Here is the observation that should terrify whoever emerges from the other semi-final. As we have analysed repeatedly, <strong>Spain are still not playing at their best.</strong> They remain the team that creates far more than it converts, that eases rather than annihilates, that keeps something in reserve. Neither was tonight their absolute ceiling. <strong>And yet this was, by some distance, the most perfect match they have played in this tournament</strong> — a complete, flawless dismantling of the highest-ranked team on the planet and the most feared attack in football, without ever appearing to strain. That is quite some saying. <strong>Imagine what happens when they finally play to their full potential.</strong> Spain have now conceded a single goal in the entire tournament; Unai Simón holds the World Cup record for minutes without conceding at 650 and counting; and two more clean sheets would make them the meanest champions in the history of the competition. One match stands between them and that.</p>
+
+  <h2><span class="ic">🏆</span> The Final — Who's Waiting at MetLife?</h2>
+  <p>Spain now await the winner of England vs Argentina in Atlanta. The two possible finals could hardly be more different in character — and both, in their way, would test whether this Spanish idea can complete the job.</p>
+
+  <div class="move">
+    <div class="mh"><span class="mtag future">Final Scenario A</span><span class="mt">🇪🇸 Spain vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England — the control derby</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="26" x2="360" y2="294" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="32" y="50" font-size="14" font-weight="800" fill="#ffc400">🇪🇸 Spain would…</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="32" y="78">▸ Dominate the ball — England cede it</text>
+        <text x="32" y="100">▸ Rodri vs Rice: the technical mismatch</text>
+        <text x="32" y="122">▸ Yamal vs England's left — a mauling risk</text>
+        <text x="32" y="144">▸ Bank on England's incoherence</text>
+      </g>
+      <rect x="30" y="164" width="302" height="126" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="46" y="190" font-size="12.5" font-weight="800" fill="#ffc400">The danger:</text>
+      <text x="46" y="212" font-size="11.5" fill="#cdd6e2">England's set-pieces &amp; Bellingham's</text>
+      <text x="46" y="230" font-size="11.5" fill="#cdd6e2">individual moments — the one route</text>
+      <text x="46" y="248" font-size="11.5" fill="#cdd6e2">past a side that concedes nothing.</text>
+      <text x="46" y="274" font-size="11" fill="#8df0c2">Verdict: Spain heavy favourites.</text>
+      <text x="392" y="50" font-size="14" font-weight="800" fill="#e8edf4">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England would…</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="78">▸ Sit deep, stay compact, absorb</text>
+        <text x="392" y="100">▸ Hope Bellingham conjures a moment</text>
+        <text x="392" y="122">▸ Load the box at every set-piece</text>
+        <text x="392" y="144">▸ Pray it reaches penalties</text>
+      </g>
+      <rect x="390" y="164" width="300" height="126" rx="8" fill="#101722" stroke="#2a3546"/>
+      <text x="406" y="190" font-size="12.5" font-weight="800" fill="#e8edf4">The problem:</text>
+      <text x="406" y="212" font-size="11.5" fill="#cdd6e2">they were outplayed by Norway and</text>
+      <text x="406" y="230" font-size="11.5" fill="#cdd6e2">slammed by Tuchel. Parking the bus</text>
+      <text x="406" y="248" font-size="11.5" fill="#cdd6e2">against this Spain rarely ends well.</text>
+      <text x="406" y="274" font-size="11" fill="#ff9ba1">Spain's block has conceded once.</text>
+    </svg>
+
+    <p class="expl"><strong>A Spain-England final would be the more one-sided of the two on current form.</strong> England have been thoroughly unconvincing — outplayed for long spells by Norway, dependent on Bellingham's individual brilliance, and publicly criticised by their own manager. They would almost certainly cede the ball and try to defend deep, hunt set-pieces, and drag it toward penalties. But <strong>that is precisely the game Spain have beaten all tournament</strong> — Portugal, Belgium and now France all tried variations of it. The Rodri-vs-Rice midfield contrast would be stark, and Yamal against England's left side a serious mismatch. Spain would be heavy favourites; England's hope would rest on the two things they genuinely do have: dead-ball threat, and a talisman capable of settling any game on his own.</p>
+  </div>
+
+  <div class="move">
+    <div class="mh"><span class="mtag future">Final Scenario B</span><span class="mt">🇪🇸 Spain vs 🇦🇷 Argentina — technique vs the magician</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="26" x2="360" y2="294" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="32" y="50" font-size="14" font-weight="800" fill="#ffc400">🇪🇸 Spain would…</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="32" y="78">▸ Monopolise the ball — Argentina let them</text>
+        <text x="32" y="100">▸ Starve Messi of the ball at source</text>
+        <text x="32" y="122">▸ Attack Argentina's leaky KO defence</text>
+        <text x="32" y="144">▸ Exploit the aged legs over 90+ mins</text>
+      </g>
+      <rect x="30" y="164" width="302" height="126" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="46" y="190" font-size="12.5" font-weight="800" fill="#ffc400">The key:</text>
+      <text x="46" y="212" font-size="11.5" fill="#cdd6e2">Rodri's screen vs Messi's pockets. If</text>
+      <text x="46" y="230" font-size="11.5" fill="#cdd6e2">Spain deny him the ball entirely,</text>
+      <text x="46" y="248" font-size="11.5" fill="#cdd6e2">Argentina have no Plan B at all.</text>
+      <text x="46" y="274" font-size="11" fill="#8df0c2">Verdict: Spain favoured, narrowly.</text>
+      <text x="392" y="50" font-size="14" font-weight="800" fill="#a9d8f5">🇦🇷 Argentina would…</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="78">▸ Cede possession happily — sit &amp; strike</text>
+        <text x="392" y="100">▸ Control the tempo, slow it to a crawl</text>
+        <text x="392" y="122">▸ Feed Messi &amp; pray for magic</text>
+        <text x="392" y="144">▸ Back Dibu in any shootout</text>
+      </g>
+      <rect x="390" y="164" width="300" height="126" rx="8" fill="#101722" stroke="#2a3f52"/>
+      <text x="406" y="190" font-size="12.5" font-weight="800" fill="#a9d8f5">The threat:</text>
+      <text x="406" y="212" font-size="11.5" fill="#cdd6e2">Messi needs one half-yard, and Spain's</text>
+      <text x="406" y="230" font-size="11.5" fill="#cdd6e2">profligacy could leave the door open.</text>
+      <text x="406" y="248" font-size="11.5" fill="#cdd6e2">Champions' will is not a statistic.</text>
+      <text x="406" y="274" font-size="11" fill="#bcd9f6">Dibu makes penalties Argentina's.</text>
+    </svg>
+
+    <p class="expl"><strong>A Spain-Argentina final would be the richer, more finely balanced contest — and the one the neutrals want.</strong> It would pit the tournament's most complete technical machine against its most stubborn, magician-led survivors: <strong>Rodri's screen against Messi's pockets, Spain's geometry against Argentina's control of time.</strong> The tactical crux is clear — Spain's method is to deny the opponent the ball entirely, and <strong>Argentina, as we saw against Switzerland, have no Plan B once Messi is starved.</strong> If Rodri and Cubarsí do to Messi what they did to Mbappé, Argentina's aged legs would have nothing left to offer. But Messi is not Mbappé; he needs no space to run into, only a half-yard to think in — and Spain's chronic wastefulness in front of goal would leave the door ajar for exactly the kind of late, improbable moment Argentina have made their signature. Add Dibu Martínez waiting in any shootout, and you have a genuine final. <strong>Spain would be favoured — but only narrowly, and never comfortably.</strong></p>
+  </div>
+
+  <div class="nextfix">
+    <div class="nx"><div class="d">Semi-Final · WON (2-0)</div><div class="g">A masterclass</div><div class="n">Spain dismantled the world's No.1 and the tournament's most feared attack without conceding a shot on target for an hour.</div></div>
+    <div class="nx"><div class="d">🏆 The Final · MetLife, Jul 19</div><div class="g">🇪🇸 Spain vs England/Argentina</div><div class="n">One of our four is already in the final. Spain are 90 minutes from a second world title — and from being the meanest champions in history.</div></div>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">📊</span> The Last Word</h2>
+    <p>Spain are in the World Cup final, and they got there by winning an argument, not just a football match. This was a purely technical performance — perfect passing, triangles and quadrangles, and a defensive shape that denied the most feared attack on earth a single inch near the box. The high line caught Mbappé so relentlessly that he did not exist until the hour; Dembélé, inconsistent as ever, managed not one cross; Barcola and Olise were withdrawn; and France's frustration distilled into their captain's needless yellow card for fouling Unai Simón. It was, remarkably, a repeat of the Euro 2024 semi-final — the best attacking team in the world meeting the best technical team in the world and failing, completely, for a second time. Pace and power cannot beat puritanical football, and for a purist that is a beautiful thing to know. Olmo was brilliant, Cucurella complete, Yamal irrepressible, and Rodri untouchable. And the most chilling part: <strong>this was Spain's most perfect match of the tournament, and still not their best. Imagine the ceiling. One more to go. Vamos España.</strong></p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

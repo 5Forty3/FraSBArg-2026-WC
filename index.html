@@ -516,7 +516,10 @@ const QF = [
 /* ---------- Finals stage: 2 semis, 3rd place, final ---------- */
 const SF = [
  {id:'SF1', slot:'sf', v:"Dallas", ist:"12:30 AM IST · Wed 15 Jul", ko:"2026-07-14T19:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'es',n:"Spain"}, ours:true, key:"France/Spain", marquee:true,
-   pre:"france-spain-prematch.html",
+   pre:"france-spain-prematch.html", post:"france-spain-postmatch.html",
+   win:'b',
+   result:{sa:0, sb:2, done:true, scorers:"⚽ Spain: Oyarzabal 22' (pen), Porro 58' · Yamal goal disallowed (offside)", note:"A technical masterclass — Spain erase the world's most feared attack and reach the final"},
+   verdict:"Spain dismantle France 2-0 — into the MetLife final",
    feeds:"France (beat Morocco 2-0) vs Spain (beat Belgium 2-1) — CONFIRMED · Match 101",
    intro:"The tie of the tournament — a final a round early. Two of our four collide in the last four, and one of France or Spain is guaranteed to go out. The most explosive attack in North America against the most complete control side and (until Belgium) the meanest defence. Tap either flag or name above to switch between the two teams' philosophy and tactics.",
    sides:{
@@ -541,14 +544,19 @@ const SF = [
    form:"Argentina outlasted 10-man Switzerland 3-1 in extra time via an Álvarez golazo. England ground past Norway 2-1 in extra time — a performance so poor manager Tuchel publicly criticised them.",
    star:"messi",
    pred:"Argentina favoured on big-game pedigree, Messi's genius and shootout insurance — but their aged legs and one-dimensional, Messi-reliant attack are real vulnerabilities, and England are fresher. If England can cage Messi and find rhythm, an upset is on; but on current form, the champions' will and quality edge a tight, tense semi. A 2022-final echo hangs in the air."},
- {id:'TP', slot:'third', v:"Miami", ist:"2:30 AM IST · Sun 19 Jul", ko:"2026-07-18T21:00:00Z", a:{iso:'_tbd',n:"Loser SF1"}, b:{iso:'_tbd',n:"Loser SF2"}, ours:false,
-   feeds:"Loser SF1 vs Loser SF2 · Third-Place Play-off · Match 103",
-   phil:"The bronze-medal match — the two beaten semi-finalists meet in Miami, 24 hours before the final. Often a free-flowing, pressure-off spectacle between two of the tournament's best four sides.",
-   pred:"To be confirmed after the semi-finals. A consolation for two heavyweights denied the final — pride, and a place on the World Cup podium, on the line."},
- {id:'FIN', slot:'final', v:"New York / NJ", ist:"12:30 AM IST · Mon 20 Jul", ko:"2026-07-19T19:00:00Z", a:{iso:'_tbd',n:"Winner SF1"}, b:{iso:'_tbd',n:"Winner SF2"}, ours:false, marquee:true,
-   feeds:"Winner SF1 vs Winner SF2 · THE FINAL · Match 104 · MetLife Stadium",
-   phil:"The World Cup Final. The last act, at MetLife Stadium in East Rutherford — the same ground where Argentina dream of lifting the trophy again. Two nations, one match, football immortality. The first-ever live World Cup Final halftime show (Coldplay's Chris Martin curating, Shakira among performers) frames the occasion.",
-   pred:"To be confirmed after the semi-finals. Whoever reaches here will be 90 minutes — or 120, or a shootout — from the greatest prize in the sport. On current form, a France–Argentina final would be a dream: Mbappé vs Messi, one last time, for the crown."},
+ {id:'TP', slot:'third', v:"Miami", ist:"2:30 AM IST · Sun 19 Jul", ko:"2026-07-18T21:00:00Z", a:{iso:'fr',n:"France"}, b:{iso:'_tbd',n:"Loser SF2"}, ours:true, key:"France",
+   feeds:"France (lost to Spain 0-2) vs Loser SF2 (England/Argentina) · Third-Place Play-off · Match 103",
+   phil:"The bronze-medal match — the two beaten semi-finalists meet in Miami, 24 hours before the final. Often a free-flowing, pressure-off spectacle between two of the tournament's best four sides. France arrive after a chastening 2-0 semi-final defeat in which Spain's technical superiority left the world's most feared attack without a shot on target for an hour.",
+   form:"France's tournament ends in the same manner as Euro 2024 — outplayed by Spain in a semi-final. Six wins, 16 goals, and then a night when the idea behind their football was comprehensively answered. Deschamps' 14-year reign closes with this match.",
+   pred:"A bittersweet farewell fixture for Deschamps, whose long era ends here rather than at MetLife. France remain immensely talented — Mbappé is still tied for the Golden Boot on 8 goals — and will want a response after the Dallas humbling. Expect a more open, less inhibited France against whichever heavyweight joins them, with pride and a podium place at stake."},
+ {id:'FIN', slot:'final', v:"New York / NJ", ist:"12:30 AM IST · Mon 20 Jul", ko:"2026-07-19T19:00:00Z", a:{iso:'es',n:"Spain"}, b:{iso:'_tbd',n:"Winner SF2"}, ours:true, key:"Spain", marquee:true,
+   feeds:"Spain (beat France 2-0) vs Winner SF2 (England/Argentina) · THE FINAL · Match 104 · MetLife Stadium",
+   phil:"The World Cup Final. The last act, at MetLife Stadium in East Rutherford. Spain are through — the tournament's most complete technical side, having conceded a single goal in the entire competition and dismantled the world's No.1 in the semi. They now await England or Argentina. Two nations, one match, football immortality. The first-ever live World Cup Final halftime show (Coldplay's Chris Martin curating, Shakira among performers) frames the occasion.",
+   deep:"Spain's method is total: monopolise the ball, deny the opponent any moment of chaos, and strangle the game through Rodri's control. Against England, expect a heavy favouritism — the Rodri-vs-Rice gulf and Yamal against their left side would be mismatches, with England's only routes being set-pieces and a Bellingham moment. Against Argentina, a richer contest: Rodri's screen against Messi's pockets, Spain's geometry against Argentina's control of time. Starve Messi and Argentina have no Plan B — but he needs only a half-yard, and Spain's chronic wastefulness leaves a door ajar. Dibu Martínez would make any shootout Argentina's.",
+   team:"Spain's key men: Rodri (untouchable), Olmo (the tournament's most consistent creator), Yamal (19, full of tricks), Cucurella, Oyarzabal (4 goals), and Unai Simón — 650+ minutes without conceding, a World Cup record. Merino waits as the super-sub who has twice won knockout ties off the bench.",
+   form:"Spain have conceded ONE goal all tournament. Two more clean sheets would make them the meanest champions in World Cup history (France 1998, Italy 2006 and Spain 2010 each conceded two). They beat France 2-0 in the semi — their most perfect performance yet, and, remarkably, still not their best.",
+   star:"yamal",
+   pred:"Spain are 90 minutes from a second world title, and favourites against either opponent. Against England — heavy favourites; that parked-bus game is one they have beaten all tournament. Against Argentina — favoured, but narrowly and never comfortably; Messi needs only a moment, and Dibu tilts any shootout. The abiding thought: this Spain keep winning while holding something back. If they finally unleash it at MetLife, they could be remembered as one of the great champions."},
 ];
 
 /* ---------- helpers ---------- */

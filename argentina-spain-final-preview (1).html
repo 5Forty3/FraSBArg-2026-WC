@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Argentina vs Spain — The Dream Final</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--esp:#e63946;--espy:#ffc400;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#1a1608 0%,var(--bg) 60%);color:var(--txt);min-height:100vh;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(26px,5.6vw,44px);font-weight:800;margin-top:6px;line-height:1.08;
+    background:linear-gradient(90deg,#7cc0ec,#e9b949 50%,#ffc400);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:14.5px;margin-top:10px;font-style:italic}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+  .trophy{text-align:center;font-size:44px;margin:14px 0 4px}
+  .vsbar{display:flex;align-items:stretch;margin:24px 0 10px;border-radius:14px;overflow:hidden;border:1px solid #4a3c14}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .a{background:linear-gradient(135deg,#0e2536,#0d1117)}
+  .vsbar .s{background:linear-gradient(135deg,#2a1a06,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .a .nm{color:var(--arg2)}.vsbar .s .nm{color:var(--espy)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--gold);background:#0c1117}
+  .oddsbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .odds{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .odds .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .odds .v{font-size:20px;font-weight:800;margin-top:4px}
+  .odds .p{font-size:11px;color:var(--muted);margin-top:2px}
+  .odds.fav{border-color:#3a3014;background:linear-gradient(135deg,#1a1406,#101722)}
+  .odds.fav .v{color:var(--espy)}
+  h2{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16px;font-weight:800;color:var(--gold);margin:20px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:12px}
+  p strong{color:#fff}
+  .lead{font-size:15.5px}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.arg{border-left:3px solid var(--arg)}
+  .card.esp{border-left:3px solid var(--esp)}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .philo{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid var(--pur);border-radius:10px;padding:15px 17px;margin:16px 0}
+  .philo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+  .et{background:linear-gradient(135deg,#1a1226,#0f1117);border:1px solid #3d2b4a;border-left:3px solid #d98cff;
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .et .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d98cff}
+  .pull{border-left:3px solid var(--gold);background:linear-gradient(135deg,#1a1406,#0f1117);border-radius:0 10px 10px 0;
+    padding:16px 18px;margin:20px 0;font-size:17px;font-style:italic;color:#f0e6cf;line-height:1.6}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.key{background:rgba(185,140,255,.16);color:var(--pur)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+  .verdict{margin-top:22px;background:linear-gradient(135deg,#1c1608,#0f1117);border:1px solid #4a3c14;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:22px;font-weight:800;color:#fff;text-align:center;margin:8px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · THE FINAL</span>
+</div>
+
+<div class="wrap">
+
+  <div class="trophy">🏆</div>
+  <div class="tagrow">
+    <span class="badge">🔍 The Final · Deep Preview</span>
+    <span class="badge" style="background:rgba(185,140,255,.16);color:var(--pur);border-color:#3a2b4a">Two of our four</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">The Dream Final</span>
+  </div>
+  <h1>Argentina vs Spain</h1>
+  <div class="sub">The magician against the machine. The greatest player who ever lived against the most complete technical side in football. Two of our four, one trophy — and the perfect ending, whichever way it falls</div>
+  <div class="meta">🕒 12:30 AM IST, Mon 20 Jul · 📍 MetLife Stadium, East Rutherford, New Jersey · The World Cup Final</div>
+
+  <div class="vsbar">
+    <div class="side a"><div class="nm">🇦🇷 Argentina</div><div class="fm">Holders · Messi 8 goals · back-to-back finals · survived everything</div></div>
+    <div class="mid">🏆</div>
+    <div class="side s"><div class="nm">Spain 🇪🇸</div><div class="fm">Euro champions · 1 goal conceded ALL tournament · Simón 650+ mins</div></div>
+  </div>
+
+  <div class="oddsbar">
+    <div class="odds fav"><div class="l">Spain</div><div class="v">-175</div><div class="p">the favourites</div></div>
+    <div class="odds"><div class="l">The read</div><div class="v">Idea vs Genius</div><div class="p">the tie of the era</div></div>
+    <div class="odds"><div class="l">Argentina</div><div class="v">+125</div><div class="p">underdogs — again</div></div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:2px">BetMGM have Spain at -175, Argentina +125. The champions enter their own final as underdogs. They will not mind that at all.</p>
+
+  <div class="callout">
+    <div class="t">✦ The dream final — and the perfect FraSBArg ending</div>
+    <p style="margin:8px 0 0">When we picked our four — France, Spain, Brazil, Argentina — this was the outcome we could only have hoped for. <strong>Brazil, the weak link, fell to Norway. France fell to Spain in a semi-final that answered a philosophical question. And so our two best remain, and one of them will lift the World Cup on Sunday.</strong> It is, by any measure, the final the tournament deserves: <strong>the reigning champions against the European champions; the world's greatest ever player against the world's most complete team; the last dance of a 39-year-old magician against a 19-year-old prodigy just beginning.</strong> Spain arrive having conceded a single goal in the entire competition and having dismantled the world's No.1 without breaking sweat. Argentina arrive having been dead and buried four separate times and refusing, every time, to actually die. Something has to give.</p>
+  </div>
+
+  <h2><span class="ic">📊</span> The Two Roads — how they got here</h2>
+  <div class="card esp">
+    <h3 style="margin-top:0">🇪🇸 Spain — the machine that has barely been touched</h3>
+    <ul>
+      <li><strong>One goal conceded in the entire tournament.</strong> A World Cup record six straight clean sheets, broken only by De Ketelaere's Belgium strike. <strong>Unai Simón holds the all-time record for minutes without conceding (650+).</strong></li>
+      <li><strong>They beat France 2-0 in the semi</strong> — Oyarzabal's penalty and Porro's give-and-go — in what we called <a href="france-spain-postmatch.html">"The Triumph of the Purists"</a>: the most feared attack on earth did not test the goalkeeper's palms until the 64th minute.</li>
+      <li><strong>The method:</strong> monopolise the ball (65%+), triangles and quadrangles around Rodri, a millimetre-perfect high line, and a compact block that leaves no gaps between the lines. They deny you the ball, and therefore the game.</li>
+      <li><strong>The flaw, still:</strong> they create far more than they convert. Portugal and Belgium both needed late Merino winners. This side <em>eases</em> to victory rather than annihilating — and as we've written all tournament, <strong>they are still not playing at their best.</strong></li>
+      <li><strong>The stakes:</strong> two more clean sheets — well, one now — and they would be the meanest champions in World Cup history.</li>
+    </ul>
+  </div>
+  <div class="card arg">
+    <h3 style="margin-top:0">🇦🇷 Argentina — the team that will not die</h3>
+    <ul>
+      <li><strong>Four near-deaths:</strong> extra time against Cape Verde; 2-0 down to Egypt; second-best to Switzerland until a red card; and 1-0 down to England with five minutes left. <strong>They have won every single one.</strong></li>
+      <li><strong>Messi:</strong> 8 goals (Golden Boot lead), the all-time World Cup assists record, and two assists in six minutes to bury England. At 39, this is <strong>his THIRD World Cup final</strong> (2014, 2022, 2026) — one more than Maradona ever reached — and back-to-back on top of it. Should he start, <strong>he becomes the only player in history to start three World Cup finals</strong>, joining Cafu as the only man to appear in three at all. As we argued, he has <a href="argentina-england-postmatch.html">made himself immortal</a>.</li>
+      <li><strong>The method:</strong> control the tempo (the Riquelme inheritance), pack the midfield, feed Messi, defend the box with numbers and know-how. It is not a system so much as a delivery mechanism for a genius.</li>
+      <li><strong>The defence — reappraised:</strong> the leaky back line finally showed up against England. <strong>Romero, Lisandro and Paredes were immense, winning ~80% of the contested balls and holding Kane and Bellingham to a single shot between them.</strong> If that version turns up at MetLife, Spain have a genuine problem. <strong>But there is one crack: Nahuel Molina lacks pace and was repeatedly caught wanting on the right — and England's only goal came down exactly that flank.</strong></li>
+      <li><strong>The other flaws, unchanged:</strong> aged legs after two extra-time marathons, and a chronic absence of a Plan B — though Simeone's width and Scaloni's attacking substitutions against England were, at last, an encouraging answer.</li>
+      <li><strong>The stakes:</strong> the first back-to-back World Cup winners in 64 years (joining only Italy 1934-38 and Brazil 1958-62), Argentina's seventh final, and the perfect final chapter for the greatest career in the sport's history.</li>
+    </ul>
+  </div>
+
+  <h2><span class="ic">⚔️</span> Battle #1 — The Central Duel: Rodri's screen vs Messi's pockets</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Tie's Beating Heart</span><span class="mt">The best screening midfielder alive against the best player who ever lived</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="f1a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="f1b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi seeks the pocket; Rodri's screen is the one that has never been beaten</text>
+      <g><circle cx="360" cy="42" r="11" fill="#e63946" stroke="#fff" stroke-width="1.3"/><text x="360" y="46" font-size="7" fill="#fff" text-anchor="middle">SIMÓN</text></g>
+      <!-- spain back line -->
+      <g font-size="8.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="250" cy="135" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="250" y="139">CUC</text>
+        <circle cx="325" cy="122" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="325" y="126">LAP</text>
+        <circle cx="400" cy="122" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="400" y="126">CUB</text>
+        <circle cx="475" cy="135" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="475" y="139">POR</text>
+      </g>
+      <!-- the screen zone -->
+      <path d="M270 185 L455 185 L440 250 L285 250 Z" fill="#ffc400" opacity=".14" stroke="#ffc400" stroke-opacity=".55" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="362" y="270" text-anchor="middle" font-size="10" fill="#ffe98a">the zone Rodri owns — no one has entered it all tournament</text>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="310" cy="195" r="13" fill="#ff8e95" stroke="#fff" stroke-width="1.5"/><text x="310" y="199">RODRI</text>
+        <circle cx="420" cy="195" r="12" fill="#ff8e95" stroke="#fff" stroke-width="1.3"/><text x="420" y="199">FAB</text>
+      </g>
+      <!-- Messi seeking pocket -->
+      <g><circle cx="365" cy="300" r="15" fill="#7cc0ec" stroke="#fff" stroke-width="1.7"/><text x="365" y="304" font-size="9" fill="#0a0e14" text-anchor="middle">MESSI</text></g>
+      <text x="365" y="330" text-anchor="middle" font-size="9.5" fill="#bcd9f6">drops, drifts, hunts a half-yard</text>
+      <!-- attempts to enter -->
+      <g stroke="#7cc0ec" stroke-width="2.5" stroke-dasharray="6 4">
+        <path d="M352 288 C 330 265, 318 235, 314 212" marker-end="url(#f1b)"/>
+        <path d="M380 290 C 405 265, 418 235, 422 212" marker-end="url(#f1b)"/>
+      </g>
+      <!-- Rodri closing -->
+      <g stroke="#ffc400" stroke-width="2.5">
+        <path d="M310 210 L340 280" marker-end="url(#f1a)"/>
+      </g>
+      <text x="600" y="230" font-size="10" fill="#ffe98a" text-anchor="end">Rodri steps early — the pocket closes</text>
+      <text x="600" y="248" font-size="10" fill="#bcd9f6" text-anchor="end">…but Messi needs it only once</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Messi hunting the pocket</span>
+      <span><i style="border-top-color:#ffc400"></i> Rodri's screen closing it</span>
+    </div>
+
+    <p class="expl"><strong>Everything else in this final is decoration. This is the match.</strong> Spain's entire defensive superiority — one goal conceded in six matches — is built on the fact that <strong>Rodri owns the zone between the lines, and nobody has been allowed into it all tournament.</strong> He steps early, screens the entry pass, and turns the space where creators live into a place that simply doesn't exist. He did it to France; he has done it to everyone. And Argentina's entire attacking existence depends on <strong>Messi finding exactly that pocket, receiving, turning, and creating.</strong> The whole final reduces to one question: <em>can Rodri deny Messi the half-yard?</em> Every other opponent has tried and failed to cage the Argentine — Switzerland used three men, England used a forest of giants, and both were beaten by moments of pure invention. But none of them had Rodri. And here is the asymmetry that makes this so delicious: <strong>Rodri must win this duel for ninety-plus minutes. Messi has to win it once.</strong></p>
+  </div>
+
+  <h2><span class="ic">🎯</span> Battle #2 — Why Messi is the one man Spain's high line cannot catch</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · The Threat</span><span class="mt">The trap that erased Mbappé is useless against a player who never runs behind</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="f2a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="f2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+        <marker id="f2x" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · the offside trap needs a runner to catch — Messi gives it none</text>
+      <g><circle cx="360" cy="42" r="11" fill="#e63946" stroke="#fff" stroke-width="1.3"/><text x="360" y="46" font-size="7" fill="#fff" text-anchor="middle">SIMÓN</text></g>
+      <!-- the high line -->
+      <line x1="30" y1="190" x2="690" y2="190" stroke="#ffc400" stroke-width="3" stroke-dasharray="10 6" opacity=".9"/>
+      <text x="660" y="182" font-size="10" font-weight="700" fill="#ffc400" text-anchor="end">the high line that erased Mbappé</text>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="290" cy="190" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="290" y="194">LAP</text>
+        <circle cx="430" cy="190" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="430" y="194">CUB</text>
+      </g>
+      <!-- Mbappe ghost - the runner it catches -->
+      <g opacity=".4"><circle cx="560" cy="150" r="12" fill="#3b82d6" stroke="#ff5d6a" stroke-width="2"/><text x="560" y="154" font-size="8" fill="#fff" text-anchor="middle">MBA</text></g>
+      <text x="560" y="128" text-anchor="middle" font-size="8.5" fill="#ff9ba1">a runner: caught (France, SF)</text>
+      <path d="M560 240 L560 168" stroke="#ff5d6a" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#f2x)" opacity=".5"/>
+      <!-- Messi in front, not behind -->
+      <g><circle cx="300" cy="265" r="15" fill="#7cc0ec" stroke="#fff" stroke-width="1.7"/><text x="300" y="269" font-size="9" fill="#0a0e14" text-anchor="middle">MESSI</text></g>
+      <text x="300" y="296" text-anchor="middle" font-size="9.5" fill="#bcd9f6">receives IN FRONT — never offside</text>
+      <!-- the through ball he plays instead -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="520" cy="230" r="12" fill="#39d98a" stroke="#fff" stroke-width="1.4"/><text x="520" y="234" fill="#06301d">LAU</text>
+      </g>
+      <path d="M316 258 C 390 240, 470 232, 506 230" stroke="#7cc0ec" stroke-width="3.5" fill="none" marker-end="url(#f2a)"/>
+      <text x="410" y="222" font-size="9.5" fill="#bcd9f6">he passes it — he doesn't race it</text>
+      <path d="M528 218 C 545 190, 520 130, 440 70" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#f2g)"/>
+      <text x="600" y="180" font-size="10" fill="#bff0d0" text-anchor="end">the runner arrives late — timed by Messi</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec"></i> Messi's pass from in front of the line</span>
+      <span><i style="border-top-color:#39d98a"></i> The late run he times</span>
+      <span><i style="border-top-color:#ff5d6a;border-top-style:dashed"></i> The runner the trap catches</span>
+    </div>
+
+    <p class="expl"><strong>Here is the single most important tactical fact of this final, and the reason Argentina genuinely can win it.</strong> Spain's high line destroyed France because <strong>an offside trap needs a runner to catch — and Mbappé is a runner.</strong> His whole threat is the sprint in behind; step up as one, and his greatest weapon becomes his cage. <strong>But Messi does not run in behind. He never has.</strong> He receives in front of the line, facing it, with the ball at his feet — a position in which the offside law is simply irrelevant. You cannot trap a man who doesn't go anywhere. <strong>Spain's most devastating defensive weapon is, against this specific opponent, close to useless.</strong> Worse for them: Messi's genius is precisely in timing <em>other</em> men's runs — Lautaro's, Álvarez's, Enzo's late arrivals — and a high line is exactly what makes those runs lethal if the pass is perfect. And his passes, as England discovered twice in six minutes, are perfect. <strong>Spain must defend Messi with bodies and pressure, not with geometry. That is a far harder night's work than the one they had against France.</strong></p>
+  </div>
+
+  <h2><span class="ic">🕸️</span> Battle #3 — Spain's control vs Argentina's happy surrender of the ball</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain · The Strangle</span><span class="mt">Deny Argentina the ball and you deny Messi the ball — the only proven method</span></div>
+
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="f3" markerWidth="8" markerHeight="8" refX="5.5" refY="2.6" orient="auto"><path d="M0,0 L6,2.6 L0,5.2 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="420" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="52"/><rect y="104" width="720" height="52"/><rect y="208" width="720" height="52"/><rect y="312" width="720" height="52"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="392" rx="4"/></g>
+      <text x="360" y="412" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain in possession — the triangles that starved France. Messi cannot conjure what he never touches.</text>
+      <path d="M180 300 L310 225 L180 155 Z" fill="#ffc400" opacity=".10" stroke="#ffc400" stroke-opacity=".5" stroke-width="1.5"/>
+      <path d="M310 225 L450 160 L560 235 L430 300 Z" fill="#ffc400" opacity=".10" stroke="#ffc400" stroke-opacity=".5" stroke-width="1.5"/>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="180" cy="300" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="180" y="304">CUC</text>
+        <circle cx="180" cy="155" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="180" y="159">LAP</text>
+        <circle cx="310" cy="225" r="14" fill="#ff8e95" stroke="#fff" stroke-width="1.6"/><text x="310" y="229">RODRI</text>
+        <circle cx="450" cy="160" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="450" y="164">OLMO</text>
+        <circle cx="560" cy="235" r="13" fill="#ffc400" stroke="#fff" stroke-width="1.4"/><text x="560" y="239">YAM</text>
+        <circle cx="430" cy="300" r="12" fill="#ff8e95" stroke="#fff" stroke-width="1.3"/><text x="430" y="304">FAB</text>
+      </g>
+      <g stroke="#ffc400" stroke-width="2.5" fill="none" opacity=".95">
+        <path d="M192 294 L298 231" marker-end="url(#f3)"/>
+        <path d="M310 211 L186 165" marker-end="url(#f3)"/>
+        <path d="M192 163 L296 217" marker-end="url(#f3)"/>
+        <path d="M324 219 L436 166" marker-end="url(#f3)"/>
+        <path d="M462 166 L548 227" marker-end="url(#f3)"/>
+        <path d="M552 247 L442 295" marker-end="url(#f3)"/>
+        <path d="M418 295 L324 235" marker-end="url(#f3)"/>
+      </g>
+      <!-- Messi isolated, watching -->
+      <g><circle cx="620" cy="350" r="14" fill="#7cc0ec" stroke="#ff5d6a" stroke-width="2"/><text x="620" y="354" font-size="9" fill="#0a0e14" text-anchor="middle">MESSI</text></g>
+      <text x="620" y="382" text-anchor="middle" font-size="10" fill="#ffb0b3">starved — a spectator</text>
+      <text x="620" y="326" text-anchor="middle" font-size="9" fill="#bcd9f6">40% possession = fewer touches</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400"></i> Spain's circulation — the ball Argentina never see</span>
+    </div>
+
+    <p class="expl"><strong>Spain's answer to the Messi problem isn't to defend him. It's to make sure he never gets the ball.</strong> This is the elegance of their method and why it has beaten everyone: <strong>at 65% possession, the opponent's best player simply has fewer touches</strong> — and a magician who touches the ball thirty times instead of sixty has half the chances to conjure. France's front three starved to death this way; Mbappé didn't test the keeper until the 64th minute not only because of the high line but because <em>the ball was never there.</em> The good news for Spain: <strong>Argentina are entirely comfortable ceding possession</strong> — they averaged just 48% against England and were happy with it — which means Spain will get their monopoly without a fight. The bad news: <strong>Argentina were also happy to cede it against England and still won, because they don't need volume, they need one moment.</strong> Spain's control worked against a team that requires rhythm and space. It has never been tested against a team that requires neither.</p>
+  </div>
+
+  <h2><span class="ic">🧠</span> Battle #4 — The lesson England taught: how NOT to defend Messi</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Warning</span><span class="mt">England had height and no imagination. Spain must not repeat it.</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="400" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="26" x2="360" y2="374" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="32" y="50" font-size="14" font-weight="800" fill="#ff8e95">🏴󠁧󠁢󠁥󠁮󠁧󠁿 What England did (and lost)</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="32" y="80">▸ Took a lead, then bunkered for 35 mins</text>
+        <text x="32" y="102">▸ Withdrew the goalscorer for a defender</text>
+        <text x="32" y="124">▸ Brought on 6'7" and 6'4" centre-backs</text>
+        <text x="32" y="146">▸ Ended with a wall of tall men, no outlet</text>
+        <text x="32" y="168">▸ Result: 36% ball, 0.53 xG, 2 shots on target</text>
+        <text x="32" y="190">▸ Kane + Bellingham: ONE shot combined</text>
+      </g>
+      <rect x="30" y="212" width="302" height="152" rx="8" fill="#101722" stroke="#4a1518"/>
+      <text x="46" y="238" font-size="12.5" font-weight="800" fill="#ff8e95">Why it failed:</text>
+      <text x="46" y="262" font-size="11.5" fill="#cdd6e2">Height is a reaction, not a plan. Messi</text>
+      <text x="46" y="280" font-size="11.5" fill="#cdd6e2">simply stopped playing high balls, took</text>
+      <text x="46" y="298" font-size="11.5" fill="#cdd6e2">short corners instead, and manufactured</text>
+      <text x="46" y="316" font-size="11.5" fill="#cdd6e2">a better angle from open play.</text>
+      <text x="46" y="344" font-size="11.5" font-weight="700" fill="#ffb0b3">They had the size. They had no idea.</text>
+
+      <text x="392" y="50" font-size="14" font-weight="800" fill="#ffc400">🇪🇸 What Spain must do instead</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="80">▸ Never surrender the ball or the tempo</text>
+        <text x="392" y="102">▸ Keep the block high — don't invite pressure</text>
+        <text x="392" y="124">▸ Rodri screens; don't collapse three men</text>
+        <text x="392" y="146">▸ Attack Argentina's leaky, aged back line</text>
+        <text x="392" y="168">▸ Score the second goal — 1-0 is not safe</text>
+        <text x="392" y="190">▸ Above all: do NOT sit on a lead</text>
+      </g>
+      <rect x="390" y="212" width="300" height="152" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="406" y="238" font-size="12.5" font-weight="800" fill="#ffc400">Why it could work:</text>
+      <text x="406" y="262" font-size="11.5" fill="#cdd6e2">Spain don't defend by retreating — they</text>
+      <text x="406" y="280" font-size="11.5" fill="#cdd6e2">defend by owning the ball. That is the one</text>
+      <text x="406" y="298" font-size="11.5" fill="#cdd6e2">method Messi has no answer to, because</text>
+      <text x="406" y="316" font-size="11.5" fill="#cdd6e2">he cannot create without possession.</text>
+      <text x="406" y="344" font-size="11.5" font-weight="700" fill="#ffe98a">Starve him. Don't crowd him.</text>
+    </svg>
+
+    <p class="expl"><strong>The semi-final was a masterclass in how not to play against this Argentina, and Spain will have studied every second of it.</strong> England's error was believing that <strong>a lead plus height equals safety</strong>. They stripped out every attacking outlet, invited a 35-minute siege, and handed Messi the one thing he needs above all: <strong>the ball, in the opponent's half, over and over again.</strong> When the high balls bounced off the giants, he simply changed method — short corners, the ball on the floor, a manufactured angle — and Enzo's thunderbolt followed. <strong>Height is a reaction. Messi is a solver.</strong> Spain's great advantage is that their defensive philosophy is the opposite of England's: <strong>they don't defend by retreating, they defend by never giving you the ball.</strong> That is the one thing Messi genuinely has no answer to — he cannot solve a puzzle he isn't allowed to touch. But it comes with a corollary Spain must heed: <strong>if they take a 1-0 lead and the temptation comes to sit on it, as they have flirted with all tournament, they will lose.</strong> Against this man, passivity is suicide.</p>
+  </div>
+
+  <h2><span class="ic">🛡️</span> Battle #5 — Argentina's back line vs Spain's attack: and the Molina problem</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina · The Defence</span><span class="mt">The spine that silenced Kane and Bellingham — and the one flank Yamal will hunt</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="f5a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="f5x" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff5d6a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="290" width="320" height="130"/></g>
+      <rect x="310" y="412" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="30" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↓ · the Argentine spine holds the middle — so Spain will go where it is soft</text>
+
+      <g><circle cx="360" cy="396" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="400" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+
+      <!-- solid centre -->
+      <path d="M240 250 L470 250 L490 335 L220 335 Z" fill="#7cc0ec" opacity=".15" stroke="#7cc0ec" stroke-opacity=".5" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="350" y="232" text-anchor="middle" font-size="10" font-weight="700" fill="#bcd9f6">the spine that held England to 1 shot from Kane+Bellingham</text>
+
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="355" cy="262" r="12" fill="#a9d8f5" stroke="#fff" stroke-width="1.4"/><text x="355" y="266">PAREDES</text>
+        <circle cx="300" cy="335" r="13" fill="#a9d8f5" stroke="#fff" stroke-width="1.5"/><text x="300" y="339">ROMERO</text>
+        <circle cx="420" cy="335" r="13" fill="#a9d8f5" stroke="#fff" stroke-width="1.5"/><text x="420" y="339">LISANDRO</text>
+        <circle cx="170" cy="335" r="11" fill="#a9d8f5" stroke="#fff" stroke-width="1.2"/><text x="170" y="339">TAGLIA</text>
+      </g>
+
+      <!-- Oyarzabal blunted centrally -->
+      <g font-size="8.5" font-weight="700" text-anchor="middle">
+        <circle cx="340" cy="165" r="12" fill="#ffc400" stroke="#ff5d6a" stroke-width="2"/><text x="340" y="169" fill="#0a0e14">OYA</text>
+      </g>
+      <path d="M340 179 L352 246" stroke="#ff5d6a" stroke-width="2.5" stroke-dasharray="4 4" marker-end="url(#f5x)"/>
+      <g stroke="#ff3b46" stroke-width="3">
+        <path d="M334 202 L350 218"/><path d="M350 202 L334 218"/>
+      </g>
+      <text x="270" y="196" text-anchor="middle" font-size="9" fill="#ffb0b3">central route: shut</text>
+
+      <!-- Molina vs Yamal - the danger -->
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="580" cy="335" r="13" fill="#a9d8f5" stroke="#ff5d6a" stroke-width="2.5"/><text x="580" y="339">MOLINA</text>
+      </g>
+      <text x="592" y="364" text-anchor="middle" font-size="9" fill="#ff9ba1">no pace — the crack</text>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="640" cy="180" r="14" fill="#ffc400" stroke="#fff" stroke-width="1.7"/><text x="640" y="184">YAMAL</text>
+      </g>
+      <text x="640" y="152" text-anchor="middle" font-size="9.5" fill="#ffe98a">19, fearless, lives on this flank</text>
+      <path d="M636 196 C 622 240, 600 300, 590 318" stroke="#ffc400" stroke-width="3.5" fill="none" marker-end="url(#f5a)"/>
+      <path d="M568 328 C 500 300, 430 280, 380 268" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#f5a)"/>
+      <text x="470" y="300" font-size="9.5" fill="#ffe98a">beat him → cut inside → the cutback</text>
+      <text x="690" y="240" font-size="9" fill="#ffb0b3" text-anchor="end">Gordon found this lane once.</text>
+      <text x="690" y="256" font-size="9" fill="#ffb0b3" text-anchor="end">Yamal will find it repeatedly.</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Argentina's solid spine</span>
+      <span><i style="border-top-color:#ffc400"></i> Spain's route: Yamal at Molina</span>
+    </div>
+
+    <p class="expl"><strong>Argentina's defence is no longer the punchline it was, and Spain must reckon with that — but there is one flank that will decide a great deal.</strong> Against England, <strong>Romero and Lisandro Martínez were immense and Paredes screened superbly, winning roughly 80% of the contested balls and reducing two forwards with twelve tournament goals to a single shot.</strong> Centrally, Spain will find that same wall: Oyarzabal is not the man to break it alone, and Argentina defend their box with numbers and know-how. <strong>Which is precisely why this final runs down Argentina's right.</strong> <strong>Nahuel Molina lacks pace and was caught wanting repeatedly against England — whose only goal, Gordon's, came down exactly that side.</strong> England exploited it once and were too timid to go back. <strong>Lamine Yamal will not be timid.</strong> He is nineteen, fearless, and that touchline is his home — he tormented Digne there in the semi and knocked France out of Euro 2024 from the same spot. If Scaloni does not solve the Molina problem — a covering midfielder, Montiel, or a back three — Yamal could win Spain the World Cup on his own. <strong>The tie's likeliest goal comes from that duel.</strong></p>
+  </div>
+
+  <h2><span class="ic">🧤</span> Battle #6 — The Goalkeepers, and the shootout that might decide everything</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Last Line</span><span class="mt">Simón's record vs Dibu's dark arts — the goalkeepers' World Cup, one last time</span></div>
+
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="26" x2="360" y2="294" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="32" y="50" font-size="14" font-weight="800" fill="#ffc400">🇪🇸 Unai Simón</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="32" y="80">▸ 650+ minutes without conceding — a</text>
+        <text x="32" y="97" font-size="10.5" fill="#8b97a8">   World Cup all-time record</text>
+        <text x="32" y="120">▸ ONE goal conceded all tournament</text>
+        <text x="32" y="142">▸ Aggressive sweeper — races out to</text>
+        <text x="32" y="159" font-size="10.5" fill="#8b97a8">   kill breakaways before they start</text>
+        <text x="32" y="182">▸ Made his 1st save vs France on 64'</text>
+      </g>
+      <rect x="30" y="200" width="302" height="90" rx="8" fill="#101722" stroke="#3a3014"/>
+      <text x="46" y="226" font-size="12.5" font-weight="800" fill="#ffc400">The record on the line:</text>
+      <text x="46" y="250" font-size="11.5" fill="#cdd6e2">one more clean sheet and Spain become</text>
+      <text x="46" y="268" font-size="11.5" fill="#cdd6e2">the meanest champions in history.</text>
+
+      <text x="392" y="50" font-size="14" font-weight="800" fill="#a9d8f5">🇦🇷 Emiliano "Dibu" Martínez</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="80">▸ The definitive shootout goalkeeper of</text>
+        <text x="392" y="97" font-size="10.5" fill="#8b97a8">   his era — 2022 WC &amp; Copa hero</text>
+        <text x="392" y="120">▸ Below his best this tournament: low</text>
+        <text x="392" y="137" font-size="10.5" fill="#8b97a8">   save %, beaten in every knockout</text>
+        <text x="392" y="160">▸ But the mind games are undefeated</text>
+        <text x="392" y="182">▸ Spain: 1 win from 5 WC shootouts</text>
+      </g>
+      <rect x="390" y="200" width="300" height="90" rx="8" fill="#101722" stroke="#2a3f52"/>
+      <text x="406" y="226" font-size="12.5" font-weight="800" fill="#a9d8f5">The nightmare scenario for Spain:</text>
+      <text x="406" y="250" font-size="11.5" fill="#cdd6e2">120 minutes, 0-0, and Dibu Martínez</text>
+      <text x="406" y="268" font-size="11.5" fill="#cdd6e2">standing on the line. Their oldest demon.</text>
+    </svg>
+
+    <p class="expl"><strong>In a tournament that has belonged to goalkeepers — Bounou, Kobel, Nyland, Vozinha, Courtois — it is fitting that the final may turn on the two men in gloves.</strong> <strong>Unai Simón arrives with the most extraordinary record in World Cup history: 650+ minutes without conceding, one goal against Spain in the entire competition</strong>, and a sweeping, aggressive style that snuffs out danger before it becomes danger. One more clean sheet writes his name into the record books forever. <strong>Emiliano Martínez arrives with a worse tournament and a better reputation for exactly one thing: penalties.</strong> He has been beaten in every knockout game and his save percentage is uncharacteristically poor. None of which matters if this reaches a shootout — because Dibu's dark arts are undefeated, and <strong>Spain's shootout history is their oldest demon: one win from five World Cup shootouts, plus the 2024 Nations League final lost the same way.</strong> Spain's imperative could not be clearer: <strong>win this inside 90 or 120 minutes. Do not, under any circumstances, let it reach twelve yards.</strong></p>
+  </div>
+
+  <div class="philo">
+    <div class="t">🎭 The Philosophy — the Idea against the Individual</div>
+    <p style="margin:8px 0 0">Strip away the names and this final is the oldest argument in football, in its purest possible form. <strong>Spain are the triumph of the collective idea:</strong> a team where no single player is indispensable, where the system produces the goals, where the geometry does the work. They beat France by proving that pace and power cannot defeat puritanical football — a result that thrilled every purist alive. <strong>Argentina are the triumph of the individual:</strong> a structurally naive, aged team with no Plan B and a leaky defence, held aloft entirely by one 39-year-old who bends games to his will through sheer, unrepeatable genius.</p>
+    <p style="margin:10px 0 0">Two days ago the idea beat the individual, comprehensively. But Mbappé is not Messi — <strong>Mbappé is an athlete of supreme gifts; Messi is a solver of problems.</strong> Spain's method neutralised a weapon. It has never yet had to neutralise a mind. If Spain win, it is the definitive proof that modern football has finally solved the individual — that no genius, however transcendent, can beat a perfect collective. <strong>If Argentina win, it is the last, glorious refutation: that for all the systems and geometry and data, one man who sees what no one else sees can still decide everything.</strong> There has rarely been a final that meant this much, philosophically, to the sport itself.</p>
+  </div>
+
+  <div class="pull">Spain's high line erased Mbappé because a trap needs a runner to catch. Messi never runs. Spain's control starved France because their front three needed the ball. Messi needs it once. Everything that made Spain untouchable was designed for a problem this final does not present.
+    <span class="a">— Why the machine's greatest strengths may not apply</span>
+  </div>
+
+  <div class="et">
+    <div class="t">⏱️ Extra Time &amp; Penalties — the asymmetry</div>
+    <p style="margin:8px 0 0"><strong>Extra time favours Spain, heavily.</strong> Argentina have now gone to 120 minutes twice and been dragged to the brink four times; Romero was hooked through exhaustion against Switzerland. Spain, by contrast, have barely been touched — they eased past France without breaking sweat and have the deeper, fresher, younger squad. Add Merino, twice a late knockout matchwinner off the bench, and a 30-minute extension should be Spanish territory.</p>
+    <p style="margin:8px 0 0"><strong>Penalties favour Argentina, heavily.</strong> Dibu Martínez versus a Spain side with one win from five World Cup shootouts is about as lopsided as a lottery gets. Messi, Lautaro and Álvarez are ice-cold; Oyarzabal is Spain's one genuinely reliable taker.</p>
+    <p style="margin:8px 0 0"><strong>Which produces the strangest tension of the final:</strong> Spain must avoid the shootout at all costs, but their entire method — control, patience, strangle, wait — is precisely the football that produces goalless draws. <strong>The team best equipped to reach penalties is the team that least wants to.</strong> Meanwhile Argentina, who cannot afford a 120-minute footrace, would happily crawl to the shootout on their hands and knees.</p>
+  </div>
+
+  <div class="verdict">
+    <h2><span class="ic">🏆</span> The Verdict — the honest read on the dream final</h2>
+    <p><strong>Spain are the better team. That is simply true, and the bookmakers are right to make them favourites at -175.</strong> They are the most complete side in the tournament, they have conceded one goal in six matches, they have the best midfielder alive, the deepest squad, the freshest legs, and a method that has beaten every style thrown at it — including, most convincingly, the most feared attack on earth. If they play as they did against France, they win, and they may win comfortably.</p>
+    <p><strong>And yet I cannot pick them with any confidence, for two reasons.</strong> First, everything that makes Spain untouchable was built to solve problems Argentina do not pose. The high line erases runners; Messi is not a runner. The block denies space between the lines; Messi manufactures space that isn't there. Control starves teams that need rhythm; Argentina need one moment and have never once required more. <strong>Spain have beaten a machine. They have not yet beaten a magician.</strong> Second, the Argentine defence that everyone has spent this tournament calling leaky just produced its finest night at the perfect time — <strong>Romero, Lisandro and Paredes silenced Kane and Bellingham completely.</strong> If that back line turns up at MetLife, Spain's chronic wastefulness becomes a serious problem for them, not a footnote. And the man they face has now made himself immortal by doing precisely this — being dead, being caged, being written off, and finding a way regardless. Four times in this tournament alone.</p>
+    <p><strong>My honest verdict: Spain by a nose, on the balance of everything — but with the caveat that logic has been wrong about this Argentina at every single stage.</strong> Cape Verde, Egypt, Switzerland, England: four times the analysis said they were beaten, and four times they weren't. The likeliest route to a Spanish trophy is not Rodri caging Messi — it is <strong>Yamal, relentlessly, at Molina.</strong> That is the crack in an otherwise formidable Argentine defence, and Spain have exactly the player to prise it open. If they find it early, score first, and refuse to sit on the lead, they lift the trophy. If Scaloni plugs that flank, or if this reaches twelve yards, Argentina win it — and Messi's story ends in a way no scriptwriter would dare submit. <strong>Two of our four. The idea against the individual. Whatever happens, we could not have asked for more.</strong></p>
+    <div class="scoreline">🇦🇷 Argentina 1 — 2 Spain <span style="font-size:13px;color:var(--muted)">…but do not bet against the magician</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a tight, low-scoring final where Spain control and eventually convert their superiority. But the tournament's clearest lesson is that this Argentina cannot be counted out — and if it goes to penalties, the trophy is theirs.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain vs Argentina — The Total Football Final</title>
+<style>
+  :root{
+    --bg:#0a0e14;--panel:#121822;--panel-2:#19212e;--line:#26303f;
+    --txt:#e8edf4;--muted:#8b97a8;--gold:#e9b949;--green:#39d98a;
+    --arg:#7cc0ec;--arg2:#a9d8f5;--esp:#e63946;--espy:#ffc400;--blue:#5aa0e6;--red:#ff5d6a;--pur:#b98cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif;
+    background:radial-gradient(1300px 650px at 50% -10%,#1a1608 0%,var(--bg) 58%);color:var(--txt);min-height:100vh;line-height:1.66}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 90px}
+  .topnav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 14px;margin:0 auto 18px;max-width:920px}
+  .topnav a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--txt);transition:.16s}
+  .topnav a:hover{border-color:var(--gold);background:var(--panel-2)}
+  .topnav a.home{background:linear-gradient(135deg,var(--gold),#fff);color:#0a0e14;border-color:var(--gold)}
+  .topnav .nspacer{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  @media(max-width:520px){.topnav .nspacer{display:none}}
+  .trophy{text-align:center;font-size:46px;margin:10px 0 2px}
+  .tagrow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(233,185,73,.16);color:var(--gold);border:1px solid #3a2f12}
+  h1{text-align:center;font-size:clamp(27px,5.8vw,46px);font-weight:800;margin-top:6px;line-height:1.06;
+    background:linear-gradient(90deg,#7cc0ec,#e9b949 50%,#ffc400);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:15px;margin-top:12px;font-style:italic;max-width:760px;margin-left:auto;margin-right:auto}
+  .meta{text-align:center;color:var(--muted);font-size:13px;margin-top:8px}
+  .earlynote{max-width:720px;margin:16px auto 0;background:linear-gradient(135deg,#16110a,#101722);border:1px solid #3a2f12;border-radius:10px;padding:11px 15px;font-size:12.5px;color:#d9c9a4;text-align:center}
+  .vsbar{display:flex;align-items:stretch;margin:22px 0 10px;border-radius:14px;overflow:hidden;border:1px solid #4a3c14}
+  .vsbar .side{flex:1;padding:16px 18px}
+  .vsbar .a{background:linear-gradient(135deg,#0e2536,#0d1117)}
+  .vsbar .s{background:linear-gradient(135deg,#2a1a06,#0d1117);text-align:right}
+  .vsbar .nm{font-size:20px;font-weight:800}
+  .vsbar .a .nm{color:var(--arg2)}.vsbar .s .nm{color:var(--espy)}
+  .vsbar .fm{font-size:12px;color:var(--muted);margin-top:3px}
+  .vsbar .mid{display:flex;align-items:center;justify-content:center;padding:0 14px;font-weight:800;color:var(--gold);background:#0c1117}
+  .oddsbar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .odds{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+  .odds .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .odds .v{font-size:19px;font-weight:800;margin-top:4px}
+  .odds .p{font-size:11px;color:var(--muted);margin-top:2px}
+  .odds.fav{border-color:#3a3014;background:linear-gradient(135deg,#1a1406,#101722)}
+  .odds.fav .v{color:var(--espy)}
+  h2{font-size:21px;font-weight:800;margin:34px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .ic{font-size:18px}
+  h3{font-size:16.5px;font-weight:800;color:var(--gold);margin:22px 0 6px}
+  p{font-size:15px;color:#d3dbe6;margin-bottom:13px}
+  p strong{color:#fff}
+  .lead{font-size:16px;color:#e4ebf3}
+  .dropcap::first-letter{float:left;font-size:58px;line-height:46px;padding:6px 12px 2px 0;color:var(--gold);font-weight:800}
+  ul{margin:0 0 14px 0;padding:0;list-style:none}
+  li{font-size:14.5px;color:#cdd6e2;padding:6px 0 6px 22px;position:relative}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--green)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .card.arg{border-left:3px solid var(--arg)}
+  .card.esp{border-left:3px solid var(--esp)}
+  .philo{background:linear-gradient(135deg,#160f1e,#0f1117);border:1px solid #3a2b4a;border-left:3px solid var(--pur);border-radius:10px;padding:16px 18px;margin:18px 0}
+  .philo .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a8ff}
+  .callout{background:linear-gradient(135deg,#15202e,#101722);border:1px solid var(--line);border-left:3px solid var(--blue);
+    border-radius:10px;padding:14px 16px;margin:14px 0}
+  .callout .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+  .callout a{color:var(--arg2);font-weight:700}
+  .pull{border-left:3px solid var(--gold);background:linear-gradient(135deg,#1a1406,#0f1117);border-radius:0 10px 10px 0;
+    padding:18px 20px;margin:22px 0;font-size:18px;font-style:italic;color:#f0e6cf;line-height:1.55}
+  .pull .a{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.5px}
+  .move{background:#0c1722;border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .move .mh{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+  .move .mtag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .move .mtag.arg{background:rgba(124,192,236,.16);color:var(--arg2)}
+  .move .mtag.esp{background:rgba(255,196,0,.16);color:var(--espy)}
+  .move .mtag.key{background:rgba(185,140,255,.16);color:var(--pur)}
+  .move .mt{font-size:16.5px;font-weight:800}
+  .move svg{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0}
+  .move .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .move .legend span{display:flex;align-items:center;gap:6px}
+  .move .legend i{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+  .move .expl{font-size:14.5px;color:#d3dbe6;margin-top:10px}
+  .move .expl strong{color:#fff}
+  .verdict{margin-top:24px;background:linear-gradient(135deg,#1c1608,#0f1117);border:1px solid #4a3c14;border-radius:12px;padding:18px 20px}
+  .verdict h2{border:none;margin:0 0 8px;color:var(--gold)}
+  .scoreline{font-size:22px;font-weight:800;color:#fff;text-align:center;margin:10px 0 4px}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  @media(max-width:640px){.twocol{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">🏠 Home</a>
+  <a href="index.html">← Back to Bracket</a>
+  <span class="nspacer">FraSBArg · THE FINAL</span>
+</div>
+
+<div class="wrap">
+
+  <div class="trophy">🏆</div>
+  <div class="tagrow">
+    <span class="badge">🔍 The Final · The Grand Preview</span>
+    <span class="badge" style="background:rgba(124,192,236,.16);color:var(--arg2);border-color:#2a3f52">Two of our four</span>
+    <span class="badge" style="background:rgba(185,140,255,.16);color:var(--pur);border-color:#3a2b4a">The Total Football Final</span>
+  </div>
+  <h1>Spain vs Argentina</h1>
+  <div class="sub">Ever since Johan Cruyff gave the world a phrase in the 1970s, football has waited for a stage that would define it in full. This is that night: not a clash of styles, but a civil war within a single idea — two purest expressions of Total Football, fighting for the soul of the beautiful game</div>
+  <div class="meta">🕒 12:30 AM IST, Mon 20 Jul · 📍 MetLife Stadium, East Rutherford, New Jersey · The World Cup Final</div>
+  <div class="earlynote">✍️ A note on timing: we publish this one early, breaking our own custom of holding analysis until the hour before kickoff. Some matches earn an exception. This is the biggest game of the tournament — perhaps of a generation — and it deserves the room to breathe. Team sheets below are informed predictions from the best available reporting; we will not pretend they are confirmed.</div>
+
+  <div class="vsbar">
+    <div class="side a"><div class="nm">🇦🇷 Argentina</div><div class="fm">Holders · Messi · the magician's school of Total Football · back-to-back?</div></div>
+    <div class="mid">🏆</div>
+    <div class="side s"><div class="nm">Spain 🇪🇸</div><div class="fm">Euro champions · the collective's school · 1 goal conceded in 7</div></div>
+  </div>
+
+  <div class="oddsbar">
+    <div class="odds fav"><div class="l">Spain</div><div class="v">favourites</div><div class="p">the process team</div></div>
+    <div class="odds"><div class="l">The read</div><div class="v">Two totals</div><div class="p">one idea, two faiths</div></div>
+    <div class="odds"><div class="l">Argentina</div><div class="v">the value</div><div class="p">the emotional wave</div></div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:2px">The first World Cup final ever contested between the reigning champions of Europe and South America. Spain are narrow favourites on every model; Argentina chase a back-to-back double no nation has managed since Brazil in 1962. The market leans Spain; the heart of the world leans Messi.</p>
+
+  <h2><span class="ic">📜</span> The Thesis — A Civil War Within Total Football</h2>
+  <div class="essay">
+  <p class="lead dropcap">Ever since Johan Cruyff — one of the greatest footballing brains the game has produced — gave the world the phrase "Total Football" in the 1970s, the universe has been waiting for a match that would define it in its fullest force. Tonight could be that night: every purist's fantasy made flesh. Because the 2026 World Cup final is not, at heart, a clash of opposites. It is something rarer and more beautiful — a battle between two nuances of the same revolutionary idea. Spain and Argentina are not enemies of a philosophy. They are its two truest living heirs, fighting over which of them carries its soul.</p>
+
+  <p>It is no accident that Barcelona became the cradle of this new football in the 1970s. Europe had retreated into regressive, hard defence; Brazil had lost its expression after the sunlit peak of 1970. Where else could such a rebellion have been born but in the Catalan capital? Total Football at Barça was never merely a tactic. It was a way of expressing the beautiful game as a completely new artistry — a rebellion against the prevailing norms of the world, and, on the pitch, a backhand punch at the political injustices done to Catalonia. The football was the argument. The possession was the protest.</p>
+
+  <p>Barça — as the fans came to call it — kept those embers burning through decades of thick and thin, losing the battle again and again to their great rivals Real Madrid, and never once surrendering their puritanical expression of the idea. And other great minds came to nurture it into ever higher forms. <strong>Pep Guardiola distilled it into tiki-taka</strong>, and gave it to both Barcelona and the Spanish national team. <strong>Luis Enrique sharpened it with verticality</strong> — a lethal attacking trident that could bypass the midfield entirely and strike directly in transition. The gospel grew new testaments, but the scripture stayed the same.</p>
+
+  <p>And perhaps only one other nation was ever influenced as deeply as Spain: Argentina. The country already had <strong>"La Nuestra"</strong> — "our way," its own romantic, possession-loving street tradition — and Cruyff and Guardiola's modern school altered it utterly. Meanwhile the vertical, transitional strand of the same idea became the hallmark of one of the greatest coaching minds of the last half-century, <strong>Marcelo Bielsa</strong>, whose influence radiates through every serious Argentine coach alive. Through all of it ran the Catalan rebellion — an umbilical cord between Barcelona and Buenos Aires that would change football forever. So completely did this idea conquer the world that <strong>the two great powerhouses of defensive, long-ball, sweeper football of the 1970s and 80s — Italy and Germany — have both been rendered toothless.</strong> The rebels won. The final is now an argument among the victors.</p>
+
+  <div class="pull">This is not Spain against Argentina. This is Total Football against Total Football — the collective against the individual, tiki-taka against the magician, two heirs of Cruyff's rebellion fighting for the right to call themselves its truest church.
+    <span class="a">— The soul of the beautiful game, contested</span>
+  </div>
+
+  <h2><span class="ic">🌳</span> The Lineage — one rebellion, two bloodlines</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Genealogy of an Idea</span><span class="mt">From Cruyff's Barcelona to MetLife — how one philosophy split into two faiths</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="440" rx="10" fill="#0d141d"/>
+      <rect x="290" y="20" width="140" height="42" rx="8" fill="#160f1e" stroke="#7c5cff" stroke-width="1.6"/>
+      <text x="360" y="40" text-anchor="middle" font-size="12.5" font-weight="800" fill="#c9a8ff">CRUYFF · 1970s</text>
+      <text x="360" y="55" text-anchor="middle" font-size="10" fill="#a892ff">"Total Football" · Barcelona</text>
+      <path d="M360 62 L360 92" stroke="#7c5cff" stroke-width="2.5"/>
+      <rect x="278" y="92" width="164" height="34" rx="7" fill="#12101a" stroke="#5a4a8a" stroke-width="1.3"/>
+      <text x="360" y="113" text-anchor="middle" font-size="11" font-weight="700" fill="#b9a6e6">The Catalan rebellion · possession as protest</text>
+      <path d="M360 126 C 360 150, 200 150, 200 172" stroke="#ffc400" stroke-width="2.5" fill="none"/>
+      <path d="M360 126 C 360 150, 520 150, 520 172" stroke="#7cc0ec" stroke-width="2.5" fill="none"/>
+
+      <text x="200" y="166" text-anchor="middle" font-size="12" font-weight="800" fill="#ffc400">🇪🇸 THE COLLECTIVE</text>
+      <rect x="96" y="176" width="208" height="34" rx="7" fill="#1a1406" stroke="#3a3014"/>
+      <text x="200" y="197" text-anchor="middle" font-size="10.5" fill="#ffe0a0">Guardiola → tiki-taka · the system is the star</text>
+      <rect x="96" y="232" width="208" height="34" rx="7" fill="#1a1406" stroke="#3a3014"/>
+      <text x="200" y="253" text-anchor="middle" font-size="10.5" fill="#ffe0a0">Luis Enrique → verticality · the trident</text>
+      <rect x="112" y="288" width="176" height="40" rx="8" fill="#241a06" stroke="#ffc400" stroke-width="1.6"/>
+      <text x="200" y="307" text-anchor="middle" font-size="11.5" font-weight="800" fill="#ffc400">DE LA FUENTE · 2026</text>
+      <text x="200" y="322" text-anchor="middle" font-size="9.5" fill="#ffe0a0">the purest technical collective</text>
+      <g stroke="#ffc400" stroke-width="2" fill="none"><path d="M200 210 L200 232"/><path d="M200 266 L200 288"/></g>
+
+      <text x="520" y="166" text-anchor="middle" font-size="12" font-weight="800" fill="#7cc0ec">🇦🇷 THE INDIVIDUAL</text>
+      <rect x="416" y="176" width="208" height="34" rx="7" fill="#0e2536" stroke="#2a3f52"/>
+      <text x="520" y="197" text-anchor="middle" font-size="10.5" fill="#bcd9f6">"La Nuestra" — the romantic street tradition</text>
+      <rect x="416" y="232" width="208" height="34" rx="7" fill="#0e2536" stroke="#2a3f52"/>
+      <text x="520" y="253" text-anchor="middle" font-size="10.5" fill="#bcd9f6">Bielsa → the vertical, pressing strand</text>
+      <g stroke="#7cc0ec" stroke-width="2" fill="none"><path d="M520 210 L520 232"/><path d="M520 266 L520 288"/></g>
+      <rect x="432" y="288" width="176" height="40" rx="8" fill="#0a2233" stroke="#7cc0ec" stroke-width="1.6"/>
+      <text x="520" y="307" text-anchor="middle" font-size="11.5" font-weight="800" fill="#7cc0ec">SCALONI · 2026</text>
+      <text x="520" y="322" text-anchor="middle" font-size="9.5" fill="#bcd9f6">possession built around a magician</text>
+
+      <path d="M200 328 C 200 370, 360 370, 360 388" stroke="#ffc400" stroke-width="2.5" fill="none"/>
+      <path d="M520 328 C 520 370, 360 370, 360 388" stroke="#7cc0ec" stroke-width="2.5" fill="none"/>
+      <rect x="286" y="388" width="148" height="40" rx="9" fill="#1c1608" stroke="#e9b949" stroke-width="2"/>
+      <text x="360" y="407" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e9b949">THE 2026 FINAL</text>
+      <text x="360" y="422" text-anchor="middle" font-size="9.5" fill="#f0d090">the bloodlines reunite</text>
+
+      <text x="644" y="60" text-anchor="middle" font-size="9.5" fill="#5a6b7d">the defeated:</text>
+      <text x="644" y="76" text-anchor="middle" font-size="9.5" fill="#5a6b7d">🇮🇹 Italy · catenaccio</text>
+      <text x="644" y="90" text-anchor="middle" font-size="9.5" fill="#5a6b7d">🇩🇪 Germany · long-ball</text>
+      <text x="644" y="104" text-anchor="middle" font-size="9" fill="#4a5768">— toothless</text>
+    </svg>
+
+    <p class="expl"><strong>One root, two trunks, and tonight they touch again.</strong> The diagram traces the single idea from Cruyff's Barcelona down two diverging bloodlines. On the Spanish side, the collective strand: Guardiola's tiki-taka, where the system itself is the star; then Luis Enrique's vertical refinement; and now De la Fuente, fielding perhaps the purest technical collective the game has seen. On the Argentine side, the individual strand: the old romantic "La Nuestra" fused with Bielsa's vertical, pressing intensity, and now Scaloni, who has taken the same possession principles and organised them around the singular genius of one man. <strong>Both are Total Football. Neither is a betrayal of it.</strong> They are the idea's two legitimate children — and the beautiful, almost unbearable symmetry of this final is that after fifty years apart, the bloodlines converge on a single pitch in New Jersey to settle which interpretation is truest. The old gods of defensive football, Italy and Germany, are not even in the room.</p>
+  </div>
+
+  <h2><span class="ic">🎭</span> The Two High Priests — De la Fuente &amp; Scaloni</h2>
+  <p>Two of the finest coaches alive, working on two spectrums of the same faith. It is worth stating plainly how differently they read the same scripture.</p>
+
+  <div class="twocol">
+    <div class="card esp">
+      <h3 style="margin-top:0">🇪🇸 Luis de la Fuente — the technical collective</h3>
+      <ul>
+        <li><strong>The system IS the star.</strong> Everyone plays a role; no single man is indispensable. Spain conceded one goal in seven matches by making the team, not any individual, the unit of defence.</li>
+        <li><strong>Tiki-taka as a completely technical team game</strong> — triangles and quadrangles, telepathic circulation, the ball as the best defender.</li>
+        <li><strong>Pragmatic, not romantic:</strong> he benched Pedri for Fabián Ruiz's physicality and has ground out one-goal wins. He controls games and picks his moment.</li>
+        <li><strong>The through-line:</strong> Guardiola's possession plus Luis Enrique's verticality, held in balance by Rodri.</li>
+      </ul>
+    </div>
+    <div class="card arg">
+      <h3 style="margin-top:0">🇦🇷 Lionel Scaloni — possession around a magician</h3>
+      <ul>
+        <li><strong>The genius IS the star, and the system serves him.</strong> A possession side — 60%+ of the ball, 90% pass accuracy — whose every principle bends toward getting the ball to Messi in the right place.</li>
+        <li><strong>Relationships over formation.</strong> Argentina's analyst Matías Manna insists shape matters less than the bonds between players — "the game is in the relationships." Total Football's deepest principle, through one man's connections.</li>
+        <li><strong>Streetwise resilience:</strong> the Bielsa inheritance of intensity, fused with a champions' refusal to die — reborn from the brink four times.</li>
+        <li><strong>The through-line:</strong> La Nuestra's romance plus Bielsa's verticality, organised around Messi's mind.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="philo">
+    <div class="t">⚙️ The philosophical fault line</div>
+    <p style="margin:8px 0 0">Here is the precise point of difference, and it is the whole match. <strong>De la Fuente believes the collective can produce genius on demand — that if eleven players move correctly, the moment of magic becomes inevitable, and no one man need be relied upon.</strong> <strong>Scaloni believes that genius, when it is genuinely once-in-a-century, is itself a system — that the most rational way to organise a football team is to build it as a delivery mechanism for the one player who can do what no structure can.</strong> Both are coherent. Both have been proven this tournament. Spain's collective erased the individual brilliance of Mbappé; Argentina's individual erased the collective solidity of England. The final asks the deepest question the sport has: <strong>in the fullest expression of Total Football, is the ultimate unit the team, or the man?</strong></p>
+  </div>
+
+  <h2><span class="ic">📋</span> Predicted Line-ups <span style="font-size:12px;font-weight:700;color:var(--gold);border:1px solid #3a2f12;background:rgba(233,185,73,.14);padding:3px 9px;border-radius:999px;margin-left:8px">informed prediction · not confirmed</span></h2>
+  <div class="twocol">
+    <div class="card esp">
+      <h3 style="margin-top:0">🇪🇸 Spain (4-3-3)</h3>
+      <p style="font-size:13.5px">Simón; Porro, Cubarsí, Laporte, Cucurella; Rodri, Fabián Ruiz, Olmo; Yamal, Oyarzabal, Baena.</p>
+      <p style="font-size:12.5px;color:var(--muted);margin:0"><strong>Watch for:</strong> Pedri again benched for Fabián's steel; Nico Williams a game-changing option from the bench for Baena. No injury concerns of note. De la Fuente changes a winning team only when forced.</p>
+    </div>
+    <div class="card arg">
+      <h3 style="margin-top:0">🇦🇷 Argentina (4-3-3 / 4-4-2)</h3>
+      <p style="font-size:13.5px">E. Martínez; Molina, Romero, L. Martínez, Tagliafico; De Paul, Paredes, Mac Allister; Messi, Álvarez; (Enzo/Simeone the variable).</p>
+      <p style="font-size:12.5px;color:var(--muted);margin:0"><strong>Watch for:</strong> whether Scaloni restores Enzo's thunder from the semi or keeps Simeone's width against Cucurella; whether Romero, hooked through exhaustion vs Switzerland, is at full tilt. Lo Celso the Plan-B card.</p>
+    </div>
+  </div>
+
+  <h2><span class="ic">⚔️</span> Sub-Contest #1 — Rodri vs Paredes: the two metronomes</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Deep-Lying Duel</span><span class="mt">The glue of the collective against the man who best finds Messi between the lines</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="400" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="26" x2="360" y2="374" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="50" font-size="14" font-weight="800" fill="#ffc400">🇪🇸 RODRI</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="34" y="78">▸ The glue that makes the whole system move</text>
+        <text x="34" y="100">▸ Never yet stifled into the horizontal —</text>
+        <text x="34" y="116" font-size="10.5" fill="#8b97a8">   no team has entered his zone all tournament</text>
+        <text x="34" y="138">▸ Connects midfield to attack; forces turnovers</text>
+        <text x="34" y="160">▸ Playing his best since the ACL injury &amp; Ballon d'Or</text>
+      </g>
+      <rect x="30" y="180" width="302" height="88" rx="8" fill="#1a1406" stroke="#3a3014"/>
+      <text x="46" y="206" font-size="12.5" font-weight="800" fill="#ffc400">His job tonight:</text>
+      <text x="46" y="228" font-size="11.5" fill="#cdd6e2">own the centre so totally that the ball never</text>
+      <text x="46" y="246" font-size="11.5" fill="#cdd6e2">reaches Messi in a dangerous area. Starve</text>
+      <text x="46" y="260" font-size="11.5" fill="#cdd6e2">the supply line at its source.</text>
+
+      <text x="392" y="50" font-size="14" font-weight="800" fill="#a9d8f5">🇦🇷 PAREDES</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="78">▸ "The Argentinian who best finds Messi</text>
+        <text x="392" y="94" font-size="10.5" fill="#8b97a8">   between the lines" — analyst Matías Manna</text>
+        <text x="392" y="116">▸ Wins the ball high, defends the space behind</text>
+        <text x="392" y="138">▸ The metronome Scaloni added for control</text>
+        <text x="392" y="160">▸ 2022 world champion — age is just a number</text>
+      </g>
+      <rect x="390" y="180" width="300" height="88" rx="8" fill="#0e2536" stroke="#2a3f52"/>
+      <text x="406" y="206" font-size="12.5" font-weight="800" fill="#a9d8f5">His job tonight:</text>
+      <text x="406" y="228" font-size="11.5" fill="#cdd6e2">survive Spain's press, and thread the one</text>
+      <text x="406" y="246" font-size="11.5" fill="#cdd6e2">pass between the lines that springs Messi.</text>
+      <text x="406" y="260" font-size="11.5" fill="#cdd6e2">He is the relationship the whole side runs on.</text>
+
+      <rect x="150" y="300" width="420" height="70" rx="9" fill="#12101a" stroke="#5a4a8a"/>
+      <text x="360" y="326" text-anchor="middle" font-size="12.5" font-weight="800" fill="#c9a8ff">THE PIVOT OF THE FINAL</text>
+      <text x="360" y="348" text-anchor="middle" font-size="11" fill="#cdd6e2">If Rodri wins it, Messi never receives. If Paredes wins it,</text>
+      <text x="360" y="364" text-anchor="middle" font-size="11" fill="#cdd6e2">Messi turns — and the magician decides a World Cup final.</text>
+    </svg>
+
+    <p class="expl"><strong>The final is decided in this patch of grass more than anywhere else.</strong> Both are deep-lying orchestrators, but they serve their philosophies differently. <strong>Rodri is the glue of the collective</strong> — the man who makes eleven parts move as one, and whom no side has managed to stifle into sterile, sideways passing all tournament. His task is to own the centre so completely that Spain's dominance of the ball becomes a wall between Messi and the game. <strong>Paredes, meanwhile, is the single most important relationship in the Argentine side</strong> — their own analyst calls him "the Argentinian who best finds Messi between the lines," and in Total Football, as Manna insists, the game lives in exactly those relationships, not in the formation. Rodri must strangle the supply at source; Paredes must survive the Spanish press and thread the one line-breaking pass that turns Messi toward goal. Whoever wins this duel likely lifts the trophy.</p>
+  </div>
+
+  <h2><span class="ic">🎩</span> Sub-Contest #2 — Messi vs Cucurella: the magician into the pocket</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain's Left</span><span class="mt">Messi drifts off the right into the central pocket — into Cucurella's zone and Rodri's shadow</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="m1a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7cc0ec"/></marker>
+        <marker id="m1b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/><rect y="330" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="120"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Argentina attacking ↑ · Messi roams off the right into the pocket — Cucurella &amp; Rodri must share him</text>
+      <g><circle cx="360" cy="42" r="11" fill="#e63946" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="7" fill="#fff" text-anchor="middle">SIMÓN</text></g>
+      <g font-size="8.5" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="250" cy="140" r="12" fill="#ffc400" stroke="#fff" stroke-width="1.3"/><text x="250" y="144">CUC</text>
+        <circle cx="340" cy="122" r="11" fill="#ffc400" stroke="#fff" stroke-width="1.2"/><text x="340" y="126">LAP</text>
+        <circle cx="300" cy="205" r="12" fill="#ff8e95" stroke="#fff" stroke-width="1.3"/><text x="300" y="209">RODRI</text>
+      </g>
+      <g><circle cx="470" cy="250" r="15" fill="#7cc0ec" stroke="#fff" stroke-width="1.7"/><text x="470" y="254" font-size="9" fill="#0a0e14" text-anchor="middle">MESSI</text></g>
+      <text x="470" y="280" text-anchor="middle" font-size="9" fill="#bcd9f6">starts right, drifts into the pocket</text>
+      <path d="M456 244 C 400 225, 350 215, 316 210" stroke="#7cc0ec" stroke-width="3" stroke-dasharray="7 4" fill="none" marker-end="url(#m1a)"/>
+      <path d="M256 152 C 320 180, 400 210, 452 238" stroke="#ffc400" stroke-width="2.5" fill="none" marker-end="url(#m1b)"/>
+      <text x="360" y="175" text-anchor="middle" font-size="9.5" fill="#ffe98a">does Cucurella follow him inside, or hold the line?</text>
+      <path d="M180 200 L240 200 L240 300 L180 300 Z" fill="#7cc0ec" opacity=".12" stroke="#7cc0ec" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="210" y="255" text-anchor="middle" font-size="9" fill="#bcd9f6">space behind if</text>
+      <text x="210" y="270" text-anchor="middle" font-size="9" fill="#bcd9f6">he steps in</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#7cc0ec;border-top-style:dashed"></i> Messi's drift into the pocket</span>
+      <span><i style="border-top-color:#ffc400"></i> Cucurella's dilemma</span>
+    </div>
+
+    <p class="expl"><strong>The reigning World Cup Best Left-Back against the best player of all time — a duel with no clean answer.</strong> Messi no longer hugs a touchline; he roams from a nominal right or central position into the pockets between an opponent's lines, and that drift will repeatedly carry him toward Spain's left, where <strong>Marc Cucurella has been outstanding all tournament.</strong> Cucurella's dilemma is exquisite and unsolvable in isolation: <strong>follow Messi infield and he vacates the flank for Álvarez or an overlapping run; hold his position and he leaves Messi to Rodri and the centre-backs, trusting the collective to swarm.</strong> This is precisely where Spain's philosophy is tested — their whole defensive theology says <em>no single man marks Messi; the system does.</em> Cucurella cannot win this alone, and he is not meant to. The question is whether Spain's collective can do to Messi what it did to Mbappé — and Messi, unlike Mbappé, does not need to run into space. He needs only to receive in it.</p>
+  </div>
+
+  <h2><span class="ic">⚡</span> Sub-Contest #3 — Yamal vs the full-backs: Spain's likeliest goal</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag esp">Spain's Right</span><span class="mt">The 19-year-old against Tagliafico &amp; a Molina who England exposed for pace</span></div>
+
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="y1a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc400"/></marker>
+        <marker id="y1g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#39d98a"/></marker>
+      </defs>
+      <rect width="720" height="440" rx="10" fill="#0f5230"/>
+      <g opacity="0.10" fill="#fff"><rect y="0" width="720" height="55"/><rect y="110" width="720" height="55"/><rect y="220" width="720" height="55"/></g>
+      <g stroke="#fff" stroke-opacity="0.4" fill="none" stroke-width="2"><rect x="14" y="14" width="692" height="412" rx="4"/><rect x="200" y="14" width="320" height="130"/><rect x="285" y="14" width="150" height="60"/></g>
+      <rect x="310" y="16" width="100" height="12" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="360" y="432" text-anchor="middle" font-size="11" fill="#cfe6d6" opacity=".8">Spain attacking ↑ · Yamal isolates the full-back, cuts inside, bends it far post</text>
+      <g><circle cx="360" cy="42" r="11" fill="#7cc0ec" stroke="#fff" stroke-width="1.2"/><text x="360" y="46" font-size="8" fill="#0a0e14" text-anchor="middle">DIBU</text></g>
+      <g font-size="9" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="180" cy="210" r="12" fill="#a9d8f5" stroke="#fff" stroke-width="1.3"/><text x="180" y="214">TAG</text>
+      </g>
+      <text x="180" y="234" text-anchor="middle" font-size="8.5" fill="#bcd9f6">experienced, but 33</text>
+      <g><circle cx="600" cy="240" r="15" fill="#ffc400" stroke="#fff" stroke-width="1.7"/><text x="600" y="244" font-size="9" fill="#0a0e14" text-anchor="middle">YAMAL</text></g>
+      <text x="600" y="268" text-anchor="middle" font-size="9" fill="#ffe98a">19 · fearless · lives here</text>
+      <path d="M588 230 C 530 205, 470 190, 438 182" stroke="#ffc400" stroke-width="3" stroke-dasharray="6 4" fill="none" marker-end="url(#y1a)"/>
+      <text x="500" y="200" font-size="9" fill="#ffe98a">cut inside onto the left foot</text>
+      <path d="M582 224 C 520 175, 440 110, 392 66" stroke="#39d98a" stroke-width="3.5" fill="none" marker-end="url(#y1g)"/>
+      <text x="470" y="130" font-size="10" fill="#bff0d0">the signature far-post curl</text>
+      <rect x="470" y="300" width="220" height="118" rx="8" fill="#101722" stroke="#4a1518"/>
+      <text x="486" y="324" font-size="11.5" font-weight="800" fill="#ff8e95">⚠ the Molina problem</text>
+      <text x="486" y="346" font-size="10.5" fill="#cdd6e2">If Yamal shifts to Argentina's right,</text>
+      <text x="486" y="362" font-size="10.5" fill="#cdd6e2">he meets Molina — who lacks pace</text>
+      <text x="486" y="378" font-size="10.5" fill="#cdd6e2">and was caught wanting vs England,</text>
+      <text x="486" y="394" font-size="10.5" fill="#cdd6e2">whose only goal came down that side.</text>
+      <text x="486" y="410" font-size="10.5" font-weight="700" fill="#ffb0b3">Cape Verde &amp; Egypt found it too.</text>
+    </svg>
+
+    <div class="legend">
+      <span><i style="border-top-color:#ffc400;border-top-style:dashed"></i> Yamal cuts inside</span>
+      <span><i style="border-top-color:#39d98a"></i> The far-post curl</span>
+    </div>
+
+    <p class="expl"><strong>This, on the balance of evidence, is Spain's single likeliest route to the trophy.</strong> Lamine Yamal — nineteen, fearless, already a Euro 2024 semi-final destroyer of France from exactly this position — will isolate whichever full-back he faces, drop the shoulder, cut inside onto his left foot and bend it far post. Against Tagliafico, he faces a wise but 33-year-old defender in a foot race he should relish. And if Spain angle him toward Argentina's right, he meets <strong>Nahuel Molina — the one genuine crack in an otherwise superb Argentine back line.</strong> Molina lacks pace and was caught wanting repeatedly against England, whose only goal came streaking down exactly that flank; <strong>Cape Verde and Egypt both exposed the same vulnerability to pace earlier in the tournament.</strong> The Irish Times noted the telling detail: England, bafflingly, chose not to attack it — <strong>but that reticence is not a mistake Spain, with Yamal, are likely to repeat.</strong> If Scaloni does not shield that side — a covering midfielder, Montiel, or help from Álvarez tracking back — the World Cup could be decided there.</p>
+  </div>
+
+  <h2><span class="ic">🕸️</span> Sub-Contest #4 — Two visions of possession, side by side</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Systems</span><span class="mt">Spain's web of triangles vs Argentina's spokes radiating from one hub</span></div>
+
+    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="sp2" markerWidth="8" markerHeight="8" refX="5.5" refY="2.6" orient="auto"><path d="M0,0 L6,2.6 L0,5.2 Z" fill="#7cc0ec"/></marker>
+      </defs>
+      <rect width="720" height="400" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="24" x2="360" y2="376" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="185" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#ffc400">🇪🇸 THE WEB</text>
+      <text x="185" y="62" text-anchor="middle" font-size="10" fill="#ffe0a0">every node connected to every node</text>
+      <g stroke="#ffc400" stroke-width="1.6" opacity=".8" fill="none">
+        <path d="M131 120 L229 111"/><path d="M120 131 L92 209"/><path d="M128 128 L192 223"/>
+        <path d="M240 120 L288 181"/><path d="M240 120 L206 221"/><path d="M99 226 L162 302"/>
+        <path d="M210 228 L280 196"/><path d="M198 240 L176 301"/><path d="M131 124 L282 187"/>
+      </g>
+      <g font-size="8" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="120" cy="120" r="11" fill="#ffc400"/><text x="120" y="124">RODRI</text>
+        <circle cx="240" cy="110" r="10" fill="#ffc400"/><text x="240" y="114">OLMO</text>
+        <circle cx="90" cy="220" r="10" fill="#ffc400"/><text x="90" y="224">FAB</text>
+        <circle cx="200" cy="230" r="10" fill="#ffc400"/><text x="200" y="234">YAM</text>
+        <circle cx="290" cy="190" r="10" fill="#ffc400"/><text x="290" y="194">OYA</text>
+        <circle cx="170" cy="310" r="10" fill="#ffc400"/><text x="170" y="314">CUC</text>
+      </g>
+      <text x="185" y="360" text-anchor="middle" font-size="10.5" fill="#ffe0a0">remove any one node — the web still holds</text>
+
+      <text x="535" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#7cc0ec">🇦🇷 THE HUB</text>
+      <text x="535" y="62" text-anchor="middle" font-size="10" fill="#bcd9f6">every spoke runs through one man</text>
+      <g stroke="#7cc0ec" stroke-width="1.8" opacity=".85" fill="none">
+        <path d="M521 200 L450 128" marker-end="url(#sp2)"/>
+        <path d="M540 195 L556 117" marker-end="url(#sp2)"/>
+        <path d="M550 205 L632 165" marker-end="url(#sp2)"/>
+        <path d="M521 220 L450 284" marker-end="url(#sp2)"/>
+        <path d="M540 225 L556 290" marker-end="url(#sp2)"/>
+        <path d="M551 214 L642 251" marker-end="url(#sp2)"/>
+      </g>
+      <g font-size="8" font-weight="700" fill="#0a0e14" text-anchor="middle">
+        <circle cx="535" cy="210" r="16" fill="#7cc0ec" stroke="#fff" stroke-width="1.5"/><text x="535" y="214">MESSI</text>
+        <circle cx="440" cy="120" r="10" fill="#a9d8f5"/><text x="440" y="124">PAR</text>
+        <circle cx="560" cy="105" r="10" fill="#a9d8f5"/><text x="560" y="109">ENZO</text>
+        <circle cx="640" cy="160" r="10" fill="#a9d8f5"/><text x="640" y="164">MAC</text>
+        <circle cx="440" cy="290" r="10" fill="#a9d8f5"/><text x="440" y="294">DEP</text>
+        <circle cx="560" cy="300" r="10" fill="#a9d8f5"/><text x="560" y="304">ALV</text>
+        <circle cx="650" cy="255" r="10" fill="#a9d8f5"/><text x="650" y="259">MOL</text>
+      </g>
+      <text x="535" y="360" text-anchor="middle" font-size="10.5" fill="#bcd9f6">remove the hub — the spokes collapse</text>
+    </svg>
+
+    <p class="expl"><strong>The same possession, wired two completely different ways — the philosophical thesis made visible.</strong> Spain are a distributed <strong>web</strong>: every player a node, every node connected to every other, the ball travelling any of a dozen routes at any moment. Cut one connection and the web re-routes — which is why no side has pressed them into error, and why they need no individual to be brilliant. Argentina are a <strong>hub and spokes</strong>: a magnificent structure, but one whose every spoke runs to and from a single centre. When Messi is on the ball, no team in history is more dangerous; when he is starved, as against Switzerland, the spokes have nowhere to connect. <strong>The genius of Spain's model is its redundancy; the genius of Argentina's is its peak.</strong> The final asks whether a network can out-think a singularity — or whether, at the very summit of the game, one transcendent hub is worth more than the most perfect web ever built.</p>
+  </div>
+
+  <h2><span class="ic">🎯</span> Sub-Contest #5 — The pace problem Spain may not be able to use</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag arg">Argentina's Vulnerability</span><span class="mt">The weakness Cape Verde &amp; Egypt found — and why Spain's style may not exploit it</span></div>
+
+    <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="380" rx="10" fill="#0d141d"/>
+      <text x="360" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="#e9b949">Argentina's aged back line: fast, direct running hurts it — slow possession does not</text>
+      <rect x="30" y="64" width="316" height="286" rx="9" fill="#101722" stroke="#4a1518"/>
+      <text x="188" y="90" text-anchor="middle" font-size="12.5" font-weight="800" fill="#ff8e95">✓ What HAS hurt them</text>
+      <g font-size="11" fill="#cdd6e2">
+        <text x="50" y="118">▸ Cape Verde — direct, pacy running</text>
+        <text x="50" y="142">▸ Egypt — went 2-0 up through speed</text>
+        <text x="50" y="166">▸ England — Gordon's transition burst</text>
+        <text x="50" y="182" font-size="10.5" fill="#8b97a8">   (down Molina's flank, their only goal)</text>
+        <text x="50" y="208">▸ Romero &amp; Lisandro: superb on the ball,</text>
+        <text x="50" y="224" font-size="10.5" fill="#8b97a8">   vulnerable turned toward their own goal</text>
+        <text x="50" y="250">▸ Molina: no recovery pace on the right</text>
+      </g>
+      <text x="188" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#ffb0b3">The recipe: run AT them, fast, in behind.</text>
+      <text x="188" y="324" text-anchor="middle" font-size="10" fill="#8b97a8">Verticality &amp; transition, not patience.</text>
+
+      <rect x="374" y="64" width="316" height="286" rx="9" fill="#101722" stroke="#3a3014"/>
+      <text x="532" y="90" text-anchor="middle" font-size="12.5" font-weight="800" fill="#ffc400">✗ Why SPAIN may not use it</text>
+      <g font-size="11" fill="#cdd6e2">
+        <text x="394" y="118">▸ Spain's DNA is possession, not the</text>
+        <text x="394" y="134" font-size="10.5" fill="#8b97a8">   long, fast ball in behind</text>
+        <text x="394" y="160">▸ Oyarzabal is a link forward, not a</text>
+        <text x="394" y="176" font-size="10.5" fill="#8b97a8">   burner who stretches a high line</text>
+        <text x="394" y="202">▸ They walk teams to death — the exact</text>
+        <text x="394" y="218" font-size="10.5" fill="#8b97a8">   opposite of what exposes Argentina</text>
+        <text x="394" y="244">▸ Irish Times: "not something Spain</text>
+        <text x="394" y="260" font-size="10.5" fill="#8b97a8">   can obviously do"</text>
+      </g>
+      <text x="532" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#ffe0a0">The paradox: the best team may lack</text>
+      <text x="532" y="322" text-anchor="middle" font-size="11" font-weight="700" fill="#ffe0a0">the one tool that beats this opponent.</text>
+    </svg>
+
+    <p class="expl"><strong>Here is the tactical paradox that makes this final so hard to call, and so fascinating.</strong> Argentina's back line, for all its know-how, has one clear weakness: <strong>it can be hurt by pace and direct, vertical running.</strong> Cape Verde troubled them with it, Egypt went two goals up exploiting it, and England's only goal came from Gordon bursting in behind. Romero and Lisandro Martínez are magnificent facing the ball, but turned toward their own goal at speed they are far more human — and Molina offers no recovery pace at all. <strong>The recipe to beat Argentina is well known: run at them, fast, in behind.</strong> The problem is that <strong>this is close to the one thing Spain, by philosophy, do not do.</strong> Spain do not launch fast balls into the channels; they walk you to death with possession, and Oyarzabal is a link man, not a burner to stretch a defence. As the Irish Times put it, exploiting Argentina's pace vulnerability is "not something Spain can obviously do." The best team in the tournament may be constitutionally unsuited to the single clearest route to beating their opponent — unless, and this is Yamal's importance again, the teenager's dribbling supplies the verticality the system otherwise lacks.</p>
+  </div>
+
+  <h2><span class="ic">🧤</span> Sub-Contest #6 — Simón vs Dibu, and the shootout asymmetry</h2>
+  <div class="move">
+    <div class="mh"><span class="mtag key">The Last Line</span><span class="mt">A record-breaking wall against the definitive penalty goalkeeper of the age</span></div>
+
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="300" rx="10" fill="#0d141d"/>
+      <line x1="360" y1="24" x2="360" y2="276" stroke="#26303f" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="34" y="48" font-size="13.5" font-weight="800" fill="#ffc400">🇪🇸 Unai Simón</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="34" y="76">▸ 1 goal conceded in 7 matches</text>
+        <text x="34" y="98">▸ Record World Cup clean-sheet run</text>
+        <text x="34" y="120">▸ Aggressive sweeper behind a high line</text>
+        <text x="34" y="142">▸ One more clean sheet = meanest</text>
+        <text x="34" y="158" font-size="10.5" fill="#8b97a8">   champions in World Cup history</text>
+      </g>
+      <text x="392" y="48" font-size="13.5" font-weight="800" fill="#a9d8f5">🇦🇷 Emiliano "Dibu" Martínez</text>
+      <g font-size="11.5" fill="#cdd6e2">
+        <text x="392" y="76">▸ The definitive shootout keeper of the era</text>
+        <text x="392" y="98">▸ 2022 WC &amp; Copa América hero</text>
+        <text x="392" y="120">▸ Below his best in open play this run</text>
+        <text x="392" y="142">▸ But the mind games are undefeated</text>
+      </g>
+      <rect x="120" y="188" width="480" height="88" rx="9" fill="#12101a" stroke="#5a4a8a"/>
+      <text x="360" y="214" text-anchor="middle" font-size="12.5" font-weight="800" fill="#c9a8ff">THE ASYMMETRY THAT SHADOWS THE FINAL</text>
+      <text x="360" y="238" text-anchor="middle" font-size="11" fill="#cdd6e2">Extra time favours Spain (fresher, deeper). Penalties favour Argentina</text>
+      <text x="360" y="256" text-anchor="middle" font-size="11" fill="#cdd6e2">(Dibu; Spain won just 1 of their last 5 WC shootouts).</text>
+      <text x="360" y="272" text-anchor="middle" font-size="10.5" font-weight="700" fill="#f0d090">The team most likely to reach penalties is the one that least wants to.</text>
+    </svg>
+
+    <p class="expl"><strong>In a tournament that has belonged to goalkeepers, the final may be settled by them too.</strong> <strong>Unai Simón</strong> arrives with the meanest record in World Cup history — one goal conceded across seven games — and stands one clean sheet from making Spain the stingiest champions ever. <strong>Dibu Martínez</strong> arrives below his open-play best but carrying the one reputation that terrifies any opponent: the definitive penalty goalkeeper of his generation. And that produces the strange tension that shadows the whole night. <strong>Extra time favours Spain</strong> — fresher legs, a deeper bench, Argentina's aged core having run two 120-minute marathons already. <strong>Penalties favour Argentina</strong> — Dibu against a Spain side that has won just one of its last five World Cup shootouts. The paradox: Spain's patient, controlling, lead-protecting football is exactly the style that produces tight, goalless, shootout-bound finals — so <strong>the team best equipped to reach penalties is the very team that must, at all costs, avoid them.</strong></p>
+  </div>
+
+  <div class="pull">Spain must win this in ninety minutes, because their whole method drifts toward the one ending they cannot afford — Dibu Martínez, twelve yards, and the coldest man in football wearing Argentine gloves.
+    <span class="a">— The shootout that hangs over everything</span>
+  </div>
+
+  <h2><span class="ic">🔑</span> The Keys — what decides the final</h2>
+  <ul>
+    <li><strong>The Rodri–Paredes pivot.</strong> Whoever controls the deep midfield controls whether Messi ever receives the ball in a dangerous area. The match's true fulcrum.</li>
+    <li><strong>Can the collective cage the genius?</strong> Spain erased Mbappé because he needs space to run into. Messi needs only space to think in. Their system faces a problem it has not yet solved.</li>
+    <li><strong>Yamal at the full-backs.</strong> Spain's clearest route to goal, and the place Argentina's defence is thinnest — especially if Yamal finds Molina.</li>
+    <li><strong>Spain's stylistic paradox.</strong> The known way to beat Argentina is pace in behind — the one thing Spain's possession game does not naturally provide.</li>
+    <li><strong>The clock and the spot.</strong> Spain must win inside 90–120 minutes. If it reaches penalties, the trophy tilts sharply toward Dibu and Argentina.</li>
+    <li><strong>The emotional wave.</strong> Argentina have been reborn from the brink four times. Messi in a third final, chasing the perfect ending, is a force no model fully captures.</li>
+  </ul>
+
+  <div class="verdict">
+    <h2><span class="ic">🏆</span> The Verdict — the honest read on the final of finals</h2>
+    <p><strong>Spain are the better football team, and they deserve to be favourites.</strong> They are the most complete side in the tournament, the purest living expression of the collective ideal, unbeaten and barely breached, with the best midfielder alive and a system that has answered every style put in front of it. On the balance of pure quality, they win — and if the game is played on their terms, controlled and patient and technical, they may win it without ever trailing.</p>
+    <p><strong>And yet this is the one final where being the better team may not be enough</strong>, because everything that makes Spain formidable was built to solve problems this specific opponent does not pose. Their high line erased a runner; Messi does not run. Their possession starves teams that need rhythm; Argentina need only one moment. Their control drifts toward the shootout that is their oldest weakness. And across from De la Fuente's perfect web stands the single greatest reason to believe a hub can beat a network: a 39-year-old in his third final, who has spent this whole tournament being caged, written off, and reborn, and who now needs — as he always has — just one half-yard of thought to break the most beautiful system ever built.</p>
+    <p><strong>My honest verdict: Spain by the barest margin — the network edges the singularity, the collective completes what the individual cannot.</strong> I make it Spain, narrowly, in a final that Argentina could win with a single touch of Messi's left foot, and would very likely win on penalties. But this is the prediction I hold most loosely of the entire tournament, because we have said Argentina were beaten four times already and been wrong four times. If this is Total Football's defining night, then perhaps it is fitting that it cannot truly be called — that the collective and the individual, Cruyff's two children, are so perfectly matched that only ninety minutes of football can separate them. <strong>Two of our four. The web against the hub. Whatever happens, the beautiful game has already won.</strong></p>
+    <div class="scoreline">🇪🇸 Spain 2 — 1 Argentina <span style="font-size:13px;color:var(--muted)">…but do not, ever, bet against the magician</span></div>
+    <p style="text-align:center;margin:0;font-size:13px;color:var(--muted)">Most likely: a tight, tense, technical final that Spain edge through control and a Yamal moment — unless Messi writes one last impossible chapter, in which case no model, and no defence, will have stopped him. If it reaches penalties, lean Argentina. Kickoff: Sunday, MetLife.</p>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

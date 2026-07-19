@@ -554,7 +554,7 @@ const SF = [
    form:"France's tournament ends as Euro 2024 did — outplayed by Spain in a semi-final. Deschamps' 14-year reign closes here. England, meanwhile, must live with the most heartbreaking loss in generations of them: leading with five minutes left and beaten by two Messi assists.",
    pred:"A bittersweet fixture for both. Deschamps bows out after 14 years, while Tuchel faces questions about a bunkering strategy that will be debated for years. Expect a more open, less inhibited game than either semi — France remain immensely talented (Mbappé is still tied for the Golden Boot on 8), and England's stars, silent in Atlanta, will want to prove something. Pride and a podium place on the line."},
  {id:'FIN', slot:'final', v:"New York / NJ", ist:"12:30 AM IST · Mon 20 Jul", ko:"2026-07-19T19:00:00Z", a:{iso:'ar',n:"Argentina"}, b:{iso:'es',n:"Spain"}, ours:true, key:"Argentina/Spain", marquee:true,
-   pre:"argentina-spain-final-preview.html",
+   pre:"argentina-spain-final-preview.html", preEarly:true,
    feeds:"Argentina (beat England 2-1) vs Spain (beat France 2-0) — THE DREAM FINAL · Match 104 · MetLife Stadium",
    phil:"THE FINAL — and the dream one. Two of our four: the magician against the machine. Spain are the most complete technical side in football, having conceded ONE goal all tournament and dismantled the world's No.1 in the semi. Argentina are the holders who have been dead four times and refused, every time, to actually die — held aloft by a 39-year-old who has just made himself immortal. The idea against the individual, for the greatest prize in sport.",
    deep:"The tactical crux is beautiful: everything that made Spain untouchable was built to solve problems Argentina do not pose. Their high line erased Mbappé because a trap needs a runner to catch — Messi never runs behind, he receives in front. Their control starved France's front three because that team needed rhythm and space — Argentina need neither, only one moment. Spain's real weapon is possession itself: at 65% of the ball, Messi simply gets fewer touches. The duel that decides it: Rodri's screen, unbeaten all tournament, against Messi's hunt for a half-yard. Rodri must win it for 90+ minutes. Messi has to win it once. But the likeliest goal comes elsewhere — Yamal at Molina, the one crack in an otherwise formidable Argentine back line.",
@@ -873,7 +873,7 @@ function buildAnalysisButtons(m){
   const ko = m.ko? new Date(m.ko).getTime() : null;
   const preOpen = ko? ko-60*60*1000 : null;     // 1 hour before KO
   const postOpen= ko? ko+90*60*1000 : null;     // 90 min after KO (regulation)
-  const preReady  = ko? now>=preOpen : false;
+  const preReady  = m.preEarly? true : (ko? now>=preOpen : false);  // preEarly = published ahead of the usual window
   const postReady = ko? now>=postOpen : false;
 
   // data attributes drive the click handler (onAnalysisTap)
